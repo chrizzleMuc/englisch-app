@@ -45,7 +45,7 @@ export function stop() {
   if (synth) synth.cancel();
 }
 
-function sayOne(text, lang, rate) {
+function sayOne(text, lang, rate, pitch = 1.05) {
   return new Promise((resolve) => {
     if (!synth) return resolve();
     const u = new SpeechSynthesisUtterance(text);
@@ -53,7 +53,7 @@ function sayOne(text, lang, rate) {
     const v = pickVoice(lang);
     if (v) u.voice = v;
     u.rate = rate;
-    u.pitch = 1.05;
+    u.pitch = pitch;
     let done = false;
     const finish = () => {
       if (!done) {
@@ -70,11 +70,11 @@ function sayOne(text, lang, rate) {
 }
 
 // Spricht mehrere Teile nacheinander, z. B. [["de","Wo ist"],["en","cat"]]
-export async function sayParts(parts, { slow = false } = {}) {
-  stop();
+export async function sayParts(parts, { slow = false, pitch, keep = false } = {}) {
+  if (!keep) stop();
   for (const [lang, text] of parts) {
     const isEn = lang === "en";
-    await sayOne(text, isEn ? "en-GB" : "de-DE", isEn ? (slow ? 0.55 : 0.85) : 1.0);
+    await sayOne(text, isEn ? "en-GB" : "de-DE", isEn ? (slow ? 0.55 : 0.85) : 1.0, pitch);
   }
 }
 

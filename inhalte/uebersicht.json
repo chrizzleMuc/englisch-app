@@ -1,0 +1,26 @@
+{
+  "subjects": [
+    {
+      "id": "englisch",
+      "title": "Englisch",
+      "image": "🇬🇧",
+      "color": "#ff9f43",
+      "stages": [
+        {
+          "id": "englisch-s1",
+          "stage": 1,
+          "title": "Stufe 1: Hören und Sprechen",
+          "units": [
+            "englisch/s1-hello.json",
+            "englisch/s1-colours.json",
+            "englisch/s1-numbers.json",
+            "englisch/s1-animals.json",
+            "englisch/s1-body.json",
+            "englisch/s1-feelings.json",
+            "englisch/s1-festivals.json"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,11 +1,13 @@
-import { SUBJECTS, PROFILES, NUMBER_WORDS, PRAISE, PRAISE_EN, AVATAR } from "./data.js";
-import { sayParts, sayEn, sayDe, stop, chime, voiceInfo } from "./speech.js";
+import { PROFILES, PRAISE, PRAISE_EN, AVATAR, LESSONS, SPEAKERS } from "./data.js";
+import { sayParts, sayEn, sayDe, chime, voiceInfo } from "./speech.js";
+import { play, promptAnd, stopAudio } from "./audio.js";
+import { canRecord, record, playUrl } from "./recorder.js";
+import { content, loadContent } from "./content.js";
 import * as store from "./store.js";
-import { micReady, listenOnce } from "./mic.js";
 
+const APP_VERSION = 7;
 const app = document.getElementById("app");
-let current = { profile: null, screen: null, subject: null };
-let listening = null;
+const current = { profile: null, subject: null, screen: null };
 
 // ---------- Hilfsfunktionen ----------
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -19,75 +21,38 @@ const shuffle = (a) => {
 };
 const pick = (a) => a[Math.floor(Math.random() * a.length)];
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-const topicById = (id) => SUBJECTS.flatMap((x) => x.topics).find((t) => t.id === id);
 const prof = () => PROFILES.find((p) => p.id === current.profile);
-
-function fill(text) {
-  const p = prof();
-  const data = store.profile(p.id);
-  const name = (data.name || "").trim() || "Sam";
-  const [ageEn, ageDe] = NUMBER_WORDS[p.age] || [String(p.age), String(p.age)];
-  return text.replace("{name}", name).replace("{age}", ageEn).replace("{age_de}", ageDe);
-}
-
-function itemsOf(topic) {
-  return topic.items.map((it) => ({ ...it, en: fill(it.en), de: fill(it.de), key: store.wordKey(topic.id, it.en) }));
-}
-
-function lessonsOf(topic) {
-  const n = prof().perLesson;
-  const items = itemsOf(topic);
-  const out = [];
-  for (let i = 0; i < items.length; i += n) out.push(items.slice(i, i + n));
-  // Einen sehr kleinen Rest an die letzte Lektion hängen
-  if (out.length > 1 && out[out.length - 1].length < 3) out[out.length - 2].push(...out.pop());
-  return out;
-}
-
-function stars(n, max = 3) {
-  let s = "";
-  for (let i = 0; i < max; i++) s += `<span class="star ${i < n ? "on" : ""}">★</span>`;
-  return s;
-}
+const item = (id) => content.items.get(id);
+const unitById = (id) => content.units.get(id);
 
 function render(html) {
-  stop();
-  if (listening) listening.cancel();
-  listening = null;
-  current.screen = null;
+  stopAudio();
+  current.screen = {};
   app.innerHTML = html;
-  app.scrollTop = 0;
   window.scrollTo(0, 0);
+  return current.screen;
 }
+const alive = (token) => current.screen === token;
 
 function on(sel, ev, fn) {
   app.querySelectorAll(sel).forEach((el) => el.addEventListener(ev, fn));
 }
-
-function speakerBtn(cls = "") {
-  return `<button class="speaker ${cls}" aria-label="Anhören">🔊</button>`;
-}
+const $ = (id) => document.getElementById(id);
 
 // ---------- Avatar ----------
 function avatarOf(pid) {
   const p = PROFILES.find((x) => x.id === pid);
-  const a = store.profile(pid).avatar;
-  return a || { base: p.pic, color: pid === "pirat" ? "#74c0fc" : "#8ce99a" };
+  return store.profile(pid).avatar || { base: p.pic, color: pid === "pirat" ? "#74c0fc" : "#8ce99a" };
 }
 
 function avatarHtml(a, cls = "") {
-  return `<span class="avatar ${cls}" style="--bg:${a.color}">
-    <span class="av-base">${a.base}</span>
-  </span>`;
+  return `<span class="avatar ${cls}" style="--bg:${a.color}"><span class="av-base">${a.base}</span></span>`;
 }
 
 function showAvatarEditor(first = false) {
   const pid = current.profile;
   const a = { ...avatarOf(pid) };
-  const groups = [
-    ["base", "Welches Tier bist du?"],
-    ["color", "Hintergrundfarbe"]
-  ];
+  const groups = [["base", "Welches Tier bist du?"], ["color", "Hintergrundfarbe"]];
   render(`
     <div class="screen">
       <header class="bar">
@@ -98,28 +63,27 @@ function showAvatarEditor(first = false) {
       ${groups.map(([g, label]) => `
         <h3 class="av-label">${label}</h3>
         <div class="av-row">
-          ${AVATAR[g].map(([v, en], i) => `<button class="av-opt ${a[g] === v ? "sel" : ""}" data-g="${g}" data-i="${i}" ${g === "color" ? `style="background:${v}"` : ""}>${g === "color" ? "" : v}</button>`).join("")}
+          ${AVATAR[g].map(([v], i) => `<button class="av-opt ${a[g] === v ? "sel" : ""}" data-g="${g}" data-i="${i}" ${g === "color" ? `style="background:${v}"` : ""}>${g === "color" ? "" : v}</button>`).join("")}
         </div>`).join("")}
       <button class="go-btn" id="done">Fertig ✓</button>
     </div>`);
-  const refresh = () => (app.querySelector(".av-preview").innerHTML = avatarHtml(a, "xl"));
   on(".av-opt", "click", (e) => {
     const { g, i } = e.currentTarget.dataset;
     const [v, en] = AVATAR[g][+i];
     a[g] = v;
     app.querySelectorAll(`.av-opt[data-g="${g}"]`).forEach((b) => b.classList.toggle("sel", b === e.currentTarget));
-    refresh();
+    app.querySelector(".av-preview").innerHTML = avatarHtml(a, "xl");
     chime("pop");
-    if (en && v) sayEn(en);
+    sayEn(en);
   });
-  document.getElementById("done").onclick = () => {
+  $("done").onclick = () => {
     store.profile(pid).avatar = { base: a.base, color: a.color };
     store.save();
     chime("win");
     showHome();
   };
-  if (!first) document.getElementById("back").onclick = () => showHome();
-  if (first && !prof().reads) sayDe("Welches Tier willst du sein? Such dir eins aus!");
+  if (!first) $("back").onclick = () => showHome();
+  if (first) sayDe("Welches Tier willst du sein? Such dir eins aus!");
 }
 
 // ---------- Profilauswahl ----------
@@ -131,15 +95,11 @@ function showProfiles() {
       <h1 class="logo">Learnino</h1>
       <p class="sub">Wer lernt heute?</p>
       <div class="profiles">
-        ${PROFILES.map((p) => {
-          const d = store.profile(p.id);
-          return `<button class="profile-card" data-id="${p.id}">
+        ${PROFILES.map((p) => `<button class="profile-card" data-id="${p.id}">
             ${avatarHtml(avatarOf(p.id), "lg")}
             <span class="pname">${esc(p.title)}</span>
-            ${d.name ? `<span class="small">${esc(d.name)}</span>` : ""}
             <span class="small">⭐ ${store.totalStars(p.id)}</span>
-          </button>`;
-        }).join("")}
+          </button>`).join("")}
       </div>
       <button class="link-btn" id="parents">🔒 Elternbereich</button>
     </div>`);
@@ -149,27 +109,28 @@ function showProfiles() {
     if (store.profile(current.profile).avatar) showHome();
     else showAvatarEditor(true);
   });
-  document.getElementById("parents").onclick = showParentGate;
+  $("parents").onclick = showParentGate;
 }
 
-// ---------- Startseite mit Themen ----------
-function topicProgress(topic) {
-  const ls = lessonsOf(topic);
-  const done = ls.filter((_, i) => store.lessonStars(current.profile, topic.id, i) > 0).length;
-  return { done, total: ls.length };
-}
-
-function topicsFor(pid, subject) {
-  return subject.topics.filter((t) => !t.soon && store.isEnabled(pid, t.id));
+// ---------- Freigeschaltete Inhalte ----------
+function stagesFor(pid, sub) {
+  return sub.stages
+    .filter((st) => store.isEnabled(pid, st.id))
+    .map((st) => ({ ...st, units: st.units.filter((u) => store.isEnabled(pid, u.id)) }))
+    .filter((st) => st.units.length);
 }
 
 function subjectsFor(pid) {
-  return SUBJECTS.filter((sub) => store.isEnabled(pid, sub.id) && topicsFor(pid, sub).length);
+  return content.subjects.filter((s) => store.isEnabled(pid, s.id) && stagesFor(pid, s).length);
 }
 
-function homeHeader(p, backId = "back") {
+function unitMastered(pid, unit) {
+  return unit.words.every((w) => (store.card(pid, w.id)?.box || 0) >= 3);
+}
+
+function homeHeader(p) {
   return `<header class="bar">
-        <button class="icon-btn" id="${backId}" aria-label="Zurück">⬅</button>
+        <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
         <button class="who who-btn" id="me" aria-label="Bild ändern">${avatarHtml(avatarOf(p.id), "sm")} ${esc(p.title)} <span class="pencil">✏️</span></button>
         <span class="stat">🔥 ${store.streakCount(p.id)}</span>
         <span class="stat">⭐ ${store.totalStars(p.id)}</span>
@@ -179,38 +140,37 @@ function homeHeader(p, backId = "back") {
 function showHome(subjectId = current.subject) {
   const p = prof();
   const subs = subjectsFor(p.id);
-  let sub = subs.find((x) => x.id === subjectId);
-  if (!sub && subs.length === 1) sub = subs[0];
+  let sub = subs.find((x) => x.id === subjectId) || (subs.length === 1 ? subs[0] : null);
   if (!sub) return showSubjects(subs);
   current.subject = sub.id;
   const many = subs.length > 1;
   render(`
     <div class="screen">
       ${homeHeader(p)}
-      ${many ? `<h2 class="subject-title">${sub.pic} ${sub.title}</h2>` : ""}
-      <div class="topics">
-        ${topicsFor(p.id, sub).map((t) => {
-          const pr = topicProgress(t);
-          return `<button class="topic" data-id="${t.id}" style="--c:${t.color}">
-            <span class="big-pic">${t.pic}</span>
-            <span class="tname">${t.title}</span>
-            <span class="meter"><span style="width:${(pr.done / pr.total) * 100}%"></span></span>
-          </button>`;
-        }).join("")}
-      </div>
+      ${many ? `<h2 class="subject-title">${sub.image} ${esc(sub.title)}</h2>` : ""}
+      ${stagesFor(p.id, sub).map((st) => `
+        <h3 class="stage-title">${esc(st.title)}</h3>
+        <div class="topics">
+          ${st.units.map((u) => {
+            const done = [0, 1, 2, 3, 4].filter((n) => store.lessonDone(p.id, u.id, n)).length;
+            return `<button class="topic" data-id="${u.id}" style="--c:${u.color}">
+              ${unitMastered(p.id, u) ? `<span class="badge">🏆</span>` : ""}
+              <span class="big-pic">${u.image}</span>
+              <span class="tname">${esc(u.title_de)}</span>
+              <span class="dots small-dots">${[0, 1, 2, 3, 4].map((n) => `<span class="dot ${n < done ? "on" : ""}"></span>`).join("")}</span>
+            </button>`;
+          }).join("")}
+        </div>`).join("")}
       <button class="wide-btn album-btn" id="album">📒 Mein Sticker-Album</button>
     </div>`);
-  document.getElementById("back").onclick = () => {
-    current.subject = null;
-    many ? showSubjects(subs) : showProfiles();
-  };
-  document.getElementById("album").onclick = showAlbum;
-  document.getElementById("me").onclick = () => showAvatarEditor(false);
+  $("back").onclick = () => (many ? showSubjects(subs) : showProfiles());
+  $("album").onclick = showAlbum;
+  $("me").onclick = () => showAvatarEditor(false);
   on(".topic[data-id]", "click", (e) => {
     chime("pop");
-    showTopic(e.currentTarget.dataset.id);
+    showUnit(e.currentTarget.dataset.id);
   });
-  if (!p.reads) sayDe("Such dir ein Thema aus!");
+  sayDe("Such dir ein Thema aus!");
 }
 
 function showSubjects(subs) {
@@ -221,474 +181,532 @@ function showSubjects(subs) {
       ${homeHeader(p)}
       ${subs.length ? `<div class="topics">
         ${subs.map((x) => `<button class="topic subject" data-id="${x.id}" style="--c:${x.color}">
-          <span class="big-pic">${x.pic}</span><span class="tname">${x.title}</span></button>`).join("")}
+          <span class="big-pic">${x.image}</span><span class="tname">${esc(x.title)}</span></button>`).join("")}
       </div>` : `<p class="sub center-text">Hier ist noch nichts freigeschaltet. Frag Mama oder Papa!</p>`}
     </div>`);
-  document.getElementById("back").onclick = showProfiles;
-  document.getElementById("me").onclick = () => showAvatarEditor(false);
-  on(".subject", "click", (e) => {
-    chime("pop");
-    showHome(e.currentTarget.dataset.id);
-  });
-  if (!p.reads) sayDe(subs.length ? "Was willst du heute lernen?" : "Hier ist noch nichts freigeschaltet.");
+  $("back").onclick = showProfiles;
+  $("me").onclick = () => showAvatarEditor(false);
+  on(".subject", "click", (e) => showHome(e.currentTarget.dataset.id));
+  sayDe(subs.length ? "Was willst du heute lernen?" : "Hier ist noch nichts freigeschaltet.");
 }
 
-// ---------- Themenseite mit Lektionen ----------
-function showTopic(topicId) {
-  const t = topicById(topicId);
-  const ls = lessonsOf(t);
-  const firstDone = store.lessonStars(current.profile, t.id, 0) > 0;
+// ---------- Einheit mit 5 Lektionen ----------
+function showUnit(unitId) {
+  const u = unitById(unitId);
+  const pid = current.profile;
   render(`
     <div class="screen">
       <header class="bar">
         <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
-        <span class="who">${t.pic} ${t.title}</span>
+        <span class="who">${u.image} ${esc(u.title_de)}</span>
+        ${unitMastered(pid, u) ? `<span class="stat">🏆</span>` : ""}
       </header>
       <div class="path">
-        ${ls.map((items, i) => {
-          const s = store.lessonStars(current.profile, t.id, i);
-          const open = i === 0 || store.lessonStars(current.profile, t.id, i - 1) > 0;
-          return `<button class="node ${open ? "" : "locked"} ${i % 2 ? "right" : "left"}" data-i="${i}" ${open ? "" : "disabled"} style="--c:${t.color}">
-            <span class="node-pics">${open ? items.slice(0, 3).map((x) => x.pic).join("") : "🔒"}</span>
-            <span class="node-stars">${stars(s)}</span>
+        ${LESSONS.map((l, i) => {
+          const open = i === 0 || store.lessonDone(pid, u.id, i - 1);
+          const done = store.lessonDone(pid, u.id, i);
+          return `<button class="node ${open ? "" : "locked"} ${i % 2 ? "right" : "left"}" data-i="${i}" ${open ? "" : "disabled"} style="--c:${u.color}">
+            <span class="node-pics">${open ? l.icon : "🔒"}</span>
+            <span class="node-label">${l.title}</span>
+            <span class="node-stars">${done ? `<span class="star on">★</span>` : `<span class="star">★</span>`}</span>
           </button>`;
         }).join("")}
       </div>
-      <button class="wide-btn" id="memory" ${firstDone ? "" : "disabled"} style="--c:${t.color}">🃏 Memory spielen${firstDone ? "" : " (nach Lektion 1)"}</button>
     </div>`);
-  document.getElementById("back").onclick = () => showHome();
-  on(".node:not(.locked)", "click", (e) => startLesson(t.id, +e.currentTarget.dataset.i));
-  document.getElementById("memory").onclick = () => firstDone && startMemory(t.id);
+  $("back").onclick = () => showHome();
+  on(".node:not(.locked)", "click", (e) => startLesson(u.id, +e.currentTarget.dataset.i));
 }
 
-// ---------- Lektion ----------
-function buildSteps(topic, idx) {
-  const p = prof();
-  const ls = lessonsOf(topic);
-  const fresh = ls[idx];
-  const earlier = ls.slice(0, idx).flat();
-  const pd = store.profile(p.id);
-  // Wiederholung: bis zu 2 frühere Wörter, schwierige zuerst
-  const review = earlier
-    .map((it) => ({ it, score: (pd.words[it.key]?.w || 0) - (pd.words[it.key]?.c || 0) * 0.3 + Math.random() }))
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 2)
-    .map((x) => x.it);
+// ---------- Lektionen zusammenstellen ----------
+function reviewSteps(pid) {
+  // Jede Sitzung beginnt mit höchstens 5 fälligen Inhalten aus der Lernkartei
+  return store
+    .dueCards(pid)
+    .filter((id) => item(id) && store.isEnabled(pid, item(id).unit))
+    .slice(0, 5)
+    .map((id) => ({ kind: item(id).kind === "word" ? "listen" : "phrasePic", id, review: true, unit: item(id).unit }));
+}
 
-  const steps = fresh.map((it) => ({ kind: "learn", item: it }));
-  const pool = itemsOf(topic);
-  let quiz = [];
-  const quizKinds = topic.type === "phrases" ? (p.reads ? ["situation", "meaning"] : ["situation", "situation"]) : p.reads ? ["listen", "word"] : ["listen", "listen"];
-  fresh.forEach((it) => quizKinds.forEach((k) => quiz.push({ kind: k, item: it })));
-  review.forEach((it) => quiz.push({ kind: quizKinds[0], item: it }));
-  quiz = shuffle(quiz);
-  // Nicht zweimal hintereinander dasselbe Wort
-  for (let i = 1; i < quiz.length; i++) {
-    if (quiz[i].item.key === quiz[i - 1].item.key) {
-      const j = quiz.findIndex((q, k) => k > i && q.item.key !== quiz[i].item.key);
-      if (j > 0) [quiz[i], quiz[j]] = [quiz[j], quiz[i]];
-    }
+function buildLesson(u, n) {
+  const words = u.words.map((w) => w.id);
+  const phrases = u.phrases.map((p) => p.id);
+  const steps = [];
+  if (n === 0) {
+    steps.push({ kind: "explore", ids: words, introduce: true });
+    shuffle(words).forEach((id) => steps.push({ kind: "listen", id }));
+  } else if (n === 1) {
+    steps.push({ kind: "memory", ids: shuffle(words).slice(0, 4) });
+    shuffle(words).slice(0, 4).forEach((id) => steps.push({ kind: "listen", id }));
+    steps.push({ kind: "missing" }, { kind: "missing" });
+  } else if (n === 2) {
+    steps.push({ kind: "explore", ids: phrases, introduce: true, phrases: true });
+    shuffle(phrases).forEach((id) => steps.push({ kind: "phrasePic", id }));
+    phrases.forEach((id) => steps.push({ kind: item(id).action ? "action" : "repeat", id }));
+  } else if (n === 3) {
+    if (u.story.length) steps.push({ kind: "story" });
+    u.questions.forEach((q) => steps.push({ kind: "question", q }));
+  } else {
+    if (u.rhyme?.lines?.length) steps.push({ kind: "rhyme" });
+    const quiz = [
+      ...shuffle(words).slice(0, 4).map((id) => ({ kind: "listen", id })),
+      ...shuffle(phrases).slice(0, 2).map((id) => ({ kind: "phrasePic", id }))
+    ];
+    const act = u.phrases.find((p) => p.action);
+    if (act) quiz.push({ kind: "action", id: act.id });
+    steps.push(...shuffle(quiz));
   }
-  const known = [...earlier, ...fresh];
-  return { steps: [...steps, ...quiz], pool, known };
+  return steps.map((s) => ({ unit: u.id, ...s }));
 }
 
-function startLesson(topicId, idx) {
-  const topic = topicById(topicId);
-  const { steps, pool, known } = buildSteps(topic, idx);
-  const lesson = { topic, idx, steps, pool, known, pos: 0, mistakes: 0, retried: new Set(), total: steps.length };
+function startLesson(unitId, n) {
+  const u = unitById(unitId);
+  const review = reviewSteps(current.profile);
+  const steps = [...review, ...buildLesson(u, n)];
+  const lesson = { u, n, steps, pos: 0, reviewCount: review.length };
   nextStep(lesson);
 }
 
 function lessonFrame(lesson, inner) {
   const pct = Math.round((lesson.pos / lesson.steps.length) * 100);
+  const step = lesson.steps[lesson.pos];
   return `
-    <div class="screen lesson" style="--c:${lesson.topic.color}">
+    <div class="screen lesson" style="--c:${unitById(step?.unit || lesson.u.id).color}">
       <header class="bar">
         <button class="icon-btn" id="quit" aria-label="Beenden">✖</button>
         <div class="progress"><span style="width:${pct}%"></span></div>
       </header>
+      ${step?.review ? `<p class="review-tag">🔁 Wiederholung</p>` : ""}
       ${inner}
     </div>`;
 }
 
-function bindQuit(lesson) {
-  document.getElementById("quit").onclick = () => showTopic(lesson.topic.id);
+function lessonRender(lesson, inner) {
+  const token = render(lessonFrame(lesson, inner));
+  $("quit").onclick = () => showUnit(lesson.u.id);
+  return token;
 }
 
+const STEPS = {};
 function nextStep(lesson) {
   if (lesson.pos >= lesson.steps.length) return finishLesson(lesson);
   const step = lesson.steps[lesson.pos];
-  ({ learn: stepLearn, listen: stepListen, word: stepWord, situation: stepSituation, meaning: stepMeaning })[step.kind](lesson, step);
+  STEPS[step.kind](lesson, step);
 }
-
 function advance(lesson) {
   lesson.pos++;
   nextStep(lesson);
 }
 
-function distractors(lesson, item, n) {
-  // Bevorzugt bekannte Wörter, sonst andere aus dem Thema
-  let pool = lesson.known.filter((x) => x.key !== item.key);
-  if (pool.length < n) pool = pool.concat(lesson.pool.filter((x) => x.key !== item.key && !pool.some((p) => p.key === x.key)));
-  return shuffle(pool).slice(0, n);
+function nextBtn(label = "Weiter ➜", disabled = false) {
+  return `<button class="go-btn" id="next" ${disabled ? "disabled" : ""}>${label}</button>`;
 }
 
-function answered(lesson, step, correct) {
-  store.recordAnswer(current.profile, step.item.key, correct);
-  if (!correct) {
-    lesson.mistakes++;
-    // Falsch beantwortete Aufgabe einmal am Ende wiederholen
-    if (!lesson.retried.has(lesson.pos)) {
-      lesson.retried.add(lesson.steps.length);
-      lesson.steps.push({ ...step });
-    }
-  }
-}
-
-// 1) Kennenlernen (mit Nachsprechen)
-const TIMES = ["", "einmal", "zweimal", "dreimal", "viermal", "fünfmal"];
-
-function stepLearn(lesson, step) {
-  const p = prof();
-  const it = step.item;
-  const need = store.settings().repeat || 0;
-  render(lessonFrame(lesson, `
-    <p class="task">Neu! Hör gut zu.</p>
-    <div class="learn-card">
-      <span class="huge-pic">${it.pic}</span>
-      <span class="en ${p.reads ? "" : "faint"}">${esc(it.en)}</span>
-      <span class="de">${esc(it.de)}</span>
+// ---------- Übung: Entdecken (Bilder antippen und hören) ----------
+STEPS.explore = (lesson, step) => {
+  const pid = current.profile;
+  const heard = new Set();
+  lessonRender(lesson, `
+    <p class="task">Tipp auf jedes Bild und hör gut zu!</p>
+    <div class="explore">
+      ${step.ids.map((id) => `<button class="choice exp" data-id="${id}"><span class="${step.phrases ? "mid-pic" : "huge-pic"}">${item(id).image}</span><span class="check">✓</span></button>`).join("")}
     </div>
-    <div class="row">
-      ${speakerBtn("big")}
-      <button class="speaker big" id="slow" aria-label="Langsam anhören">🐢</button>
-    </div>
-    ${need ? `<div class="repeat">
-      <p class="repeat-task">Jetzt du! Sag es ${TIMES[need] || need + "-mal"} laut nach.</p>
-      <div class="dots">${Array.from({ length: need }, () => `<span class="dot"></span>`).join("")}</div>
-      <button class="mic" id="mic" aria-label="Zuhören">🎤<span class="ring"></span></button>
-      <button class="wide-btn said" id="said" hidden>🗣️ Ich hab's gesagt</button>
-    </div>` : ""}
-    <button class="go-btn" id="next" ${need ? "disabled" : ""}>Weiter ➜</button>`));
-  bindQuit(lesson);
-  const nextBtn = document.getElementById("next");
-  nextBtn.onclick = () => advance(lesson);
-  document.getElementById("slow").onclick = () => replay({ slow: true });
-  on(".speaker:not(#slow)", "click", () => replay());
-
-  if (!need) {
-    setTimeout(() => sayParts([["en", it.en], ["de", it.de], ["en", it.en]]), 250);
-    return;
-  }
-
-  let count = 0;
-  let useMic = false;
-  let fallbackTimer = null;
-  const micBtn = document.getElementById("mic");
-  const saidBtn = document.getElementById("said");
-  const dots = app.querySelectorAll(".dot");
-  const token = (current.screen = {});
-  const alive = () => current.screen === token;
-
-  const stopListening = () => {
-    if (listening) listening.cancel();
-    listening = null;
-    clearTimeout(fallbackTimer);
-    micBtn.classList.remove("on", "hear");
-    micBtn.style.setProperty("--lvl", 0);
+    ${nextBtn("Weiter ➜", true)}`);
+  on(".exp", "click", async (e) => {
+    const el = e.currentTarget;
+    const id = el.dataset.id;
+    app.querySelectorAll(".exp").forEach((b) => b.classList.remove("sel"));
+    el.classList.add("sel", "heard");
+    heard.add(id);
+    if (heard.size === step.ids.length) $("next").disabled = false;
+    await play(item(id));
+  });
+  $("next").onclick = () => {
+    if (step.introduce) step.ids.forEach((id) => store.introduce(pid, id));
+    store.save();
+    advance(lesson);
   };
+  sayDe("Tipp auf jedes Bild und hör gut zu!");
+};
 
-  const listen = () => {
-    if (!alive() || count >= need) return;
-    if (!useMic) {
-      saidBtn.hidden = false;
-      return;
-    }
-    micBtn.classList.add("on");
-    // Wenn nach 8 Sekunden nichts gehört wurde, auch den Knopf anbieten
-    fallbackTimer = setTimeout(() => alive() && (saidBtn.hidden = false), 8000);
-    listening = listenOnce({
-      onLevel: (l) => micBtn.style.setProperty("--lvl", l.toFixed(2)),
-      onStart: () => micBtn.classList.add("hear"),
-      onDone: () => {
-        stopListening();
-        counted();
-      }
-    });
-  };
-
-  const counted = async () => {
-    if (!alive() || count >= need) return;
-    dots[count].classList.add("on");
-    count++;
-    store.recordSpoken(current.profile, it.key);
-    if (count >= need) {
-      chime("good");
-      saidBtn.hidden = true;
-      micBtn.hidden = true;
-      app.querySelector(".repeat-task").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
-      nextBtn.disabled = false;
-      nextBtn.classList.add("pulse");
-      await sayEn(pick(PRAISE_EN));
-      return;
-    }
-    chime("pop");
-    await wait(250);
-    if (!alive()) return;
-    await sayEn(it.en);
-    await wait(200);
-    listen();
-  };
-
-  async function replay(opts) {
-    stopListening();
-    await sayEn(it.en, opts);
-    await wait(200);
-    listen();
-  }
-
-  saidBtn.onclick = () => {
-    stopListening();
-    counted();
-  };
-  micBtn.onclick = () => replay();
-
-  (async () => {
-    useMic = store.settings().mic && (await micReady());
-    if (!alive()) return;
-    await wait(150);
-    await sayParts([["en", it.en], ["de", it.de], ["en", it.en]]);
-    if (!alive()) return;
-    if (lesson.pos === 0 && !p.reads) await sayDe(`Jetzt du! Sag es ${TIMES[need] || need + " mal"} nach.`);
-    if (!alive()) return;
-    await wait(150);
-    listen();
-  })();
-}
-
-// Gemeinsame Logik für Auswahlaufgaben
-function choiceStep(lesson, step, { task, prompt, options, optionHtml, speak, checkMode }) {
-  render(lessonFrame(lesson, `
+// ---------- Gemeinsame Auswahl-Logik ----------
+// Falsche Antwort: freundlicher Hinweis, Audio nochmal, neuer Versuch. Bewertet wird nur der erste Versuch.
+function choose(lesson, step, { task, prompt = "", options, correctId, speak, grade = true, big = true }) {
+  const token = lessonRender(lesson, `
     <p class="task">${task}</p>
     ${prompt}
     <div class="choices n${options.length}">
-      ${options.map((o, i) => `<button class="choice" data-i="${i}">${optionHtml(o)}</button>`).join("")}
+      ${options.map((o) => `<button class="choice" data-id="${o.id}"><span class="${big ? "huge-pic" : "mid-pic"}">${o.image}</span></button>`).join("")}
     </div>
-    ${checkMode ? `<button class="go-btn" id="check" disabled>Prüfen ✓</button>` : ""}
-    <div class="feedback" id="fb"></div>`));
-  bindQuit(lesson);
+    <div class="feedback" id="fb"></div>`);
   on(".again", "click", () => speak());
+  let first = true;
   let locked = false;
-  let selected = null;
-
-  const judge = async (i, el) => {
+  on(".choice", "click", async (e) => {
     if (locked) return;
-    const ok = options[i].key === step.item.key;
-    const fb = document.getElementById("fb");
-    if (ok) {
+    const el = e.currentTarget;
+    if (el.dataset.id === correctId) {
       locked = true;
       el.classList.add("right");
       chime("good");
-      const praise = pick(PRAISE);
-      fb.innerHTML = `<span class="ok">${praise}</span>`;
-      answered(lesson, step, true);
-      await sayParts([["en", step.item.en]]);
-      await wait(400);
-      advance(lesson);
+      $("fb").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
+      if (grade) store.grade(current.profile, correctId, first);
+      store.save();
+      await play(item(correctId) || { en: "" });
+      await wait(350);
+      if (alive(token)) advance(lesson);
     } else {
+      first = false;
       el.classList.add("wrong");
       el.disabled = true;
       chime("bad");
-      if (!el.dataset.counted) {
-        el.dataset.counted = "1";
-        if (!lesson._wrongHere) {
-          lesson._wrongHere = true;
-          answered(lesson, step, false);
-        }
-      }
-      fb.innerHTML = `<span class="try">Fast! Versuch es nochmal.</span>`;
-      if (checkMode) {
-        selected = null;
-        document.getElementById("check").disabled = true;
-      }
+      $("fb").innerHTML = `<span class="try">Fast! Hör nochmal genau hin.</span>`;
+      await wait(400);
+      if (alive(token)) speak();
     }
-  };
-
-  on(".choice", "click", (e) => {
-    const el = e.currentTarget;
-    const i = +el.dataset.i;
-    if (checkMode) {
-      app.querySelectorAll(".choice").forEach((c) => c.classList.remove("sel"));
-      el.classList.add("sel");
-      selected = i;
-      document.getElementById("check").disabled = false;
-      sayEn(options[i].en);
-    } else judge(i, el);
   });
-  if (checkMode) document.getElementById("check").onclick = () => selected !== null && judge(selected, app.querySelector(`.choice[data-i="${selected}"]`));
-  lesson._wrongHere = false;
-  setTimeout(speak, 250);
+  setTimeout(() => alive(token) && speak(), 250);
 }
 
-// 2) Hör zu und tipp das richtige Bild
-function stepListen(lesson, step) {
-  const n = prof().reads ? 4 : 3;
-  const options = shuffle([step.item, ...distractors(lesson, step.item, n - 1)]);
-  const speak = () => sayParts([["de", "Wo ist"], ["en", step.item.en]]);
-  choiceStep(lesson, step, {
+function wordDistractors(unitId, id, n) {
+  const u = unitById(unitId);
+  return shuffle(u.words.filter((w) => w.id !== id)).slice(0, n);
+}
+
+function phraseDistractors(unitId, id, n) {
+  const own = unitById(unitId).phrases.filter((p) => p.id !== id && p.image !== item(id).image);
+  const others = [...content.items.values()].filter((x) => x.kind === "phrase" && x.unit !== unitId && x.image !== item(id).image);
+  const pool = [...shuffle(own), ...shuffle(others)];
+  const out = [];
+  for (const p of pool) if (out.length < n && !out.some((o) => o.image === p.image)) out.push(p);
+  return out;
+}
+
+// ---------- Übung: Hören → Bild antippen ----------
+STEPS.listen = (lesson, step) => {
+  const it = item(step.id);
+  const options = shuffle([it, ...wordDistractors(step.unit, step.id, 3)]);
+  choose(lesson, step, {
     task: "Hör zu und tipp das richtige Bild!",
-    prompt: `<div class="row">${speakerBtn("big again")}</div>`,
+    prompt: `<div class="row"><button class="speaker big again" aria-label="Nochmal hören">🔊</button></div>`,
     options,
-    optionHtml: (o) => `<span class="huge-pic">${o.pic}</span>`,
-    speak
+    correctId: it.id,
+    speak: () => promptAnd("Wo ist", it)
   });
-}
+};
 
-// 3) Wort zum Bild (nur Pirat)
-function stepWord(lesson, step) {
-  const options = shuffle([step.item, ...distractors(lesson, step.item, 3)]);
-  choiceStep(lesson, step, {
-    task: "Welches Wort passt zum Bild?",
-    prompt: `<div class="prompt-pic">${step.item.pic}</div>`,
+// ---------- Übung: Satz hören → Bild wählen ----------
+STEPS.phrasePic = (lesson, step) => {
+  const it = item(step.id);
+  const options = shuffle([it, ...phraseDistractors(step.unit, step.id, 2)]);
+  choose(lesson, step, {
+    task: "Welches Bild passt zum Satz?",
+    prompt: `<div class="row"><button class="speaker big again" aria-label="Nochmal hören">🔊</button></div>`,
     options,
-    optionHtml: (o) => `<span class="word">${esc(o.en)}</span>`,
-    speak: () => {}
+    correctId: it.id,
+    speak: () => play(it),
+    big: false
   });
-}
+};
 
-// 4) Was sagst du? (Redewendungen)
-function stepSituation(lesson, step) {
-  const p = prof();
-  const options = shuffle([step.item, ...distractors(lesson, step.item, 2)]);
-  const situation = fill(lesson.topic.items.find((x) => store.wordKey(lesson.topic.id, x.en) === step.item.key).situation);
-  const speak = () => sayDe(situation);
-  choiceStep(lesson, step, {
-    task: esc(situation),
-    prompt: `<div class="row">${speakerBtn("big again")}</div><p class="hint">Tipp auf eine Karte zum Anhören. Dann auf „Prüfen“.</p>`,
-    options,
-    optionHtml: (o) => `<span class="mid-pic">${o.pic}</span><span class="word ${p.reads ? "" : "faint"}">${esc(o.en)}</span>`,
-    speak,
-    checkMode: true
-  });
-}
-
-// 5) Was bedeutet das? (Redewendungen, nur Pirat)
-function stepMeaning(lesson, step) {
-  const others = distractors(lesson, step.item, 3);
-  const options = shuffle([step.item, ...others]);
-  choiceStep(lesson, step, {
-    task: "Was bedeutet das?",
-    prompt: `<div class="row">${speakerBtn("big again")}</div>`,
-    options,
-    optionHtml: (o) => `<span class="word">${esc(o.de)}</span>`,
-    speak: () => sayEn(step.item.en)
-  });
-}
-
-function finishLesson(lesson) {
-  const s = lesson.mistakes <= 1 ? 3 : lesson.mistakes <= 3 ? 2 : 1;
-  const pid = current.profile;
-  const firstTime = store.lessonStars(pid, lesson.topic.id, lesson.idx) === 0;
-  store.setLessonStars(pid, lesson.topic.id, lesson.idx, s);
-  const streak = store.touchStreak(pid);
-  store.save();
-  const newOnes = lessonsOf(lesson.topic)[lesson.idx];
-  render(`
-    <div class="screen center result" style="--c:${lesson.topic.color}">
-      <h2>${pick(PRAISE)}</h2>
-      <div class="result-stars">${stars(s)}</div>
-      <p class="sub">🔥 ${streak.count} ${streak.count === 1 ? "Tag" : "Tage"} in Folge</p>
-      ${firstTime ? `<p class="sub">Neue Sticker für dein Album:</p><div class="stickers">${newOnes.map((x) => `<span class="sticker">${x.pic}</span>`).join("")}</div>` : ""}
-      <button class="go-btn" id="next">Weiter ➜</button>
-    </div>`);
-  chime("win");
-  setTimeout(() => sayEn(pick(PRAISE_EN)), 600);
-  document.getElementById("next").onclick = () => showTopic(lesson.topic.id);
-}
-
-// ---------- Memory ----------
-function startMemory(topicId) {
-  const topic = topicById(topicId);
-  const p = prof();
-  const ls = lessonsOf(topic);
-  const learned = ls.filter((_, i) => store.lessonStars(current.profile, topic.id, i) > 0).flat();
-  const pairs = shuffle(learned).slice(0, p.reads ? 6 : 4);
-  const cards = shuffle(pairs.flatMap((it) => [
-    { key: it.key, it, face: "pic" },
-    { key: it.key, it, face: p.reads ? "word" : "sound" }
-  ]));
+// ---------- Übung: Memory (Bild + Ton) ----------
+STEPS.memory = (lesson, step) => {
+  const pairs = step.ids.map(item);
+  const cards = shuffle(pairs.flatMap((it) => [{ it, face: "pic" }, { it, face: "sound" }]));
   let open = [];
   let found = 0;
-  let tries = 0;
-  render(`
-    <div class="screen" style="--c:${topic.color}">
-      <header class="bar">
-        <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
-        <span class="who">🃏 Memory</span>
-      </header>
-      <p class="task">${p.reads ? "Finde Bild und Wort, die zusammengehören." : "Finde Bild und Ton, die zusammengehören."}</p>
-      <div class="memory n${cards.length}">
-        ${cards.map((c, i) => `<button class="mcard" data-i="${i}"><span class="back">?</span><span class="front">${c.face === "pic" ? c.it.pic : c.face === "word" ? `<span class="word">${esc(c.it.en)}</span>` : "🔊"}</span></button>`).join("")}
-      </div>
-    </div>`);
-  document.getElementById("back").onclick = () => showTopic(topic.id);
+  const token = lessonRender(lesson, `
+    <p class="task">Memory: Finde Bild und Ton, die zusammengehören!</p>
+    <div class="memory">
+      ${cards.map((c, i) => `<button class="mcard" data-i="${i}"><span class="back">?</span><span class="front">${c.face === "pic" ? c.it.image : "🔊"}</span></button>`).join("")}
+    </div>
+    <div class="feedback" id="fb"></div>`);
+  sayDe("Finde Bild und Ton, die zusammengehören!");
   on(".mcard", "click", async (e) => {
     const el = e.currentTarget;
     const c = cards[+el.dataset.i];
     if (el.classList.contains("flip") || open.length === 2) return;
     el.classList.add("flip");
-    sayEn(c.it.en);
+    play(c.it);
     open.push({ el, c });
-    if (open.length === 2) {
-      tries++;
-      const [a, b] = open;
-      if (a.c.key === b.c.key) {
-        await wait(500);
-        chime("good");
-        a.el.classList.add("done");
-        b.el.classList.add("done");
-        open = [];
-        found++;
-        if (found === pairs.length) {
-          await wait(600);
-          chime("win");
-          sayEn(pick(PRAISE_EN));
-          app.querySelector(".task").innerHTML = `<span class="ok">Geschafft in ${tries} Zügen!</span> <button class="go-btn inline" id="again">Nochmal 🔄</button>`;
-          document.getElementById("again").onclick = () => startMemory(topic.id);
-          store.touchStreak(current.profile);
-          store.save();
-        }
-      } else {
-        await wait(1300);
-        a.el.classList.remove("flip");
-        b.el.classList.remove("flip");
-        open = [];
+    if (open.length < 2) return;
+    const [a, b] = open;
+    if (a.c.it.id === b.c.it.id) {
+      await wait(600);
+      chime("good");
+      a.el.classList.add("done");
+      b.el.classList.add("done");
+      open = [];
+      if (++found === pairs.length) {
+        $("fb").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
+        chime("win");
+        await wait(1200);
+        if (alive(token)) advance(lesson);
       }
+    } else {
+      await wait(1400);
+      a.el.classList.remove("flip");
+      b.el.classList.remove("flip");
+      open = [];
     }
   });
+};
+
+// ---------- Übung: Was fehlt? ----------
+STEPS.missing = async (lesson, step) => {
+  const u = unitById(step.unit);
+  const set = shuffle(u.words).slice(0, 4);
+  const gone = pick(set);
+  const rest = set.filter((x) => x !== gone);
+  const others = shuffle(u.words.filter((w) => !set.includes(w))).slice(0, 2);
+  const token = lessonRender(lesson, `
+    <p class="task">Was fehlt? Schau dir die Bilder gut an!</p>
+    <div class="missing-row" id="row">${set.map((w) => `<span class="mpic">${w.image}</span>`).join("")}</div>
+    <div id="area"></div>`);
+  await sayDe("Schau dir die Bilder gut an!");
+  for (const w of set) {
+    if (!alive(token)) return;
+    await play(w);
+    await wait(250);
+  }
+  await wait(600);
+  if (!alive(token)) return;
+  $("row").classList.add("closed");
+  await sayDe("Augen zu!");
+  await wait(900);
+  if (!alive(token)) return;
+  $("row").classList.remove("closed");
+  $("row").innerHTML = rest.map((w) => `<span class="mpic">${w.image}</span>`).join("") + `<span class="mpic gap">❓</span>`;
+  const options = shuffle([gone, ...others]);
+  $("area").innerHTML = `<p class="task">Was fehlt?</p><div class="choices n${options.length}">${options.map((o) => `<button class="choice" data-id="${o.id}"><span class="huge-pic">${o.image}</span></button>`).join("")}</div><div class="feedback" id="fb"></div>`;
+  sayDe("Was fehlt?");
+  let first = true;
+  on(".choice", "click", async (e) => {
+    const el = e.currentTarget;
+    if (el.dataset.id === gone.id) {
+      el.classList.add("right");
+      chime("good");
+      $("fb").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
+      store.grade(current.profile, gone.id, first);
+      app.querySelector(".gap").textContent = gone.image;
+      await play(gone);
+      await wait(400);
+      if (alive(token)) advance(lesson);
+    } else {
+      first = false;
+      el.classList.add("wrong");
+      el.disabled = true;
+      chime("bad");
+      $("fb").innerHTML = `<span class="try">Fast! Versuch es nochmal.</span>`;
+    }
+  });
+};
+
+// ---------- Übung: Nachsprechen mit Selbstvergleich ----------
+STEPS.repeat = (lesson, step) => {
+  const it = item(step.id);
+  const mic = canRecord();
+  let myUrl = null;
+  let busy = false;
+  const token = lessonRender(lesson, `
+    <p class="task">Hör zu und sprich nach!</p>
+    <div class="learn-card"><span class="huge-pic">${it.image}</span></div>
+    <div class="row compare">
+      <div class="cmp"><button class="speaker big" id="orig" aria-label="Original">🔊</button><span class="small">Original</span></div>
+      ${mic ? `<div class="cmp"><button class="rec" id="rec" aria-label="Aufnehmen">🎙️<span class="rec-ring"></span></button><span class="small" id="reclabel">Aufnehmen</span></div>
+      <div class="cmp"><button class="speaker big me" id="mine" aria-label="Meine Aufnahme" disabled>👂</button><span class="small">Ich</span></div>` : ""}
+    </div>
+    <div class="feedback" id="fb"></div>
+    ${nextBtn("Weiter ➜", mic)}`);
+  $("orig").onclick = () => play(it);
+  $("next").onclick = () => {
+    if (myUrl) URL.revokeObjectURL(myUrl);
+    advance(lesson);
+  };
+  if (mic) {
+    let active = null;
+    $("rec").onclick = async () => {
+      if (active) return active.stop();
+      stopAudio();
+      const btn = $("rec");
+      btn.classList.add("on");
+      $("reclabel").textContent = "Sprich jetzt!";
+      try {
+        active = await record(3500, (f) => btn.style.setProperty("--p", f));
+        const url = await active.result;
+        active = null;
+        if (!alive(token)) return URL.revokeObjectURL(url);
+        if (myUrl) URL.revokeObjectURL(myUrl);
+        myUrl = url;
+        btn.classList.remove("on");
+        $("reclabel").textContent = "Nochmal";
+        $("mine").disabled = false;
+        $("next").disabled = false;
+        $("next").classList.add("pulse");
+        // Original und eigene Aufnahme direkt nacheinander zum Vergleichen
+        await play(it);
+        await wait(300);
+        if (alive(token)) await playUrl(myUrl);
+        if (alive(token)) $("fb").innerHTML = `<span class="ok">Hörst du den Unterschied? Du kannst es nochmal versuchen.</span>`;
+      } catch (e) {
+        active = null;
+        if (!alive(token)) return;
+        btn.classList.remove("on");
+        $("reclabel").textContent = "Aufnehmen";
+        $("fb").innerHTML = `<span class="try">Das Mikrofon ist aus. Sprich einfach laut nach!</span>`;
+        $("next").disabled = false;
+      }
+    };
+    $("mine").onclick = () => myUrl && playUrl(myUrl);
+  }
+  (async () => {
+    await sayDe("Hör zu und sprich nach!");
+    if (alive(token)) await play(it);
+    if (alive(token) && mic) await sayDe("Tipp auf das Mikrofon und sprich!");
+  })();
+};
+
+// ---------- Übung: Bewegungsaufgabe ----------
+STEPS.action = (lesson, step) => {
+  const it = item(step.id);
+  const token = lessonRender(lesson, `
+    <p class="task">Hör zu und mach mit!</p>
+    <div class="learn-card action-card"><span class="huge-pic">${it.image}</span></div>
+    <div class="row"><button class="speaker big again" aria-label="Nochmal hören">🔊</button></div>
+    ${nextBtn("Geschafft! 💪")}`);
+  on(".again", "click", () => play(it));
+  $("next").onclick = () => {
+    chime("good");
+    store.grade(current.profile, it.id, true);
+    store.save();
+    advance(lesson);
+  };
+  (async () => {
+    await sayDe("Hör zu und mach mit!");
+    if (alive(token)) await play(it);
+  })();
+};
+
+// ---------- Mini-Geschichte ----------
+STEPS.story = (lesson, step) => {
+  const u = unitById(step.unit);
+  let i = 0;
+  const token = lessonRender(lesson, `
+    <p class="task">Hör dir die Geschichte an!</p>
+    <div class="story-card">
+      <span class="speaker-pic" id="who"></span>
+      <span class="huge-pic" id="scene"></span>
+    </div>
+    <div class="story-dots">${u.story.map((_, k) => `<span class="dot" data-k="${k}"></span>`).join("")}</div>
+    <div class="row">
+      <button class="speaker big" id="again" aria-label="Nochmal">🔁</button>
+      <button class="go-btn" id="next" disabled>Weiter ➜</button>
+    </div>`);
+  const show = async () => {
+    const line = u.story[i];
+    const sp = SPEAKERS[line.speaker] || { pitch: 1.05, pic: "🗣️" };
+    $("who").textContent = sp.pic;
+    $("who").hidden = line.image === sp.pic;
+    $("scene").textContent = line.image;
+    app.querySelectorAll(".story-dots .dot").forEach((d) => d.classList.toggle("on", +d.dataset.k <= i));
+    $("next").disabled = true;
+    await play(line, { pitch: sp.pitch });
+    if (alive(token)) $("next").disabled = false;
+  };
+  $("again").onclick = show;
+  $("next").onclick = () => {
+    if (++i >= u.story.length) return advance(lesson);
+    show();
+  };
+  show();
+};
+
+// ---------- Verständnisfrage zur Geschichte ----------
+STEPS.question = (lesson, step) => {
+  const q = step.q;
+  const options = shuffle(q.choices.map(item));
+  choose(lesson, step, {
+    task: "Was war in der Geschichte?",
+    prompt: `<div class="row"><button class="speaker big again" aria-label="Frage nochmal">🔊</button></div>`,
+    options,
+    correctId: q.answer,
+    speak: () => play(q),
+    grade: false
+  });
+};
+
+// ---------- Reim zum Mitmachen ----------
+STEPS.rhyme = (lesson, step) => {
+  const r = unitById(step.unit).rhyme;
+  let running = false;
+  const token = lessonRender(lesson, `
+    <p class="task">Ein Reim! Hör zu, klatsch und sprich mit!</p>
+    <div class="learn-card"><span class="huge-pic" id="rpic">${r.lines[0].image}</span></div>
+    <div class="row"><button class="speaker big" id="again" aria-label="Nochmal">🔁</button><button class="speaker big" id="clap" aria-label="Klatschen">👏</button></div>
+    ${nextBtn("Weiter ➜", true)}`);
+  const run = async () => {
+    if (running) return;
+    running = true;
+    for (const line of r.lines) {
+      if (!alive(token)) return;
+      $("rpic").textContent = line.image;
+      $("rpic").classList.remove("bounce");
+      void $("rpic").offsetWidth;
+      $("rpic").classList.add("bounce");
+      await play(line, { pitch: 1.15 });
+      await wait(250);
+    }
+    running = false;
+    if (alive(token)) $("next").disabled = false;
+  };
+  $("again").onclick = run;
+  $("clap").onclick = () => chime("pop");
+  $("next").onclick = () => advance(lesson);
+  (async () => {
+    await sayDe("Hör zu und sprich mit!");
+    if (alive(token)) run();
+  })();
+};
+
+// ---------- Ende der Lektion ----------
+function finishLesson(lesson) {
+  const pid = current.profile;
+  const first = !store.lessonDone(pid, lesson.u.id, lesson.n);
+  store.setLessonDone(pid, lesson.u.id, lesson.n);
+  const streak = store.touchStreak(pid);
+  store.save();
+  const isLast = lesson.n === 4;
+  render(`
+    <div class="screen center result" style="--c:${lesson.u.color}">
+      <h2>${pick(PRAISE)}</h2>
+      <div class="result-stars"><span class="star on">★</span></div>
+      <p class="sub">🔥 ${streak.count} ${streak.count === 1 ? "Tag" : "Tage"} in Folge</p>
+      ${isLast && first ? `<p class="sub">Neuer Sticker für dein Album:</p><div class="stickers"><span class="sticker big-sticker">${lesson.u.image}</span></div>` : ""}
+      ${lesson.n === 0 && first ? `<p class="sub">Neue Wörter im Album:</p><div class="stickers">${lesson.u.words.map((w) => `<span class="sticker">${w.image}</span>`).join("")}</div>` : ""}
+      <button class="go-btn" id="next">Weiter ➜</button>
+    </div>`);
+  chime("win");
+  setTimeout(() => sayEn(pick(PRAISE_EN)), 600);
+  $("next").onclick = () => showUnit(lesson.u.id);
 }
 
 // ---------- Sticker-Album ----------
 function showAlbum() {
   const pid = current.profile;
+  const units = subjectsFor(pid).flatMap((s) => stagesFor(pid, s).flatMap((st) => st.units));
   render(`
     <div class="screen">
       <header class="bar">
         <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
         <span class="who">📒 Sticker-Album</span>
       </header>
-      ${subjectsFor(current.profile).flatMap((sub) => topicsFor(current.profile, sub)).map((t) => {
-        const ls = lessonsOf(t);
-        return `<h3 class="album-title">${t.pic} ${t.title}</h3>
-          <div class="album">${ls.map((items, i) => items.map((it) => {
-            const has = store.lessonStars(pid, t.id, i) > 0;
-            return `<button class="sticker ${has ? "" : "empty"}" data-en="${esc(it.en)}" ${has ? "" : "disabled"}>${has ? it.pic : "?"}</button>`;
-          }).join("")).join("")}</div>`;
+      ${units.map((u) => {
+        const has = store.lessonDone(pid, u.id, 0);
+        return `<h3 class="album-title">${store.lessonDone(pid, u.id, 4) ? u.image : "⬜"} ${esc(u.title_de)}</h3>
+          <div class="album">${u.words.map((w) => `<button class="sticker ${has ? "" : "empty"}" data-id="${w.id}" ${has ? "" : "disabled"}>${has ? w.image : "?"}</button>`).join("")}</div>`;
       }).join("")}
     </div>`);
-  document.getElementById("back").onclick = () => showHome();
-  on(".sticker:not(.empty)", "click", (e) => sayEn(e.currentTarget.dataset.en));
+  $("back").onclick = () => showHome();
+  on(".sticker:not(.empty)", "click", (e) => play(item(e.currentTarget.dataset.id)));
 }
 
 // ---------- Elternbereich ----------
@@ -703,11 +721,17 @@ function showParentGate() {
       <button class="go-btn" id="ok">Öffnen</button>
       <button class="link-btn" id="back">Zurück</button>
     </div>`);
-  document.getElementById("back").onclick = showProfiles;
-  document.getElementById("ok").onclick = () => {
-    if (+document.getElementById("ans").value === a * b) showParents();
-    else document.getElementById("ans").value = "";
+  $("back").onclick = showProfiles;
+  $("ok").onclick = () => {
+    if (+$("ans").value === a * b) showParents();
+    else $("ans").value = "";
   };
+}
+
+function boxCounts(pid, unit) {
+  const n = [0, 0, 0, 0, 0, 0];
+  for (const w of unit.words) n[store.card(pid, w.id)?.box || 0]++;
+  return n;
 }
 
 function showParents(msg = "") {
@@ -720,10 +744,40 @@ function showParents(msg = "") {
         <span class="who">Elternbereich</span>
       </header>
       ${msg ? `<p class="notice">${msg}</p>` : ""}
+      ${content.errors.length ? `<section class="errors"><h3>⚠️ Probleme mit den Inhalten</h3><ul>${content.errors.map((e) => `<li>${esc(e)}</li>`).join("")}</ul></section>` : ""}
       <section>
-        <h3>Vornamen</h3>
-        <p class="small">Wird nur für den Satz „My name is …“ benutzt und bleibt auf diesem Gerät.</p>
-        ${PROFILES.map((p) => `<label class="field">${p.pic} ${p.title} <input class="input name" data-id="${p.id}" value="${esc(store.profile(p.id).name || "")}" placeholder="Vorname"></label>`).join("")}
+        <h3>Freigeschaltet</h3>
+        <p class="small">Was soll das Kind sehen? Ausgeschaltetes verschwindet, der Fortschritt bleibt gespeichert.</p>
+        <div class="unlock">
+          ${PROFILES.map((p) => `<div class="unlock-col">
+            <h4>${avatarHtml(avatarOf(p.id), "sm")} ${p.title}</h4>
+            ${content.subjects.map((sub) => `
+              <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${sub.image} ${esc(sub.title)}</label>
+              ${sub.stages.map((st) => `
+                <div class="unlock-topics">
+                  <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${st.id}" ${store.isEnabled(p.id, st.id) ? "checked" : ""}> ${esc(st.title)}</label>
+                  <div class="unlock-topics">
+                    ${st.units.map((u) => `<label class="field check"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${u.id}" ${store.isEnabled(p.id, u.id) ? "checked" : ""}> ${u.image} ${esc(u.title_de)}</label>`).join("")}
+                  </div>
+                </div>`).join("")}`).join("")}
+          </div>`).join("")}
+        </div>
+      </section>
+      <section>
+        <h3>Lernstand</h3>
+        <p class="small">Lernkartei: Jedes Wort wandert bei richtiger Antwort einen Kasten weiter (1 → 5), bei falscher zurück in Kasten 1. Eine Einheit ist geschafft 🏆, wenn alle Wörter mindestens in Kasten 3 sind. Fällig heute: ${PROFILES.map((p) => `${p.title} ${store.dueCards(p.id).length}`).join(", ")}.</p>
+        ${content.subjects.flatMap((s) => s.stages.flatMap((st) => st.units)).map((u) => `
+          <details class="unit-details">
+            <summary>${u.image} ${esc(u.title_de)} <span class="small">${PROFILES.map((p) => {
+              const n = boxCounts(p.id, u);
+              const sure = n[3] + n[4] + n[5];
+              return `${p.title}: ${sure}/${u.words.length} sicher${unitMastered(p.id, u) ? " 🏆" : ""}`;
+            }).join(" · ")}</span></summary>
+            <table class="words">
+              <tr><th></th><th>Englisch</th><th>Deutsch</th>${PROFILES.map((p) => `<th>${p.title}</th>`).join("")}</tr>
+              ${[...u.words, ...u.phrases].map((w) => `<tr><td>${w.image}</td><td><button class="link-btn inline-btn" data-say="${w.id}">${esc(w.en)} 🔊</button></td><td>${esc(w.de || "")}</td>${PROFILES.map((p) => `<td>${store.card(p.id, w.id) ? "Kasten " + store.card(p.id, w.id).box : "–"}</td>`).join("")}</tr>`).join("")}
+            </table>
+          </details>`).join("")}
       </section>
       <section>
         <h3>Fortschritt sichern und laden</h3>
@@ -735,33 +789,8 @@ function showParents(msg = "") {
         ${saved ? `<p class="small">Zuletzt gespeichert: ${new Date(saved).toLocaleString("de-DE")}</p>` : ""}
       </section>
       <section>
-        <h3>Freigeschaltet</h3>
-        <p class="small">Was soll das Kind sehen? Ausgeschaltete Fächer und Themen verschwinden, der Fortschritt bleibt gespeichert.</p>
-        <div class="unlock">
-          ${PROFILES.map((p) => `<div class="unlock-col">
-            <h4>${p.pic} ${p.title}</h4>
-            ${SUBJECTS.map((sub) => `
-              <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${sub.pic} ${sub.title}</label>
-              <div class="unlock-topics">
-                ${sub.topics.filter((t) => !t.soon).map((t) => `<label class="field check"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${t.id}" ${store.isEnabled(p.id, t.id) ? "checked" : ""}> ${t.pic} ${t.title}</label>`).join("")}
-              </div>`).join("")}
-          </div>`).join("")}
-        </div>
-      </section>
-      <section>
-        <h3>Nachsprechen</h3>
-        <p class="small">Beim Kennenlernen müssen die Kinder jedes neue Wort so oft laut nachsprechen, bevor es weitergeht.</p>
-        <label class="field">Wie oft?
-          <select class="input" id="repeat">
-            ${[[0, "Aus"], [1, "1-mal"], [2, "2-mal"], [3, "3-mal"], [5, "5-mal"]].map(([v, t]) => `<option value="${v}" ${store.settings().repeat === v ? "selected" : ""}>${t}</option>`).join("")}
-          </select>
-        </label>
-        <label class="field check"><input type="checkbox" id="usemic" ${store.settings().mic ? "checked" : ""}> Mikrofon nutzen</label>
-        <p class="small">Mit Mikrofon zählt die App automatisch, sobald ein Kind etwas sagt. Sie prüft dabei nur, <b>dass</b> gesprochen wird, nicht ob die Aussprache stimmt. Es wird nichts aufgenommen oder gespeichert. Ohne Mikrofon tippt das Kind nach jedem Mal auf „Ich hab's gesagt“.</p>
-      </section>
-      <section>
         <h3>Stimme</h3>
-        <p class="small">${v.supported ? (v.british ? `Britische Stimme gefunden: ${esc(v.name)}` : "Keine britische Stimme gefunden. Bitte in den Android-Einstellungen unter „Sprachausgabe“ (Google) die Sprache „Englisch (Vereinigtes Königreich)“ herunterladen, dann funktioniert sie auch offline.") : "Dieses Gerät unterstützt keine Sprachausgabe."}</p>
+        <p class="small">${v.supported ? (v.british ? `Britische Stimme gefunden: ${esc(v.name)}` : "Keine britische Stimme gefunden. Bitte in den Android-Einstellungen unter „Sprachausgabe“ (Google) die Sprache „Englisch (Vereinigtes Königreich)“ herunterladen, dann funktioniert sie auch offline.") : "Dieses Gerät unterstützt keine Sprachausgabe."} Liegt für einen Inhalt eine Aufnahme im Ordner audio/en, wird stattdessen die Aufnahme abgespielt.</p>
         <button class="wide-btn" id="test">🔊 Stimme testen</button>
       </section>
       <section>
@@ -770,25 +799,14 @@ function showParents(msg = "") {
       </section>
       <p class="small center-text">Learnino Version ${APP_VERSION}</p>
     </div>`);
-  document.getElementById("back").onclick = showProfiles;
-  on(".name", "change", (e) => {
-    store.profile(e.target.dataset.id).name = e.target.value.trim().slice(0, 20);
-    store.save();
-  });
+  $("back").onclick = showProfiles;
   on(".en-box", "change", (e) => {
     store.setEnabled(e.target.dataset.p, e.target.dataset.id, e.target.checked);
     store.save();
   });
-  document.getElementById("repeat").onchange = (e) => {
-    store.settings().repeat = +e.target.value;
-    store.save();
-  };
-  document.getElementById("usemic").onchange = (e) => {
-    store.settings().mic = e.target.checked;
-    store.save();
-  };
-  document.getElementById("test").onclick = () => sayParts([["en", "Hello! My name is Learnino. Let's learn English!"]]);
-  document.getElementById("export").onclick = async () => {
+  on("[data-say]", "click", (e) => play(item(e.currentTarget.dataset.say)));
+  $("test").onclick = () => sayParts([["en", "Hello! My name is Learnino. Let's learn English!"]]);
+  $("export").onclick = async () => {
     const file = store.exportFile();
     if (navigator.canShare && navigator.canShare({ files: [file] })) {
       try {
@@ -804,17 +822,17 @@ function showParents(msg = "") {
     a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
   };
-  document.getElementById("import").onchange = async (e) => {
+  $("import").onchange = async (e) => {
     const f = e.target.files[0];
     if (!f) return;
     try {
       store.importData(await f.text());
       showParents("✅ Fortschritt geladen.");
     } catch (err) {
-      showParents("⚠️ Diese Datei konnte nicht geladen werden.");
+      showParents("⚠️ Diese Datei konnte nicht geladen werden (vielleicht von einer alten App-Version).");
     }
   };
-  document.getElementById("reset").onclick = () => {
+  $("reset").onclick = () => {
     if (confirm("Wirklich den gesamten Fortschritt beider Kinder löschen?")) {
       store.resetAll();
       showParents("Fortschritt gelöscht.");
@@ -823,8 +841,6 @@ function showParents(msg = "") {
 }
 
 // ---------- Start ----------
-const APP_VERSION = 6;
-
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   const hadController = !!navigator.serviceWorker.controller;
   let reloaded = false;
@@ -837,4 +853,6 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
   });
   navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).then((reg) => reg.update()).catch(() => {});
 }
-showProfiles();
+
+app.innerHTML = `<div class="screen center"><h1 class="logo">Learnino</h1><p class="sub">Einen Moment…</p></div>`;
+loadContent().then(showProfiles);

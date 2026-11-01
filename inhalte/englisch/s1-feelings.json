@@ -1,0 +1,168 @@
+{
+  "id": "s1-feelings",
+  "stage": 1,
+  "title_de": "Gefühle",
+  "title_en": "Feelings",
+  "image": "😀",
+  "color": "#f7b731",
+  "words": [
+    {
+      "id": "s1-feelings-happy",
+      "en": "happy",
+      "de": "fröhlich",
+      "image": "😀"
+    },
+    {
+      "id": "s1-feelings-sad",
+      "en": "sad",
+      "de": "traurig",
+      "image": "😢"
+    },
+    {
+      "id": "s1-feelings-tired",
+      "en": "tired",
+      "de": "müde",
+      "image": "😴"
+    },
+    {
+      "id": "s1-feelings-hungry",
+      "en": "hungry",
+      "de": "hungrig",
+      "image": "😋🍽️"
+    },
+    {
+      "id": "s1-feelings-angry",
+      "en": "angry",
+      "de": "wütend",
+      "image": "😠"
+    },
+    {
+      "id": "s1-feelings-scared",
+      "en": "scared",
+      "de": "ängstlich",
+      "image": "😱"
+    }
+  ],
+  "phrases": [
+    {
+      "id": "s1-feelings-p1",
+      "en": "How are you?",
+      "de": "Wie geht es dir?",
+      "image": "🙂❓",
+      "uses": []
+    },
+    {
+      "id": "s1-feelings-p2",
+      "en": "I'm happy.",
+      "de": "Ich bin fröhlich.",
+      "image": "😀",
+      "uses": [
+        "s1-feelings-happy"
+      ]
+    },
+    {
+      "id": "s1-feelings-p3",
+      "en": "I'm tired.",
+      "de": "Ich bin müde.",
+      "image": "😴",
+      "uses": [
+        "s1-feelings-tired"
+      ]
+    },
+    {
+      "id": "s1-feelings-p4",
+      "en": "I'm hungry.",
+      "de": "Ich habe Hunger.",
+      "image": "😋🍽️",
+      "uses": [
+        "s1-feelings-hungry"
+      ]
+    }
+  ],
+  "story": [
+    {
+      "id": "s1-feelings-story1",
+      "image": "👧",
+      "speaker": "Lisa",
+      "en": "Hello, Tom! How are you?",
+      "de": "Hallo, Tom! Wie geht es dir?"
+    },
+    {
+      "id": "s1-feelings-story2",
+      "image": "😴",
+      "speaker": "Tom",
+      "en": "I'm tired.",
+      "de": "Ich bin müde."
+    },
+    {
+      "id": "s1-feelings-story3",
+      "image": "😋",
+      "speaker": "Tom",
+      "en": "And I'm hungry!",
+      "de": "Und ich habe Hunger!"
+    },
+    {
+      "id": "s1-feelings-story4",
+      "image": "🍎",
+      "speaker": "Lisa",
+      "en": "Here, Tom. An apple!",
+      "de": "Hier, Tom. Ein Apfel!"
+    },
+    {
+      "id": "s1-feelings-story5",
+      "image": "😀",
+      "speaker": "Tom",
+      "en": "Thank you! I'm happy now.",
+      "de": "Danke! Jetzt bin ich fröhlich."
+    }
+  ],
+  "questions": [
+    {
+      "id": "s1-feelings-q1",
+      "en": "How is Tom at first?",
+      "de": "Wie geht es Tom am Anfang?",
+      "answer": "s1-feelings-tired",
+      "choices": [
+        "s1-feelings-tired",
+        "s1-feelings-happy",
+        "s1-feelings-angry"
+      ]
+    },
+    {
+      "id": "s1-feelings-q2",
+      "en": "How is Tom at the end?",
+      "de": "Wie geht es Tom am Ende?",
+      "answer": "s1-feelings-happy",
+      "choices": [
+        "s1-feelings-happy",
+        "s1-feelings-sad",
+        "s1-feelings-scared"
+      ]
+    }
+  ],
+  "rhyme": {
+    "id": "s1-feelings-rhyme",
+    "lines": [
+      {
+        "id": "s1-feelings-rhyme1",
+        "en": "Happy, happy, clap with me!",
+        "image": "😀👏"
+      },
+      {
+        "id": "s1-feelings-rhyme2",
+        "en": "Sad, sad, one, two, three.",
+        "image": "😢"
+      },
+      {
+        "id": "s1-feelings-rhyme3",
+        "en": "Tired, tired, yawn and sleep.",
+        "image": "😴"
+      },
+      {
+        "id": "s1-feelings-rhyme4",
+        "en": "Hungry, hungry, eat, eat, eat!",
+        "image": "😋"
+      }
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "id": "s1-festivals",
+  "stage": 1,
+  "title_de": "Feste",
+  "title_en": "Festivals",
+  "image": "🎄",
+  "color": "#20bf6b",
+  "words": [
+    {
+      "id": "s1-festivals-tree",
+      "en": "tree",
+      "de": "Baum",
+      "image": "🎄"
+    },
+    {
+      "id": "s1-festivals-star",
+      "en": "star",
+      "de": "Stern",
+      "image": "⭐"
+    },
+    {
+      "id": "s1-festivals-present",
+      "en": "present",
+      "de": "Geschenk",
+      "image": "🎁"
+    },
+    {
+      "id": "s1-festivals-candle",
+      "en": "candle",
+      "de": "Kerze",
+      "image": "🕯️"
+    },
+    {
+      "id": "s1-festivals-pumpkin",
+      "en": "pumpkin",
+      "de": "Kürbis",
+      "image": "🎃"
+    },
+    {
+      "id": "s1-festivals-witch",
+      "en": "witch",
+      "de": "Hexe",
+      "image": "🧙‍♀️"
+    },
+    {
+      "id": "s1-festivals-ghost",
+      "en": "ghost",
+      "de": "Gespenst",
+      "image": "👻"
+    },
+    {
+      "id": "s1-festivals-bat",
+      "en": "bat",
+      "de": "Fledermaus",
+      "image": "🦇"
+    }
+  ],
+  "phrases": [
+    {
+      "id": "s1-festivals-p1",
+      "en": "Merry Christmas!",
+      "de": "Frohe Weihnachten!",
+      "image": "🎄🎉",
+      "uses": [
+        "s1-festivals-tree"
+      ]
+    },
+    {
+      "id": "s1-festivals-p2",
+      "en": "Happy Halloween!",
+      "de": "Fröhliches Halloween!",
+      "image": "🎃🎉",
+      "uses": [
+        "s1-festivals-pumpkin"
+      ]
+    },
+    {
+      "id": "s1-festivals-p3",
+      "en": "It's a present.",
+      "de": "Das ist ein Geschenk.",
+      "image": "🎁👈",
+      "uses": [
+        "s1-festivals-present"
+      ]
+    }
+  ],
+  "story": [
+    {
+      "id": "s1-festivals-story1",
+      "image": "🎄",
+      "speaker": "Lisa",
+      "en": "Look, Tom! A Christmas tree!",
+      "de": "Schau, Tom! Ein Weihnachtsbaum!"
+    },
+    {
+      "id": "s1-festivals-story2",
+      "image": "⭐",
+      "speaker": "Tom",
+      "en": "And a star!",
+      "de": "Und ein Stern!"
+    },
+    {
+      "id": "s1-festivals-story3",
+      "image": "🎁",
+      "speaker": "Lisa",
+      "en": "A present for you, Tom!",
+      "de": "Ein Geschenk für dich, Tom!"
+    },
+    {
+      "id": "s1-festivals-story4",
+      "image": "😀",
+      "speaker": "Tom",
+      "en": "Thank you! Merry Christmas!",
+      "de": "Danke! Frohe Weihnachten!"
+    }
+  ],
+  "questions": [
+    {
+      "id": "s1-festivals-q1",
+      "en": "What is on the tree? A … ?",
+      "de": "Was ist auf dem Baum? Ein …?",
+      "answer": "s1-festivals-star",
+      "choices": [
+        "s1-festivals-star",
+        "s1-festivals-candle",
+        "s1-festivals-bat"
+      ]
+    },
+    {
+      "id": "s1-festivals-q2",
+      "en": "What does Lisa give Tom?",
+      "de": "Was schenkt Lisa Tom?",
+      "answer": "s1-festivals-present",
+      "choices": [
+        "s1-festivals-present",
+        "s1-festivals-pumpkin",
+        "s1-festivals-ghost"
+      ]
+    }
+  ],
+  "rhyme": {
+    "id": "s1-festivals-rhyme",
+    "lines": [
+      {
+        "id": "s1-festivals-rhyme1",
+        "en": "Candle, candle, shining bright,",
+        "image": "🕯️"
+      },
+      {
+        "id": "s1-festivals-rhyme2",
+        "en": "star, star, in the night.",
+        "image": "⭐"
+      },
+      {
+        "id": "s1-festivals-rhyme3",
+        "en": "Presents under the Christmas tree,",
+        "image": "🎁🎄"
+      },
+      {
+        "id": "s1-festivals-rhyme4",
+        "en": "Merry Christmas, you and me!",
+        "image": "🎉"
+      }
+    ]
+  }
+}

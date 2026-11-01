@@ -1,0 +1,194 @@
+{
+  "id": "s1-animals",
+  "stage": 1,
+  "title_de": "Tiere",
+  "title_en": "Animals",
+  "image": "🐶",
+  "color": "#2ecc71",
+  "words": [
+    {
+      "id": "s1-animals-cat",
+      "en": "cat",
+      "de": "Katze",
+      "image": "🐱"
+    },
+    {
+      "id": "s1-animals-dog",
+      "en": "dog",
+      "de": "Hund",
+      "image": "🐶"
+    },
+    {
+      "id": "s1-animals-horse",
+      "en": "horse",
+      "de": "Pferd",
+      "image": "🐴"
+    },
+    {
+      "id": "s1-animals-cow",
+      "en": "cow",
+      "de": "Kuh",
+      "image": "🐮"
+    },
+    {
+      "id": "s1-animals-pig",
+      "en": "pig",
+      "de": "Schwein",
+      "image": "🐷"
+    },
+    {
+      "id": "s1-animals-sheep",
+      "en": "sheep",
+      "de": "Schaf",
+      "image": "🐑"
+    },
+    {
+      "id": "s1-animals-duck",
+      "en": "duck",
+      "de": "Ente",
+      "image": "🦆"
+    },
+    {
+      "id": "s1-animals-rabbit",
+      "en": "rabbit",
+      "de": "Hase",
+      "image": "🐰"
+    },
+    {
+      "id": "s1-animals-mouse",
+      "en": "mouse",
+      "de": "Maus",
+      "image": "🐭"
+    },
+    {
+      "id": "s1-animals-bird",
+      "en": "bird",
+      "de": "Vogel",
+      "image": "🐦"
+    }
+  ],
+  "phrases": [
+    {
+      "id": "s1-animals-p1",
+      "en": "It's a horse.",
+      "de": "Das ist ein Pferd.",
+      "image": "🐴👈",
+      "uses": [
+        "s1-animals-horse"
+      ]
+    },
+    {
+      "id": "s1-animals-p2",
+      "en": "I like horses.",
+      "de": "Ich mag Pferde.",
+      "image": "🐴❤️",
+      "uses": [
+        "s1-animals-horse"
+      ]
+    },
+    {
+      "id": "s1-animals-p3",
+      "en": "It's a cat.",
+      "de": "Das ist eine Katze.",
+      "image": "🐱👈",
+      "uses": [
+        "s1-animals-cat"
+      ]
+    },
+    {
+      "id": "s1-animals-p4",
+      "en": "I like dogs.",
+      "de": "Ich mag Hunde.",
+      "image": "🐶❤️",
+      "uses": [
+        "s1-animals-dog"
+      ]
+    }
+  ],
+  "story": [
+    {
+      "id": "s1-animals-story1",
+      "image": "🐴",
+      "speaker": "Tom",
+      "en": "Look, Lisa! It's a horse.",
+      "de": "Schau, Lisa! Das ist ein Pferd."
+    },
+    {
+      "id": "s1-animals-story2",
+      "image": "😍",
+      "speaker": "Lisa",
+      "en": "I like horses!",
+      "de": "Ich mag Pferde!"
+    },
+    {
+      "id": "s1-animals-story3",
+      "image": "🐷",
+      "speaker": "Tom",
+      "en": "It's a pig!",
+      "de": "Das ist ein Schwein!"
+    },
+    {
+      "id": "s1-animals-story4",
+      "image": "🦆",
+      "speaker": "Lisa",
+      "en": "And a duck!",
+      "de": "Und eine Ente!"
+    },
+    {
+      "id": "s1-animals-story5",
+      "image": "😀",
+      "speaker": "Tom",
+      "en": "I like ducks.",
+      "de": "Ich mag Enten."
+    }
+  ],
+  "questions": [
+    {
+      "id": "s1-animals-q1",
+      "en": "What does Lisa like?",
+      "de": "Was mag Lisa?",
+      "answer": "s1-animals-horse",
+      "choices": [
+        "s1-animals-horse",
+        "s1-animals-pig",
+        "s1-animals-cow"
+      ]
+    },
+    {
+      "id": "s1-animals-q2",
+      "en": "What does Tom like?",
+      "de": "Was mag Tom?",
+      "answer": "s1-animals-duck",
+      "choices": [
+        "s1-animals-duck",
+        "s1-animals-horse",
+        "s1-animals-sheep"
+      ]
+    }
+  ],
+  "rhyme": {
+    "id": "s1-animals-rhyme",
+    "lines": [
+      {
+        "id": "s1-animals-rhyme1",
+        "en": "Cat and dog and cow and pig,",
+        "image": "🐱🐶"
+      },
+      {
+        "id": "s1-animals-rhyme2",
+        "en": "some are small and some are big.",
+        "image": "🐭🐮"
+      },
+      {
+        "id": "s1-animals-rhyme3",
+        "en": "Duck and mouse and sheep and bird,",
+        "image": "🦆🐑"
+      },
+      {
+        "id": "s1-animals-rhyme4",
+        "en": "quack, squeak, baa, tweet! Have you heard?",
+        "image": "👂"
+      }
+    ]
+  }
+}

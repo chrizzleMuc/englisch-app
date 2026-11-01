@@ -1,0 +1,199 @@
+{
+  "id": "s1-body",
+  "stage": 1,
+  "title_de": "Mein Körper",
+  "title_en": "My body",
+  "image": "🧍",
+  "color": "#ff6b81",
+  "words": [
+    {
+      "id": "s1-body-head",
+      "en": "head",
+      "de": "Kopf",
+      "image": "🙂"
+    },
+    {
+      "id": "s1-body-eyes",
+      "en": "eyes",
+      "de": "Augen",
+      "image": "👀"
+    },
+    {
+      "id": "s1-body-ears",
+      "en": "ears",
+      "de": "Ohren",
+      "image": "👂"
+    },
+    {
+      "id": "s1-body-nose",
+      "en": "nose",
+      "de": "Nase",
+      "image": "👃"
+    },
+    {
+      "id": "s1-body-mouth",
+      "en": "mouth",
+      "de": "Mund",
+      "image": "👄"
+    },
+    {
+      "id": "s1-body-hands",
+      "en": "hands",
+      "de": "Hände",
+      "image": "👐"
+    },
+    {
+      "id": "s1-body-feet",
+      "en": "feet",
+      "de": "Füße",
+      "image": "🦶"
+    },
+    {
+      "id": "s1-body-arms",
+      "en": "arms",
+      "de": "Arme",
+      "image": "💪"
+    },
+    {
+      "id": "s1-body-legs",
+      "en": "legs",
+      "de": "Beine",
+      "image": "🦵"
+    }
+  ],
+  "phrases": [
+    {
+      "id": "s1-body-p1",
+      "en": "Touch your nose!",
+      "de": "Fass dir an die Nase!",
+      "image": "👉👃",
+      "uses": [
+        "s1-body-nose"
+      ],
+      "action": true
+    },
+    {
+      "id": "s1-body-p2",
+      "en": "Clap your hands!",
+      "de": "Klatsch in die Hände!",
+      "image": "👏",
+      "uses": [
+        "s1-body-hands"
+      ],
+      "action": true
+    },
+    {
+      "id": "s1-body-p3",
+      "en": "Touch your head!",
+      "de": "Fass dir an den Kopf!",
+      "image": "👉🙂",
+      "uses": [
+        "s1-body-head"
+      ],
+      "action": true
+    },
+    {
+      "id": "s1-body-p4",
+      "en": "Stamp your feet!",
+      "de": "Stampf mit den Füßen!",
+      "image": "🦶💥",
+      "uses": [
+        "s1-body-feet"
+      ],
+      "action": true
+    }
+  ],
+  "story": [
+    {
+      "id": "s1-body-story1",
+      "image": "👧",
+      "speaker": "Lisa",
+      "en": "Let's play! Touch your nose!",
+      "de": "Lass uns spielen! Fass dir an die Nase!"
+    },
+    {
+      "id": "s1-body-story2",
+      "image": "👃",
+      "speaker": "Tom",
+      "en": "My nose!",
+      "de": "Meine Nase!"
+    },
+    {
+      "id": "s1-body-story3",
+      "image": "👏",
+      "speaker": "Lisa",
+      "en": "Clap your hands!",
+      "de": "Klatsch in die Hände!"
+    },
+    {
+      "id": "s1-body-story4",
+      "image": "👏",
+      "speaker": "Tom",
+      "en": "Clap, clap, clap!",
+      "de": "Klatsch, klatsch, klatsch!"
+    },
+    {
+      "id": "s1-body-story5",
+      "image": "🦶",
+      "speaker": "Lisa",
+      "en": "Stamp your feet!",
+      "de": "Stampf mit den Füßen!"
+    },
+    {
+      "id": "s1-body-story6",
+      "image": "😂",
+      "speaker": "Tom",
+      "en": "Stamp, stamp, stamp!",
+      "de": "Stampf, stampf, stampf!"
+    }
+  ],
+  "questions": [
+    {
+      "id": "s1-body-q1",
+      "en": "Lisa says: Touch your … ?",
+      "de": "Lisa sagt: Fass dir an die …?",
+      "answer": "s1-body-nose",
+      "choices": [
+        "s1-body-nose",
+        "s1-body-ears",
+        "s1-body-eyes"
+      ]
+    },
+    {
+      "id": "s1-body-q2",
+      "en": "Lisa says: Clap your … ?",
+      "de": "Lisa sagt: Klatsch in die …?",
+      "answer": "s1-body-hands",
+      "choices": [
+        "s1-body-hands",
+        "s1-body-feet",
+        "s1-body-legs"
+      ]
+    }
+  ],
+  "rhyme": {
+    "id": "s1-body-rhyme",
+    "lines": [
+      {
+        "id": "s1-body-rhyme1",
+        "en": "Touch your head and touch your nose,",
+        "image": "🙂👃"
+      },
+      {
+        "id": "s1-body-rhyme2",
+        "en": "touch your feet and wiggle your toes.",
+        "image": "🦶"
+      },
+      {
+        "id": "s1-body-rhyme3",
+        "en": "Clap your hands, one, two, three,",
+        "image": "👏"
+      },
+      {
+        "id": "s1-body-rhyme4",
+        "en": "now sit down and smile with me!",
+        "image": "😊"
+      }
+    ]
+  }
+}
