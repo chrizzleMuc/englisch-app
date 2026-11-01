@@ -1,24 +1,30 @@
 # Learnino
 
-Eine Englisch-Lern-App für Kinder: Wörter und kurze Sätze mit Bildern und britischer Aussprache, ganz ohne Werbung. Sie läuft im Browser, lässt sich auf Android-Tablets und -Handys als App installieren und funktioniert danach offline.
+Eine Englisch-Lern-App für Grundschulkinder: Hören und Sprechen mit Bildern und britischer Aussprache, ganz ohne Werbung, Konten oder Datenweitergabe. Sie läuft im Browser, lässt sich auf Android-Tablets und -Handys als App installieren und funktioniert danach offline.
 
-## Was drin ist
+## Aufbau
 
-- Zwei Profile: **Entdecker** (ohne Lesen, alles über Bild und Ton) und **Pirat** (mit Lesen)
-- Themen: Hallo & Tschüss (Redewendungen), Tiere, Farben, Zahlen, Essen, Zuhause, Spielen
-- Spiele: Kennenlernen, Hör zu und tipp, Was sagst du?, Wort zum Bild, Was bedeutet das?, Memory
-- Sterne, Sticker-Album, Tagesserie mit einem Joker pro Woche
-- Nachsprechen: jedes neue Wort mehrmals laut sagen (Mikrofon erkennt, dass gesprochen wird, oder Knopf)
-- Profilbild selbst wählen: Tier und Hintergrundfarbe
-- Elternbereich: Vornamen, Fächer und Themen pro Kind freischalten, Nachsprechen einstellen, Fortschritt als Datei sichern/laden (z. B. über OneDrive), Stimme testen
+Fach → Stufe → Einheit → 5 Lektionen (Neue Wörter, Wörter üben, Sätze, Geschichte, Abschluss).
+Jede Sitzung beginnt mit bis zu 5 fälligen Wiederholungen aus der Lernkartei (5 Kästen: 1, 2, 4, 7, 14 Tage).
 
-## Inhalte ändern
+## Inhalte ändern oder ergänzen
 
-Alle Themen und Wörter stehen in `js/data.js`. Nach jeder Änderung in `sw.js` die Zahl bei `VERSION` erhöhen, damit installierte Apps das Update laden.
+Alle Inhalte stehen im Ordner `inhalte/`:
 
-## Aussprache
+- `inhalte/uebersicht.json` listet Fächer, Stufen und die Dateien der Einheiten.
+- `inhalte/englisch/s1-....json` ist je eine Einheit mit Wörtern, Sätzen, Geschichte, Fragen und Reim.
 
-Die App nutzt die Sprachausgabe des Geräts. Damit sie offline britisch spricht: Android-Einstellungen, Suche nach „Sprachausgabe“, bei Google-Sprachausgabe die Sprache „Englisch (Vereinigtes Königreich)“ installieren.
+Neue Einheit: eine vorhandene Datei kopieren, Inhalte und IDs ändern, Dateinamen in `uebersicht.json` eintragen. Fehler in den Dateien zeigt die App im Elternbereich an.
+
+## Echte Aufnahmen
+
+Für jede ID kann eine Aufnahme `audio/en/<ID>.mp3` abgelegt werden, z. B. `audio/en/s1-animals-horse.mp3`. Gibt es keine, spricht die Stimme des Geräts.
+
+Damit die Stimme offline britisch spricht: Android-Einstellungen, Suche nach „Sprachausgabe“, bei Google-Sprachausgabe „Englisch (Vereinigtes Königreich)“ installieren.
+
+## Nach Änderungen am Code
+
+In `sw.js` die Zahl bei `VERSION` und in `js/app.js` `APP_VERSION` erhöhen, damit installierte Apps das Update laden.
 
 ## Lokal ansehen
 

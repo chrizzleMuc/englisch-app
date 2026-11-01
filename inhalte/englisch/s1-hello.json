@@ -1,0 +1,188 @@
+{
+  "id": "s1-hello",
+  "stage": 1,
+  "title_de": "Hallo!",
+  "title_en": "Hello!",
+  "image": "👋",
+  "color": "#ff9f43",
+  "words": [
+    {
+      "id": "s1-hello-hello",
+      "en": "hello",
+      "de": "hallo",
+      "image": "👋😀"
+    },
+    {
+      "id": "s1-hello-goodbye",
+      "en": "goodbye",
+      "de": "auf Wiedersehen",
+      "image": "👋🏠"
+    },
+    {
+      "id": "s1-hello-yes",
+      "en": "yes",
+      "de": "ja",
+      "image": "✅"
+    },
+    {
+      "id": "s1-hello-no",
+      "en": "no",
+      "de": "nein",
+      "image": "❌"
+    },
+    {
+      "id": "s1-hello-please",
+      "en": "please",
+      "de": "bitte",
+      "image": "🙏"
+    },
+    {
+      "id": "s1-hello-thank-you",
+      "en": "thank you",
+      "de": "danke",
+      "image": "💝"
+    },
+    {
+      "id": "s1-hello-boy",
+      "en": "boy",
+      "de": "Junge",
+      "image": "👦"
+    },
+    {
+      "id": "s1-hello-girl",
+      "en": "girl",
+      "de": "Mädchen",
+      "image": "👧"
+    }
+  ],
+  "phrases": [
+    {
+      "id": "s1-hello-p1",
+      "en": "Hello, I'm Tom.",
+      "de": "Hallo, ich bin Tom.",
+      "image": "👦👋",
+      "uses": [
+        "s1-hello-hello",
+        "s1-hello-boy"
+      ]
+    },
+    {
+      "id": "s1-hello-p2",
+      "en": "What's your name?",
+      "de": "Wie heißt du?",
+      "image": "🙂❓",
+      "uses": []
+    },
+    {
+      "id": "s1-hello-p3",
+      "en": "My name is Lisa.",
+      "de": "Ich heiße Lisa.",
+      "image": "👧💬",
+      "uses": [
+        "s1-hello-girl"
+      ]
+    },
+    {
+      "id": "s1-hello-p4",
+      "en": "Goodbye!",
+      "de": "Auf Wiedersehen!",
+      "image": "👋🏠",
+      "uses": [
+        "s1-hello-goodbye"
+      ]
+    }
+  ],
+  "story": [
+    {
+      "id": "s1-hello-story1",
+      "image": "👦",
+      "speaker": "Tom",
+      "en": "Hello!",
+      "de": "Hallo!"
+    },
+    {
+      "id": "s1-hello-story2",
+      "image": "👧",
+      "speaker": "Lisa",
+      "en": "Hello!",
+      "de": "Hallo!"
+    },
+    {
+      "id": "s1-hello-story3",
+      "image": "👦",
+      "speaker": "Tom",
+      "en": "I'm Tom. What's your name?",
+      "de": "Ich bin Tom. Wie heißt du?"
+    },
+    {
+      "id": "s1-hello-story4",
+      "image": "👧",
+      "speaker": "Lisa",
+      "en": "My name is Lisa.",
+      "de": "Ich heiße Lisa."
+    },
+    {
+      "id": "s1-hello-story5",
+      "image": "👦",
+      "speaker": "Tom",
+      "en": "Goodbye, Lisa!",
+      "de": "Tschüss, Lisa!"
+    },
+    {
+      "id": "s1-hello-story6",
+      "image": "👧",
+      "speaker": "Lisa",
+      "en": "Goodbye, Tom!",
+      "de": "Tschüss, Tom!"
+    }
+  ],
+  "questions": [
+    {
+      "id": "s1-hello-q1",
+      "en": "Tom is a boy. Lisa is a … ?",
+      "de": "Tom ist ein Junge. Lisa ist ein …?",
+      "answer": "s1-hello-girl",
+      "choices": [
+        "s1-hello-girl",
+        "s1-hello-boy",
+        "s1-hello-yes"
+      ]
+    },
+    {
+      "id": "s1-hello-q2",
+      "en": "What does Tom say at the end?",
+      "de": "Was sagt Tom am Ende?",
+      "answer": "s1-hello-goodbye",
+      "choices": [
+        "s1-hello-goodbye",
+        "s1-hello-hello",
+        "s1-hello-please"
+      ]
+    }
+  ],
+  "rhyme": {
+    "id": "s1-hello-rhyme",
+    "lines": [
+      {
+        "id": "s1-hello-rhyme1",
+        "en": "Hello, hello, hello to you!",
+        "image": "👋"
+      },
+      {
+        "id": "s1-hello-rhyme2",
+        "en": "Hello, hello, how do you do?",
+        "image": "😀"
+      },
+      {
+        "id": "s1-hello-rhyme3",
+        "en": "Goodbye, goodbye, goodbye to you!",
+        "image": "👋🏠"
+      },
+      {
+        "id": "s1-hello-rhyme4",
+        "en": "Goodbye, goodbye, see you soon!",
+        "image": "🌙"
+      }
+    ]
+  }
+}

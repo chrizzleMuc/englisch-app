@@ -1,5 +1,5 @@
 // Offline-Speicher: Bei jeder Änderung an der App VERSION erhöhen.
-const VERSION = "learnino-6";
+const VERSION = "learnino-7";
 const FILES = [
   "./",
   "index.html",
@@ -9,7 +9,17 @@ const FILES = [
   "js/data.js",
   "js/speech.js",
   "js/store.js",
-  "js/mic.js",
+  "js/audio.js",
+  "js/recorder.js",
+  "js/content.js",
+  "inhalte/uebersicht.json",
+  "inhalte/englisch/s1-animals.json",
+  "inhalte/englisch/s1-body.json",
+  "inhalte/englisch/s1-colours.json",
+  "inhalte/englisch/s1-feelings.json",
+  "inhalte/englisch/s1-festivals.json",
+  "inhalte/englisch/s1-hello.json",
+  "inhalte/englisch/s1-numbers.json",
   "icons/icon-192.png",
   "icons/icon-512.png",
   "icons/icon-maskable-512.png"
@@ -34,7 +44,7 @@ self.addEventListener("fetch", (e) => {
       const same = new URL(e.request.url).origin === location.origin;
       const net = fetch(same ? new Request(e.request.url, { cache: "no-cache" }) : e.request)
         .then((res) => {
-          if (res.ok && new URL(e.request.url).origin === location.origin) {
+          if (res.status === 200 && same) {
             const copy = res.clone();
             caches.open(VERSION).then((c) => c.put(e.request, copy));
           }

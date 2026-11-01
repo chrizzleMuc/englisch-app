@@ -1,0 +1,183 @@
+{
+  "id": "s1-numbers",
+  "stage": 1,
+  "title_de": "Zahlen 1 bis 10",
+  "title_en": "Numbers 1–10",
+  "image": "🔢",
+  "color": "#3498db",
+  "words": [
+    {
+      "id": "s1-numbers-one",
+      "en": "one",
+      "de": "eins",
+      "image": "1️⃣"
+    },
+    {
+      "id": "s1-numbers-two",
+      "en": "two",
+      "de": "zwei",
+      "image": "2️⃣"
+    },
+    {
+      "id": "s1-numbers-three",
+      "en": "three",
+      "de": "drei",
+      "image": "3️⃣"
+    },
+    {
+      "id": "s1-numbers-four",
+      "en": "four",
+      "de": "vier",
+      "image": "4️⃣"
+    },
+    {
+      "id": "s1-numbers-five",
+      "en": "five",
+      "de": "fünf",
+      "image": "5️⃣"
+    },
+    {
+      "id": "s1-numbers-six",
+      "en": "six",
+      "de": "sechs",
+      "image": "6️⃣"
+    },
+    {
+      "id": "s1-numbers-seven",
+      "en": "seven",
+      "de": "sieben",
+      "image": "7️⃣"
+    },
+    {
+      "id": "s1-numbers-eight",
+      "en": "eight",
+      "de": "acht",
+      "image": "8️⃣"
+    },
+    {
+      "id": "s1-numbers-nine",
+      "en": "nine",
+      "de": "neun",
+      "image": "9️⃣"
+    },
+    {
+      "id": "s1-numbers-ten",
+      "en": "ten",
+      "de": "zehn",
+      "image": "🔟"
+    }
+  ],
+  "phrases": [
+    {
+      "id": "s1-numbers-p1",
+      "en": "How old are you?",
+      "de": "Wie alt bist du?",
+      "image": "🎂❓",
+      "uses": []
+    },
+    {
+      "id": "s1-numbers-p2",
+      "en": "I'm seven.",
+      "de": "Ich bin sieben.",
+      "image": "🎂7️⃣",
+      "uses": [
+        "s1-numbers-seven"
+      ]
+    },
+    {
+      "id": "s1-numbers-p3",
+      "en": "I'm nine.",
+      "de": "Ich bin neun.",
+      "image": "🎂9️⃣",
+      "uses": [
+        "s1-numbers-nine"
+      ]
+    }
+  ],
+  "story": [
+    {
+      "id": "s1-numbers-story1",
+      "image": "🎂",
+      "speaker": "Tom",
+      "en": "Happy birthday, Lisa! How old are you?",
+      "de": "Alles Gute zum Geburtstag, Lisa! Wie alt bist du?"
+    },
+    {
+      "id": "s1-numbers-story2",
+      "image": "7️⃣",
+      "speaker": "Lisa",
+      "en": "I'm seven.",
+      "de": "Ich bin sieben."
+    },
+    {
+      "id": "s1-numbers-story3",
+      "image": "🕯️",
+      "speaker": "Tom",
+      "en": "One, two, three, four, five, six, seven!",
+      "de": "Eins, zwei, drei, vier, fünf, sechs, sieben!"
+    },
+    {
+      "id": "s1-numbers-story4",
+      "image": "👧",
+      "speaker": "Lisa",
+      "en": "How old are you, Tom?",
+      "de": "Wie alt bist du, Tom?"
+    },
+    {
+      "id": "s1-numbers-story5",
+      "image": "9️⃣",
+      "speaker": "Tom",
+      "en": "I'm nine.",
+      "de": "Ich bin neun."
+    }
+  ],
+  "questions": [
+    {
+      "id": "s1-numbers-q1",
+      "en": "How old is Lisa?",
+      "de": "Wie alt ist Lisa?",
+      "answer": "s1-numbers-seven",
+      "choices": [
+        "s1-numbers-seven",
+        "s1-numbers-five",
+        "s1-numbers-nine"
+      ]
+    },
+    {
+      "id": "s1-numbers-q2",
+      "en": "How old is Tom?",
+      "de": "Wie alt ist Tom?",
+      "answer": "s1-numbers-nine",
+      "choices": [
+        "s1-numbers-nine",
+        "s1-numbers-seven",
+        "s1-numbers-three"
+      ]
+    }
+  ],
+  "rhyme": {
+    "id": "s1-numbers-rhyme",
+    "lines": [
+      {
+        "id": "s1-numbers-rhyme1",
+        "en": "One, two, three, four, five,",
+        "image": "🖐️"
+      },
+      {
+        "id": "s1-numbers-rhyme2",
+        "en": "six, seven, eight, nine, ten.",
+        "image": "🙌"
+      },
+      {
+        "id": "s1-numbers-rhyme3",
+        "en": "Count with me, count with me,",
+        "image": "😀"
+      },
+      {
+        "id": "s1-numbers-rhyme4",
+        "en": "let's count again!",
+        "image": "🔁"
+      }
+    ]
+  }
+}

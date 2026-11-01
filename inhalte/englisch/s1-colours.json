@@ -1,0 +1,192 @@
+{
+  "id": "s1-colours",
+  "stage": 1,
+  "title_de": "Farben",
+  "title_en": "Colours",
+  "image": "🎨",
+  "color": "#a55eea",
+  "words": [
+    {
+      "id": "s1-colours-red",
+      "en": "red",
+      "de": "rot",
+      "image": "🟥"
+    },
+    {
+      "id": "s1-colours-blue",
+      "en": "blue",
+      "de": "blau",
+      "image": "🟦"
+    },
+    {
+      "id": "s1-colours-yellow",
+      "en": "yellow",
+      "de": "gelb",
+      "image": "🟨"
+    },
+    {
+      "id": "s1-colours-green",
+      "en": "green",
+      "de": "grün",
+      "image": "🟩"
+    },
+    {
+      "id": "s1-colours-orange",
+      "en": "orange",
+      "de": "orange",
+      "image": "🟧"
+    },
+    {
+      "id": "s1-colours-pink",
+      "en": "pink",
+      "de": "rosa",
+      "image": "🩷"
+    },
+    {
+      "id": "s1-colours-purple",
+      "en": "purple",
+      "de": "lila",
+      "image": "🟪"
+    },
+    {
+      "id": "s1-colours-black",
+      "en": "black",
+      "de": "schwarz",
+      "image": "⬛"
+    },
+    {
+      "id": "s1-colours-white",
+      "en": "white",
+      "de": "weiß",
+      "image": "⬜"
+    },
+    {
+      "id": "s1-colours-brown",
+      "en": "brown",
+      "de": "braun",
+      "image": "🟫"
+    }
+  ],
+  "phrases": [
+    {
+      "id": "s1-colours-p1",
+      "en": "What colour is it?",
+      "de": "Welche Farbe hat es?",
+      "image": "🎨❓",
+      "uses": []
+    },
+    {
+      "id": "s1-colours-p2",
+      "en": "It's red.",
+      "de": "Es ist rot.",
+      "image": "🍓",
+      "uses": [
+        "s1-colours-red"
+      ]
+    },
+    {
+      "id": "s1-colours-p3",
+      "en": "It's blue.",
+      "de": "Es ist blau.",
+      "image": "🫐",
+      "uses": [
+        "s1-colours-blue"
+      ]
+    },
+    {
+      "id": "s1-colours-p4",
+      "en": "It's yellow.",
+      "de": "Es ist gelb.",
+      "image": "🍌",
+      "uses": [
+        "s1-colours-yellow"
+      ]
+    }
+  ],
+  "story": [
+    {
+      "id": "s1-colours-story1",
+      "image": "🎈",
+      "speaker": "Lisa",
+      "en": "Look, Tom! What colour is it?",
+      "de": "Schau, Tom! Welche Farbe hat es?"
+    },
+    {
+      "id": "s1-colours-story2",
+      "image": "🎈",
+      "speaker": "Tom",
+      "en": "It's red!",
+      "de": "Es ist rot!"
+    },
+    {
+      "id": "s1-colours-story3",
+      "image": "🐟",
+      "speaker": "Lisa",
+      "en": "What colour is it?",
+      "de": "Welche Farbe hat es?"
+    },
+    {
+      "id": "s1-colours-story4",
+      "image": "🐟",
+      "speaker": "Tom",
+      "en": "It's blue!",
+      "de": "Es ist blau!"
+    },
+    {
+      "id": "s1-colours-story5",
+      "image": "🌻",
+      "speaker": "Lisa",
+      "en": "And this? It's yellow!",
+      "de": "Und das? Es ist gelb!"
+    }
+  ],
+  "questions": [
+    {
+      "id": "s1-colours-q1",
+      "en": "What colour is the balloon?",
+      "de": "Welche Farbe hat der Luftballon?",
+      "answer": "s1-colours-red",
+      "choices": [
+        "s1-colours-red",
+        "s1-colours-blue",
+        "s1-colours-green"
+      ]
+    },
+    {
+      "id": "s1-colours-q2",
+      "en": "What colour is the fish?",
+      "de": "Welche Farbe hat der Fisch?",
+      "answer": "s1-colours-blue",
+      "choices": [
+        "s1-colours-blue",
+        "s1-colours-yellow",
+        "s1-colours-pink"
+      ]
+    }
+  ],
+  "rhyme": {
+    "id": "s1-colours-rhyme",
+    "lines": [
+      {
+        "id": "s1-colours-rhyme1",
+        "en": "Red, red, a big red ball.",
+        "image": "🔴"
+      },
+      {
+        "id": "s1-colours-rhyme2",
+        "en": "Blue, blue, the sky so tall.",
+        "image": "🟦"
+      },
+      {
+        "id": "s1-colours-rhyme3",
+        "en": "Yellow, yellow, the sun is bright.",
+        "image": "🌞"
+      },
+      {
+        "id": "s1-colours-rhyme4",
+        "en": "Black and white, good night!",
+        "image": "🌙"
+      }
+    ]
+  }
+}

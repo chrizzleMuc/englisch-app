@@ -1,9 +1,13 @@
-// Fortschritt speichern (auf dem Gerät) sowie Sichern/Laden als Datei.
+// Fortschritt speichern (nur auf diesem Gerät) sowie Sichern/Laden als Datei.
 
-const KEY = "learnino-v1";
+const KEY = "learnino-v2";
+const OLD_KEY = "learnino-v1";
+
+// Lernkartei: nach wie vielen Tagen ein Inhalt in Kasten 1 bis 5 wiederkommt
+export const BOX_DAYS = [0, 1, 2, 4, 7, 14];
 
 function blank() {
-  return { version: 1, profiles: {}, savedAt: null, settings: { repeat: 3, mic: true } };
+  return { version: 2, profiles: {}, savedAt: null, settings: {} };
 }
 
 let state = load();
@@ -12,6 +16,16 @@ function load() {
   try {
     const raw = localStorage.getItem(KEY);
     if (raw) return { ...blank(), ...JSON.parse(raw) };
+    // Umzug von Version 1: Profilbild, Name und Tagesserie bleiben, Lernstand startet neu
+    const old = localStorage.getItem(OLD_KEY);
+    if (old) {
+      const o = JSON.parse(old);
+      const s = blank();
+      for (const [id, p] of Object.entries(o.profiles || {})) {
+        s.profiles[id] = { name: p.name || "", avatar: p.avatar ? { base: p.avatar.base, color: p.avatar.color } : null, streak: p.streak };
+      }
+      return s;
+    }
   } catch (e) {
     /* leer starten */
   }
@@ -28,64 +42,23 @@ export function save() {
 }
 
 export function profile(id) {
-  if (!state.profiles[id]) {
-    state.profiles[id] = { name: "", stars: {}, words: {}, streak: { count: 0, last: null, jokerWeek: null } };
-  }
-  return state.profiles[id];
-}
-
-export function wordKey(topicId, en) {
-  return topicId + ":" + en;
-}
-
-export function recordAnswer(pid, key, correct) {
-  const p = profile(pid);
-  const w = p.words[key] || { c: 0, w: 0, last: null };
-  if (correct) w.c++;
-  else w.w++;
-  w.last = today();
-  p.words[key] = w;
-}
-
-export function recordSpoken(pid, key) {
-  const p = profile(pid);
-  const w = p.words[key] || { c: 0, w: 0, last: null };
-  w.s = (w.s || 0) + 1;
-  p.words[key] = w;
-}
-
-// Freischalten: Standard ist alles an. "off" merkt sich, was ausgeschaltet wurde.
-export function isEnabled(pid, id) {
-  return !(profile(pid).off || {})[id];
-}
-
-export function setEnabled(pid, id, on) {
-  const p = profile(pid);
+  const p = (state.profiles[id] = state.profiles[id] || {});
+  p.name = p.name || "";
+  p.cards = p.cards || {};
+  p.lessons = p.lessons || {};
   p.off = p.off || {};
-  if (on) delete p.off[id];
-  else p.off[id] = true;
+  p.streak = p.streak || { count: 0, last: null, jokerWeek: null };
+  return p;
 }
 
-export function lessonStars(pid, topicId, idx) {
-  const t = profile(pid).stars[topicId] || {};
-  return t[idx] || 0;
-}
-
-export function setLessonStars(pid, topicId, idx, stars) {
-  const p = profile(pid);
-  p.stars[topicId] = p.stars[topicId] || {};
-  p.stars[topicId][idx] = Math.max(p.stars[topicId][idx] || 0, stars);
-}
-
-export function totalStars(pid) {
-  const p = profile(pid);
-  let n = 0;
-  for (const t of Object.values(p.stars)) for (const s of Object.values(t)) n += s;
-  return n;
-}
-
-function today() {
+export function today() {
   const d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+}
+
+function addDays(dateStr, n) {
+  const d = new Date(dateStr + "T12:00:00");
+  d.setDate(d.getDate() + n);
   return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
 }
 
@@ -93,13 +66,74 @@ function daysBetween(a, b) {
   return Math.round((new Date(b + "T12:00:00") - new Date(a + "T12:00:00")) / 86400000);
 }
 
+// ---------- Lernkartei ----------
+export function card(pid, id) {
+  return profile(pid).cards[id] || null;
+}
+
+// Neuer Inhalt kommt in Kasten 1, morgen wieder dran
+export function introduce(pid, id) {
+  const p = profile(pid);
+  if (!p.cards[id]) p.cards[id] = { box: 1, due: addDays(today(), BOX_DAYS[1]), last: today() };
+}
+
+// Richtig: einen Kasten weiter (höchstens einmal pro Tag). Falsch: zurück in Kasten 1.
+export function grade(pid, id, correct) {
+  const p = profile(pid);
+  const c = p.cards[id] || { box: 1, due: today(), last: null };
+  const t = today();
+  if (!correct) {
+    c.box = 1;
+    c.due = addDays(t, BOX_DAYS[1]);
+  } else if (c.due <= t && c.last !== t) {
+    c.box = Math.min(5, c.box + 1);
+    c.due = addDays(t, BOX_DAYS[c.box]);
+  }
+  c.last = t;
+  p.cards[id] = c;
+}
+
+export function dueCards(pid) {
+  const t = today();
+  return Object.entries(profile(pid).cards)
+    .filter(([, c]) => c.due <= t)
+    .sort((a, b) => a[1].box - b[1].box || a[1].due.localeCompare(b[1].due))
+    .map(([id]) => id);
+}
+
+// ---------- Lektionen ----------
+export function lessonDone(pid, unitId, n) {
+  return !!(profile(pid).lessons[unitId] || [])[n];
+}
+
+export function setLessonDone(pid, unitId, n) {
+  const p = profile(pid);
+  p.lessons[unitId] = p.lessons[unitId] || [false, false, false, false, false];
+  p.lessons[unitId][n] = true;
+}
+
+export function totalStars(pid) {
+  return Object.values(profile(pid).lessons).reduce((n, l) => n + l.filter(Boolean).length, 0);
+}
+
+// ---------- Freischalten (Standard: alles an) ----------
+export function isEnabled(pid, id) {
+  return !profile(pid).off[id];
+}
+
+export function setEnabled(pid, id, on) {
+  const p = profile(pid);
+  if (on) delete p.off[id];
+  else p.off[id] = true;
+}
+
+// ---------- Tagesserie (ein Joker pro Woche) ----------
 function weekId(dateStr) {
   const d = new Date(dateStr + "T12:00:00");
   const jan1 = new Date(d.getFullYear(), 0, 1);
   return d.getFullYear() + "-" + Math.ceil(((d - jan1) / 86400000 + jan1.getDay() + 1) / 7);
 }
 
-// Tagesserie: Ein verpasster Tag pro Woche wird mit einem Joker überbrückt.
 export function touchStreak(pid) {
   const s = profile(pid).streak;
   const t = today();
@@ -126,23 +160,18 @@ export function streakCount(pid) {
   return 0;
 }
 
+// ---------- Sichern / Laden ----------
 export function exportFile() {
   save();
-  const data = JSON.stringify(state, null, 1);
-  const name = "learnino-fortschritt-" + today() + ".json";
-  return new File([data], name, { type: "application/json" });
+  return new File([JSON.stringify(state, null, 1)], "learnino-fortschritt-" + today() + ".json", { type: "application/json" });
 }
 
 export function importData(text) {
   const parsed = JSON.parse(text);
   if (!parsed || typeof parsed !== "object" || !parsed.profiles) throw new Error("Keine Learnino-Datei");
+  if ((parsed.version || 1) < 2) throw new Error("Alte Version");
   state = { ...blank(), ...parsed };
   save();
-}
-
-export function settings() {
-  state.settings = { repeat: 3, mic: true, ...(state.settings || {}) };
-  return state.settings;
 }
 
 export function savedAt() {
