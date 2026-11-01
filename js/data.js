@@ -62,3 +62,24 @@ export const NUMBER_WORDS = { 7: ["seven", "sieben"], 8: ["eight", "acht"], 9: [
 
 export const PRAISE = ["Super!", "Toll gemacht!", "Klasse!", "Prima!", "Spitze!", "Genau!"];
 export const PRAISE_EN = ["Great!", "Well done!", "Brilliant!", "Super!", "Fantastic!"];
+
+// Bausteine für den Avatar. "en" wird beim Antippen vorgesprochen.
+export const AVATAR = {
+  base: [
+    ["🐱", "cat"], ["🐶", "dog"], ["🦊", "fox"], ["🐼", "panda"], ["🐯", "tiger"], ["🦁", "lion"],
+    ["🐸", "frog"], ["🐵", "monkey"], ["🦄", "unicorn"], ["🐲", "dragon"], ["🐧", "penguin"], ["🐨", "koala"],
+    ["🦜", "parrot"], ["🐙", "octopus"], ["🤖", "robot"], ["👽", "alien"], ["👧", "girl"], ["👦", "boy"],
+    ["🧚", "fairy"], ["🧜", "mermaid"], ["🦸", "superhero"], ["🧙", "wizard"]
+  ],
+  hat: [
+    ["", "no hat"], ["👑", "crown"], ["🎩", "top hat"], ["🧢", "cap"], ["🎀", "bow"], ["🌸", "flower"], ["⭐", "star"], ["🎓", "school hat"]
+  ],
+  item: [
+    ["", "nothing"], ["⚽", "ball"], ["🎈", "balloon"], ["🧸", "teddy"], ["🍭", "lollipop"], ["🪁", "kite"],
+    ["🌈", "rainbow"], ["🔭", "telescope"], ["🧭", "compass"], ["🗺️", "map"], ["🦴", "bone"], ["🍕", "pizza"]
+  ],
+  color: [
+    ["#ff8787", "red"], ["#74c0fc", "blue"], ["#8ce99a", "green"], ["#ffe066", "yellow"],
+    ["#ffa94d", "orange"], ["#faa2c1", "pink"], ["#b197fc", "purple"], ["#d8a47f", "brown"]
+  ]
+};

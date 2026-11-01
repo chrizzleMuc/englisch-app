@@ -3,7 +3,7 @@
 const KEY = "learnino-v1";
 
 function blank() {
-  return { version: 1, profiles: {}, savedAt: null };
+  return { version: 1, profiles: {}, savedAt: null, settings: { repeat: 3, mic: true } };
 }
 
 let state = load();
@@ -44,6 +44,13 @@ export function recordAnswer(pid, key, correct) {
   if (correct) w.c++;
   else w.w++;
   w.last = today();
+  p.words[key] = w;
+}
+
+export function recordSpoken(pid, key) {
+  const p = profile(pid);
+  const w = p.words[key] || { c: 0, w: 0, last: null };
+  w.s = (w.s || 0) + 1;
   p.words[key] = w;
 }
 
@@ -119,6 +126,11 @@ export function importData(text) {
   if (!parsed || typeof parsed !== "object" || !parsed.profiles) throw new Error("Keine Learnino-Datei");
   state = { ...blank(), ...parsed };
   save();
+}
+
+export function settings() {
+  state.settings = { repeat: 3, mic: true, ...(state.settings || {}) };
+  return state.settings;
 }
 
 export function savedAt() {
