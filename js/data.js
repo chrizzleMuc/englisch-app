@@ -130,18 +130,16 @@ export const AVATAR = {
   base: [
     ["🐱", "cat"], ["🐶", "dog"], ["🦊", "fox"], ["🐼", "panda"], ["🐯", "tiger"], ["🦁", "lion"],
     ["🐸", "frog"], ["🐵", "monkey"], ["🦄", "unicorn"], ["🐲", "dragon"], ["🐧", "penguin"], ["🐨", "koala"],
-    ["🦜", "parrot"], ["🐙", "octopus"], ["🤖", "robot"], ["👽", "alien"], ["👧", "girl"], ["👦", "boy"],
-    ["🧚", "fairy"], ["🧜", "mermaid"], ["🦸", "superhero"], ["🧙", "wizard"]
-  ],
-  hat: [
-    ["", "no hat"], ["👑", "crown"], ["🎩", "top hat"], ["🧢", "cap"], ["🎀", "bow"], ["🌸", "flower"], ["⭐", "star"], ["🎓", "school hat"]
-  ],
-  item: [
-    ["", "nothing"], ["⚽", "ball"], ["🎈", "balloon"], ["🧸", "teddy"], ["🍭", "lollipop"], ["🪁", "kite"],
-    ["🌈", "rainbow"], ["🔭", "telescope"], ["🧭", "compass"], ["🗺️", "map"], ["🦴", "bone"], ["🍕", "pizza"]
+    ["🐻", "bear"], ["🐰", "rabbit"], ["🐷", "pig"], ["🐮", "cow"], ["🐭", "mouse"], ["🦉", "owl"],
+    ["🦜", "parrot"], ["🐙", "octopus"], ["🐢", "turtle"], ["🐬", "dolphin"], ["🦋", "butterfly"], ["🦖", "dinosaur"]
   ],
   color: [
     ["#ff8787", "red"], ["#74c0fc", "blue"], ["#8ce99a", "green"], ["#ffe066", "yellow"],
     ["#ffa94d", "orange"], ["#faa2c1", "pink"], ["#b197fc", "purple"], ["#d8a47f", "brown"]
   ]
 };
+
+// Fächer. Neue Fächer bekommen hier einen Eintrag mit eigener Themenliste.
+export const SUBJECTS = [
+  { id: "englisch", title: "Englisch", pic: "🇬🇧", color: "#ff9f43", topics: TOPICS }
+];

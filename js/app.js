@@ -1,10 +1,10 @@
-import { TOPICS, PROFILES, NUMBER_WORDS, PRAISE, PRAISE_EN, AVATAR } from "./data.js";
+import { SUBJECTS, PROFILES, NUMBER_WORDS, PRAISE, PRAISE_EN, AVATAR } from "./data.js";
 import { sayParts, sayEn, sayDe, stop, chime, voiceInfo } from "./speech.js";
 import * as store from "./store.js";
 import { micReady, listenOnce } from "./mic.js";
 
 const app = document.getElementById("app");
-let current = { profile: null, screen: null };
+let current = { profile: null, screen: null, subject: null };
 let listening = null;
 
 // ---------- Hilfsfunktionen ----------
@@ -19,7 +19,7 @@ const shuffle = (a) => {
 };
 const pick = (a) => a[Math.floor(Math.random() * a.length)];
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-const topicById = (id) => TOPICS.find((t) => t.id === id);
+const topicById = (id) => SUBJECTS.flatMap((x) => x.topics).find((t) => t.id === id);
 const prof = () => PROFILES.find((p) => p.id === current.profile);
 
 function fill(text) {
@@ -72,14 +72,12 @@ function speakerBtn(cls = "") {
 function avatarOf(pid) {
   const p = PROFILES.find((x) => x.id === pid);
   const a = store.profile(pid).avatar;
-  return a || { base: p.pic, hat: "", item: "", color: pid === "pirat" ? "#74c0fc" : "#8ce99a" };
+  return a || { base: p.pic, color: pid === "pirat" ? "#74c0fc" : "#8ce99a" };
 }
 
 function avatarHtml(a, cls = "") {
   return `<span class="avatar ${cls}" style="--bg:${a.color}">
     <span class="av-base">${a.base}</span>
-    ${a.hat ? `<span class="av-hat">${a.hat}</span>` : ""}
-    ${a.item ? `<span class="av-item">${a.item}</span>` : ""}
   </span>`;
 }
 
@@ -87,22 +85,20 @@ function showAvatarEditor(first = false) {
   const pid = current.profile;
   const a = { ...avatarOf(pid) };
   const groups = [
-    ["base", "Wer bist du?"],
-    ["hat", "Auf den Kopf"],
-    ["item", "In die Hand"],
-    ["color", "Farbe"]
+    ["base", "Welches Tier bist du?"],
+    ["color", "Hintergrundfarbe"]
   ];
   render(`
     <div class="screen">
       <header class="bar">
         ${first ? "" : `<button class="icon-btn" id="back" aria-label="Zurück">⬅</button>`}
-        <span class="who">${first ? "Wie willst du aussehen?" : "Mein Avatar"}</span>
+        <span class="who">${first ? "Wie willst du aussehen?" : "Mein Bild"}</span>
       </header>
       <div class="av-preview">${avatarHtml(a, "xl")}</div>
       ${groups.map(([g, label]) => `
         <h3 class="av-label">${label}</h3>
         <div class="av-row">
-          ${AVATAR[g].map(([v, en], i) => `<button class="av-opt ${a[g] === v ? "sel" : ""}" data-g="${g}" data-i="${i}" ${g === "color" ? `style="background:${v}"` : ""}>${g === "color" ? "" : v || "🚫"}</button>`).join("")}
+          ${AVATAR[g].map(([v, en], i) => `<button class="av-opt ${a[g] === v ? "sel" : ""}" data-g="${g}" data-i="${i}" ${g === "color" ? `style="background:${v}"` : ""}>${g === "color" ? "" : v}</button>`).join("")}
         </div>`).join("")}
       <button class="go-btn" id="done">Fertig ✓</button>
     </div>`);
@@ -117,18 +113,19 @@ function showAvatarEditor(first = false) {
     if (en && v) sayEn(en);
   });
   document.getElementById("done").onclick = () => {
-    store.profile(pid).avatar = a;
+    store.profile(pid).avatar = { base: a.base, color: a.color };
     store.save();
     chime("win");
     showHome();
   };
-  if (!first) document.getElementById("back").onclick = showHome;
-  if (first && !prof().reads) sayDe("Wie willst du aussehen? Such dir etwas aus!");
+  if (!first) document.getElementById("back").onclick = () => showHome();
+  if (first && !prof().reads) sayDe("Welches Tier willst du sein? Such dir eins aus!");
 }
 
 // ---------- Profilauswahl ----------
 function showProfiles() {
   current.profile = null;
+  current.subject = null;
   render(`
     <div class="screen center">
       <h1 class="logo">Learnino</h1>
@@ -162,20 +159,37 @@ function topicProgress(topic) {
   return { done, total: ls.length };
 }
 
-function showHome() {
+function topicsFor(pid, subject) {
+  return subject.topics.filter((t) => !t.soon && store.isEnabled(pid, t.id));
+}
+
+function subjectsFor(pid) {
+  return SUBJECTS.filter((sub) => store.isEnabled(pid, sub.id) && topicsFor(pid, sub).length);
+}
+
+function homeHeader(p, backId = "back") {
+  return `<header class="bar">
+        <button class="icon-btn" id="${backId}" aria-label="Zurück">⬅</button>
+        <button class="who who-btn" id="me" aria-label="Bild ändern">${avatarHtml(avatarOf(p.id), "sm")} ${esc(p.title)} <span class="pencil">✏️</span></button>
+        <span class="stat">🔥 ${store.streakCount(p.id)}</span>
+        <span class="stat">⭐ ${store.totalStars(p.id)}</span>
+      </header>`;
+}
+
+function showHome(subjectId = current.subject) {
   const p = prof();
-  const streak = store.streakCount(p.id);
+  const subs = subjectsFor(p.id);
+  let sub = subs.find((x) => x.id === subjectId);
+  if (!sub && subs.length === 1) sub = subs[0];
+  if (!sub) return showSubjects(subs);
+  current.subject = sub.id;
+  const many = subs.length > 1;
   render(`
     <div class="screen">
-      <header class="bar">
-        <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
-        <button class="who who-btn" id="me" aria-label="Avatar ändern">${avatarHtml(avatarOf(p.id), "sm")} ${esc(p.title)} <span class="pencil">✏️</span></button>
-        <span class="stat">🔥 ${streak}</span>
-        <span class="stat">⭐ ${store.totalStars(p.id)}</span>
-      </header>
+      ${homeHeader(p)}
+      ${many ? `<h2 class="subject-title">${sub.pic} ${sub.title}</h2>` : ""}
       <div class="topics">
-        ${TOPICS.map((t) => {
-          if (t.soon) return `<div class="topic soon" style="--c:${t.color}"><span class="big-pic">${t.pic}</span><span class="tname">${t.title}</span><span class="small">Bald</span></div>`;
+        ${topicsFor(p.id, sub).map((t) => {
           const pr = topicProgress(t);
           return `<button class="topic" data-id="${t.id}" style="--c:${t.color}">
             <span class="big-pic">${t.pic}</span>
@@ -186,7 +200,10 @@ function showHome() {
       </div>
       <button class="wide-btn album-btn" id="album">📒 Mein Sticker-Album</button>
     </div>`);
-  document.getElementById("back").onclick = showProfiles;
+  document.getElementById("back").onclick = () => {
+    current.subject = null;
+    many ? showSubjects(subs) : showProfiles();
+  };
   document.getElementById("album").onclick = showAlbum;
   document.getElementById("me").onclick = () => showAvatarEditor(false);
   on(".topic[data-id]", "click", (e) => {
@@ -194,6 +211,26 @@ function showHome() {
     showTopic(e.currentTarget.dataset.id);
   });
   if (!p.reads) sayDe("Such dir ein Thema aus!");
+}
+
+function showSubjects(subs) {
+  const p = prof();
+  current.subject = null;
+  render(`
+    <div class="screen">
+      ${homeHeader(p)}
+      ${subs.length ? `<div class="topics">
+        ${subs.map((x) => `<button class="topic subject" data-id="${x.id}" style="--c:${x.color}">
+          <span class="big-pic">${x.pic}</span><span class="tname">${x.title}</span></button>`).join("")}
+      </div>` : `<p class="sub center-text">Hier ist noch nichts freigeschaltet. Frag Mama oder Papa!</p>`}
+    </div>`);
+  document.getElementById("back").onclick = showProfiles;
+  document.getElementById("me").onclick = () => showAvatarEditor(false);
+  on(".subject", "click", (e) => {
+    chime("pop");
+    showHome(e.currentTarget.dataset.id);
+  });
+  if (!p.reads) sayDe(subs.length ? "Was willst du heute lernen?" : "Hier ist noch nichts freigeschaltet.");
 }
 
 // ---------- Themenseite mit Lektionen ----------
@@ -219,7 +256,7 @@ function showTopic(topicId) {
       </div>
       <button class="wide-btn" id="memory" ${firstDone ? "" : "disabled"} style="--c:${t.color}">🃏 Memory spielen${firstDone ? "" : " (nach Lektion 1)"}</button>
     </div>`);
-  document.getElementById("back").onclick = showHome;
+  document.getElementById("back").onclick = () => showHome();
   on(".node:not(.locked)", "click", (e) => startLesson(t.id, +e.currentTarget.dataset.i));
   document.getElementById("memory").onclick = () => firstDone && startMemory(t.id);
 }
@@ -641,7 +678,7 @@ function showAlbum() {
         <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
         <span class="who">📒 Sticker-Album</span>
       </header>
-      ${TOPICS.filter((t) => !t.soon).map((t) => {
+      ${subjectsFor(current.profile).flatMap((sub) => topicsFor(current.profile, sub)).map((t) => {
         const ls = lessonsOf(t);
         return `<h3 class="album-title">${t.pic} ${t.title}</h3>
           <div class="album">${ls.map((items, i) => items.map((it) => {
@@ -650,7 +687,7 @@ function showAlbum() {
           }).join("")).join("")}</div>`;
       }).join("")}
     </div>`);
-  document.getElementById("back").onclick = showHome;
+  document.getElementById("back").onclick = () => showHome();
   on(".sticker:not(.empty)", "click", (e) => sayEn(e.currentTarget.dataset.en));
 }
 
@@ -698,6 +735,20 @@ function showParents(msg = "") {
         ${saved ? `<p class="small">Zuletzt gespeichert: ${new Date(saved).toLocaleString("de-DE")}</p>` : ""}
       </section>
       <section>
+        <h3>Freigeschaltet</h3>
+        <p class="small">Was soll das Kind sehen? Ausgeschaltete Fächer und Themen verschwinden, der Fortschritt bleibt gespeichert.</p>
+        <div class="unlock">
+          ${PROFILES.map((p) => `<div class="unlock-col">
+            <h4>${p.pic} ${p.title}</h4>
+            ${SUBJECTS.map((sub) => `
+              <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${sub.pic} ${sub.title}</label>
+              <div class="unlock-topics">
+                ${sub.topics.filter((t) => !t.soon).map((t) => `<label class="field check"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${t.id}" ${store.isEnabled(p.id, t.id) ? "checked" : ""}> ${t.pic} ${t.title}</label>`).join("")}
+              </div>`).join("")}
+          </div>`).join("")}
+        </div>
+      </section>
+      <section>
         <h3>Nachsprechen</h3>
         <p class="small">Beim Kennenlernen müssen die Kinder jedes neue Wort so oft laut nachsprechen, bevor es weitergeht.</p>
         <label class="field">Wie oft?
@@ -722,6 +773,10 @@ function showParents(msg = "") {
   document.getElementById("back").onclick = showProfiles;
   on(".name", "change", (e) => {
     store.profile(e.target.dataset.id).name = e.target.value.trim().slice(0, 20);
+    store.save();
+  });
+  on(".en-box", "change", (e) => {
+    store.setEnabled(e.target.dataset.p, e.target.dataset.id, e.target.checked);
     store.save();
   });
   document.getElementById("repeat").onchange = (e) => {
@@ -768,7 +823,7 @@ function showParents(msg = "") {
 }
 
 // ---------- Start ----------
-const APP_VERSION = 5;
+const APP_VERSION = 6;
 
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   const hadController = !!navigator.serviceWorker.controller;
