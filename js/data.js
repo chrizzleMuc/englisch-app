@@ -46,11 +46,73 @@ export const TOPICS = [
       { en: "frog", de: "Frosch", pic: "🐸" }
     ]
   },
-  { id: "colours", title: "Farben", pic: "🎨", color: "#a55eea", type: "words", soon: true, items: [] },
-  { id: "numbers", title: "Zahlen", pic: "🔢", color: "#3498db", type: "words", soon: true, items: [] },
-  { id: "food", title: "Essen", pic: "🍎", color: "#e74c3c", type: "words", soon: true, items: [] },
-  { id: "home", title: "Zuhause", pic: "🏠", color: "#e67e22", type: "words", soon: true, items: [] },
-  { id: "play", title: "Spielen", pic: "⚽", color: "#1abc9c", type: "words", soon: true, items: [] }
+  { id: "colours", title: "Farben", pic: "🎨", color: "#a55eea", type: "words", items: [
+      { en: "red", de: "rot", pic: "🟥" },
+      { en: "blue", de: "blau", pic: "🟦" },
+      { en: "green", de: "grün", pic: "🟩" },
+      { en: "yellow", de: "gelb", pic: "🟨" },
+      { en: "orange", de: "orange", pic: "🟧" },
+      { en: "purple", de: "lila", pic: "🟪" },
+      { en: "brown", de: "braun", pic: "🟫" },
+      { en: "black", de: "schwarz", pic: "⬛" },
+      { en: "white", de: "weiß", pic: "⬜" },
+      { en: "pink", de: "rosa", pic: "🩷" }
+    ]
+  },
+  { id: "numbers", title: "Zahlen", pic: "🔢", color: "#3498db", type: "words", items: [
+      { en: "one", de: "eins", pic: "1️⃣" },
+      { en: "two", de: "zwei", pic: "2️⃣" },
+      { en: "three", de: "drei", pic: "3️⃣" },
+      { en: "four", de: "vier", pic: "4️⃣" },
+      { en: "five", de: "fünf", pic: "5️⃣" },
+      { en: "six", de: "sechs", pic: "6️⃣" },
+      { en: "seven", de: "sieben", pic: "7️⃣" },
+      { en: "eight", de: "acht", pic: "8️⃣" },
+      { en: "nine", de: "neun", pic: "9️⃣" },
+      { en: "ten", de: "zehn", pic: "🔟" }
+    ]
+  },
+  { id: "food", title: "Essen", pic: "🍎", color: "#e74c3c", type: "words", items: [
+      { en: "apple", de: "Apfel", pic: "🍎" },
+      { en: "banana", de: "Banane", pic: "🍌" },
+      { en: "bread", de: "Brot", pic: "🍞" },
+      { en: "milk", de: "Milch", pic: "🥛" },
+      { en: "cheese", de: "Käse", pic: "🧀" },
+      { en: "egg", de: "Ei", pic: "🥚" },
+      { en: "water", de: "Wasser", pic: "💧" },
+      { en: "cake", de: "Kuchen", pic: "🍰" },
+      { en: "biscuit", de: "Keks", pic: "🍪" },
+      { en: "ice cream", de: "Eis", pic: "🍦" },
+      { en: "carrot", de: "Karotte", pic: "🥕" },
+      { en: "pizza", de: "Pizza", pic: "🍕" }
+    ]
+  },
+  { id: "home", title: "Zuhause", pic: "🏠", color: "#e67e22", type: "words", items: [
+      { en: "house", de: "Haus", pic: "🏠" },
+      { en: "bed", de: "Bett", pic: "🛏️" },
+      { en: "chair", de: "Stuhl", pic: "🪑" },
+      { en: "door", de: "Tür", pic: "🚪" },
+      { en: "sofa", de: "Sofa", pic: "🛋️" },
+      { en: "bath", de: "Badewanne", pic: "🛁" },
+      { en: "toothbrush", de: "Zahnbürste", pic: "🪥" },
+      { en: "lamp", de: "Lampe", pic: "💡" },
+      { en: "clock", de: "Uhr", pic: "⏰" },
+      { en: "key", de: "Schlüssel", pic: "🔑" }
+    ]
+  },
+  { id: "play", title: "Spielen", pic: "⚽", color: "#1abc9c", type: "words", items: [
+      { en: "ball", de: "Ball", pic: "⚽" },
+      { en: "teddy", de: "Teddy", pic: "🧸" },
+      { en: "kite", de: "Drachen", pic: "🪁" },
+      { en: "puzzle", de: "Puzzle", pic: "🧩" },
+      { en: "balloon", de: "Luftballon", pic: "🎈" },
+      { en: "bike", de: "Fahrrad", pic: "🚲" },
+      { en: "car", de: "Auto", pic: "🚗" },
+      { en: "friend", de: "Freund", pic: "🧑‍🤝‍🧑" },
+      { en: "dice", de: "Würfel", pic: "🎲" },
+      { en: "book", de: "Buch", pic: "📖" }
+    ]
+  }
 ];
 
 export const PROFILES = [

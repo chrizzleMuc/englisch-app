@@ -5,7 +5,7 @@ Eine Englisch-Lern-App für Kinder: Wörter und kurze Sätze mit Bildern und bri
 ## Was drin ist
 
 - Zwei Profile: **Entdecker** (ohne Lesen, alles über Bild und Ton) und **Pirat** (mit Lesen)
-- Themen: Hallo & Tschüss (Redewendungen) und Tiere, weitere folgen
+- Themen: Hallo & Tschüss (Redewendungen), Tiere, Farben, Zahlen, Essen, Zuhause, Spielen
 - Spiele: Kennenlernen, Hör zu und tipp, Was sagst du?, Wort zum Bild, Was bedeutet das?, Memory
 - Sterne, Sticker-Album, Tagesserie mit einem Joker pro Woche
 - Nachsprechen: jedes neue Wort mehrmals laut sagen (Mikrofon erkennt, dass gesprochen wird, oder Knopf)
