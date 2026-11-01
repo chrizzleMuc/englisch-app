@@ -263,3 +263,4 @@ select.input { flex: none; }
   background: var(--card); box-shadow: 0 4px 0 var(--line); border: 4px solid transparent;
 }
 .av-opt.sel { border-color: var(--ink); transform: scale(1.06); }
+.center-text { text-align: center; }

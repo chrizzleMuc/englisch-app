@@ -717,6 +717,7 @@ function showParents(msg = "") {
         <h3>Zurücksetzen</h3>
         <button class="wide-btn danger" id="reset">Gesamten Fortschritt löschen</button>
       </section>
+      <p class="small center-text">Learnino Version ${APP_VERSION}</p>
     </div>`);
   document.getElementById("back").onclick = showProfiles;
   on(".name", "change", (e) => {
@@ -767,7 +768,18 @@ function showParents(msg = "") {
 }
 
 // ---------- Start ----------
+const APP_VERSION = 5;
+
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
-  navigator.serviceWorker.register("sw.js").catch(() => {});
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloaded = false;
+  // Sobald ein Update installiert ist, einmal neu laden, damit es sofort sichtbar ist
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (hadController && !reloaded) {
+      reloaded = true;
+      location.reload();
+    }
+  });
+  navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).then((reg) => reg.update()).catch(() => {});
 }
 showProfiles();
