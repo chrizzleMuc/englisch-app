@@ -8,7 +8,9 @@ Eine Englisch-Lern-App für Kinder: Wörter und kurze Sätze mit Bildern und bri
 - Themen: Hallo & Tschüss (Redewendungen) und Tiere, weitere folgen
 - Spiele: Kennenlernen, Hör zu und tipp, Was sagst du?, Wort zum Bild, Was bedeutet das?, Memory
 - Sterne, Sticker-Album, Tagesserie mit einem Joker pro Woche
-- Elternbereich: Vornamen, Fortschritt als Datei sichern/laden (z. B. über OneDrive), Stimme testen
+- Nachsprechen: jedes neue Wort mehrmals laut sagen (Mikrofon erkennt, dass gesprochen wird, oder Knopf)
+- Avatar selbst gestalten: Figur, Hut, Ding in der Hand, Farbe
+- Elternbereich: Vornamen, Nachsprechen einstellen, Fortschritt als Datei sichern/laden (z. B. über OneDrive), Stimme testen
 
 ## Inhalte ändern
 

@@ -1,9 +1,11 @@
-import { TOPICS, PROFILES, NUMBER_WORDS, PRAISE, PRAISE_EN } from "./data.js";
+import { TOPICS, PROFILES, NUMBER_WORDS, PRAISE, PRAISE_EN, AVATAR } from "./data.js";
 import { sayParts, sayEn, sayDe, stop, chime, voiceInfo } from "./speech.js";
 import * as store from "./store.js";
+import { micReady, listenOnce } from "./mic.js";
 
 const app = document.getElementById("app");
-let current = { profile: null };
+let current = { profile: null, screen: null };
+let listening = null;
 
 // ---------- Hilfsfunktionen ----------
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -50,6 +52,9 @@ function stars(n, max = 3) {
 
 function render(html) {
   stop();
+  if (listening) listening.cancel();
+  listening = null;
+  current.screen = null;
   app.innerHTML = html;
   app.scrollTop = 0;
   window.scrollTo(0, 0);
@@ -63,6 +68,64 @@ function speakerBtn(cls = "") {
   return `<button class="speaker ${cls}" aria-label="Anhören">🔊</button>`;
 }
 
+// ---------- Avatar ----------
+function avatarOf(pid) {
+  const p = PROFILES.find((x) => x.id === pid);
+  const a = store.profile(pid).avatar;
+  return a || { base: p.pic, hat: "", item: "", color: pid === "pirat" ? "#74c0fc" : "#8ce99a" };
+}
+
+function avatarHtml(a, cls = "") {
+  return `<span class="avatar ${cls}" style="--bg:${a.color}">
+    <span class="av-base">${a.base}</span>
+    ${a.hat ? `<span class="av-hat">${a.hat}</span>` : ""}
+    ${a.item ? `<span class="av-item">${a.item}</span>` : ""}
+  </span>`;
+}
+
+function showAvatarEditor(first = false) {
+  const pid = current.profile;
+  const a = { ...avatarOf(pid) };
+  const groups = [
+    ["base", "Wer bist du?"],
+    ["hat", "Auf den Kopf"],
+    ["item", "In die Hand"],
+    ["color", "Farbe"]
+  ];
+  render(`
+    <div class="screen">
+      <header class="bar">
+        ${first ? "" : `<button class="icon-btn" id="back" aria-label="Zurück">⬅</button>`}
+        <span class="who">${first ? "Wie willst du aussehen?" : "Mein Avatar"}</span>
+      </header>
+      <div class="av-preview">${avatarHtml(a, "xl")}</div>
+      ${groups.map(([g, label]) => `
+        <h3 class="av-label">${label}</h3>
+        <div class="av-row">
+          ${AVATAR[g].map(([v, en], i) => `<button class="av-opt ${a[g] === v ? "sel" : ""}" data-g="${g}" data-i="${i}" ${g === "color" ? `style="background:${v}"` : ""}>${g === "color" ? "" : v || "🚫"}</button>`).join("")}
+        </div>`).join("")}
+      <button class="go-btn" id="done">Fertig ✓</button>
+    </div>`);
+  const refresh = () => (app.querySelector(".av-preview").innerHTML = avatarHtml(a, "xl"));
+  on(".av-opt", "click", (e) => {
+    const { g, i } = e.currentTarget.dataset;
+    const [v, en] = AVATAR[g][+i];
+    a[g] = v;
+    app.querySelectorAll(`.av-opt[data-g="${g}"]`).forEach((b) => b.classList.toggle("sel", b === e.currentTarget));
+    refresh();
+    chime("pop");
+    if (en && v) sayEn(en);
+  });
+  document.getElementById("done").onclick = () => {
+    store.profile(pid).avatar = a;
+    store.save();
+    chime("win");
+    showHome();
+  };
+  if (!first) document.getElementById("back").onclick = showHome;
+  if (first && !prof().reads) sayDe("Wie willst du aussehen? Such dir etwas aus!");
+}
+
 // ---------- Profilauswahl ----------
 function showProfiles() {
   current.profile = null;
@@ -74,7 +137,7 @@ function showProfiles() {
         ${PROFILES.map((p) => {
           const d = store.profile(p.id);
           return `<button class="profile-card" data-id="${p.id}">
-            <span class="big-pic">${p.pic}</span>
+            ${avatarHtml(avatarOf(p.id), "lg")}
             <span class="pname">${esc(p.title)}</span>
             ${d.name ? `<span class="small">${esc(d.name)}</span>` : ""}
             <span class="small">⭐ ${store.totalStars(p.id)}</span>
@@ -86,7 +149,8 @@ function showProfiles() {
   on(".profile-card", "click", (e) => {
     current.profile = e.currentTarget.dataset.id;
     chime("pop");
-    showHome();
+    if (store.profile(current.profile).avatar) showHome();
+    else showAvatarEditor(true);
   });
   document.getElementById("parents").onclick = showParentGate;
 }
@@ -105,7 +169,7 @@ function showHome() {
     <div class="screen">
       <header class="bar">
         <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
-        <span class="who">${p.pic} ${esc(p.title)}</span>
+        <button class="who who-btn" id="me" aria-label="Avatar ändern">${avatarHtml(avatarOf(p.id), "sm")} ${esc(p.title)} <span class="pencil">✏️</span></button>
         <span class="stat">🔥 ${streak}</span>
         <span class="stat">⭐ ${store.totalStars(p.id)}</span>
       </header>
@@ -124,6 +188,7 @@ function showHome() {
     </div>`);
   document.getElementById("back").onclick = showProfiles;
   document.getElementById("album").onclick = showAlbum;
+  document.getElementById("me").onclick = () => showAvatarEditor(false);
   on(".topic[data-id]", "click", (e) => {
     chime("pop");
     showTopic(e.currentTarget.dataset.id);
@@ -244,10 +309,13 @@ function answered(lesson, step, correct) {
   }
 }
 
-// 1) Kennenlernen
+// 1) Kennenlernen (mit Nachsprechen)
+const TIMES = ["", "einmal", "zweimal", "dreimal", "viermal", "fünfmal"];
+
 function stepLearn(lesson, step) {
   const p = prof();
   const it = step.item;
+  const need = store.settings().repeat || 0;
   render(lessonFrame(lesson, `
     <p class="task">Neu! Hör gut zu.</p>
     <div class="learn-card">
@@ -259,13 +327,107 @@ function stepLearn(lesson, step) {
       ${speakerBtn("big")}
       <button class="speaker big" id="slow" aria-label="Langsam anhören">🐢</button>
     </div>
-    <button class="go-btn" id="next">Weiter ➜</button>`));
+    ${need ? `<div class="repeat">
+      <p class="repeat-task">Jetzt du! Sag es ${TIMES[need] || need + "-mal"} laut nach.</p>
+      <div class="dots">${Array.from({ length: need }, () => `<span class="dot"></span>`).join("")}</div>
+      <button class="mic" id="mic" aria-label="Zuhören">🎤<span class="ring"></span></button>
+      <button class="wide-btn said" id="said" hidden>🗣️ Ich hab's gesagt</button>
+    </div>` : ""}
+    <button class="go-btn" id="next" ${need ? "disabled" : ""}>Weiter ➜</button>`));
   bindQuit(lesson);
-  const play = () => sayParts([["en", it.en], ["de", it.de], ["en", it.en]]);
-  on(".speaker:not(#slow)", "click", () => sayEn(it.en));
-  document.getElementById("slow").onclick = () => sayEn(it.en, { slow: true });
-  document.getElementById("next").onclick = () => advance(lesson);
-  setTimeout(play, 250);
+  const nextBtn = document.getElementById("next");
+  nextBtn.onclick = () => advance(lesson);
+  document.getElementById("slow").onclick = () => replay({ slow: true });
+  on(".speaker:not(#slow)", "click", () => replay());
+
+  if (!need) {
+    setTimeout(() => sayParts([["en", it.en], ["de", it.de], ["en", it.en]]), 250);
+    return;
+  }
+
+  let count = 0;
+  let useMic = false;
+  let fallbackTimer = null;
+  const micBtn = document.getElementById("mic");
+  const saidBtn = document.getElementById("said");
+  const dots = app.querySelectorAll(".dot");
+  const token = (current.screen = {});
+  const alive = () => current.screen === token;
+
+  const stopListening = () => {
+    if (listening) listening.cancel();
+    listening = null;
+    clearTimeout(fallbackTimer);
+    micBtn.classList.remove("on", "hear");
+    micBtn.style.setProperty("--lvl", 0);
+  };
+
+  const listen = () => {
+    if (!alive() || count >= need) return;
+    if (!useMic) {
+      saidBtn.hidden = false;
+      return;
+    }
+    micBtn.classList.add("on");
+    // Wenn nach 8 Sekunden nichts gehört wurde, auch den Knopf anbieten
+    fallbackTimer = setTimeout(() => alive() && (saidBtn.hidden = false), 8000);
+    listening = listenOnce({
+      onLevel: (l) => micBtn.style.setProperty("--lvl", l.toFixed(2)),
+      onStart: () => micBtn.classList.add("hear"),
+      onDone: () => {
+        stopListening();
+        counted();
+      }
+    });
+  };
+
+  const counted = async () => {
+    if (!alive() || count >= need) return;
+    dots[count].classList.add("on");
+    count++;
+    store.recordSpoken(current.profile, it.key);
+    if (count >= need) {
+      chime("good");
+      saidBtn.hidden = true;
+      micBtn.hidden = true;
+      app.querySelector(".repeat-task").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
+      nextBtn.disabled = false;
+      nextBtn.classList.add("pulse");
+      await sayEn(pick(PRAISE_EN));
+      return;
+    }
+    chime("pop");
+    await wait(250);
+    if (!alive()) return;
+    await sayEn(it.en);
+    await wait(200);
+    listen();
+  };
+
+  async function replay(opts) {
+    stopListening();
+    await sayEn(it.en, opts);
+    await wait(200);
+    listen();
+  }
+
+  saidBtn.onclick = () => {
+    stopListening();
+    counted();
+  };
+  micBtn.onclick = () => replay();
+
+  (async () => {
+    useMic = store.settings().mic && (await micReady());
+    if (!alive()) return;
+    await wait(150);
+    await sayParts([["en", it.en], ["de", it.de], ["en", it.en]]);
+    if (!alive()) return;
+    if (lesson.pos === 0 && !p.reads) await sayDe(`Jetzt du! Sag es ${TIMES[need] || need + " mal"} nach.`);
+    if (!alive()) return;
+    await wait(150);
+    listen();
+  })();
 }
 
 // Gemeinsame Logik für Auswahlaufgaben
@@ -536,6 +698,17 @@ function showParents(msg = "") {
         ${saved ? `<p class="small">Zuletzt gespeichert: ${new Date(saved).toLocaleString("de-DE")}</p>` : ""}
       </section>
       <section>
+        <h3>Nachsprechen</h3>
+        <p class="small">Beim Kennenlernen müssen die Kinder jedes neue Wort so oft laut nachsprechen, bevor es weitergeht.</p>
+        <label class="field">Wie oft?
+          <select class="input" id="repeat">
+            ${[[0, "Aus"], [1, "1-mal"], [2, "2-mal"], [3, "3-mal"], [5, "5-mal"]].map(([v, t]) => `<option value="${v}" ${store.settings().repeat === v ? "selected" : ""}>${t}</option>`).join("")}
+          </select>
+        </label>
+        <label class="field check"><input type="checkbox" id="usemic" ${store.settings().mic ? "checked" : ""}> Mikrofon nutzen</label>
+        <p class="small">Mit Mikrofon zählt die App automatisch, sobald ein Kind etwas sagt. Sie prüft dabei nur, <b>dass</b> gesprochen wird, nicht ob die Aussprache stimmt. Es wird nichts aufgenommen oder gespeichert. Ohne Mikrofon tippt das Kind nach jedem Mal auf „Ich hab's gesagt“.</p>
+      </section>
+      <section>
         <h3>Stimme</h3>
         <p class="small">${v.supported ? (v.british ? `Britische Stimme gefunden: ${esc(v.name)}` : "Keine britische Stimme gefunden. Bitte in den Android-Einstellungen unter „Sprachausgabe“ (Google) die Sprache „Englisch (Vereinigtes Königreich)“ herunterladen, dann funktioniert sie auch offline.") : "Dieses Gerät unterstützt keine Sprachausgabe."}</p>
         <button class="wide-btn" id="test">🔊 Stimme testen</button>
@@ -550,6 +723,14 @@ function showParents(msg = "") {
     store.profile(e.target.dataset.id).name = e.target.value.trim().slice(0, 20);
     store.save();
   });
+  document.getElementById("repeat").onchange = (e) => {
+    store.settings().repeat = +e.target.value;
+    store.save();
+  };
+  document.getElementById("usemic").onchange = (e) => {
+    store.settings().mic = e.target.checked;
+    store.save();
+  };
   document.getElementById("test").onclick = () => sayParts([["en", "Hello! My name is Learnino. Let's learn English!"]]);
   document.getElementById("export").onclick = async () => {
     const file = store.exportFile();
