@@ -1,5 +1,5 @@
 // Offline-Speicher: Bei jeder Änderung an der App VERSION erhöhen.
-const VERSION = "learnino-4";
+const VERSION = "learnino-5";
 const FILES = [
   "./",
   "index.html",
@@ -16,7 +16,7 @@ const FILES = [
 ];
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(VERSION).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(VERSION).then((c) => c.addAll(FILES.map((f) => new Request(f, { cache: "reload" })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener("activate", (e) => {
@@ -30,7 +30,9 @@ self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET") return;
   e.respondWith(
     caches.match(e.request, { ignoreSearch: true }).then((hit) => {
-      const net = fetch(e.request)
+      // Am Browser-Zwischenspeicher vorbei, damit Updates sofort ankommen
+      const same = new URL(e.request.url).origin === location.origin;
+      const net = fetch(same ? new Request(e.request.url, { cache: "no-cache" }) : e.request)
         .then((res) => {
           if (res.ok && new URL(e.request.url).origin === location.origin) {
             const copy = res.clone();
