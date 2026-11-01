@@ -257,10 +257,19 @@ select.input { flex: none; }
 .pencil { font-size: 16px; opacity: .6; }
 .av-preview { display: flex; justify-content: center; padding: 30px 0 6px; }
 .av-label { margin: 4px 0 0; font-size: 20px; }
-.av-row { display: flex; gap: 10px; overflow-x: auto; padding: 4px 2px 10px; scrollbar-width: none; }
+.av-row { display: flex; flex-wrap: wrap; gap: 10px; padding: 4px 2px 10px; }
 .av-opt {
   flex: none; width: 70px; height: 70px; border-radius: 20px; font-size: 40px;
   background: var(--card); box-shadow: 0 4px 0 var(--line); border: 4px solid transparent;
 }
 .av-opt.sel { border-color: var(--ink); transform: scale(1.06); }
 .center-text { text-align: center; }
+
+/* Fächer und Freischalten */
+.subject-title { font-size: 28px; margin: 0; }
+.subject .big-pic { font-size: 90px; }
+.unlock { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.unlock h4 { margin: 8px 0 4px; font-size: 20px; }
+.unlock .field { margin: 4px 0; }
+.unlock .subj { font-weight: 800; }
+.unlock-topics { padding-left: 28px; }

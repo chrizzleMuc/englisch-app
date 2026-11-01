@@ -54,6 +54,18 @@ export function recordSpoken(pid, key) {
   p.words[key] = w;
 }
 
+// Freischalten: Standard ist alles an. "off" merkt sich, was ausgeschaltet wurde.
+export function isEnabled(pid, id) {
+  return !(profile(pid).off || {})[id];
+}
+
+export function setEnabled(pid, id, on) {
+  const p = profile(pid);
+  p.off = p.off || {};
+  if (on) delete p.off[id];
+  else p.off[id] = true;
+}
+
 export function lessonStars(pid, topicId, idx) {
   const t = profile(pid).stars[topicId] || {};
   return t[idx] || 0;
