@@ -7,12 +7,29 @@
       "color": "#0f9d76",
       "stages": [
         {
+          "id": "deutsch-k1",
+          "title": "1. Klasse · Lesen lernen",
+          "kinder": [
+            "entdecker"
+          ],
+          "units": [
+            "deutsch/k1-anlaute.json",
+            "deutsch/k1-silben.json",
+            "deutsch/k1-lesen.json"
+          ]
+        },
+        {
           "id": "deutsch-k3",
-          "title": "Klasse 3: Rechtschreibung",
+          "title": "3. Klasse · Rechtschreibung",
           "kinder": [
             "pirat"
           ],
           "units": [
+            "deutsch/k3-nomen.json",
+            "deutsch/k3-verlaengern.json",
+            "deutsch/k3-doppelte-mitlaute.json",
+            "deutsch/k3-lange-selbstlaute.json",
+            "deutsch/k3-ableiten.json",
             "deutsch/k3-vorsilben.json",
             "deutsch/k3-unregelmaessige-verben.json",
             "deutsch/k3-worttrennung.json"

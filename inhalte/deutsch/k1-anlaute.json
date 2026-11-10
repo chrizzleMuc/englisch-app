@@ -1,0 +1,842 @@
+{
+ "id": "d1-anlaute",
+ "type": "schule",
+ "title_de": "Anfangsbuchstaben",
+ "image": "🔤",
+ "color": "#c2417a",
+ "lessons": [
+  {
+   "title": "M, I und U",
+   "icon": "🔤",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-an-messer",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Messer",
+     "pic": "🔪",
+     "say": "Messer. Womit fängt Messer an?",
+     "options": [
+      "M m",
+      "I i",
+      "A a"
+     ],
+     "answer": "M m",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-melone",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Melone",
+     "pic": "🍉",
+     "say": "Melone. Womit fängt Melone an?",
+     "options": [
+      "M m",
+      "A a",
+      "I i"
+     ],
+     "answer": "M m",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-mais",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Mais",
+     "pic": "🌽",
+     "say": "Mais. Womit fängt Mais an?",
+     "options": [
+      "M m",
+      "U u",
+      "A a"
+     ],
+     "answer": "M m",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-uhr",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Uhr",
+     "pic": "⌚",
+     "say": "Uhr. Womit fängt Uhr an?",
+     "options": [
+      "U u",
+      "M m",
+      "A a"
+     ],
+     "answer": "U u",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-mond",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Mond",
+     "pic": "🌙",
+     "say": "Mond. Womit fängt Mond an?",
+     "options": [
+      "M m",
+      "U u",
+      "I i"
+     ],
+     "answer": "M m",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-ufo",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Ufo",
+     "pic": "🛸",
+     "say": "Ufo. Womit fängt Ufo an?",
+     "options": [
+      "U u",
+      "M m",
+      "A a"
+     ],
+     "answer": "U u",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-igel",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Igel",
+     "pic": "🦔",
+     "say": "Igel. Womit fängt Igel an?",
+     "options": [
+      "I i",
+      "M m",
+      "A a"
+     ],
+     "answer": "I i",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-moehre",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Möhre",
+     "pic": "🥕",
+     "say": "Möhre. Womit fängt Möhre an?",
+     "options": [
+      "M m",
+      "I i",
+      "A a"
+     ],
+     "answer": "M m",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-insel",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Insel",
+     "pic": "🏝️",
+     "say": "Insel. Womit fängt Insel an?",
+     "options": [
+      "I i",
+      "M m",
+      "U u"
+     ],
+     "answer": "I i",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-uhu",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Uhu",
+     "pic": "🦉",
+     "say": "Uhu. Womit fängt Uhu an?",
+     "options": [
+      "U u",
+      "A a",
+      "I i"
+     ],
+     "answer": "U u",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-milch",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Milch",
+     "pic": "🥛",
+     "say": "Milch. Womit fängt Milch an?",
+     "options": [
+      "M m",
+      "U u",
+      "I i"
+     ],
+     "answer": "M m",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-maus",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Maus",
+     "pic": "🐭",
+     "say": "Maus. Womit fängt Maus an?",
+     "options": [
+      "M m",
+      "U u",
+      "I i"
+     ],
+     "answer": "M m",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "O, A und E",
+   "icon": "🔤",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-an-affe",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Affe",
+     "pic": "🐒",
+     "say": "Affe. Womit fängt Affe an?",
+     "options": [
+      "A a",
+      "E e",
+      "U u"
+     ],
+     "answer": "A a",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-oma",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Oma",
+     "pic": "👵",
+     "say": "Oma. Womit fängt Oma an?",
+     "options": [
+      "O o",
+      "E e",
+      "A a"
+     ],
+     "answer": "O o",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-esel",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Esel",
+     "pic": "🫏",
+     "say": "Esel. Womit fängt Esel an?",
+     "options": [
+      "E e",
+      "U u",
+      "A a"
+     ],
+     "answer": "E e",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-oktopus",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Oktopus",
+     "pic": "🐙",
+     "say": "Oktopus. Womit fängt Oktopus an?",
+     "options": [
+      "O o",
+      "A a",
+      "M m"
+     ],
+     "answer": "O o",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-ei",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Ei",
+     "pic": "🥚",
+     "say": "Ei. Womit fängt Ei an?",
+     "options": [
+      "E e",
+      "M m",
+      "U u"
+     ],
+     "answer": "E e",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-ohr",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Ohr",
+     "pic": "👂",
+     "say": "Ohr. Womit fängt Ohr an?",
+     "options": [
+      "O o",
+      "A a",
+      "M m"
+     ],
+     "answer": "O o",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-anker",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Anker",
+     "pic": "⚓",
+     "say": "Anker. Womit fängt Anker an?",
+     "options": [
+      "A a",
+      "U u",
+      "E e"
+     ],
+     "answer": "A a",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-ameise",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Ameise",
+     "pic": "🐜",
+     "say": "Ameise. Womit fängt Ameise an?",
+     "options": [
+      "A a",
+      "U u",
+      "E e"
+     ],
+     "answer": "A a",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-elefant",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Elefant",
+     "pic": "🐘",
+     "say": "Elefant. Womit fängt Elefant an?",
+     "options": [
+      "E e",
+      "A a",
+      "M m"
+     ],
+     "answer": "E e",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-opa",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Opa",
+     "pic": "👴",
+     "say": "Opa. Womit fängt Opa an?",
+     "options": [
+      "O o",
+      "E e",
+      "U u"
+     ],
+     "answer": "O o",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-apfel",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Apfel",
+     "pic": "🍎",
+     "say": "Apfel. Womit fängt Apfel an?",
+     "options": [
+      "A a",
+      "M m",
+      "O o"
+     ],
+     "answer": "A a",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-orange",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Orange",
+     "pic": "🍊",
+     "say": "Orange. Womit fängt Orange an?",
+     "options": [
+      "O o",
+      "A a",
+      "M m"
+     ],
+     "answer": "O o",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-ananas",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Ananas",
+     "pic": "🍍",
+     "say": "Ananas. Womit fängt Ananas an?",
+     "options": [
+      "A a",
+      "U u",
+      "M m"
+     ],
+     "answer": "A a",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-ente",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Ente",
+     "pic": "🦆",
+     "say": "Ente. Womit fängt Ente an?",
+     "options": [
+      "E e",
+      "A a",
+      "O o"
+     ],
+     "answer": "E e",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "L und T",
+   "icon": "🔤",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-an-tomate",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Tomate",
+     "pic": "🍅",
+     "say": "Tomate. Womit fängt Tomate an?",
+     "options": [
+      "T t",
+      "A a",
+      "O o"
+     ],
+     "answer": "T t",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-tulpe",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Tulpe",
+     "pic": "🌷",
+     "say": "Tulpe. Womit fängt Tulpe an?",
+     "options": [
+      "T t",
+      "M m",
+      "A a"
+     ],
+     "answer": "T t",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-teddy",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Teddy",
+     "pic": "🧸",
+     "say": "Teddy. Womit fängt Teddy an?",
+     "options": [
+      "T t",
+      "O o",
+      "M m"
+     ],
+     "answer": "T t",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-tuer",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Tür",
+     "pic": "🚪",
+     "say": "Tür. Womit fängt Tür an?",
+     "options": [
+      "T t",
+      "A a",
+      "L l"
+     ],
+     "answer": "T t",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-lineal",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Lineal",
+     "pic": "📏",
+     "say": "Lineal. Womit fängt Lineal an?",
+     "options": [
+      "L l",
+      "T t",
+      "M m"
+     ],
+     "answer": "L l",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-leopard",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Leopard",
+     "pic": "🐆",
+     "say": "Leopard. Womit fängt Leopard an?",
+     "options": [
+      "L l",
+      "O o",
+      "A a"
+     ],
+     "answer": "L l",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-telefon",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Telefon",
+     "pic": "☎️",
+     "say": "Telefon. Womit fängt Telefon an?",
+     "options": [
+      "T t",
+      "O o",
+      "M m"
+     ],
+     "answer": "T t",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-taxi",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Taxi",
+     "pic": "🚕",
+     "say": "Taxi. Womit fängt Taxi an?",
+     "options": [
+      "T t",
+      "O o",
+      "A a"
+     ],
+     "answer": "T t",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-leiter",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Leiter",
+     "pic": "🪜",
+     "say": "Leiter. Womit fängt Leiter an?",
+     "options": [
+      "L l",
+      "A a",
+      "O o"
+     ],
+     "answer": "L l",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-lupe",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Lupe",
+     "pic": "🔍",
+     "say": "Lupe. Womit fängt Lupe an?",
+     "options": [
+      "L l",
+      "O o",
+      "T t"
+     ],
+     "answer": "L l",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-loeffel",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Löffel",
+     "pic": "🥄",
+     "say": "Löffel. Womit fängt Löffel an?",
+     "options": [
+      "L l",
+      "O o",
+      "A a"
+     ],
+     "answer": "L l",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-lama",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Lama",
+     "pic": "🦙",
+     "say": "Lama. Womit fängt Lama an?",
+     "options": [
+      "L l",
+      "T t",
+      "A a"
+     ],
+     "answer": "L l",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-tiger",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Tiger",
+     "pic": "🐯",
+     "say": "Tiger. Womit fängt Tiger an?",
+     "options": [
+      "T t",
+      "L l",
+      "O o"
+     ],
+     "answer": "T t",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-loewe",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Löwe",
+     "pic": "🦁",
+     "say": "Löwe. Womit fängt Löwe an?",
+     "options": [
+      "L l",
+      "A a",
+      "M m"
+     ],
+     "answer": "L l",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "R und S",
+   "icon": "🔤",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-an-roboter",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Roboter",
+     "pic": "🤖",
+     "say": "Roboter. Womit fängt Roboter an?",
+     "options": [
+      "R r",
+      "T t",
+      "M m"
+     ],
+     "answer": "R r",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-saxofon",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Saxofon",
+     "pic": "🎷",
+     "say": "Saxofon. Womit fängt Saxofon an?",
+     "options": [
+      "S s",
+      "M m",
+      "T t"
+     ],
+     "answer": "S s",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-sofa",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Sofa",
+     "pic": "🛋️",
+     "say": "Sofa. Womit fängt Sofa an?",
+     "options": [
+      "S s",
+      "L l",
+      "R r"
+     ],
+     "answer": "S s",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-rakete",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Rakete",
+     "pic": "🚀",
+     "say": "Rakete. Womit fängt Rakete an?",
+     "options": [
+      "R r",
+      "T t",
+      "S s"
+     ],
+     "answer": "R r",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-salat",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Salat",
+     "pic": "🥗",
+     "say": "Salat. Womit fängt Salat an?",
+     "options": [
+      "S s",
+      "L l",
+      "R r"
+     ],
+     "answer": "S s",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-socken",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Socken",
+     "pic": "🧦",
+     "say": "Socken. Womit fängt Socken an?",
+     "options": [
+      "S s",
+      "L l",
+      "T t"
+     ],
+     "answer": "S s",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-seife",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Seife",
+     "pic": "🧼",
+     "say": "Seife. Womit fängt Seife an?",
+     "options": [
+      "S s",
+      "L l",
+      "M m"
+     ],
+     "answer": "S s",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-regen",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Regen",
+     "pic": "🌧️",
+     "say": "Regen. Womit fängt Regen an?",
+     "options": [
+      "R r",
+      "M m",
+      "S s"
+     ],
+     "answer": "R r",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-sonne",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Sonne",
+     "pic": "🌞",
+     "say": "Sonne. Womit fängt Sonne an?",
+     "options": [
+      "S s",
+      "L l",
+      "R r"
+     ],
+     "answer": "S s",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-ring",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Ring",
+     "pic": "💍",
+     "say": "Ring. Womit fängt Ring an?",
+     "options": [
+      "R r",
+      "M m",
+      "T t"
+     ],
+     "answer": "R r",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-rose",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Rose",
+     "pic": "🌹",
+     "say": "Rose. Womit fängt Rose an?",
+     "options": [
+      "R r",
+      "M m",
+      "T t"
+     ],
+     "answer": "R r",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-radio",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Radio",
+     "pic": "📻",
+     "say": "Radio. Womit fängt Radio an?",
+     "options": [
+      "R r",
+      "M m",
+      "L l"
+     ],
+     "answer": "R r",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Alles gemischt",
+   "icon": "🔀",
+   "pick": "k1-an-",
+   "count": 10
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "k1-an-foto",
+     "task": "Schreib je eine Reihe M m, L l und T t in dein Heft. Schön langsam!",
+     "say": "Schreib je eine Reihe M, L und T in dein Heft. Groß und klein. Schön langsam!",
+     "show": [
+      "M m",
+      "L l",
+      "T t"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

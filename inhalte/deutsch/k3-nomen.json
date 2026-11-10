@@ -1,0 +1,916 @@
+{
+ "id": "d3-nomen",
+ "type": "schule",
+ "title_de": "Nomen",
+ "image": "📦",
+ "color": "#b5476b",
+ "lessons": [
+  {
+   "title": "Konkret oder abstrakt",
+   "icon": "✋",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Kann man es anfassen?",
+     "review": "Konkret oder abstrakt?",
+     "groups": [
+      "konkret (anfassen)",
+      "abstrakt (nicht anfassen)"
+     ],
+     "items": [
+      {
+       "id": "d3-no-ka-der-tisch",
+       "text": "der Tisch",
+       "group": "konkret (anfassen)"
+      },
+      {
+       "id": "d3-no-ka-die-blume",
+       "text": "die Blume",
+       "group": "konkret (anfassen)"
+      },
+      {
+       "id": "d3-no-ka-der-hund",
+       "text": "der Hund",
+       "group": "konkret (anfassen)"
+      },
+      {
+       "id": "d3-no-ka-das-fahrrad",
+       "text": "das Fahrrad",
+       "group": "konkret (anfassen)"
+      },
+      {
+       "id": "d3-no-ka-die-tasse",
+       "text": "die Tasse",
+       "group": "konkret (anfassen)"
+      },
+      {
+       "id": "d3-no-ka-der-schluessel",
+       "text": "der Schlüssel",
+       "group": "konkret (anfassen)"
+      },
+      {
+       "id": "d3-no-ka-die-muetze",
+       "text": "die Mütze",
+       "group": "konkret (anfassen)"
+      },
+      {
+       "id": "d3-no-ka-der-apfel",
+       "text": "der Apfel",
+       "group": "konkret (anfassen)"
+      },
+      {
+       "id": "d3-no-ka-die-freude",
+       "text": "die Freude",
+       "group": "abstrakt (nicht anfassen)"
+      },
+      {
+       "id": "d3-no-ka-der-mut",
+       "text": "der Mut",
+       "group": "abstrakt (nicht anfassen)"
+      },
+      {
+       "id": "d3-no-ka-die-angst",
+       "text": "die Angst",
+       "group": "abstrakt (nicht anfassen)"
+      },
+      {
+       "id": "d3-no-ka-das-glueck",
+       "text": "das Glück",
+       "group": "abstrakt (nicht anfassen)"
+      },
+      {
+       "id": "d3-no-ka-die-wut",
+       "text": "die Wut",
+       "group": "abstrakt (nicht anfassen)"
+      },
+      {
+       "id": "d3-no-ka-der-hunger",
+       "text": "der Hunger",
+       "group": "abstrakt (nicht anfassen)"
+      },
+      {
+       "id": "d3-no-ka-die-idee",
+       "text": "die Idee",
+       "group": "abstrakt (nicht anfassen)"
+      },
+      {
+       "id": "d3-no-ka-die-hoffnung",
+       "text": "die Hoffnung",
+       "group": "abstrakt (nicht anfassen)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Groß oder klein",
+   "icon": "🔠",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-beere",
+     "task": "Groß oder klein?",
+     "prompt": "beere",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "groß",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Ein Nomen: die Beere. Nomen schreibt man groß.",
+     "say": "beere"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-hoffentlich",
+     "task": "Groß oder klein?",
+     "prompt": "hoffentlich",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "klein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein Nomen: Man kann nicht der, die oder das hoffentlich sagen. Also klein.",
+     "say": "hoffentlich"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-welt",
+     "task": "Groß oder klein?",
+     "prompt": "welt",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "groß",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Ein Nomen: die Welt. Nomen schreibt man groß.",
+     "say": "welt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-oft",
+     "task": "Groß oder klein?",
+     "prompt": "oft",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "klein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein Nomen: Man kann nicht der, die oder das oft sagen. Also klein.",
+     "say": "oft"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-traum",
+     "task": "Groß oder klein?",
+     "prompt": "traum",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "groß",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Ein Nomen: der Traum. Nomen schreibt man groß.",
+     "say": "traum"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-zum",
+     "task": "Groß oder klein?",
+     "prompt": "zum",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "klein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein Nomen: Man kann nicht der, die oder das zum sagen. Also klein.",
+     "say": "zum"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-flugzeug",
+     "task": "Groß oder klein?",
+     "prompt": "flugzeug",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "groß",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Ein Nomen: das Flugzeug. Nomen schreibt man groß.",
+     "say": "flugzeug"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-treu",
+     "task": "Groß oder klein?",
+     "prompt": "treu",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "klein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein Nomen: Man kann nicht der, die oder das treu sagen. Also klein.",
+     "say": "treu"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-kunst",
+     "task": "Groß oder klein?",
+     "prompt": "kunst",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "groß",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Ein Nomen: die Kunst. Nomen schreibt man groß.",
+     "say": "kunst"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-bei",
+     "task": "Groß oder klein?",
+     "prompt": "bei",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "klein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein Nomen: Man kann nicht der, die oder das bei sagen. Also klein.",
+     "say": "bei"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-igel",
+     "task": "Groß oder klein?",
+     "prompt": "igel",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "groß",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Ein Nomen: der Igel. Nomen schreibt man groß.",
+     "say": "igel"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-schnell",
+     "task": "Groß oder klein?",
+     "prompt": "schnell",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "klein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein Nomen: Man kann nicht der, die oder das schnell sagen. Also klein.",
+     "say": "schnell"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-unterricht",
+     "task": "Groß oder klein?",
+     "prompt": "unterricht",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "groß",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Ein Nomen: der Unterricht. Nomen schreibt man groß.",
+     "say": "unterricht"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-spaet",
+     "task": "Groß oder klein?",
+     "prompt": "spät",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "klein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein Nomen: Man kann nicht der, die oder das spät sagen. Also klein.",
+     "say": "spät"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-mond",
+     "task": "Groß oder klein?",
+     "prompt": "mond",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "groß",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Ein Nomen: der Mond. Nomen schreibt man groß.",
+     "say": "mond"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-no-gk-leise",
+     "task": "Groß oder klein?",
+     "prompt": "leise",
+     "options": [
+      "groß",
+      "klein"
+     ],
+     "answer": "klein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein Nomen: Man kann nicht der, die oder das leise sagen. Also klein.",
+     "say": "leise"
+    }
+   ]
+  },
+  {
+   "title": "Mehrzahl 1",
+   "icon": "👥",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-no-mz-der-hund",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "der Hund",
+     "say": "der Hund. Und viele?",
+     "before": "viele",
+     "answer": "Hunde"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-die-katze",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "die Katze",
+     "say": "die Katze. Und viele?",
+     "before": "viele",
+     "answer": "Katzen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-das-bett",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "das Bett",
+     "say": "das Bett. Und viele?",
+     "before": "viele",
+     "answer": "Betten"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-die-uhr",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "die Uhr",
+     "say": "die Uhr. Und viele?",
+     "before": "viele",
+     "answer": "Uhren"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-das-kind",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "das Kind",
+     "say": "das Kind. Und viele?",
+     "before": "viele",
+     "answer": "Kinder"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-das-buch",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "das Buch",
+     "say": "das Buch. Und viele?",
+     "before": "viele",
+     "answer": "Bücher"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-das-haus",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "das Haus",
+     "say": "das Haus. Und viele?",
+     "before": "viele",
+     "answer": "Häuser"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-der-baum",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "der Baum",
+     "say": "der Baum. Und viele?",
+     "before": "viele",
+     "answer": "Bäume"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-die-maus",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "die Maus",
+     "say": "die Maus. Und viele?",
+     "before": "viele",
+     "answer": "Mäuse"
+    }
+   ]
+  },
+  {
+   "title": "Mehrzahl 2",
+   "icon": "👥",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-no-mz-das-auto",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "das Auto",
+     "say": "das Auto. Und viele?",
+     "before": "viele",
+     "answer": "Autos"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-das-sofa",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "das Sofa",
+     "say": "das Sofa. Und viele?",
+     "before": "viele",
+     "answer": "Sofas"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-der-lehrer",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "der Lehrer",
+     "say": "der Lehrer. Und viele?",
+     "before": "viele",
+     "answer": "Lehrer"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-das-fenster",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "das Fenster",
+     "say": "das Fenster. Und viele?",
+     "before": "viele",
+     "answer": "Fenster"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-der-apfel",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "der Apfel",
+     "say": "der Apfel. Und viele?",
+     "before": "viele",
+     "answer": "Äpfel"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-die-nuss",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "die Nuss",
+     "say": "die Nuss. Und viele?",
+     "before": "viele",
+     "answer": "Nüsse"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-das-glas",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "das Glas",
+     "say": "das Glas. Und viele?",
+     "before": "viele",
+     "answer": "Gläser"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-der-zug",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "der Zug",
+     "say": "der Zug. Und viele?",
+     "before": "viele",
+     "answer": "Züge"
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-mz-die-hand",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "die Hand",
+     "say": "die Hand. Und viele?",
+     "before": "viele",
+     "answer": "Hände"
+    }
+   ]
+  },
+  {
+   "title": "Zusammensetzen",
+   "icon": "🧩",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-no-ko-die-haustuer",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "Haus + Tür",
+     "say": "Haus und Tür",
+     "answer": "die Haustür",
+     "also": [
+      "Haustür"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-der-schneemann",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "Schnee + Mann",
+     "say": "Schnee und Mann",
+     "answer": "der Schneemann",
+     "also": [
+      "Schneemann"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-der-apfelbaum",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "Apfel + Baum",
+     "say": "Apfel und Baum",
+     "answer": "der Apfelbaum",
+     "also": [
+      "Apfelbaum"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-der-fussball",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "Fuß + Ball",
+     "say": "Fuß und Ball",
+     "answer": "der Fußball",
+     "also": [
+      "Fußball"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-die-sommerferien",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "Sommer + Ferien",
+     "say": "Sommer und Ferien",
+     "answer": "die Sommerferien",
+     "also": [
+      "Sommerferien"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-die-wasserflasche",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "Wasser + Flasche",
+     "say": "Wasser und Flasche",
+     "answer": "die Wasserflasche",
+     "also": [
+      "Wasserflasche"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-der-geburtstag",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "Geburt + s + Tag",
+     "say": "Geburt und s und Tag",
+     "answer": "der Geburtstag",
+     "also": [
+      "Geburtstag"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-die-kleinstadt",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "klein + Stadt",
+     "say": "klein und Stadt",
+     "answer": "die Kleinstadt",
+     "also": [
+      "Kleinstadt"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-das-rotkraut",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "rot + Kraut",
+     "say": "rot und Kraut",
+     "answer": "das Rotkraut",
+     "also": [
+      "Rotkraut"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-der-schreibtisch",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "schreiben + Tisch",
+     "say": "schreiben und Tisch",
+     "answer": "der Schreibtisch",
+     "also": [
+      "Schreibtisch"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-das-schwimmbad",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "schwimmen + Bad",
+     "say": "schwimmen und Bad",
+     "answer": "das Schwimmbad",
+     "also": [
+      "Schwimmbad"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-das-lesebuch",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "lesen + Buch",
+     "say": "lesen und Buch",
+     "answer": "das Lesebuch",
+     "also": [
+      "Lesebuch"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-der-spielplatz",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "spielen + Platz",
+     "say": "spielen und Platz",
+     "answer": "der Spielplatz",
+     "also": [
+      "Spielplatz"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-ko-der-kuehlschrank",
+     "task": "Bilde ein Nomen. Mit Artikel!",
+     "prompt": "kühl + Schrank",
+     "say": "kühl und Schrank",
+     "answer": "der Kühlschrank",
+     "also": [
+      "Kühlschrank"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "-heit und -keit",
+   "icon": "🔚",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-no-en-krank",
+     "task": "Mach ein Nomen mit -heit oder -keit. Mit Artikel!",
+     "prompt": "krank",
+     "say": "krank",
+     "answer": "die Krankheit",
+     "also": [
+      "Krankheit"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-frei",
+     "task": "Mach ein Nomen mit -heit oder -keit. Mit Artikel!",
+     "prompt": "frei",
+     "say": "frei",
+     "answer": "die Freiheit",
+     "also": [
+      "Freiheit"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-gesund",
+     "task": "Mach ein Nomen mit -heit oder -keit. Mit Artikel!",
+     "prompt": "gesund",
+     "say": "gesund",
+     "answer": "die Gesundheit",
+     "also": [
+      "Gesundheit"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-dumm",
+     "task": "Mach ein Nomen mit -heit oder -keit. Mit Artikel!",
+     "prompt": "dumm",
+     "say": "dumm",
+     "answer": "die Dummheit",
+     "also": [
+      "Dummheit"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-sicher",
+     "task": "Mach ein Nomen mit -heit oder -keit. Mit Artikel!",
+     "prompt": "sicher",
+     "say": "sicher",
+     "answer": "die Sicherheit",
+     "also": [
+      "Sicherheit"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-freundlich",
+     "task": "Mach ein Nomen mit -heit oder -keit. Mit Artikel!",
+     "prompt": "freundlich",
+     "say": "freundlich",
+     "answer": "die Freundlichkeit",
+     "also": [
+      "Freundlichkeit"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-froehlich",
+     "task": "Mach ein Nomen mit -heit oder -keit. Mit Artikel!",
+     "prompt": "fröhlich",
+     "say": "fröhlich",
+     "answer": "die Fröhlichkeit",
+     "also": [
+      "Fröhlichkeit"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-puenktlich",
+     "task": "Mach ein Nomen mit -heit oder -keit. Mit Artikel!",
+     "prompt": "pünktlich",
+     "say": "pünktlich",
+     "answer": "die Pünktlichkeit",
+     "also": [
+      "Pünktlichkeit"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-traurig",
+     "task": "Mach ein Nomen mit -heit oder -keit. Mit Artikel!",
+     "prompt": "traurig",
+     "say": "traurig",
+     "answer": "die Traurigkeit",
+     "also": [
+      "Traurigkeit"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-fluessig",
+     "task": "Mach ein Nomen mit -heit oder -keit. Mit Artikel!",
+     "prompt": "flüssig",
+     "say": "flüssig",
+     "answer": "die Flüssigkeit",
+     "also": [
+      "Flüssigkeit"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "-ung",
+   "icon": "🔚",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-no-en-wandern",
+     "task": "Mach ein Nomen mit -ung. Mit Artikel!",
+     "prompt": "wandern",
+     "say": "wandern",
+     "answer": "die Wanderung",
+     "also": [
+      "Wanderung"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-zeichnen",
+     "task": "Mach ein Nomen mit -ung. Mit Artikel!",
+     "prompt": "zeichnen",
+     "say": "zeichnen",
+     "answer": "die Zeichnung",
+     "also": [
+      "Zeichnung"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-erklaeren",
+     "task": "Mach ein Nomen mit -ung. Mit Artikel!",
+     "prompt": "erklären",
+     "say": "erklären",
+     "answer": "die Erklärung",
+     "also": [
+      "Erklärung"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-ueben",
+     "task": "Mach ein Nomen mit -ung. Mit Artikel!",
+     "prompt": "üben",
+     "say": "üben",
+     "answer": "die Übung",
+     "also": [
+      "Übung"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-ordnen",
+     "task": "Mach ein Nomen mit -ung. Mit Artikel!",
+     "prompt": "ordnen",
+     "say": "ordnen",
+     "answer": "die Ordnung",
+     "also": [
+      "Ordnung"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-rechnen",
+     "task": "Mach ein Nomen mit -ung. Mit Artikel!",
+     "prompt": "rechnen",
+     "say": "rechnen",
+     "answer": "die Rechnung",
+     "also": [
+      "Rechnung"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-impfen",
+     "task": "Mach ein Nomen mit -ung. Mit Artikel!",
+     "prompt": "impfen",
+     "say": "impfen",
+     "answer": "die Impfung",
+     "also": [
+      "Impfung"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-no-en-meinen",
+     "task": "Mach ein Nomen mit -ung. Mit Artikel!",
+     "prompt": "meinen",
+     "say": "meinen",
+     "answer": "die Meinung",
+     "also": [
+      "Meinung"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-no-foto",
+     "task": "Schreib 5 konkrete und 5 abstrakte Nomen mit Artikel in dein Heft. Zum Beispiel: der Tisch, die Freude.",
+     "say": "Schreib fünf konkrete und fünf abstrakte Nomen mit Artikel in dein Heft."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

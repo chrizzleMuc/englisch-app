@@ -1,9 +1,12 @@
 // Feste Bausteine der App. Die Lerninhalte selbst stehen im Ordner "inhalte".
 
 export const PROFILES = [
-  { id: "entdecker", title: "Entdecker", pic: "🧭" },
-  { id: "pirat", title: "Pirat", pic: "🏴‍☠️" }
+  { id: "entdecker", title: "1. Klasse", pic: "" },
+  { id: "pirat", title: "3. Klasse", pic: "" }
 ];
+
+// Testzugang für Eltern: eigener Fortschritt, sieht alles, alle Stufen offen
+export const TEST_PROFILE = { id: "test", title: "Testmodus", pic: "", test: true };
 
 export const PRAISE = ["Super!", "Toll gemacht!", "Klasse!", "Prima!", "Spitze!", "Genau!"];
 export const PRAISE_EN = ["Great!", "Well done!", "Brilliant!", "Super!", "Fantastic!"];
