@@ -11,44 +11,16 @@
    "tasks": [
     {
      "kind": "choice",
-     "id": "k1-le-tomate",
+     "id": "k1-le-salat",
      "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Tomate",
+     "prompt": "Salat",
      "say": "Lies das Wort. Welches Bild passt?",
      "options": [
-      "🍅",
-      "👴",
-      "🍦"
-     ],
-     "answer": "🍅",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-rose",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Rose",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🌹",
-      "🛋️",
+      "🥗",
+      "👵",
       "🌽"
      ],
-     "answer": "🌹",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-eis",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Eis",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🍦",
-      "👵",
-      "🥚"
-     ],
-     "answer": "🍦",
+     "answer": "🥗",
      "picOptions": true
     },
     {
@@ -59,156 +31,10 @@
      "say": "Lies das Wort. Welches Bild passt?",
      "options": [
       "🦙",
-      "👵",
-      "👴"
+      "👴",
+      "🛋️"
      ],
      "answer": "🦙",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-uhu",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Uhu",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🦉",
-      "👴",
-      "🍅"
-     ],
-     "answer": "🦉",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-opa",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Opa",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "👴",
-      "🌽",
-      "🫏"
-     ],
-     "answer": "👴",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-esel",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Esel",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🫏",
-      "🍅",
-      "🦉"
-     ],
-     "answer": "🫏",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-salat",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Salat",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🥗",
-      "👴",
-      "🦉"
-     ],
-     "answer": "🥗",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-ameise",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Ameise",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🐜",
-      "🐭",
-      "🦙"
-     ],
-     "answer": "🐜",
-     "picOptions": true
-    }
-   ]
-  },
-  {
-   "title": "Lesen 2",
-   "icon": "📖",
-   "tasks": [
-    {
-     "kind": "choice",
-     "id": "k1-le-ufo",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Ufo",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🛸",
-      "🌹",
-      "🪜"
-     ],
-     "answer": "🛸",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-taxi",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Taxi",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🚕",
-      "👵",
-      "🐭"
-     ],
-     "answer": "🚕",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-leiter",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Leiter",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🪜",
-      "🦙",
-      "🌹"
-     ],
-     "answer": "🪜",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-sofa",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Sofa",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🛋️",
-      "🥗",
-      "🫏"
-     ],
-     "answer": "🛋️",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-messer",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Messer",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🔪",
-      "🐜",
-      "🌹"
-     ],
-     "answer": "🔪",
      "picOptions": true
     },
     {
@@ -219,38 +45,10 @@
      "say": "Lies das Wort. Welches Bild passt?",
      "options": [
       "🥚",
-      "🦙",
-      "🌽"
+      "🦉",
+      "🛸"
      ],
      "answer": "🥚",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-mais",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Mais",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🌽",
-      "🍅",
-      "🍦"
-     ],
-     "answer": "🌽",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-le-maus",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Maus",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🐭",
-      "🥚",
-      "🚕"
-     ],
-     "answer": "🐭",
      "picOptions": true
     },
     {
@@ -261,10 +59,212 @@
      "say": "Lies das Wort. Welches Bild passt?",
      "options": [
       "👵",
-      "🐭",
-      "🫏"
+      "🍦",
+      "🔪"
      ],
      "answer": "👵",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-mais",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Mais",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🌽",
+      "🥚",
+      "👴"
+     ],
+     "answer": "🌽",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-rose",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Rose",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🌹",
+      "🚕",
+      "👴"
+     ],
+     "answer": "🌹",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-ufo",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Ufo",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🛸",
+      "🥚",
+      "🌹"
+     ],
+     "answer": "🛸",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-sofa",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Sofa",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🛋️",
+      "🌹",
+      "🌽"
+     ],
+     "answer": "🛋️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-tomate",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Tomate",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🍅",
+      "🥗",
+      "🌽"
+     ],
+     "answer": "🍅",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Lesen 2",
+   "icon": "📖",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-le-esel",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Esel",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🫏",
+      "🚕",
+      "🌽"
+     ],
+     "answer": "🫏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-leiter",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Leiter",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🪜",
+      "🦉",
+      "🐭"
+     ],
+     "answer": "🪜",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-messer",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Messer",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🔪",
+      "🌽",
+      "🐜"
+     ],
+     "answer": "🔪",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-maus",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Maus",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🐭",
+      "🥗",
+      "🐜"
+     ],
+     "answer": "🐭",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-opa",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Opa",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "👴",
+      "👵",
+      "🌽"
+     ],
+     "answer": "👴",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-eis",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Eis",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🍦",
+      "👴",
+      "🛸"
+     ],
+     "answer": "🍦",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-taxi",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Taxi",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🚕",
+      "🛸",
+      "🥗"
+     ],
+     "answer": "🚕",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-uhu",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Uhu",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🦉",
+      "🍅",
+      "🛸"
+     ],
+     "answer": "🦉",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-ameise",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Ameise",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🐜",
+      "🫏",
+      "🛋️"
+     ],
+     "answer": "🐜",
      "picOptions": true
     }
    ]

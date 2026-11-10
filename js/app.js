@@ -7,7 +7,7 @@ import * as store from "./store.js";
 import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 
-const APP_VERSION = 12;
+const APP_VERSION = 13;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -719,7 +719,7 @@ function score(lesson, step, id, correct) {
 }
 
 function promptCard(text) {
-  return `<div class="prompt-card"><span class="prompt-text">${esc(text)}</span><button class="speaker again" aria-label="Vorlesen">🔊</button></div>`;
+  return `<div class="prompt-card"><span class="prompt-text">${esc(text)}</span></div>`;
 }
 
 // ---------- Übung: Eintippen ----------
@@ -801,7 +801,7 @@ STEPS.choice = (lesson, step) => {
   const opts = q.keepOrder ? q.options : shuffle(q.options);
   const token = lessonRender(lesson, `
     <p class="task">${esc(q.task || "Was ist richtig?")}</p>
-    ${q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}<button class="speaker again" aria-label="Vorlesen">🔊</button></div>` : promptCard(q.prompt)}
+    ${q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : promptCard(q.prompt)}
     <div class="choices ${q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(o)}">${q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
@@ -844,7 +844,7 @@ STEPS.syllables = (lesson, step) => {
     <p class="task">Wo trennst du das Wort?</p>
     <p class="hint">Tipp zwischen die Buchstaben. Geht es nicht zu trennen? Dann gleich auf „Fertig“.</p>
     <div class="syl-wrap"><div class="syl" id="syl">${letters.map((ch, i) => `<span class="let">${esc(ch)}</span>${i < letters.length - 1 ? `<button class="gap" data-i="${i}" aria-label="Hier trennen"></button>` : ""}`).join("")}</div></div>
-    <div class="row"><button class="speaker again" aria-label="Vorlesen">🔊</button></div>
+    
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="check">Fertig ✓</button>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
@@ -977,7 +977,7 @@ STEPS.photo = (lesson, step) => {
     <p class="task">✍️ Schreib in dein Heft!</p>
     <p class="photo-task">${esc(t.task)}</p>
     ${t.show ? `<div class="write-list">${t.show.map((w) => `<span>${esc(w)}</span>`).join("")}</div>` : ""}
-    <div class="row"><button class="speaker again" aria-label="Vorlesen">🔊</button></div>
+    
     <label class="go-btn photo-btn" id="camlabel">📷 Fertig? Foto machen<input type="file" accept="image/*" capture="environment" id="cam" hidden></label>
     <div id="after"></div>`);
   const say = () => sayDe(t.say || t.task);
