@@ -1,4 +1,4 @@
-import { PROFILES, PRAISE, PRAISE_EN, AVATAR, LESSONS, SPEAKERS } from "./data.js";
+import { PROFILES, PRAISE, PRAISE_EN, LESSONS, SPEAKERS } from "./data.js";
 import { sayParts, sayEn, sayDe, chime, voiceInfo } from "./speech.js";
 import { play, promptAnd, stopAudio } from "./audio.js";
 import { canRecord, record, playUrl } from "./recorder.js";
@@ -6,7 +6,7 @@ import { content, loadContent } from "./content.js";
 import * as store from "./store.js";
 import * as photos from "./photos.js";
 
-const APP_VERSION = 9;
+const APP_VERSION = 10;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -40,53 +40,6 @@ function on(sel, ev, fn) {
 }
 const $ = (id) => document.getElementById(id);
 
-// ---------- Avatar ----------
-function avatarOf(pid) {
-  const p = PROFILES.find((x) => x.id === pid);
-  return store.profile(pid).avatar || { base: p.pic, color: pid === "pirat" ? "#74c0fc" : "#8ce99a" };
-}
-
-function avatarHtml(a, cls = "") {
-  return `<span class="avatar ${cls}" style="--bg:${a.color}"><span class="av-base">${a.base}</span></span>`;
-}
-
-function showAvatarEditor(first = false) {
-  const pid = current.profile;
-  const a = { ...avatarOf(pid) };
-  const groups = [["base", "Welches Tier bist du?"], ["color", "Hintergrundfarbe"]];
-  render(`
-    <div class="screen">
-      <header class="bar">
-        ${first ? "" : `<button class="icon-btn" id="back" aria-label="Zurück">⬅</button>`}
-        <span class="who">${first ? "Wie willst du aussehen?" : "Mein Bild"}</span>
-      </header>
-      <div class="av-preview">${avatarHtml(a, "xl")}</div>
-      ${groups.map(([g, label]) => `
-        <h3 class="av-label">${label}</h3>
-        <div class="av-row">
-          ${AVATAR[g].map(([v], i) => `<button class="av-opt ${a[g] === v ? "sel" : ""}" data-g="${g}" data-i="${i}" ${g === "color" ? `style="background:${v}"` : ""}>${g === "color" ? "" : v}</button>`).join("")}
-        </div>`).join("")}
-      <button class="go-btn" id="done">Fertig ✓</button>
-    </div>`);
-  on(".av-opt", "click", (e) => {
-    const { g, i } = e.currentTarget.dataset;
-    const [v, en] = AVATAR[g][+i];
-    a[g] = v;
-    app.querySelectorAll(`.av-opt[data-g="${g}"]`).forEach((b) => b.classList.toggle("sel", b === e.currentTarget));
-    app.querySelector(".av-preview").innerHTML = avatarHtml(a, "xl");
-    chime("pop");
-    sayEn(en);
-  });
-  $("done").onclick = () => {
-    store.profile(pid).avatar = { base: a.base, color: a.color };
-    store.save();
-    chime("win");
-    showHome();
-  };
-  if (!first) $("back").onclick = () => showHome();
-  if (first) sayDe("Welches Tier willst du sein? Such dir eins aus!");
-}
-
 // ---------- Profilauswahl ----------
 function showProfiles() {
   current.profile = null;
@@ -97,7 +50,6 @@ function showProfiles() {
       <p class="sub">Wer lernt heute?</p>
       <div class="profiles">
         ${PROFILES.map((p) => `<button class="profile-card" data-id="${p.id}">
-            ${avatarHtml(avatarOf(p.id), "lg")}
             <span class="pname">${esc(p.title)}</span>
             <span class="small">⭐ ${store.totalStars(p.id)}</span>
           </button>`).join("")}
@@ -107,8 +59,7 @@ function showProfiles() {
   on(".profile-card", "click", (e) => {
     current.profile = e.currentTarget.dataset.id;
     chime("pop");
-    if (store.profile(current.profile).avatar) showHome();
-    else showAvatarEditor(true);
+    showHome();
   });
   $("parents").onclick = showParentGate;
 }
@@ -139,7 +90,7 @@ function unitMastered(pid, unit) {
 function homeHeader(p) {
   return `<header class="bar">
         <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
-        <button class="who who-btn" id="me" aria-label="Bild ändern">${avatarHtml(avatarOf(p.id), "sm")} ${esc(p.title)} <span class="pencil">✏️</span></button>
+        <span class="who">${esc(p.title)}</span>
         <span class="stat">🔥 ${store.streakCount(p.id)}</span>
         <span class="stat">⭐ ${store.totalStars(p.id)}</span>
       </header>`;
@@ -155,7 +106,7 @@ function showHome(subjectId = current.subject) {
   render(`
     <div class="screen">
       ${homeHeader(p)}
-      ${many ? `<h2 class="subject-title">${sub.image} ${esc(sub.title)}</h2>` : ""}
+      ${many ? `<h2 class="subject-title">${esc(sub.title)}</h2>` : ""}
       ${stagesFor(p.id, sub).map((st) => `
         <h3 class="stage-title">${esc(st.title)}</h3>
         <div class="topics">
@@ -164,7 +115,6 @@ function showHome(subjectId = current.subject) {
             const done = lessonsOf(u).filter((_, n) => store.lessonDone(p.id, u.id, n)).length;
             return `<button class="topic" data-id="${u.id}" style="--c:${u.color}">
               ${unitMastered(p.id, u) ? `<span class="badge">🏆</span>` : ""}
-              <span class="big-pic">${u.image}</span>
               <span class="tname">${esc(u.title_de)}</span>
               <span class="dots small-dots">${Array.from({ length: nl }, (_, n) => `<span class="dot ${n < done ? "on" : ""}"></span>`).join("")}</span>
             </button>`;
@@ -174,7 +124,6 @@ function showHome(subjectId = current.subject) {
     </div>`);
   $("back").onclick = () => (many ? showSubjects(subs) : showProfiles());
   if ($("album")) $("album").onclick = showAlbum;
-  $("me").onclick = () => showAvatarEditor(false);
   on(".topic[data-id]", "click", (e) => {
     chime("pop");
     showUnit(e.currentTarget.dataset.id);
@@ -190,11 +139,10 @@ function showSubjects(subs) {
       ${homeHeader(p)}
       ${subs.length ? `<div class="topics">
         ${subs.map((x) => `<button class="topic subject" data-id="${x.id}" style="--c:${x.color}">
-          <span class="big-pic">${x.image}</span><span class="tname">${esc(x.title)}</span></button>`).join("")}
+<span class="tname">${esc(x.title)}</span></button>`).join("")}
       </div>` : `<p class="sub center-text">Hier ist noch nichts freigeschaltet. Frag Mama oder Papa!</p>`}
     </div>`);
   $("back").onclick = showProfiles;
-  $("me").onclick = () => showAvatarEditor(false);
   on(".subject", "click", (e) => showHome(e.currentTarget.dataset.id));
   sayDe(subs.length ? "Was willst du heute lernen?" : "Hier ist noch nichts freigeschaltet.");
 }
@@ -207,7 +155,7 @@ function showUnit(unitId) {
     <div class="screen">
       <header class="bar">
         <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
-        <span class="who">${u.image} ${esc(u.title_de)}</span>
+        <span class="who">${esc(u.title_de)}</span>
         ${unitMastered(pid, u) ? `<span class="stat">🏆</span>` : ""}
       </header>
       <div class="path">
@@ -215,7 +163,7 @@ function showUnit(unitId) {
           const open = isSchool(u) || i === 0 || store.lessonDone(pid, u.id, i - 1);
           const done = store.lessonDone(pid, u.id, i);
           return `<button class="node ${open ? "" : "locked"} ${i % 2 ? "right" : "left"}" data-i="${i}" ${open ? "" : "disabled"} style="--c:${u.color}">
-            <span class="node-pics">${open ? l.icon : "🔒"}</span>
+            <span class="node-pics">${open ? i + 1 : "🔒"}</span>
             <span class="node-label">${l.title}</span>
             <span class="node-stars">${done ? `<span class="star on">★</span>` : `<span class="star">★</span>`}</span>
           </button>`;
@@ -1217,14 +1165,14 @@ function showParents(msg = "") {
         <p class="small">Was soll das Kind sehen? Ausgeschaltetes verschwindet, der Fortschritt bleibt gespeichert.</p>
         <div class="unlock">
           ${PROFILES.map((p) => `<div class="unlock-col">
-            <h4>${avatarHtml(avatarOf(p.id), "sm")} ${p.title}</h4>
+            <h4>${p.title}</h4>
             ${content.subjects.map((sub) => `
-              <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${sub.image} ${esc(sub.title)}</label>
+              <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${esc(sub.title)}</label>
               ${sub.stages.map((st) => `
                 <div class="unlock-topics">
                   <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${st.id}" ${store.isEnabled(p.id, st.id, stageDefault(p.id, st)) ? "checked" : ""}> ${esc(st.title)}</label>
                   <div class="unlock-topics">
-                    ${st.units.map((u) => `<label class="field check"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${u.id}" ${store.isEnabled(p.id, u.id) ? "checked" : ""}> ${u.image} ${esc(u.title_de)}</label>`).join("")}
+                    ${st.units.map((u) => `<label class="field check"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${u.id}" ${store.isEnabled(p.id, u.id) ? "checked" : ""}> ${esc(u.title_de)}</label>`).join("")}
                   </div>
                 </div>`).join("")}`).join("")}
           </div>`).join("")}
@@ -1235,7 +1183,7 @@ function showParents(msg = "") {
         <p class="small">Lernkartei: Jede Aufgabe wandert bei richtiger Antwort einen Kasten weiter (1 → 5), bei falscher zurück in Kasten 1. Eine Einheit ist geschafft 🏆, wenn alles mindestens in Kasten 3 ist. Fällig heute: ${PROFILES.map((p) => `${p.title} ${store.dueCards(p.id).length}`).join(", ")}.</p>
         ${content.subjects.flatMap((s) => s.stages.flatMap((st) => st.units)).map((u) => `
           <details class="unit-details">
-            <summary>${u.image} ${esc(u.title_de)} <span class="small">${PROFILES.map((p) => {
+            <summary>${esc(u.title_de)} <span class="small">${PROFILES.map((p) => {
               const n = boxCounts(p.id, u);
               const sure = n[3] + n[4] + n[5];
               return `${p.title}: ${sure}/${unitIds(u).length} sicher${unitMastered(p.id, u) ? " 🏆" : ""}`;

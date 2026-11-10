@@ -496,3 +496,11 @@ h2 { font-size: 32px; font-weight: 750; letter-spacing: -.5px; }
 .parents section { border-radius: 16px; }
 .parents h3 { font-size: 18px; }
 .notice { border-radius: 12px; font-size: 16px; }
+
+/* Version 10: ohne große Symbole und ohne Avatar */
+.topic { border-left: 4px solid var(--c); min-height: 84px; justify-content: space-between; }
+.subject.topic { min-height: 110px; }
+.subject .tname { font-size: 22px; }
+.profile-card { padding: 26px 16px; }
+.node .node-pics { font-size: 18px; font-weight: 700; color: var(--brand); }
+.node.locked .node-pics { font-size: 16px; color: var(--muted); }
