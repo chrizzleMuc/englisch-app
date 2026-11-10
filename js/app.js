@@ -6,7 +6,7 @@ import { content, loadContent } from "./content.js";
 import * as store from "./store.js";
 import * as photos from "./photos.js";
 
-const APP_VERSION = 10;
+const APP_VERSION = 11;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -151,22 +151,37 @@ function showSubjects(subs) {
 function showUnit(unitId) {
   const u = unitById(unitId);
   const pid = current.profile;
+  const sub = content.subjects.find((x) => x.id === u.subject);
+  const lessons = lessonsOf(u);
+  const isOpen = (i) => isSchool(u) || i === 0 || store.lessonDone(pid, u.id, i - 1);
+  const cur = lessons.findIndex((_, i) => isOpen(i) && !store.lessonDone(pid, u.id, i));
+  // Pfad schlängelt sich wie eine Treppe nach links und rechts
+  const sway = [0, -70, -105, -70, 0, 70, 105, 70];
   render(`
-    <div class="screen">
+    <div class="screen unit-screen">
       <header class="bar">
         <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
-        <span class="who">${esc(u.title_de)}</span>
+        <span class="who"></span>
         ${unitMastered(pid, u) ? `<span class="stat">🏆</span>` : ""}
       </header>
+      <div class="unit-card">
+        <small>${esc(sub ? sub.title : "")}</small>
+        <b>${esc(u.title_de)}</b>
+      </div>
       <div class="path">
-        ${lessonsOf(u).map((l, i) => {
-          const open = isSchool(u) || i === 0 || store.lessonDone(pid, u.id, i - 1);
+        ${lessons.map((l, i) => {
+          const open = isOpen(i);
           const done = store.lessonDone(pid, u.id, i);
-          return `<button class="node ${open ? "" : "locked"} ${i % 2 ? "right" : "left"}" data-i="${i}" ${open ? "" : "disabled"} style="--c:${u.color}">
-            <span class="node-pics">${open ? i + 1 : "🔒"}</span>
-            <span class="node-label">${l.title}</span>
-            <span class="node-stars">${done ? `<span class="star on">★</span>` : `<span class="star">★</span>`}</span>
-          </button>`;
+          const last = i === lessons.length - 1;
+          const state = !open ? "locked" : i === cur ? "cur" : done ? "done" : "open";
+          const sym = !open ? "🔒" : done ? "✓" : last ? "🏆" : "★";
+          return `<div class="step" style="--x:${sway[i % sway.length]}px">
+            ${state === "cur" ? `<span class="go-bubble">${done ? "NOCHMAL" : i === 0 ? "LOS GEHT'S" : "WEITER"}</span>` : ""}
+            <button class="node ${state}" data-i="${i}" ${open ? "" : "disabled"} aria-label="${esc(l.title)}">
+              <span class="node-pics">${sym}</span>
+            </button>
+            <span class="node-label">${esc(l.title)}</span>
+          </div>`;
         }).join("")}
       </div>
     </div>`);
