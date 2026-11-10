@@ -1,7 +1,68 @@
 // Lädt die Inhalte aus dem Ordner "inhalte" und prüft sie.
 // Fehler werden gesammelt und im Elternbereich angezeigt, statt dass die App leer bleibt.
 
-export const content = { subjects: [], items: new Map(), units: new Map(), errors: [] };
+export const content = { subjects: [], items: new Map(), units: new Map(), photoTasks: new Map(), errors: [] };
+
+// ---------- Schulfächer ----------
+// Eine Schul-Einheit hat "type": "schule" und eine Liste "lessons" mit Aufgaben ("tasks").
+// Jede bewertbare Aufgabe kommt als Einzelfrage in die Lernkartei (content.items, kind "task").
+
+const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo"];
+
+function sharedStart(a, b) {
+  const wa = a.split(" ");
+  const wb = b.split(" ");
+  return wa.length > 1 && wb.length > 1 && wa[0] === wb[0] ? wa[0] : "";
+}
+
+// Macht aus einem Paar oder Sortier-Wort eine Einzelfrage (für Wiederholung und Test)
+function singles(t) {
+  if (t.kind === "pairs") {
+    return t.pairs.map((p) => {
+      const before = sharedStart(p.a, p.b);
+      return { kind: "type", id: p.id, task: t.review || "Was gehört dazu?", prompt: p.a, before, answer: before ? p.b.slice(before.length + 1) : p.b };
+    });
+  }
+  if (t.kind === "sort") {
+    return t.items.map((it) => ({ kind: "choice", id: it.id, task: t.review || "Wohin gehört das Wort?", prompt: it.text, options: t.groups, answer: it.group }));
+  }
+  if (t.kind === "photo") return [];
+  return [t];
+}
+
+function checkSchool(unit, path) {
+  const err = (m) => content.errors.push(`${path}: ${m}`);
+  unit.words = [];
+  unit.phrases = [];
+  unit.lessons = unit.lessons || [];
+  unit.singles = [];
+  if (!unit.lessons.length) err("Die Einheit hat keine Lektionen.");
+  const add = (q) => {
+    if (!q.id) return err(`Eine Aufgabe (${q.kind}) hat keine id.`);
+    if (content.items.has(q.id)) err(`Die ID ${q.id} gibt es doppelt.`);
+    content.items.set(q.id, { id: q.id, kind: "task", unit: unit.id, q });
+    unit.singles.push(q);
+  };
+  for (const l of unit.lessons) {
+    l.tasks = l.tasks || [];
+    for (const t of l.tasks) {
+      if (!KINDS.includes(t.kind)) {
+        err(`Unbekannte Aufgabenart "${t.kind}".`);
+        continue;
+      }
+      if (t.kind === "pairs" && !(t.pairs || []).length) err("Eine Paare-Aufgabe hat keine Paare.");
+      if (t.kind === "sort" && (!(t.groups || []).length || !(t.items || []).length)) err("Eine Sortier-Aufgabe braucht groups und items.");
+      if (t.kind === "sort") for (const it of t.items || []) if (!t.groups.includes(it.group)) err(`${it.id}: Gruppe "${it.group}" gibt es nicht.`);
+      if (t.kind === "choice" && !(t.options || []).includes(t.answer)) err(`${t.id}: Die Antwort steht nicht bei den Auswahlmöglichkeiten.`);
+      if (t.kind === "photo") {
+        if (!t.id) err("Eine Foto-Aufgabe hat keine id.");
+        content.photoTasks.set(t.id, { ...t, unit: unit.id });
+        continue;
+      }
+      for (const q of singles(t)) add(q);
+    }
+  }
+}
 
 async function getJson(path) {
   const res = await fetch("inhalte/" + path);
@@ -14,6 +75,7 @@ async function getJson(path) {
 }
 
 function check(unit, path) {
+  if (unit.type === "schule") return checkSchool(unit, path);
   const err = (m) => content.errors.push(`${path}: ${m}`);
   if (!unit.id) err("Es fehlt die „id“ der Einheit.");
   unit.words = unit.words || [];

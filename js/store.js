@@ -47,6 +47,8 @@ export function profile(id) {
   p.cards = p.cards || {};
   p.lessons = p.lessons || {};
   p.off = p.off || {};
+  p.on = p.on || {};
+  p.redo = p.redo || {};
   p.streak = p.streak || { count: 0, last: null, jokerWeek: null };
   return p;
 }
@@ -78,19 +80,40 @@ export function introduce(pid, id) {
 }
 
 // Richtig: einen Kasten weiter (höchstens einmal pro Tag). Falsch: zurück in Kasten 1.
+// Wer mindestens zweimal falsch war, gilt als "Sorgenkind": Es bleibt höchstens in Kasten 2
+// (kommt also spätestens alle 2 Tage), bis es dreimal hintereinander richtig war.
 export function grade(pid, id, correct) {
   const p = profile(pid);
   const c = p.cards[id] || { box: 1, due: today(), last: null };
   const t = today();
+  c.wrong = c.wrong || 0;
+  c.run = c.run || 0;
   if (!correct) {
     c.box = 1;
     c.due = addDays(t, BOX_DAYS[1]);
-  } else if (c.due <= t && c.last !== t) {
-    c.box = Math.min(5, c.box + 1);
-    c.due = addDays(t, BOX_DAYS[c.box]);
+    c.wrong++;
+    c.run = 0;
+  } else {
+    c.run++;
+    if (c.run >= 3) c.wrong = 0;
+    if (c.due <= t && c.last !== t) {
+      c.box = Math.min(isTrouble(c) ? 2 : 5, c.box + 1);
+      c.due = addDays(t, BOX_DAYS[c.box]);
+    }
   }
   c.last = t;
   p.cards[id] = c;
+}
+
+export function isTrouble(c) {
+  return !!c && (c.wrong || 0) >= 2;
+}
+
+export function troubleCards(pid) {
+  return Object.entries(profile(pid).cards)
+    .filter(([, c]) => isTrouble(c))
+    .sort((a, b) => b[1].wrong - a[1].wrong)
+    .map(([id, c]) => ({ id, ...c }));
 }
 
 export function dueCards(pid) {
@@ -108,7 +131,7 @@ export function lessonDone(pid, unitId, n) {
 
 export function setLessonDone(pid, unitId, n) {
   const p = profile(pid);
-  p.lessons[unitId] = p.lessons[unitId] || [false, false, false, false, false];
+  p.lessons[unitId] = p.lessons[unitId] || [];
   p.lessons[unitId][n] = true;
 }
 
@@ -116,15 +139,34 @@ export function totalStars(pid) {
   return Object.values(profile(pid).lessons).reduce((n, l) => n + l.filter(Boolean).length, 0);
 }
 
-// ---------- Freischalten (Standard: alles an) ----------
-export function isEnabled(pid, id) {
-  return !profile(pid).off[id];
+// ---------- Freischalten (Standard: an, außer der Inhalt ist für das Kind nicht vorgesehen) ----------
+export function isEnabled(pid, id, byDefault = true) {
+  const p = profile(pid);
+  if (p.off[id]) return false;
+  if (p.on[id]) return true;
+  return byDefault;
 }
 
 export function setEnabled(pid, id, on) {
   const p = profile(pid);
-  if (on) delete p.off[id];
-  else p.off[id] = true;
+  if (on) {
+    delete p.off[id];
+    p.on[id] = true;
+  } else {
+    p.off[id] = true;
+    delete p.on[id];
+  }
+}
+
+// ---------- Foto-Aufgaben, die Eltern mit "nochmal" zurückgegeben haben ----------
+export function setRedo(pid, taskId, on) {
+  const p = profile(pid);
+  if (on) p.redo[taskId] = today();
+  else delete p.redo[taskId];
+}
+
+export function redoTasks(pid) {
+  return Object.keys(profile(pid).redo);
 }
 
 // ---------- Tagesserie (ein Joker pro Woche) ----------

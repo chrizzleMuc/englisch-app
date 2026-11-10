@@ -1,0 +1,696 @@
+{
+ "id": "d3-vorsilben",
+ "type": "schule",
+ "title_de": "Vorsilben",
+ "image": "🧩",
+ "color": "#20bf6b",
+ "lessons": [
+  {
+   "title": "ver- davor",
+   "icon": "🧩",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-vs-ver-kleiden",
+     "task": "Häng ver- vorne dran und schreib das Verb!",
+     "prompt": "kleiden",
+     "answer": "verkleiden"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vs-ver-trauen",
+     "task": "Häng ver- vorne dran und schreib das Verb!",
+     "prompt": "trauen",
+     "answer": "vertrauen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vs-ver-packen",
+     "task": "Häng ver- vorne dran und schreib das Verb!",
+     "prompt": "packen",
+     "answer": "verpacken"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vs-ver-raten",
+     "task": "Häng ver- vorne dran und schreib das Verb!",
+     "prompt": "raten",
+     "answer": "verraten"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vs-ver-kaufen",
+     "task": "Häng ver- vorne dran und schreib das Verb!",
+     "prompt": "kaufen",
+     "answer": "verkaufen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vs-ver-schenken",
+     "task": "Häng ver- vorne dran und schreib das Verb!",
+     "prompt": "schenken",
+     "answer": "verschenken"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vs-ver-stecken",
+     "task": "Häng ver- vorne dran und schreib das Verb!",
+     "prompt": "stecken",
+     "answer": "verstecken"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-nomen-verschmutzung",
+     "task": "Nomen schreibt man groß! Was ist richtig?",
+     "prompt": "die ___",
+     "say": "die Verschmutzung",
+     "options": [
+      "die Verschmutzung",
+      "die verschmutzung"
+     ],
+     "answer": "die Verschmutzung"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-nomen-verletzung",
+     "task": "Nomen schreibt man groß! Was ist richtig?",
+     "prompt": "die ___",
+     "say": "die Verletzung",
+     "options": [
+      "die Verletzung",
+      "die verletzung"
+     ],
+     "answer": "die Verletzung"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-nomen-versteck",
+     "task": "Nomen schreibt man groß! Was ist richtig?",
+     "prompt": "das ___",
+     "say": "das Versteck",
+     "options": [
+      "das Versteck",
+      "das versteck"
+     ],
+     "answer": "das Versteck"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-nomen-versuch",
+     "task": "Nomen schreibt man groß! Was ist richtig?",
+     "prompt": "der ___",
+     "say": "der Versuch",
+     "options": [
+      "der Versuch",
+      "der versuch"
+     ],
+     "answer": "der Versuch"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-nomen-verkaeuferin",
+     "task": "Nomen schreibt man groß! Was ist richtig?",
+     "prompt": "die ___",
+     "say": "die Verkäuferin",
+     "options": [
+      "die Verkäuferin",
+      "die verkäuferin"
+     ],
+     "answer": "die Verkäuferin"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-nomen-verein",
+     "task": "Nomen schreibt man groß! Was ist richtig?",
+     "prompt": "der ___",
+     "say": "der Verein",
+     "options": [
+      "der Verein",
+      "der verein"
+     ],
+     "answer": "der Verein"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-nomen-verbot",
+     "task": "Nomen schreibt man groß! Was ist richtig?",
+     "prompt": "das ___",
+     "say": "das Verbot",
+     "options": [
+      "das Verbot",
+      "das verbot"
+     ],
+     "answer": "das Verbot"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-nomen-verkleidung",
+     "task": "Nomen schreibt man groß! Was ist richtig?",
+     "prompt": "die ___",
+     "say": "die Verkleidung",
+     "options": [
+      "die Verkleidung",
+      "die verkleidung"
+     ],
+     "answer": "die Verkleidung"
+    }
+   ]
+  },
+  {
+   "title": "Silben",
+   "icon": "✂️",
+   "tasks": [
+    {
+     "kind": "syllables",
+     "id": "d3-vs-syl-vereinen",
+     "word": "vereinen",
+     "answer": "ver-ei-nen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-vs-syl-verbrennen",
+     "word": "verbrennen",
+     "answer": "ver-bren-nen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-vs-syl-verkaeufer",
+     "word": "Verkäufer",
+     "answer": "Ver-käu-fer"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-vs-syl-verbrauchen",
+     "word": "verbrauchen",
+     "answer": "ver-brau-chen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-vs-syl-vertrauen",
+     "word": "Vertrauen",
+     "answer": "Ver-trau-en"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-vs-syl-verspaeten",
+     "word": "verspäten",
+     "answer": "ver-spä-ten"
+    }
+   ]
+  },
+  {
+   "title": "Wortfamilien",
+   "icon": "👪",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Zu welcher Wortfamilie gehört das Wort?",
+     "review": "Zu welcher Wortfamilie gehört das Wort?",
+     "groups": [
+      "verlieren",
+      "vergessen",
+      "versprechen",
+      "vergleichen",
+      "verletzen"
+     ],
+     "items": [
+      {
+       "id": "d3-vs-fam-du-verlierst",
+       "text": "du verlierst",
+       "group": "verlieren"
+      },
+      {
+       "id": "d3-vs-fam-er-verlor",
+       "text": "er verlor",
+       "group": "verlieren"
+      },
+      {
+       "id": "d3-vs-fam-ich-verlor",
+       "text": "ich verlor",
+       "group": "verlieren"
+      },
+      {
+       "id": "d3-vs-fam-du-vergisst",
+       "text": "du vergisst",
+       "group": "vergessen"
+      },
+      {
+       "id": "d3-vs-fam-er-vergass",
+       "text": "er vergaß",
+       "group": "vergessen"
+      },
+      {
+       "id": "d3-vs-fam-sie-vergassen",
+       "text": "sie vergaßen",
+       "group": "vergessen"
+      },
+      {
+       "id": "d3-vs-fam-ich-verspreche",
+       "text": "ich verspreche",
+       "group": "versprechen"
+      },
+      {
+       "id": "d3-vs-fam-er-verspricht",
+       "text": "er verspricht",
+       "group": "versprechen"
+      },
+      {
+       "id": "d3-vs-fam-er-versprach",
+       "text": "er versprach",
+       "group": "versprechen"
+      },
+      {
+       "id": "d3-vs-fam-du-vergleichst",
+       "text": "du vergleichst",
+       "group": "vergleichen"
+      },
+      {
+       "id": "d3-vs-fam-ich-verglich",
+       "text": "ich verglich",
+       "group": "vergleichen"
+      },
+      {
+       "id": "d3-vs-fam-er-verglich",
+       "text": "er verglich",
+       "group": "vergleichen"
+      },
+      {
+       "id": "d3-vs-fam-du-verletzt",
+       "text": "du verletzt",
+       "group": "verletzen"
+      },
+      {
+       "id": "d3-vs-fam-er-verletzte",
+       "text": "er verletzte",
+       "group": "verletzen"
+      },
+      {
+       "id": "d3-vs-fam-ich-verletzte",
+       "text": "ich verletzte",
+       "group": "verletzen"
+      }
+     ]
+    },
+    {
+     "kind": "photo",
+     "id": "d3-vs-foto-fam",
+     "task": "Schreib die Wortfamilien verlieren und vergessen in dein Heft. Fang so an: wir verlieren, du verlierst …",
+     "say": "Schreib die Wortfamilien verlieren und vergessen in dein Heft.",
+     "solution": [
+      "wir verlieren",
+      "du verlierst",
+      "er verlor",
+      "ich verlor",
+      "wir vergessen",
+      "du vergisst",
+      "er vergaß",
+      "sie vergaßen"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "vor- oder ver-?",
+   "icon": "🤔",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-vs-vv-0",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "Der Hund will sich unter dem Bett ___stecken.",
+     "say": "Der Hund will sich unter dem Bett …stecken.",
+     "options": [
+      "vor",
+      "ver"
+     ],
+     "answer": "ver"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vv-1",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "Der Zauberer lässt die Münze ___schwinden.",
+     "say": "Der Zauberer lässt die Münze …schwinden.",
+     "options": [
+      "vor",
+      "ver"
+     ],
+     "answer": "ver"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vv-2",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "Papa ___bietet, im Wohnzimmer Fußball zu spielen.",
+     "say": "Papa …bietet, im Wohnzimmer Fußball zu spielen.",
+     "options": [
+      "vor",
+      "ver"
+     ],
+     "answer": "ver"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vv-3",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "Wir ___gleichen unsere Bilder.",
+     "say": "Wir …gleichen unsere Bilder.",
+     "options": [
+      "vor",
+      "ver"
+     ],
+     "answer": "ver"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vv-4",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "Bitte ___zeih mir!",
+     "say": "Bitte …zeih mir!",
+     "options": [
+      "vor",
+      "ver"
+     ],
+     "answer": "ver"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vv-5",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "Kannst du uns das Lied ___singen?",
+     "say": "Kannst du uns das Lied …singen?",
+     "options": [
+      "vor",
+      "ver"
+     ],
+     "answer": "vor"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vv-6",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "Ich möchte dir ein Spiel ___schlagen.",
+     "say": "Ich möchte dir ein Spiel …schlagen.",
+     "options": [
+      "vor",
+      "ver"
+     ],
+     "answer": "vor"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vv-7",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "Das Taxi soll bis vor die Haustür ___fahren.",
+     "say": "Das Taxi soll bis vor die Haustür …fahren.",
+     "options": [
+      "vor",
+      "ver"
+     ],
+     "answer": "vor"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vv-8",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "Pass auf, dass du dich nicht ___brennst!",
+     "say": "Pass auf, dass du dich nicht …brennst!",
+     "options": [
+      "vor",
+      "ver"
+     ],
+     "answer": "ver"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vv-9",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "Zum Fasching ___kleide ich mich als Ritter.",
+     "say": "Zum Fasching …kleide ich mich als Ritter.",
+     "options": [
+      "vor",
+      "ver"
+     ],
+     "answer": "ver"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vv-10",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "Wir ___bereiten zusammen das Fest.",
+     "say": "Wir …bereiten zusammen das Fest.",
+     "options": [
+      "vor",
+      "ver"
+     ],
+     "answer": "vor"
+    }
+   ]
+  },
+  {
+   "title": "Viele Vorsilben",
+   "icon": "🔤",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-wecken",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___wecken",
+     "say": "wecken",
+     "options": [
+      "auf",
+      "ent"
+     ],
+     "answer": "auf"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-raeumen",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___räumen",
+     "say": "räumen",
+     "options": [
+      "auf",
+      "zer"
+     ],
+     "answer": "auf"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-stehen",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___stehen",
+     "say": "stehen",
+     "options": [
+      "auf",
+      "emp"
+     ],
+     "answer": "auf"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-gruessen",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___grüßen",
+     "say": "grüßen",
+     "options": [
+      "be",
+      "ent"
+     ],
+     "answer": "be"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-lohnen",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___lohnen",
+     "say": "lohnen",
+     "options": [
+      "be",
+      "zer"
+     ],
+     "answer": "be"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-decken",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___decken",
+     "say": "decken",
+     "options": [
+      "ent",
+      "emp"
+     ],
+     "answer": "ent"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-scheiden",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___scheiden",
+     "say": "scheiden",
+     "options": [
+      "ent",
+      "auf"
+     ],
+     "answer": "ent"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-kehren",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___kehren",
+     "say": "kehren",
+     "options": [
+      "um",
+      "emp"
+     ],
+     "answer": "um"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-ruehren",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___rühren",
+     "say": "rühren",
+     "options": [
+      "um",
+      "emp"
+     ],
+     "answer": "um"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-zaehlen",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___zählen",
+     "say": "zählen",
+     "options": [
+      "er",
+      "zer"
+     ],
+     "answer": "er"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-klaeren",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___klären",
+     "say": "klären",
+     "options": [
+      "er",
+      "emp"
+     ],
+     "answer": "er"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-schrecken",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___schrecken",
+     "say": "schrecken",
+     "options": [
+      "er",
+      "ent"
+     ],
+     "answer": "er"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-fallen",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___fallen",
+     "say": "fallen",
+     "options": [
+      "ge",
+      "emp"
+     ],
+     "answer": "ge"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-finden",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___finden",
+     "say": "finden",
+     "options": [
+      "emp",
+      "zer"
+     ],
+     "answer": "emp"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-queren",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___queren",
+     "say": "queren",
+     "options": [
+      "über",
+      "ein"
+     ],
+     "answer": "über"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-stellen",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___stellen",
+     "say": "stellen",
+     "options": [
+      "her",
+      "ge"
+     ],
+     "answer": "her"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-steigen",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___steigen",
+     "say": "steigen",
+     "options": [
+      "ein",
+      "zer"
+     ],
+     "answer": "ein"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vs-vs-legen",
+     "task": "Welche Vorsilbe passt?",
+     "prompt": "___legen",
+     "say": "legen",
+     "options": [
+      "zer",
+      "emp"
+     ],
+     "answer": "zer"
+    },
+    {
+     "kind": "photo",
+     "id": "d3-vs-foto-verben",
+     "task": "Schreib diese Verben mit Vorsilbe in dein Heft.",
+     "show": [
+      "aufräumen",
+      "begrüßen",
+      "entdecken",
+      "umrühren",
+      "erzählen",
+      "überqueren",
+      "einsteigen",
+      "zerlegen"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

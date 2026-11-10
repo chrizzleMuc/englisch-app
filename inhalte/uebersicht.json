@@ -1,6 +1,26 @@
 {
   "subjects": [
     {
+      "id": "deutsch",
+      "title": "Deutsch",
+      "image": "📝",
+      "color": "#20bf6b",
+      "stages": [
+        {
+          "id": "deutsch-k3",
+          "title": "Klasse 3: Rechtschreibung",
+          "kinder": [
+            "pirat"
+          ],
+          "units": [
+            "deutsch/k3-vorsilben.json",
+            "deutsch/k3-unregelmaessige-verben.json",
+            "deutsch/k3-worttrennung.json"
+          ]
+        }
+      ]
+    },
+    {
       "id": "englisch",
       "title": "Englisch",
       "image": "🇬🇧",
