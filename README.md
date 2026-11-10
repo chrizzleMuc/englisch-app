@@ -46,6 +46,9 @@ Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede E
 
 Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.
 
+## Version 17
+- **Namen** im Elternbereich eintragen: Die Startseite zeigt den Namen groß und die Klasse klein darunter. Die Namen stehen nur auf dem Gerät und in der Sicherungsdatei, nicht im Programmcode.
+
 ## Version 16
 - Fehler behoben: Im Eltern-Code-Feld erschienen auf dem Handy keine Ziffern.
 - Zurück-Knopf oben links größer und gelb mit „Zurück“.

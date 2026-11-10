@@ -647,3 +647,7 @@ table.words td .emo { font-size: 28px; }
 .back-btn .back-arrow { font-size: 26px; line-height: 1; }
 .bar .test-badge { white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; }
 .bar .who { min-width: 0; }
+
+/* ---- Version 17: Namen ---- */
+.profile-card .pclass { font-size: 15px; font-weight: 700; color: var(--card-muted); }
+.voice-row .name-input { max-width: 220px; }
