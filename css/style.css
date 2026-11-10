@@ -599,3 +599,16 @@ table.words th, table.words td { border-color: var(--line); color: var(--card-in
 .go-bubble::after { content: ""; position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%) rotate(45deg); width: 12px; height: 12px; background: var(--gold); }
 .unit-screen .step:has(.go-bubble) { margin-top: 30px; }
 @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+/* 3D-Bilder: kleiner und mit Luft im Kasten */
+.emo { width: 1em; height: 1em; object-fit: contain; vertical-align: middle; display: inline-block; filter: drop-shadow(0 4px 4px rgba(40, 8, 110, .25)); }
+.emo + .emo, .emo + .emo-txt, .emo-txt + .emo { margin-left: .08em; }
+.huge-pic { font-size: clamp(56px, 11vw, 92px); }
+.mid-pic { font-size: 46px; }
+.choice { padding: 22px 10px; }
+.explore .exp { min-height: 120px; }
+.mpic { font-size: clamp(52px, 10vw, 80px); padding: 10px 14px; }
+.sticker { font-size: 38px; }
+.mcard .front { font-size: 38px; }
+.speaker-pic { font-size: 56px; }
+table.words td .emo { font-size: 28px; }

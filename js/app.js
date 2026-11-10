@@ -5,6 +5,7 @@ import { canRecord, record, playUrl } from "./recorder.js";
 import { content, loadContent } from "./content.js";
 import * as store from "./store.js";
 import * as photos from "./photos.js";
+import { pic } from "./pics.js";
 
 const APP_VERSION = 11;
 const app = document.getElementById("app");
@@ -294,7 +295,7 @@ STEPS.explore = (lesson, step) => {
   lessonRender(lesson, `
     <p class="task">Tipp auf jedes Bild und hör gut zu!</p>
     <div class="explore">
-      ${step.ids.map((id) => `<button class="choice exp" data-id="${id}"><span class="${step.phrases ? "mid-pic" : "huge-pic"}">${item(id).image}</span><span class="check">✓</span></button>`).join("")}
+      ${step.ids.map((id) => `<button class="choice exp" data-id="${id}"><span class="${step.phrases ? "mid-pic" : "huge-pic"}">${pic(item(id).image)}</span><span class="check">✓</span></button>`).join("")}
     </div>
     ${nextBtn("Weiter ➜", true)}`);
   on(".exp", "click", async (e) => {
@@ -321,7 +322,7 @@ function choose(lesson, step, { task, prompt = "", options, correctId, speak, gr
     <p class="task">${task}</p>
     ${prompt}
     <div class="choices n${options.length}">
-      ${options.map((o) => `<button class="choice" data-id="${o.id}"><span class="${big ? "huge-pic" : "mid-pic"}">${o.image}</span></button>`).join("")}
+      ${options.map((o) => `<button class="choice" data-id="${o.id}"><span class="${big ? "huge-pic" : "mid-pic"}">${pic(o.image)}</span></button>`).join("")}
     </div>
     <div class="feedback" id="fb"></div>`);
   on(".again", "click", () => speak());
@@ -403,7 +404,7 @@ STEPS.memory = (lesson, step) => {
   const token = lessonRender(lesson, `
     <p class="task">Memory: Finde Bild und Ton, die zusammengehören!</p>
     <div class="memory">
-      ${cards.map((c, i) => `<button class="mcard" data-i="${i}"><span class="back">?</span><span class="front">${c.face === "pic" ? c.it.image : "🔊"}</span></button>`).join("")}
+      ${cards.map((c, i) => `<button class="mcard" data-i="${i}"><span class="back">?</span><span class="front">${c.face === "pic" ? pic(c.it.image) : "🔊"}</span></button>`).join("")}
     </div>
     <div class="feedback" id="fb"></div>`);
   sayDe("Finde Bild und Ton, die zusammengehören!");
@@ -446,7 +447,7 @@ STEPS.missing = async (lesson, step) => {
   const others = shuffle(u.words.filter((w) => !set.includes(w))).slice(0, 2);
   const token = lessonRender(lesson, `
     <p class="task">Was fehlt? Schau dir die Bilder gut an!</p>
-    <div class="missing-row" id="row">${set.map((w) => `<span class="mpic">${w.image}</span>`).join("")}</div>
+    <div class="missing-row" id="row">${set.map((w) => `<span class="mpic">${pic(w.image)}</span>`).join("")}</div>
     <div id="area"></div>`);
   await sayDe("Schau dir die Bilder gut an!");
   for (const w of set) {
@@ -461,9 +462,9 @@ STEPS.missing = async (lesson, step) => {
   await wait(900);
   if (!alive(token)) return;
   $("row").classList.remove("closed");
-  $("row").innerHTML = rest.map((w) => `<span class="mpic">${w.image}</span>`).join("") + `<span class="mpic gap">❓</span>`;
+  $("row").innerHTML = rest.map((w) => `<span class="mpic">${pic(w.image)}</span>`).join("") + `<span class="mpic gap">❓</span>`;
   const options = shuffle([gone, ...others]);
-  $("area").innerHTML = `<p class="task">Was fehlt?</p><div class="choices n${options.length}">${options.map((o) => `<button class="choice" data-id="${o.id}"><span class="huge-pic">${o.image}</span></button>`).join("")}</div><div class="feedback" id="fb"></div>`;
+  $("area").innerHTML = `<p class="task">Was fehlt?</p><div class="choices n${options.length}">${options.map((o) => `<button class="choice" data-id="${o.id}"><span class="huge-pic">${pic(o.image)}</span></button>`).join("")}</div><div class="feedback" id="fb"></div>`;
   sayDe("Was fehlt?");
   let first = true;
   on(".choice", "click", async (e) => {
@@ -473,7 +474,7 @@ STEPS.missing = async (lesson, step) => {
       chime("good");
       $("fb").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
       store.grade(current.profile, gone.id, first);
-      app.querySelector(".gap").textContent = gone.image;
+      app.querySelector(".gap").innerHTML = pic(gone.image);
       await play(gone);
       await wait(400);
       if (alive(token)) advance(lesson);
@@ -495,7 +496,7 @@ STEPS.repeat = (lesson, step) => {
   let busy = false;
   const token = lessonRender(lesson, `
     <p class="task">Hör zu und sprich nach!</p>
-    <div class="learn-card"><span class="huge-pic">${it.image}</span></div>
+    <div class="learn-card"><span class="huge-pic">${pic(it.image)}</span></div>
     <div class="row compare">
       <div class="cmp"><button class="speaker big" id="orig" aria-label="Original">🔊</button><span class="small">Original</span></div>
       ${mic ? `<div class="cmp"><button class="rec" id="rec" aria-label="Aufnehmen">🎙️<span class="rec-ring"></span></button><span class="small" id="reclabel">Aufnehmen</span></div>
@@ -556,7 +557,7 @@ STEPS.action = (lesson, step) => {
   const it = item(step.id);
   const token = lessonRender(lesson, `
     <p class="task">Hör zu und mach mit!</p>
-    <div class="learn-card action-card"><span class="huge-pic">${it.image}</span></div>
+    <div class="learn-card action-card"><span class="huge-pic">${pic(it.image)}</span></div>
     <div class="row"><button class="speaker big again" aria-label="Nochmal hören">🔊</button></div>
     ${nextBtn("Geschafft! 💪")}`);
   on(".again", "click", () => play(it));
@@ -590,9 +591,9 @@ STEPS.story = (lesson, step) => {
   const show = async () => {
     const line = u.story[i];
     const sp = SPEAKERS[line.speaker] || { pitch: 1.05, pic: "🗣️" };
-    $("who").textContent = sp.pic;
+    $("who").innerHTML = pic(sp.pic);
     $("who").hidden = line.image === sp.pic;
-    $("scene").textContent = line.image;
+    $("scene").innerHTML = pic(line.image);
     app.querySelectorAll(".story-dots .dot").forEach((d) => d.classList.toggle("on", +d.dataset.k <= i));
     $("next").disabled = true;
     await play(line, { pitch: sp.pitch });
@@ -626,7 +627,7 @@ STEPS.rhyme = (lesson, step) => {
   let running = false;
   const token = lessonRender(lesson, `
     <p class="task">Ein Reim! Hör zu, klatsch und sprich mit!</p>
-    <div class="learn-card"><span class="huge-pic" id="rpic">${r.lines[0].image}</span></div>
+    <div class="learn-card"><span class="huge-pic" id="rpic">${pic(r.lines[0].image)}</span></div>
     <div class="row"><button class="speaker big" id="again" aria-label="Nochmal">🔁</button><button class="speaker big" id="clap" aria-label="Klatschen">👏</button></div>
     ${nextBtn("Weiter ➜", true)}`);
   const run = async () => {
@@ -634,7 +635,7 @@ STEPS.rhyme = (lesson, step) => {
     running = true;
     for (const line of r.lines) {
       if (!alive(token)) return;
-      $("rpic").textContent = line.image;
+      $("rpic").innerHTML = pic(line.image);
       $("rpic").classList.remove("bounce");
       void $("rpic").offsetWidth;
       $("rpic").classList.add("bounce");
@@ -667,8 +668,8 @@ function finishLesson(lesson) {
       <h2>${pick(PRAISE)}</h2>
       <div class="result-stars"><span class="star on">★</span></div>
       <p class="sub">🔥 ${streak.count} ${streak.count === 1 ? "Tag" : "Tage"} in Folge</p>
-      ${isLast && first ? `<p class="sub">Neuer Sticker für dein Album:</p><div class="stickers"><span class="sticker big-sticker">${lesson.u.image}</span></div>` : ""}
-      ${lesson.n === 0 && first ? `<p class="sub">Neue Wörter im Album:</p><div class="stickers">${lesson.u.words.map((w) => `<span class="sticker">${w.image}</span>`).join("")}</div>` : ""}
+      ${isLast && first ? `<p class="sub">Neuer Sticker für dein Album:</p><div class="stickers"><span class="sticker big-sticker">${pic(lesson.u.image)}</span></div>` : ""}
+      ${lesson.n === 0 && first ? `<p class="sub">Neue Wörter im Album:</p><div class="stickers">${lesson.u.words.map((w) => `<span class="sticker">${pic(w.image)}</span>`).join("")}</div>` : ""}
       <button class="go-btn" id="next">Weiter ➜</button>
     </div>`);
   chime("win");
@@ -1046,8 +1047,8 @@ function showAlbum() {
       </header>
       ${units.map((u) => {
         const has = store.lessonDone(pid, u.id, 0);
-        return `<h3 class="album-title">${store.lessonDone(pid, u.id, 4) ? u.image : "⬜"} ${esc(u.title_de)}</h3>
-          <div class="album">${u.words.map((w) => `<button class="sticker ${has ? "" : "empty"}" data-id="${w.id}" ${has ? "" : "disabled"}>${has ? w.image : "?"}</button>`).join("")}</div>`;
+        return `<h3 class="album-title">${store.lessonDone(pid, u.id, 4) ? pic(u.image) : "⬜"} ${esc(u.title_de)}</h3>
+          <div class="album">${u.words.map((w) => `<button class="sticker ${has ? "" : "empty"}" data-id="${w.id}" ${has ? "" : "disabled"}>${has ? pic(w.image) : "?"}</button>`).join("")}</div>`;
       }).join("")}
     </div>`);
   $("back").onclick = () => showHome();
@@ -1095,7 +1096,7 @@ function unitTable(u) {
   }
   return `<table class="words">
     <tr><th></th><th>Englisch</th><th>Deutsch</th>${PROFILES.map((p) => `<th>${p.title}</th>`).join("")}</tr>
-    ${[...u.words, ...u.phrases].map((w) => `<tr><td>${w.image}</td><td><button class="link-btn inline-btn" data-say="${w.id}">${esc(w.en)} 🔊</button></td><td>${esc(w.de || "")}</td>${PROFILES.map((p) => `<td>${box(p.id, w.id)}</td>`).join("")}</tr>`).join("")}
+    ${[...u.words, ...u.phrases].map((w) => `<tr><td>${pic(w.image)}</td><td><button class="link-btn inline-btn" data-say="${w.id}">${esc(w.en)} 🔊</button></td><td>${esc(w.de || "")}</td>${PROFILES.map((p) => `<td>${box(p.id, w.id)}</td>`).join("")}</tr>`).join("")}
   </table>`;
 }
 
