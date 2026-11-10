@@ -1,8 +1,8 @@
 // Feste Bausteine der App. Die Lerninhalte selbst stehen im Ordner "inhalte".
 
 export const PROFILES = [
-  { id: "entdecker", title: "Entdecker", pic: "🧭" },
-  { id: "pirat", title: "Pirat", pic: "🏴‍☠️" }
+  { id: "entdecker", title: "1. Klasse", pic: "" },
+  { id: "pirat", title: "3. Klasse", pic: "" }
 ];
 
 export const PRAISE = ["Super!", "Toll gemacht!", "Klasse!", "Prima!", "Spitze!", "Genau!"];
