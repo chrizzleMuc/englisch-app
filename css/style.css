@@ -509,20 +509,20 @@ h2 { font-size: 32px; font-weight: 750; letter-spacing: -.5px; }
    Version 11: Design "Lila Nacht" mit Stufen-Pfad
    ===================================================================== */
 :root {
-  --bg: #24114f;
-  --bg2: #1b0c3e;
+  --bg: #5b34c4;
+  --bg2: #4626a3;
   --ink: #ffffff;
-  --muted: #b8a8e8;
-  --card: #34206b;
-  --card2: #3f2a7d;
-  --line: #4a3490;
-  --brand: #7c4dff;
+  --muted: #e2d9ff;
+  --card: #6c48d4;
+  --card2: #7a58dd;
+  --line: #8a6ae4;
+  --brand: #ffffff;
   --gold: #ffc83d;
   --good: #2fd27a;
   --bad: #ff6b7a;
-  --ok-bg: #1f4a3f;
-  --bad-bg: #4f2140;
-  --shadow: 0 4px 0 rgba(10, 0, 30, .35);
+  --ok-bg: #2d8a5f;
+  --bad-bg: #a63a63;
+  --shadow: 0 4px 0 rgba(40, 10, 110, .45);
   --tint: rgba(255, 255, 255, .1);
 }
 html, body { background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%) fixed; color: var(--ink); }
@@ -559,9 +559,13 @@ table.words th, table.words td { border-color: var(--line); }
 .sticker.empty { background: var(--bg2); color: var(--line); }
 .progress { background: var(--card); }
 .progress span { background: var(--gold); }
+.progress { background: #4a2ca8; }
+.logo::after { color: var(--gold); }
+.unit-screen .node-label { color: #fff; }
+.choice.sel, .pbtn.sel { border-color: var(--gold); }
 .speaker { background: var(--card2); color: #fff; }
-.go-btn { background: var(--brand); box-shadow: 0 5px 0 #5a2fd6; }
-.go-btn:disabled { background: var(--card2); color: var(--muted); box-shadow: none; }
+.go-btn { background: var(--gold); color: #4a2a00; box-shadow: 0 5px 0 #d99a00; }
+.go-btn:disabled { background: #7a58dd; color: #d9ccff; box-shadow: none; }
 .wide-btn.danger { color: var(--bad); border-color: var(--bad); }
 .small-dots .dot { background: var(--line); }
 .small-dots .dot.on { background: var(--gold); }
@@ -569,7 +573,7 @@ table.words th, table.words td { border-color: var(--line); }
 .result-stars .star.on { color: var(--gold); }
 
 /* Themen-Kopf und Stufen-Pfad */
-.unit-card { background: var(--brand); border-radius: 18px; padding: 16px 20px; box-shadow: 0 5px 0 #5a2fd6; display: flex; flex-direction: column; gap: 2px; }
+.unit-card { background: #8e6cf0; border-radius: 18px; padding: 16px 20px; box-shadow: 0 5px 0 #4626a3; display: flex; flex-direction: column; gap: 2px; }
 .unit-card small { font-size: 13px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; opacity: .8; }
 .unit-card b { font-size: 22px; }
 .unit-screen .path { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 24px 0 40px; }
@@ -577,16 +581,16 @@ table.words th, table.words td { border-color: var(--line); }
 .unit-screen .node, .unit-screen .node.locked {
   width: 80px; height: 74px; border-radius: 50%; padding: 0; margin: 0; border: none; align-self: auto;
   display: flex; align-items: center; justify-content: center;
-  background: var(--card2); box-shadow: 0 7px 0 #241052; color: var(--muted);
+  background: #4a2ca8; box-shadow: 0 7px 0 #331c80; color: #b9a6f5;
 }
 .unit-screen .node .node-pics { width: auto; height: auto; background: none; font-size: 30px; font-weight: 900; color: inherit; }
-.unit-screen .node.open { background: var(--brand); color: #fff; box-shadow: 0 7px 0 #5a2fd6; }
+.unit-screen .node.open { background: #8e6cf0; color: #fff; box-shadow: 0 7px 0 #4626a3; }
 .unit-screen .node.done { background: var(--gold); color: #7a4d00; box-shadow: 0 7px 0 #d99a00; }
-.unit-screen .node.cur { background: #fff; color: var(--brand); box-shadow: 0 7px 0 #c9bcf2, 0 0 0 10px rgba(255, 255, 255, .12); }
+.unit-screen .node.cur { background: #fff; color: #6c48d4; box-shadow: 0 7px 0 #c9bcf2, 0 0 0 10px rgba(255, 255, 255, .12); }
 .unit-screen .node.locked { opacity: .75; }
-.unit-screen .node:active { transform: translateY(5px); box-shadow: 0 2px 0 #241052; }
+.unit-screen .node:active { transform: translateY(5px); box-shadow: 0 2px 0 #331c80; }
 .unit-screen .node-label { font-size: 14px; font-weight: 700; color: var(--muted); text-align: center; max-width: 140px; }
-.go-bubble { position: absolute; top: -40px; white-space: nowrap; background: #fff; color: var(--brand); font-weight: 900; font-size: 13px; letter-spacing: .6px; padding: 7px 12px; border-radius: 10px; animation: bob 1.6s ease-in-out infinite; }
+.go-bubble { position: absolute; top: -40px; white-space: nowrap; background: #fff; color: #6c48d4; font-weight: 900; font-size: 13px; letter-spacing: .6px; padding: 7px 12px; border-radius: 10px; animation: bob 1.6s ease-in-out infinite; }
 .go-bubble::after { content: ""; position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%) rotate(45deg); width: 12px; height: 12px; background: #fff; }
 .unit-screen .step:has(.go-bubble) { margin-top: 30px; }
 @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
