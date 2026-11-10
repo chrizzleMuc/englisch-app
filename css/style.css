@@ -376,3 +376,131 @@ table.words th, table.words td { text-align: left; padding: 6px 4px; border-bott
 .photo-info { flex: 1; min-width: 200px; }
 .row.left { justify-content: flex-start; margin-top: 6px; gap: 8px; }
 .wide-btn.mini { padding: 8px 12px; font-size: 16px; }
+
+/* =====================================================================
+   Modernes Design (Version 9): ruhige Farben, flache Karten, weniger verspielt.
+   Steht bewusst am Ende und überschreibt die alten Regeln.
+   ===================================================================== */
+:root {
+  --bg: #f4f5f9;
+  --ink: #161a23;
+  --muted: #687082;
+  --card: #ffffff;
+  --line: #e4e7ee;
+  --brand: #4f5bd5;
+  --good: #14a05a;
+  --bad: #e5484d;
+  --shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 2px 8px rgba(16, 24, 40, .04);
+  --tint: color-mix(in srgb, var(--c) 12%, white);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+body { -webkit-font-smoothing: antialiased; }
+h2 { font-size: 32px; font-weight: 750; letter-spacing: -.5px; }
+.who, .tname, .pname, .task, .stat, .choice .word, .wide-btn, .go-btn, .feedback { font-weight: 700; }
+
+.logo { color: var(--ink); text-shadow: none; font-weight: 800; letter-spacing: -2px; font-size: clamp(44px, 9vw, 72px); }
+.logo::after { content: "."; color: var(--brand); }
+.sub { font-size: 19px; }
+
+/* Karten: flach mit feinem Rand statt dickem 3D-Schatten */
+.icon-btn, .stat, .profile-card, .topic, .wide-btn, .learn-card, .choice, .sticker, .mpic, .story-card,
+.av-opt, .prompt-card, .pbtn, .bin, .syl, .write-list span, .missed, .parents section, .mic, .rec {
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+.icon-btn { width: 46px; height: 46px; border-radius: 12px; font-size: 20px; }
+.stat { font-size: 17px; padding: 8px 12px; border-radius: 12px; }
+.who { font-size: 20px; }
+.profile-card:active, .topic:active, .choice:active, .node:active, .pbtn:active, .bin:active, .wide-btn:active, .go-btn:active {
+  transform: scale(.98); box-shadow: var(--shadow);
+}
+
+.profile-card { border-radius: 20px; padding: 24px 12px; }
+.pname { font-size: 22px; }
+.avatar { box-shadow: none; }
+
+/* Themen-Kacheln: weiß mit farbigem Symbol-Feld */
+.topics { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+.topic { border-radius: 18px; padding: 16px 12px; border-bottom: 1px solid var(--line); align-items: flex-start; text-align: left; }
+.topic .big-pic { font-size: 30px; width: 56px; height: 56px; border-radius: 14px; background: var(--tint); display: flex; align-items: center; justify-content: center; }
+.subject .big-pic { font-size: 34px; width: 64px; height: 64px; }
+.tname { font-size: 17px; }
+.small-dots .dot { width: 8px; height: 8px; border-width: 0; background: var(--line); transform: none; }
+.small-dots .dot.on { background: var(--c); transform: none; }
+.badge { font-size: 20px; top: 12px; right: 12px; }
+.stage-title { font-size: 14px; text-transform: uppercase; letter-spacing: .6px; font-weight: 700; margin: 10px 0 -6px; }
+.subject-title { font-size: 24px; }
+
+.wide-btn { border-radius: 14px; font-size: 17px; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+.wide-btn.danger { color: var(--bad); border-color: #f5c2c4; }
+.wide-btn.mini { font-size: 15px; }
+
+/* Lern-Pfad als ruhige Liste statt Zickzack-Blasen */
+.path { gap: 10px; }
+.node, .node.left, .node.right {
+  align-self: stretch; margin: 0; width: auto; height: auto; border-radius: 16px; padding: 14px 16px;
+  flex-direction: row; justify-content: flex-start; gap: 14px;
+  background: var(--card); color: var(--ink); border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+.node .node-pics { font-size: 24px; width: 46px; height: 46px; border-radius: 12px; background: var(--tint); display: flex; align-items: center; justify-content: center; flex: none; }
+.node .node-label { font-size: 17px; font-weight: 650; flex: 1; text-align: left; }
+.node-stars .star { color: var(--line); font-size: 20px; }
+.node-stars .star.on { color: #f5b301; }
+.node.locked { background: #f7f8fb; box-shadow: none; color: var(--muted); }
+.node.locked .node-pics { background: #eef0f5; }
+
+/* Lektion */
+.progress { height: 10px; border-radius: 6px; }
+.progress span { border-radius: 6px; }
+.task { font-size: 22px; }
+.hint { font-size: 15px; }
+.review-tag { font-size: 14px; font-weight: 600; }
+.learn-card, .story-card { border-radius: 22px; }
+.speaker { box-shadow: none; background: var(--tint); color: var(--ink); width: 64px; height: 64px; font-size: 28px; }
+.speaker.big { width: 80px; height: 80px; font-size: 34px; }
+.speaker.me { background: #e6f1fd; }
+.choice { border: 2px solid var(--line); border-radius: 18px; min-height: 100px; }
+.choice .word { font-size: 21px; }
+.choice.sel { border-color: var(--brand); }
+.choice.right { background: #eaf7f0; }
+.choice.wrong { background: #fdeeee; }
+
+.go-btn { background: var(--brand); border-radius: 14px; font-size: 19px; padding: 15px 26px; min-width: 220px; box-shadow: 0 1px 2px rgba(16,24,40,.12); }
+.go-btn:disabled { background: #c8ccd8; box-shadow: none; }
+.feedback { font-size: 21px; }
+
+.input { border: 2px solid var(--line); border-radius: 12px; font-size: 20px; }
+.input:focus { outline: none; border-color: var(--brand); }
+
+/* Schulfächer */
+.prompt-card { border-radius: 20px; padding: 20px 16px; }
+.prompt-text { font-size: clamp(24px, 5.5vw, 38px); font-weight: 700; }
+.pbtn, .bin { border: 2px solid var(--line); border-radius: 14px; font-weight: 650; }
+.pbtn { font-size: clamp(17px, 3.6vw, 22px); }
+.pbtn.sel { border-color: var(--brand); background: color-mix(in srgb, var(--brand) 8%, white); }
+.pbtn.done { background: #eaf7f0; border-color: #a7dfbf; opacity: .6; }
+.bin-title { font-size: 18px; }
+.syl { border-radius: 18px; }
+.let { font-weight: 700; }
+.write-list span { font-size: 20px; font-weight: 650; border-radius: 10px; box-shadow: none; }
+.solution, .solution-list span { background: #fff6d6; }
+.score { font-size: 24px; }
+
+/* Ergebnis, Album, Memory */
+.result-stars .star { font-size: 56px; }
+.sticker { border-radius: 14px; font-size: 40px; height: 76px; }
+.mcard { border-radius: 14px; box-shadow: var(--shadow); font-size: 36px; }
+.mpic { border-radius: 16px; }
+
+/* Eltern */
+.parents section { border-radius: 16px; }
+.parents h3 { font-size: 18px; }
+.notice { border-radius: 12px; font-size: 16px; }
+
+/* Version 10: ohne große Symbole und ohne Avatar */
+.topic { border-left: 4px solid var(--c); min-height: 84px; justify-content: space-between; }
+.subject.topic { min-height: 110px; }
+.subject .tname { font-size: 22px; }
+.profile-card { padding: 26px 16px; }
+.node .node-pics { font-size: 18px; font-weight: 700; color: var(--brand); }
+.node.locked .node-pics { font-size: 16px; color: var(--muted); }

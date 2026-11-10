@@ -1,5 +1,5 @@
 // Offline-Speicher: Bei jeder Änderung an der App VERSION erhöhen.
-const VERSION = "learnino-8";
+const VERSION = "learnino-10";
 const FILES = [
   "./",
   "index.html",
