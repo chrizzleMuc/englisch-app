@@ -1,0 +1,438 @@
+{
+ "id": "d3-worttrennung",
+ "type": "schule",
+ "title_de": "Worttrennung",
+ "image": "✂️",
+ "color": "#fa8231",
+ "lessons": [
+  {
+   "title": "Die Regeln",
+   "icon": "📏",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-wt-regel-0",
+     "task": "Stimmt das?",
+     "prompt": "sch bleibt beim Trennen zusammen: Fla-sche",
+     "say": "sch bleibt beim Trennen zusammen.",
+     "options": [
+      "Stimmt",
+      "Stimmt nicht"
+     ],
+     "keepOrder": true,
+     "answer": "Stimmt",
+     "explain": "Richtig: Fla-sche, Ta-sche."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wt-regel-1",
+     "task": "Stimmt das?",
+     "prompt": "ch wird getrennt: Sac-he",
+     "say": "ch wird getrennt.",
+     "options": [
+      "Stimmt",
+      "Stimmt nicht"
+     ],
+     "keepOrder": true,
+     "answer": "Stimmt nicht",
+     "explain": "ch bleibt zusammen: Sa-che."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wt-regel-2",
+     "task": "Stimmt das?",
+     "prompt": "ng und nk werden getrennt: Fin-ger, tan-ken",
+     "say": "ng und nk werden getrennt.",
+     "options": [
+      "Stimmt",
+      "Stimmt nicht"
+     ],
+     "keepOrder": true,
+     "answer": "Stimmt",
+     "explain": "Richtig: Fin-ger, tan-ken, sprin-gen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wt-regel-3",
+     "task": "Stimmt das?",
+     "prompt": "Ein einzelner Buchstabe am Anfang darf allein stehen: E-le-fant",
+     "say": "Ein einzelner Buchstabe am Anfang darf allein stehen.",
+     "options": [
+      "Stimmt",
+      "Stimmt nicht"
+     ],
+     "keepOrder": true,
+     "answer": "Stimmt nicht",
+     "explain": "Ein einzelner Buchstabe wird nie abgetrennt: Ele-fant, oben."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wt-regel-4",
+     "task": "Stimmt das?",
+     "prompt": "Wörter mit nur einer Silbe kann man nicht trennen: Luft",
+     "say": "Wörter mit nur einer Silbe kann man nicht trennen.",
+     "options": [
+      "Stimmt",
+      "Stimmt nicht"
+     ],
+     "keepOrder": true,
+     "answer": "Stimmt",
+     "explain": "Richtig: Luft, Fisch, Milch bleiben ganz."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wt-regel-5",
+     "task": "Stimmt das?",
+     "prompt": "ck wird getrennt: Zuc-ker",
+     "say": "ck wird getrennt.",
+     "options": [
+      "Stimmt",
+      "Stimmt nicht"
+     ],
+     "keepOrder": true,
+     "answer": "Stimmt nicht",
+     "explain": "ck bleibt zusammen: Zu-cker."
+    }
+   ]
+  },
+  {
+   "title": "Trennen 1",
+   "icon": "✂️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "syllables",
+     "id": "d3-wt-boden",
+     "word": "Boden",
+     "answer": "Bo-den"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-neu",
+     "word": "neu",
+     "answer": "neu"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-etwas",
+     "word": "etwas",
+     "answer": "et-was"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-beide",
+     "word": "beide",
+     "answer": "bei-de"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-gehoeren",
+     "word": "gehören",
+     "answer": "ge-hö-ren"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-jagen",
+     "word": "jagen",
+     "answer": "ja-gen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-luft",
+     "word": "Luft",
+     "answer": "Luft"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-moegen",
+     "word": "mögen",
+     "answer": "mö-gen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-helfen",
+     "word": "helfen",
+     "answer": "hel-fen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-weinen",
+     "word": "weinen",
+     "answer": "wei-nen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-nase",
+     "word": "Nase",
+     "answer": "Na-se"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-freuen",
+     "word": "freuen",
+     "answer": "freu-en"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-stein",
+     "word": "Stein",
+     "answer": "Stein"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-gegen",
+     "word": "gegen",
+     "answer": "ge-gen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-reiten",
+     "word": "reiten",
+     "answer": "rei-ten"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-neben",
+     "word": "neben",
+     "answer": "ne-ben"
+    }
+   ]
+  },
+  {
+   "title": "Trennen 2",
+   "icon": "✂️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "syllables",
+     "id": "d3-wt-runter",
+     "word": "runter",
+     "answer": "run-ter"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-wagen",
+     "word": "Wagen",
+     "answer": "Wa-gen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-heute",
+     "word": "heute",
+     "answer": "heu-te"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-bremsen",
+     "word": "bremsen",
+     "answer": "brem-sen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-hals",
+     "word": "Hals",
+     "answer": "Hals"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-seite",
+     "word": "Seite",
+     "answer": "Sei-te"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-genau",
+     "word": "genau",
+     "answer": "ge-nau"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-jeder",
+     "word": "jeder",
+     "answer": "je-der"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-zeitung",
+     "word": "Zeitung",
+     "answer": "Zei-tung"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-hier",
+     "word": "hier",
+     "answer": "hier"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-sache",
+     "word": "Sache",
+     "answer": "Sa-che"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-oben",
+     "word": "oben",
+     "answer": "oben"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-tanken",
+     "word": "tanken",
+     "answer": "tan-ken"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-schlecht",
+     "word": "schlecht",
+     "answer": "schlecht"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-flasche",
+     "word": "Flasche",
+     "answer": "Fla-sche"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-sprechen",
+     "word": "sprechen",
+     "answer": "spre-chen"
+    }
+   ]
+  },
+  {
+   "title": "Trennen 3",
+   "icon": "✂️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "syllables",
+     "id": "d3-wt-schenken",
+     "word": "schenken",
+     "answer": "schen-ken"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-loch",
+     "word": "Loch",
+     "answer": "Loch"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-tasche",
+     "word": "Tasche",
+     "answer": "Ta-sche"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-ding",
+     "word": "Ding",
+     "answer": "Ding"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-licht",
+     "word": "Licht",
+     "answer": "Licht"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-zwischen",
+     "word": "zwischen",
+     "answer": "zwi-schen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-springen",
+     "word": "springen",
+     "answer": "sprin-gen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-elefant",
+     "word": "Elefant",
+     "answer": "Ele-fant"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-geschichte",
+     "word": "Geschichte",
+     "answer": "Ge-schich-te"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-mensch",
+     "word": "Mensch",
+     "answer": "Mensch"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-reich",
+     "word": "reich",
+     "answer": "reich"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-finger",
+     "word": "Finger",
+     "answer": "Fin-ger"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-fisch",
+     "word": "Fisch",
+     "answer": "Fisch"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-wt-milch",
+     "word": "Milch",
+     "answer": "Milch"
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-wt-foto",
+     "task": "Schreib diese Wörter in Silben in dein Heft, zum Beispiel: Fla-sche.",
+     "say": "Schreib diese Wörter in Silben in dein Heft.",
+     "show": [
+      "Geschichte",
+      "Elefant",
+      "Zeitung",
+      "springen",
+      "gehören",
+      "Tasche",
+      "Finger",
+      "oben",
+      "Milch",
+      "bremsen"
+     ],
+     "solution": [
+      "Ge-schich-te",
+      "Ele-fant",
+      "Zei-tung",
+      "sprin-gen",
+      "ge-hö-ren",
+      "Ta-sche",
+      "Fin-ger",
+      "oben",
+      "Milch",
+      "brem-sen"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

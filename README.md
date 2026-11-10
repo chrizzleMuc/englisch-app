@@ -32,3 +32,16 @@ In `sw.js` die Zahl bei `VERSION` und in `js/app.js` `APP_VERSION` erhöhen, dam
 python3 -m http.server 8000
 ```
 Dann im Browser `http://localhost:8000` öffnen.
+
+## Schulfächer (seit Version 8)
+
+Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede Einheit hat Lektionen mit Aufgaben:
+
+- `pairs` – Paare verbinden (z. B. wir singen – wir sangen)
+- `type` – Antwort eintippen, optional vorher wählen (`choose`, z. B. hat/ist)
+- `choice` – auswählen, auch „Stimmt das?“ mit `explain`
+- `sort` – Wörter in Gruppen sortieren (z. B. Wortfamilien)
+- `syllables` – Wort in Silben trennen (`answer` mit Bindestrichen)
+- `photo` – im Heft schreiben, Foto als Nachweis (Fotomappe im Elternbereich)
+
+Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.

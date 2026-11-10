@@ -4,8 +4,9 @@ import { play, promptAnd, stopAudio } from "./audio.js";
 import { canRecord, record, playUrl } from "./recorder.js";
 import { content, loadContent } from "./content.js";
 import * as store from "./store.js";
+import * as photos from "./photos.js";
 
-const APP_VERSION = 7;
+const APP_VERSION = 8;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -113,9 +114,11 @@ function showProfiles() {
 }
 
 // ---------- Freigeschaltete Inhalte ----------
+const stageDefault = (pid, st) => !st.kinder || st.kinder.includes(pid);
+
 function stagesFor(pid, sub) {
   return sub.stages
-    .filter((st) => store.isEnabled(pid, st.id))
+    .filter((st) => store.isEnabled(pid, st.id, stageDefault(pid, st)))
     .map((st) => ({ ...st, units: st.units.filter((u) => store.isEnabled(pid, u.id)) }))
     .filter((st) => st.units.length);
 }
@@ -124,8 +127,13 @@ function subjectsFor(pid) {
   return content.subjects.filter((s) => store.isEnabled(pid, s.id) && stagesFor(pid, s).length);
 }
 
+const isSchool = (u) => u.type === "schule";
+const unitIds = (u) => (isSchool(u) ? u.singles.map((q) => q.id) : u.words.map((w) => w.id));
+const lessonsOf = (u) => (isSchool(u) ? u.lessons : LESSONS);
+
 function unitMastered(pid, unit) {
-  return unit.words.every((w) => (store.card(pid, w.id)?.box || 0) >= 3);
+  const ids = unitIds(unit);
+  return ids.length > 0 && ids.every((id) => (store.card(pid, id)?.box || 0) >= 3);
 }
 
 function homeHeader(p) {
@@ -152,19 +160,20 @@ function showHome(subjectId = current.subject) {
         <h3 class="stage-title">${esc(st.title)}</h3>
         <div class="topics">
           ${st.units.map((u) => {
-            const done = [0, 1, 2, 3, 4].filter((n) => store.lessonDone(p.id, u.id, n)).length;
+            const nl = lessonsOf(u).length;
+            const done = lessonsOf(u).filter((_, n) => store.lessonDone(p.id, u.id, n)).length;
             return `<button class="topic" data-id="${u.id}" style="--c:${u.color}">
               ${unitMastered(p.id, u) ? `<span class="badge">🏆</span>` : ""}
               <span class="big-pic">${u.image}</span>
               <span class="tname">${esc(u.title_de)}</span>
-              <span class="dots small-dots">${[0, 1, 2, 3, 4].map((n) => `<span class="dot ${n < done ? "on" : ""}"></span>`).join("")}</span>
+              <span class="dots small-dots">${Array.from({ length: nl }, (_, n) => `<span class="dot ${n < done ? "on" : ""}"></span>`).join("")}</span>
             </button>`;
           }).join("")}
         </div>`).join("")}
-      <button class="wide-btn album-btn" id="album">📒 Mein Sticker-Album</button>
+      ${stagesFor(p.id, sub).some((st) => st.units.some((u) => u.words.length)) ? `<button class="wide-btn album-btn" id="album">📒 Mein Sticker-Album</button>` : ""}
     </div>`);
   $("back").onclick = () => (many ? showSubjects(subs) : showProfiles());
-  $("album").onclick = showAlbum;
+  if ($("album")) $("album").onclick = showAlbum;
   $("me").onclick = () => showAvatarEditor(false);
   on(".topic[data-id]", "click", (e) => {
     chime("pop");
@@ -202,8 +211,8 @@ function showUnit(unitId) {
         ${unitMastered(pid, u) ? `<span class="stat">🏆</span>` : ""}
       </header>
       <div class="path">
-        ${LESSONS.map((l, i) => {
-          const open = i === 0 || store.lessonDone(pid, u.id, i - 1);
+        ${lessonsOf(u).map((l, i) => {
+          const open = isSchool(u) || i === 0 || store.lessonDone(pid, u.id, i - 1);
           const done = store.lessonDone(pid, u.id, i);
           return `<button class="node ${open ? "" : "locked"} ${i % 2 ? "right" : "left"}" data-i="${i}" ${open ? "" : "disabled"} style="--c:${u.color}">
             <span class="node-pics">${open ? l.icon : "🔒"}</span>
@@ -218,16 +227,28 @@ function showUnit(unitId) {
 }
 
 // ---------- Lektionen zusammenstellen ----------
-function reviewSteps(pid) {
-  // Jede Sitzung beginnt mit höchstens 5 fälligen Inhalten aus der Lernkartei
-  return store
+function reviewSteps(pid, subject) {
+  // Jede Sitzung beginnt mit höchstens 5 fälligen Inhalten aus der Lernkartei (nur aus demselben Fach)
+  const inSubject = (unitId) => unitById(unitId) && unitById(unitId).subject === subject && store.isEnabled(pid, unitId);
+  const steps = store
     .dueCards(pid)
-    .filter((id) => item(id) && store.isEnabled(pid, item(id).unit))
+    .filter((id) => item(id) && inSubject(item(id).unit))
     .slice(0, 5)
-    .map((id) => ({ kind: item(id).kind === "word" ? "listen" : "phrasePic", id, review: true, unit: item(id).unit }));
+    .map((id) => {
+      const it = item(id);
+      if (it.kind === "task") return { ...singleStep(it.q), review: true, unit: it.unit };
+      return { kind: it.kind === "word" ? "listen" : "phrasePic", id, review: true, unit: it.unit };
+    });
+  // Foto-Aufgaben, bei denen die Eltern "nochmal" gesagt haben
+  for (const tid of store.redoTasks(pid)) {
+    const t = content.photoTasks.get(tid);
+    if (t && inSubject(t.unit)) steps.push({ kind: "photo", t, review: true, unit: t.unit });
+  }
+  return steps;
 }
 
 function buildLesson(u, n) {
+  if (isSchool(u)) return buildSchoolLesson(u, n);
   const words = u.words.map((w) => w.id);
   const phrases = u.phrases.map((p) => p.id);
   const steps = [];
@@ -260,9 +281,11 @@ function buildLesson(u, n) {
 
 function startLesson(unitId, n) {
   const u = unitById(unitId);
-  const review = reviewSteps(current.profile);
+  const school = isSchool(u);
+  const isTest = school && !!u.lessons[n].test;
+  const review = isTest ? [] : reviewSteps(current.profile, u.subject);
   const steps = [...review, ...buildLesson(u, n)];
-  const lesson = { u, n, steps, pos: 0, reviewCount: review.length };
+  const lesson = { u, n, steps, pos: 0, reviewCount: review.length, school, isTest, right: 0, total: 0, missed: [] };
   nextStep(lesson);
 }
 
@@ -275,7 +298,7 @@ function lessonFrame(lesson, inner) {
         <button class="icon-btn" id="quit" aria-label="Beenden">✖</button>
         <div class="progress"><span style="width:${pct}%"></span></div>
       </header>
-      ${step?.review ? `<p class="review-tag">🔁 Wiederholung</p>` : ""}
+      ${step?.review ? `<p class="review-tag">🔁 Wiederholung</p>` : step?.retry ? `<p class="review-tag">🔁 Nochmal, weil es vorhin nicht geklappt hat</p>` : ""}
       ${inner}
     </div>`;
 }
@@ -669,6 +692,7 @@ STEPS.rhyme = (lesson, step) => {
 
 // ---------- Ende der Lektion ----------
 function finishLesson(lesson) {
+  if (lesson.school) return finishSchoolLesson(lesson);
   const pid = current.profile;
   const first = !store.lessonDone(pid, lesson.u.id, lesson.n);
   store.setLessonDone(pid, lesson.u.id, lesson.n);
@@ -689,10 +713,368 @@ function finishLesson(lesson) {
   $("next").onclick = () => showUnit(lesson.u.id);
 }
 
+// ================= Schulfächer (Deutsch, Mathe, HSU …) =================
+// Aufgabenarten: pairs (Paare finden), type (eintippen, optional vorher hat/ist wählen),
+// choice (auswählen, z. B. "Stimmt das?"), sort (in Gruppen sortieren),
+// syllables (Silben trennen), photo (im Heft schreiben + Foto als Nachweis).
+
+const norm = (s) => String(s || "").normalize("NFC").replace(/\s+/g, " ").trim();
+const singleStep = (q) => ({ kind: q.kind, q });
+
+// Frage und richtige Antwort als Text (für Elternbereich und Ergebnis)
+function describe(q) {
+  if (q.kind === "type") return [q.prompt, [q.before, q.choose?.answer, q.answer].filter(Boolean).join(" ")];
+  if (q.kind === "syllables") return [q.word, q.answer];
+  return [q.prompt, q.answer];
+}
+
+function buildSchoolLesson(u, n) {
+  const l = u.lessons[n];
+  if (l.test) return shuffle(u.singles).slice(0, l.count || 12).map((q) => ({ ...singleStep(q), unit: u.id }));
+  if (l.pick) return shuffle(u.singles.filter((q) => q.id.startsWith(l.pick))).slice(0, l.count || 10).map((q) => ({ ...singleStep(q), unit: u.id }));
+  let steps = l.tasks.map((t) => (["pairs", "sort", "photo"].includes(t.kind) ? { kind: t.kind, t } : singleStep(t)));
+  if (l.mix) steps = shuffle(steps);
+  return steps.map((s) => ({ unit: u.id, ...s }));
+}
+
+// Ergebnis einer Einzelfrage: Lernkartei, Punkte, und bei Fehler am Ende der Lektion nochmal
+function score(lesson, step, id, correct) {
+  const pid = current.profile;
+  if (step.retry) return;
+  store.grade(pid, id, correct);
+  store.save();
+  if (!step.review) {
+    lesson.total++;
+    if (correct) lesson.right++;
+  }
+  if (!correct) {
+    if (!lesson.missed.includes(id)) lesson.missed.push(id);
+    if (!lesson.isTest) lesson.steps.push({ ...singleStep(item(id).q), unit: item(id).unit, retry: true });
+  }
+}
+
+function promptCard(text) {
+  return `<div class="prompt-card"><span class="prompt-text">${esc(text)}</span><button class="speaker again" aria-label="Vorlesen">🔊</button></div>`;
+}
+
+// ---------- Übung: Eintippen ----------
+STEPS.type = (lesson, step) => {
+  const q = step.q;
+  let first = true;
+  let chosen = q.choose ? null : "";
+  const token = lessonRender(lesson, `
+    <p class="task">${esc(q.task || "Schreib die Antwort!")}</p>
+    ${promptCard(q.prompt)}
+    ${q.choose ? `<div class="choices text-choices" id="ch">${q.choose.options.map((o) => `<button class="choice" data-v="${esc(o)}"><span class="word">${esc(o)}</span></button>`).join("")}</div>` : ""}
+    <div class="type-row" id="tr" ${q.choose ? "hidden" : ""}>
+      <span class="before" id="before">${esc(q.before || "")}</span>
+      <input id="ans" class="input type-input" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done">
+    </div>
+    <div class="feedback" id="fb"></div>
+    <button class="go-btn" id="check" ${q.choose ? "hidden" : ""}>Prüfen ✓</button>
+    <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
+  const say = () => sayDe(q.say || q.prompt);
+  on(".again", "click", say);
+  setTimeout(() => alive(token) && say(), 250);
+  const showInput = () => {
+    $("before").textContent = [q.before, chosen].filter(Boolean).join(" ");
+    $("tr").hidden = false;
+    $("check").hidden = false;
+    $("ans").focus();
+  };
+  on("#ch .choice", "click", (e) => {
+    if (chosen) return;
+    const el = e.currentTarget;
+    if (el.dataset.v === q.choose.answer) {
+      chosen = el.dataset.v;
+      el.classList.add("right");
+      chime("good");
+      app.querySelectorAll("#ch .choice").forEach((b) => (b.disabled = true));
+      $("fb").innerHTML = "";
+      showInput();
+    } else {
+      first = false;
+      el.classList.add("wrong");
+      el.disabled = true;
+      chime("bad");
+      $("fb").innerHTML = `<span class="try">Hmm, probier das andere!</span>`;
+    }
+  });
+  if (!q.choose) setTimeout(() => alive(token) && $("ans").focus(), 300);
+  const check = async () => {
+    const typed = norm($("ans").value);
+    if (!typed) return;
+    const full = norm([q.before, chosen, q.answer].filter(Boolean).join(" "));
+    const ok = typed === norm(q.answer) || typed === full || (q.also || []).some((a) => norm(a) === typed);
+    $("ans").disabled = true;
+    $("check").hidden = true;
+    if (ok) {
+      $("ans").classList.add("right");
+      chime("good");
+      $("fb").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
+      score(lesson, step, q.id, first);
+      await wait(900);
+      if (alive(token)) advance(lesson);
+    } else {
+      $("ans").classList.add("wrong");
+      chime("bad");
+      $("fb").innerHTML = `<span class="try">Richtig ist:</span> <span class="solution">${esc(full)}</span>`;
+      score(lesson, step, q.id, false);
+      $("next").hidden = false;
+    }
+  };
+  $("check").onclick = check;
+  $("ans").addEventListener("keydown", (e) => e.key === "Enter" && check());
+  $("next").onclick = () => advance(lesson);
+};
+
+// ---------- Übung: Auswählen (auch "Stimmt das?") ----------
+STEPS.choice = (lesson, step) => {
+  const q = step.q;
+  let first = true;
+  let locked = false;
+  const opts = q.keepOrder ? q.options : shuffle(q.options);
+  const token = lessonRender(lesson, `
+    <p class="task">${esc(q.task || "Was ist richtig?")}</p>
+    ${promptCard(q.prompt)}
+    <div class="choices text-choices">${opts.map((o) => `<button class="choice" data-v="${esc(o)}"><span class="word">${esc(o)}</span></button>`).join("")}</div>
+    <div class="feedback" id="fb"></div>
+    <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
+  const say = () => sayDe(q.say || q.prompt);
+  on(".again", "click", say);
+  setTimeout(() => alive(token) && say(), 250);
+  on(".choices .choice", "click", async (e) => {
+    if (locked) return;
+    const el = e.currentTarget;
+    if (el.dataset.v === q.answer) {
+      locked = true;
+      el.classList.add("right");
+      chime("good");
+      score(lesson, step, q.id, first);
+      if (q.explain) {
+        $("fb").innerHTML = `<span class="ok">${first ? pick(PRAISE) : "Genau."}</span><p class="explain">${esc(q.explain)}</p>`;
+        $("next").hidden = false;
+      } else {
+        $("fb").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
+        await wait(800);
+        if (alive(token)) advance(lesson);
+      }
+    } else {
+      first = false;
+      el.classList.add("wrong");
+      el.disabled = true;
+      chime("bad");
+      $("fb").innerHTML = `<span class="try">Nicht ganz. Versuch es nochmal!</span>`;
+    }
+  });
+  $("next").onclick = () => advance(lesson);
+};
+
+// ---------- Übung: Silben trennen ----------
+STEPS.syllables = (lesson, step) => {
+  const q = step.q;
+  const letters = [...q.word];
+  const cuts = new Set();
+  const token = lessonRender(lesson, `
+    <p class="task">Wo trennst du das Wort?</p>
+    <p class="hint">Tipp zwischen die Buchstaben. Geht es nicht zu trennen? Dann gleich auf „Fertig“.</p>
+    <div class="syl-wrap"><div class="syl" id="syl">${letters.map((ch, i) => `<span class="let">${esc(ch)}</span>${i < letters.length - 1 ? `<button class="gap" data-i="${i}" aria-label="Hier trennen"></button>` : ""}`).join("")}</div></div>
+    <div class="row"><button class="speaker again" aria-label="Vorlesen">🔊</button></div>
+    <div class="feedback" id="fb"></div>
+    <button class="go-btn" id="check">Fertig ✓</button>
+    <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
+  const say = () => sayDe(q.word);
+  on(".again", "click", say);
+  setTimeout(() => alive(token) && say(), 250);
+  on(".gap", "click", (e) => {
+    const i = +e.currentTarget.dataset.i;
+    if (cuts.has(i)) cuts.delete(i);
+    else cuts.add(i);
+    e.currentTarget.classList.toggle("cut", cuts.has(i));
+    chime("pop");
+  });
+  $("check").onclick = async () => {
+    const built = letters.map((ch, i) => ch + (cuts.has(i) ? "-" : "")).join("");
+    app.querySelectorAll(".gap").forEach((b) => (b.disabled = true));
+    $("check").hidden = true;
+    if (built === q.answer) {
+      chime("good");
+      $("syl").classList.add("right");
+      $("fb").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
+      score(lesson, step, q.id, true);
+      await wait(900);
+      if (alive(token)) advance(lesson);
+    } else {
+      chime("bad");
+      $("fb").innerHTML = `<span class="try">Richtig ist:</span> <span class="solution">${esc(q.answer.includes("-") ? q.answer : q.answer + " (nicht trennbar)")}</span>`;
+      score(lesson, step, q.id, false);
+      $("next").hidden = false;
+    }
+  };
+  $("next").onclick = () => advance(lesson);
+};
+
+// ---------- Übung: Paare finden ----------
+STEPS.pairs = (lesson, step) => {
+  const t = step.t;
+  const wrong = new Set();
+  let sel = null;
+  let found = 0;
+  const left = shuffle(t.pairs);
+  const right = shuffle(t.pairs);
+  const token = lessonRender(lesson, `
+    <p class="task">${esc(t.task || "Was gehört zusammen?")}</p>
+    <p class="hint">Tipp links ein Wort an und dann rechts das passende.</p>
+    <div class="pairs">
+      <div class="pcol">${left.map((p) => `<button class="pbtn" data-side="a" data-id="${p.id}">${esc(p.a)}</button>`).join("")}</div>
+      <div class="pcol">${right.map((p) => `<button class="pbtn" data-side="b" data-id="${p.id}">${esc(p.b)}</button>`).join("")}</div>
+    </div>
+    <div class="feedback" id="fb"></div>`);
+  on(".pbtn", "click", async (e) => {
+    const el = e.currentTarget;
+    if (el.classList.contains("done")) return;
+    if (!sel || sel.dataset.side === el.dataset.side) {
+      if (sel) sel.classList.remove("sel");
+      sel = el;
+      el.classList.add("sel");
+      chime("pop");
+      return;
+    }
+    const a = sel;
+    sel = null;
+    a.classList.remove("sel");
+    const leftBtn = a.dataset.side === "a" ? a : el;
+    if (a.dataset.id === el.dataset.id) {
+      a.classList.add("done");
+      el.classList.add("done");
+      chime("good");
+      if (++found === t.pairs.length) {
+        t.pairs.forEach((p) => score(lesson, step, p.id, !wrong.has(p.id)));
+        $("fb").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
+        chime("win");
+        await wait(1000);
+        if (alive(token)) advance(lesson);
+      }
+    } else {
+      wrong.add(leftBtn.dataset.id);
+      chime("bad");
+      [a, el].forEach((b) => {
+        b.classList.add("wrong");
+        setTimeout(() => b.classList.remove("wrong"), 500);
+      });
+    }
+  });
+};
+
+// ---------- Übung: Sortieren ----------
+STEPS.sort = (lesson, step) => {
+  const t = step.t;
+  const order = shuffle(t.items);
+  let i = 0;
+  let first = true;
+  const token = lessonRender(lesson, `
+    <p class="task">${esc(t.task || "Wohin gehört das Wort?")}</p>
+    <div class="prompt-card"><span class="prompt-text" id="cur"></span></div>
+    <div class="bins">${t.groups.map((g) => `<button class="bin" data-g="${esc(g)}"><span class="bin-title">${esc(g)}</span><span class="bin-items"></span></button>`).join("")}</div>
+    <div class="feedback" id="fb"></div>`);
+  const show = () => ($("cur").textContent = order[i].text);
+  show();
+  on(".bin", "click", async (e) => {
+    if (i >= order.length) return;
+    const el = e.currentTarget;
+    const it = order[i];
+    if (el.dataset.g === it.group) {
+      chime("good");
+      score(lesson, step, it.id, first);
+      el.querySelector(".bin-items").insertAdjacentHTML("beforeend", `<span>${esc(it.text)}</span>`);
+      first = true;
+      $("fb").innerHTML = "";
+      if (++i < order.length) return show();
+      $("fb").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
+      chime("win");
+      await wait(1200);
+      if (alive(token)) advance(lesson);
+    } else {
+      first = false;
+      chime("bad");
+      el.classList.add("wrong");
+      setTimeout(() => el.classList.remove("wrong"), 500);
+      $("fb").innerHTML = `<span class="try">Nicht ganz. Wo passt es besser?</span>`;
+    }
+  });
+};
+
+// ---------- Übung: Im Heft schreiben + Foto ----------
+STEPS.photo = (lesson, step) => {
+  const t = step.t;
+  const pid = current.profile;
+  const token = lessonRender(lesson, `
+    <p class="task">✍️ Schreib in dein Heft!</p>
+    <p class="photo-task">${esc(t.task)}</p>
+    ${t.show ? `<div class="write-list">${t.show.map((w) => `<span>${esc(w)}</span>`).join("")}</div>` : ""}
+    <div class="row"><button class="speaker again" aria-label="Vorlesen">🔊</button></div>
+    <label class="go-btn photo-btn" id="camlabel">📷 Fertig? Foto machen<input type="file" accept="image/*" capture="environment" id="cam" hidden></label>
+    <div id="after"></div>`);
+  const say = () => sayDe(t.say || t.task);
+  on(".again", "click", say);
+  setTimeout(() => alive(token) && say(), 250);
+  $("cam").onchange = async (e) => {
+    const f = e.target.files[0];
+    if (!f) return;
+    $("camlabel").hidden = true;
+    $("after").innerHTML = `<p class="hint">Foto wird gespeichert …</p>`;
+    let ok = true;
+    let url = "";
+    try {
+      const blob = await photos.shrink(f);
+      url = URL.createObjectURL(blob);
+      await photos.addPhoto({ pid, taskId: t.id, unitTitle: unitById(t.unit || step.unit)?.title_de || "", task: t.task, blob });
+      store.setRedo(pid, t.id, false);
+      store.save();
+    } catch (err) {
+      ok = false;
+    }
+    if (!alive(token)) return url && URL.revokeObjectURL(url);
+    chime(ok ? "win" : "bad");
+    $("after").innerHTML = `
+      ${ok ? `<p class="feedback"><span class="ok">Foto gespeichert! 📸</span></p>${url ? `<img class="photo-preview" src="${url}" alt="Dein Foto">` : ""}` : `<p class="feedback"><span class="try">Das Foto konnte nicht gespeichert werden.</span></p>`}
+      ${t.solution ? `<p class="task">Vergleiche mit der Lösung:</p><div class="write-list solution-list">${t.solution.map((w) => `<span>${esc(w)}</span>`).join("")}</div>` : ""}
+      <div class="row">${nextBtn()}</div>`;
+    $("next").onclick = () => {
+      if (url) URL.revokeObjectURL(url);
+      advance(lesson);
+    };
+  };
+};
+
+// ---------- Ende einer Schul-Lektion ----------
+function finishSchoolLesson(lesson) {
+  const pid = current.profile;
+  store.setLessonDone(pid, lesson.u.id, lesson.n);
+  const streak = store.touchStreak(pid);
+  store.save();
+  const missed = lesson.missed.map((id) => item(id)?.q).filter(Boolean);
+  render(`
+    <div class="screen center result" style="--c:${lesson.u.color}">
+      <h2>${lesson.isTest ? "Test geschafft!" : pick(PRAISE)}</h2>
+      <div class="result-stars"><span class="star on">★</span></div>
+      ${lesson.total ? `<p class="score">${lesson.right} von ${lesson.total} gleich richtig</p>` : ""}
+      <p class="sub">🔥 ${streak.count} ${streak.count === 1 ? "Tag" : "Tage"} in Folge</p>
+      ${missed.length ? `<p class="sub">${lesson.isTest ? "Das üben wir noch:" : "Das kommt in den nächsten Tagen nochmal dran:"}</p>
+        <div class="missed">${missed.map((q) => {
+          const [a, b] = describe(q);
+          return `<div><span>${esc(a)}</span> → <b>${esc(b)}</b></div>`;
+        }).join("")}</div>` : ""}
+      <button class="go-btn" id="next">Weiter ➜</button>
+    </div>`);
+  chime("win");
+  $("next").onclick = () => showUnit(lesson.u.id);
+}
+
 // ---------- Sticker-Album ----------
 function showAlbum() {
   const pid = current.profile;
-  const units = subjectsFor(pid).flatMap((s) => stagesFor(pid, s).flatMap((st) => st.units));
+  const units = subjectsFor(pid).flatMap((s) => stagesFor(pid, s).flatMap((st) => st.units)).filter((u) => u.words.length);
   render(`
     <div class="screen">
       <header class="bar">
@@ -730,8 +1112,93 @@ function showParentGate() {
 
 function boxCounts(pid, unit) {
   const n = [0, 0, 0, 0, 0, 0];
-  for (const w of unit.words) n[store.card(pid, w.id)?.box || 0]++;
+  for (const id of unitIds(unit)) n[store.card(pid, id)?.box || 0]++;
   return n;
+}
+
+function unitTable(u) {
+  const box = (pid, id) => {
+    const c = store.card(pid, id);
+    return c ? "Kasten " + c.box + (store.isTrouble(c) ? " ⚠️" : "") : "–";
+  };
+  if (isSchool(u)) {
+    return `<table class="words">
+      <tr><th>Aufgabe</th><th>Lösung</th>${PROFILES.map((p) => `<th>${p.title}</th>`).join("")}</tr>
+      ${u.singles.map((q) => {
+        const [a, b] = describe(q);
+        return `<tr><td>${esc(a)}</td><td>${esc(b)}</td>${PROFILES.map((p) => `<td>${box(p.id, q.id)}</td>`).join("")}</tr>`;
+      }).join("")}
+    </table>`;
+  }
+  return `<table class="words">
+    <tr><th></th><th>Englisch</th><th>Deutsch</th>${PROFILES.map((p) => `<th>${p.title}</th>`).join("")}</tr>
+    ${[...u.words, ...u.phrases].map((w) => `<tr><td>${w.image}</td><td><button class="link-btn inline-btn" data-say="${w.id}">${esc(w.en)} 🔊</button></td><td>${esc(w.de || "")}</td>${PROFILES.map((p) => `<td>${box(p.id, w.id)}</td>`).join("")}</tr>`).join("")}
+  </table>`;
+}
+
+function troubleHtml() {
+  const rows = PROFILES.map((p) => {
+    const list = store.troubleCards(p.id).filter((c) => item(c.id));
+    if (!list.length) return `<p class="small"><b>${p.title}:</b> nichts, prima!</p>`;
+    return `<p class="small"><b>${p.title}:</b></p><table class="words">
+      <tr><th>Aufgabe</th><th>Lösung</th><th>falsch</th></tr>
+      ${list.map((c) => {
+        const it = item(c.id);
+        const [a, b] = it.kind === "task" ? describe(it.q) : [it.en, it.de || ""];
+        return `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td>${c.wrong}×</td></tr>`;
+      }).join("")}
+    </table>`;
+  }).join("");
+  return `<section>
+    <h3>⚠️ Das klappt noch nicht</h3>
+    <p class="small">Aufgaben, die mindestens zweimal falsch waren. Sie kommen öfter dran (spätestens alle 2 Tage), bis sie dreimal hintereinander richtig waren.</p>
+    ${rows}
+  </section>`;
+}
+
+async function fillPhotos() {
+  const box = $("photos");
+  if (!box) return;
+  const list = await photos.allPhotos();
+  if (!$("photos")) return;
+  if (!list.length) {
+    box.innerHTML = `<p class="small">Noch keine Fotos.</p>`;
+    return;
+  }
+  const label = { neu: "🆕 neu", ok: "✅ passt", nochmal: "🔁 nochmal" };
+  box.innerHTML = list.map((f) => {
+    const p = PROFILES.find((x) => x.id === f.pid);
+    const url = URL.createObjectURL(f.blob);
+    return `<div class="photo-item" data-id="${f.id}">
+      <a href="${url}" target="_blank"><img src="${url}" alt="Foto"></a>
+      <div class="photo-info">
+        <b>${esc(p ? p.title : f.pid)}</b> · ${new Date(f.date).toLocaleString("de-DE", { dateStyle: "short", timeStyle: "short" })} · <span class="pstatus">${label[f.status] || ""}</span><br>
+        <span class="small">${esc(f.unitTitle)}: ${esc(f.task)}</span>
+        <div class="row left">
+          <button class="wide-btn mini" data-act="ok">✅ Passt</button>
+          <button class="wide-btn mini" data-act="nochmal">🔁 Nochmal</button>
+          <button class="wide-btn mini danger" data-act="del">🗑️</button>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+  box.querySelectorAll("[data-act]").forEach((b) =>
+    b.addEventListener("click", async (e) => {
+      const el = e.currentTarget.closest(".photo-item");
+      const f = list.find((x) => x.id === +el.dataset.id);
+      const act = e.currentTarget.dataset.act;
+      if (act === "del") {
+        if (!confirm("Foto löschen?")) return;
+        await photos.deletePhoto(f.id);
+        el.remove();
+        return;
+      }
+      await photos.setStatus(f.id, act);
+      store.setRedo(f.pid, f.taskId, act === "nochmal");
+      store.save();
+      el.querySelector(".pstatus").textContent = label[act];
+    })
+  );
 }
 
 function showParents(msg = "") {
@@ -755,7 +1222,7 @@ function showParents(msg = "") {
               <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${sub.image} ${esc(sub.title)}</label>
               ${sub.stages.map((st) => `
                 <div class="unlock-topics">
-                  <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${st.id}" ${store.isEnabled(p.id, st.id) ? "checked" : ""}> ${esc(st.title)}</label>
+                  <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${st.id}" ${store.isEnabled(p.id, st.id, stageDefault(p.id, st)) ? "checked" : ""}> ${esc(st.title)}</label>
                   <div class="unlock-topics">
                     ${st.units.map((u) => `<label class="field check"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${u.id}" ${store.isEnabled(p.id, u.id) ? "checked" : ""}> ${u.image} ${esc(u.title_de)}</label>`).join("")}
                   </div>
@@ -765,19 +1232,22 @@ function showParents(msg = "") {
       </section>
       <section>
         <h3>Lernstand</h3>
-        <p class="small">Lernkartei: Jedes Wort wandert bei richtiger Antwort einen Kasten weiter (1 → 5), bei falscher zurück in Kasten 1. Eine Einheit ist geschafft 🏆, wenn alle Wörter mindestens in Kasten 3 sind. Fällig heute: ${PROFILES.map((p) => `${p.title} ${store.dueCards(p.id).length}`).join(", ")}.</p>
+        <p class="small">Lernkartei: Jede Aufgabe wandert bei richtiger Antwort einen Kasten weiter (1 → 5), bei falscher zurück in Kasten 1. Eine Einheit ist geschafft 🏆, wenn alles mindestens in Kasten 3 ist. Fällig heute: ${PROFILES.map((p) => `${p.title} ${store.dueCards(p.id).length}`).join(", ")}.</p>
         ${content.subjects.flatMap((s) => s.stages.flatMap((st) => st.units)).map((u) => `
           <details class="unit-details">
             <summary>${u.image} ${esc(u.title_de)} <span class="small">${PROFILES.map((p) => {
               const n = boxCounts(p.id, u);
               const sure = n[3] + n[4] + n[5];
-              return `${p.title}: ${sure}/${u.words.length} sicher${unitMastered(p.id, u) ? " 🏆" : ""}`;
+              return `${p.title}: ${sure}/${unitIds(u).length} sicher${unitMastered(p.id, u) ? " 🏆" : ""}`;
             }).join(" · ")}</span></summary>
-            <table class="words">
-              <tr><th></th><th>Englisch</th><th>Deutsch</th>${PROFILES.map((p) => `<th>${p.title}</th>`).join("")}</tr>
-              ${[...u.words, ...u.phrases].map((w) => `<tr><td>${w.image}</td><td><button class="link-btn inline-btn" data-say="${w.id}">${esc(w.en)} 🔊</button></td><td>${esc(w.de || "")}</td>${PROFILES.map((p) => `<td>${store.card(p.id, w.id) ? "Kasten " + store.card(p.id, w.id).box : "–"}</td>`).join("")}</tr>`).join("")}
-            </table>
+            ${unitTable(u)}
           </details>`).join("")}
+      </section>
+      ${troubleHtml()}
+      <section>
+        <h3>📷 Fotomappe</h3>
+        <p class="small">Fotos von Heft-Aufgaben. „Nochmal“ gibt die Aufgabe zurück: Sie kommt beim nächsten Üben im Fach wieder. Die Fotos liegen nur auf diesem Gerät und sind nicht in der Sicherungsdatei.</p>
+        <div id="photos"><p class="small">Lade Fotos …</p></div>
       </section>
       <section>
         <h3>Fortschritt sichern und laden</h3>
@@ -800,6 +1270,7 @@ function showParents(msg = "") {
       <p class="small center-text">Learnino Version ${APP_VERSION}</p>
     </div>`);
   $("back").onclick = showProfiles;
+  fillPhotos();
   on(".en-box", "change", (e) => {
     store.setEnabled(e.target.dataset.p, e.target.dataset.id, e.target.checked);
     store.save();

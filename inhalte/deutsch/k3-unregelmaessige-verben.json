@@ -1,0 +1,713 @@
+{
+ "id": "d3-unregelmaessige-verben",
+ "type": "schule",
+ "title_de": "Unregelmäßige Verben",
+ "image": "⏳",
+ "color": "#4b7bec",
+ "lessons": [
+  {
+   "title": "Paare 1",
+   "icon": "🔗",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Was gehört zusammen?",
+     "review": "Wie heißt es in der Vergangenheit?",
+     "pairs": [
+      {
+       "id": "d3-uv-pr-wir-denken",
+       "a": "wir denken",
+       "b": "wir dachten"
+      },
+      {
+       "id": "d3-uv-pr-wir-singen",
+       "a": "wir singen",
+       "b": "wir sangen"
+      },
+      {
+       "id": "d3-uv-pr-wir-bleiben",
+       "a": "wir bleiben",
+       "b": "wir blieben"
+      },
+      {
+       "id": "d3-uv-pr-wir-essen",
+       "a": "wir essen",
+       "b": "wir aßen"
+      },
+      {
+       "id": "d3-uv-pr-wir-geben",
+       "a": "wir geben",
+       "b": "wir gaben"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Was gehört zusammen?",
+     "review": "Wie heißt es in der Vergangenheit?",
+     "pairs": [
+      {
+       "id": "d3-uv-pr-wir-sitzen",
+       "a": "wir sitzen",
+       "b": "wir saßen"
+      },
+      {
+       "id": "d3-uv-pr-wir-gehen",
+       "a": "wir gehen",
+       "b": "wir gingen"
+      },
+      {
+       "id": "d3-uv-pr-wir-ziehen",
+       "a": "wir ziehen",
+       "b": "wir zogen"
+      },
+      {
+       "id": "d3-uv-pr-wir-kommen",
+       "a": "wir kommen",
+       "b": "wir kamen"
+      },
+      {
+       "id": "d3-uv-pr-wir-trinken",
+       "a": "wir trinken",
+       "b": "wir tranken"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Was gehört zusammen?",
+     "review": "Wie heißt es in der Vergangenheit?",
+     "pairs": [
+      {
+       "id": "d3-uv-pr-wir-lesen",
+       "a": "wir lesen",
+       "b": "wir lasen"
+      },
+      {
+       "id": "d3-uv-pr-wir-rufen",
+       "a": "wir rufen",
+       "b": "wir riefen"
+      },
+      {
+       "id": "d3-uv-pr-wir-fallen",
+       "a": "wir fallen",
+       "b": "wir fielen"
+      },
+      {
+       "id": "d3-uv-pr-wir-heissen",
+       "a": "wir heißen",
+       "b": "wir hießen"
+      },
+      {
+       "id": "d3-uv-pr-wir-tragen",
+       "a": "wir tragen",
+       "b": "wir trugen"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Paare 2",
+   "icon": "🔗",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Was gehört zusammen?",
+     "review": "Wie heißt es in der Vergangenheit?",
+     "pairs": [
+      {
+       "id": "d3-uv-pr-wir-haengen",
+       "a": "wir hängen",
+       "b": "wir hingen"
+      },
+      {
+       "id": "d3-uv-pr-wir-steigen",
+       "a": "wir steigen",
+       "b": "wir stiegen"
+      },
+      {
+       "id": "d3-uv-pr-wir-koennen",
+       "a": "wir können",
+       "b": "wir konnten"
+      },
+      {
+       "id": "d3-uv-pr-wir-schieben",
+       "a": "wir schieben",
+       "b": "wir schoben"
+      },
+      {
+       "id": "d3-uv-pr-wir-scheinen",
+       "a": "wir scheinen",
+       "b": "wir schienen"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Was gehört zusammen?",
+     "review": "Wie heißt es in der Vergangenheit?",
+     "pairs": [
+      {
+       "id": "d3-uv-pr-wir-laufen",
+       "a": "wir laufen",
+       "b": "wir liefen"
+      },
+      {
+       "id": "d3-uv-pr-wir-lassen",
+       "a": "wir lassen",
+       "b": "wir ließen"
+      },
+      {
+       "id": "d3-uv-pr-wir-muessen",
+       "a": "wir müssen",
+       "b": "wir mussten"
+      },
+      {
+       "id": "d3-uv-pr-wir-liegen",
+       "a": "wir liegen",
+       "b": "wir lagen"
+      },
+      {
+       "id": "d3-uv-pr-ich-lese-vor",
+       "a": "ich lese vor",
+       "b": "ich las vor"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Was gehört zusammen?",
+     "review": "Wie heißt es in der Vergangenheit?",
+     "pairs": [
+      {
+       "id": "d3-uv-pr-ich-mag",
+       "a": "ich mag",
+       "b": "ich mochte"
+      },
+      {
+       "id": "d3-uv-pr-ich-schiebe",
+       "a": "ich schiebe",
+       "b": "ich schob"
+      },
+      {
+       "id": "d3-uv-pr-ich-schreie",
+       "a": "ich schreie",
+       "b": "ich schrie"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Selbst schreiben",
+   "icon": "⌨️",
+   "pick": "d3-uv-pr-",
+   "count": 12
+  },
+  {
+   "title": "hat oder ist? 1",
+   "icon": "🕰️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-kriecht",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er kriecht",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "ist"
+     },
+     "answer": "gekrochen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-biegt",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er biegt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gebogen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-springt",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er springt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "ist"
+     },
+     "answer": "gesprungen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-zieht",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er zieht",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gezogen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-giesst",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er gießt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gegossen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-schwimmt",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er schwimmt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "ist"
+     },
+     "answer": "geschwommen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-streitet",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er streitet",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gestritten"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-beisst",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er beißt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gebissen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-laesst",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er lässt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gelassen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-streicht",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er streicht",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gestrichen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-laeuft",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er läuft",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "ist"
+     },
+     "answer": "gelaufen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-schiebt",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er schiebt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "geschoben"
+    }
+   ]
+  },
+  {
+   "title": "hat oder ist? 2",
+   "icon": "🕰️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-haengt",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er hängt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gehangen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-trifft",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er trifft",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "getroffen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-geht",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er geht",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "ist"
+     },
+     "answer": "gegangen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-faellt",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er fällt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "ist"
+     },
+     "answer": "gefallen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-reisst",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er reißt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gerissen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-gewinnt",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er gewinnt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gewonnen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-schliesst",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er schließt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "geschlossen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-mag",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er mag",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gemocht"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-bittet",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er bittet",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gebeten"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-schweigt",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er schweigt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "geschwiegen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-weiss",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er weiß",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gewusst"
+    },
+    {
+     "kind": "type",
+     "id": "d3-uv-pf-er-kennt",
+     "task": "Was ist gestern passiert? Erst hat oder ist wählen, dann schreiben.",
+     "prompt": "er kennt",
+     "before": "er",
+     "choose": {
+      "options": [
+       "hat",
+       "ist"
+      ],
+      "answer": "hat"
+     },
+     "answer": "gekannt"
+    }
+   ]
+  },
+  {
+   "title": "Wortfamilien",
+   "icon": "👪",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Zu welcher Wortfamilie gehört das Wort?",
+     "review": "Zu welcher Wortfamilie gehört das Wort?",
+     "groups": [
+      "dürfen",
+      "frieren",
+      "messen",
+      "schlafen"
+     ],
+     "items": [
+      {
+       "id": "d3-uv-fam-du-darfst",
+       "text": "du darfst",
+       "group": "dürfen"
+      },
+      {
+       "id": "d3-uv-fam-ich-durfte",
+       "text": "ich durfte",
+       "group": "dürfen"
+      },
+      {
+       "id": "d3-uv-fam-er-hat-gedurft",
+       "text": "er hat gedurft",
+       "group": "dürfen"
+      },
+      {
+       "id": "d3-uv-fam-du-frierst",
+       "text": "du frierst",
+       "group": "frieren"
+      },
+      {
+       "id": "d3-uv-fam-er-fror",
+       "text": "er fror",
+       "group": "frieren"
+      },
+      {
+       "id": "d3-uv-fam-er-hat-gefroren",
+       "text": "er hat gefroren",
+       "group": "frieren"
+      },
+      {
+       "id": "d3-uv-fam-er-misst",
+       "text": "er misst",
+       "group": "messen"
+      },
+      {
+       "id": "d3-uv-fam-wir-massen",
+       "text": "wir maßen",
+       "group": "messen"
+      },
+      {
+       "id": "d3-uv-fam-er-mass",
+       "text": "er maß",
+       "group": "messen"
+      },
+      {
+       "id": "d3-uv-fam-er-hat-gemessen",
+       "text": "er hat gemessen",
+       "group": "messen"
+      },
+      {
+       "id": "d3-uv-fam-du-schlaefst",
+       "text": "du schläfst",
+       "group": "schlafen"
+      },
+      {
+       "id": "d3-uv-fam-wir-schliefen",
+       "text": "wir schliefen",
+       "group": "schlafen"
+      },
+      {
+       "id": "d3-uv-fam-du-schliefst",
+       "text": "du schliefst",
+       "group": "schlafen"
+      },
+      {
+       "id": "d3-uv-fam-er-schlief",
+       "text": "er schlief",
+       "group": "schlafen"
+      },
+      {
+       "id": "d3-uv-fam-er-hat-geschlafen",
+       "text": "er hat geschlafen",
+       "group": "schlafen"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-uv-foto-paare",
+     "task": "Schreib 8 Wortpaare in dein Heft, zum Beispiel: wir gehen – wir gingen.",
+     "say": "Schreib acht Wortpaare in dein Heft. Zum Beispiel: wir gehen, wir gingen.",
+     "show": [
+      "wir gehen",
+      "wir singen",
+      "wir essen",
+      "wir sitzen",
+      "wir tragen",
+      "wir laufen",
+      "wir müssen",
+      "ich mag"
+     ],
+     "solution": [
+      "wir gehen – wir gingen",
+      "wir singen – wir sangen",
+      "wir essen – wir aßen",
+      "wir sitzen – wir saßen",
+      "wir tragen – wir trugen",
+      "wir laufen – wir liefen",
+      "wir müssen – wir mussten",
+      "ich mag – ich mochte"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}
