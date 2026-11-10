@@ -7,7 +7,7 @@ import * as store from "./store.js";
 import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 
-const APP_VERSION = 15;
+const APP_VERSION = 17;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -52,6 +52,10 @@ function on(sel, ev, fn) {
 }
 const $ = (id) => document.getElementById(id);
 
+// Anzeigename: im Elternbereich eingetragener Name (nur auf dem Gerät und in der Sicherungsdatei),
+// sonst die Klasse. Echte Namen stehen absichtlich nicht im öffentlichen Programmcode.
+const pname = (p) => (p.test ? p.title : store.profile(p.id).name || p.title);
+
 // ---------- Profilauswahl ----------
 function showProfiles() {
   current.profile = null;
@@ -62,7 +66,8 @@ function showProfiles() {
       <p class="sub">Wer lernt heute?</p>
       <div class="profiles">
         ${PROFILES.map((p) => `<button class="profile-card" data-id="${p.id}">
-            <span class="pname">${esc(p.title)}</span>
+            <span class="pname">${esc(pname(p))}</span>
+            ${pname(p) !== p.title ? `<span class="pclass">${esc(p.title)}</span>` : ""}
             <span class="small">⭐ ${store.totalStars(p.id)}</span>
           </button>`).join("")}
       </div>
@@ -101,8 +106,8 @@ function unitMastered(pid, unit) {
 
 function homeHeader(p) {
   return `<header class="bar">
-        <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
-        <span class="who">${p.test ? `<span class="test-badge">🧪 Testmodus</span>` : esc(p.title)}</span>
+        <button class="icon-btn back-btn" id="back" aria-label="Zurück"><span class="back-arrow">←</span> Zurück</button>
+        <span class="who">${p.test ? `<span class="test-badge">🧪 Test</span>` : esc(pname(p))}</span>
         <span class="stat">🔥 ${store.streakCount(p.id)}</span>
         <span class="stat">⭐ ${store.totalStars(p.id)}</span>
       </header>`;
@@ -172,7 +177,7 @@ function showUnit(unitId) {
   render(`
     <div class="screen unit-screen">
       <header class="bar">
-        <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
+        <button class="icon-btn back-btn" id="back" aria-label="Zurück"><span class="back-arrow">←</span> Zurück</button>
         <span class="who"></span>
         ${unitMastered(pid, u) ? `<span class="stat">🏆</span>` : ""}
       </header>
@@ -1073,7 +1078,7 @@ function showAlbum() {
   render(`
     <div class="screen">
       <header class="bar">
-        <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
+        <button class="icon-btn back-btn" id="back" aria-label="Zurück"><span class="back-arrow">←</span> Zurück</button>
         <span class="who">📒 Sticker-Album</span>
       </header>
       ${units.map((u) => {
@@ -1151,7 +1156,10 @@ function showParentGate(msg = "") {
     $("msg").textContent = lock.until > Date.now() ? "Zu oft falsch. Eine Minute warten." : "Falscher Code.";
   };
   $("ok").onclick = tryOpen;
-  $("ans").onkeydown = (e) => e.key === "Enter" && tryOpen();
+  // Wichtig: kein "return false" für andere Tasten, sonst erscheinen keine Ziffern
+  $("ans").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") tryOpen();
+  });
   $("ans").focus();
 }
 
@@ -1191,7 +1199,7 @@ function unitTable(u) {
   };
   if (isSchool(u)) {
     return `<table class="words">
-      <tr><th>Aufgabe</th><th>Lösung</th>${PROFILES.map((p) => `<th>${p.title}</th>`).join("")}</tr>
+      <tr><th>Aufgabe</th><th>Lösung</th>${PROFILES.map((p) => `<th>${esc(pname(p))}</th>`).join("")}</tr>
       ${u.singles.map((q) => {
         const [a, b] = describe(q);
         return `<tr><td>${esc(a)}</td><td>${esc(b)}</td>${PROFILES.map((p) => `<td>${box(p.id, q.id)}</td>`).join("")}</tr>`;
@@ -1199,7 +1207,7 @@ function unitTable(u) {
     </table>`;
   }
   return `<table class="words">
-    <tr><th></th><th>Englisch</th><th>Deutsch</th>${PROFILES.map((p) => `<th>${p.title}</th>`).join("")}</tr>
+    <tr><th></th><th>Englisch</th><th>Deutsch</th>${PROFILES.map((p) => `<th>${esc(pname(p))}</th>`).join("")}</tr>
     ${[...u.words, ...u.phrases].map((w) => `<tr><td>${pic(w.image)}</td><td><button class="link-btn inline-btn" data-say="${w.id}">${esc(w.en)} 🔊</button></td><td>${esc(w.de || "")}</td>${PROFILES.map((p) => `<td>${box(p.id, w.id)}</td>`).join("")}</tr>`).join("")}
   </table>`;
 }
@@ -1207,8 +1215,8 @@ function unitTable(u) {
 function troubleHtml() {
   const rows = PROFILES.map((p) => {
     const list = store.troubleCards(p.id).filter((c) => item(c.id));
-    if (!list.length) return `<p class="small"><b>${p.title}:</b> nichts, prima!</p>`;
-    return `<p class="small"><b>${p.title}:</b></p><table class="words">
+    if (!list.length) return `<p class="small"><b>${esc(pname(p))}:</b> nichts, prima!</p>`;
+    return `<p class="small"><b>${esc(pname(p))}:</b></p><table class="words">
       <tr><th>Aufgabe</th><th>Lösung</th><th>falsch</th></tr>
       ${list.map((c) => {
         const it = item(c.id);
@@ -1240,7 +1248,7 @@ async function fillPhotos() {
     return `<div class="photo-item" data-id="${f.id}">
       <a href="${url}" target="_blank"><img src="${url}" alt="Foto"></a>
       <div class="photo-info">
-        <b>${esc(p ? p.title : f.pid)}</b> · ${new Date(f.date).toLocaleString("de-DE", { dateStyle: "short", timeStyle: "short" })} · <span class="pstatus">${label[f.status] || ""}</span><br>
+        <b>${esc(p ? pname(p) : f.pid)}</b> · ${new Date(f.date).toLocaleString("de-DE", { dateStyle: "short", timeStyle: "short" })} · <span class="pstatus">${label[f.status] || ""}</span><br>
         <span class="small">${esc(f.unitTitle)}: ${esc(f.task)}</span>
         <div class="row left">
           <button class="wide-btn mini" data-act="ok">✅ Passt</button>
@@ -1275,7 +1283,7 @@ function showParents(msg = "") {
   render(`
     <div class="screen parents">
       <header class="bar">
-        <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
+        <button class="icon-btn back-btn" id="back" aria-label="Zurück"><span class="back-arrow">←</span> Zurück</button>
         <span class="who">Elternbereich</span>
       </header>
       ${msg ? `<p class="notice">${msg}</p>` : ""}
@@ -1285,7 +1293,7 @@ function showParents(msg = "") {
         <p class="small">Was soll das Kind sehen? Ausgeschaltetes verschwindet, der Fortschritt bleibt gespeichert.</p>
         <div class="unlock">
           ${PROFILES.map((p) => `<div class="unlock-col">
-            <h4>${p.title}</h4>
+            <h4>${esc(pname(p))}</h4>
             ${content.subjects.map((sub) => `
               <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${esc(sub.title)}</label>
               ${sub.stages.map((st) => `
@@ -1300,13 +1308,13 @@ function showParents(msg = "") {
       </section>
       <section>
         <h3>Lernstand</h3>
-        <p class="small">Lernkartei: Jede Aufgabe wandert bei richtiger Antwort einen Kasten weiter (1 → 5), bei falscher zurück in Kasten 1. Eine Einheit ist geschafft 🏆, wenn alles mindestens in Kasten 3 ist. Fällig heute: ${PROFILES.map((p) => `${p.title} ${store.dueCards(p.id).length}`).join(", ")}.</p>
+        <p class="small">Lernkartei: Jede Aufgabe wandert bei richtiger Antwort einen Kasten weiter (1 → 5), bei falscher zurück in Kasten 1. Eine Einheit ist geschafft 🏆, wenn alles mindestens in Kasten 3 ist. Fällig heute: ${PROFILES.map((p) => `${esc(pname(p))} ${store.dueCards(p.id).length}`).join(", ")}.</p>
         ${content.subjects.flatMap((s) => s.stages.flatMap((st) => st.units)).map((u) => `
           <details class="unit-details">
             <summary>${esc(u.title_de)} <span class="small">${PROFILES.map((p) => {
               const n = boxCounts(p.id, u);
               const sure = n[3] + n[4] + n[5];
-              return `${p.title}: ${sure}/${unitIds(u).length} sicher${unitMastered(p.id, u) ? " 🏆" : ""}`;
+              return `${esc(pname(p))}: ${sure}/${unitIds(u).length} sicher${unitMastered(p.id, u) ? " 🏆" : ""}`;
             }).join(" · ")}</span></summary>
             ${unitTable(u)}
           </details>`).join("")}
@@ -1327,9 +1335,14 @@ function showParents(msg = "") {
         ${saved ? `<p class="small">Zuletzt gespeichert: ${new Date(saved).toLocaleString("de-DE")}</p>` : ""}
       </section>
       <section>
+        <h3>👧👦 Namen</h3>
+        <p class="small">Steht auf der Startseite statt der Klasse. Der Name bleibt auf diesem Gerät und kommt mit der Sicherungsdatei auf das andere Gerät.</p>
+        ${PROFILES.map((p) => `<div class="voice-row"><span>${esc(p.title)}</span><input class="input name-input" data-p="${p.id}" value="${esc(store.profile(p.id).name || "")}" placeholder="Name" maxlength="20" autocomplete="off"></div>`).join("")}
+      </section>
+      <section>
         <h3>🔊 Aufgaben vorlesen</h3>
         <p class="small">Für Kinder, die noch nicht lesen können. <b>Vorlesen</b>: Jede Aufgabe wird automatisch vorgelesen. <b>Erst selbst lesen</b>: Das Kind soll die Aufgabe zuerst selbst lesen, der 🔊-Knopf geht erst nach ein paar Sekunden. Am Ende steht, wie viele Aufgaben es allein gelesen hat. <b>Aus</b>: keine deutsche Stimme. Englische Wörter werden immer vorgesprochen.</p>
-        ${[...PROFILES, TEST_PROFILE].map((p) => `<div class="voice-row"><span>${esc(p.title)}</span><select class="input voice-sel" data-p="${p.id}">
+        ${[...PROFILES, TEST_PROFILE].map((p) => `<div class="voice-row"><span>${esc(pname(p))}</span><select class="input voice-sel" data-p="${p.id}">
           ${[["auto", "Vorlesen"], ["selbst", "Erst selbst lesen"], ["aus", "Aus"]].map(([v, l]) => `<option value="${v}" ${voiceMode(p.id) === v ? "selected" : ""}>${l}</option>`).join("")}
         </select></div>`).join("")}
       </section>
@@ -1359,6 +1372,10 @@ function showParents(msg = "") {
     </div>`);
   $("back").onclick = showProfiles;
   fillPhotos();
+  on(".name-input", "change", (e) => {
+    store.profile(e.target.dataset.p).name = e.target.value.trim();
+    store.save();
+  });
   on(".voice-sel", "change", (e) => {
     store.profile(e.target.dataset.p).voice = e.target.value;
     store.save();

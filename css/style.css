@@ -640,3 +640,14 @@ table.words td .emo { font-size: 28px; }
 .pin-input { max-width: 240px; text-align: center; font-size: 28px; letter-spacing: 8px; }
 .pin-input::placeholder { font-size: 16px; letter-spacing: 0; }
 .pin-msg { min-height: 1.4em; color: #ffe066; font-weight: 700; }
+
+/* ---- Version 16: gut sichtbarer Zurück-Knopf ---- */
+.icon-btn.back-btn { width: auto; height: 52px; padding: 0 18px 0 14px; border-radius: 999px; background: var(--gold); color: #3a1f00;
+  font-size: 19px; font-weight: 800; display: inline-flex; align-items: center; gap: 6px; flex: none; }
+.back-btn .back-arrow { font-size: 26px; line-height: 1; }
+.bar .test-badge { white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; }
+.bar .who { min-width: 0; }
+
+/* ---- Version 17: Namen ---- */
+.profile-card .pclass { font-size: 15px; font-weight: 700; color: var(--card-muted); }
+.voice-row .name-input { max-width: 220px; }
