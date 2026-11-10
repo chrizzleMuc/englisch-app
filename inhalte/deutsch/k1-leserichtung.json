@@ -1,0 +1,914 @@
+{
+ "id": "d1-leserichtung",
+ "type": "schule",
+ "title_de": "Leserichtung",
+ "image": "👉",
+ "color": "#d9822b",
+ "lessons": [
+  {
+   "title": "Gleiche Silbe finden",
+   "icon": "👀",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-lr-gleich-am",
+     "task": "Finde die gleiche Silbe!",
+     "prompt": "am",
+     "say": "Schau genau. Wo steht die gleiche Silbe? Achte auf den ersten Buchstaben.",
+     "options": [
+      "am",
+      "ma",
+      "an"
+     ],
+     "answer": "am",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gleich-ma",
+     "task": "Finde die gleiche Silbe!",
+     "prompt": "ma",
+     "say": "Schau genau. Wo steht die gleiche Silbe? Achte auf den ersten Buchstaben.",
+     "options": [
+      "ma",
+      "am",
+      "mo"
+     ],
+     "answer": "ma",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gleich-im",
+     "task": "Finde die gleiche Silbe!",
+     "prompt": "im",
+     "say": "Schau genau. Wo steht die gleiche Silbe? Achte auf den ersten Buchstaben.",
+     "options": [
+      "im",
+      "mi",
+      "in"
+     ],
+     "answer": "im",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gleich-mi",
+     "task": "Finde die gleiche Silbe!",
+     "prompt": "mi",
+     "say": "Schau genau. Wo steht die gleiche Silbe? Achte auf den ersten Buchstaben.",
+     "options": [
+      "mi",
+      "im",
+      "ma"
+     ],
+     "answer": "mi",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gleich-so",
+     "task": "Finde die gleiche Silbe!",
+     "prompt": "so",
+     "say": "Schau genau. Wo steht die gleiche Silbe? Achte auf den ersten Buchstaben.",
+     "options": [
+      "so",
+      "os",
+      "sa"
+     ],
+     "answer": "so",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gleich-lo",
+     "task": "Finde die gleiche Silbe!",
+     "prompt": "lo",
+     "say": "Schau genau. Wo steht die gleiche Silbe? Achte auf den ersten Buchstaben.",
+     "options": [
+      "lo",
+      "ol",
+      "la"
+     ],
+     "answer": "lo",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gleich-ro",
+     "task": "Finde die gleiche Silbe!",
+     "prompt": "ro",
+     "say": "Schau genau. Wo steht die gleiche Silbe? Achte auf den ersten Buchstaben.",
+     "options": [
+      "ro",
+      "or",
+      "ra"
+     ],
+     "answer": "ro",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gleich-um",
+     "task": "Finde die gleiche Silbe!",
+     "prompt": "um",
+     "say": "Schau genau. Wo steht die gleiche Silbe? Achte auf den ersten Buchstaben.",
+     "options": [
+      "um",
+      "mu",
+      "un"
+     ],
+     "answer": "um",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gleich-es",
+     "task": "Finde die gleiche Silbe!",
+     "prompt": "es",
+     "say": "Schau genau. Wo steht die gleiche Silbe? Achte auf den ersten Buchstaben.",
+     "options": [
+      "es",
+      "se",
+      "et"
+     ],
+     "answer": "es",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gleich-al",
+     "task": "Finde die gleiche Silbe!",
+     "prompt": "al",
+     "say": "Schau genau. Wo steht die gleiche Silbe? Achte auf den ersten Buchstaben.",
+     "options": [
+      "al",
+      "la",
+      "at"
+     ],
+     "answer": "al",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Welche Silbe fehlt? 1",
+   "icon": "👉",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-tomate",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "To __ te",
+     "say": "Tomate. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "ma",
+      "am"
+     ],
+     "answer": "ma",
+     "pic": "🍅",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Tomate: Tomate. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-igel",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "__ el",
+     "say": "Igel. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "Ig",
+      "Gi"
+     ],
+     "answer": "Ig",
+     "pic": "🦔",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Igel: Igel. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-opa",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "O __",
+     "say": "Opa. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "pa",
+      "ap"
+     ],
+     "answer": "pa",
+     "pic": "👴",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Opa: Opa. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-lama",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "La __",
+     "say": "Lama. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "ma",
+      "am"
+     ],
+     "answer": "ma",
+     "pic": "🦙",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Lama: Lama. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-melone",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Me __ ne",
+     "say": "Melone. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "lo",
+      "ol"
+     ],
+     "answer": "lo",
+     "pic": "🍉",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Melone: Melone. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-rakete",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Ra __ te",
+     "say": "Rakete. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "ke",
+      "ek"
+     ],
+     "answer": "ke",
+     "pic": "🚀",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Rakete: Rakete. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-ananas",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "__ anas",
+     "say": "Ananas. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "An",
+      "Na"
+     ],
+     "answer": "An",
+     "pic": "🍍",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Ananas: Ananas. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-esel",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "E __",
+     "say": "Esel. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "sel",
+      "les"
+     ],
+     "answer": "sel",
+     "pic": "🫏",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Esel: Esel. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-salat",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Sa __",
+     "say": "Salat. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "lat",
+      "tal"
+     ],
+     "answer": "lat",
+     "pic": "🥗",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Salat: Salat. Lies immer von links nach rechts."
+    }
+   ]
+  },
+  {
+   "title": "Welche Silbe fehlt? 2",
+   "icon": "👉",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-tiger",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Ti __",
+     "say": "Tiger. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "ger",
+      "reg"
+     ],
+     "answer": "ger",
+     "pic": "🐯",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Tiger: Tiger. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-oma",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "O __",
+     "say": "Oma. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "ma",
+      "am"
+     ],
+     "answer": "ma",
+     "pic": "👵",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Oma: Oma. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-rose",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Ro __",
+     "say": "Rose. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "se",
+      "es"
+     ],
+     "answer": "se",
+     "pic": "🌹",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Rose: Rose. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-taxi",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Ta __",
+     "say": "Taxi. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "xi",
+      "ix"
+     ],
+     "answer": "xi",
+     "pic": "🚕",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Taxi: Taxi. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-sofa",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "So __",
+     "say": "Sofa. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "fa",
+      "af"
+     ],
+     "answer": "fa",
+     "pic": "🛋️",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Sofa: Sofa. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-ameise",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "__ eise",
+     "say": "Ameise. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "Am",
+      "Ma"
+     ],
+     "answer": "Am",
+     "pic": "🐜",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Ameise: Ameise. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-lupe",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "__ pe",
+     "say": "Lupe. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "Lu",
+      "Ul"
+     ],
+     "answer": "Lu",
+     "pic": "🔍",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Lupe: Lupe. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-uhu",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "U __",
+     "say": "Uhu. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "hu",
+      "uh"
+     ],
+     "answer": "hu",
+     "pic": "🦉",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Uhu: Uhu. Lies immer von links nach rechts."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-gap-mama",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Ma __",
+     "say": "Mama. Welche Silbe fehlt? Lies von links nach rechts.",
+     "options": [
+      "ma",
+      "am"
+     ],
+     "answer": "ma",
+     "pic": "👩",
+     "showText": true,
+     "bigOptions": true,
+     "explain": "Mama: Mama. Lies immer von links nach rechts."
+    }
+   ]
+  },
+  {
+   "title": "am oder ma? im oder mi?",
+   "icon": "📖",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-lr-satz-0",
+     "task": "Was passt in die Lücke?",
+     "prompt": "Mia ist ___ Garten.",
+     "say": "Was passt in die Lücke? im oder mi?",
+     "options": [
+      "im",
+      "mi"
+     ],
+     "answer": "im",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "„im“: zuerst i, dann m. Von links nach rechts lesen."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-satz-1",
+     "task": "Was passt in die Lücke?",
+     "prompt": "Oma ist ___ Tor.",
+     "say": "Was passt in die Lücke? am oder ma?",
+     "options": [
+      "am",
+      "ma"
+     ],
+     "answer": "am",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "„am“: zuerst a, dann m. Von links nach rechts lesen."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-satz-2",
+     "task": "Was passt in die Lücke?",
+     "prompt": "Mio sitzt ___ Auto.",
+     "say": "Was passt in die Lücke? im oder mi?",
+     "options": [
+      "im",
+      "mi"
+     ],
+     "answer": "im",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "„im“: zuerst i, dann m. Von links nach rechts lesen."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-satz-3",
+     "task": "Was passt in die Lücke?",
+     "prompt": "Das Lama ist ___ See.",
+     "say": "Was passt in die Lücke? am oder ma?",
+     "options": [
+      "am",
+      "ma"
+     ],
+     "answer": "am",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "„am“: zuerst a, dann m. Von links nach rechts lesen."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-satz-4",
+     "task": "Was passt in die Lücke?",
+     "prompt": "Die Maus ist ___ Loch.",
+     "say": "Was passt in die Lücke? im oder mi?",
+     "options": [
+      "im",
+      "mi"
+     ],
+     "answer": "im",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "„im“: zuerst i, dann m. Von links nach rechts lesen."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-satz-5",
+     "task": "Was passt in die Lücke?",
+     "prompt": "Tom malt ___ Tisch.",
+     "say": "Was passt in die Lücke? am oder ma?",
+     "options": [
+      "am",
+      "ma"
+     ],
+     "answer": "am",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "„am“: zuerst a, dann m. Von links nach rechts lesen."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-satz-6",
+     "task": "Was passt in die Lücke?",
+     "prompt": "Lea ist ___ Bad.",
+     "say": "Was passt in die Lücke? im oder mi?",
+     "options": [
+      "im",
+      "mi"
+     ],
+     "answer": "im",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "„im“: zuerst i, dann m. Von links nach rechts lesen."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-satz-7",
+     "task": "Was passt in die Lücke?",
+     "prompt": "Die Ente ist ___ Teich.",
+     "say": "Was passt in die Lücke? am oder ma?",
+     "options": [
+      "am",
+      "ma"
+     ],
+     "answer": "am",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "„am“: zuerst a, dann m. Von links nach rechts lesen."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-satz-8",
+     "task": "Was passt in die Lücke?",
+     "prompt": "Der Ball ist ___ Tor.",
+     "say": "Was passt in die Lücke? im oder mi?",
+     "options": [
+      "im",
+      "mi"
+     ],
+     "answer": "im",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "„im“: zuerst i, dann m. Von links nach rechts lesen."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-satz-9",
+     "task": "Was passt in die Lücke?",
+     "prompt": "Wir sind ___ Meer.",
+     "say": "Was passt in die Lücke? am oder ma?",
+     "options": [
+      "am",
+      "ma"
+     ],
+     "answer": "am",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "„am“: zuerst a, dann m. Von links nach rechts lesen."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-satz-10",
+     "task": "Was passt in die Lücke?",
+     "prompt": "Der Igel schläft ___ Laub.",
+     "say": "Was passt in die Lücke? im oder mi?",
+     "options": [
+      "im",
+      "mi"
+     ],
+     "answer": "im",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "„im“: zuerst i, dann m. Von links nach rechts lesen."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-satz-11",
+     "task": "Was passt in die Lücke?",
+     "prompt": "Opa wartet ___ Auto.",
+     "say": "Was passt in die Lücke? am oder ma?",
+     "options": [
+      "am",
+      "ma"
+     ],
+     "answer": "am",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "„am“: zuerst a, dann m. Von links nach rechts lesen."
+    }
+   ]
+  },
+  {
+   "title": "Richtig herum lesen",
+   "icon": "🔁",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-oma",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Oma",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Oma",
+      "Amo",
+      "Moa"
+     ],
+     "answer": "Oma",
+     "pic": "👵",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-opa",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Opa",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Opa",
+      "Apo",
+      "Pao"
+     ],
+     "answer": "Opa",
+     "pic": "👴",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-lama",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Lama",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Lama",
+      "Mala",
+      "Amal"
+     ],
+     "answer": "Lama",
+     "pic": "🦙",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-esel",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Esel",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Esel",
+      "Lese",
+      "Seel"
+     ],
+     "answer": "Esel",
+     "pic": "🫏",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-rose",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Rose",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Rose",
+      "Sero",
+      "Esor"
+     ],
+     "answer": "Rose",
+     "pic": "🌹",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-sofa",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Sofa",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Sofa",
+      "Faso",
+      "Afos"
+     ],
+     "answer": "Sofa",
+     "pic": "🛋️",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-taxi",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Taxi",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Taxi",
+      "Xita",
+      "Ixat"
+     ],
+     "answer": "Taxi",
+     "pic": "🚕",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-tomate",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Tomate",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Tomate",
+      "Matote",
+      "Etamot"
+     ],
+     "answer": "Tomate",
+     "pic": "🍅",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-salat",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Salat",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Salat",
+      "Lasat",
+      "Talas"
+     ],
+     "answer": "Salat",
+     "pic": "🥗",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-tiger",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Tiger",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Tiger",
+      "Gerti",
+      "Regit"
+     ],
+     "answer": "Tiger",
+     "pic": "🐯",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-lupe",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Lupe",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Lupe",
+      "Pelu",
+      "Epul"
+     ],
+     "answer": "Lupe",
+     "pic": "🔍",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-melone",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Melone",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Melone",
+      "Nelome",
+      "Enolem"
+     ],
+     "answer": "Melone",
+     "pic": "🍉",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-igel",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Igel",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Igel",
+      "Legi",
+      "Ilge"
+     ],
+     "answer": "Igel",
+     "pic": "🦔",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-ameise",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Ameise",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Ameise",
+      "Seiame",
+      "Esiema"
+     ],
+     "answer": "Ameise",
+     "pic": "🐜",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-mais",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Mais",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Mais",
+      "Sima",
+      "Sium"
+     ],
+     "answer": "Mais",
+     "pic": "🌽",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-lr-wort-eis",
+     "task": "Welches Wort passt zum Bild?",
+     "prompt": "Eis",
+     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
+     "options": [
+      "Eis",
+      "Sie",
+      "Ies"
+     ],
+     "answer": "Eis",
+     "pic": "🍦",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "k1-lr-foto",
+     "task": "Schreib die Silben paarweise in dein Heft: am – ma, im – mi, om – mo, um – mu. Mal unter jede Silbe einen Pfeil nach rechts.",
+     "say": "Schreib die Silben paarweise in dein Heft. Am und ma, im und mi, om und mo, um und mu. Mal unter jede Silbe einen Pfeil nach rechts.",
+     "show": [
+      "am – ma",
+      "im – mi",
+      "om – mo",
+      "um – mu"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

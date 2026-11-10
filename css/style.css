@@ -624,3 +624,14 @@ table.words td .emo { font-size: 28px; }
 .test-badge { background: var(--gold); color: #3d2600; border-radius: 10px; padding: 4px 10px; font-size: 15px; font-weight: 900; }
 .big-options { grid-template-columns: repeat(auto-fit, minmax(92px, 1fr)); }
 .pic-choices .mid-pic { display: inline-flex; flex-wrap: nowrap; align-items: center; font-size: clamp(34px, 9vw, 60px); }
+
+/* ---- Version 14: Aufgaben vorlesen ---- */
+.task-row { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.task-row .task { margin: 0; }
+.task-row .speaker { width: 52px; height: 52px; font-size: 24px; flex: none; }
+.speaker.waiting { opacity: .3; }
+.speaker.again:not(.waiting) { transition: opacity .4s; }
+.read-self { text-align: center; margin: 0; font-weight: 800; color: #7a4fd1; background: #fff3c4; border-radius: 999px; padding: 6px 14px; align-self: center; width: fit-content; margin-inline: auto; }
+.self-read { font-size: 20px; font-weight: 800; color: #7a4fd1; background: #fff3c4; border-radius: 14px; padding: 10px 16px; }
+.voice-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 8px 0; }
+.voice-row .voice-sel { max-width: 220px; }

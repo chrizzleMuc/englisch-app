@@ -46,6 +46,11 @@ Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede E
 
 Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.
 
+## Version 14
+- **Aufgaben vorlesen** pro Kind (Elternbereich): „Vorlesen“ (Aufgabe wird automatisch vorgelesen, Standard für die 1. Klasse), „Erst selbst lesen“ (🔊 geht erst nach ein paar Sekunden, am Ende steht, wie viele Aufgaben das Kind allein gelesen hat) oder „Aus“ (Standard 3. Klasse). Englische Wörter werden immer vorgesprochen.
+- **Leserichtung** (Deutsch 1. Klasse, neu): gleiche Silbe finden (am/ma), fehlende Silbe ergänzen, am/ma und im/mi im Satz, Wörter richtig herum lesen.
+- Neu aus den Heft-Anweisungen: „Was passt nicht?“ (Anfangsbuchstaben), Silben lesen und „Welcher Satz passt zum Bild?“, Namen in zwei Farben schreiben (Heft).
+
 ## Version 12
 - **Testmodus** (im Elternbereich): eigener Lernstand, sieht alle Fächer und Stufen, alle Lektionen offen. „Test-Fortschritt löschen“ setzt nur den Testmodus zurück.
 - **Deutsch 1. Klasse** (Profil „1. Klasse“): Anfangsbuchstaben, Silben (hören, klatschen, erste Silbe), Wörter lesen und „ist oder sind“. Alles mit Bild und Vorlesen, Antworten als große Buchstaben oder Bilder.

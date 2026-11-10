@@ -70,11 +70,17 @@ function sayOne(text, lang, rate, pitch = 1.05) {
 }
 
 // Spricht mehrere Teile nacheinander, z. B. [["de","Wo ist"],["en","cat"]]
+// Deutsche Ansagen nur, wenn sie für das Profil eingeschaltet sind (1. Klasse: Vorlesen)
+let germanOn = false;
+export function setGerman(on) {
+  germanOn = !!on;
+  if (!on && synth) synth.cancel();
+}
+
 export async function sayParts(parts, { slow = false, pitch, keep = false } = {}) {
   if (!keep) stop();
   for (const [lang, text] of parts) {
-    // Deutsche Stimme ist abgeschaltet (Wunsch: keine Ansagen und Fragen in der App)
-    if (lang !== "en") continue;
+    if (lang !== "en" && !germanOn) continue;
     const isEn = lang === "en";
     await sayOne(text, isEn ? "en-GB" : "de-DE", isEn ? (slow ? 0.55 : 0.85) : 1.0, pitch);
   }

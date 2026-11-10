@@ -15,6 +15,7 @@
           "units": [
             "deutsch/k1-anlaute.json",
             "deutsch/k1-silben.json",
+            "deutsch/k1-leserichtung.json",
             "deutsch/k1-lesen.json"
           ]
         },

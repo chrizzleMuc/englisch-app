@@ -816,6 +816,288 @@
    "count": 10
   },
   {
+   "title": "Was passt nicht?",
+   "icon": "❌",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-e0",
+     "task": "Welches Bild fängt NICHT mit E an?",
+     "prompt": "E e",
+     "say": "Welches Bild fängt nicht mit E an?",
+     "options": [
+      "🦆",
+      "🫏",
+      "🪜"
+     ],
+     "answer": "🪜",
+     "picOptions": true,
+     "explain": "Leiter fängt mit L an. Esel und Ente fangen mit E an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-u1",
+     "task": "Welches Bild fängt NICHT mit U an?",
+     "prompt": "U u",
+     "say": "Welches Bild fängt nicht mit U an?",
+     "options": [
+      "🧦",
+      "⌚",
+      "🛸"
+     ],
+     "answer": "🧦",
+     "picOptions": true,
+     "explain": "Socken fängt mit S an. Uhr und Ufo fangen mit U an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-r1",
+     "task": "Welches Bild fängt NICHT mit R an?",
+     "prompt": "R r",
+     "say": "Welches Bild fängt nicht mit R an?",
+     "options": [
+      "🏝️",
+      "🌹",
+      "🌧️"
+     ],
+     "answer": "🏝️",
+     "picOptions": true,
+     "explain": "Insel fängt mit I an. Rose und Regen fangen mit R an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-e1",
+     "task": "Welches Bild fängt NICHT mit E an?",
+     "prompt": "E e",
+     "say": "Welches Bild fängt nicht mit E an?",
+     "options": [
+      "🥗",
+      "🐘",
+      "🥚"
+     ],
+     "answer": "🥗",
+     "picOptions": true,
+     "explain": "Salat fängt mit S an. Elefant und Ei fangen mit E an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-s1",
+     "task": "Welches Bild fängt NICHT mit S an?",
+     "prompt": "S s",
+     "say": "Welches Bild fängt nicht mit S an?",
+     "options": [
+      "🥗",
+      "🦉",
+      "🧼"
+     ],
+     "answer": "🦉",
+     "picOptions": true,
+     "explain": "Uhu fängt mit U an. Salat und Seife fangen mit S an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-t1",
+     "task": "Welches Bild fängt NICHT mit T an?",
+     "prompt": "T t",
+     "say": "Welches Bild fängt nicht mit T an?",
+     "options": [
+      "🐯",
+      "🍅",
+      "📻"
+     ],
+     "answer": "📻",
+     "picOptions": true,
+     "explain": "Radio fängt mit R an. Tomate und Tiger fangen mit T an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-o0",
+     "task": "Welches Bild fängt NICHT mit O an?",
+     "prompt": "O o",
+     "say": "Welches Bild fängt nicht mit O an?",
+     "options": [
+      "🤖",
+      "👂",
+      "🐙"
+     ],
+     "answer": "🤖",
+     "picOptions": true,
+     "explain": "Roboter fängt mit R an. Ohr und Oktopus fangen mit O an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-o1",
+     "task": "Welches Bild fängt NICHT mit O an?",
+     "prompt": "O o",
+     "say": "Welches Bild fängt nicht mit O an?",
+     "options": [
+      "👂",
+      "🍅",
+      "🐙"
+     ],
+     "answer": "🍅",
+     "picOptions": true,
+     "explain": "Tomate fängt mit T an. Ohr und Oktopus fangen mit O an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-a1",
+     "task": "Welches Bild fängt NICHT mit A an?",
+     "prompt": "A a",
+     "say": "Welches Bild fängt nicht mit A an?",
+     "options": [
+      "🐒",
+      "🐯",
+      "⚓"
+     ],
+     "answer": "🐯",
+     "picOptions": true,
+     "explain": "Tiger fängt mit T an. Affe und Anker fangen mit A an."
+    }
+   ]
+  },
+  {
+   "title": "Was passt nicht? 2",
+   "icon": "❌",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-l0",
+     "task": "Welches Bild fängt NICHT mit L an?",
+     "prompt": "L l",
+     "say": "Welches Bild fängt nicht mit L an?",
+     "options": [
+      "🦁",
+      "🦙",
+      "🦔"
+     ],
+     "answer": "🦔",
+     "picOptions": true,
+     "explain": "Igel fängt mit I an. Löwe und Lama fangen mit L an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-a0",
+     "task": "Welches Bild fängt NICHT mit A an?",
+     "prompt": "A a",
+     "say": "Welches Bild fängt nicht mit A an?",
+     "options": [
+      "🐒",
+      "🌧️",
+      "🐜"
+     ],
+     "answer": "🌧️",
+     "picOptions": true,
+     "explain": "Regen fängt mit R an. Affe und Ameise fangen mit A an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-s0",
+     "task": "Welches Bild fängt NICHT mit S an?",
+     "prompt": "S s",
+     "say": "Welches Bild fängt nicht mit S an?",
+     "options": [
+      "🛋️",
+      "🌞",
+      "🦙"
+     ],
+     "answer": "🦙",
+     "picOptions": true,
+     "explain": "Lama fängt mit L an. Sonne und Sofa fangen mit S an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-u0",
+     "task": "Welches Bild fängt NICHT mit U an?",
+     "prompt": "U u",
+     "say": "Welches Bild fängt nicht mit U an?",
+     "options": [
+      "🌙",
+      "🛸",
+      "⌚"
+     ],
+     "answer": "🌙",
+     "picOptions": true,
+     "explain": "Mond fängt mit M an. Ufo und Uhr fangen mit U an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-l1",
+     "task": "Welches Bild fängt NICHT mit L an?",
+     "prompt": "L l",
+     "say": "Welches Bild fängt nicht mit L an?",
+     "options": [
+      "🦙",
+      "🐜",
+      "🐆"
+     ],
+     "answer": "🐜",
+     "picOptions": true,
+     "explain": "Ameise fängt mit A an. Lama und Leopard fangen mit L an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-m0",
+     "task": "Welches Bild fängt NICHT mit M an?",
+     "prompt": "M m",
+     "say": "Welches Bild fängt nicht mit M an?",
+     "options": [
+      "🌽",
+      "🐆",
+      "🥕"
+     ],
+     "answer": "🐆",
+     "picOptions": true,
+     "explain": "Leopard fängt mit L an. Mais und Möhre fangen mit M an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-r0",
+     "task": "Welches Bild fängt NICHT mit R an?",
+     "prompt": "R r",
+     "say": "Welches Bild fängt nicht mit R an?",
+     "options": [
+      "💍",
+      "🐙",
+      "🤖"
+     ],
+     "answer": "🐙",
+     "picOptions": true,
+     "explain": "Oktopus fängt mit O an. Ring und Roboter fangen mit R an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-t0",
+     "task": "Welches Bild fängt NICHT mit T an?",
+     "prompt": "T t",
+     "say": "Welches Bild fängt nicht mit T an?",
+     "options": [
+      "🚪",
+      "🚕",
+      "🦔"
+     ],
+     "answer": "🦔",
+     "picOptions": true,
+     "explain": "Igel fängt mit I an. Tür und Taxi fangen mit T an."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-an-nicht-m1",
+     "task": "Welches Bild fängt NICHT mit M an?",
+     "prompt": "M m",
+     "say": "Welches Bild fängt nicht mit M an?",
+     "options": [
+      "🛋️",
+      "🔪",
+      "🌽"
+     ],
+     "answer": "🛋️",
+     "picOptions": true,
+     "explain": "Sofa fängt mit S an. Mais und Messer fangen mit M an."
+    }
+   ]
+  },
+  {
    "title": "Ins Heft",
    "icon": "✍️",
    "tasks": [

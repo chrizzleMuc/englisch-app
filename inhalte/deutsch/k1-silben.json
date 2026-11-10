@@ -796,6 +796,20 @@
       "li",
       "le"
      ]
+    },
+    {
+     "kind": "photo",
+     "id": "k1-sil-farben",
+     "task": "Schreib die Namen mit zwei Farben: die erste Silbe blau, die zweite rot.",
+     "say": "Schreib die Namen mit zwei Farben. Die erste Silbe blau, die zweite Silbe rot.",
+     "show": [
+      "Mi | mi",
+      "Mo | mo",
+      "Ti | mo",
+      "Li | lo",
+      "Ri | a",
+      "Ma | ma"
+     ]
     }
    ]
   },

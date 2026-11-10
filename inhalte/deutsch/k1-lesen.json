@@ -427,6 +427,472 @@
    ]
   },
   {
+   "title": "Silben lesen 1",
+   "icon": "📖",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-sl-ameise",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "A · mei · se",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🐜",
+      "🍅",
+      "🚀"
+     ],
+     "answer": "🐜",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-oma",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "O · ma",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "👵",
+      "🧦",
+      "🍉"
+     ],
+     "answer": "👵",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-leiter",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "Lei · ter",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🪜",
+      "🥗",
+      "👵"
+     ],
+     "answer": "🪜",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-rakete",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "Ra · ke · te",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🚀",
+      "🌹",
+      "🫏"
+     ],
+     "answer": "🚀",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-salat",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "Sa · lat",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🥗",
+      "🐜",
+      "🔍"
+     ],
+     "answer": "🥗",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-lokomotive",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "Lo · ko · mo · ti · ve",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🚂",
+      "🤖",
+      "🐯"
+     ],
+     "answer": "🚂",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-esel",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "E · sel",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🫏",
+      "🐯",
+      "🤖"
+     ],
+     "answer": "🫏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-sofa",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "So · fa",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🛋️",
+      "🚂",
+      "👵"
+     ],
+     "answer": "🛋️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-rose",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "Ro · se",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🌹",
+      "🐯",
+      "🐜"
+     ],
+     "answer": "🌹",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Silben lesen 2",
+   "icon": "📖",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-sl-lama",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "La · ma",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🦙",
+      "🍅",
+      "🥗"
+     ],
+     "answer": "🦙",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-tiger",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "Ti · ger",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🐯",
+      "🚕",
+      "🫏"
+     ],
+     "answer": "🐯",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-socken",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "So · cken",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🧦",
+      "🐯",
+      "🫏"
+     ],
+     "answer": "🧦",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-roboter",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "Ro · bo · ter",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🤖",
+      "🫏",
+      "🥗"
+     ],
+     "answer": "🤖",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-telefon",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "Te · le · fon",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "☎️",
+      "🐜",
+      "🚂"
+     ],
+     "answer": "☎️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-taxi",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "Ta · xi",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🚕",
+      "🌹",
+      "🐜"
+     ],
+     "answer": "🚕",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-tomate",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "To · ma · te",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🍅",
+      "☎️",
+      "🚂"
+     ],
+     "answer": "🍅",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-melone",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "Me · lo · ne",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🍉",
+      "🚂",
+      "🤖"
+     ],
+     "answer": "🍉",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sl-lupe",
+     "task": "Lies Silbe für Silbe. Welches Bild passt?",
+     "prompt": "Lu · pe",
+     "say": "Lies Silbe für Silbe. Welches Bild passt?",
+     "options": [
+      "🔍",
+      "☎️",
+      "👵"
+     ],
+     "answer": "🔍",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Welcher Satz passt?",
+   "icon": "🖼️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-sz-10",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Der Esel ist müde.",
+     "pic": "🫏",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Der Esel ist müde.",
+      "Die Ameise ist am Ast.",
+      "Die Sonne scheint."
+     ],
+     "answer": "Der Esel ist müde."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-6",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Die Rakete fliegt.",
+     "pic": "🚀",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Die Rakete fliegt.",
+      "Die Rose ist rot.",
+      "Der Uhu sitzt im Baum."
+     ],
+     "answer": "Die Rakete fliegt."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-3",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Das Lama ist lieb.",
+     "pic": "🦙",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Das Lama ist lieb.",
+      "Die Maus ist klein.",
+      "Die Sonne scheint."
+     ],
+     "answer": "Das Lama ist lieb."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-5",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Das Eis ist lecker.",
+     "pic": "🍦",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Das Eis ist lecker.",
+      "Das Segelboot ist am See.",
+      "Die Rose ist rot."
+     ],
+     "answer": "Das Eis ist lecker."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-1",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Die Rose ist rot.",
+     "pic": "🌹",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Die Rose ist rot.",
+      "Oma liest.",
+      "Die Rakete fliegt."
+     ],
+     "answer": "Die Rose ist rot."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-2",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Der Mond ist am Himmel.",
+     "pic": "🌙",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Der Mond ist am Himmel.",
+      "Die Rose ist rot.",
+      "Die Rakete fliegt."
+     ],
+     "answer": "Der Mond ist am Himmel."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-9",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Das Segelboot ist am See.",
+     "pic": "⛵",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Das Segelboot ist am See.",
+      "Die Rose ist rot.",
+      "Die Maus ist klein."
+     ],
+     "answer": "Das Segelboot ist am See."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-4",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Der Elefant ist groß.",
+     "pic": "🐘",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Der Elefant ist groß.",
+      "Die Sonne scheint.",
+      "Die Ameise ist am Ast."
+     ],
+     "answer": "Der Elefant ist groß."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-13",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Die Ameise ist am Ast.",
+     "pic": "🐜",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Die Ameise ist am Ast.",
+      "Das Segelboot ist am See.",
+      "Der Mond ist am Himmel."
+     ],
+     "answer": "Die Ameise ist am Ast."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-8",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Oma liest.",
+     "pic": "👵",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Oma liest.",
+      "Die Sonne scheint.",
+      "Der Mond ist am Himmel."
+     ],
+     "answer": "Oma liest."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-11",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Die Sonne scheint.",
+     "pic": "🌞",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Die Sonne scheint.",
+      "Der Elefant ist groß.",
+      "Die Maus ist klein."
+     ],
+     "answer": "Die Sonne scheint."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-12",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Mia sitzt auf dem Sofa.",
+     "pic": "🛋️",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Mia sitzt auf dem Sofa.",
+      "Der Mond ist am Himmel.",
+      "Die Rakete fliegt."
+     ],
+     "answer": "Mia sitzt auf dem Sofa."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-7",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Der Uhu sitzt im Baum.",
+     "pic": "🦉",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Der Uhu sitzt im Baum.",
+      "Die Rose ist rot.",
+      "Die Maus ist klein."
+     ],
+     "answer": "Der Uhu sitzt im Baum."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-sz-0",
+     "task": "Welcher Satz passt zum Bild?",
+     "prompt": "Die Maus ist klein.",
+     "pic": "🐭",
+     "say": "Welcher Satz passt zum Bild?",
+     "options": [
+      "Die Maus ist klein.",
+      "Oma liest.",
+      "Das Eis ist lecker."
+     ],
+     "answer": "Die Maus ist klein."
+    }
+   ]
+  },
+  {
    "title": "Ins Heft",
    "icon": "✍️",
    "tasks": [
