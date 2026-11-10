@@ -220,6 +220,11 @@ export function savedAt() {
   return state.savedAt;
 }
 
+export function resetProfile(pid) {
+  delete state.profiles[pid];
+  save();
+}
+
 export function resetAll() {
   state = blank();
   save();

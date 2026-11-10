@@ -1,0 +1,765 @@
+{
+ "id": "d3-lang",
+ "type": "schule",
+ "title_de": "Lange Selbstlaute: ie, h, ß",
+ "image": "〰️",
+ "color": "#8a5a2b",
+ "lessons": [
+  {
+   "title": "i oder ie",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ie-die-biene",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Biene",
+      "die Bine"
+     ],
+     "answer": "die Biene",
+     "explain": "Langes i schreibt man meistens ie.",
+     "say": "die Biene"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-die-wiese",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Wiese",
+      "die Wise"
+     ],
+     "answer": "die Wiese",
+     "explain": "Langes i schreibt man meistens ie.",
+     "say": "die Wiese"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-spielen",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "spielen",
+      "spilen"
+     ],
+     "answer": "spielen",
+     "explain": "Langes i schreibt man meistens ie.",
+     "say": "spielen"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-der-brief",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Brief",
+      "der Brif"
+     ],
+     "answer": "der Brief",
+     "explain": "Langes i schreibt man meistens ie.",
+     "say": "der Brief"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-das-tier",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Tier",
+      "das Tir"
+     ],
+     "answer": "das Tier",
+     "explain": "Langes i schreibt man meistens ie.",
+     "say": "das Tier"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-das-papier",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Papier",
+      "das Papir"
+     ],
+     "answer": "das Papier",
+     "explain": "Langes i schreibt man meistens ie.",
+     "say": "das Papier"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-viel",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "viel",
+      "vil"
+     ],
+     "answer": "viel",
+     "bigOptions": true,
+     "explain": "Langes i schreibt man meistens ie.",
+     "say": "viel"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-der-riese",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Riese",
+      "der Rise"
+     ],
+     "answer": "der Riese",
+     "explain": "Langes i schreibt man meistens ie.",
+     "say": "der Riese"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-die-kirche",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Kirche",
+      "die Kierche"
+     ],
+     "answer": "die Kirche",
+     "explain": "Kurzes i: nur i.",
+     "say": "die Kirche"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-die-kiste",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Kiste",
+      "die Kieste"
+     ],
+     "answer": "die Kiste",
+     "explain": "Kurzes i: nur i.",
+     "say": "die Kiste"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-der-winter",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Winter",
+      "der Wienter"
+     ],
+     "answer": "der Winter",
+     "explain": "Kurzes i: nur i.",
+     "say": "der Winter"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-der-tiger",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Tiger",
+      "der Tieger"
+     ],
+     "answer": "der Tiger",
+     "explain": "Ausnahme! Merkwort mit langem i ohne e.",
+     "say": "der Tiger"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-der-igel",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Igel",
+      "der Iegel"
+     ],
+     "answer": "der Igel",
+     "explain": "Ausnahme! Merkwort mit langem i ohne e.",
+     "say": "der Igel"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-das-kino",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Kino",
+      "das Kieno"
+     ],
+     "answer": "das Kino",
+     "explain": "Ausnahme! Merkwort mit langem i ohne e.",
+     "say": "das Kino"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ie-mir",
+     "task": "i oder ie?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "mir",
+      "mier"
+     ],
+     "answer": "mir",
+     "bigOptions": true,
+     "explain": "Ausnahme! Merkwort mit langem i ohne e.",
+     "say": "mir"
+    }
+   ]
+  },
+  {
+   "title": "Mit h oder ohne",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-hh-fahren",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "fahren",
+      "faren"
+     ],
+     "answer": "fahren",
+     "explain": "Dehnungs-h: Man hört es nicht, man muss es sich merken.",
+     "say": "fahren"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-der-zahn",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Zahn",
+      "der Zan"
+     ],
+     "answer": "der Zahn",
+     "explain": "Dehnungs-h: Man hört es nicht, man muss es sich merken.",
+     "say": "der Zahn"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-die-zahl",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Zahl",
+      "die Zal"
+     ],
+     "answer": "die Zahl",
+     "explain": "Dehnungs-h: Man hört es nicht, man muss es sich merken.",
+     "say": "die Zahl"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-der-stuhl",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Stuhl",
+      "der Stul"
+     ],
+     "answer": "der Stuhl",
+     "explain": "Dehnungs-h: Man hört es nicht, man muss es sich merken.",
+     "say": "der Stuhl"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-fuehlen",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "fühlen",
+      "fülen"
+     ],
+     "answer": "fühlen",
+     "explain": "Dehnungs-h: Man hört es nicht, man muss es sich merken.",
+     "say": "fühlen"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-wohnen",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "wohnen",
+      "wonen"
+     ],
+     "answer": "wohnen",
+     "explain": "Dehnungs-h: Man hört es nicht, man muss es sich merken.",
+     "say": "wohnen"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-ohne",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "ohne",
+      "one"
+     ],
+     "answer": "ohne",
+     "bigOptions": true,
+     "explain": "Dehnungs-h: Man hört es nicht, man muss es sich merken.",
+     "say": "ohne"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-das-jahr",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Jahr",
+      "das Jar"
+     ],
+     "answer": "das Jahr",
+     "explain": "Dehnungs-h: Man hört es nicht, man muss es sich merken.",
+     "say": "das Jahr"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-sehr",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "sehr",
+      "ser"
+     ],
+     "answer": "sehr",
+     "bigOptions": true,
+     "explain": "Dehnungs-h: Man hört es nicht, man muss es sich merken.",
+     "say": "sehr"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-nehmen",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "nehmen",
+      "nemen"
+     ],
+     "answer": "nehmen",
+     "explain": "Dehnungs-h: Man hört es nicht, man muss es sich merken.",
+     "say": "nehmen"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-die-hose",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Hose",
+      "die Hohse"
+     ],
+     "answer": "die Hose",
+     "explain": "Hier gibt es kein h.",
+     "say": "die Hose"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-die-blume",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Blume",
+      "die Bluhme"
+     ],
+     "answer": "die Blume",
+     "explain": "Hier gibt es kein h.",
+     "say": "die Blume"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-die-schule",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Schule",
+      "die Schuhle"
+     ],
+     "answer": "die Schule",
+     "explain": "Hier gibt es kein h.",
+     "say": "die Schule"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-hh-das-brot",
+     "task": "Mit h oder ohne?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Brot",
+      "das Broht"
+     ],
+     "answer": "das Brot",
+     "explain": "Hier gibt es kein h.",
+     "say": "das Brot"
+    }
+   ]
+  },
+  {
+   "title": "aa, ee, oo",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-dv-das-meer",
+     "task": "Doppelter Selbstlaut?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Meer",
+      "das Mer"
+     ],
+     "answer": "das Meer",
+     "explain": "Doppelter Selbstlaut: ein Merkwort.",
+     "say": "das Meer"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dv-das-boot",
+     "task": "Doppelter Selbstlaut?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Boot",
+      "das Bot"
+     ],
+     "answer": "das Boot",
+     "explain": "Doppelter Selbstlaut: ein Merkwort.",
+     "say": "das Boot"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dv-der-zoo",
+     "task": "Doppelter Selbstlaut?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Zoo",
+      "der Zo"
+     ],
+     "answer": "der Zoo",
+     "explain": "Doppelter Selbstlaut: ein Merkwort.",
+     "say": "der Zoo"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dv-der-tee",
+     "task": "Doppelter Selbstlaut?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Tee",
+      "der Te"
+     ],
+     "answer": "der Tee",
+     "explain": "Doppelter Selbstlaut: ein Merkwort.",
+     "say": "der Tee"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dv-der-see",
+     "task": "Doppelter Selbstlaut?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der See",
+      "der Se"
+     ],
+     "answer": "der See",
+     "explain": "Doppelter Selbstlaut: ein Merkwort.",
+     "say": "der See"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dv-die-beere",
+     "task": "Doppelter Selbstlaut?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Beere",
+      "die Bere"
+     ],
+     "answer": "die Beere",
+     "explain": "Doppelter Selbstlaut: ein Merkwort.",
+     "say": "die Beere"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dv-die-haare",
+     "task": "Doppelter Selbstlaut?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Haare",
+      "die Hare"
+     ],
+     "answer": "die Haare",
+     "explain": "Doppelter Selbstlaut: ein Merkwort.",
+     "say": "die Haare"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dv-das-moos",
+     "task": "Doppelter Selbstlaut?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Moos",
+      "das Mos"
+     ],
+     "answer": "das Moos",
+     "explain": "Doppelter Selbstlaut: ein Merkwort.",
+     "say": "das Moos"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dv-leer",
+     "task": "Doppelter Selbstlaut?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "leer",
+      "ler"
+     ],
+     "answer": "leer",
+     "bigOptions": true,
+     "explain": "Doppelter Selbstlaut: ein Merkwort.",
+     "say": "leer"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dv-der-saal",
+     "task": "Doppelter Selbstlaut?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Saal",
+      "der Sal"
+     ],
+     "answer": "der Saal",
+     "explain": "Doppelter Selbstlaut: ein Merkwort.",
+     "say": "der Saal"
+    }
+   ]
+  },
+  {
+   "title": "ß oder ss",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-sz-der-fuss",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Fuß",
+      "der Fuss"
+     ],
+     "answer": "der Fuß",
+     "explain": "Langer Selbstlaut oder au, ei, eu: ß.",
+     "say": "der Fuß"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-die-strasse",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Straße",
+      "die Strasse"
+     ],
+     "answer": "die Straße",
+     "explain": "Langer Selbstlaut oder au, ei, eu: ß.",
+     "say": "die Straße"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-gross",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "groß",
+      "gross"
+     ],
+     "answer": "groß",
+     "bigOptions": true,
+     "explain": "Langer Selbstlaut oder au, ei, eu: ß.",
+     "say": "groß"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-heiss",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "heiß",
+      "heiss"
+     ],
+     "answer": "heiß",
+     "bigOptions": true,
+     "explain": "Langer Selbstlaut oder au, ei, eu: ß.",
+     "say": "heiß"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-suess",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "süß",
+      "süss"
+     ],
+     "answer": "süß",
+     "bigOptions": true,
+     "explain": "Langer Selbstlaut oder au, ei, eu: ß.",
+     "say": "süß"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-der-spass",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Spaß",
+      "der Spass"
+     ],
+     "answer": "der Spaß",
+     "explain": "Langer Selbstlaut oder au, ei, eu: ß.",
+     "say": "der Spaß"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-beissen",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "beißen",
+      "beissen"
+     ],
+     "answer": "beißen",
+     "explain": "Langer Selbstlaut oder au, ei, eu: ß.",
+     "say": "beißen"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-die-sosse",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Soße",
+      "die Sosse"
+     ],
+     "answer": "die Soße",
+     "explain": "Langer Selbstlaut oder au, ei, eu: ß.",
+     "say": "die Soße"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-der-fluss",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Fluss",
+      "der Fluß"
+     ],
+     "answer": "der Fluss",
+     "explain": "Kurzer Selbstlaut: ss.",
+     "say": "der Fluss"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-das-wasser",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Wasser",
+      "das Waßer"
+     ],
+     "answer": "das Wasser",
+     "explain": "Kurzer Selbstlaut: ss.",
+     "say": "das Wasser"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-essen",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "essen",
+      "eßen"
+     ],
+     "answer": "essen",
+     "bigOptions": true,
+     "explain": "Kurzer Selbstlaut: ss.",
+     "say": "essen"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-der-kuss",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Kuss",
+      "der Kuß"
+     ],
+     "answer": "der Kuss",
+     "explain": "Kurzer Selbstlaut: ss.",
+     "say": "der Kuss"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-das-schloss",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Schloss",
+      "das Schloß"
+     ],
+     "answer": "das Schloss",
+     "explain": "Kurzer Selbstlaut: ss.",
+     "say": "das Schloss"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sz-nass",
+     "task": "ß oder ss?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "nass",
+      "naß"
+     ],
+     "answer": "nass",
+     "bigOptions": true,
+     "explain": "Kurzer Selbstlaut: ss.",
+     "say": "nass"
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-lang-foto",
+     "task": "Schreib die Merkwörter in dein Heft: Igel, Tiger, Kino, Meer, Boot, Zoo, Haare, Fuß, Straße.",
+     "say": "Schreib die Merkwörter in dein Heft.",
+     "show": [
+      "der Igel",
+      "der Tiger",
+      "das Kino",
+      "das Meer",
+      "das Boot",
+      "der Zoo",
+      "die Haare",
+      "der Fuß",
+      "die Straße"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

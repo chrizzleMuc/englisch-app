@@ -1,0 +1,704 @@
+{
+ "id": "d3-verlaengern",
+ "type": "schule",
+ "title_de": "Verlängern: d/t, g/k, b/p",
+ "image": "📏",
+ "color": "#3f7fbf",
+ "lessons": [
+  {
+   "title": "d oder t",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-vl-hand",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Han_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Hände → die Hand",
+     "say": "Hand"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-wald",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Wal_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Wälder → der Wald",
+     "say": "Wald"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-zelt",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "das Zel_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "t",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Zelte → das Zelt",
+     "say": "Zelt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-feld",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "das Fel_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Felder → das Feld",
+     "say": "Feld"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-bild",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "das Bil_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Bilder → das Bild",
+     "say": "Bild"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-brot",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "das Bro_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "t",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Brote → das Brot",
+     "say": "Brot"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-mund",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Mun_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Münder → der Mund",
+     "say": "Mund"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-pferd",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "das Pfer_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Pferde → das Pferd",
+     "say": "Pferd"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-hut",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Hu_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "t",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Hüte → der Hut",
+     "say": "Hut"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-rad",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "das Ra_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Räder → das Rad",
+     "say": "Rad"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-rund",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "run_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ein runder Ball → rund",
+     "say": "rund"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-kalt",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "kal_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "t",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "kälter → kalt",
+     "say": "kalt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-wild",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "wil_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "eine wilde Fahrt → wild",
+     "say": "wild"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-laut",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "lau_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "t",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "lauter → laut",
+     "say": "laut"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-gesund",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "gesun_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "gesunde Kinder → gesund",
+     "say": "gesund"
+    }
+   ]
+  },
+  {
+   "title": "g oder k",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-vl-berg",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Ber_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Berge → der Berg",
+     "say": "Berg"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-zwerg",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Zwer_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Zwerge → der Zwerg",
+     "say": "Zwerg"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-tag",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Ta_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Tage → der Tag",
+     "say": "Tag"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-zug",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Zu_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Züge → der Zug",
+     "say": "Zug"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-schrank",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Schran_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "k",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Schränke → der Schrank",
+     "say": "Schrank"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-bank",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "die Ban_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "k",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Bänke → die Bank",
+     "say": "Bank"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-burg",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "die Bur_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Burgen → die Burg",
+     "say": "Burg"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-koenig",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Köni_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Könige → der König",
+     "say": "König"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-klug",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "klu_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "klüger → klug",
+     "say": "klug"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-stark",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "star_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "k",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "stärker → stark",
+     "say": "stark"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-lustig",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "lusti_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "lustige Witze → lustig",
+     "say": "lustig"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-schlank",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "schlan_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "k",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "schlanker → schlank",
+     "say": "schlank"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-er-sagt",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "er sa_t",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "sagen → er sagt",
+     "say": "er sagt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-er-trinkt",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "er trin_t",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "k",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "trinken → er trinkt",
+     "say": "er trinkt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-er-liegt",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "er lie_t",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "liegen → er liegt",
+     "say": "er liegt"
+    }
+   ]
+  },
+  {
+   "title": "b oder p",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-vl-korb",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Kor_",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "b",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Körbe → der Korb",
+     "say": "Korb"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-dieb",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Die_",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "b",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Diebe → der Dieb",
+     "say": "Dieb"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-sieb",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "das Sie_",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "b",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Siebe → das Sieb",
+     "say": "Sieb"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-kalb",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "das Kal_",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "b",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Kälber → das Kalb",
+     "say": "Kalb"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-halb",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "hal_",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "b",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "eine halbe Wurst → halb",
+     "say": "halb"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-gelb",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "gel_",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "b",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "eine gelbe Blume → gelb",
+     "say": "gelb"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-lieb",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "lie_",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "b",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ein lieber Hund → lieb",
+     "say": "lieb"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-er-gibt",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "er gi_t",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "b",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "geben → er gibt",
+     "say": "er gibt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-er-klebt",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "er kle_t",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "b",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "kleben → er klebt",
+     "say": "er klebt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-er-hupt",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "er hu_t",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "p",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "hupen → er hupt",
+     "say": "er hupt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-er-pumpt",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "er pum_t",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "p",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "pumpen → er pumpt",
+     "say": "er pumpt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vl-typ",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Ty_",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "p",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Typen → der Typ",
+     "say": "Typ"
+    }
+   ]
+  },
+  {
+   "title": "Gemischt",
+   "icon": "🔀",
+   "pick": "d3-vl-",
+   "count": 12
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-vl-foto",
+     "task": "Schreib jedes Wort und daneben die verlängerte Form, zum Beispiel: Hand – Hände.",
+     "say": "Schreib jedes Wort und daneben die verlängerte Form in dein Heft.",
+     "show": [
+      "Wald",
+      "Zwerg",
+      "Korb",
+      "kalt",
+      "klug",
+      "gelb",
+      "Zelt",
+      "Bank"
+     ],
+     "solution": [
+      "Wald – Wälder",
+      "Zwerg – Zwerge",
+      "Korb – Körbe",
+      "kalt – kälter",
+      "klug – klüger",
+      "gelb – gelbe",
+      "Zelt – Zelte",
+      "Bank – Bänke"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

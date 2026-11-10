@@ -45,3 +45,9 @@ Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede E
 - `photo` – im Heft schreiben, Foto als Nachweis (Fotomappe im Elternbereich)
 
 Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.
+
+## Version 12
+- **Testmodus** (im Elternbereich): eigener Lernstand, sieht alle Fächer und Stufen, alle Lektionen offen. „Test-Fortschritt löschen“ setzt nur den Testmodus zurück.
+- **Deutsch 1. Klasse** (Profil „1. Klasse“): Anfangsbuchstaben, Silben (hören, klatschen, erste Silbe), Wörter lesen und „ist oder sind“. Alles mit Bild und Vorlesen, Antworten als große Buchstaben oder Bilder.
+- **Deutsch 3. Klasse**: neu Nomen, Verlängern (d/t, g/k, b/p), doppelte Mitlaute mit ck und tz, lange Selbstlaute (ie, h, aa/ee/oo, ß), Ableiten (ä/e, äu/eu).
+- Auswahl-Aufgaben können jetzt ein Bild zeigen (`pic`), Bilder als Antworten haben (`picOptions`) und große Antwortknöpfe (`bigOptions`).

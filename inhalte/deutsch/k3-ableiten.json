@@ -1,0 +1,474 @@
+{
+ "id": "d3-ableiten",
+ "type": "schule",
+ "title_de": "Ableiten: ä oder e, äu oder eu",
+ "image": "🔁",
+ "color": "#6a6fc2",
+ "lessons": [
+  {
+   "title": "ä oder e",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ae-die-aepfel",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die _pfel",
+     "options": [
+      "Ä",
+      "E"
+     ],
+     "answer": "Ä",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Apfel → die Äpfel",
+     "say": "die Äpfel"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-die-haende",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die H_nde",
+     "options": [
+      "ä",
+      "e"
+     ],
+     "answer": "ä",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Hand → die Hände",
+     "say": "die Hände"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-der-baecker",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "der B_cker",
+     "options": [
+      "ä",
+      "e"
+     ],
+     "answer": "ä",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "backen → der Bäcker",
+     "say": "der Bäcker"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-die-glaeser",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die Gl_ser",
+     "options": [
+      "ä",
+      "e"
+     ],
+     "answer": "ä",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Glas → die Gläser",
+     "say": "die Gläser"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-die-raeder",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die R_der",
+     "options": [
+      "ä",
+      "e"
+     ],
+     "answer": "ä",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Rad → die Räder",
+     "say": "die Räder"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-kaelter",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "k_lter",
+     "options": [
+      "ä",
+      "e"
+     ],
+     "answer": "ä",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "kalt → kälter",
+     "say": "kälter"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-die-laenge",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die L_nge",
+     "options": [
+      "ä",
+      "e"
+     ],
+     "answer": "ä",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "lang → die Länge",
+     "say": "die Länge"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-er-faehrt",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "er f_hrt",
+     "options": [
+      "ä",
+      "e"
+     ],
+     "answer": "ä",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "fahren → er fährt",
+     "say": "er fährt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-die-waesche",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die W_sche",
+     "options": [
+      "ä",
+      "e"
+     ],
+     "answer": "ä",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "waschen → die Wäsche",
+     "say": "die Wäsche"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-die-naechte",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die N_chte",
+     "options": [
+      "ä",
+      "e"
+     ],
+     "answer": "ä",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Nacht → die Nächte",
+     "say": "die Nächte"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-das-bett",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "das B_tt",
+     "options": [
+      "ä",
+      "e"
+     ],
+     "answer": "e",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein verwandtes Wort mit a: also e.",
+     "say": "das Bett"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-das-messer",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "das M_sser",
+     "options": [
+      "ä",
+      "e"
+     ],
+     "answer": "e",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein verwandtes Wort mit a: also e.",
+     "say": "das Messer"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-das-wetter",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "das W_tter",
+     "options": [
+      "ä",
+      "e"
+     ],
+     "answer": "e",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein verwandtes Wort mit a: also e.",
+     "say": "das Wetter"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ae-die-ente",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die _nte",
+     "options": [
+      "Ä",
+      "E"
+     ],
+     "answer": "E",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein verwandtes Wort mit a: also E.",
+     "say": "die Ente"
+    }
+   ]
+  },
+  {
+   "title": "äu oder eu",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-eu-die-baeume",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die B_me",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "äu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Baum → die Bäume",
+     "say": "die Bäume"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-die-haeuser",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die H_ser",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "äu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Haus → die Häuser",
+     "say": "die Häuser"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-die-maeuse",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die M_se",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "äu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Maus → die Mäuse",
+     "say": "die Mäuse"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-die-kraeuter",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die Kr_ter",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "äu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Kraut → die Kräuter",
+     "say": "die Kräuter"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-die-traeume",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die Tr_me",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "äu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Traum → die Träume",
+     "say": "die Träume"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-er-laeuft",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "er l_ft",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "äu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "laufen → er läuft",
+     "say": "er läuft"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-der-raeuber",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "der R_ber",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "äu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "rauben → der Räuber",
+     "say": "der Räuber"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-die-freude",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die Fr_de",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "eu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein verwandtes Wort mit au: also eu.",
+     "say": "die Freude"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-heute",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "h_te",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "eu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein verwandtes Wort mit au: also eu.",
+     "say": "heute"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-neu",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "n_",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "eu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein verwandtes Wort mit au: also eu.",
+     "say": "neu"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-das-feuer",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "das F_er",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "eu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein verwandtes Wort mit au: also eu.",
+     "say": "das Feuer"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-die-leute",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die L_te",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "eu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein verwandtes Wort mit au: also eu.",
+     "say": "die Leute"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-die-eule",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "die _le",
+     "options": [
+      "Äu",
+      "Eu"
+     ],
+     "answer": "Eu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein verwandtes Wort mit au: also Eu.",
+     "say": "die Eule"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-eu-teuer",
+     "task": "Welcher Buchstabe fehlt? Such ein verwandtes Wort!",
+     "prompt": "t_er",
+     "options": [
+      "äu",
+      "eu"
+     ],
+     "answer": "eu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kein verwandtes Wort mit au: also eu.",
+     "say": "teuer"
+    }
+   ]
+  },
+  {
+   "title": "Gemischt",
+   "icon": "🔀",
+   "pick": "d3-",
+   "count": 12
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-ab-foto",
+     "task": "Schreib die Wortpaare in dein Heft: Baum – Bäume, Hand – Hände, Haus – Häuser, kalt – kälter, Maus – Mäuse.",
+     "say": "Schreib die Wortpaare in dein Heft.",
+     "show": [
+      "Baum – Bäume",
+      "Hand – Hände",
+      "Haus – Häuser",
+      "kalt – kälter",
+      "Maus – Mäuse"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

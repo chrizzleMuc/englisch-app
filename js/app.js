@@ -1,4 +1,4 @@
-import { PROFILES, PRAISE, PRAISE_EN, LESSONS, SPEAKERS } from "./data.js";
+import { PROFILES, TEST_PROFILE, PRAISE, PRAISE_EN, LESSONS, SPEAKERS } from "./data.js";
 import { sayParts, sayEn, sayDe, chime, voiceInfo } from "./speech.js";
 import { play, promptAnd, stopAudio } from "./audio.js";
 import { canRecord, record, playUrl } from "./recorder.js";
@@ -7,7 +7,7 @@ import * as store from "./store.js";
 import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 
-const APP_VERSION = 11;
+const APP_VERSION = 12;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -23,7 +23,8 @@ const shuffle = (a) => {
 };
 const pick = (a) => a[Math.floor(Math.random() * a.length)];
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-const prof = () => PROFILES.find((p) => p.id === current.profile);
+const prof = () => [...PROFILES, TEST_PROFILE].find((p) => p.id === current.profile);
+const isTestUser = () => current.profile === TEST_PROFILE.id;
 const item = (id) => content.items.get(id);
 const unitById = (id) => content.units.get(id);
 
@@ -66,7 +67,7 @@ function showProfiles() {
 }
 
 // ---------- Freigeschaltete Inhalte ----------
-const stageDefault = (pid, st) => !st.kinder || st.kinder.includes(pid);
+const stageDefault = (pid, st) => pid === TEST_PROFILE.id || !st.kinder || st.kinder.includes(pid);
 
 function stagesFor(pid, sub) {
   return sub.stages
@@ -91,7 +92,7 @@ function unitMastered(pid, unit) {
 function homeHeader(p) {
   return `<header class="bar">
         <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
-        <span class="who">${esc(p.title)}</span>
+        <span class="who">${p.test ? `<span class="test-badge">🧪 Testmodus</span>` : esc(p.title)}</span>
         <span class="stat">🔥 ${store.streakCount(p.id)}</span>
         <span class="stat">⭐ ${store.totalStars(p.id)}</span>
       </header>`;
@@ -154,7 +155,7 @@ function showUnit(unitId) {
   const pid = current.profile;
   const sub = content.subjects.find((x) => x.id === u.subject);
   const lessons = lessonsOf(u);
-  const isOpen = (i) => isSchool(u) || i === 0 || store.lessonDone(pid, u.id, i - 1);
+  const isOpen = (i) => isSchool(u) || isTestUser() || i === 0 || store.lessonDone(pid, u.id, i - 1);
   const cur = lessons.findIndex((_, i) => isOpen(i) && !store.lessonDone(pid, u.id, i));
   // Pfad schlängelt sich wie eine Treppe nach links und rechts
   const sway = [0, -70, -105, -70, 0, 70, 105, 70];
@@ -689,7 +690,7 @@ const singleStep = (q) => ({ kind: q.kind, q });
 function describe(q) {
   if (q.kind === "type") return [q.prompt, [q.before, q.choose?.answer, q.answer].filter(Boolean).join(" ")];
   if (q.kind === "syllables") return [q.word, q.answer];
-  return [q.prompt, q.answer];
+  return [q.prompt || q.say, q.answer];
 }
 
 function buildSchoolLesson(u, n) {
@@ -800,8 +801,8 @@ STEPS.choice = (lesson, step) => {
   const opts = q.keepOrder ? q.options : shuffle(q.options);
   const token = lessonRender(lesson, `
     <p class="task">${esc(q.task || "Was ist richtig?")}</p>
-    ${promptCard(q.prompt)}
-    <div class="choices text-choices">${opts.map((o) => `<button class="choice" data-v="${esc(o)}"><span class="word">${esc(o)}</span></button>`).join("")}</div>
+    ${q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}<button class="speaker again" aria-label="Vorlesen">🔊</button></div>` : promptCard(q.prompt)}
+    <div class="choices ${q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(o)}">${q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
   const say = () => sayDe(q.say || q.prompt);
@@ -1228,6 +1229,14 @@ function showParents(msg = "") {
         <button class="wide-btn" id="test">🔊 Stimme testen</button>
       </section>
       <section>
+        <h3>🧪 Testmodus</h3>
+        <p class="small">Zum Ausprobieren ohne den Fortschritt der Kinder zu verändern. Der Testmodus sieht alle Fächer und Stufen und hat einen eigenen Lernstand. Fällig im Test: ${store.dueCards(TEST_PROFILE.id).length}.</p>
+        <div class="row">
+          <button class="wide-btn" id="testmode">🧪 Testmodus starten</button>
+          <button class="wide-btn" id="testreset">Test-Fortschritt löschen</button>
+        </div>
+      </section>
+      <section>
         <h3>Zurücksetzen</h3>
         <button class="wide-btn danger" id="reset">Gesamten Fortschritt löschen</button>
       </section>
@@ -1266,6 +1275,15 @@ function showParents(msg = "") {
     } catch (err) {
       showParents("⚠️ Diese Datei konnte nicht geladen werden (vielleicht von einer alten App-Version).");
     }
+  };
+  $("testmode").onclick = () => {
+    current.profile = TEST_PROFILE.id;
+    current.subject = null;
+    showHome();
+  };
+  $("testreset").onclick = () => {
+    store.resetProfile(TEST_PROFILE.id);
+    showParents("Test-Fortschritt gelöscht.");
   };
   $("reset").onclick = () => {
     if (confirm("Wirklich den gesamten Fortschritt beider Kinder löschen?")) {

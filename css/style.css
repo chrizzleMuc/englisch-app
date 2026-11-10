@@ -612,3 +612,15 @@ table.words th, table.words td { border-color: var(--line); color: var(--card-in
 .mcard .front { font-size: 38px; }
 .speaker-pic { font-size: 56px; }
 table.words td .emo { font-size: 28px; }
+
+/* ---------- Version 12: 1. Klasse (Bild + Ton) und Testmodus ---------- */
+.pic-card { flex-direction: row; }
+.pic-card .huge-pic { font-size: clamp(72px, 15vw, 110px); }
+.pic-choices { grid-template-columns: repeat(3, 1fr); }
+.pic-choices .choice { min-height: 110px; display: flex; align-items: center; justify-content: center; }
+.pic-choices .mid-pic { font-size: clamp(52px, 12vw, 72px); }
+.big-options .word { font-size: clamp(34px, 8vw, 48px) !important; font-weight: 900; letter-spacing: 1px; }
+.big-options .choice { min-height: 96px; }
+.test-badge { background: var(--gold); color: #3d2600; border-radius: 10px; padding: 4px 10px; font-size: 15px; font-weight: 900; }
+.big-options { grid-template-columns: repeat(auto-fit, minmax(92px, 1fr)); }
+.pic-choices .mid-pic { display: inline-flex; flex-wrap: nowrap; align-items: center; font-size: clamp(34px, 9vw, 60px); }

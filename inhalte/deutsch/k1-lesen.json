@@ -1,0 +1,455 @@
+{
+ "id": "d1-lesen",
+ "type": "schule",
+ "title_de": "Wörter lesen",
+ "image": "📖",
+ "color": "#2f8fb0",
+ "lessons": [
+  {
+   "title": "Lesen 1",
+   "icon": "📖",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-le-tomate",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Tomate",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🍅",
+      "👴",
+      "🍦"
+     ],
+     "answer": "🍅",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-rose",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Rose",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🌹",
+      "🛋️",
+      "🌽"
+     ],
+     "answer": "🌹",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-eis",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Eis",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🍦",
+      "👵",
+      "🥚"
+     ],
+     "answer": "🍦",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-lama",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Lama",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🦙",
+      "👵",
+      "👴"
+     ],
+     "answer": "🦙",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-uhu",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Uhu",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🦉",
+      "👴",
+      "🍅"
+     ],
+     "answer": "🦉",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-opa",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Opa",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "👴",
+      "🌽",
+      "🫏"
+     ],
+     "answer": "👴",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-esel",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Esel",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🫏",
+      "🍅",
+      "🦉"
+     ],
+     "answer": "🫏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-salat",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Salat",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🥗",
+      "👴",
+      "🦉"
+     ],
+     "answer": "🥗",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-ameise",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Ameise",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🐜",
+      "🐭",
+      "🦙"
+     ],
+     "answer": "🐜",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Lesen 2",
+   "icon": "📖",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-le-ufo",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Ufo",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🛸",
+      "🌹",
+      "🪜"
+     ],
+     "answer": "🛸",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-taxi",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Taxi",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🚕",
+      "👵",
+      "🐭"
+     ],
+     "answer": "🚕",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-leiter",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Leiter",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🪜",
+      "🦙",
+      "🌹"
+     ],
+     "answer": "🪜",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-sofa",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Sofa",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🛋️",
+      "🥗",
+      "🫏"
+     ],
+     "answer": "🛋️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-messer",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Messer",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🔪",
+      "🐜",
+      "🌹"
+     ],
+     "answer": "🔪",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-ei",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Ei",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🥚",
+      "🦙",
+      "🌽"
+     ],
+     "answer": "🥚",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-mais",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Mais",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🌽",
+      "🍅",
+      "🍦"
+     ],
+     "answer": "🌽",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-maus",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Maus",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🐭",
+      "🥚",
+      "🚕"
+     ],
+     "answer": "🐭",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-le-oma",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Oma",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "👵",
+      "🐭",
+      "🫏"
+     ],
+     "answer": "👵",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "ist oder sind",
+   "icon": "👥",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-is-0",
+     "task": "ist oder sind?",
+     "prompt": "Mia ___ im Garten.",
+     "say": "Mia … im Garten. Ist oder sind?",
+     "options": [
+      "ist",
+      "sind"
+     ],
+     "keepOrder": true,
+     "answer": "ist",
+     "bigOptions": true,
+     "explain": "Einer: ist. Mehrere: sind."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-is-1",
+     "task": "ist oder sind?",
+     "prompt": "Mia und Mio ___ im Garten.",
+     "say": "Mia und Mio … im Garten. Ist oder sind?",
+     "options": [
+      "ist",
+      "sind"
+     ],
+     "keepOrder": true,
+     "answer": "sind",
+     "bigOptions": true,
+     "explain": "Einer: ist. Mehrere: sind."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-is-2",
+     "task": "ist oder sind?",
+     "prompt": "Oma ___ am Tor.",
+     "say": "Oma … am Tor. Ist oder sind?",
+     "options": [
+      "ist",
+      "sind"
+     ],
+     "keepOrder": true,
+     "answer": "ist",
+     "bigOptions": true,
+     "explain": "Einer: ist. Mehrere: sind."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-is-3",
+     "task": "ist oder sind?",
+     "prompt": "Mama und Papa ___ da.",
+     "say": "Mama und Papa … da. Ist oder sind?",
+     "options": [
+      "ist",
+      "sind"
+     ],
+     "keepOrder": true,
+     "answer": "sind",
+     "bigOptions": true,
+     "explain": "Einer: ist. Mehrere: sind."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-is-4",
+     "task": "ist oder sind?",
+     "prompt": "Das Lama ___ am Zaun.",
+     "say": "Das Lama … am Zaun. Ist oder sind?",
+     "options": [
+      "ist",
+      "sind"
+     ],
+     "keepOrder": true,
+     "answer": "ist",
+     "bigOptions": true,
+     "explain": "Einer: ist. Mehrere: sind."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-is-5",
+     "task": "ist oder sind?",
+     "prompt": "Die Ameisen ___ am Ast.",
+     "say": "Die Ameisen … am Ast. Ist oder sind?",
+     "options": [
+      "ist",
+      "sind"
+     ],
+     "keepOrder": true,
+     "answer": "sind",
+     "bigOptions": true,
+     "explain": "Einer: ist. Mehrere: sind."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-is-6",
+     "task": "ist oder sind?",
+     "prompt": "Tim ___ müde.",
+     "say": "Tim … müde. Ist oder sind?",
+     "options": [
+      "ist",
+      "sind"
+     ],
+     "keepOrder": true,
+     "answer": "ist",
+     "bigOptions": true,
+     "explain": "Einer: ist. Mehrere: sind."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-is-7",
+     "task": "ist oder sind?",
+     "prompt": "Leo und Lea ___ im Haus.",
+     "say": "Leo und Lea … im Haus. Ist oder sind?",
+     "options": [
+      "ist",
+      "sind"
+     ],
+     "keepOrder": true,
+     "answer": "sind",
+     "bigOptions": true,
+     "explain": "Einer: ist. Mehrere: sind."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-is-8",
+     "task": "ist oder sind?",
+     "prompt": "Die Maus ___ im Loch.",
+     "say": "Die Maus … im Loch. Ist oder sind?",
+     "options": [
+      "ist",
+      "sind"
+     ],
+     "keepOrder": true,
+     "answer": "ist",
+     "bigOptions": true,
+     "explain": "Einer: ist. Mehrere: sind."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-is-9",
+     "task": "ist oder sind?",
+     "prompt": "Opa und Oma ___ am See.",
+     "say": "Opa und Oma … am See. Ist oder sind?",
+     "options": [
+      "ist",
+      "sind"
+     ],
+     "keepOrder": true,
+     "answer": "sind",
+     "bigOptions": true,
+     "explain": "Einer: ist. Mehrere: sind."
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "k1-le-foto",
+     "task": "Schreib diese Wörter in dein Heft: Oma, Mama, Lama, Mimi, Momo.",
+     "say": "Schreib diese Wörter in dein Heft: Oma, Mama, Lama, Mimi und Momo.",
+     "show": [
+      "Oma",
+      "Mama",
+      "Lama",
+      "Mimi",
+      "Momo"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

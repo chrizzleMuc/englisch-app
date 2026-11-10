@@ -5,6 +5,9 @@ export const PROFILES = [
   { id: "pirat", title: "3. Klasse", pic: "" }
 ];
 
+// Testzugang für Eltern: eigener Fortschritt, sieht alles, alle Stufen offen
+export const TEST_PROFILE = { id: "test", title: "Testmodus", pic: "", test: true };
+
 export const PRAISE = ["Super!", "Toll gemacht!", "Klasse!", "Prima!", "Spitze!", "Genau!"];
 export const PRAISE_EN = ["Great!", "Well done!", "Brilliant!", "Super!", "Fantastic!"];
 

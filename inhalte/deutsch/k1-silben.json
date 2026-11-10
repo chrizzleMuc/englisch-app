@@ -1,0 +1,1196 @@
+{
+ "id": "d1-silben",
+ "type": "schule",
+ "title_de": "Silben",
+ "image": "👏",
+ "color": "#7a4fd1",
+ "lessons": [
+  {
+   "title": "Silben hören 1",
+   "icon": "👂",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-hs-so",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "so",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? So.",
+     "options": [
+      "so",
+      "sa",
+      "se"
+     ],
+     "answer": "so",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-la",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "la",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? La.",
+     "options": [
+      "la",
+      "lu",
+      "lo"
+     ],
+     "answer": "la",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-tu",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "tu",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Tu.",
+     "options": [
+      "tu",
+      "ta",
+      "ti"
+     ],
+     "answer": "tu",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-ti",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "ti",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Ti.",
+     "options": [
+      "ti",
+      "tu",
+      "te"
+     ],
+     "answer": "ti",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-te",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "te",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Te.",
+     "options": [
+      "te",
+      "ta",
+      "ti"
+     ],
+     "answer": "te",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-ma",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "ma",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Ma.",
+     "options": [
+      "ma",
+      "mu",
+      "me"
+     ],
+     "answer": "ma",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-le",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "le",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Le.",
+     "options": [
+      "le",
+      "li",
+      "la"
+     ],
+     "answer": "le",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-re",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "re",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Re.",
+     "options": [
+      "re",
+      "ri",
+      "ra"
+     ],
+     "answer": "re",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-ta",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "ta",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Ta.",
+     "options": [
+      "ta",
+      "tu",
+      "te"
+     ],
+     "answer": "ta",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-ra",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "ra",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Ra.",
+     "options": [
+      "ra",
+      "ri",
+      "ru"
+     ],
+     "answer": "ra",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-si",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "si",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Si.",
+     "options": [
+      "si",
+      "so",
+      "sa"
+     ],
+     "answer": "si",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-to",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "to",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? To.",
+     "options": [
+      "to",
+      "te",
+      "tu"
+     ],
+     "answer": "to",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Silben hören 2",
+   "icon": "👂",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-hs-li",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "li",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Li.",
+     "options": [
+      "li",
+      "lo",
+      "la"
+     ],
+     "answer": "li",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-ru",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "ru",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Ru.",
+     "options": [
+      "ru",
+      "re",
+      "ro"
+     ],
+     "answer": "ru",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-mo",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "mo",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Mo.",
+     "options": [
+      "mo",
+      "ma",
+      "me"
+     ],
+     "answer": "mo",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-mu",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "mu",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Mu.",
+     "options": [
+      "mu",
+      "mi",
+      "mo"
+     ],
+     "answer": "mu",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-sa",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "sa",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Sa.",
+     "options": [
+      "sa",
+      "su",
+      "so"
+     ],
+     "answer": "sa",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-su",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "su",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Su.",
+     "options": [
+      "su",
+      "si",
+      "so"
+     ],
+     "answer": "su",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-ro",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "ro",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Ro.",
+     "options": [
+      "ro",
+      "ru",
+      "ri"
+     ],
+     "answer": "ro",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-lu",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "lu",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Lu.",
+     "options": [
+      "lu",
+      "la",
+      "le"
+     ],
+     "answer": "lu",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-me",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "me",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Me.",
+     "options": [
+      "me",
+      "ma",
+      "mu"
+     ],
+     "answer": "me",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-ri",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "ri",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Ri.",
+     "options": [
+      "ri",
+      "re",
+      "ra"
+     ],
+     "answer": "ri",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-se",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "se",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Se.",
+     "options": [
+      "se",
+      "si",
+      "sa"
+     ],
+     "answer": "se",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-lo",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "lo",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Lo.",
+     "options": [
+      "lo",
+      "le",
+      "lu"
+     ],
+     "answer": "lo",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-hs-mi",
+     "task": "Welche Silbe hörst du?",
+     "prompt": "mi",
+     "pic": "👂",
+     "say": "Hör genau. Welche Silbe hörst du? Mi.",
+     "options": [
+      "mi",
+      "ma",
+      "mo"
+     ],
+     "answer": "mi",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Klatschen 1",
+   "icon": "👏",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-kl-sonne",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Sonne",
+     "pic": "🌞",
+     "say": "Sonne. Wie viele Silben hat Sonne? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-affe",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Affe",
+     "pic": "🐒",
+     "say": "Affe. Wie viele Silben hat Affe? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-igel",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Igel",
+     "pic": "🦔",
+     "say": "Igel. Wie viele Silben hat Igel? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-teddy",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Teddy",
+     "pic": "🧸",
+     "say": "Teddy. Wie viele Silben hat Teddy? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-saxofon",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Saxofon",
+     "pic": "🎷",
+     "say": "Saxofon. Wie viele Silben hat Saxofon? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-uhr",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Uhr",
+     "pic": "⌚",
+     "say": "Uhr. Wie viele Silben hat Uhr? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-esel",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Esel",
+     "pic": "🫏",
+     "say": "Esel. Wie viele Silben hat Esel? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-rose",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Rose",
+     "pic": "🌹",
+     "say": "Rose. Wie viele Silben hat Rose? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-maus",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Maus",
+     "pic": "🐭",
+     "say": "Maus. Wie viele Silben hat Maus? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-tuer",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Tür",
+     "pic": "🚪",
+     "say": "Tür. Wie viele Silben hat Tür? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-banane",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Banane",
+     "pic": "🍌",
+     "say": "Banane. Wie viele Silben hat Banane? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-mond",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Mond",
+     "pic": "🌙",
+     "say": "Mond. Wie viele Silben hat Mond? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-oma",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Oma",
+     "pic": "👵",
+     "say": "Oma. Wie viele Silben hat Oma? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-taxi",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Taxi",
+     "pic": "🚕",
+     "say": "Taxi. Wie viele Silben hat Taxi? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-leiter",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Leiter",
+     "pic": "🪜",
+     "say": "Leiter. Wie viele Silben hat Leiter? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Klatschen 2",
+   "icon": "👏",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-kl-lama",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Lama",
+     "pic": "🦙",
+     "say": "Lama. Wie viele Silben hat Lama? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-ei",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Ei",
+     "pic": "🥚",
+     "say": "Ei. Wie viele Silben hat Ei? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-tomate",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Tomate",
+     "pic": "🍅",
+     "say": "Tomate. Wie viele Silben hat Tomate? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-ufo",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Ufo",
+     "pic": "🛸",
+     "say": "Ufo. Wie viele Silben hat Ufo? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-ring",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Ring",
+     "pic": "💍",
+     "say": "Ring. Wie viele Silben hat Ring? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-telefon",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Telefon",
+     "pic": "☎️",
+     "say": "Telefon. Wie viele Silben hat Telefon? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-rakete",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Rakete",
+     "pic": "🚀",
+     "say": "Rakete. Wie viele Silben hat Rakete? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-melone",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Melone",
+     "pic": "🍉",
+     "say": "Melone. Wie viele Silben hat Melone? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-tiger",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Tiger",
+     "pic": "🐯",
+     "say": "Tiger. Wie viele Silben hat Tiger? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-socken",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Socken",
+     "pic": "🧦",
+     "say": "Socken. Wie viele Silben hat Socken? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-elefant",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Elefant",
+     "pic": "🐘",
+     "say": "Elefant. Wie viele Silben hat Elefant? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-ameise",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Ameise",
+     "pic": "🐜",
+     "say": "Ameise. Wie viele Silben hat Ameise? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-ananas",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Ananas",
+     "pic": "🍍",
+     "say": "Ananas. Wie viele Silben hat Ananas? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-roboter",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Roboter",
+     "pic": "🤖",
+     "say": "Roboter. Wie viele Silben hat Roboter? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-oktopus",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Oktopus",
+     "pic": "🐙",
+     "say": "Oktopus. Wie viele Silben hat Oktopus? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏👏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-kl-ente",
+     "task": "Wie viele Silben? Klatsch mit!",
+     "prompt": "Ente",
+     "pic": "🦆",
+     "say": "Ente. Wie viele Silben hat Ente? Klatsch mit!",
+     "options": [
+      "👏",
+      "👏👏",
+      "👏👏👏"
+     ],
+     "keepOrder": true,
+     "answer": "👏👏",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Erste Silbe",
+   "icon": "🔤",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-as-tomate",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Tomate",
+     "pic": "🍅",
+     "say": "Tomate. Mit welcher Silbe fängt Tomate an?",
+     "options": [
+      "To",
+      "Tu",
+      "Te"
+     ],
+     "answer": "To",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-tiger",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Tiger",
+     "pic": "🐯",
+     "say": "Tiger. Mit welcher Silbe fängt Tiger an?",
+     "options": [
+      "Ti",
+      "Ta",
+      "Tu"
+     ],
+     "answer": "Ti",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-tulpe",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Tulpe",
+     "pic": "🌷",
+     "say": "Tulpe. Mit welcher Silbe fängt Tulpe an?",
+     "options": [
+      "Tu",
+      "Ta",
+      "To"
+     ],
+     "answer": "Tu",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-telefon",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Telefon",
+     "pic": "☎️",
+     "say": "Telefon. Mit welcher Silbe fängt Telefon an?",
+     "options": [
+      "Te",
+      "To",
+      "Tu"
+     ],
+     "answer": "Te",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-taxi",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Taxi",
+     "pic": "🚕",
+     "say": "Taxi. Mit welcher Silbe fängt Taxi an?",
+     "options": [
+      "Ta",
+      "Ti",
+      "Te"
+     ],
+     "answer": "Ta",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-rose",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Rose",
+     "pic": "🌹",
+     "say": "Rose. Mit welcher Silbe fängt Rose an?",
+     "options": [
+      "Ro",
+      "Ru",
+      "Ra"
+     ],
+     "answer": "Ro",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-rakete",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Rakete",
+     "pic": "🚀",
+     "say": "Rakete. Mit welcher Silbe fängt Rakete an?",
+     "options": [
+      "Ra",
+      "Re",
+      "Ri"
+     ],
+     "answer": "Ra",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-roboter",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Roboter",
+     "pic": "🤖",
+     "say": "Roboter. Mit welcher Silbe fängt Roboter an?",
+     "options": [
+      "Ro",
+      "Re",
+      "Ru"
+     ],
+     "answer": "Ro",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-regen",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Regen",
+     "pic": "🌧️",
+     "say": "Regen. Mit welcher Silbe fängt Regen an?",
+     "options": [
+      "Re",
+      "Ra",
+      "Ri"
+     ],
+     "answer": "Re",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-salat",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Salat",
+     "pic": "🥗",
+     "say": "Salat. Mit welcher Silbe fängt Salat an?",
+     "options": [
+      "Sa",
+      "Si",
+      "So"
+     ],
+     "answer": "Sa",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-sofa",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Sofa",
+     "pic": "🛋️",
+     "say": "Sofa. Mit welcher Silbe fängt Sofa an?",
+     "options": [
+      "So",
+      "Si",
+      "Sa"
+     ],
+     "answer": "So",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-melone",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Melone",
+     "pic": "🍉",
+     "say": "Melone. Mit welcher Silbe fängt Melone an?",
+     "options": [
+      "Me",
+      "Mo",
+      "Mi"
+     ],
+     "answer": "Me",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-messer",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Messer",
+     "pic": "🔪",
+     "say": "Messer. Mit welcher Silbe fängt Messer an?",
+     "options": [
+      "Me",
+      "Mu",
+      "Mi"
+     ],
+     "answer": "Me",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-lama",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Lama",
+     "pic": "🦙",
+     "say": "Lama. Mit welcher Silbe fängt Lama an?",
+     "options": [
+      "La",
+      "Li",
+      "Lu"
+     ],
+     "answer": "La",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-lupe",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Lupe",
+     "pic": "🔍",
+     "say": "Lupe. Mit welcher Silbe fängt Lupe an?",
+     "options": [
+      "Lu",
+      "Le",
+      "Li"
+     ],
+     "answer": "Lu",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-lineal",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Lineal",
+     "pic": "📏",
+     "say": "Lineal. Mit welcher Silbe fängt Lineal an?",
+     "options": [
+      "Li",
+      "Lu",
+      "La"
+     ],
+     "answer": "Li",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-as-leopard",
+     "task": "Mit welcher Silbe fängt das Wort an?",
+     "prompt": "Leopard",
+     "pic": "🐆",
+     "say": "Leopard. Mit welcher Silbe fängt Leopard an?",
+     "options": [
+      "Le",
+      "Lo",
+      "La"
+     ],
+     "answer": "Le",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "k1-sil-foto",
+     "task": "Schreib diese Silben in dein Heft: ma mo mu mi me, la lo lu li le.",
+     "say": "Schreib diese Silben in dein Heft: ma, mo, mu, mi, me. Und la, lo, lu, li, le.",
+     "show": [
+      "ma",
+      "mo",
+      "mu",
+      "mi",
+      "me",
+      "la",
+      "lo",
+      "lu",
+      "li",
+      "le"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

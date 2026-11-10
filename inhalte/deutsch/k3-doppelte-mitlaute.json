@@ -1,0 +1,722 @@
+{
+ "id": "d3-doppel",
+ "type": "schule",
+ "title_de": "Doppelte Mitlaute, ck und tz",
+ "image": "👯",
+ "color": "#2f9a8a",
+ "lessons": [
+  {
+   "title": "Doppelt oder nicht?",
+   "icon": "👯",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-dk-die-tasse",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Tasse",
+      "die Tase"
+     ],
+     "answer": "die Tasse",
+     "explain": "Kurzer Selbstlaut: Der Mitlaut danach wird verdoppelt.",
+     "say": "die Tasse"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-die-sonne",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Sonne",
+      "die Sone"
+     ],
+     "answer": "die Sonne",
+     "explain": "Kurzer Selbstlaut: Der Mitlaut danach wird verdoppelt.",
+     "say": "die Sonne"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-die-mutter",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Mutter",
+      "die Muter"
+     ],
+     "answer": "die Mutter",
+     "explain": "Kurzer Selbstlaut: Der Mitlaut danach wird verdoppelt.",
+     "say": "die Mutter"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-der-teller",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Teller",
+      "der Teler"
+     ],
+     "answer": "der Teller",
+     "explain": "Kurzer Selbstlaut: Der Mitlaut danach wird verdoppelt.",
+     "say": "der Teller"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-kommen",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "kommen",
+      "komen"
+     ],
+     "answer": "kommen",
+     "explain": "Kurzer Selbstlaut: Der Mitlaut danach wird verdoppelt.",
+     "say": "kommen"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-die-butter",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Butter",
+      "die Buter"
+     ],
+     "answer": "die Butter",
+     "explain": "Kurzer Selbstlaut: Der Mitlaut danach wird verdoppelt.",
+     "say": "die Butter"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-das-wasser",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Wasser",
+      "das Waser"
+     ],
+     "answer": "das Wasser",
+     "explain": "Kurzer Selbstlaut: Der Mitlaut danach wird verdoppelt.",
+     "say": "das Wasser"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-der-himmel",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Himmel",
+      "der Himel"
+     ],
+     "answer": "der Himmel",
+     "explain": "Kurzer Selbstlaut: Der Mitlaut danach wird verdoppelt.",
+     "say": "der Himmel"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-die-puppe",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Puppe",
+      "die Pupe"
+     ],
+     "answer": "die Puppe",
+     "explain": "Kurzer Selbstlaut: Der Mitlaut danach wird verdoppelt.",
+     "say": "die Puppe"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-der-loeffel",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Löffel",
+      "der Löfel"
+     ],
+     "answer": "der Löffel",
+     "explain": "Kurzer Selbstlaut: Der Mitlaut danach wird verdoppelt.",
+     "say": "der Löffel"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-schwimmen",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "schwimmen",
+      "schwimen"
+     ],
+     "answer": "schwimmen",
+     "explain": "Kurzer Selbstlaut: Der Mitlaut danach wird verdoppelt.",
+     "say": "schwimmen"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-die-brille",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Brille",
+      "die Brile"
+     ],
+     "answer": "die Brille",
+     "explain": "Kurzer Selbstlaut: Der Mitlaut danach wird verdoppelt.",
+     "say": "die Brille"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-die-hose",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Hose",
+      "die Hosse"
+     ],
+     "answer": "die Hose",
+     "explain": "Langer Selbstlaut: nur ein Mitlaut.",
+     "say": "die Hose"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-der-name",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Name",
+      "der Namme"
+     ],
+     "answer": "der Name",
+     "explain": "Langer Selbstlaut: nur ein Mitlaut.",
+     "say": "der Name"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-die-tomate",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Tomate",
+      "die Tommate"
+     ],
+     "answer": "die Tomate",
+     "explain": "Langer Selbstlaut: nur ein Mitlaut.",
+     "say": "die Tomate"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dk-der-hof",
+     "task": "Hör genau: kurz oder lang?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Hof",
+      "der Hoff"
+     ],
+     "answer": "der Hof",
+     "explain": "Langer Selbstlaut: nur ein Mitlaut.",
+     "say": "der Hof"
+    }
+   ]
+  },
+  {
+   "title": "ck oder k",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ck-der-zucker",
+     "task": "ck oder k?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Zucker",
+      "der Zuker"
+     ],
+     "answer": "der Zucker",
+     "explain": "Kurzer Selbstlaut: ck.",
+     "say": "der Zucker"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ck-die-decke",
+     "task": "ck oder k?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Decke",
+      "die Deke"
+     ],
+     "answer": "die Decke",
+     "explain": "Kurzer Selbstlaut: ck.",
+     "say": "die Decke"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ck-der-ruecken",
+     "task": "ck oder k?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Rücken",
+      "der Rüken"
+     ],
+     "answer": "der Rücken",
+     "explain": "Kurzer Selbstlaut: ck.",
+     "say": "der Rücken"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ck-die-bruecke",
+     "task": "ck oder k?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Brücke",
+      "die Brüke"
+     ],
+     "answer": "die Brücke",
+     "explain": "Kurzer Selbstlaut: ck.",
+     "say": "die Brücke"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ck-die-socke",
+     "task": "ck oder k?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Socke",
+      "die Soke"
+     ],
+     "answer": "die Socke",
+     "explain": "Kurzer Selbstlaut: ck.",
+     "say": "die Socke"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ck-backen",
+     "task": "ck oder k?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "backen",
+      "baken"
+     ],
+     "answer": "backen",
+     "explain": "Kurzer Selbstlaut: ck.",
+     "say": "backen"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ck-dick",
+     "task": "ck oder k?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "dick",
+      "dik"
+     ],
+     "answer": "dick",
+     "bigOptions": true,
+     "explain": "Kurzer Selbstlaut: ck.",
+     "say": "dick"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ck-das-glueck",
+     "task": "ck oder k?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Glück",
+      "das Glük"
+     ],
+     "answer": "das Glück",
+     "explain": "Kurzer Selbstlaut: ck.",
+     "say": "das Glück"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ck-der-fleck",
+     "task": "ck oder k?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Fleck",
+      "der Flek"
+     ],
+     "answer": "der Fleck",
+     "explain": "Kurzer Selbstlaut: ck.",
+     "say": "der Fleck"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ck-die-bank",
+     "task": "ck oder k?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Bank",
+      "die Banck"
+     ],
+     "answer": "die Bank",
+     "explain": "Nach l, n oder r steht nie ck oder tz.",
+     "say": "die Bank"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ck-die-wolke",
+     "task": "ck oder k?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Wolke",
+      "die Wolcke"
+     ],
+     "answer": "die Wolke",
+     "explain": "Nach l, n oder r steht nie ck oder tz.",
+     "say": "die Wolke"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ck-der-park",
+     "task": "ck oder k?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Park",
+      "der Parck"
+     ],
+     "answer": "der Park",
+     "explain": "Nach l, n oder r steht nie ck oder tz.",
+     "say": "der Park"
+    }
+   ]
+  },
+  {
+   "title": "tz oder z",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-tz-die-katze",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Katze",
+      "die Kaze"
+     ],
+     "answer": "die Katze",
+     "explain": "Kurzer Selbstlaut: tz.",
+     "say": "die Katze"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-die-muetze",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Mütze",
+      "die Müze"
+     ],
+     "answer": "die Mütze",
+     "explain": "Kurzer Selbstlaut: tz.",
+     "say": "die Mütze"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-der-platz",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Platz",
+      "der Plaz"
+     ],
+     "answer": "der Platz",
+     "explain": "Kurzer Selbstlaut: tz.",
+     "say": "der Platz"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-die-hitze",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Hitze",
+      "die Hize"
+     ],
+     "answer": "die Hitze",
+     "explain": "Kurzer Selbstlaut: tz.",
+     "say": "die Hitze"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-sitzen",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "sitzen",
+      "sizen"
+     ],
+     "answer": "sitzen",
+     "explain": "Kurzer Selbstlaut: tz.",
+     "say": "sitzen"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-der-witz",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Witz",
+      "der Wiz"
+     ],
+     "answer": "der Witz",
+     "explain": "Kurzer Selbstlaut: tz.",
+     "say": "der Witz"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-der-satz",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Satz",
+      "der Saz"
+     ],
+     "answer": "der Satz",
+     "explain": "Kurzer Selbstlaut: tz.",
+     "say": "der Satz"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-die-pfuetze",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Pfütze",
+      "die Pfüze"
+     ],
+     "answer": "die Pfütze",
+     "explain": "Kurzer Selbstlaut: tz.",
+     "say": "die Pfütze"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-jetzt",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "jetzt",
+      "jezt"
+     ],
+     "answer": "jetzt",
+     "bigOptions": true,
+     "explain": "Kurzer Selbstlaut: tz.",
+     "say": "jetzt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-das-herz",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Herz",
+      "das Hertz"
+     ],
+     "answer": "das Herz",
+     "explain": "Nach l, n oder r steht nie ck oder tz.",
+     "say": "das Herz"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-der-pilz",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "der Pilz",
+      "der Piltz"
+     ],
+     "answer": "der Pilz",
+     "explain": "Nach l, n oder r steht nie ck oder tz.",
+     "say": "der Pilz"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-das-holz",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Holz",
+      "das Holtz"
+     ],
+     "answer": "das Holz",
+     "explain": "Nach l, n oder r steht nie ck oder tz.",
+     "say": "das Holz"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-das-salz",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "das Salz",
+      "das Saltz"
+     ],
+     "answer": "das Salz",
+     "explain": "Nach l, n oder r steht nie ck oder tz.",
+     "say": "das Salz"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-tz-die-kerze",
+     "task": "tz oder z?",
+     "prompt": "Welches Wort ist richtig?",
+     "options": [
+      "die Kerze",
+      "die Kertze"
+     ],
+     "answer": "die Kerze",
+     "explain": "Nach l, n oder r steht nie ck oder tz.",
+     "say": "die Kerze"
+    }
+   ]
+  },
+  {
+   "title": "Trennen",
+   "icon": "✂️",
+   "tasks": [
+    {
+     "kind": "syllables",
+     "id": "d3-dt-tasse",
+     "word": "Tasse",
+     "answer": "Tas-se"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-dt-zimmer",
+     "word": "Zimmer",
+     "answer": "Zim-mer"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-dt-kartoffel",
+     "word": "Kartoffel",
+     "answer": "Kar-tof-fel"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-dt-schmetterling",
+     "word": "Schmetterling",
+     "answer": "Schmet-ter-ling"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-dt-brennen",
+     "word": "brennen",
+     "answer": "bren-nen"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-dt-zucker",
+     "word": "Zucker",
+     "answer": "Zu-cker"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-dt-decke",
+     "word": "Decke",
+     "answer": "De-cke"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-dt-backen",
+     "word": "backen",
+     "answer": "ba-cken"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-dt-katze",
+     "word": "Katze",
+     "answer": "Kat-ze"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-dt-muetze",
+     "word": "Mütze",
+     "answer": "Müt-ze"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-dt-hitze",
+     "word": "Hitze",
+     "answer": "Hit-ze"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-dt-wasser",
+     "word": "Wasser",
+     "answer": "Was-ser"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dt-regel-ck",
+     "task": "Stimmt das?",
+     "prompt": "ck bleibt beim Trennen zusammen: Zu-cker",
+     "options": [
+      "Stimmt",
+      "Stimmt nicht"
+     ],
+     "answer": "Stimmt",
+     "keepOrder": true,
+     "explain": "Richtig: Zu-cker, Bä-cker, De-cke.",
+     "say": "ck bleibt beim Trennen zusammen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-dt-regel-tz",
+     "task": "Stimmt das?",
+     "prompt": "tz bleibt beim Trennen zusammen: Ka-tze",
+     "options": [
+      "Stimmt",
+      "Stimmt nicht"
+     ],
+     "answer": "Stimmt nicht",
+     "keepOrder": true,
+     "explain": "tz wird getrennt: Kat-ze, Müt-ze.",
+     "say": "tz bleibt beim Trennen zusammen."
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-dk-foto",
+     "task": "Schreib die Wörter ab und trenne sie in Silben: Kat-ze.",
+     "say": "Schreib die Wörter ab und trenne sie in Silben.",
+     "show": [
+      "Katze",
+      "Zucker",
+      "Sonne",
+      "Brücke",
+      "Pfütze",
+      "Teller",
+      "Decke",
+      "Himmel"
+     ],
+     "solution": [
+      "Kat-ze",
+      "Zu-cker",
+      "Son-ne",
+      "Brü-cke",
+      "Pfüt-ze",
+      "Tel-ler",
+      "De-cke",
+      "Him-mel"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}
