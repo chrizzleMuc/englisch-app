@@ -7,7 +7,7 @@ import * as store from "./store.js";
 import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 
-const APP_VERSION = 14;
+const APP_VERSION = 15;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -1087,22 +1087,95 @@ function showAlbum() {
 }
 
 // ---------- Elternbereich ----------
-function showParentGate() {
-  const a = 3 + Math.floor(Math.random() * 6);
-  const b = 4 + Math.floor(Math.random() * 6);
+// Eltern-Code: wird beim ersten Öffnen festgelegt, liegt nur auf diesem Gerät (als Prüfsumme),
+// ist nicht in der Sicherungsdatei und bleibt beim Zurücksetzen erhalten.
+const PIN_KEY = "learnino-eltern-code";
+const PIN_LOCK_KEY = "learnino-eltern-sperre";
+async function pinHash(code) {
+  const text = "learnino:" + code;
+  try {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+    return [...new Uint8Array(buf)].map((x) => x.toString(16).padStart(2, "0")).join("");
+  } catch (e) {
+    let h = 5381;
+    for (const ch of text) h = ((h * 33) ^ ch.charCodeAt(0)) >>> 0;
+    return "s" + h.toString(16);
+  }
+}
+const lsGet = (k) => {
+  try {
+    return localStorage.getItem(k);
+  } catch (e) {
+    return null;
+  }
+};
+const lsSet = (k, v) => {
+  try {
+    localStorage.setItem(k, v);
+  } catch (e) {
+    /* blockiert */
+  }
+};
+const validPin = (c) => /^\d{4,8}$/.test(c);
+
+function showParentGate(msg = "") {
+  if (!lsGet(PIN_KEY)) return showPinSetup(showParents, "");
   render(`
     <div class="screen center">
       <h2>🔒 Elternbereich</h2>
-      <p class="sub">Wie viel ist ${a} × ${b}?</p>
-      <input id="ans" class="input" inputmode="numeric" autocomplete="off">
+      <p class="sub">Eltern-Code eingeben</p>
+      <input id="ans" class="input pin-input" type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="8">
+      <p class="small pin-msg" id="msg">${esc(msg)}</p>
       <button class="go-btn" id="ok">Öffnen</button>
       <button class="link-btn" id="back">Zurück</button>
     </div>`);
   $("back").onclick = showProfiles;
-  $("ok").onclick = () => {
-    if (+$("ans").value === a * b) showParents();
-    else $("ans").value = "";
+  const tryOpen = async () => {
+    const lock = JSON.parse(lsGet(PIN_LOCK_KEY) || '{"n":0,"until":0}');
+    if (Date.now() < lock.until) {
+      $("msg").textContent = `Zu oft falsch. Bitte in ${Math.ceil((lock.until - Date.now()) / 1000)} Sekunden nochmal.`;
+      $("ans").value = "";
+      return;
+    }
+    if ((await pinHash($("ans").value.trim())) === lsGet(PIN_KEY)) {
+      lsSet(PIN_LOCK_KEY, '{"n":0,"until":0}');
+      return showParents();
+    }
+    lock.n++;
+    if (lock.n >= 3) {
+      lock.until = Date.now() + 60000;
+      lock.n = 0;
+    }
+    lsSet(PIN_LOCK_KEY, JSON.stringify(lock));
+    $("ans").value = "";
+    $("msg").textContent = lock.until > Date.now() ? "Zu oft falsch. Eine Minute warten." : "Falscher Code.";
   };
+  $("ok").onclick = tryOpen;
+  $("ans").onkeydown = (e) => e.key === "Enter" && tryOpen();
+  $("ans").focus();
+}
+
+// Code festlegen (beim ersten Mal) oder ändern (im Elternbereich)
+function showPinSetup(done, back) {
+  render(`
+    <div class="screen center">
+      <h2>🔒 Eltern-Code festlegen</h2>
+      <p class="sub">4 bis 8 Ziffern. Damit öffnest du später den Elternbereich. Schreib ihn dir auf: Ohne Code kommt man nicht mehr hinein.</p>
+      <input id="p1" class="input pin-input" type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="8" placeholder="Code">
+      <input id="p2" class="input pin-input" type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="8" placeholder="Nochmal">
+      <p class="small pin-msg" id="msg"></p>
+      <button class="go-btn" id="ok">Speichern</button>
+      <button class="link-btn" id="back">Zurück</button>
+    </div>`);
+  $("back").onclick = back ? () => showParents() : showProfiles;
+  $("ok").onclick = async () => {
+    const a = $("p1").value.trim();
+    if (!validPin(a)) return ($("msg").textContent = "Bitte 4 bis 8 Ziffern eingeben.");
+    if (a !== $("p2").value.trim()) return ($("msg").textContent = "Die beiden Eingaben sind verschieden.");
+    lsSet(PIN_KEY, await pinHash(a));
+    done("✅ Eltern-Code gespeichert.");
+  };
+  $("p1").focus();
 }
 
 function boxCounts(pid, unit) {
@@ -1274,6 +1347,11 @@ function showParents(msg = "") {
         </div>
       </section>
       <section>
+        <h3>🔒 Eltern-Code</h3>
+        <p class="small">Der Code gilt nur auf diesem Gerät. Auf dem Handy legst du beim ersten Öffnen dort einen eigenen fest.</p>
+        <button class="wide-btn" id="pinchange">Code ändern</button>
+      </section>
+      <section>
         <h3>Zurücksetzen</h3>
         <button class="wide-btn danger" id="reset">Gesamten Fortschritt löschen</button>
       </section>
@@ -1317,6 +1395,7 @@ function showParents(msg = "") {
       showParents("⚠️ Diese Datei konnte nicht geladen werden (vielleicht von einer alten App-Version).");
     }
   };
+  $("pinchange").onclick = () => showPinSetup(showParents, true);
   $("testmode").onclick = () => {
     current.profile = TEST_PROFILE.id;
     current.subject = null;

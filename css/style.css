@@ -635,3 +635,8 @@ table.words td .emo { font-size: 28px; }
 .self-read { font-size: 20px; font-weight: 800; color: #7a4fd1; background: #fff3c4; border-radius: 14px; padding: 10px 16px; }
 .voice-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 8px 0; }
 .voice-row .voice-sel { max-width: 220px; }
+
+/* ---- Version 15: Eltern-Code ---- */
+.pin-input { max-width: 240px; text-align: center; font-size: 28px; letter-spacing: 8px; }
+.pin-input::placeholder { font-size: 16px; letter-spacing: 0; }
+.pin-msg { min-height: 1.4em; color: #ffe066; font-weight: 700; }
