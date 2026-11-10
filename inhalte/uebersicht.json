@@ -4,7 +4,7 @@
       "id": "deutsch",
       "title": "Deutsch",
       "image": "📝",
-      "color": "#20bf6b",
+      "color": "#0f9d76",
       "stages": [
         {
           "id": "deutsch-k3",
@@ -24,7 +24,7 @@
       "id": "englisch",
       "title": "Englisch",
       "image": "🇬🇧",
-      "color": "#ff9f43",
+      "color": "#e07a2e",
       "stages": [
         {
           "id": "englisch-s1",

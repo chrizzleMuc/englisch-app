@@ -6,7 +6,7 @@ import { content, loadContent } from "./content.js";
 import * as store from "./store.js";
 import * as photos from "./photos.js";
 
-const APP_VERSION = 8;
+const APP_VERSION = 9;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
