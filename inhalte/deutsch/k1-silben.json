@@ -6,393 +6,6 @@
  "color": "#7a4fd1",
  "lessons": [
   {
-   "title": "Silben hören 1",
-   "icon": "👂",
-   "tasks": [
-    {
-     "kind": "choice",
-     "id": "k1-hs-so",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "so",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? So.",
-     "options": [
-      "so",
-      "sa",
-      "se"
-     ],
-     "answer": "so",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-la",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "la",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? La.",
-     "options": [
-      "la",
-      "lu",
-      "lo"
-     ],
-     "answer": "la",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-tu",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "tu",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Tu.",
-     "options": [
-      "tu",
-      "ta",
-      "ti"
-     ],
-     "answer": "tu",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-ti",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "ti",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Ti.",
-     "options": [
-      "ti",
-      "tu",
-      "te"
-     ],
-     "answer": "ti",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-te",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "te",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Te.",
-     "options": [
-      "te",
-      "ta",
-      "ti"
-     ],
-     "answer": "te",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-ma",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "ma",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Ma.",
-     "options": [
-      "ma",
-      "mu",
-      "me"
-     ],
-     "answer": "ma",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-le",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "le",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Le.",
-     "options": [
-      "le",
-      "li",
-      "la"
-     ],
-     "answer": "le",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-re",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "re",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Re.",
-     "options": [
-      "re",
-      "ri",
-      "ra"
-     ],
-     "answer": "re",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-ta",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "ta",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Ta.",
-     "options": [
-      "ta",
-      "tu",
-      "te"
-     ],
-     "answer": "ta",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-ra",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "ra",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Ra.",
-     "options": [
-      "ra",
-      "ri",
-      "ru"
-     ],
-     "answer": "ra",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-si",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "si",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Si.",
-     "options": [
-      "si",
-      "so",
-      "sa"
-     ],
-     "answer": "si",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-to",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "to",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? To.",
-     "options": [
-      "to",
-      "te",
-      "tu"
-     ],
-     "answer": "to",
-     "bigOptions": true
-    }
-   ]
-  },
-  {
-   "title": "Silben hören 2",
-   "icon": "👂",
-   "tasks": [
-    {
-     "kind": "choice",
-     "id": "k1-hs-li",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "li",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Li.",
-     "options": [
-      "li",
-      "lo",
-      "la"
-     ],
-     "answer": "li",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-ru",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "ru",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Ru.",
-     "options": [
-      "ru",
-      "re",
-      "ro"
-     ],
-     "answer": "ru",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-mo",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "mo",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Mo.",
-     "options": [
-      "mo",
-      "ma",
-      "me"
-     ],
-     "answer": "mo",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-mu",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "mu",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Mu.",
-     "options": [
-      "mu",
-      "mi",
-      "mo"
-     ],
-     "answer": "mu",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-sa",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "sa",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Sa.",
-     "options": [
-      "sa",
-      "su",
-      "so"
-     ],
-     "answer": "sa",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-su",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "su",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Su.",
-     "options": [
-      "su",
-      "si",
-      "so"
-     ],
-     "answer": "su",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-ro",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "ro",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Ro.",
-     "options": [
-      "ro",
-      "ru",
-      "ri"
-     ],
-     "answer": "ro",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-lu",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "lu",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Lu.",
-     "options": [
-      "lu",
-      "la",
-      "le"
-     ],
-     "answer": "lu",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-me",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "me",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Me.",
-     "options": [
-      "me",
-      "ma",
-      "mu"
-     ],
-     "answer": "me",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-ri",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "ri",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Ri.",
-     "options": [
-      "ri",
-      "re",
-      "ra"
-     ],
-     "answer": "ri",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-se",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "se",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Se.",
-     "options": [
-      "se",
-      "si",
-      "sa"
-     ],
-     "answer": "se",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-lo",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "lo",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Lo.",
-     "options": [
-      "lo",
-      "le",
-      "lu"
-     ],
-     "answer": "lo",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-hs-mi",
-     "task": "Welche Silbe hörst du?",
-     "prompt": "mi",
-     "pic": "👂",
-     "say": "Hör genau. Welche Silbe hörst du? Mi.",
-     "options": [
-      "mi",
-      "ma",
-      "mo"
-     ],
-     "answer": "mi",
-     "bigOptions": true
-    }
-   ]
-  },
-  {
    "title": "Klatschen 1",
    "icon": "👏",
    "tasks": [
@@ -914,7 +527,7 @@
      "say": "Tomate. Mit welcher Silbe fängt Tomate an?",
      "options": [
       "To",
-      "Tu",
+      "Ta",
       "Te"
      ],
      "answer": "To",
@@ -929,8 +542,8 @@
      "say": "Tiger. Mit welcher Silbe fängt Tiger an?",
      "options": [
       "Ti",
-      "Ta",
-      "Tu"
+      "Tu",
+      "Ta"
      ],
      "answer": "Ti",
      "bigOptions": true
@@ -945,7 +558,7 @@
      "options": [
       "Tu",
       "Ta",
-      "To"
+      "Ti"
      ],
      "answer": "Tu",
      "bigOptions": true
@@ -959,7 +572,7 @@
      "say": "Telefon. Mit welcher Silbe fängt Telefon an?",
      "options": [
       "Te",
-      "To",
+      "Ti",
       "Tu"
      ],
      "answer": "Te",
@@ -974,8 +587,8 @@
      "say": "Taxi. Mit welcher Silbe fängt Taxi an?",
      "options": [
       "Ta",
-      "Ti",
-      "Te"
+      "To",
+      "Tu"
      ],
      "answer": "Ta",
      "bigOptions": true
@@ -990,7 +603,7 @@
      "options": [
       "Ro",
       "Ru",
-      "Ra"
+      "Re"
      ],
      "answer": "Ro",
      "bigOptions": true
@@ -1004,8 +617,8 @@
      "say": "Rakete. Mit welcher Silbe fängt Rakete an?",
      "options": [
       "Ra",
-      "Re",
-      "Ri"
+      "Ru",
+      "Ro"
      ],
      "answer": "Ra",
      "bigOptions": true
@@ -1019,8 +632,8 @@
      "say": "Roboter. Mit welcher Silbe fängt Roboter an?",
      "options": [
       "Ro",
-      "Re",
-      "Ru"
+      "Ru",
+      "Ra"
      ],
      "answer": "Ro",
      "bigOptions": true
@@ -1034,8 +647,8 @@
      "say": "Regen. Mit welcher Silbe fängt Regen an?",
      "options": [
       "Re",
-      "Ra",
-      "Ri"
+      "Ri",
+      "Ru"
      ],
      "answer": "Re",
      "bigOptions": true
@@ -1050,7 +663,7 @@
      "options": [
       "Sa",
       "Si",
-      "So"
+      "Su"
      ],
      "answer": "Sa",
      "bigOptions": true
@@ -1079,7 +692,7 @@
      "say": "Melone. Mit welcher Silbe fängt Melone an?",
      "options": [
       "Me",
-      "Mo",
+      "Mu",
       "Mi"
      ],
      "answer": "Me",
@@ -1094,8 +707,8 @@
      "say": "Messer. Mit welcher Silbe fängt Messer an?",
      "options": [
       "Me",
-      "Mu",
-      "Mi"
+      "Mo",
+      "Ma"
      ],
      "answer": "Me",
      "bigOptions": true
@@ -1109,8 +722,8 @@
      "say": "Lama. Mit welcher Silbe fängt Lama an?",
      "options": [
       "La",
-      "Li",
-      "Lu"
+      "Le",
+      "Li"
      ],
      "answer": "La",
      "bigOptions": true
@@ -1124,8 +737,8 @@
      "say": "Lupe. Mit welcher Silbe fängt Lupe an?",
      "options": [
       "Lu",
-      "Le",
-      "Li"
+      "La",
+      "Le"
      ],
      "answer": "Lu",
      "bigOptions": true
@@ -1140,7 +753,7 @@
      "options": [
       "Li",
       "Lu",
-      "La"
+      "Lo"
      ],
      "answer": "Li",
      "bigOptions": true
@@ -1154,7 +767,7 @@
      "say": "Leopard. Mit welcher Silbe fängt Leopard an?",
      "options": [
       "Le",
-      "Lo",
+      "Li",
       "La"
      ],
      "answer": "Le",
@@ -1182,6 +795,20 @@
       "lu",
       "li",
       "le"
+     ]
+    },
+    {
+     "kind": "photo",
+     "id": "k1-sil-farben",
+     "task": "Schreib die Namen mit zwei Farben: die erste Silbe blau, die zweite rot.",
+     "say": "Schreib die Namen mit zwei Farben. Die erste Silbe blau, die zweite Silbe rot.",
+     "show": [
+      "Mi | mi",
+      "Mo | mo",
+      "Ti | mo",
+      "Li | lo",
+      "Ri | a",
+      "Ma | ma"
      ]
     }
    ]

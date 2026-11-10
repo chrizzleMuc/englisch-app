@@ -1,5 +1,5 @@
 import { PROFILES, TEST_PROFILE, PRAISE, PRAISE_EN, LESSONS, SPEAKERS } from "./data.js";
-import { sayParts, sayEn, sayDe, chime, voiceInfo } from "./speech.js";
+import { sayParts, sayEn, sayDe, chime, voiceInfo, setGerman } from "./speech.js";
 import { play, promptAnd, stopAudio } from "./audio.js";
 import { canRecord, record, playUrl } from "./recorder.js";
 import { content, loadContent } from "./content.js";
@@ -7,7 +7,7 @@ import * as store from "./store.js";
 import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 
-const APP_VERSION = 12;
+const APP_VERSION = 15;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -28,8 +28,18 @@ const isTestUser = () => current.profile === TEST_PROFILE.id;
 const item = (id) => content.items.get(id);
 const unitById = (id) => content.units.get(id);
 
+// Vorlesen der Aufgaben (Deutsch): "auto" = wird vorgelesen, "selbst" = erst selbst lesen,
+// 🔊 wird nach ein paar Sekunden freigegeben, "aus" = keine deutsche Stimme.
+const VOICE_DEFAULT = { entdecker: "auto" };
+const VOICE_WAIT_MS = 6000;
+function voiceMode(pid = current.profile) {
+  if (!pid) return "aus";
+  return store.profile(pid).voice || VOICE_DEFAULT[pid] || "aus";
+}
+
 function render(html) {
   stopAudio();
+  setGerman(voiceMode() !== "aus");
   current.screen = {};
   app.innerHTML = html;
   window.scrollTo(0, 0);
@@ -130,7 +140,7 @@ function showHome(subjectId = current.subject) {
     chime("pop");
     showUnit(e.currentTarget.dataset.id);
   });
-  sayDe("Such dir ein Thema aus!");
+  if (voiceMode() === "auto") sayDe("Such dir ein Thema aus!");
 }
 
 function showSubjects(subs) {
@@ -146,7 +156,7 @@ function showSubjects(subs) {
     </div>`);
   $("back").onclick = showProfiles;
   on(".subject", "click", (e) => showHome(e.currentTarget.dataset.id));
-  sayDe(subs.length ? "Was willst du heute lernen?" : "Hier ist noch nichts freigeschaltet.");
+  if (voiceMode() === "auto") sayDe(subs.length ? "Was willst du heute lernen?" : "Hier ist noch nichts freigeschaltet.");
 }
 
 // ---------- Einheit mit 5 Lektionen ----------
@@ -281,6 +291,7 @@ function nextStep(lesson) {
   STEPS[step.kind](lesson, step);
 }
 function advance(lesson) {
+  if (lesson.school && voiceMode() === "selbst" && current.screen && !current.screen.heard) lesson.selfRead = (lesson.selfRead || 0) + 1;
   lesson.pos++;
   nextStep(lesson);
 }
@@ -718,8 +729,32 @@ function score(lesson, step, id, correct) {
   }
 }
 
+// Aufgabenzeile mit Vorlese-Knopf (je nach Einstellung des Profils)
+function taskHead(text) {
+  const m = voiceMode();
+  if (m === "aus") return `<p class="task">${esc(text)}</p>`;
+  return `${m === "selbst" ? `<p class="read-self">📖 Lies die Aufgabe selbst!</p>` : ""}
+    <div class="task-row"><p class="task">${esc(text)}</p><button class="speaker again ${m === "selbst" ? "waiting" : ""}" aria-label="Vorlesen" ${m === "selbst" ? "disabled" : ""}>🔊</button></div>`;
+}
+function wireVoice(token, say) {
+  const m = voiceMode();
+  if (m === "aus") return;
+  on(".again", "click", () => {
+    token.heard = true;
+    say();
+  });
+  if (m === "auto") setTimeout(() => alive(token) && say(), 250);
+  else
+    setTimeout(() => {
+      if (alive(token)) app.querySelectorAll(".again").forEach((b) => {
+        b.disabled = false;
+        b.classList.remove("waiting");
+      });
+    }, VOICE_WAIT_MS);
+}
+
 function promptCard(text) {
-  return `<div class="prompt-card"><span class="prompt-text">${esc(text)}</span><button class="speaker again" aria-label="Vorlesen">🔊</button></div>`;
+  return `<div class="prompt-card"><span class="prompt-text">${esc(text)}</span></div>`;
 }
 
 // ---------- Übung: Eintippen ----------
@@ -728,7 +763,7 @@ STEPS.type = (lesson, step) => {
   let first = true;
   let chosen = q.choose ? null : "";
   const token = lessonRender(lesson, `
-    <p class="task">${esc(q.task || "Schreib die Antwort!")}</p>
+    ${taskHead(q.task || "Schreib die Antwort!")}
     ${promptCard(q.prompt)}
     ${q.choose ? `<div class="choices text-choices" id="ch">${q.choose.options.map((o) => `<button class="choice" data-v="${esc(o)}"><span class="word">${esc(o)}</span></button>`).join("")}</div>` : ""}
     <div class="type-row" id="tr" ${q.choose ? "hidden" : ""}>
@@ -738,9 +773,7 @@ STEPS.type = (lesson, step) => {
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="check" ${q.choose ? "hidden" : ""}>Prüfen ✓</button>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
-  const say = () => sayDe(q.say || q.prompt);
-  on(".again", "click", say);
-  setTimeout(() => alive(token) && say(), 250);
+  wireVoice(token, () => sayDe(q.say || q.task || q.prompt));
   const showInput = () => {
     $("before").textContent = [q.before, chosen].filter(Boolean).join(" ");
     $("tr").hidden = false;
@@ -800,14 +833,12 @@ STEPS.choice = (lesson, step) => {
   let locked = false;
   const opts = q.keepOrder ? q.options : shuffle(q.options);
   const token = lessonRender(lesson, `
-    <p class="task">${esc(q.task || "Was ist richtig?")}</p>
-    ${q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}<button class="speaker again" aria-label="Vorlesen">🔊</button></div>` : promptCard(q.prompt)}
+    ${taskHead(q.task || "Was ist richtig?")}
+    ${q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : promptCard(q.prompt)}
     <div class="choices ${q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(o)}">${q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
-  const say = () => sayDe(q.say || q.prompt);
-  on(".again", "click", say);
-  setTimeout(() => alive(token) && say(), 250);
+  wireVoice(token, () => sayDe(q.say || q.task || q.prompt));
   on(".choices .choice", "click", async (e) => {
     if (locked) return;
     const el = e.currentTarget;
@@ -841,16 +872,14 @@ STEPS.syllables = (lesson, step) => {
   const letters = [...q.word];
   const cuts = new Set();
   const token = lessonRender(lesson, `
-    <p class="task">Wo trennst du das Wort?</p>
+    ${taskHead("Wo trennst du das Wort?")}
     <p class="hint">Tipp zwischen die Buchstaben. Geht es nicht zu trennen? Dann gleich auf „Fertig“.</p>
     <div class="syl-wrap"><div class="syl" id="syl">${letters.map((ch, i) => `<span class="let">${esc(ch)}</span>${i < letters.length - 1 ? `<button class="gap" data-i="${i}" aria-label="Hier trennen"></button>` : ""}`).join("")}</div></div>
-    <div class="row"><button class="speaker again" aria-label="Vorlesen">🔊</button></div>
+    
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="check">Fertig ✓</button>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
-  const say = () => sayDe(q.word);
-  on(".again", "click", say);
-  setTimeout(() => alive(token) && say(), 250);
+  wireVoice(token, () => sayDe("Wo trennst du das Wort " + q.word + "?"));
   on(".gap", "click", (e) => {
     const i = +e.currentTarget.dataset.i;
     if (cuts.has(i)) cuts.delete(i);
@@ -888,13 +917,14 @@ STEPS.pairs = (lesson, step) => {
   const left = shuffle(t.pairs);
   const right = shuffle(t.pairs);
   const token = lessonRender(lesson, `
-    <p class="task">${esc(t.task || "Was gehört zusammen?")}</p>
+    ${taskHead(t.task || "Was gehört zusammen?")}
     <p class="hint">Tipp links ein Wort an und dann rechts das passende.</p>
     <div class="pairs">
       <div class="pcol">${left.map((p) => `<button class="pbtn" data-side="a" data-id="${p.id}">${esc(p.a)}</button>`).join("")}</div>
       <div class="pcol">${right.map((p) => `<button class="pbtn" data-side="b" data-id="${p.id}">${esc(p.b)}</button>`).join("")}</div>
     </div>
     <div class="feedback" id="fb"></div>`);
+  wireVoice(token, () => sayDe(t.say || t.task || "Was gehört zusammen?"));
   on(".pbtn", "click", async (e) => {
     const el = e.currentTarget;
     if (el.classList.contains("done")) return;
@@ -938,10 +968,11 @@ STEPS.sort = (lesson, step) => {
   let i = 0;
   let first = true;
   const token = lessonRender(lesson, `
-    <p class="task">${esc(t.task || "Wohin gehört das Wort?")}</p>
+    ${taskHead(t.task || "Wohin gehört das Wort?")}
     <div class="prompt-card"><span class="prompt-text" id="cur"></span></div>
     <div class="bins">${t.groups.map((g) => `<button class="bin" data-g="${esc(g)}"><span class="bin-title">${esc(g)}</span><span class="bin-items"></span></button>`).join("")}</div>
     <div class="feedback" id="fb"></div>`);
+  wireVoice(token, () => sayDe(t.say || t.task || "Wohin gehört das Wort?"));
   const show = () => ($("cur").textContent = order[i].text);
   show();
   on(".bin", "click", async (e) => {
@@ -974,15 +1005,13 @@ STEPS.photo = (lesson, step) => {
   const t = step.t;
   const pid = current.profile;
   const token = lessonRender(lesson, `
-    <p class="task">✍️ Schreib in dein Heft!</p>
+    ${taskHead("✍️ Schreib in dein Heft!")}
     <p class="photo-task">${esc(t.task)}</p>
     ${t.show ? `<div class="write-list">${t.show.map((w) => `<span>${esc(w)}</span>`).join("")}</div>` : ""}
-    <div class="row"><button class="speaker again" aria-label="Vorlesen">🔊</button></div>
+    
     <label class="go-btn photo-btn" id="camlabel">📷 Fertig? Foto machen<input type="file" accept="image/*" capture="environment" id="cam" hidden></label>
     <div id="after"></div>`);
-  const say = () => sayDe(t.say || t.task);
-  on(".again", "click", say);
-  setTimeout(() => alive(token) && say(), 250);
+  wireVoice(token, () => sayDe(t.say || t.task));
   $("cam").onchange = async (e) => {
     const f = e.target.files[0];
     if (!f) return;
@@ -1024,6 +1053,7 @@ function finishSchoolLesson(lesson) {
       <h2>${lesson.isTest ? "Test geschafft!" : pick(PRAISE)}</h2>
       <div class="result-stars"><span class="star on">★</span></div>
       ${lesson.total ? `<p class="score">${lesson.right} von ${lesson.total} gleich richtig</p>` : ""}
+      ${lesson.selfRead ? `<p class="self-read">📖 ${lesson.selfRead} ${lesson.selfRead === 1 ? "Aufgabe" : "Aufgaben"} ganz allein gelesen. Toll!</p>` : ""}
       <p class="sub">🔥 ${streak.count} ${streak.count === 1 ? "Tag" : "Tage"} in Folge</p>
       ${missed.length ? `<p class="sub">${lesson.isTest ? "Das üben wir noch:" : "Das kommt in den nächsten Tagen nochmal dran:"}</p>
         <div class="missed">${missed.map((q) => {
@@ -1057,22 +1087,95 @@ function showAlbum() {
 }
 
 // ---------- Elternbereich ----------
-function showParentGate() {
-  const a = 3 + Math.floor(Math.random() * 6);
-  const b = 4 + Math.floor(Math.random() * 6);
+// Eltern-Code: wird beim ersten Öffnen festgelegt, liegt nur auf diesem Gerät (als Prüfsumme),
+// ist nicht in der Sicherungsdatei und bleibt beim Zurücksetzen erhalten.
+const PIN_KEY = "learnino-eltern-code";
+const PIN_LOCK_KEY = "learnino-eltern-sperre";
+async function pinHash(code) {
+  const text = "learnino:" + code;
+  try {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+    return [...new Uint8Array(buf)].map((x) => x.toString(16).padStart(2, "0")).join("");
+  } catch (e) {
+    let h = 5381;
+    for (const ch of text) h = ((h * 33) ^ ch.charCodeAt(0)) >>> 0;
+    return "s" + h.toString(16);
+  }
+}
+const lsGet = (k) => {
+  try {
+    return localStorage.getItem(k);
+  } catch (e) {
+    return null;
+  }
+};
+const lsSet = (k, v) => {
+  try {
+    localStorage.setItem(k, v);
+  } catch (e) {
+    /* blockiert */
+  }
+};
+const validPin = (c) => /^\d{4,8}$/.test(c);
+
+function showParentGate(msg = "") {
+  if (!lsGet(PIN_KEY)) return showPinSetup(showParents, "");
   render(`
     <div class="screen center">
       <h2>🔒 Elternbereich</h2>
-      <p class="sub">Wie viel ist ${a} × ${b}?</p>
-      <input id="ans" class="input" inputmode="numeric" autocomplete="off">
+      <p class="sub">Eltern-Code eingeben</p>
+      <input id="ans" class="input pin-input" type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="8">
+      <p class="small pin-msg" id="msg">${esc(msg)}</p>
       <button class="go-btn" id="ok">Öffnen</button>
       <button class="link-btn" id="back">Zurück</button>
     </div>`);
   $("back").onclick = showProfiles;
-  $("ok").onclick = () => {
-    if (+$("ans").value === a * b) showParents();
-    else $("ans").value = "";
+  const tryOpen = async () => {
+    const lock = JSON.parse(lsGet(PIN_LOCK_KEY) || '{"n":0,"until":0}');
+    if (Date.now() < lock.until) {
+      $("msg").textContent = `Zu oft falsch. Bitte in ${Math.ceil((lock.until - Date.now()) / 1000)} Sekunden nochmal.`;
+      $("ans").value = "";
+      return;
+    }
+    if ((await pinHash($("ans").value.trim())) === lsGet(PIN_KEY)) {
+      lsSet(PIN_LOCK_KEY, '{"n":0,"until":0}');
+      return showParents();
+    }
+    lock.n++;
+    if (lock.n >= 3) {
+      lock.until = Date.now() + 60000;
+      lock.n = 0;
+    }
+    lsSet(PIN_LOCK_KEY, JSON.stringify(lock));
+    $("ans").value = "";
+    $("msg").textContent = lock.until > Date.now() ? "Zu oft falsch. Eine Minute warten." : "Falscher Code.";
   };
+  $("ok").onclick = tryOpen;
+  $("ans").onkeydown = (e) => e.key === "Enter" && tryOpen();
+  $("ans").focus();
+}
+
+// Code festlegen (beim ersten Mal) oder ändern (im Elternbereich)
+function showPinSetup(done, back) {
+  render(`
+    <div class="screen center">
+      <h2>🔒 Eltern-Code festlegen</h2>
+      <p class="sub">4 bis 8 Ziffern. Damit öffnest du später den Elternbereich. Schreib ihn dir auf: Ohne Code kommt man nicht mehr hinein.</p>
+      <input id="p1" class="input pin-input" type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="8" placeholder="Code">
+      <input id="p2" class="input pin-input" type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="8" placeholder="Nochmal">
+      <p class="small pin-msg" id="msg"></p>
+      <button class="go-btn" id="ok">Speichern</button>
+      <button class="link-btn" id="back">Zurück</button>
+    </div>`);
+  $("back").onclick = back ? () => showParents() : showProfiles;
+  $("ok").onclick = async () => {
+    const a = $("p1").value.trim();
+    if (!validPin(a)) return ($("msg").textContent = "Bitte 4 bis 8 Ziffern eingeben.");
+    if (a !== $("p2").value.trim()) return ($("msg").textContent = "Die beiden Eingaben sind verschieden.");
+    lsSet(PIN_KEY, await pinHash(a));
+    done("✅ Eltern-Code gespeichert.");
+  };
+  $("p1").focus();
 }
 
 function boxCounts(pid, unit) {
@@ -1224,6 +1327,13 @@ function showParents(msg = "") {
         ${saved ? `<p class="small">Zuletzt gespeichert: ${new Date(saved).toLocaleString("de-DE")}</p>` : ""}
       </section>
       <section>
+        <h3>🔊 Aufgaben vorlesen</h3>
+        <p class="small">Für Kinder, die noch nicht lesen können. <b>Vorlesen</b>: Jede Aufgabe wird automatisch vorgelesen. <b>Erst selbst lesen</b>: Das Kind soll die Aufgabe zuerst selbst lesen, der 🔊-Knopf geht erst nach ein paar Sekunden. Am Ende steht, wie viele Aufgaben es allein gelesen hat. <b>Aus</b>: keine deutsche Stimme. Englische Wörter werden immer vorgesprochen.</p>
+        ${[...PROFILES, TEST_PROFILE].map((p) => `<div class="voice-row"><span>${esc(p.title)}</span><select class="input voice-sel" data-p="${p.id}">
+          ${[["auto", "Vorlesen"], ["selbst", "Erst selbst lesen"], ["aus", "Aus"]].map(([v, l]) => `<option value="${v}" ${voiceMode(p.id) === v ? "selected" : ""}>${l}</option>`).join("")}
+        </select></div>`).join("")}
+      </section>
+      <section>
         <h3>Stimme</h3>
         <p class="small">${v.supported ? (v.british ? `Britische Stimme gefunden: ${esc(v.name)}` : "Keine britische Stimme gefunden. Bitte in den Android-Einstellungen unter „Sprachausgabe“ (Google) die Sprache „Englisch (Vereinigtes Königreich)“ herunterladen, dann funktioniert sie auch offline.") : "Dieses Gerät unterstützt keine Sprachausgabe."} Liegt für einen Inhalt eine Aufnahme im Ordner audio/en, wird stattdessen die Aufnahme abgespielt.</p>
         <button class="wide-btn" id="test">🔊 Stimme testen</button>
@@ -1237,6 +1347,11 @@ function showParents(msg = "") {
         </div>
       </section>
       <section>
+        <h3>🔒 Eltern-Code</h3>
+        <p class="small">Der Code gilt nur auf diesem Gerät. Auf dem Handy legst du beim ersten Öffnen dort einen eigenen fest.</p>
+        <button class="wide-btn" id="pinchange">Code ändern</button>
+      </section>
+      <section>
         <h3>Zurücksetzen</h3>
         <button class="wide-btn danger" id="reset">Gesamten Fortschritt löschen</button>
       </section>
@@ -1244,6 +1359,10 @@ function showParents(msg = "") {
     </div>`);
   $("back").onclick = showProfiles;
   fillPhotos();
+  on(".voice-sel", "change", (e) => {
+    store.profile(e.target.dataset.p).voice = e.target.value;
+    store.save();
+  });
   on(".en-box", "change", (e) => {
     store.setEnabled(e.target.dataset.p, e.target.dataset.id, e.target.checked);
     store.save();
@@ -1276,6 +1395,7 @@ function showParents(msg = "") {
       showParents("⚠️ Diese Datei konnte nicht geladen werden (vielleicht von einer alten App-Version).");
     }
   };
+  $("pinchange").onclick = () => showPinSetup(showParents, true);
   $("testmode").onclick = () => {
     current.profile = TEST_PROFILE.id;
     current.subject = null;
