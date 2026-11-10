@@ -7,7 +7,7 @@ import * as store from "./store.js";
 import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 
-const APP_VERSION = 15;
+const APP_VERSION = 16;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -101,8 +101,8 @@ function unitMastered(pid, unit) {
 
 function homeHeader(p) {
   return `<header class="bar">
-        <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
-        <span class="who">${p.test ? `<span class="test-badge">🧪 Testmodus</span>` : esc(p.title)}</span>
+        <button class="icon-btn back-btn" id="back" aria-label="Zurück"><span class="back-arrow">←</span> Zurück</button>
+        <span class="who">${p.test ? `<span class="test-badge">🧪 Test</span>` : esc(p.title)}</span>
         <span class="stat">🔥 ${store.streakCount(p.id)}</span>
         <span class="stat">⭐ ${store.totalStars(p.id)}</span>
       </header>`;
@@ -172,7 +172,7 @@ function showUnit(unitId) {
   render(`
     <div class="screen unit-screen">
       <header class="bar">
-        <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
+        <button class="icon-btn back-btn" id="back" aria-label="Zurück"><span class="back-arrow">←</span> Zurück</button>
         <span class="who"></span>
         ${unitMastered(pid, u) ? `<span class="stat">🏆</span>` : ""}
       </header>
@@ -1073,7 +1073,7 @@ function showAlbum() {
   render(`
     <div class="screen">
       <header class="bar">
-        <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
+        <button class="icon-btn back-btn" id="back" aria-label="Zurück"><span class="back-arrow">←</span> Zurück</button>
         <span class="who">📒 Sticker-Album</span>
       </header>
       ${units.map((u) => {
@@ -1151,7 +1151,10 @@ function showParentGate(msg = "") {
     $("msg").textContent = lock.until > Date.now() ? "Zu oft falsch. Eine Minute warten." : "Falscher Code.";
   };
   $("ok").onclick = tryOpen;
-  $("ans").onkeydown = (e) => e.key === "Enter" && tryOpen();
+  // Wichtig: kein "return false" für andere Tasten, sonst erscheinen keine Ziffern
+  $("ans").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") tryOpen();
+  });
   $("ans").focus();
 }
 
@@ -1275,7 +1278,7 @@ function showParents(msg = "") {
   render(`
     <div class="screen parents">
       <header class="bar">
-        <button class="icon-btn" id="back" aria-label="Zurück">⬅</button>
+        <button class="icon-btn back-btn" id="back" aria-label="Zurück"><span class="back-arrow">←</span> Zurück</button>
         <span class="who">Elternbereich</span>
       </header>
       ${msg ? `<p class="notice">${msg}</p>` : ""}

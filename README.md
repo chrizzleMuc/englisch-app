@@ -46,6 +46,10 @@ Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede E
 
 Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.
 
+## Version 16
+- Fehler behoben: Im Eltern-Code-Feld erschienen auf dem Handy keine Ziffern.
+- Zurück-Knopf oben links größer und gelb mit „Zurück“.
+
 ## Version 15
 - **Eltern-Code** statt Rechenaufgabe: Beim ersten Öffnen des Elternbereichs legt man auf jedem Gerät einen Code (4–8 Ziffern) fest. Nach 3 Fehlversuchen eine Minute Sperre. Der Code liegt nur als Prüfsumme auf dem Gerät, ist nicht in der Sicherungsdatei und bleibt beim Zurücksetzen erhalten. Ändern im Elternbereich.
 
