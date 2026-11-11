@@ -16,7 +16,9 @@
             "deutsch/k1-anlaute.json",
             "deutsch/k1-silben.json",
             "deutsch/k1-leserichtung.json",
-            "deutsch/k1-lesen.json"
+            "deutsch/k1-lesen.json",
+            "deutsch/k1-buchstaben2.json",
+            "deutsch/k1-lesen2.json"
           ]
         },
         {
@@ -26,6 +28,7 @@
             "pirat"
           ],
           "units": [
+            "deutsch/k3-lernwoerter1.json",
             "deutsch/k3-nomen.json",
             "deutsch/k3-verlaengern.json",
             "deutsch/k3-doppelte-mitlaute.json",
@@ -34,6 +37,29 @@
             "deutsch/k3-vorsilben.json",
             "deutsch/k3-unregelmaessige-verben.json",
             "deutsch/k3-worttrennung.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mathe",
+      "title": "Mathe",
+      "image": "🔢",
+      "color": "#3b6fd8",
+      "stages": [
+        {
+          "id": "mathe-k3",
+          "title": "3. Klasse · Rechnen",
+          "kinder": [
+            "pirat"
+          ],
+          "units": [
+            "mathe/k3-einmaleins.json",
+            "mathe/k3-rechnen100.json",
+            "mathe/k3-zahlen1000.json",
+            "mathe/k3-rechnen1000.json",
+            "mathe/k3-sachaufgaben.json",
+            "mathe/k3-groessen.json"
           ]
         }
       ]

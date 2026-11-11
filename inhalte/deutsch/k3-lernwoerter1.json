@@ -1,0 +1,893 @@
+{
+ "id": "d3-lernwoerter1",
+ "type": "schule",
+ "title_de": "Lernwörter 1",
+ "image": "📒",
+ "color": "#b5651d",
+ "lessons": [
+  {
+   "title": "Richtig geschrieben?",
+   "icon": "🔍",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-das-laub",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "das Laup",
+      "das Lauph",
+      "das Laub"
+     ],
+     "answer": "das Laub",
+     "explain": "Laub mit b: belaubt, die Laubbäume."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-denkt",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "dengt",
+      "denckt",
+      "denkt"
+     ],
+     "answer": "denkt",
+     "explain": "Grundform: denken → er denkt mit nk."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-fertig",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "färtig",
+      "fertich",
+      "fertig"
+     ],
+     "answer": "fertig",
+     "explain": "Verlängern: die fertige Arbeit → fertig mit g."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-jemand",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "jemand",
+      "jemant",
+      "jehmand"
+     ],
+     "answer": "jemand",
+     "explain": "Merkwort: jemand mit d am Ende."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-der-urlaub",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "der Urlaup",
+      "der Urlaub",
+      "der Uhrlaub"
+     ],
+     "answer": "der Urlaub",
+     "explain": "Verlängern: die Urlaube → Urlaub mit b."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-blind",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "blint",
+      "blind",
+      "plind"
+     ],
+     "answer": "blind",
+     "explain": "Verlängern: die blinde Katze → blind mit d."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-der-korb",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "der Korb",
+      "der Kohrb",
+      "der Korp"
+     ],
+     "answer": "der Korb",
+     "explain": "Verlängern: die Körbe → Korb mit b."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-richtig",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "richtich",
+      "rischtig",
+      "richtig"
+     ],
+     "answer": "richtig",
+     "explain": "Verlängern: die richtige Antwort → richtig mit g."
+    }
+   ]
+  },
+  {
+   "title": "Richtig geschrieben? 2",
+   "icon": "🔍",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-hupt",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "hupd",
+      "hubt",
+      "hupt"
+     ],
+     "answer": "hupt",
+     "explain": "Grundform: hupen → er hupt mit p."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-das-land",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "das Landt",
+      "das Lant",
+      "das Land"
+     ],
+     "answer": "das Land",
+     "explain": "Verlängern: die Länder → Land mit d."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-die-bank",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "die Banck",
+      "die Pank",
+      "die Bank"
+     ],
+     "answer": "die Bank",
+     "explain": "Bank schreibt man mit nk."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-schreibt",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "schraibt",
+      "schreipt",
+      "schreibt"
+     ],
+     "answer": "schreibt",
+     "explain": "Grundform: schreiben → er schreibt mit ei und b."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-der-krieg",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "der Kriek",
+      "der Krig",
+      "der Krieg"
+     ],
+     "answer": "der Krieg",
+     "explain": "Verlängern: die Kriege → Krieg mit ie und g."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-der-zweig",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "der Zweig",
+      "der Zweik",
+      "der Zwaig"
+     ],
+     "answer": "der Zweig",
+     "explain": "Verlängern: die Zweige → Zweig mit ei und g."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-tausend",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "tausent",
+      "tausend",
+      "tausendt"
+     ],
+     "answer": "tausend",
+     "explain": "Verlängern: viele Tausende → tausend mit d."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-rs-sagt",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "prompt": "Lernwort",
+     "options": [
+      "sacht",
+      "sagt",
+      "sakt"
+     ],
+     "answer": "sagt",
+     "explain": "Grundform: sagen → er sagt mit g."
+    }
+   ]
+  },
+  {
+   "title": "Verlängern",
+   "icon": "📏",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vl-der-kor",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Kor_",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "b",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Körbe → der Korb"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vl-er-sat",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "er sa_t",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "sagen → er sagt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vl-der-krie",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Krie_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Kriege → der Krieg"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vl-blin",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "blin_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die blinde Katze → blind"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vl-der-urlau",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Urlau_",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "b",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Urlaube → der Urlaub"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vl-er-schreit",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "er schrei_t",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "b",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "schreiben → er schreibt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vl-das-lan",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "das Lan_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Länder → das Land"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vl-richti",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "richti_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die richtige Antwort → richtig"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vl-tausen",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "tausen_",
+     "options": [
+      "d",
+      "t"
+     ],
+     "answer": "d",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "viele Tausende → tausend"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vl-der-zwei",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "der Zwei_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Zweige → der Zweig"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vl-er-hut",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "er hu_t",
+     "options": [
+      "b",
+      "p"
+     ],
+     "answer": "p",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "hupen → er hupt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vl-ferti",
+     "task": "Welcher Buchstabe fehlt? Verlängere das Wort!",
+     "prompt": "ferti_",
+     "options": [
+      "g",
+      "k"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die fertige Arbeit → fertig"
+    }
+   ]
+  },
+  {
+   "title": "Silben trennen",
+   "icon": "✂️",
+   "tasks": [
+    {
+     "kind": "syllables",
+     "id": "d3-lw1-sy-tausend",
+     "word": "tausend",
+     "answer": "tau-send"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-lw1-sy-fertig",
+     "word": "fertig",
+     "answer": "fer-tig"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-lw1-sy-jemand",
+     "word": "jemand",
+     "answer": "je-mand"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-lw1-sy-richtig",
+     "word": "richtig",
+     "answer": "rich-tig"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-lw1-sy-urlaub",
+     "word": "Urlaub",
+     "answer": "Ur-laub"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-lw1-sy-baenke",
+     "word": "Bänke",
+     "answer": "Bän-ke"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-lw1-sy-koerbe",
+     "word": "Körbe",
+     "answer": "Kör-be"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-lw1-sy-laender",
+     "word": "Länder",
+     "answer": "Län-der"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-lw1-sy-zweige",
+     "word": "Zweige",
+     "answer": "Zwei-ge"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-lw1-sy-kriege",
+     "word": "Kriege",
+     "answer": "Krie-ge"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-lw1-sy-schreiben",
+     "word": "schreiben",
+     "answer": "schrei-ben"
+    },
+    {
+     "kind": "syllables",
+     "id": "d3-lw1-sy-denken",
+     "word": "denken",
+     "answer": "den-ken"
+    }
+   ]
+  },
+  {
+   "title": "Mehrzahl und Grundform",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-lw1-mz-die-bank",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "die Bank",
+     "say": "die Bank. Und viele?",
+     "before": "die",
+     "answer": "Bänke"
+    },
+    {
+     "kind": "type",
+     "id": "d3-lw1-mz-der-korb",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "der Korb",
+     "say": "der Korb. Und viele?",
+     "before": "die",
+     "answer": "Körbe"
+    },
+    {
+     "kind": "type",
+     "id": "d3-lw1-mz-das-land",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "das Land",
+     "say": "das Land. Und viele?",
+     "before": "die",
+     "answer": "Länder"
+    },
+    {
+     "kind": "type",
+     "id": "d3-lw1-mz-der-krieg",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "der Krieg",
+     "say": "der Krieg. Und viele?",
+     "before": "die",
+     "answer": "Kriege"
+    },
+    {
+     "kind": "type",
+     "id": "d3-lw1-mz-der-urlaub",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "der Urlaub",
+     "say": "der Urlaub. Und viele?",
+     "before": "die",
+     "answer": "Urlaube"
+    },
+    {
+     "kind": "type",
+     "id": "d3-lw1-mz-der-zweig",
+     "task": "Schreib die Mehrzahl.",
+     "prompt": "der Zweig",
+     "say": "der Zweig. Und viele?",
+     "before": "die",
+     "answer": "Zweige"
+    },
+    {
+     "kind": "type",
+     "id": "d3-lw1-gf-er-hupt",
+     "task": "Schreib die Grundform.",
+     "prompt": "er hupt",
+     "answer": "hupen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-lw1-gf-er-denkt",
+     "task": "Schreib die Grundform.",
+     "prompt": "er denkt",
+     "answer": "denken"
+    },
+    {
+     "kind": "type",
+     "id": "d3-lw1-gf-er-schreibt",
+     "task": "Schreib die Grundform.",
+     "prompt": "er schreibt",
+     "answer": "schreiben"
+    },
+    {
+     "kind": "type",
+     "id": "d3-lw1-gf-er-sagt",
+     "task": "Schreib die Grundform.",
+     "prompt": "er sagt",
+     "answer": "sagen"
+    }
+   ]
+  },
+  {
+   "title": "Vergangenheit",
+   "icon": "⏪",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vg-denken",
+     "task": "Wie heißt es in der 1. Vergangenheit?",
+     "prompt": "denken",
+     "options": [
+      "ich dankte",
+      "ich denkte",
+      "ich dachte"
+     ],
+     "answer": "ich dachte"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vg-schreiben",
+     "task": "Wie heißt es in der 1. Vergangenheit?",
+     "prompt": "schreiben",
+     "options": [
+      "ich schreibte",
+      "ich schrob",
+      "ich schrieb"
+     ],
+     "answer": "ich schrieb"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vg-sagen",
+     "task": "Wie heißt es in der 1. Vergangenheit?",
+     "prompt": "sagen",
+     "options": [
+      "ich sagte",
+      "ich sagete",
+      "ich sug"
+     ],
+     "answer": "ich sagte"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-vg-hupen",
+     "task": "Wie heißt es in der 1. Vergangenheit?",
+     "prompt": "hupen",
+     "options": [
+      "ich hupte",
+      "ich hupe",
+      "ich hup"
+     ],
+     "answer": "ich hupte"
+    }
+   ]
+  },
+  {
+   "title": "Wortarten",
+   "icon": "🗂️",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Ordne die Lernwörter nach Wortarten.",
+     "review": "Welche Wortart ist das?",
+     "groups": [
+      "Nomen",
+      "Verben",
+      "Adjektive",
+      "andere Wörter"
+     ],
+     "items": [
+      {
+       "id": "d3-lw1-wa-bank",
+       "text": "Bank",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-lw1-wa-hupt",
+       "text": "hupt",
+       "group": "Verben"
+      },
+      {
+       "id": "d3-lw1-wa-blind",
+       "text": "blind",
+       "group": "Adjektive"
+      },
+      {
+       "id": "d3-lw1-wa-tausend",
+       "text": "tausend",
+       "group": "andere Wörter"
+      },
+      {
+       "id": "d3-lw1-wa-korb",
+       "text": "Korb",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-lw1-wa-denkt",
+       "text": "denkt",
+       "group": "Verben"
+      },
+      {
+       "id": "d3-lw1-wa-fertig",
+       "text": "fertig",
+       "group": "Adjektive"
+      },
+      {
+       "id": "d3-lw1-wa-jemand",
+       "text": "jemand",
+       "group": "andere Wörter"
+      }
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Ordne die Lernwörter nach Wortarten.",
+     "review": "Welche Wortart ist das?",
+     "groups": [
+      "Nomen",
+      "Verben",
+      "Adjektive"
+     ],
+     "items": [
+      {
+       "id": "d3-lw1-wa-krieg",
+       "text": "Krieg",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-lw1-wa-schreibt",
+       "text": "schreibt",
+       "group": "Verben"
+      },
+      {
+       "id": "d3-lw1-wa-richtig",
+       "text": "richtig",
+       "group": "Adjektive"
+      },
+      {
+       "id": "d3-lw1-wa-land",
+       "text": "Land",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-lw1-wa-sagt",
+       "text": "sagt",
+       "group": "Verben"
+      },
+      {
+       "id": "d3-lw1-wa-urlaub",
+       "text": "Urlaub",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-lw1-wa-zweig",
+       "text": "Zweig",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-lw1-wa-laub",
+       "text": "Laub",
+       "group": "Nomen"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ABC",
+   "icon": "🔤",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-lw1-abc-sagt-laub-hupt",
+     "task": "Welches Wort kommt im ABC zuerst?",
+     "prompt": "sagt · Laub · hupt",
+     "options": [
+      "sagt",
+      "Laub",
+      "hupt"
+     ],
+     "answer": "hupt",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-abc-sagt-blind-schreibt",
+     "task": "Welches Wort kommt im ABC zuerst?",
+     "prompt": "sagt · blind · schreibt",
+     "options": [
+      "sagt",
+      "blind",
+      "schreibt"
+     ],
+     "answer": "blind",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-abc-tausend-urlaub-hupt",
+     "task": "Welches Wort kommt im ABC zuerst?",
+     "prompt": "tausend · Urlaub · hupt",
+     "options": [
+      "tausend",
+      "Urlaub",
+      "hupt"
+     ],
+     "answer": "hupt",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-abc-bank-laub-denkt",
+     "task": "Welches Wort kommt im ABC zuerst?",
+     "prompt": "Bank · Laub · denkt",
+     "options": [
+      "Bank",
+      "Laub",
+      "denkt"
+     ],
+     "answer": "Bank",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-abc-sagt-zweig-bank",
+     "task": "Welches Wort kommt im ABC zuerst?",
+     "prompt": "sagt · Zweig · Bank",
+     "options": [
+      "sagt",
+      "Zweig",
+      "Bank"
+     ],
+     "answer": "Bank",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-abc-land-richtig-hupt",
+     "task": "Welches Wort kommt im ABC zuerst?",
+     "prompt": "Land · richtig · hupt",
+     "options": [
+      "Land",
+      "richtig",
+      "hupt"
+     ],
+     "answer": "hupt",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-abc-bank-tausend-krieg",
+     "task": "Welches Wort kommt im ABC zuerst?",
+     "prompt": "Bank · tausend · Krieg",
+     "options": [
+      "Bank",
+      "tausend",
+      "Krieg"
+     ],
+     "answer": "Bank",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-lw1-abc-land-korb-richtig",
+     "task": "Welches Wort kommt im ABC zuerst?",
+     "prompt": "Land · Korb · richtig",
+     "options": [
+      "Land",
+      "Korb",
+      "richtig"
+     ],
+     "answer": "Korb",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-lw1-foto1",
+     "task": "Schreib jedes Lernwort in deiner schönsten Schrift und markiere die schwierigen Stellen mit Buntstift.",
+     "say": "Schreib jedes Lernwort schön ab und markiere die schwierigen Stellen.",
+     "show": [
+      "blind",
+      "tausend",
+      "fertig",
+      "hupt",
+      "jemand",
+      "die Bank",
+      "das Laub",
+      "denkt",
+      "der Krieg",
+      "der Korb",
+      "schreibt",
+      "sagt",
+      "das Land",
+      "der Urlaub",
+      "richtig",
+      "der Zweig"
+     ]
+    },
+    {
+     "kind": "photo",
+     "id": "d3-lw1-foto2",
+     "task": "Schreib eine kurze Geschichte mit möglichst vielen Lernwörtern.",
+     "say": "Schreib eine kurze Geschichte mit möglichst vielen Lernwörtern.",
+     "show": [
+      "Urlaub",
+      "Land",
+      "Korb",
+      "Zweig",
+      "Laub"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 14
+  }
+ ]
+}
