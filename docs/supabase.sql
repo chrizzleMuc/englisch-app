@@ -8,9 +8,12 @@ create table if not exists public.learnino_state (
 alter table public.learnino_state enable row level security;
 
 -- Jede angemeldete Familie sieht und ändert nur ihre eigene Zeile
+drop policy if exists "eigene Daten lesen" on public.learnino_state;
 create policy "eigene Daten lesen" on public.learnino_state
   for select to authenticated using (auth.uid() = user_id);
+drop policy if exists "eigene Daten anlegen" on public.learnino_state;
 create policy "eigene Daten anlegen" on public.learnino_state
   for insert to authenticated with check (auth.uid() = user_id);
+drop policy if exists "eigene Daten ändern" on public.learnino_state;
 create policy "eigene Daten ändern" on public.learnino_state
   for update to authenticated using (auth.uid() = user_id) with check (auth.uid() = user_id);
