@@ -199,14 +199,16 @@ export function sync() {
       const t = await token();
       const auth = { Authorization: "Bearer " + t };
       const rows = await api(`/rest/v1/${TABLE}?select=data,updated_at`, { headers: auth });
+      const before = JSON.stringify(store.getState().profiles);
       const merged = merge(store.getState(), rows?.[0]?.data);
+      const changed = JSON.stringify(merged.profiles) !== before;
       store.replaceState(merged);
       await api(`/rest/v1/${TABLE}?on_conflict=user_id`, {
         method: "POST",
         headers: { ...auth, Prefer: "resolution=merge-duplicates,return=minimal" },
         body: JSON.stringify([{ user_id: session.user_id, data: merged, updated_at: new Date().toISOString() }])
       });
-      setStatus({ state: "ok", at: new Date().toISOString() });
+      setStatus({ state: "ok", at: new Date().toISOString(), changed });
       return true;
     } catch (e) {
       const offline = !navigator.onLine || e instanceof TypeError;
@@ -228,6 +230,10 @@ export function schedule(ms = 4000) {
 
 export function start() {
   if (!configured()) return;
+  // Solange die App offen ist: jede Minute neuen Stand von anderen Geräten holen
+  setInterval(() => {
+    if (document.visibilityState === "visible" && loggedIn() && navigator.onLine) sync();
+  }, 60000);
   store.setOnSave(() => schedule());
   window.addEventListener("online", () => schedule(500));
   document.addEventListener("visibilitychange", () => {

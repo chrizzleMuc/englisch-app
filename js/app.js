@@ -8,7 +8,7 @@ import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 21;
+const APP_VERSION = 22;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -39,6 +39,7 @@ function voiceMode(pid = current.profile) {
 }
 
 function render(html) {
+  current.view = null;
   stopAudio();
   setGerman(voiceMode() !== "aus");
   current.screen = {};
@@ -74,6 +75,7 @@ function showProfiles() {
       </div>
       <button class="link-btn" id="parents">🔒 Elternbereich</button>
     </div>`);
+  current.view = "profiles";
   on(".profile-card", "click", (e) => {
     current.profile = e.currentTarget.dataset.id;
     chime("pop");
@@ -140,6 +142,7 @@ function showHome(subjectId = current.subject) {
         </div>`).join("")}
       ${stagesFor(p.id, sub).some((st) => st.units.some((u) => u.words.length)) ? `<button class="wide-btn album-btn" id="album">📒 Mein Sticker-Album</button>` : ""}
     </div>`);
+  current.view = "home";
   $("back").onclick = () => (many ? showSubjects(subs) : showProfiles());
   if ($("album")) $("album").onclick = showAlbum;
   on(".topic[data-id]", "click", (e) => {
@@ -160,6 +163,7 @@ function showSubjects(subs) {
 <span class="tname">${esc(x.title)}</span></button>`).join("")}
       </div>` : `<p class="sub center-text">Hier ist noch nichts freigeschaltet. Frag Mama oder Papa!</p>`}
     </div>`);
+  current.view = "subjects";
   $("back").onclick = showProfiles;
   on(".subject", "click", (e) => showHome(e.currentTarget.dataset.id));
   if (voiceMode() === "auto") sayDe(subs.length ? "Was willst du heute lernen?" : "Hier ist noch nichts freigeschaltet.");
@@ -1528,6 +1532,14 @@ loadContent()
     showProfiles();
     if (loginNote) toast(loginNote.ok ? "✅ " + loginNote.message + ". Der Lernstand wird jetzt online gespeichert." : "⚠️ Anmeldung fehlgeschlagen: " + loginNote.message);
   });
+
+// Neuer Stand von einem anderen Gerät: Übersichtsseiten gleich neu zeichnen (nicht mitten in einer Lektion)
+cloud.onChange((st) => {
+  if (st.state !== "ok" || !st.changed) return;
+  if (current.view === "profiles") showProfiles();
+  else if (current.view === "home") showHome();
+  else if (current.view === "subjects") showHome();
+});
 
 function toast(text) {
   const el = document.createElement("div");
