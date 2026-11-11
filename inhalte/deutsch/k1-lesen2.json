@@ -1,0 +1,1526 @@
+{
+ "id": "d1-lesen2",
+ "type": "schule",
+ "title_de": "Lesen 2: Silben, Reime, Sätze",
+ "image": "📚",
+ "color": "#2f8fb0",
+ "lessons": [
+  {
+   "title": "Welche Silbe fehlt?",
+   "icon": "🧩",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-tomate",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Toma _",
+     "pic": "🍅",
+     "showText": true,
+     "say": "Tomate. Welche Silbe fehlt?",
+     "options": [
+      "se",
+      "te",
+      "le"
+     ],
+     "answer": "te",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-rakete",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Rake _",
+     "pic": "🚀",
+     "showText": true,
+     "say": "Rakete. Welche Silbe fehlt?",
+     "options": [
+      "te",
+      "se",
+      "ma"
+     ],
+     "answer": "te",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-seife",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Sei _",
+     "pic": "🧼",
+     "showText": true,
+     "say": "Seife. Welche Silbe fehlt?",
+     "options": [
+      "fe",
+      "re",
+      "ne"
+     ],
+     "answer": "fe",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-lama",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "La _",
+     "pic": "🦙",
+     "showText": true,
+     "say": "Lama. Welche Silbe fehlt?",
+     "options": [
+      "ter",
+      "ma",
+      "re"
+     ],
+     "answer": "ma",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-melone",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Melo _",
+     "pic": "🍉",
+     "showText": true,
+     "say": "Melone. Welche Silbe fehlt?",
+     "options": [
+      "te",
+      "ne",
+      "ma"
+     ],
+     "answer": "ne",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-kiste",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Kis _",
+     "pic": "📦",
+     "showText": true,
+     "say": "Kiste. Welche Silbe fehlt?",
+     "options": [
+      "de",
+      "te",
+      "me"
+     ],
+     "answer": "te",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-banane",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Bana _",
+     "pic": "🍌",
+     "showText": true,
+     "say": "Banane. Welche Silbe fehlt?",
+     "options": [
+      "ne",
+      "we",
+      "le"
+     ],
+     "answer": "ne",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-biene",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Bie _",
+     "pic": "🐝",
+     "showText": true,
+     "say": "Biene. Welche Silbe fehlt?",
+     "options": [
+      "ne",
+      "re",
+      "de"
+     ],
+     "answer": "ne",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Welche Silbe fehlt? 2",
+   "icon": "🧩",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-nase",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Na _",
+     "pic": "👃",
+     "showText": true,
+     "say": "Nase. Welche Silbe fehlt?",
+     "options": [
+      "me",
+      "te",
+      "se"
+     ],
+     "answer": "se",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-rose",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Ro _",
+     "pic": "🌹",
+     "showText": true,
+     "say": "Rose. Welche Silbe fehlt?",
+     "options": [
+      "ter",
+      "te",
+      "se"
+     ],
+     "answer": "se",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-loewe",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Lö _",
+     "pic": "🦁",
+     "showText": true,
+     "say": "Löwe. Welche Silbe fehlt?",
+     "options": [
+      "we",
+      "ne",
+      "se"
+     ],
+     "answer": "we",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-dose",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Do _",
+     "pic": "🥫",
+     "showText": true,
+     "say": "Dose. Welche Silbe fehlt?",
+     "options": [
+      "se",
+      "le",
+      "te"
+     ],
+     "answer": "se",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-vase",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Va _",
+     "pic": "🏺",
+     "showText": true,
+     "say": "Vase. Welche Silbe fehlt?",
+     "options": [
+      "fe",
+      "se",
+      "te"
+     ],
+     "answer": "se",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-leiter",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Lei _",
+     "pic": "🪜",
+     "showText": true,
+     "say": "Leiter. Welche Silbe fehlt?",
+     "options": [
+      "ne",
+      "re",
+      "ter"
+     ],
+     "answer": "ter",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-hase",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Ha _",
+     "pic": "🐇",
+     "showText": true,
+     "say": "Hase. Welche Silbe fehlt?",
+     "options": [
+      "we",
+      "se",
+      "ter"
+     ],
+     "answer": "se",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-end-hose",
+     "task": "Welche Silbe fehlt?",
+     "prompt": "Ho _",
+     "pic": "👖",
+     "showText": true,
+     "say": "Hose. Welche Silbe fehlt?",
+     "options": [
+      "se",
+      "ter",
+      "de"
+     ],
+     "answer": "se",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Wörter lesen",
+   "icon": "👀",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-rose",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Rose",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "☁️",
+      "🌹",
+      "🧼"
+     ],
+     "answer": "🌹",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-wal",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Wal",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🐋",
+      "👑",
+      "🪺"
+     ],
+     "answer": "🐋",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-nase",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Nase",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "👗",
+      "🪜",
+      "👃"
+     ],
+     "answer": "👃",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-dose",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Dose",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🌭",
+      "🥫",
+      "⚽"
+     ],
+     "answer": "🥫",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-schaf",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Schaf",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🐑",
+      "⚽",
+      "👟"
+     ],
+     "answer": "🐑",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-schuh",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Schuh",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "☁️",
+      "🧼",
+      "👟"
+     ],
+     "answer": "👟",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-ei",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Ei",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🪜",
+      "🥚",
+      "🥫"
+     ],
+     "answer": "🥚",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-eis",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Eis",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🐌",
+      "🐬",
+      "🍦"
+     ],
+     "answer": "🍦",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-krone",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Krone",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🍌",
+      "👑",
+      "🐬"
+     ],
+     "answer": "👑",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-baer",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Bär",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "☁️",
+      "🐻",
+      "👃"
+     ],
+     "answer": "🐻",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-ball",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Ball",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "⚽",
+      "🪜",
+      "👃"
+     ],
+     "answer": "⚽",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-buch",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Buch",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "👑",
+      "🐬",
+      "📖"
+     ],
+     "answer": "📖",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Wörter lesen 2",
+   "icon": "👀",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-bus",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Bus",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🚌",
+      "🐑",
+      "☁️"
+     ],
+     "answer": "🚌",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-delfin",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Delfin",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🍌",
+      "🐬",
+      "☁️"
+     ],
+     "answer": "🐬",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-dino",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Dino",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🥚",
+      "🦕",
+      "🐬"
+     ],
+     "answer": "🦕",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-nest",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Nest",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "👑",
+      "🪺",
+      "🐑"
+     ],
+     "answer": "🪺",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-wolke",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Wolke",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🐋",
+      "🥚",
+      "☁️"
+     ],
+     "answer": "☁️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-banane",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Banane",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🍌",
+      "🌭",
+      "🌹"
+     ],
+     "answer": "🍌",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-leiter",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Leiter",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🪜",
+      "📖",
+      "🍦"
+     ],
+     "answer": "🪜",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-seife",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Seife",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🥫",
+      "🧼",
+      "🪺"
+     ],
+     "answer": "🧼",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-schnecke",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Schnecke",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🧼",
+      "🐌",
+      "☁️"
+     ],
+     "answer": "🐌",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-kleid",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Kleid",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "☁️",
+      "👗",
+      "✂️"
+     ],
+     "answer": "👗",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-wurst",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Wurst",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🐌",
+      "🌭",
+      "🚌"
+     ],
+     "answer": "🌭",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-les-schere",
+     "task": "Lies das Wort. Welches Bild passt?",
+     "prompt": "Schere",
+     "say": "Lies das Wort. Welches Bild passt?",
+     "options": [
+      "🍌",
+      "✂️",
+      "🥚"
+     ],
+     "answer": "✂️",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Reimwörter",
+   "icon": "🎵",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-l2-reim-hase",
+     "task": "Was reimt sich?",
+     "prompt": "Hase",
+     "pic": "🐇",
+     "showText": true,
+     "say": "Was reimt sich auf Hase?",
+     "options": [
+      "Nase",
+      "Ball",
+      "Hund"
+     ],
+     "answer": "Nase",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-reim-dose",
+     "task": "Was reimt sich?",
+     "prompt": "Dose",
+     "pic": "🥫",
+     "showText": true,
+     "say": "Was reimt sich auf Dose?",
+     "options": [
+      "Rose",
+      "Bein",
+      "Kuh"
+     ],
+     "answer": "Rose",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-reim-maus",
+     "task": "Was reimt sich?",
+     "prompt": "Maus",
+     "pic": "🐭",
+     "showText": true,
+     "say": "Was reimt sich auf Maus?",
+     "options": [
+      "Haus",
+      "Tisch",
+      "Ei"
+     ],
+     "answer": "Haus",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-reim-wal",
+     "task": "Was reimt sich?",
+     "prompt": "Wal",
+     "pic": "🐋",
+     "showText": true,
+     "say": "Was reimt sich auf Wal?",
+     "options": [
+      "Nest",
+      "Schal",
+      "Bus"
+     ],
+     "answer": "Schal",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-reim-bein",
+     "task": "Was reimt sich?",
+     "prompt": "Bein",
+     "pic": "🦵",
+     "showText": true,
+     "say": "Was reimt sich auf Bein?",
+     "options": [
+      "Dino",
+      "Buch",
+      "Schwein"
+     ],
+     "answer": "Schwein",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-reim-hand",
+     "task": "Was reimt sich?",
+     "prompt": "Hand",
+     "pic": "🖐️",
+     "showText": true,
+     "say": "Was reimt sich auf Hand?",
+     "options": [
+      "Mond",
+      "Wand",
+      "Rose"
+     ],
+     "answer": "Wand",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-reim-tanne",
+     "task": "Was reimt sich?",
+     "prompt": "Tanne",
+     "pic": "🌲",
+     "showText": true,
+     "say": "Was reimt sich auf Tanne?",
+     "options": [
+      "Kanne",
+      "Bär",
+      "Eis"
+     ],
+     "answer": "Kanne",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-reim-leiter",
+     "task": "Was reimt sich?",
+     "prompt": "Leiter",
+     "pic": "🪜",
+     "showText": true,
+     "say": "Was reimt sich auf Leiter?",
+     "options": [
+      "Reiter",
+      "Wolke",
+      "Dose"
+     ],
+     "answer": "Reiter",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-reim-meise",
+     "task": "Was reimt sich?",
+     "prompt": "Meise",
+     "pic": "🐦",
+     "showText": true,
+     "say": "Was reimt sich auf Meise?",
+     "options": [
+      "Bus",
+      "Reise",
+      "Schuh"
+     ],
+     "answer": "Reise",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-reim-kuchen",
+     "task": "Was reimt sich?",
+     "prompt": "Kuchen",
+     "pic": "🍰",
+     "showText": true,
+     "say": "Was reimt sich auf Kuchen?",
+     "options": [
+      "Banane",
+      "suchen",
+      "Ei"
+     ],
+     "answer": "suchen",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-reim-rabe",
+     "task": "Was reimt sich?",
+     "prompt": "Rabe",
+     "pic": "🐦",
+     "showText": true,
+     "say": "Was reimt sich auf Rabe?",
+     "options": [
+      "Gabe",
+      "Nase",
+      "Wal"
+     ],
+     "answer": "Gabe",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-reim-ball",
+     "task": "Was reimt sich?",
+     "prompt": "Ball",
+     "pic": "⚽",
+     "showText": true,
+     "say": "Was reimt sich auf Ball?",
+     "options": [
+      "Rose",
+      "Buch",
+      "Stall"
+     ],
+     "answer": "Stall",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "ein oder eine?",
+   "icon": "☝️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-buch",
+     "task": "ein oder eine?",
+     "prompt": "_ Buch",
+     "pic": "📖",
+     "showText": true,
+     "say": "Buch. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-krone",
+     "task": "ein oder eine?",
+     "prompt": "_ Krone",
+     "pic": "👑",
+     "showText": true,
+     "say": "Krone. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "eine",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-flasche",
+     "task": "ein oder eine?",
+     "prompt": "_ Flasche",
+     "pic": "🍾",
+     "showText": true,
+     "say": "Flasche. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "eine",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-ei",
+     "task": "ein oder eine?",
+     "prompt": "_ Ei",
+     "pic": "🥚",
+     "showText": true,
+     "say": "Ei. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-ball",
+     "task": "ein oder eine?",
+     "prompt": "_ Ball",
+     "pic": "⚽",
+     "showText": true,
+     "say": "Ball. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-banane",
+     "task": "ein oder eine?",
+     "prompt": "_ Banane",
+     "pic": "🍌",
+     "showText": true,
+     "say": "Banane. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "eine",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-auto",
+     "task": "ein oder eine?",
+     "prompt": "_ Auto",
+     "pic": "🚗",
+     "showText": true,
+     "say": "Auto. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-eis",
+     "task": "ein oder eine?",
+     "prompt": "_ Eis",
+     "pic": "🍦",
+     "showText": true,
+     "say": "Eis. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-lampe",
+     "task": "ein oder eine?",
+     "prompt": "_ Lampe",
+     "pic": "💡",
+     "showText": true,
+     "say": "Lampe. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "eine",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-haus",
+     "task": "ein oder eine?",
+     "prompt": "_ Haus",
+     "pic": "🏠",
+     "showText": true,
+     "say": "Haus. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-tasse",
+     "task": "ein oder eine?",
+     "prompt": "_ Tasse",
+     "pic": "☕",
+     "showText": true,
+     "say": "Tasse. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "eine",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-leiter",
+     "task": "ein oder eine?",
+     "prompt": "_ Leiter",
+     "pic": "🪜",
+     "showText": true,
+     "say": "Leiter. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "eine",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-schere",
+     "task": "ein oder eine?",
+     "prompt": "_ Schere",
+     "pic": "✂️",
+     "showText": true,
+     "say": "Schere. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "eine",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-rose",
+     "task": "ein oder eine?",
+     "prompt": "_ Rose",
+     "pic": "🌹",
+     "showText": true,
+     "say": "Rose. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "eine",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-baum",
+     "task": "ein oder eine?",
+     "prompt": "_ Baum",
+     "pic": "🌳",
+     "showText": true,
+     "say": "Baum. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-ein-stuhl",
+     "task": "ein oder eine?",
+     "prompt": "_ Stuhl",
+     "pic": "🪑",
+     "showText": true,
+     "say": "Stuhl. Heißt es ein oder eine?",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Lang oder kurz?",
+   "icon": "🏠",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-dose",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Dose",
+     "pic": "🥫",
+     "showText": true,
+     "say": "Dose. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "lang",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Do-se: Das o klingt lang."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-schirm",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Schirm",
+     "pic": "☂️",
+     "showText": true,
+     "say": "Schirm. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "kurz",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Schirm: Das i klingt kurz."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-wolke",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Wolke",
+     "pic": "☁️",
+     "showText": true,
+     "say": "Wolke. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "kurz",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wol-ke: Das o klingt kurz."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-lama",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Lama",
+     "pic": "🦙",
+     "showText": true,
+     "say": "Lama. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "lang",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "La-ma: Das a klingt lang."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-tanne",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Tanne",
+     "pic": "🌲",
+     "showText": true,
+     "say": "Tanne. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "kurz",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Tan-ne: Das a klingt kurz."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-nadel",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Nadel",
+     "pic": "🪡",
+     "showText": true,
+     "say": "Nadel. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "lang",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Na-del: Das a klingt lang."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-winter",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Winter",
+     "pic": "⛄",
+     "showText": true,
+     "say": "Winter. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "kurz",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Win-ter: Das i klingt kurz. Es wohnt in Häuschen B."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-hose",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Hose",
+     "pic": "👖",
+     "showText": true,
+     "say": "Hose. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "lang",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Ho-se: Das o klingt lang."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-kiste",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Kiste",
+     "pic": "📦",
+     "showText": true,
+     "say": "Kiste. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "kurz",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Kis-te: Das i klingt kurz."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-rose",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Rose",
+     "pic": "🌹",
+     "showText": true,
+     "say": "Rose. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "lang",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Ro-se: Das o klingt lang. Es wohnt in Häuschen A."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-nase",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Nase",
+     "pic": "👃",
+     "showText": true,
+     "say": "Nase. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "lang",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Na-se: Das a klingt lang."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-mantel",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Mantel",
+     "pic": "🧥",
+     "showText": true,
+     "say": "Mantel. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "kurz",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Man-tel: Das a klingt kurz."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-schule",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Schule",
+     "pic": "🏫",
+     "showText": true,
+     "say": "Schule. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "lang",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Schu-le: Das u klingt lang."
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-lk-tinte",
+     "task": "Sprich das Wort langsam. Klingt der erste Selbstlaut lang oder kurz?",
+     "prompt": "Tinte",
+     "pic": "🖋️",
+     "showText": true,
+     "say": "Tinte. Klingt der erste Selbstlaut lang oder kurz?",
+     "options": [
+      "lang",
+      "kurz"
+     ],
+     "answer": "kurz",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Tin-te: Das i klingt kurz."
+    }
+   ]
+  },
+  {
+   "title": "Sätze lesen",
+   "icon": "📖",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-l2-satz-der-wal-ist-im-meer",
+     "task": "Lies den Satz. Welches Bild passt?",
+     "prompt": "Der Wal ist im Meer.",
+     "say": "Lies den Satz. Welches Bild passt?",
+     "options": [
+      "🦕",
+      "🚌",
+      "🐋"
+     ],
+     "answer": "🐋",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-satz-der-baer-ist-im-wald",
+     "task": "Lies den Satz. Welches Bild passt?",
+     "prompt": "Der Bär ist im Wald.",
+     "say": "Lies den Satz. Welches Bild passt?",
+     "options": [
+      "🐻",
+      "🌹",
+      "🚌"
+     ],
+     "answer": "🐻",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-satz-das-schaf-ist-auf-der-wiese",
+     "task": "Lies den Satz. Welches Bild passt?",
+     "prompt": "Das Schaf ist auf der Wiese.",
+     "say": "Lies den Satz. Welches Bild passt?",
+     "options": [
+      "🐑",
+      "🐋",
+      "🦕"
+     ],
+     "answer": "🐑",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-satz-mama-malt-eine-rose",
+     "task": "Lies den Satz. Welches Bild passt?",
+     "prompt": "Mama malt eine Rose.",
+     "say": "Lies den Satz. Welches Bild passt?",
+     "options": [
+      "🐌",
+      "🌹",
+      "📖"
+     ],
+     "answer": "🌹",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-satz-der-dino-ist-sehr-alt",
+     "task": "Lies den Satz. Welches Bild passt?",
+     "prompt": "Der Dino ist sehr alt.",
+     "say": "Lies den Satz. Welches Bild passt?",
+     "options": [
+      "🐻",
+      "🪺",
+      "🦕"
+     ],
+     "answer": "🦕",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-satz-das-eis-ist-lecker",
+     "task": "Lies den Satz. Welches Bild passt?",
+     "prompt": "Das Eis ist lecker.",
+     "say": "Lies den Satz. Welches Bild passt?",
+     "options": [
+      "🍦",
+      "🐻",
+      "🚌"
+     ],
+     "answer": "🍦",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-satz-wir-lesen-ein-buch",
+     "task": "Lies den Satz. Welches Bild passt?",
+     "prompt": "Wir lesen ein Buch.",
+     "say": "Lies den Satz. Welches Bild passt?",
+     "options": [
+      "🐋",
+      "📖",
+      "🦕"
+     ],
+     "answer": "📖",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-satz-der-bus-ist-rot",
+     "task": "Lies den Satz. Welches Bild passt?",
+     "prompt": "Der Bus ist rot.",
+     "say": "Lies den Satz. Welches Bild passt?",
+     "options": [
+      "🚌",
+      "🐌",
+      "🐋"
+     ],
+     "answer": "🚌",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-satz-die-schnecke-ist-langsam",
+     "task": "Lies den Satz. Welches Bild passt?",
+     "prompt": "Die Schnecke ist langsam.",
+     "say": "Lies den Satz. Welches Bild passt?",
+     "options": [
+      "🦕",
+      "🚌",
+      "🐌"
+     ],
+     "answer": "🐌",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-satz-lisa-hat-eine-krone",
+     "task": "Lies den Satz. Welches Bild passt?",
+     "prompt": "Lisa hat eine Krone.",
+     "say": "Lies den Satz. Welches Bild passt?",
+     "options": [
+      "🐻",
+      "📖",
+      "👑"
+     ],
+     "answer": "👑",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-satz-der-ball-ist-im-tor",
+     "task": "Lies den Satz. Welches Bild passt?",
+     "prompt": "Der Ball ist im Tor.",
+     "say": "Lies den Satz. Welches Bild passt?",
+     "options": [
+      "🐌",
+      "⚽",
+      "🍦"
+     ],
+     "answer": "⚽",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-l2-satz-im-nest-sind-eier",
+     "task": "Lies den Satz. Welches Bild passt?",
+     "prompt": "Im Nest sind Eier.",
+     "say": "Lies den Satz. Welches Bild passt?",
+     "options": [
+      "🪺",
+      "🚌",
+      "🐑"
+     ],
+     "answer": "🪺",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "k1-l2-foto",
+     "task": "Schreib drei Reimpaare in dein Heft, zum Beispiel Hase – Nase. Male ein Bild dazu.",
+     "say": "Schreib drei Reimpaare in dein Heft, zum Beispiel Hase und Nase. Male ein Bild dazu.",
+     "show": [
+      "Hase – Nase",
+      "Dose – Rose",
+      "Maus – Haus"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

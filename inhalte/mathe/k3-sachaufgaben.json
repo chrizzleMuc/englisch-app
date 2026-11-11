@@ -1,0 +1,308 @@
+{
+ "id": "m3-sachaufgaben",
+ "type": "schule",
+ "title_de": "Sachaufgaben",
+ "image": "🧾",
+ "color": "#c08a1e",
+ "lessons": [
+  {
+   "title": "Kann man das rechnen?",
+   "icon": "🤔",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-sach-kb-1",
+     "task": "Kann man die Frage mit den Zahlen beantworten?",
+     "prompt": "Ein Eis kostet 2 €. Lisa kauft 3 Eis. Wie viel muss sie bezahlen?",
+     "options": [
+      "ja",
+      "nein"
+     ],
+     "answer": "ja",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sach-kb-2",
+     "task": "Kann man die Frage mit den Zahlen beantworten?",
+     "prompt": "Familie Böhm geht ins Schwimmbad. Wie tief ist das Becken?",
+     "options": [
+      "ja",
+      "nein"
+     ],
+     "answer": "nein",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sach-kb-3",
+     "task": "Kann man die Frage mit den Zahlen beantworten?",
+     "prompt": "Ein Heft kostet 1 €. Wie alt ist die Lehrerin?",
+     "options": [
+      "ja",
+      "nein"
+     ],
+     "answer": "nein",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sach-kb-4",
+     "task": "Kann man die Frage mit den Zahlen beantworten?",
+     "prompt": "Tim hat 10 Murmeln und bekommt 5 dazu. Wie viele hat er jetzt?",
+     "options": [
+      "ja",
+      "nein"
+     ],
+     "answer": "ja",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sach-kb-5",
+     "task": "Kann man die Frage mit den Zahlen beantworten?",
+     "prompt": "Im Zoo leben 12 Affen. Wie heißt der Zoodirektor?",
+     "options": [
+      "ja",
+      "nein"
+     ],
+     "answer": "nein",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sach-kb-6",
+     "task": "Kann man die Frage mit den Zahlen beantworten?",
+     "prompt": "Ein Bus hat 40 Plätze. 31 sind besetzt. Wie viele sind frei?",
+     "options": [
+      "ja",
+      "nein"
+     ],
+     "answer": "ja",
+     "keepOrder": true,
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Welche Rechnung passt?",
+   "icon": "🧮",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-sach-ra-1",
+     "task": "Welche Rechnung passt?",
+     "prompt": "Lea kauft 3 Hefte für je 2 €.",
+     "options": [
+      "3 − 2",
+      "3 · 2",
+      "3 + 2"
+     ],
+     "answer": "3 · 2",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sach-ra-2",
+     "task": "Welche Rechnung passt?",
+     "prompt": "Max hat 50 €. Er kauft ein Spiel für 12 €.",
+     "options": [
+      "50 : 12",
+      "50 − 12",
+      "50 + 12"
+     ],
+     "answer": "50 − 12",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sach-ra-3",
+     "task": "Welche Rechnung passt?",
+     "prompt": "40 Bonbons werden an 5 Kinder verteilt.",
+     "options": [
+      "40 − 5",
+      "40 · 5",
+      "40 : 5"
+     ],
+     "answer": "40 : 5",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sach-ra-4",
+     "task": "Welche Rechnung passt?",
+     "prompt": "Oma gibt Ben 20 €. Er hatte schon 35 €.",
+     "options": [
+      "35 − 20",
+      "35 + 20",
+      "35 · 20"
+     ],
+     "answer": "35 + 20",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sach-ra-5",
+     "task": "Welche Rechnung passt?",
+     "prompt": "In einer Packung sind 6 Eier. Mama kauft 4 Packungen.",
+     "options": [
+      "4 · 6",
+      "6 + 4",
+      "6 − 4"
+     ],
+     "answer": "4 · 6",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sach-ra-6",
+     "task": "Welche Rechnung passt?",
+     "prompt": "Ein Weg ist 900 m lang. Mia ist schon 350 m gelaufen.",
+     "options": [
+      "900 − 350",
+      "350 − 900",
+      "900 + 350"
+     ],
+     "answer": "900 − 350",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Rechengeschichten 1",
+   "icon": "📖",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-sach-1",
+     "task": "Lies genau. Rechne und schreib nur die Zahl.",
+     "prompt": "Ein Kinoticket kostet 7 €. Rosa geht mit 3 Freundinnen ins Kino. Sie zahlt für alle vier. Wie viel Euro zahlt Rosa?",
+     "answer": "28",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-sach-2",
+     "task": "Lies genau. Rechne und schreib nur die Zahl.",
+     "prompt": "Im Schwimmbad kostet eine Tageskarte für Kinder 6 €. Drei Kinder gehen zusammen. Wie viel Euro zahlen sie zusammen?",
+     "answer": "18",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-sach-3",
+     "task": "Lies genau. Rechne und schreib nur die Zahl.",
+     "prompt": "Tom schwimmt 100 m. Lea schafft 25 m weniger als Tom. Wie viele Meter schwimmt Lea?",
+     "answer": "75",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-sach-4",
+     "task": "Lies genau. Rechne und schreib nur die Zahl.",
+     "prompt": "Simon hat 70 € gespart. Er kauft einen Drachen für 28 €. Wie viel Euro hat er noch?",
+     "answer": "42",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-sach-5",
+     "task": "Lies genau. Rechne und schreib nur die Zahl.",
+     "prompt": "Auf dem Parkplatz stehen 63 Autos in 9 gleich langen Reihen. Wie viele Autos stehen in einer Reihe?",
+     "answer": "7",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-sach-6",
+     "task": "Lies genau. Rechne und schreib nur die Zahl.",
+     "prompt": "An jedem Tisch sitzen 8 Kinder. Es gibt 6 Tische. Wie viele Kinder sitzen an den Tischen?",
+     "answer": "48",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Rechengeschichten 2",
+   "icon": "📖",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-sach-7",
+     "task": "Lies genau. Rechne und schreib nur die Zahl.",
+     "prompt": "Eine Schnur ist 35 m lang. Eine andere ist 15 m lang. Wie viele Meter sind die Schnüre zusammen lang?",
+     "answer": "50",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-sach-8",
+     "task": "Lies genau. Rechne und schreib nur die Zahl.",
+     "prompt": "Im Bus sitzen 82 Kinder. 26 steigen aus, 35 steigen ein. Wie viele Kinder sitzen jetzt im Bus?",
+     "answer": "91",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-sach-9",
+     "task": "Lies genau. Rechne und schreib nur die Zahl.",
+     "prompt": "Ein Spinne hat 8 Beine. Im Netz sitzen Spinnen mit zusammen 40 Beinen. Wie viele Spinnen sind es?",
+     "answer": "5",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-sach-10",
+     "task": "Lies genau. Rechne und schreib nur die Zahl.",
+     "prompt": "Papa kauft ein Bett für 478 €. Er hat 600 €. Wie viel Euro bleiben übrig?",
+     "answer": "122",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-sach-11",
+     "task": "Lies genau. Rechne und schreib nur die Zahl.",
+     "prompt": "Ein Schrank kostet 289 €, ein Regal 127 €. Wie viel Euro kosten beide zusammen?",
+     "answer": "416",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-sach-12",
+     "task": "Lies genau. Rechne und schreib nur die Zahl.",
+     "prompt": "24 Kinder teilen sich gleichmäßig auf 4 Gruppen auf. Wie viele Kinder sind in einer Gruppe?",
+     "answer": "6",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "m3-sach-foto",
+     "task": "Schreib eine eigene Rechengeschichte ins Heft. Schreib darunter Frage, Rechnung und Antwort (F, R, A).",
+     "say": "Schreib eine eigene Rechengeschichte mit Frage, Rechnung und Antwort.",
+     "show": [
+      "F: …",
+      "R: …",
+      "A: …"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 10
+  }
+ ]
+}

@@ -1,0 +1,888 @@
+{
+ "id": "d1-buchstaben2",
+ "type": "schule",
+ "title_de": "Neue Buchstaben: W, D, N, Sch, Ei, K, B",
+ "image": "🔤",
+ "color": "#c2549b",
+ "lessons": [
+  {
+   "title": "W und D",
+   "icon": "🐋",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-wurst",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Wurst",
+     "pic": "🌭",
+     "say": "Wurst. Womit fängt Wurst an?",
+     "options": [
+      "S s",
+      "W w",
+      "D d"
+     ],
+     "answer": "W w",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-dino",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Dino",
+     "pic": "🦕",
+     "say": "Dino. Womit fängt Dino an?",
+     "options": [
+      "K k",
+      "D d",
+      "T t"
+     ],
+     "answer": "D d",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-drache",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Drache",
+     "pic": "🐉",
+     "say": "Drache. Womit fängt Drache an?",
+     "options": [
+      "D d",
+      "N n",
+      "M m"
+     ],
+     "answer": "D d",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-wecker",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Wecker",
+     "pic": "⏰",
+     "say": "Wecker. Womit fängt Wecker an?",
+     "options": [
+      "W w",
+      "D d",
+      "S s"
+     ],
+     "answer": "W w",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-wuerfel",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Würfel",
+     "pic": "🎲",
+     "say": "Würfel. Womit fängt Würfel an?",
+     "options": [
+      "L l",
+      "S s",
+      "W w"
+     ],
+     "answer": "W w",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-delfin",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Delfin",
+     "pic": "🐬",
+     "say": "Delfin. Womit fängt Delfin an?",
+     "options": [
+      "D d",
+      "N n",
+      "T t"
+     ],
+     "answer": "D d",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-dusche",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Dusche",
+     "pic": "🚿",
+     "say": "Dusche. Womit fängt Dusche an?",
+     "options": [
+      "D d",
+      "B b",
+      "Ei ei"
+     ],
+     "answer": "D d",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-dose",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Dose",
+     "pic": "🥫",
+     "say": "Dose. Womit fängt Dose an?",
+     "options": [
+      "R r",
+      "M m",
+      "D d"
+     ],
+     "answer": "D d",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-wolf",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Wolf",
+     "pic": "🐺",
+     "say": "Wolf. Womit fängt Wolf an?",
+     "options": [
+      "D d",
+      "T t",
+      "W w"
+     ],
+     "answer": "W w",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-daumen",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Daumen",
+     "pic": "👍",
+     "say": "Daumen. Womit fängt Daumen an?",
+     "options": [
+      "W w",
+      "D d",
+      "N n"
+     ],
+     "answer": "D d",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-wal",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Wal",
+     "pic": "🐋",
+     "say": "Wal. Womit fängt Wal an?",
+     "options": [
+      "K k",
+      "Sch sch",
+      "W w"
+     ],
+     "answer": "W w",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-wolke",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Wolke",
+     "pic": "☁️",
+     "say": "Wolke. Womit fängt Wolke an?",
+     "options": [
+      "M m",
+      "W w",
+      "S s"
+     ],
+     "answer": "W w",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "N und Sch",
+   "icon": "🐑",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-schal",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Schal",
+     "pic": "🧣",
+     "say": "Schal. Womit fängt Schal an?",
+     "options": [
+      "S s",
+      "K k",
+      "Sch sch"
+     ],
+     "answer": "Sch sch",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-schuh",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Schuh",
+     "pic": "👟",
+     "say": "Schuh. Womit fängt Schuh an?",
+     "options": [
+      "Ei ei",
+      "M m",
+      "Sch sch"
+     ],
+     "answer": "Sch sch",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-schere",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Schere",
+     "pic": "✂️",
+     "say": "Schere. Womit fängt Schere an?",
+     "options": [
+      "T t",
+      "M m",
+      "Sch sch"
+     ],
+     "answer": "Sch sch",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-schluessel",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Schlüssel",
+     "pic": "🔑",
+     "say": "Schlüssel. Womit fängt Schlüssel an?",
+     "options": [
+      "K k",
+      "M m",
+      "Sch sch"
+     ],
+     "answer": "Sch sch",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-schwan",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Schwan",
+     "pic": "🦢",
+     "say": "Schwan. Womit fängt Schwan an?",
+     "options": [
+      "N n",
+      "W w",
+      "Sch sch"
+     ],
+     "answer": "Sch sch",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-note",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Note",
+     "pic": "🎵",
+     "say": "Note. Womit fängt Note an?",
+     "options": [
+      "L l",
+      "T t",
+      "N n"
+     ],
+     "answer": "N n",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-nuss",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Nuss",
+     "pic": "🥜",
+     "say": "Nuss. Womit fängt Nuss an?",
+     "options": [
+      "W w",
+      "M m",
+      "N n"
+     ],
+     "answer": "N n",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-schaf",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Schaf",
+     "pic": "🐑",
+     "say": "Schaf. Womit fängt Schaf an?",
+     "options": [
+      "L l",
+      "R r",
+      "Sch sch"
+     ],
+     "answer": "Sch sch",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-nase",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Nase",
+     "pic": "👃",
+     "say": "Nase. Womit fängt Nase an?",
+     "options": [
+      "N n",
+      "S s",
+      "Ei ei"
+     ],
+     "answer": "N n",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-schnecke",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Schnecke",
+     "pic": "🐌",
+     "say": "Schnecke. Womit fängt Schnecke an?",
+     "options": [
+      "Sch sch",
+      "K k",
+      "W w"
+     ],
+     "answer": "Sch sch",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-schirm",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Schirm",
+     "pic": "☂️",
+     "say": "Schirm. Womit fängt Schirm an?",
+     "options": [
+      "N n",
+      "Sch sch",
+      "M m"
+     ],
+     "answer": "Sch sch",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-nudeln",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Nudeln",
+     "pic": "🍝",
+     "say": "Nudeln. Womit fängt Nudeln an?",
+     "options": [
+      "Ei ei",
+      "D d",
+      "N n"
+     ],
+     "answer": "N n",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-nest",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Nest",
+     "pic": "🪺",
+     "say": "Nest. Womit fängt Nest an?",
+     "options": [
+      "N n",
+      "D d",
+      "B b"
+     ],
+     "answer": "N n",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Ei, K und B",
+   "icon": "🥚",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-eichel",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Eichel",
+     "pic": "🌰",
+     "say": "Eichel. Womit fängt Eichel an?",
+     "options": [
+      "R r",
+      "N n",
+      "Ei ei"
+     ],
+     "answer": "Ei ei",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-kaefer",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Käfer",
+     "pic": "🪲",
+     "say": "Käfer. Womit fängt Käfer an?",
+     "options": [
+      "Ei ei",
+      "R r",
+      "K k"
+     ],
+     "answer": "K k",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-kleid",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Kleid",
+     "pic": "👗",
+     "say": "Kleid. Womit fängt Kleid an?",
+     "options": [
+      "W w",
+      "D d",
+      "K k"
+     ],
+     "answer": "K k",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-ball",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Ball",
+     "pic": "⚽",
+     "say": "Ball. Womit fängt Ball an?",
+     "options": [
+      "Sch sch",
+      "W w",
+      "B b"
+     ],
+     "answer": "B b",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-buch",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Buch",
+     "pic": "📖",
+     "say": "Buch. Womit fängt Buch an?",
+     "options": [
+      "Ei ei",
+      "B b",
+      "K k"
+     ],
+     "answer": "B b",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-kirche",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Kirche",
+     "pic": "⛪",
+     "say": "Kirche. Womit fängt Kirche an?",
+     "options": [
+      "Ei ei",
+      "R r",
+      "K k"
+     ],
+     "answer": "K k",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-eimer",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Eimer",
+     "pic": "🪣",
+     "say": "Eimer. Womit fängt Eimer an?",
+     "options": [
+      "S s",
+      "Ei ei",
+      "Sch sch"
+     ],
+     "answer": "Ei ei",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-krone",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Krone",
+     "pic": "👑",
+     "say": "Krone. Womit fängt Krone an?",
+     "options": [
+      "S s",
+      "L l",
+      "K k"
+     ],
+     "answer": "K k",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-blume",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Blume",
+     "pic": "🌸",
+     "say": "Blume. Womit fängt Blume an?",
+     "options": [
+      "W w",
+      "S s",
+      "B b"
+     ],
+     "answer": "B b",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-kuchen",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Kuchen",
+     "pic": "🍰",
+     "say": "Kuchen. Womit fängt Kuchen an?",
+     "options": [
+      "K k",
+      "Ei ei",
+      "M m"
+     ],
+     "answer": "K k",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-eis",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Eis",
+     "pic": "🍦",
+     "say": "Eis. Womit fängt Eis an?",
+     "options": [
+      "N n",
+      "Ei ei",
+      "T t"
+     ],
+     "answer": "Ei ei",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-baer",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Bär",
+     "pic": "🐻",
+     "say": "Bär. Womit fängt Bär an?",
+     "options": [
+      "Ei ei",
+      "Sch sch",
+      "B b"
+     ],
+     "answer": "B b",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-brezel",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Brezel",
+     "pic": "🥨",
+     "say": "Brezel. Womit fängt Brezel an?",
+     "options": [
+      "K k",
+      "B b",
+      "R r"
+     ],
+     "answer": "B b",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-bus",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Bus",
+     "pic": "🚌",
+     "say": "Bus. Womit fängt Bus an?",
+     "options": [
+      "K k",
+      "D d",
+      "B b"
+     ],
+     "answer": "B b",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-ei",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Ei",
+     "pic": "🥚",
+     "say": "Ei. Womit fängt Ei an?",
+     "options": [
+      "N n",
+      "Ei ei",
+      "S s"
+     ],
+     "answer": "Ei ei",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-koffer",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Koffer",
+     "pic": "🧳",
+     "say": "Koffer. Womit fängt Koffer an?",
+     "options": [
+      "Sch sch",
+      "K k",
+      "N n"
+     ],
+     "answer": "K k",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-an-banane",
+     "task": "Womit fängt das Wort an?",
+     "prompt": "Banane",
+     "pic": "🍌",
+     "say": "Banane. Womit fängt Banane an?",
+     "options": [
+      "B b",
+      "Ei ei",
+      "D d"
+     ],
+     "answer": "B b",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Alles gemischt",
+   "icon": "🔁",
+   "pick": "k1-b2-an-",
+   "count": 12
+  },
+  {
+   "title": "D oder B?",
+   "icon": "🐻",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "k1-b2-db-banane",
+     "task": "D oder B? Was hörst du am Anfang?",
+     "prompt": "_anane",
+     "pic": "🍌",
+     "showText": true,
+     "say": "Banane. Hörst du D oder B?",
+     "options": [
+      "D",
+      "B"
+     ],
+     "answer": "B",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-db-delfin",
+     "task": "D oder B? Was hörst du am Anfang?",
+     "prompt": "_elfin",
+     "pic": "🐬",
+     "showText": true,
+     "say": "Delfin. Hörst du D oder B?",
+     "options": [
+      "D",
+      "B"
+     ],
+     "answer": "D",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-db-baer",
+     "task": "D oder B? Was hörst du am Anfang?",
+     "prompt": "_är",
+     "pic": "🐻",
+     "showText": true,
+     "say": "Bär. Hörst du D oder B?",
+     "options": [
+      "D",
+      "B"
+     ],
+     "answer": "B",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-db-buch",
+     "task": "D oder B? Was hörst du am Anfang?",
+     "prompt": "_uch",
+     "pic": "📖",
+     "showText": true,
+     "say": "Buch. Hörst du D oder B?",
+     "options": [
+      "D",
+      "B"
+     ],
+     "answer": "B",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-db-blume",
+     "task": "D oder B? Was hörst du am Anfang?",
+     "prompt": "_lume",
+     "pic": "🌸",
+     "showText": true,
+     "say": "Blume. Hörst du D oder B?",
+     "options": [
+      "D",
+      "B"
+     ],
+     "answer": "B",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-db-ball",
+     "task": "D oder B? Was hörst du am Anfang?",
+     "prompt": "_all",
+     "pic": "⚽",
+     "showText": true,
+     "say": "Ball. Hörst du D oder B?",
+     "options": [
+      "D",
+      "B"
+     ],
+     "answer": "B",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-db-dose",
+     "task": "D oder B? Was hörst du am Anfang?",
+     "prompt": "_ose",
+     "pic": "🥫",
+     "showText": true,
+     "say": "Dose. Hörst du D oder B?",
+     "options": [
+      "D",
+      "B"
+     ],
+     "answer": "D",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-db-dino",
+     "task": "D oder B? Was hörst du am Anfang?",
+     "prompt": "_ino",
+     "pic": "🦕",
+     "showText": true,
+     "say": "Dino. Hörst du D oder B?",
+     "options": [
+      "D",
+      "B"
+     ],
+     "answer": "D",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-db-daumen",
+     "task": "D oder B? Was hörst du am Anfang?",
+     "prompt": "_aumen",
+     "pic": "👍",
+     "showText": true,
+     "say": "Daumen. Hörst du D oder B?",
+     "options": [
+      "D",
+      "B"
+     ],
+     "answer": "D",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-db-drache",
+     "task": "D oder B? Was hörst du am Anfang?",
+     "prompt": "_rache",
+     "pic": "🐉",
+     "showText": true,
+     "say": "Drache. Hörst du D oder B?",
+     "options": [
+      "D",
+      "B"
+     ],
+     "answer": "D",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-db-bus",
+     "task": "D oder B? Was hörst du am Anfang?",
+     "prompt": "_us",
+     "pic": "🚌",
+     "showText": true,
+     "say": "Bus. Hörst du D oder B?",
+     "options": [
+      "D",
+      "B"
+     ],
+     "answer": "B",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "k1-b2-db-dusche",
+     "task": "D oder B? Was hörst du am Anfang?",
+     "prompt": "_usche",
+     "pic": "🚿",
+     "showText": true,
+     "say": "Dusche. Hörst du D oder B?",
+     "options": [
+      "D",
+      "B"
+     ],
+     "answer": "D",
+     "keepOrder": true,
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "k1-b2-foto",
+     "task": "Schreib je eine Reihe W w, D d, N n, Sch sch, Ei ei, K k und B b in dein Heft. Schön langsam!",
+     "say": "Schreib je eine Reihe W, D, N, Sch, Ei, K und B in dein Heft. Groß und klein. Schön langsam!",
+     "show": [
+      "W w",
+      "D d",
+      "N n",
+      "Sch sch",
+      "Ei ei",
+      "K k",
+      "B b"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

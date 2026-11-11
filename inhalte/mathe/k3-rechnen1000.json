@@ -1,0 +1,583 @@
+{
+ "id": "m3-rechnen1000",
+ "type": "schule",
+ "title_de": "Plus und minus bis 1000",
+ "image": "💯",
+ "color": "#e76f51",
+ "lessons": [
+  {
+   "title": "Plus mit Zehnern",
+   "icon": "➕",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-r1000-293p20",
+     "task": "Rechne.",
+     "prompt": "293 + 20 =",
+     "answer": "313",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-147p70",
+     "task": "Rechne.",
+     "prompt": "147 + 70 =",
+     "answer": "217",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-298p70",
+     "task": "Rechne.",
+     "prompt": "298 + 70 =",
+     "answer": "368",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-724p90",
+     "task": "Rechne.",
+     "prompt": "724 + 90 =",
+     "answer": "814",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-562p40",
+     "task": "Rechne.",
+     "prompt": "562 + 40 =",
+     "answer": "602",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-397p80",
+     "task": "Rechne.",
+     "prompt": "397 + 80 =",
+     "answer": "477",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-286p60",
+     "task": "Rechne.",
+     "prompt": "286 + 60 =",
+     "answer": "346",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-751p90",
+     "task": "Rechne.",
+     "prompt": "751 + 90 =",
+     "answer": "841",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-376p90",
+     "task": "Rechne.",
+     "prompt": "376 + 90 =",
+     "answer": "466",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-786p30",
+     "task": "Rechne.",
+     "prompt": "786 + 30 =",
+     "answer": "816",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Minus mit Zehnern",
+   "icon": "➖",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-r1000-604m50",
+     "task": "Rechne.",
+     "prompt": "604 − 50 =",
+     "answer": "554",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-519m20",
+     "task": "Rechne.",
+     "prompt": "519 − 20 =",
+     "answer": "499",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-332m40",
+     "task": "Rechne.",
+     "prompt": "332 − 40 =",
+     "answer": "292",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-930m80",
+     "task": "Rechne.",
+     "prompt": "930 − 80 =",
+     "answer": "850",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-650m60",
+     "task": "Rechne.",
+     "prompt": "650 − 60 =",
+     "answer": "590",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-916m20",
+     "task": "Rechne.",
+     "prompt": "916 − 20 =",
+     "answer": "896",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-121m90",
+     "task": "Rechne.",
+     "prompt": "121 − 90 =",
+     "answer": "31",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-925m50",
+     "task": "Rechne.",
+     "prompt": "925 − 50 =",
+     "answer": "875",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-840m80",
+     "task": "Rechne.",
+     "prompt": "840 − 80 =",
+     "answer": "760",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-730m40",
+     "task": "Rechne.",
+     "prompt": "730 − 40 =",
+     "answer": "690",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Plus über den Hunderter",
+   "icon": "🚀",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-r1000-535p190",
+     "task": "Rechne.",
+     "prompt": "535 + 190 =",
+     "answer": "725",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-439p184",
+     "task": "Rechne.",
+     "prompt": "439 + 184 =",
+     "answer": "623",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-375p374",
+     "task": "Rechne.",
+     "prompt": "375 + 374 =",
+     "answer": "749",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-164p187",
+     "task": "Rechne.",
+     "prompt": "164 + 187 =",
+     "answer": "351",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-292p110",
+     "task": "Rechne.",
+     "prompt": "292 + 110 =",
+     "answer": "402",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-319p186",
+     "task": "Rechne.",
+     "prompt": "319 + 186 =",
+     "answer": "505",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-470p248",
+     "task": "Rechne.",
+     "prompt": "470 + 248 =",
+     "answer": "718",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-650p159",
+     "task": "Rechne.",
+     "prompt": "650 + 159 =",
+     "answer": "809",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-194p388",
+     "task": "Rechne.",
+     "prompt": "194 + 388 =",
+     "answer": "582",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-271p269",
+     "task": "Rechne.",
+     "prompt": "271 + 269 =",
+     "answer": "540",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Minus über den Hunderter",
+   "icon": "🛝",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-r1000-623m189",
+     "task": "Rechne.",
+     "prompt": "623 − 189 =",
+     "answer": "434",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-715m129",
+     "task": "Rechne.",
+     "prompt": "715 − 129 =",
+     "answer": "586",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-869m188",
+     "task": "Rechne.",
+     "prompt": "869 − 188 =",
+     "answer": "681",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-778m280",
+     "task": "Rechne.",
+     "prompt": "778 − 280 =",
+     "answer": "498",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-376m285",
+     "task": "Rechne.",
+     "prompt": "376 − 285 =",
+     "answer": "91",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-600m254",
+     "task": "Rechne.",
+     "prompt": "600 − 254 =",
+     "answer": "346",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-416m227",
+     "task": "Rechne.",
+     "prompt": "416 − 227 =",
+     "answer": "189",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-310m162",
+     "task": "Rechne.",
+     "prompt": "310 − 162 =",
+     "answer": "148",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-930m148",
+     "task": "Rechne.",
+     "prompt": "930 − 148 =",
+     "answer": "782",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-605m196",
+     "task": "Rechne.",
+     "prompt": "605 − 196 =",
+     "answer": "409",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Ergänzen",
+   "icon": "❓",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-r1000-erg-810-1000",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "810 + _ = 1000",
+     "answer": "190",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-erg-281-600",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "281 + _ = 600",
+     "answer": "319",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-erg-319-1000",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "319 + _ = 1000",
+     "answer": "681",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-erg-545-1000",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "545 + _ = 1000",
+     "answer": "455",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-erg-651-1000",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "651 + _ = 1000",
+     "answer": "349",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-erg-409-1000",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "409 + _ = 1000",
+     "answer": "591",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-erg-390-400",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "390 + _ = 400",
+     "answer": "10",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r1000-erg-592-1000",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "592 + _ = 1000",
+     "answer": "408",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Überschlagen",
+   "icon": "🤔",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-r1000-ub-265--160",
+     "task": "Welcher Überschlag passt am besten?",
+     "prompt": "265 − 160",
+     "options": [
+      "260 − 170",
+      "260 − 160",
+      "250 − 160"
+     ],
+     "answer": "260 − 160",
+     "explain": "Runde beide Zahlen auf Zehner."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-r1000-ub-542-p-32",
+     "task": "Welcher Überschlag passt am besten?",
+     "prompt": "542 + 32",
+     "options": [
+      "500 + 40",
+      "550 + 30",
+      "540 + 30"
+     ],
+     "answer": "540 + 30",
+     "explain": "Runde beide Zahlen auf Zehner."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-r1000-ub-286--18",
+     "task": "Welcher Überschlag passt am besten?",
+     "prompt": "286 − 18",
+     "options": [
+      "290 − 30",
+      "280 − 20",
+      "290 − 20"
+     ],
+     "answer": "290 − 20",
+     "explain": "Runde beide Zahlen auf Zehner."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-r1000-ub-632--74",
+     "task": "Welcher Überschlag passt am besten?",
+     "prompt": "632 − 74",
+     "options": [
+      "630 − 70",
+      "620 − 70",
+      "630 − 80"
+     ],
+     "answer": "630 − 70",
+     "explain": "Runde beide Zahlen auf Zehner."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-r1000-ub-670-p-112",
+     "task": "Welcher Überschlag passt am besten?",
+     "prompt": "670 + 112",
+     "options": [
+      "700 + 120",
+      "670 + 110",
+      "680 + 110"
+     ],
+     "answer": "670 + 110",
+     "explain": "Runde beide Zahlen auf Zehner."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-r1000-ub-705--136",
+     "task": "Welcher Überschlag passt am besten?",
+     "prompt": "705 − 136",
+     "options": [
+      "700 − 150",
+      "700 − 140",
+      "690 − 140"
+     ],
+     "answer": "700 − 140",
+     "explain": "Runde beide Zahlen auf Zehner."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-r1000-ub-247--117",
+     "task": "Welcher Überschlag passt am besten?",
+     "prompt": "247 − 117",
+     "options": [
+      "250 − 120",
+      "250 − 130",
+      "240 − 120"
+     ],
+     "answer": "250 − 120",
+     "explain": "Runde beide Zahlen auf Zehner."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-r1000-ub-203--108",
+     "task": "Welcher Überschlag passt am besten?",
+     "prompt": "203 − 108",
+     "options": [
+      "190 − 110",
+      "200 − 110",
+      "200 − 120"
+     ],
+     "answer": "200 − 110",
+     "explain": "Runde beide Zahlen auf Zehner."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-r1000-ub-736--104",
+     "task": "Welcher Überschlag passt am besten?",
+     "prompt": "736 − 104",
+     "options": [
+      "730 − 100",
+      "740 − 110",
+      "740 − 100"
+     ],
+     "answer": "740 − 100",
+     "explain": "Runde beide Zahlen auf Zehner."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-r1000-ub-630-p-49",
+     "task": "Welcher Überschlag passt am besten?",
+     "prompt": "630 + 49",
+     "options": [
+      "600 + 60",
+      "640 + 50",
+      "630 + 50"
+     ],
+     "answer": "630 + 50",
+     "explain": "Runde beide Zahlen auf Zehner."
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "m3-r1000-foto",
+     "task": "Rechne im Heft auf deinem Weg: 575 + 130, 585 + 240, 536 − 270, 450 − 190. Schreib zuerst den Überschlag.",
+     "say": "Rechne im Heft. Schreib zuerst den Überschlag.",
+     "show": [
+      "575 + 130",
+      "585 + 240",
+      "536 − 270",
+      "450 − 190"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 14
+  }
+ ]
+}

@@ -1,0 +1,665 @@
+{
+ "id": "m3-groessen",
+ "type": "schule",
+ "title_de": "Geld, Längen, Formen, Zufall",
+ "image": "📏",
+ "color": "#4f772d",
+ "lessons": [
+  {
+   "title": "Euro und Cent",
+   "icon": "💶",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-gr-ct-3-50",
+     "task": "Wie viele Cent sind das?",
+     "prompt": "3 € 50 ct = _ ct",
+     "answer": "350",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-ct-7-5",
+     "task": "Wie viele Cent sind das?",
+     "prompt": "7 € 5 ct = _ ct",
+     "answer": "705",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-ct-12-20",
+     "task": "Wie viele Cent sind das?",
+     "prompt": "12 € 20 ct = _ ct",
+     "answer": "1220",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-ct-1-99",
+     "task": "Wie viele Cent sind das?",
+     "prompt": "1 € 99 ct = _ ct",
+     "answer": "199",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-ct-4-40",
+     "task": "Wie viele Cent sind das?",
+     "prompt": "4 € 40 ct = _ ct",
+     "answer": "440",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-ct-9-9",
+     "task": "Wie viele Cent sind das?",
+     "prompt": "9 € 9 ct = _ ct",
+     "answer": "909",
+     "num": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-ec-250",
+     "task": "Wie schreibt man das mit Euro und Cent?",
+     "prompt": "250 ct",
+     "options": [
+      "2 € 50 ct",
+      "2 € 500 ct",
+      "25 € 0 ct"
+     ],
+     "answer": "2 € 50 ct"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-ec-805",
+     "task": "Wie schreibt man das mit Euro und Cent?",
+     "prompt": "805 ct",
+     "options": [
+      "8 € 5 ct",
+      "80 € 5 ct",
+      "8 € 50 ct"
+     ],
+     "answer": "8 € 5 ct"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-ec-120",
+     "task": "Wie schreibt man das mit Euro und Cent?",
+     "prompt": "120 ct",
+     "options": [
+      "1 € 200 ct",
+      "12 € 0 ct",
+      "1 € 20 ct"
+     ],
+     "answer": "1 € 20 ct"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-ec-999",
+     "task": "Wie schreibt man das mit Euro und Cent?",
+     "prompt": "999 ct",
+     "options": [
+      "9 € 990 ct",
+      "99 € 9 ct",
+      "9 € 99 ct"
+     ],
+     "answer": "9 € 99 ct"
+    }
+   ]
+  },
+  {
+   "title": "Meter, cm und mm",
+   "icon": "📏",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-gr-mcm-1-0",
+     "task": "Wie viele Zentimeter sind das?",
+     "prompt": "1 m = _ cm",
+     "answer": "100",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-mcm-3-20",
+     "task": "Wie viele Zentimeter sind das?",
+     "prompt": "3 m 20 cm = _ cm",
+     "answer": "320",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-mcm-2-5",
+     "task": "Wie viele Zentimeter sind das?",
+     "prompt": "2 m 5 cm = _ cm",
+     "answer": "205",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-mcm-5-40",
+     "task": "Wie viele Zentimeter sind das?",
+     "prompt": "5 m 40 cm = _ cm",
+     "answer": "540",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-mcm-7-4",
+     "task": "Wie viele Zentimeter sind das?",
+     "prompt": "7 m 4 cm = _ cm",
+     "answer": "704",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-cmmm-8-5",
+     "task": "Wie viele Millimeter sind das?",
+     "prompt": "8 cm 5 mm = _ mm",
+     "answer": "85",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-cmmm-10-2",
+     "task": "Wie viele Millimeter sind das?",
+     "prompt": "10 cm 2 mm = _ mm",
+     "answer": "102",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-cmmm-1-0",
+     "task": "Wie viele Millimeter sind das?",
+     "prompt": "1 cm = _ mm",
+     "answer": "10",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gr-cmmm-7-5",
+     "task": "Wie viele Millimeter sind das?",
+     "prompt": "7 cm 5 mm = _ mm",
+     "answer": "75",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Welche Einheit?",
+   "icon": "🐜",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-gr-einh-eine-ameise-ist-5--lang",
+     "task": "Welche Einheit passt?",
+     "prompt": "Eine Ameise ist 5 … lang.",
+     "options": [
+      "mm",
+      "cm",
+      "m",
+      "km"
+     ],
+     "answer": "mm",
+     "pic": "🐜",
+     "showText": true,
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-einh-eine-raupe-ist-4--lang",
+     "task": "Welche Einheit passt?",
+     "prompt": "Eine Raupe ist 4 … lang.",
+     "options": [
+      "mm",
+      "cm",
+      "m",
+      "km"
+     ],
+     "answer": "cm",
+     "pic": "🐛",
+     "showText": true,
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-einh-ein-wal-ist-30--lang",
+     "task": "Welche Einheit passt?",
+     "prompt": "Ein Wal ist 30 … lang.",
+     "options": [
+      "mm",
+      "cm",
+      "m",
+      "km"
+     ],
+     "answer": "m",
+     "pic": "🐋",
+     "showText": true,
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-einh-von-muenchen-nach-nuernb",
+     "task": "Welche Einheit passt?",
+     "prompt": "Von München nach Nürnberg sind es 170 ….",
+     "options": [
+      "mm",
+      "cm",
+      "m",
+      "km"
+     ],
+     "answer": "km",
+     "pic": "🚗",
+     "showText": true,
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-einh-ein-buch-ist-20--hoch",
+     "task": "Welche Einheit passt?",
+     "prompt": "Ein Buch ist 20 … hoch.",
+     "options": [
+      "mm",
+      "cm",
+      "m",
+      "km"
+     ],
+     "answer": "cm",
+     "pic": "📖",
+     "showText": true,
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-einh-ein-kind-ist-1--30-cm-gr",
+     "task": "Welche Einheit passt?",
+     "prompt": "Ein Kind ist 1 … 30 cm groß.",
+     "options": [
+      "mm",
+      "cm",
+      "m",
+      "km"
+     ],
+     "answer": "m",
+     "pic": "🧒",
+     "showText": true,
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-einh-ein-bleistift-ist-15--la",
+     "task": "Welche Einheit passt?",
+     "prompt": "Ein Bleistift ist 15 … lang.",
+     "options": [
+      "mm",
+      "cm",
+      "m",
+      "km"
+     ],
+     "answer": "cm",
+     "pic": "✏️",
+     "showText": true,
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-einh-ein-fussballfeld-ist-100",
+     "task": "Welche Einheit passt?",
+     "prompt": "Ein Fußballfeld ist 100 … lang.",
+     "options": [
+      "mm",
+      "cm",
+      "m",
+      "km"
+     ],
+     "answer": "m",
+     "pic": "⚽",
+     "showText": true,
+     "keepOrder": true,
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Symmetrie",
+   "icon": "🦋",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-h",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "H",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "2",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-a",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "A",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "1",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-f",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "F",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "0",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-x",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "X",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "2",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-e",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "E",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "1",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-z",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "Z",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "0",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-m",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "M",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "1",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-t",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "T",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "1",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-8",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "8",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "2",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-3",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "3",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "1",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-n",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "N",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "0",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-p",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "P",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "0",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-w",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "W",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "1",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-sym-u",
+     "task": "Wie viele Symmetrieachsen hat das Zeichen?",
+     "prompt": "U",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "1",
+     "keepOrder": true,
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Zufall",
+   "icon": "🎲",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-gr-zuf-1",
+     "task": "Sicher, möglich oder unmöglich?",
+     "prompt": "Du würfelst eine 7.",
+     "options": [
+      "sicher",
+      "möglich",
+      "unmöglich"
+     ],
+     "answer": "unmöglich",
+     "pic": "🎲",
+     "showText": true,
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-zuf-2",
+     "task": "Sicher, möglich oder unmöglich?",
+     "prompt": "Du würfelst eine Zahl größer als 0.",
+     "options": [
+      "sicher",
+      "möglich",
+      "unmöglich"
+     ],
+     "answer": "sicher",
+     "pic": "🎲",
+     "showText": true,
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-zuf-3",
+     "task": "Sicher, möglich oder unmöglich?",
+     "prompt": "Du würfelst eine 3.",
+     "options": [
+      "sicher",
+      "möglich",
+      "unmöglich"
+     ],
+     "answer": "möglich",
+     "pic": "🎲",
+     "showText": true,
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-zuf-4",
+     "task": "Sicher, möglich oder unmöglich?",
+     "prompt": "Du würfelst eine gerade Zahl.",
+     "options": [
+      "sicher",
+      "möglich",
+      "unmöglich"
+     ],
+     "answer": "möglich",
+     "pic": "🎲",
+     "showText": true,
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-zuf-5",
+     "task": "Sicher, möglich oder unmöglich?",
+     "prompt": "Du würfelst eine 0.",
+     "options": [
+      "sicher",
+      "möglich",
+      "unmöglich"
+     ],
+     "answer": "unmöglich",
+     "pic": "🎲",
+     "showText": true,
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-zuf-6",
+     "task": "Sicher, möglich oder unmöglich?",
+     "prompt": "Mit zwei Würfeln ist die Summe 14.",
+     "options": [
+      "sicher",
+      "möglich",
+      "unmöglich"
+     ],
+     "answer": "unmöglich",
+     "pic": "🎲",
+     "showText": true,
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-zuf-7",
+     "task": "Sicher, möglich oder unmöglich?",
+     "prompt": "Mit zwei Würfeln ist die Summe kleiner als 13.",
+     "options": [
+      "sicher",
+      "möglich",
+      "unmöglich"
+     ],
+     "answer": "sicher",
+     "pic": "🎲",
+     "showText": true,
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-gr-zuf-8",
+     "task": "Sicher, möglich oder unmöglich?",
+     "prompt": "Mit zwei Würfeln ist die Summe 7.",
+     "options": [
+      "sicher",
+      "möglich",
+      "unmöglich"
+     ],
+     "answer": "möglich",
+     "pic": "🎲",
+     "showText": true,
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

@@ -8,7 +8,7 @@ import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 19;
+const APP_VERSION = 20;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -774,7 +774,7 @@ STEPS.type = (lesson, step) => {
     ${q.choose ? `<div class="choices text-choices" id="ch">${q.choose.options.map((o) => `<button class="choice" data-v="${esc(o)}"><span class="word">${esc(o)}</span></button>`).join("")}</div>` : ""}
     <div class="type-row" id="tr" ${q.choose ? "hidden" : ""}>
       <span class="before" id="before">${esc(q.before || "")}</span>
-      <input id="ans" class="input type-input" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done">
+      <input id="ans" class="input type-input" ${q.num ? 'inputmode="numeric" pattern="[0-9]*"' : ""} autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done">
     </div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="check" ${q.choose ? "hidden" : ""}>Prüfen ✓</button>

@@ -1,0 +1,361 @@
+{
+ "id": "m3-rechnen100",
+ "type": "schule",
+ "title_de": "Plus und minus bis 100",
+ "image": "➕",
+ "color": "#2a9d8f",
+ "lessons": [
+  {
+   "title": "Plus",
+   "icon": "➕",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-r100-44p26",
+     "task": "Rechne.",
+     "prompt": "44 + 26 =",
+     "answer": "70",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-17p44",
+     "task": "Rechne.",
+     "prompt": "17 + 44 =",
+     "answer": "61",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-26p14",
+     "task": "Rechne.",
+     "prompt": "26 + 14 =",
+     "answer": "40",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-27p24",
+     "task": "Rechne.",
+     "prompt": "27 + 24 =",
+     "answer": "51",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-18p33",
+     "task": "Rechne.",
+     "prompt": "18 + 33 =",
+     "answer": "51",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-27p34",
+     "task": "Rechne.",
+     "prompt": "27 + 34 =",
+     "answer": "61",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-68p19",
+     "task": "Rechne.",
+     "prompt": "68 + 19 =",
+     "answer": "87",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-45p48",
+     "task": "Rechne.",
+     "prompt": "45 + 48 =",
+     "answer": "93",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-79p19",
+     "task": "Rechne.",
+     "prompt": "79 + 19 =",
+     "answer": "98",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-49p19",
+     "task": "Rechne.",
+     "prompt": "49 + 19 =",
+     "answer": "68",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Minus",
+   "icon": "➖",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-r100-61m42",
+     "task": "Rechne.",
+     "prompt": "61 − 42 =",
+     "answer": "19",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-70m44",
+     "task": "Rechne.",
+     "prompt": "70 − 44 =",
+     "answer": "26",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-76m29",
+     "task": "Rechne.",
+     "prompt": "76 − 29 =",
+     "answer": "47",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-66m27",
+     "task": "Rechne.",
+     "prompt": "66 − 27 =",
+     "answer": "39",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-55m27",
+     "task": "Rechne.",
+     "prompt": "55 − 27 =",
+     "answer": "28",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-65m28",
+     "task": "Rechne.",
+     "prompt": "65 − 28 =",
+     "answer": "37",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-35m18",
+     "task": "Rechne.",
+     "prompt": "35 − 18 =",
+     "answer": "17",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-51m47",
+     "task": "Rechne.",
+     "prompt": "51 − 47 =",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-61m52",
+     "task": "Rechne.",
+     "prompt": "61 − 52 =",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-92m34",
+     "task": "Rechne.",
+     "prompt": "92 − 34 =",
+     "answer": "58",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Ergänzen",
+   "icon": "❓",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-r100-erg-27-61",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "27 + _ = 61",
+     "answer": "34",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-erg-35-71",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "35 + _ = 71",
+     "answer": "36",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-erg-67-95",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "67 + _ = 95",
+     "answer": "28",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-erg-18-91",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "18 + _ = 91",
+     "answer": "73",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-erg-21-68",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "21 + _ = 68",
+     "answer": "47",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-erg-65-92",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "65 + _ = 92",
+     "answer": "27",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-erg-53-93",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "53 + _ = 93",
+     "answer": "40",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-erg-63-89",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "63 + _ = 89",
+     "answer": "26",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-erg-27-68",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "27 + _ = 68",
+     "answer": "41",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-erg-41-87",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "41 + _ = 87",
+     "answer": "46",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Zahlenmauern",
+   "icon": "🧱",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-r100-mauer-11-15-7",
+     "task": "Zahlenmauer: Zwei Steine zusammen ergeben den Stein darüber. Welche Zahl steht ganz oben?",
+     "prompt": "unten: 11 | 15 | 7",
+     "answer": "48",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-mauer-14-7-23",
+     "task": "Zahlenmauer: Zwei Steine zusammen ergeben den Stein darüber. Welche Zahl steht ganz oben?",
+     "prompt": "unten: 14 | 7 | 23",
+     "answer": "51",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-mauer-22-13-12",
+     "task": "Zahlenmauer: Zwei Steine zusammen ergeben den Stein darüber. Welche Zahl steht ganz oben?",
+     "prompt": "unten: 22 | 13 | 12",
+     "answer": "60",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-mauer-20-8-16",
+     "task": "Zahlenmauer: Zwei Steine zusammen ergeben den Stein darüber. Welche Zahl steht ganz oben?",
+     "prompt": "unten: 20 | 8 | 16",
+     "answer": "52",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-mauer-23-14-21",
+     "task": "Zahlenmauer: Zwei Steine zusammen ergeben den Stein darüber. Welche Zahl steht ganz oben?",
+     "prompt": "unten: 23 | 14 | 21",
+     "answer": "72",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-mauer-6-17-13",
+     "task": "Zahlenmauer: Zwei Steine zusammen ergeben den Stein darüber. Welche Zahl steht ganz oben?",
+     "prompt": "unten: 6 | 17 | 13",
+     "answer": "53",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-mauer-5-20-5",
+     "task": "Zahlenmauer: Zwei Steine zusammen ergeben den Stein darüber. Welche Zahl steht ganz oben?",
+     "prompt": "unten: 5 | 20 | 5",
+     "answer": "50",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-r100-mauer-16-21-21",
+     "task": "Zahlenmauer: Zwei Steine zusammen ergeben den Stein darüber. Welche Zahl steht ganz oben?",
+     "prompt": "unten: 16 | 21 | 21",
+     "answer": "79",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "m3-r100-foto",
+     "task": "Rechne im Heft und schreib deinen Rechenweg auf: 56 + 29, 37 + 48, 76 − 59, 82 − 47.",
+     "say": "Rechne im Heft und schreib deinen Rechenweg auf.",
+     "show": [
+      "56 + 29",
+      "37 + 48",
+      "76 − 59",
+      "82 − 47"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}
