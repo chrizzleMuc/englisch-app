@@ -46,6 +46,14 @@ Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede E
 
 Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.
 
+## Version 19
+- **Online-Speicherung** (Supabase, optional): Nach einmaliger Anmeldung per E-Mail gleicht sich der Lernstand automatisch zwischen Tablet und Handy ab. Ohne Internet läuft alles lokal weiter. Beide Geräte werden zusammengeführt statt überschrieben (pro Aufgabe gewinnt die zuletzt geübte). Fotos bleiben auf dem Gerät. Einrichtung: `docs/supabase.sql` im Supabase-SQL-Editor ausführen, dann Projekt-URL und Publishable-Key in `js/cloud-config.js` eintragen.
+- Offline-Speicher (Service Worker) repariert: `sw.js` war seit Version 16 versehentlich leer, die App lief dadurch ohne Internet nicht mehr.
+
+## Version 18
+- Elternbereich übersichtlicher: Alle Abschnitte sind zugeklappt und lassen sich einzeln aufklappen, „Freigeschaltet“ nach Kind und Fach, „Lernstand“ nach Fach und Stufe. Offene Abschnitte bleiben offen, solange die App läuft.
+- Häkchen-Beschriftungen im Elternbereich wieder lesbar (waren weiß auf hellem Grund).
+
 ## Version 17
 - **Namen** im Elternbereich eintragen: Die Startseite zeigt den Namen groß und die Klasse klein darunter. Die Namen stehen nur auf dem Gerät und in der Sicherungsdatei, nicht im Programmcode.
 

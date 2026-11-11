@@ -6,8 +6,9 @@ import { content, loadContent } from "./content.js";
 import * as store from "./store.js";
 import * as photos from "./photos.js";
 import { pic } from "./pics.js";
+import * as cloud from "./cloud.js";
 
-const APP_VERSION = 17;
+const APP_VERSION = 21;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -773,7 +774,7 @@ STEPS.type = (lesson, step) => {
     ${q.choose ? `<div class="choices text-choices" id="ch">${q.choose.options.map((o) => `<button class="choice" data-v="${esc(o)}"><span class="word">${esc(o)}</span></button>`).join("")}</div>` : ""}
     <div class="type-row" id="tr" ${q.choose ? "hidden" : ""}>
       <span class="before" id="before">${esc(q.before || "")}</span>
-      <input id="ans" class="input type-input" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done">
+      <input id="ans" class="input type-input" ${q.num ? 'inputmode="numeric" pattern="[0-9]*"' : ""} autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done">
     </div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="check" ${q.choose ? "hidden" : ""}>Prüfen ✓</button>
@@ -1225,11 +1226,10 @@ function troubleHtml() {
       }).join("")}
     </table>`;
   }).join("");
-  return `<section>
-    <h3>⚠️ Das klappt noch nicht</h3>
+  return `<details class="psec" data-key="sec-49314"><summary><h3>⚠️ Das klappt noch nicht</h3></summary>
     <p class="small">Aufgaben, die mindestens zweimal falsch waren. Sie kommen öfter dran (spätestens alle 2 Tage), bis sie dreimal hintereinander richtig waren.</p>
     ${rows}
-  </section>`;
+  </details>`;
 }
 
 async function fillPhotos() {
@@ -1277,6 +1277,15 @@ async function fillPhotos() {
   );
 }
 
+// Welche Kästen im Elternbereich offen sind, bleibt bis zum Schließen der App erhalten
+const openFolds = new Set();
+function rememberFolds() {
+  app.querySelectorAll("details[data-key]").forEach((d) => {
+    if (openFolds.has(d.dataset.key)) d.open = true;
+    d.addEventListener("toggle", () => (d.open ? openFolds.add(d.dataset.key) : openFolds.delete(d.dataset.key)));
+  });
+}
+
 function showParents(msg = "") {
   const v = voiceInfo();
   const saved = store.savedAt();
@@ -1288,28 +1297,26 @@ function showParents(msg = "") {
       </header>
       ${msg ? `<p class="notice">${msg}</p>` : ""}
       ${content.errors.length ? `<section class="errors"><h3>⚠️ Probleme mit den Inhalten</h3><ul>${content.errors.map((e) => `<li>${esc(e)}</li>`).join("")}</ul></section>` : ""}
-      <section>
-        <h3>Freigeschaltet</h3>
+      <details class="psec" data-key="sec-92848"><summary><h3>Freigeschaltet</h3></summary>
         <p class="small">Was soll das Kind sehen? Ausgeschaltetes verschwindet, der Fortschritt bleibt gespeichert.</p>
         <div class="unlock">
-          ${PROFILES.map((p) => `<div class="unlock-col">
-            <h4>${esc(pname(p))}</h4>
-            ${content.subjects.map((sub) => `
-              <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${esc(sub.title)}</label>
+          ${PROFILES.map((p) => `<details class="unlock-col fold" data-key="un-${p.id}"><summary><h4>${esc(pname(p))}</h4></summary>
+            ${content.subjects.map((sub) => `<details class="fold sub-fold" data-key="un-${p.id}-${sub.id}"><summary>${esc(sub.title)}${store.isEnabled(p.id, sub.id) ? "" : ` <span class="small">(aus)</span>`}</summary>
+              <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${esc(sub.title)} anzeigen</label>
               ${sub.stages.map((st) => `
                 <div class="unlock-topics">
                   <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${st.id}" ${store.isEnabled(p.id, st.id, stageDefault(p.id, st)) ? "checked" : ""}> ${esc(st.title)}</label>
                   <div class="unlock-topics">
                     ${st.units.map((u) => `<label class="field check"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${u.id}" ${store.isEnabled(p.id, u.id) ? "checked" : ""}> ${esc(u.title_de)}</label>`).join("")}
                   </div>
-                </div>`).join("")}`).join("")}
-          </div>`).join("")}
+                </div>`).join("")}</details>`).join("")}
+          </details>`).join("")}
         </div>
-      </section>
-      <section>
-        <h3>Lernstand</h3>
+      </details>
+      <details class="psec" data-key="sec-2996"><summary><h3>Lernstand</h3></summary>
         <p class="small">Lernkartei: Jede Aufgabe wandert bei richtiger Antwort einen Kasten weiter (1 → 5), bei falscher zurück in Kasten 1. Eine Einheit ist geschafft 🏆, wenn alles mindestens in Kasten 3 ist. Fällig heute: ${PROFILES.map((p) => `${esc(pname(p))} ${store.dueCards(p.id).length}`).join(", ")}.</p>
-        ${content.subjects.flatMap((s) => s.stages.flatMap((st) => st.units)).map((u) => `
+        ${content.subjects.flatMap((s) => s.stages.map((st) => ({ s, st }))).map(({ s, st }) => `<details class="fold sub-fold" data-key="ls-${st.id}"><summary>${esc(s.title)} · ${esc(st.title)}</summary>
+        ${st.units.map((u) => `
           <details class="unit-details">
             <summary>${esc(u.title_de)} <span class="small">${PROFILES.map((p) => {
               const n = boxCounts(p.id, u);
@@ -1317,67 +1324,66 @@ function showParents(msg = "") {
               return `${esc(pname(p))}: ${sure}/${unitIds(u).length} sicher${unitMastered(p.id, u) ? " 🏆" : ""}`;
             }).join(" · ")}</span></summary>
             ${unitTable(u)}
-          </details>`).join("")}
-      </section>
+          </details>`).join("")}</details>`).join("")}
+      </details>
       ${troubleHtml()}
-      <section>
-        <h3>📷 Fotomappe</h3>
+      <details class="psec" data-key="sec-59838"><summary><h3>📷 Fotomappe</h3></summary>
         <p class="small">Fotos von Heft-Aufgaben. „Nochmal“ gibt die Aufgabe zurück: Sie kommt beim nächsten Üben im Fach wieder. Die Fotos liegen nur auf diesem Gerät und sind nicht in der Sicherungsdatei.</p>
         <div id="photos"><p class="small">Lade Fotos …</p></div>
-      </section>
-      <section>
-        <h3>Fortschritt sichern und laden</h3>
+      </details>
+      ${cloud.configured() ? `<details class="psec" data-key="sec-cloud"><summary><h3>☁️ Online-Speicherung</h3></summary>
+        <div id="cloudbox">${cloudHtml()}</div>
+      </details>` : ""}
+      <details class="psec" data-key="sec-94573"><summary><h3>Fortschritt sichern und laden</h3></summary>
         <p class="small">„Sichern“ erstellt eine Datei. Leg sie in OneDrive ab. Auf dem anderen Gerät „Laden“ tippen und die Datei aus OneDrive wählen.</p>
         <div class="row">
           <button class="wide-btn" id="export">💾 Sichern</button>
           <label class="wide-btn file-btn">📂 Laden<input type="file" id="import" accept=".json,application/json" hidden></label>
         </div>
         ${saved ? `<p class="small">Zuletzt gespeichert: ${new Date(saved).toLocaleString("de-DE")}</p>` : ""}
-      </section>
-      <section>
-        <h3>👧👦 Namen</h3>
+      </details>
+      <details class="psec" data-key="sec-9942"><summary><h3>👧👦 Namen</h3></summary>
         <p class="small">Steht auf der Startseite statt der Klasse. Der Name bleibt auf diesem Gerät und kommt mit der Sicherungsdatei auf das andere Gerät.</p>
         ${PROFILES.map((p) => `<div class="voice-row"><span>${esc(p.title)}</span><input class="input name-input" data-p="${p.id}" value="${esc(store.profile(p.id).name || "")}" placeholder="Name" maxlength="20" autocomplete="off"></div>`).join("")}
-      </section>
-      <section>
-        <h3>🔊 Aufgaben vorlesen</h3>
+      </details>
+      <details class="psec" data-key="sec-33521"><summary><h3>🔊 Aufgaben vorlesen</h3></summary>
         <p class="small">Für Kinder, die noch nicht lesen können. <b>Vorlesen</b>: Jede Aufgabe wird automatisch vorgelesen. <b>Erst selbst lesen</b>: Das Kind soll die Aufgabe zuerst selbst lesen, der 🔊-Knopf geht erst nach ein paar Sekunden. Am Ende steht, wie viele Aufgaben es allein gelesen hat. <b>Aus</b>: keine deutsche Stimme. Englische Wörter werden immer vorgesprochen.</p>
         ${[...PROFILES, TEST_PROFILE].map((p) => `<div class="voice-row"><span>${esc(pname(p))}</span><select class="input voice-sel" data-p="${p.id}">
           ${[["auto", "Vorlesen"], ["selbst", "Erst selbst lesen"], ["aus", "Aus"]].map(([v, l]) => `<option value="${v}" ${voiceMode(p.id) === v ? "selected" : ""}>${l}</option>`).join("")}
         </select></div>`).join("")}
-      </section>
-      <section>
-        <h3>Stimme</h3>
+      </details>
+      <details class="psec" data-key="sec-18526"><summary><h3>Stimme</h3></summary>
         <p class="small">${v.supported ? (v.british ? `Britische Stimme gefunden: ${esc(v.name)}` : "Keine britische Stimme gefunden. Bitte in den Android-Einstellungen unter „Sprachausgabe“ (Google) die Sprache „Englisch (Vereinigtes Königreich)“ herunterladen, dann funktioniert sie auch offline.") : "Dieses Gerät unterstützt keine Sprachausgabe."} Liegt für einen Inhalt eine Aufnahme im Ordner audio/en, wird stattdessen die Aufnahme abgespielt.</p>
         <button class="wide-btn" id="test">🔊 Stimme testen</button>
-      </section>
-      <section>
-        <h3>🧪 Testmodus</h3>
+      </details>
+      <details class="psec" data-key="sec-78279"><summary><h3>🧪 Testmodus</h3></summary>
         <p class="small">Zum Ausprobieren ohne den Fortschritt der Kinder zu verändern. Der Testmodus sieht alle Fächer und Stufen und hat einen eigenen Lernstand. Fällig im Test: ${store.dueCards(TEST_PROFILE.id).length}.</p>
         <div class="row">
           <button class="wide-btn" id="testmode">🧪 Testmodus starten</button>
           <button class="wide-btn" id="testreset">Test-Fortschritt löschen</button>
         </div>
-      </section>
-      <section>
-        <h3>🔒 Eltern-Code</h3>
+      </details>
+      <details class="psec" data-key="sec-88268"><summary><h3>🔒 Eltern-Code</h3></summary>
         <p class="small">Der Code gilt nur auf diesem Gerät. Auf dem Handy legst du beim ersten Öffnen dort einen eigenen fest.</p>
         <button class="wide-btn" id="pinchange">Code ändern</button>
-      </section>
-      <section>
-        <h3>Zurücksetzen</h3>
+      </details>
+      <details class="psec" data-key="sec-93725"><summary><h3>Zurücksetzen</h3></summary>
         <button class="wide-btn danger" id="reset">Gesamten Fortschritt löschen</button>
-      </section>
+      </details>
       <p class="small center-text">Learnino Version ${APP_VERSION}</p>
     </div>`);
   $("back").onclick = showProfiles;
+  rememberFolds();
   fillPhotos();
+  wireCloud();
   on(".name-input", "change", (e) => {
     store.profile(e.target.dataset.p).name = e.target.value.trim();
+    store.touchPrefs(e.target.dataset.p);
     store.save();
   });
   on(".voice-sel", "change", (e) => {
     store.profile(e.target.dataset.p).voice = e.target.value;
+    store.touchPrefs(e.target.dataset.p);
     store.save();
   });
   on(".en-box", "change", (e) => {
@@ -1430,6 +1436,71 @@ function showParents(msg = "") {
   };
 }
 
+// ---------- Online-Speicherung (Elternbereich) ----------
+function cloudStatusText() {
+  const st = cloud.getStatus();
+  if (st.state === "busy") return "Wird abgeglichen …";
+  if (st.state === "offline") return "Kein Internet. Wird später abgeglichen.";
+  if (st.state === "error") return "⚠️ Abgleich hat nicht geklappt: " + st.error;
+  if (st.at) return "✅ Zuletzt abgeglichen: " + new Date(st.at).toLocaleString("de-DE", { dateStyle: "short", timeStyle: "short" });
+  return "";
+}
+
+function cloudHtml(note = "") {
+  if (cloud.loggedIn()) {
+    return `<p class="small">Angemeldet als <b>${esc(cloud.email())}</b>. Der Lernstand beider Kinder gleicht sich automatisch ab, sobald Internet da ist. Die Fotos bleiben auf dem Gerät.</p>
+      <p class="small" id="cloudstatus">${esc(cloudStatusText())}</p>
+      <div class="row">
+        <button class="wide-btn" id="cloudsync">🔄 Jetzt abgleichen</button>
+        <button class="wide-btn" id="cloudout">Abmelden</button>
+      </div>`;
+  }
+  const mail = cloud.email();
+  return `<p class="small">Melde dich auf jedem Gerät einmal mit derselben E-Mail an. Danach gleicht sich der Lernstand automatisch ab.</p>
+    ${note ? `<p class="notice">${esc(note)}</p>` : ""}
+    <input class="input" id="cloudmail" type="email" placeholder="E-Mail" value="${esc(mail)}" autocomplete="email">
+    <button class="wide-btn" id="cloudlink">📧 Anmelde-Link schicken</button>
+    ${mail ? `<p class="small">E-Mail öffnen und auf den Link tippen. Steht in der E-Mail ein Zahlencode, kannst du ihn auch hier eingeben:</p>
+    <div class="row"><input class="input" id="cloudcode" inputmode="numeric" placeholder="Code" autocomplete="one-time-code" maxlength="10"><button class="wide-btn" id="cloudverify">Anmelden</button></div>` : ""}`;
+}
+
+function wireCloud(note = "") {
+  const box = $("cloudbox");
+  if (!box) return;
+  box.innerHTML = cloudHtml(note);
+  const off = cloud.onChange(() => {
+    if (!document.body.contains(box)) return off();
+    const el = $("cloudstatus");
+    if (el) el.textContent = cloudStatusText();
+  });
+  if ($("cloudsync")) $("cloudsync").onclick = () => cloud.sync().then((ok) => ok && showParents("✅ Online abgeglichen."));
+  if ($("cloudout")) $("cloudout").onclick = () => {
+    if (confirm("Abmelden? Der Lernstand bleibt auf diesem Gerät, wird aber nicht mehr abgeglichen.")) {
+      cloud.logout();
+      wireCloud();
+    }
+  };
+  if ($("cloudlink")) $("cloudlink").onclick = async () => {
+    const mail = $("cloudmail").value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) return wireCloud("Bitte eine gültige E-Mail eingeben.");
+    $("cloudlink").disabled = true;
+    try {
+      await cloud.sendLink(mail);
+      wireCloud("E-Mail ist unterwegs. Bitte auf diesem Gerät öffnen und auf den Link tippen.");
+    } catch (e) {
+      wireCloud("Das hat nicht geklappt: " + e.message);
+    }
+  };
+  if ($("cloudverify")) $("cloudverify").onclick = async () => {
+    try {
+      await cloud.verifyCode(cloud.email(), $("cloudcode").value.trim());
+      showParents("✅ Angemeldet und abgeglichen.");
+    } catch (e) {
+      wireCloud("Code passt nicht: " + e.message);
+    }
+  };
+}
+
 // ---------- Start ----------
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   const hadController = !!navigator.serviceWorker.controller;
@@ -1445,4 +1516,23 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 }
 
 app.innerHTML = `<div class="screen center"><h1 class="logo">Learnino</h1><p class="sub">Einen Moment…</p></div>`;
-loadContent().then(showProfiles);
+// Online-Abgleich: Anmelde-Link auswerten, dann beim Start einmal abgleichen
+let loginNote = null;
+if (cloud.configured()) {
+  loginNote = cloud.handleRedirect();
+  cloud.start();
+}
+loadContent()
+  .then(() => (cloud.loggedIn() ? Promise.race([cloud.sync(), wait(4000)]) : null))
+  .then(() => {
+    showProfiles();
+    if (loginNote) toast(loginNote.ok ? "✅ " + loginNote.message + ". Der Lernstand wird jetzt online gespeichert." : "⚠️ Anmeldung fehlgeschlagen: " + loginNote.message);
+  });
+
+function toast(text) {
+  const el = document.createElement("div");
+  el.className = "toast";
+  el.textContent = text;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 6000);
+}

@@ -1,0 +1,538 @@
+{
+ "id": "m3-zahlen1000",
+ "type": "schule",
+ "title_de": "Zahlen bis 1000",
+ "image": "🔢",
+ "color": "#7b5cd6",
+ "lessons": [
+  {
+   "title": "Stellenwerte",
+   "icon": "🧮",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-z1000-st-597",
+     "task": "Schreib die Zahl.",
+     "prompt": "5 H 9 Z 7 E",
+     "answer": "597",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-st-935",
+     "task": "Schreib die Zahl.",
+     "prompt": "9 H 3 Z 5 E",
+     "answer": "935",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-st-802",
+     "task": "Schreib die Zahl.",
+     "prompt": "8 H 0 Z 2 E",
+     "answer": "802",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-st-575",
+     "task": "Schreib die Zahl.",
+     "prompt": "5 H 7 Z 5 E",
+     "answer": "575",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-st-407",
+     "task": "Schreib die Zahl.",
+     "prompt": "4 H 0 Z 7 E",
+     "answer": "407",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-st-944",
+     "task": "Schreib die Zahl.",
+     "prompt": "9 H 4 Z 4 E",
+     "answer": "944",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-st-895",
+     "task": "Schreib die Zahl.",
+     "prompt": "8 H 9 Z 5 E",
+     "answer": "895",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-st-110",
+     "task": "Schreib die Zahl.",
+     "prompt": "1 H 1 Z 0 E",
+     "answer": "110",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-wort-178",
+     "task": "Schreib die Zahl mit Ziffern.",
+     "prompt": "einhundertachtundsiebzig",
+     "answer": "178",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-wort-418",
+     "task": "Schreib die Zahl mit Ziffern.",
+     "prompt": "vierhundertachtzehn",
+     "answer": "418",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-wort-319",
+     "task": "Schreib die Zahl mit Ziffern.",
+     "prompt": "dreihundertneunzehn",
+     "answer": "319",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-wort-778",
+     "task": "Schreib die Zahl mit Ziffern.",
+     "prompt": "siebenhundertachtundsiebzig",
+     "answer": "778",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-wort-719",
+     "task": "Schreib die Zahl mit Ziffern.",
+     "prompt": "siebenhundertneunzehn",
+     "answer": "719",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-wort-184",
+     "task": "Schreib die Zahl mit Ziffern.",
+     "prompt": "einhundertvierundachtzig",
+     "answer": "184",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Vorgänger und Nachfolger",
+   "icon": "↔️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-z1000-nf-811",
+     "task": "Schreib den Nachfolger (die Zahl danach).",
+     "prompt": "Nachfolger von 811",
+     "answer": "812",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-vg-411",
+     "task": "Schreib den Vorgänger (die Zahl davor).",
+     "prompt": "Vorgänger von 411",
+     "answer": "410",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-nf-606",
+     "task": "Schreib den Nachfolger (die Zahl danach).",
+     "prompt": "Nachfolger von 606",
+     "answer": "607",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-vg-842",
+     "task": "Schreib den Vorgänger (die Zahl davor).",
+     "prompt": "Vorgänger von 842",
+     "answer": "841",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-nf-882",
+     "task": "Schreib den Nachfolger (die Zahl danach).",
+     "prompt": "Nachfolger von 882",
+     "answer": "883",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-vg-810",
+     "task": "Schreib den Vorgänger (die Zahl davor).",
+     "prompt": "Vorgänger von 810",
+     "answer": "809",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-vg-435",
+     "task": "Schreib den Vorgänger (die Zahl davor).",
+     "prompt": "Vorgänger von 435",
+     "answer": "434",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-nf-389",
+     "task": "Schreib den Nachfolger (die Zahl danach).",
+     "prompt": "Nachfolger von 389",
+     "answer": "390",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Vergleichen",
+   "icon": "⚖️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-z1000-vgl-803-548",
+     "task": "Größer, kleiner oder gleich?",
+     "prompt": "803  ?  548",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": ">",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-z1000-vgl-642-412",
+     "task": "Größer, kleiner oder gleich?",
+     "prompt": "642  ?  412",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": ">",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-z1000-vgl-569-669",
+     "task": "Größer, kleiner oder gleich?",
+     "prompt": "569  ?  669",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "<",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-z1000-vgl-847-354",
+     "task": "Größer, kleiner oder gleich?",
+     "prompt": "847  ?  354",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": ">",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-z1000-vgl-186-196",
+     "task": "Größer, kleiner oder gleich?",
+     "prompt": "186  ?  196",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "<",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-z1000-vgl-124-224",
+     "task": "Größer, kleiner oder gleich?",
+     "prompt": "124  ?  224",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "<",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-z1000-vgl-698-698",
+     "task": "Größer, kleiner oder gleich?",
+     "prompt": "698  ?  698",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "=",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-z1000-vgl-856-956",
+     "task": "Größer, kleiner oder gleich?",
+     "prompt": "856  ?  956",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "<",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-z1000-vgl-653-652",
+     "task": "Größer, kleiner oder gleich?",
+     "prompt": "653  ?  652",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": ">",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-z1000-vgl-280-379",
+     "task": "Größer, kleiner oder gleich?",
+     "prompt": "280  ?  379",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "<",
+     "keepOrder": true,
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Zählen in Schritten",
+   "icon": "👣",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-z1000-sr-700-10",
+     "task": "Zähle weiter. Welche Zahl kommt?",
+     "prompt": "700, 710, 720, _",
+     "answer": "730",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-sr-461-2",
+     "task": "Zähle weiter. Welche Zahl kommt?",
+     "prompt": "461, 463, 465, _",
+     "answer": "467",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-sr-812-3",
+     "task": "Zähle weiter. Welche Zahl kommt?",
+     "prompt": "812, 815, 818, _",
+     "answer": "821",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-sr-490--10",
+     "task": "Zähle weiter. Welche Zahl kommt?",
+     "prompt": "490, 480, 470, _",
+     "answer": "460",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-sr-955--3",
+     "task": "Zähle weiter. Welche Zahl kommt?",
+     "prompt": "955, 952, 949, _",
+     "answer": "946",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-sr-250-25",
+     "task": "Zähle weiter. Welche Zahl kommt?",
+     "prompt": "250, 275, 300, _",
+     "answer": "325",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-sr-188--2",
+     "task": "Zähle weiter. Welche Zahl kommt?",
+     "prompt": "188, 186, 184, _",
+     "answer": "182",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-sr-600-50",
+     "task": "Zähle weiter. Welche Zahl kommt?",
+     "prompt": "600, 650, 700, _",
+     "answer": "750",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Runden",
+   "icon": "🎯",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-z1000-rh-985",
+     "task": "Runde auf Hunderter.",
+     "prompt": "985 ≈",
+     "answer": "1000",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rh-392",
+     "task": "Runde auf Hunderter.",
+     "prompt": "392 ≈",
+     "answer": "400",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rh-940",
+     "task": "Runde auf Hunderter.",
+     "prompt": "940 ≈",
+     "answer": "900",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rh-123",
+     "task": "Runde auf Hunderter.",
+     "prompt": "123 ≈",
+     "answer": "100",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rh-329",
+     "task": "Runde auf Hunderter.",
+     "prompt": "329 ≈",
+     "answer": "300",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rh-634",
+     "task": "Runde auf Hunderter.",
+     "prompt": "634 ≈",
+     "answer": "600",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rh-161",
+     "task": "Runde auf Hunderter.",
+     "prompt": "161 ≈",
+     "answer": "200",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rh-664",
+     "task": "Runde auf Hunderter.",
+     "prompt": "664 ≈",
+     "answer": "700",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rz-281",
+     "task": "Runde auf Zehner.",
+     "prompt": "281 ≈",
+     "answer": "280",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rz-747",
+     "task": "Runde auf Zehner.",
+     "prompt": "747 ≈",
+     "answer": "750",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rz-437",
+     "task": "Runde auf Zehner.",
+     "prompt": "437 ≈",
+     "answer": "440",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rz-126",
+     "task": "Runde auf Zehner.",
+     "prompt": "126 ≈",
+     "answer": "130",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rz-841",
+     "task": "Runde auf Zehner.",
+     "prompt": "841 ≈",
+     "answer": "840",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-z1000-rz-581",
+     "task": "Runde auf Zehner.",
+     "prompt": "581 ≈",
+     "answer": "580",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 14
+  }
+ ]
+}

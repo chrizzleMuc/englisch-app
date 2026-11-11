@@ -1,0 +1,714 @@
+{
+ "id": "m3-einmaleins",
+ "type": "schule",
+ "title_de": "Einmaleins und Teilen",
+ "image": "✖️",
+ "color": "#3b6fd8",
+ "lessons": [
+  {
+   "title": "3er und 6er",
+   "icon": "3️⃣",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-1x1-4x3",
+     "task": "Rechne.",
+     "prompt": "4 · 3 =",
+     "answer": "12",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-5x3",
+     "task": "Rechne.",
+     "prompt": "5 · 3 =",
+     "answer": "15",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-9x3",
+     "task": "Rechne.",
+     "prompt": "9 · 3 =",
+     "answer": "27",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-3x3",
+     "task": "Rechne.",
+     "prompt": "3 · 3 =",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-2x3",
+     "task": "Rechne.",
+     "prompt": "2 · 3 =",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-10x3",
+     "task": "Rechne.",
+     "prompt": "10 · 3 =",
+     "answer": "30",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-10x6",
+     "task": "Rechne.",
+     "prompt": "10 · 6 =",
+     "answer": "60",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-3x6",
+     "task": "Rechne.",
+     "prompt": "3 · 6 =",
+     "answer": "18",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-2x6",
+     "task": "Rechne.",
+     "prompt": "2 · 6 =",
+     "answer": "12",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-4x6",
+     "task": "Rechne.",
+     "prompt": "4 · 6 =",
+     "answer": "24",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-5x6",
+     "task": "Rechne.",
+     "prompt": "5 · 6 =",
+     "answer": "30",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-7x6",
+     "task": "Rechne.",
+     "prompt": "7 · 6 =",
+     "answer": "42",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "4er und 8er",
+   "icon": "4️⃣",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-1x1-4x4",
+     "task": "Rechne.",
+     "prompt": "4 · 4 =",
+     "answer": "16",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-2x4",
+     "task": "Rechne.",
+     "prompt": "2 · 4 =",
+     "answer": "8",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-7x4",
+     "task": "Rechne.",
+     "prompt": "7 · 4 =",
+     "answer": "28",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-5x4",
+     "task": "Rechne.",
+     "prompt": "5 · 4 =",
+     "answer": "20",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-1x4",
+     "task": "Rechne.",
+     "prompt": "1 · 4 =",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-6x4",
+     "task": "Rechne.",
+     "prompt": "6 · 4 =",
+     "answer": "24",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-10x8",
+     "task": "Rechne.",
+     "prompt": "10 · 8 =",
+     "answer": "80",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-2x8",
+     "task": "Rechne.",
+     "prompt": "2 · 8 =",
+     "answer": "16",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-4x8",
+     "task": "Rechne.",
+     "prompt": "4 · 8 =",
+     "answer": "32",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-3x8",
+     "task": "Rechne.",
+     "prompt": "3 · 8 =",
+     "answer": "24",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-8x8",
+     "task": "Rechne.",
+     "prompt": "8 · 8 =",
+     "answer": "64",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-6x8",
+     "task": "Rechne.",
+     "prompt": "6 · 8 =",
+     "answer": "48",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "9er und 7er",
+   "icon": "9️⃣",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-1x1-9x9",
+     "task": "Rechne.",
+     "prompt": "9 · 9 =",
+     "answer": "81",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-1x9",
+     "task": "Rechne.",
+     "prompt": "1 · 9 =",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-4x9",
+     "task": "Rechne.",
+     "prompt": "4 · 9 =",
+     "answer": "36",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-6x9",
+     "task": "Rechne.",
+     "prompt": "6 · 9 =",
+     "answer": "54",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-8x9",
+     "task": "Rechne.",
+     "prompt": "8 · 9 =",
+     "answer": "72",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-10x9",
+     "task": "Rechne.",
+     "prompt": "10 · 9 =",
+     "answer": "90",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-2x7",
+     "task": "Rechne.",
+     "prompt": "2 · 7 =",
+     "answer": "14",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-5x7",
+     "task": "Rechne.",
+     "prompt": "5 · 7 =",
+     "answer": "35",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-9x7",
+     "task": "Rechne.",
+     "prompt": "9 · 7 =",
+     "answer": "63",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-3x7",
+     "task": "Rechne.",
+     "prompt": "3 · 7 =",
+     "answer": "21",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-7x7",
+     "task": "Rechne.",
+     "prompt": "7 · 7 =",
+     "answer": "49",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-8x7",
+     "task": "Rechne.",
+     "prompt": "8 · 7 =",
+     "answer": "56",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Welche Zahl fehlt?",
+   "icon": "❓",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-1x1-pl-10x8",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "_ · 8 = 80",
+     "answer": "10",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-pl-10x7",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "_ · 7 = 70",
+     "answer": "10",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-pl-3x8",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "_ · 8 = 24",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-pl-9x9",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "_ · 9 = 81",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-pl-3x9",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "_ · 9 = 27",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-pl-2x8",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "_ · 8 = 16",
+     "answer": "2",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-pl-4x7",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "_ · 7 = 28",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-pl-9x7",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "_ · 7 = 63",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-pl-9x4",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "_ · 4 = 36",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-pl-6x7",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "_ · 7 = 42",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-pl-8x8",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "_ · 8 = 64",
+     "answer": "8",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-pl-6x8",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "_ · 8 = 48",
+     "answer": "6",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Geteilt",
+   "icon": "➗",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-1x1-54d6",
+     "task": "Rechne.",
+     "prompt": "54 : 6 =",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-48d6",
+     "task": "Rechne.",
+     "prompt": "48 : 6 =",
+     "answer": "8",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-45d9",
+     "task": "Rechne.",
+     "prompt": "45 : 9 =",
+     "answer": "5",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-40d8",
+     "task": "Rechne.",
+     "prompt": "40 : 8 =",
+     "answer": "5",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-3d3",
+     "task": "Rechne.",
+     "prompt": "3 : 3 =",
+     "answer": "1",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-40d4",
+     "task": "Rechne.",
+     "prompt": "40 : 4 =",
+     "answer": "10",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-9d3",
+     "task": "Rechne.",
+     "prompt": "9 : 3 =",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-49d7",
+     "task": "Rechne.",
+     "prompt": "49 : 7 =",
+     "answer": "7",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-18d3",
+     "task": "Rechne.",
+     "prompt": "18 : 3 =",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-63d9",
+     "task": "Rechne.",
+     "prompt": "63 : 9 =",
+     "answer": "7",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-30d3",
+     "task": "Rechne.",
+     "prompt": "30 : 3 =",
+     "answer": "10",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-1x1-54d9",
+     "task": "Rechne.",
+     "prompt": "54 : 9 =",
+     "answer": "6",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Teilen mit Rest",
+   "icon": "🍪",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-1x1-rest-23d5",
+     "task": "Teile mit Rest. Was ist richtig?",
+     "prompt": "23 : 5 =",
+     "options": [
+      "4 R 3",
+      "5 R 3",
+      "4 R 2"
+     ],
+     "answer": "4 R 3",
+     "explain": "4 · 5 = 20, dann bleiben 3 übrig."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-1x1-rest-17d3",
+     "task": "Teile mit Rest. Was ist richtig?",
+     "prompt": "17 : 3 =",
+     "options": [
+      "5 R 1",
+      "5 R 2",
+      "4 R 5"
+     ],
+     "answer": "5 R 2",
+     "explain": "5 · 3 = 15, dann bleiben 2 übrig."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-1x1-rest-29d4",
+     "task": "Teile mit Rest. Was ist richtig?",
+     "prompt": "29 : 4 =",
+     "options": [
+      "8 R 1",
+      "7 R 1",
+      "7 R 0"
+     ],
+     "answer": "7 R 1",
+     "explain": "7 · 4 = 28, dann bleiben 1 übrig."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-1x1-rest-38d6",
+     "task": "Teile mit Rest. Was ist richtig?",
+     "prompt": "38 : 6 =",
+     "options": [
+      "6 R 3",
+      "6 R 2",
+      "6 R 1"
+     ],
+     "answer": "6 R 2",
+     "explain": "6 · 6 = 36, dann bleiben 2 übrig."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-1x1-rest-45d7",
+     "task": "Teile mit Rest. Was ist richtig?",
+     "prompt": "45 : 7 =",
+     "options": [
+      "6 R 3",
+      "6 R 4",
+      "7 R 3"
+     ],
+     "answer": "6 R 3",
+     "explain": "6 · 7 = 42, dann bleiben 3 übrig."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-1x1-rest-52d8",
+     "task": "Teile mit Rest. Was ist richtig?",
+     "prompt": "52 : 8 =",
+     "options": [
+      "6 R 5",
+      "6 R 4",
+      "7 R 4"
+     ],
+     "answer": "6 R 4",
+     "explain": "6 · 8 = 48, dann bleiben 4 übrig."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-1x1-rest-31d9",
+     "task": "Teile mit Rest. Was ist richtig?",
+     "prompt": "31 : 9 =",
+     "options": [
+      "3 R 3",
+      "3 R 4",
+      "3 R 5"
+     ],
+     "answer": "3 R 4",
+     "explain": "3 · 9 = 27, dann bleiben 4 übrig."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-1x1-rest-26d4",
+     "task": "Teile mit Rest. Was ist richtig?",
+     "prompt": "26 : 4 =",
+     "options": [
+      "6 R 1",
+      "6 R 2",
+      "6 R 3"
+     ],
+     "answer": "6 R 2",
+     "explain": "6 · 4 = 24, dann bleiben 2 übrig."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-1x1-rest-19d6",
+     "task": "Teile mit Rest. Was ist richtig?",
+     "prompt": "19 : 6 =",
+     "options": [
+      "3 R 0",
+      "3 R 2",
+      "3 R 1"
+     ],
+     "answer": "3 R 1",
+     "explain": "3 · 6 = 18, dann bleiben 1 übrig."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-1x1-rest-47d5",
+     "task": "Teile mit Rest. Was ist richtig?",
+     "prompt": "47 : 5 =",
+     "options": [
+      "9 R 2",
+      "9 R 1",
+      "10 R 2"
+     ],
+     "answer": "9 R 2",
+     "explain": "9 · 5 = 45, dann bleiben 2 übrig."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-1x1-rest-58d9",
+     "task": "Teile mit Rest. Was ist richtig?",
+     "prompt": "58 : 9 =",
+     "options": [
+      "7 R 4",
+      "6 R 5",
+      "6 R 4"
+     ],
+     "answer": "6 R 4",
+     "explain": "6 · 9 = 54, dann bleiben 4 übrig."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-1x1-rest-34d8",
+     "task": "Teile mit Rest. Was ist richtig?",
+     "prompt": "34 : 8 =",
+     "options": [
+      "4 R 1",
+      "4 R 2",
+      "5 R 2"
+     ],
+     "answer": "4 R 2",
+     "explain": "4 · 8 = 32, dann bleiben 2 übrig."
+    }
+   ]
+  },
+  {
+   "title": "Gemischt",
+   "icon": "🔁",
+   "pick": "m3-1x1-",
+   "count": 15
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "m3-1x1-foto",
+     "task": "Schreib die 7er-Reihe und die 8er-Reihe vollständig in dein Heft: 1 · 7 = 7 bis 10 · 7 = 70.",
+     "say": "Schreib die 7er-Reihe und die 8er-Reihe in dein Heft.",
+     "show": [
+      "1 · 7 = 7",
+      "2 · 7 = 14",
+      "…",
+      "10 · 8 = 80"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

@@ -651,3 +651,25 @@ table.words td .emo { font-size: 28px; }
 /* ---- Version 17: Namen ---- */
 .profile-card .pclass { font-size: 15px; font-weight: 700; color: var(--card-muted); }
 .voice-row .name-input { max-width: 220px; }
+
+/* ---- Version 18: ausklappbarer Elternbereich ---- */
+.parents details.psec { background: var(--card); border-radius: 16px; padding: 4px 16px; box-shadow: var(--shadow); }
+.parents details.psec[open] { padding-bottom: 16px; }
+.parents details > summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+.parents details > summary::-webkit-details-marker { display: none; }
+.parents details > summary::before { content: "▸"; color: var(--card-ink); font-size: 18px; transition: transform .15s; flex: none; }
+.parents details[open] > summary::before { transform: rotate(90deg); }
+.parents details.psec > summary h3 { margin: 12px 0; }
+.parents .fold > summary h4 { margin: 8px 0; }
+.parents .sub-fold { margin: 6px 0 6px 6px; }
+.parents .sub-fold > summary { font-weight: 800; color: var(--card-ink); padding: 6px 0; }
+.parents .sub-fold > .unit-details { margin-left: 14px; }
+.parents .field, .parents .unlock-topics .field { color: var(--card-ink); }
+.parents .unit-details > summary { flex-wrap: wrap; font-size: 17px; }
+.parents .unit-details > summary .small { flex-basis: 100%; margin-left: 26px; }
+
+/* ---- Version 19: Online-Speicherung ---- */
+.toast { position: fixed; left: 16px; right: 16px; bottom: 20px; z-index: 50; background: #fff3c4; color: #3a1f00; font-weight: 700;
+  border-radius: 14px; padding: 12px 16px; box-shadow: 0 8px 24px rgba(30,0,80,.3); text-align: center; }
+#cloudbox .input { width: 100%; margin: 6px 0; }
+#cloudbox .row .input { flex: 1; margin: 0; }
