@@ -787,22 +787,6 @@
     },
     {
      "kind": "choice",
-     "id": "k1-l2-reim-rabe",
-     "task": "Was reimt sich?",
-     "prompt": "Rabe",
-     "pic": "🐦",
-     "showText": true,
-     "say": "Was reimt sich auf Rabe?",
-     "options": [
-      "Gabe",
-      "Nase",
-      "Wal"
-     ],
-     "answer": "Gabe",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
      "id": "k1-l2-reim-ball",
      "task": "Was reimt sich?",
      "prompt": "Ball",

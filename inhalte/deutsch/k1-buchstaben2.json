@@ -11,21 +11,6 @@
    "tasks": [
     {
      "kind": "choice",
-     "id": "k1-b2-an-wurst",
-     "task": "Womit fängt das Wort an?",
-     "prompt": "Wurst",
-     "pic": "🌭",
-     "say": "Wurst. Womit fängt Wurst an?",
-     "options": [
-      "S s",
-      "W w",
-      "D d"
-     ],
-     "answer": "W w",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
      "id": "k1-b2-an-dino",
      "task": "Womit fängt das Wort an?",
      "prompt": "Dino",
@@ -287,21 +272,6 @@
     },
     {
      "kind": "choice",
-     "id": "k1-b2-an-nuss",
-     "task": "Womit fängt das Wort an?",
-     "prompt": "Nuss",
-     "pic": "🥜",
-     "say": "Nuss. Womit fängt Nuss an?",
-     "options": [
-      "W w",
-      "M m",
-      "N n"
-     ],
-     "answer": "N n",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
      "id": "k1-b2-an-schaf",
      "task": "Womit fängt das Wort an?",
      "prompt": "Schaf",
@@ -396,21 +366,6 @@
    "title": "Ei, K und B",
    "icon": "🥚",
    "tasks": [
-    {
-     "kind": "choice",
-     "id": "k1-b2-an-eichel",
-     "task": "Womit fängt das Wort an?",
-     "prompt": "Eichel",
-     "pic": "🌰",
-     "say": "Eichel. Womit fängt Eichel an?",
-     "options": [
-      "R r",
-      "N n",
-      "Ei ei"
-     ],
-     "answer": "Ei ei",
-     "bigOptions": true
-    },
     {
      "kind": "choice",
      "id": "k1-b2-an-kaefer",
