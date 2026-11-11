@@ -6,8 +6,9 @@ import { content, loadContent } from "./content.js";
 import * as store from "./store.js";
 import * as photos from "./photos.js";
 import { pic } from "./pics.js";
+import * as cloud from "./cloud.js";
 
-const APP_VERSION = 18;
+const APP_VERSION = 19;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -1330,6 +1331,9 @@ function showParents(msg = "") {
         <p class="small">Fotos von Heft-Aufgaben. „Nochmal“ gibt die Aufgabe zurück: Sie kommt beim nächsten Üben im Fach wieder. Die Fotos liegen nur auf diesem Gerät und sind nicht in der Sicherungsdatei.</p>
         <div id="photos"><p class="small">Lade Fotos …</p></div>
       </details>
+      ${cloud.configured() ? `<details class="psec" data-key="sec-cloud"><summary><h3>☁️ Online-Speicherung</h3></summary>
+        <div id="cloudbox">${cloudHtml()}</div>
+      </details>` : ""}
       <details class="psec" data-key="sec-94573"><summary><h3>Fortschritt sichern und laden</h3></summary>
         <p class="small">„Sichern“ erstellt eine Datei. Leg sie in OneDrive ab. Auf dem anderen Gerät „Laden“ tippen und die Datei aus OneDrive wählen.</p>
         <div class="row">
@@ -1371,12 +1375,15 @@ function showParents(msg = "") {
   $("back").onclick = showProfiles;
   rememberFolds();
   fillPhotos();
+  wireCloud();
   on(".name-input", "change", (e) => {
     store.profile(e.target.dataset.p).name = e.target.value.trim();
+    store.touchPrefs(e.target.dataset.p);
     store.save();
   });
   on(".voice-sel", "change", (e) => {
     store.profile(e.target.dataset.p).voice = e.target.value;
+    store.touchPrefs(e.target.dataset.p);
     store.save();
   });
   on(".en-box", "change", (e) => {
@@ -1429,6 +1436,71 @@ function showParents(msg = "") {
   };
 }
 
+// ---------- Online-Speicherung (Elternbereich) ----------
+function cloudStatusText() {
+  const st = cloud.getStatus();
+  if (st.state === "busy") return "Wird abgeglichen …";
+  if (st.state === "offline") return "Kein Internet. Wird später abgeglichen.";
+  if (st.state === "error") return "⚠️ Abgleich hat nicht geklappt: " + st.error;
+  if (st.at) return "✅ Zuletzt abgeglichen: " + new Date(st.at).toLocaleString("de-DE", { dateStyle: "short", timeStyle: "short" });
+  return "";
+}
+
+function cloudHtml(note = "") {
+  if (cloud.loggedIn()) {
+    return `<p class="small">Angemeldet als <b>${esc(cloud.email())}</b>. Der Lernstand beider Kinder gleicht sich automatisch ab, sobald Internet da ist. Die Fotos bleiben auf dem Gerät.</p>
+      <p class="small" id="cloudstatus">${esc(cloudStatusText())}</p>
+      <div class="row">
+        <button class="wide-btn" id="cloudsync">🔄 Jetzt abgleichen</button>
+        <button class="wide-btn" id="cloudout">Abmelden</button>
+      </div>`;
+  }
+  const mail = cloud.email();
+  return `<p class="small">Melde dich auf jedem Gerät einmal mit derselben E-Mail an. Danach gleicht sich der Lernstand automatisch ab.</p>
+    ${note ? `<p class="notice">${esc(note)}</p>` : ""}
+    <input class="input" id="cloudmail" type="email" placeholder="E-Mail" value="${esc(mail)}" autocomplete="email">
+    <button class="wide-btn" id="cloudlink">📧 Anmelde-Link schicken</button>
+    ${mail ? `<p class="small">E-Mail öffnen und auf den Link tippen. Steht in der E-Mail ein Zahlencode, kannst du ihn auch hier eingeben:</p>
+    <div class="row"><input class="input" id="cloudcode" inputmode="numeric" placeholder="Code" autocomplete="one-time-code" maxlength="10"><button class="wide-btn" id="cloudverify">Anmelden</button></div>` : ""}`;
+}
+
+function wireCloud(note = "") {
+  const box = $("cloudbox");
+  if (!box) return;
+  box.innerHTML = cloudHtml(note);
+  const off = cloud.onChange(() => {
+    if (!document.body.contains(box)) return off();
+    const el = $("cloudstatus");
+    if (el) el.textContent = cloudStatusText();
+  });
+  if ($("cloudsync")) $("cloudsync").onclick = () => cloud.sync().then((ok) => ok && showParents("✅ Online abgeglichen."));
+  if ($("cloudout")) $("cloudout").onclick = () => {
+    if (confirm("Abmelden? Der Lernstand bleibt auf diesem Gerät, wird aber nicht mehr abgeglichen.")) {
+      cloud.logout();
+      wireCloud();
+    }
+  };
+  if ($("cloudlink")) $("cloudlink").onclick = async () => {
+    const mail = $("cloudmail").value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) return wireCloud("Bitte eine gültige E-Mail eingeben.");
+    $("cloudlink").disabled = true;
+    try {
+      await cloud.sendLink(mail);
+      wireCloud("E-Mail ist unterwegs. Bitte auf diesem Gerät öffnen und auf den Link tippen.");
+    } catch (e) {
+      wireCloud("Das hat nicht geklappt: " + e.message);
+    }
+  };
+  if ($("cloudverify")) $("cloudverify").onclick = async () => {
+    try {
+      await cloud.verifyCode(cloud.email(), $("cloudcode").value.trim());
+      showParents("✅ Angemeldet und abgeglichen.");
+    } catch (e) {
+      wireCloud("Code passt nicht: " + e.message);
+    }
+  };
+}
+
 // ---------- Start ----------
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   const hadController = !!navigator.serviceWorker.controller;
@@ -1444,4 +1516,23 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 }
 
 app.innerHTML = `<div class="screen center"><h1 class="logo">Learnino</h1><p class="sub">Einen Moment…</p></div>`;
-loadContent().then(showProfiles);
+// Online-Abgleich: Anmelde-Link auswerten, dann beim Start einmal abgleichen
+let loginNote = null;
+if (cloud.configured()) {
+  loginNote = cloud.handleRedirect();
+  cloud.start();
+}
+loadContent()
+  .then(() => (cloud.loggedIn() ? Promise.race([cloud.sync(), wait(4000)]) : null))
+  .then(() => {
+    showProfiles();
+    if (loginNote) toast(loginNote.ok ? "✅ " + loginNote.message + ". Der Lernstand wird jetzt online gespeichert." : "⚠️ Anmeldung fehlgeschlagen: " + loginNote.message);
+  });
+
+function toast(text) {
+  const el = document.createElement("div");
+  el.className = "toast";
+  el.textContent = text;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 6000);
+}

@@ -32,13 +32,38 @@ function load() {
   return blank();
 }
 
-export function save() {
-  state.savedAt = new Date().toISOString();
+// Wird nach jedem Speichern aufgerufen (Online-Abgleich hängt sich hier ein)
+let onSave = null;
+export function setOnSave(fn) {
+  onSave = fn;
+}
+
+function writeLocal() {
   try {
     localStorage.setItem(KEY, JSON.stringify(state));
   } catch (e) {
     /* Speicher voll oder blockiert */
   }
+}
+
+export function save() {
+  state.savedAt = new Date().toISOString();
+  writeLocal();
+  if (onSave) onSave();
+}
+
+// Für den Online-Abgleich: kompletter Stand lesen und (zusammengeführt) zurückschreiben
+export function getState() {
+  return state;
+}
+export function replaceState(next) {
+  state = { ...blank(), ...next };
+  writeLocal();
+}
+
+// Einstellungen eines Kindes (Name, Vorlesen, Freischalten) geändert: Zeitstempel fürs Zusammenführen
+export function touchPrefs(pid) {
+  profile(pid).prefsAt = Date.now();
 }
 
 export function profile(id) {
@@ -102,6 +127,7 @@ export function grade(pid, id, correct) {
     }
   }
   c.last = t;
+  c.at = Date.now();
   p.cards[id] = c;
 }
 
@@ -149,6 +175,7 @@ export function isEnabled(pid, id, byDefault = true) {
 
 export function setEnabled(pid, id, on) {
   const p = profile(pid);
+  p.prefsAt = Date.now();
   if (on) {
     delete p.off[id];
     p.on[id] = true;
@@ -161,6 +188,7 @@ export function setEnabled(pid, id, on) {
 // ---------- Foto-Aufgaben, die Eltern mit "nochmal" zurückgegeben haben ----------
 export function setRedo(pid, taskId, on) {
   const p = profile(pid);
+  p.prefsAt = Date.now();
   if (on) p.redo[taskId] = today();
   else delete p.redo[taskId];
 }
@@ -220,12 +248,17 @@ export function savedAt() {
   return state.savedAt;
 }
 
+// Zurücksetzen merkt sich den Zeitpunkt, damit der Online-Abgleich den alten Stand nicht zurückholt
 export function resetProfile(pid) {
-  delete state.profiles[pid];
+  const keep = state.profiles[pid] || {};
+  state.profiles[pid] = { name: keep.name, voice: keep.voice, prefsAt: keep.prefsAt, resetAt: Date.now() };
   save();
 }
 
 export function resetAll() {
+  const ids = Object.keys(state.profiles);
+  const old = state.profiles;
   state = blank();
+  for (const id of ids) state.profiles[id] = { name: old[id].name, voice: old[id].voice, prefsAt: old[id].prefsAt, resetAt: Date.now() };
   save();
 }
