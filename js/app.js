@@ -8,7 +8,7 @@ import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 20;
+const APP_VERSION = 21;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
