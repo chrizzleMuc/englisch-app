@@ -8,7 +8,7 @@ import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 23;
+const APP_VERSION = 26;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -70,7 +70,7 @@ function showProfiles() {
         ${PROFILES.map((p) => `<button class="profile-card" data-id="${p.id}">
             <span class="pname">${esc(pname(p))}</span>
             ${pname(p) !== p.title ? `<span class="pclass">${esc(p.title)}</span>` : ""}
-            <span class="small">⭐ ${store.totalStars(p.id)}</span>
+            <span class="small">⭐ ${store.totalStars(p.id)} · 💎 ${store.diamonds(p.id)}</span>
           </button>`).join("")}
       </div>
       <button class="link-btn" id="parents">🔒 Elternbereich</button>
@@ -113,6 +113,7 @@ function homeHeader(p) {
         <span class="who">${p.test ? `<span class="test-badge">🧪 Test</span>` : esc(pname(p))}</span>
         <span class="stat">🔥 ${store.streakCount(p.id)}</span>
         <span class="stat">⭐ ${store.totalStars(p.id)}</span>
+        <span class="stat">💎 ${store.diamonds(p.id)}</span>
       </header>`;
 }
 
@@ -139,12 +140,16 @@ function showHome(subjectId = current.subject) {
               <span class="dots small-dots">${Array.from({ length: nl }, (_, n) => `<span class="dot ${n < done ? "on" : ""}"></span>`).join("")}</span>
             </button>`;
           }).join("")}
-        </div>`).join("")}
+        </div>
+        ${st.units.some(isSchool) ? (probeReady(p.id, st)
+          ? `<button class="wide-btn probe-btn" data-st="${st.id}">📝 Probe schreiben</button>`
+          : `<p class="probe-hint">📝 Probe: Schaffe erst ${Math.min(PROBE_MIN_UNITS, st.units.filter(isSchool).length)} Themen ganz (alle Lektionen), dann kannst du eine Probe schreiben.</p>`) : ""}`).join("")}
       ${stagesFor(p.id, sub).some((st) => st.units.some((u) => u.words.length)) ? `<button class="wide-btn album-btn" id="album">📒 Mein Sticker-Album</button>` : ""}
     </div>`);
   current.view = "home";
   $("back").onclick = () => (many ? showSubjects(subs) : showProfiles());
   if ($("album")) $("album").onclick = showAlbum;
+  on(".probe-btn", "click", (e) => startProbe(e.currentTarget.dataset.st));
   on(".topic[data-id]", "click", (e) => {
     chime("pop");
     showUnit(e.currentTarget.dataset.id);
@@ -175,7 +180,8 @@ function showUnit(unitId) {
   const pid = current.profile;
   const sub = content.subjects.find((x) => x.id === u.subject);
   const lessons = lessonsOf(u);
-  const isOpen = (i) => isSchool(u) || isTestUser() || i === 0 || store.lessonDone(pid, u.id, i - 1);
+  // Nächste Lektion erst, wenn die vorherige geschafft ist (Schulfächer: mit Bestehensgrenze)
+  const isOpen = (i) => isTestUser() || i === 0 || store.lessonDone(pid, u.id, i - 1);
   const cur = lessons.findIndex((_, i) => isOpen(i) && !store.lessonDone(pid, u.id, i));
   // Pfad schlängelt sich wie eine Treppe nach links und rechts
   const sway = [0, -70, -105, -70, 0, 70, 105, 70];
@@ -264,13 +270,17 @@ function buildLesson(u, n) {
   return steps.map((s) => ({ unit: u.id, ...s }));
 }
 
-function startLesson(unitId, n) {
+function startLesson(unitId, n, focus = []) {
+  resetSpoken();
   const u = unitById(unitId);
   const school = isSchool(u);
   const isTest = school && !!u.lessons[n].test;
   const review = isTest ? [] : reviewSteps(current.profile, u.subject);
-  const steps = [...review, ...buildLesson(u, n)];
-  const lesson = { u, n, steps, pos: 0, reviewCount: review.length, school, isTest, right: 0, total: 0, missed: [] };
+  let own = buildLesson(u, n);
+  // Nach "Nochmal üben": was vorher falsch war, kommt zuerst
+  if (focus.length) own = [...own.filter((st) => focus.includes(st.q?.id)), ...own.filter((st) => !focus.includes(st.q?.id))];
+  const steps = [...review, ...own];
+  const lesson = { u, n, steps, pos: 0, reviewCount: review.length, school, isTest, right: 0, total: 0, missed: [], wrongClicks: 0, started: Date.now() };
   nextStep(lesson);
 }
 
@@ -283,14 +293,17 @@ function lessonFrame(lesson, inner) {
         <button class="icon-btn" id="quit" aria-label="Beenden">✖</button>
         <div class="progress"><span style="width:${pct}%"></span></div>
       </header>
-      ${step?.review ? `<p class="review-tag">🔁 Wiederholung</p>` : step?.retry ? `<p class="review-tag">🔁 Nochmal, weil es vorhin nicht geklappt hat</p>` : ""}
+      ${lesson.exam ? `<p class="review-tag">📝 Probe · Aufgabe ${lesson.pos + 1} von ${lesson.steps.length}</p>` : step?.review ? `<p class="review-tag">🔁 Wiederholung</p>` : step?.retry ? `<p class="review-tag">🔁 Nochmal, weil es vorhin nicht geklappt hat</p>` : ""}
       ${inner}
     </div>`;
 }
 
 function lessonRender(lesson, inner) {
   const token = render(lessonFrame(lesson, inner));
-  $("quit").onclick = () => showUnit(lesson.u.id);
+  $("quit").onclick = () => {
+    if (lesson.exam && !confirm("Probe wirklich abbrechen? Sie wird nicht gewertet.")) return;
+    lesson.exam ? showHome(lesson.subject.id) : showUnit(lesson.u.id);
+  };
   return token;
 }
 
@@ -678,23 +691,26 @@ STEPS.rhyme = (lesson, step) => {
 
 // ---------- Ende der Lektion ----------
 function finishLesson(lesson) {
+  if (lesson.exam) return finishProbe(lesson);
   if (lesson.school) return finishSchoolLesson(lesson);
   const pid = current.profile;
   const first = !store.lessonDone(pid, lesson.u.id, lesson.n);
   store.setLessonDone(pid, lesson.u.id, lesson.n);
+  const gained = store.awardLesson(pid, lesson.u.id, lesson.n, 2);
   const streak = store.touchStreak(pid);
   store.save();
   const isLast = lesson.n === 4;
   render(`
     <div class="screen center result" style="--c:${lesson.u.color}">
       <h2>${pick(PRAISE)}</h2>
-      <div class="result-stars"><span class="star on">★</span></div>
+      ${gained ? `<div class="gems">${"💎".repeat(gained)}</div><p class="gem-text">+${gained} Diamanten</p>` : `<div class="result-stars"><span class="star on">★</span></div>`}
       <p class="sub">🔥 ${streak.count} ${streak.count === 1 ? "Tag" : "Tage"} in Folge</p>
       ${isLast && first ? `<p class="sub">Neuer Sticker für dein Album:</p><div class="stickers"><span class="sticker big-sticker">${pic(lesson.u.image)}</span></div>` : ""}
       ${lesson.n === 0 && first ? `<p class="sub">Neue Wörter im Album:</p><div class="stickers">${lesson.u.words.map((w) => `<span class="sticker">${pic(w.image)}</span>`).join("")}</div>` : ""}
       <button class="go-btn" id="next">Weiter ➜</button>
     </div>`);
   chime("win");
+  showRewards(pid);
   setTimeout(() => sayEn(pick(PRAISE_EN)), 600);
   $("next").onclick = () => showUnit(lesson.u.id);
 }
@@ -739,6 +755,29 @@ function score(lesson, step, id, correct) {
   }
 }
 
+// Falsch getippt: zählt für die Auswertung (Fehlklicks pro Durchgang, häufige falsche Antworten)
+function miss(lesson, step, id, picked) {
+  chime("bad");
+  lesson.wrongClicks++;
+  if (id && !step.review) {
+    store.missPick(current.profile, id, picked);
+    store.save();
+  }
+}
+
+// Probe: Antwort wird nur gemerkt, keine Rückmeldung, gleich weiter
+async function examAnswer(lesson, step, id, correct, picked, token) {
+  score(lesson, step, id, correct);
+  if (!correct) {
+    lesson.wrongClicks++;
+    store.missPick(current.profile, id, picked);
+    store.save();
+  }
+  chime("pop");
+  await wait(350);
+  if (alive(token)) advance(lesson);
+}
+
 // Aufgabenzeile mit Vorlese-Knopf (je nach Einstellung des Profils)
 function taskHead(text) {
   const m = voiceMode();
@@ -746,14 +785,28 @@ function taskHead(text) {
   return `${m === "selbst" ? `<p class="read-self">📖 Lies die Aufgabe selbst!</p>` : ""}
     <div class="task-row"><p class="task">${esc(text)}</p><button class="speaker again ${m === "selbst" ? "waiting" : ""}" aria-label="Vorlesen" ${m === "selbst" ? "disabled" : ""}>🔊</button></div>`;
 }
-function wireVoice(token, say) {
+// Gleiche Aufgabenstellung wird pro Lektion nur einmal von selbst vorgelesen,
+// danach nur noch auf Tipp aufs 🔊 (Wunsch Christin: sonst nervt es ringsherum)
+let spokenTasks = new Set();
+const resetSpoken = () => (spokenTasks = new Set());
+// Wort vorne im Vorlesetext ("Affe. Wie viele Silben hat Affe?") → "Affe"
+function sayWord(text) {
+  const m = /^([^.?!]{1,30})\. (.+)$/.exec(String(text || ""));
+  return m && m[2].includes(m[1]) ? m[1] : "";
+}
+function wireVoice(token, say, key, word) {
   const m = voiceMode();
   if (m === "aus") return;
+  const k = String(key || "").trim().toLowerCase();
+  const fresh = !k || !spokenTasks.has(k);
+  if (k) spokenTasks.add(k);
+  // Aufgabe schon bekannt: der Lautsprecher sagt nur noch das Wort
   on(".again", "click", () => {
     token.heard = true;
-    say();
+    if (!fresh && word) sayDe(word);
+    else say();
   });
-  if (m === "auto") setTimeout(() => alive(token) && say(), 250);
+  if (m === "auto" && fresh) setTimeout(() => alive(token) && say(), 250);
   else
     setTimeout(() => {
       if (alive(token)) app.querySelectorAll(".again").forEach((b) => {
@@ -783,7 +836,7 @@ STEPS.type = (lesson, step) => {
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="check" ${q.choose ? "hidden" : ""}>Prüfen ✓</button>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
-  wireVoice(token, () => sayDe(q.say || q.task || q.prompt));
+  wireVoice(token, () => sayDe(q.say || q.task || q.prompt), q.task || q.say || q.prompt, sayWord(q.say));
   const showInput = () => {
     $("before").textContent = [q.before, chosen].filter(Boolean).join(" ");
     $("tr").hidden = false;
@@ -793,6 +846,13 @@ STEPS.type = (lesson, step) => {
   on("#ch .choice", "click", (e) => {
     if (chosen) return;
     const el = e.currentTarget;
+    if (lesson.exam) {
+      chosen = el.dataset.v;
+      if (chosen !== q.choose.answer) first = false;
+      el.classList.add("sel");
+      app.querySelectorAll("#ch .choice").forEach((b) => (b.disabled = true));
+      return showInput();
+    }
     if (el.dataset.v === q.choose.answer) {
       chosen = el.dataset.v;
       el.classList.add("right");
@@ -804,7 +864,7 @@ STEPS.type = (lesson, step) => {
       first = false;
       el.classList.add("wrong");
       el.disabled = true;
-      chime("bad");
+      miss(lesson, step, q.id, el.dataset.v);
       $("fb").innerHTML = `<span class="try">Hmm, probier das andere!</span>`;
     }
   });
@@ -816,6 +876,7 @@ STEPS.type = (lesson, step) => {
     const ok = typed === norm(q.answer) || typed === full || (q.also || []).some((a) => norm(a) === typed);
     $("ans").disabled = true;
     $("check").hidden = true;
+    if (lesson.exam) return examAnswer(lesson, step, q.id, ok && first, $("ans").value, token);
     if (ok) {
       $("ans").classList.add("right");
       chime("good");
@@ -825,7 +886,7 @@ STEPS.type = (lesson, step) => {
       if (alive(token)) advance(lesson);
     } else {
       $("ans").classList.add("wrong");
-      chime("bad");
+      miss(lesson, step, q.id, $("ans").value);
       $("fb").innerHTML = `<span class="try">Richtig ist:</span> <span class="solution">${esc(full)}</span>`;
       score(lesson, step, q.id, false);
       $("next").hidden = false;
@@ -848,10 +909,15 @@ STEPS.choice = (lesson, step) => {
     <div class="choices ${q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(o)}">${q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
-  wireVoice(token, () => sayDe(q.say || q.task || q.prompt));
+  wireVoice(token, () => sayDe(q.say || q.task || q.prompt), q.task || q.say || q.prompt, sayWord(q.say));
   on(".choices .choice", "click", async (e) => {
     if (locked) return;
     const el = e.currentTarget;
+    if (lesson.exam) {
+      locked = true;
+      el.classList.add("sel");
+      return examAnswer(lesson, step, q.id, el.dataset.v === q.answer, el.dataset.v, token);
+    }
     if (el.dataset.v === q.answer) {
       locked = true;
       el.classList.add("right");
@@ -869,7 +935,7 @@ STEPS.choice = (lesson, step) => {
       first = false;
       el.classList.add("wrong");
       el.disabled = true;
-      chime("bad");
+      miss(lesson, step, q.id, el.dataset.v);
       $("fb").innerHTML = `<span class="try">Nicht ganz. Versuch es nochmal!</span>`;
     }
   });
@@ -889,7 +955,7 @@ STEPS.syllables = (lesson, step) => {
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="check">Fertig ✓</button>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
-  wireVoice(token, () => sayDe("Wo trennst du das Wort " + q.word + "?"));
+  wireVoice(token, () => sayDe("Wo trennst du das Wort " + q.word + "?"), "syllables");
   on(".gap", "click", (e) => {
     const i = +e.currentTarget.dataset.i;
     if (cuts.has(i)) cuts.delete(i);
@@ -901,6 +967,7 @@ STEPS.syllables = (lesson, step) => {
     const built = letters.map((ch, i) => ch + (cuts.has(i) ? "-" : "")).join("");
     app.querySelectorAll(".gap").forEach((b) => (b.disabled = true));
     $("check").hidden = true;
+    if (lesson.exam) return examAnswer(lesson, step, q.id, built === q.answer, built, token);
     if (built === q.answer) {
       chime("good");
       $("syl").classList.add("right");
@@ -909,7 +976,7 @@ STEPS.syllables = (lesson, step) => {
       await wait(900);
       if (alive(token)) advance(lesson);
     } else {
-      chime("bad");
+      miss(lesson, step, q.id, built);
       $("fb").innerHTML = `<span class="try">Richtig ist:</span> <span class="solution">${esc(q.answer.includes("-") ? q.answer : q.answer + " (nicht trennbar)")}</span>`;
       score(lesson, step, q.id, false);
       $("next").hidden = false;
@@ -934,7 +1001,7 @@ STEPS.pairs = (lesson, step) => {
       <div class="pcol">${right.map((p) => `<button class="pbtn" data-side="b" data-id="${p.id}">${esc(p.b)}</button>`).join("")}</div>
     </div>
     <div class="feedback" id="fb"></div>`);
-  wireVoice(token, () => sayDe(t.say || t.task || "Was gehört zusammen?"));
+  wireVoice(token, () => sayDe(t.say || t.task || "Was gehört zusammen?"), t.task || t.say || "pairs");
   on(".pbtn", "click", async (e) => {
     const el = e.currentTarget;
     if (el.classList.contains("done")) return;
@@ -962,7 +1029,7 @@ STEPS.pairs = (lesson, step) => {
       }
     } else {
       wrong.add(leftBtn.dataset.id);
-      chime("bad");
+      miss(lesson, step, leftBtn.dataset.id, (a === leftBtn ? el : a).textContent);
       [a, el].forEach((b) => {
         b.classList.add("wrong");
         setTimeout(() => b.classList.remove("wrong"), 500);
@@ -982,7 +1049,7 @@ STEPS.sort = (lesson, step) => {
     <div class="prompt-card"><span class="prompt-text" id="cur"></span></div>
     <div class="bins">${t.groups.map((g) => `<button class="bin" data-g="${esc(g)}"><span class="bin-title">${esc(g)}</span><span class="bin-items"></span></button>`).join("")}</div>
     <div class="feedback" id="fb"></div>`);
-  wireVoice(token, () => sayDe(t.say || t.task || "Wohin gehört das Wort?"));
+  wireVoice(token, () => sayDe(t.say || t.task || "Wohin gehört das Wort?"), t.task || t.say || "sort");
   const show = () => ($("cur").textContent = order[i].text);
   show();
   on(".bin", "click", async (e) => {
@@ -1002,7 +1069,7 @@ STEPS.sort = (lesson, step) => {
       if (alive(token)) advance(lesson);
     } else {
       first = false;
-      chime("bad");
+      miss(lesson, step, it.id, el.dataset.g);
       el.classList.add("wrong");
       setTimeout(() => el.classList.remove("wrong"), 500);
       $("fb").innerHTML = `<span class="try">Nicht ganz. Wo passt es besser?</span>`;
@@ -1021,7 +1088,7 @@ STEPS.photo = (lesson, step) => {
     
     <label class="go-btn photo-btn" id="camlabel">📷 Fertig? Foto machen<input type="file" accept="image/*" capture="environment" id="cam" hidden></label>
     <div id="after"></div>`);
-  wireVoice(token, () => sayDe(t.say || t.task));
+  wireVoice(token, () => sayDe(t.say || t.task), t.task || t.say);
   $("cam").onchange = async (e) => {
     const f = e.target.files[0];
     if (!f) return;
@@ -1054,26 +1121,133 @@ STEPS.photo = (lesson, step) => {
 // ---------- Ende einer Schul-Lektion ----------
 function finishSchoolLesson(lesson) {
   const pid = current.profile;
-  store.setLessonDone(pid, lesson.u.id, lesson.n);
+  const u = lesson.u;
+  const pct = lesson.total ? Math.round((lesson.right / lesson.total) * 100) : 100;
+  const mark = store.passMark(pid);
+  const passed = pct >= mark;
+  // Diamanten für Qualität: alles richtig 3, bestanden 2, darunter 1 (Test-Lektion doppelt)
+  const base = pct === 100 ? 3 : passed ? 2 : 1;
+  let gained = lesson.total ? store.awardLesson(pid, u.id, lesson.n, lesson.isTest ? base * 2 : base) : 0;
+  if (passed) {
+    store.setLessonDone(pid, u.id, lesson.n);
+    if (lesson.reviewCount) gained += store.awardDailyBonus(pid);
+  }
+  store.logAttempt(pid, {
+    u: u.id, n: lesson.n, pct, right: lesson.right, total: lesson.total,
+    wrong: lesson.wrongClicks, sec: Math.round((Date.now() - lesson.started) / 1000), ok: passed
+  });
   const streak = store.touchStreak(pid);
   store.save();
   const missed = lesson.missed.map((id) => item(id)?.q).filter(Boolean);
+  const hasNext = lesson.n + 1 < u.lessons.length;
   render(`
-    <div class="screen center result" style="--c:${lesson.u.color}">
-      <h2>${lesson.isTest ? "Test geschafft!" : pick(PRAISE)}</h2>
-      <div class="result-stars"><span class="star on">★</span></div>
+    <div class="screen center result" style="--c:${u.color}">
+      <h2>${passed ? (lesson.isTest ? "Test geschafft!" : pick(PRAISE)) : "Fast geschafft!"}</h2>
+      ${passed
+        ? (gained ? `<div class="gems">${"💎".repeat(Math.min(gained, 7))}</div><p class="gem-text">+${gained} Diamanten</p>` : `<div class="result-stars"><span class="star on">★</span></div><p class="sub">Diamanten hast du hier schon alle.</p>`)
+        : `${gained ? `<div class="gems">${"💎".repeat(gained)}</div><p class="gem-text">+${gained} ${gained === 1 ? "Diamant" : "Diamanten"}</p>` : ""}<p class="fail-text">Du hattest ${pct} %. Zum Weiterkommen brauchst du ${mark} %.<br>Übe die Lektion noch einmal, dann klappt es!</p>`}
       ${lesson.total ? `<p class="score">${lesson.right} von ${lesson.total} gleich richtig</p>` : ""}
       ${lesson.selfRead ? `<p class="self-read">📖 ${lesson.selfRead} ${lesson.selfRead === 1 ? "Aufgabe" : "Aufgaben"} ganz allein gelesen. Toll!</p>` : ""}
       <p class="sub">🔥 ${streak.count} ${streak.count === 1 ? "Tag" : "Tage"} in Folge</p>
-      ${missed.length ? `<p class="sub">${lesson.isTest ? "Das üben wir noch:" : "Das kommt in den nächsten Tagen nochmal dran:"}</p>
+      ${missed.length ? `<p class="sub">${passed ? (lesson.isTest ? "Das üben wir noch:" : "Das kommt in den nächsten Tagen nochmal dran:") : "Darauf achtest du beim nächsten Mal:"}</p>
         <div class="missed">${missed.map((q) => {
           const [a, b] = describe(q);
           return `<div><span>${esc(a)}</span> → <b>${esc(b)}</b></div>`;
         }).join("")}</div>` : ""}
-      <button class="go-btn" id="next">Weiter ➜</button>
+      ${passed ? "" : `<button class="go-btn" id="again">🔁 Nochmal üben</button>`}
+      <button class="${passed ? "go-btn" : "wide-btn"}" id="next">${passed && hasNext ? "Weiter ➜" : "Zurück zur Übersicht"}</button>
     </div>`);
+  chime(passed ? "win" : "pop");
+  showRewards(pid);
+  if ($("again")) $("again").onclick = () => startLesson(u.id, lesson.n, lesson.missed);
+  $("next").onclick = () => showUnit(u.id);
+}
+
+// ---------- Belohnung erreicht: Feuerwerk und Text ----------
+function showRewards(pid) {
+  const got = store.newRewards(pid);
+  if (!got.length) return;
+  store.save();
+  const box = document.createElement("div");
+  box.className = "reward-overlay";
+  const sparks = Array.from({ length: 36 }, (_, i) => {
+    const a = (i / 36) * Math.PI * 2;
+    const r = 90 + (i % 3) * 45;
+    const col = ["#ffd23f", "#ff6bcb", "#7cf3ff", "#a5ff7c", "#ffffff"][i % 5];
+    return `<i style="--x:${Math.round(Math.cos(a) * r)}px;--y:${Math.round(Math.sin(a) * r)}px;--c:${col};--d:${(i % 4) * 0.12}s"></i>`;
+  }).join("");
+  box.innerHTML = `<div class="fireworks">${sparks}</div><div class="fireworks second">${sparks}</div>
+    <div class="reward-card">
+      <div class="reward-gem">🎁</div>
+      <h2>Geschafft!</h2>
+      <p class="small">Du hast ${got[got.length - 1].at} 💎 gesammelt.</p>
+      ${got.map((r) => `<p class="reward-text">${esc(r.text)}</p>`).join("")}
+      <p class="small">Zeig das Mama oder Papa!</p>
+      <button class="go-btn" id="rewardok">Juhu! 🎉</button>
+    </div>`;
+  document.body.appendChild(box);
   chime("win");
-  $("next").onclick = () => showUnit(lesson.u.id);
+  setTimeout(() => chime("win"), 700);
+  box.querySelector("#rewardok").onclick = () => box.remove();
+}
+
+// ---------- Probe: Arbeit über mehrere Einheiten mit Note ----------
+const PROBE_SIZE = 20;
+const PROBE_MIN_UNITS = 2;
+function unitComplete(pid, u) {
+  return lessonsOf(u).every((_, n) => store.lessonDone(pid, u.id, n));
+}
+function probeUnits(pid, st) {
+  return st.units.filter((u) => isSchool(u) && (isTestUser() || unitComplete(pid, u)));
+}
+function probeReady(pid, st) {
+  const need = Math.min(PROBE_MIN_UNITS, st.units.filter(isSchool).length);
+  return need > 0 && probeUnits(pid, st).length >= need;
+}
+
+function startProbe(stageId) {
+  resetSpoken();
+  const pid = current.profile;
+  const sub = content.subjects.find((x) => x.stages.some((st) => st.id === stageId));
+  const st = sub.stages.find((x) => x.id === stageId);
+  const units = probeUnits(pid, st);
+  // Aus jeder geschafften Einheit gleich viele Aufgaben, gemischt
+  const per = Math.max(2, Math.ceil(PROBE_SIZE / units.length));
+  const pool = units.flatMap((u) => shuffle(u.singles).slice(0, per).map((q) => ({ ...singleStep(q), unit: u.id })));
+  const steps = shuffle(pool).slice(0, PROBE_SIZE);
+  const lesson = { u: units[0], n: 0, steps, pos: 0, reviewCount: 0, school: true, isTest: true, exam: true, stage: st, subject: sub,
+    right: 0, total: 0, missed: [], wrongClicks: 0, started: Date.now() };
+  nextStep(lesson);
+}
+
+function finishProbe(lesson) {
+  const pid = current.profile;
+  const pct = lesson.total ? Math.round((lesson.right / lesson.total) * 100) : 0;
+  const note = store.gradeFor(pct);
+  const gained = store.awardLesson(pid, "probe:" + lesson.stage.id, 0, [6, 4, 2, 1, 1, 1][note - 1]);
+  store.logAttempt(pid, { u: "probe:" + lesson.stage.id, n: 0, pct, right: lesson.right, total: lesson.total, wrong: lesson.wrongClicks,
+    sec: Math.round((Date.now() - lesson.started) / 1000), ok: note <= 4, note });
+  store.touchStreak(pid);
+  store.save();
+  const missed = lesson.missed.map((id) => item(id)?.q).filter(Boolean);
+  const words = ["sehr gut", "gut", "befriedigend", "ausreichend", "mangelhaft", "ungenügend"];
+  render(`
+    <div class="screen center result">
+      <h2>📝 Probe: ${esc(lesson.stage.title)}</h2>
+      <div class="grade grade-${note}">${note}</div>
+      <p class="grade-word">${words[note - 1]}</p>
+      <p class="score">${lesson.right} von ${lesson.total} richtig (${pct} %)</p>
+      ${gained ? `<div class="gems">${"💎".repeat(gained)}</div><p class="gem-text">+${gained} ${gained === 1 ? "Diamant" : "Diamanten"}</p>` : ""}
+      ${missed.length ? `<p class="sub">Das war noch falsch:</p>
+        <div class="missed">${missed.map((q) => {
+          const [a, b] = describe(q);
+          return `<div><span>${esc(a)}</span> → <b>${esc(b)}</b></div>`;
+        }).join("")}</div>` : `<p class="sub">Alles richtig! 🎉</p>`}
+      <button class="go-btn" id="next">Fertig ➜</button>
+    </div>`);
+  chime(note <= 3 ? "win" : "pop");
+  showRewards(pid);
+  $("next").onclick = () => showHome(lesson.subject.id);
 }
 
 // ---------- Sticker-Album ----------
@@ -1217,22 +1391,18 @@ function unitTable(u) {
   </table>`;
 }
 
-function troubleHtml() {
-  const rows = PROFILES.map((p) => {
-    const list = store.troubleCards(p.id).filter((c) => item(c.id));
-    if (!list.length) return `<p class="small"><b>${esc(pname(p))}:</b> nichts, prima!</p>`;
-    return `<p class="small"><b>${esc(pname(p))}:</b></p><table class="words">
+function troubleChild(p) {
+  const list = store.troubleCards(p.id).filter((c) => item(c.id));
+  return `<details class="fold sub-fold" data-key="tr-${p.id}"><summary>⚠️ Das klappt noch nicht <span class="small">· ${list.length || "nichts, prima!"}</span></summary>
+    <p class="small">Aufgaben, die mindestens zweimal falsch waren. Sie kommen öfter dran (spätestens alle 2 Tage), bis sie dreimal hintereinander richtig waren.</p>
+    ${list.length ? `<table class="words">
       <tr><th>Aufgabe</th><th>Lösung</th><th>falsch</th></tr>
       ${list.map((c) => {
         const it = item(c.id);
         const [a, b] = it.kind === "task" ? describe(it.q) : [it.en, it.de || ""];
         return `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td>${c.wrong}×</td></tr>`;
       }).join("")}
-    </table>`;
-  }).join("");
-  return `<details class="psec" data-key="sec-49314"><summary><h3>⚠️ Das klappt noch nicht</h3></summary>
-    <p class="small">Aufgaben, die mindestens zweimal falsch waren. Sie kommen öfter dran (spätestens alle 2 Tage), bis sie dreimal hintereinander richtig waren.</p>
-    ${rows}
+    </table>` : ""}
   </details>`;
 }
 
@@ -1281,6 +1451,95 @@ async function fillPhotos() {
   );
 }
 
+// ---------- Auswertung: Durchgänge und schwierigste Aufgaben ----------
+function lessonName(uid, n) {
+  if (String(uid).startsWith("probe:")) {
+    const st = content.subjects.flatMap((x) => x.stages).find((x) => x.id === uid.slice(6));
+    return "📝 Probe " + (st ? st.title : "");
+  }
+  const u = unitById(uid);
+  if (!u) return uid;
+  const l = lessonsOf(u)[n];
+  return `${u.title_de} · ${l ? l.title : n + 1}`;
+}
+const fmtWhen = (t) => new Date(t).toLocaleString("de-DE", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+const fmtDur = (sec) => (sec >= 60 ? Math.round(sec / 60) + " min" : sec + " s");
+function evalChild(p) {
+  const fmt = fmtWhen;
+  const dur = fmtDur;
+  const log = (store.profile(p.id).log || []).slice().sort((a, b) => b.at - a.at);
+  const days = new Set(log.filter((x) => Date.now() - x.at < 7 * 86400000).map((x) => new Date(x.at).toDateString())).size;
+  const week = log.filter((x) => Date.now() - x.at < 7 * 86400000);
+  const avg = week.length ? Math.round(week.reduce((n, x) => n + x.pct, 0) / week.length) : null;
+  const hard = Object.entries(store.profile(p.id).cards)
+    .filter(([id, c]) => c.miss && item(id))
+    .sort((a, b) => b[1].miss - a[1].miss)
+    .slice(0, 10);
+  return `<details class="fold sub-fold" data-key="ev-${p.id}"><summary>📊 Auswertung <span class="small">${week.length ? `· 7 Tage: ${week.length} Durchgänge an ${days} Tagen, ⌀ ${avg} %` : "· noch keine Durchgänge"}</span></summary>
+    ${log.length ? `<table class="words eval"><tr><th>Wann</th><th>Lektion</th><th>Ergebnis</th><th>Fehl&shy;klicks</th><th>Dauer</th></tr>
+      ${log.slice(0, 15).map((x) => `<tr class="${x.ok ? "" : "fail"}"><td>${fmt(x.at)}</td><td>${esc(lessonName(x.u, x.n))}</td><td>${x.pct} % ${x.note ? `· Note ${x.note}` : x.ok ? "✓" : "✗"}</td><td>${x.wrong}</td><td>${dur(x.sec)}</td></tr>`).join("")}
+    </table>` : ""}
+    ${hard.length ? `<p class="small"><b>Am häufigsten falsch:</b></p><table class="words eval"><tr><th>Aufgabe</th><th>Richtig</th><th>Getippt</th><th>falsch</th></tr>
+      ${hard.map(([id, c]) => {
+        const it = item(id);
+        const [a, b] = it.kind === "task" ? describe(it.q) : [it.en, it.de || ""];
+        const picks = Object.entries(c.picks || {}).sort((x, y) => y[1] - x[1]).slice(0, 3).map(([k, v]) => `${esc(k)}${v > 1 ? ` (${v}×)` : ""}`).join(", ");
+        return `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td>${picks || "–"}</td><td>${c.miss}×</td></tr>`;
+      }).join("")}</table>` : ""}
+  </details>`;
+}
+function rewardsChild(p) {
+  const pr = store.profile(p.id);
+  return `<details class="fold sub-fold" data-key="rw-${p.id}"><summary>🎁 Belohnungen <span class="small">· jetzt ${store.diamonds(p.id)} 💎</span></summary>
+    ${pr.rewards.length ? `<table class="words eval"><tr><th>ab</th><th>Belohnung</th><th></th><th></th></tr>
+      ${pr.rewards.map((r) => `<tr><td>${r.at} 💎</td><td>${esc(r.text)}</td><td>${pr.rewardsGot[r.id] ? `✅ ${new Date(pr.rewardsGot[r.id]).toLocaleDateString("de-DE")}` : ""}</td><td><button class="link-btn rw-del" data-p="${p.id}" data-id="${r.id}" aria-label="Löschen">✕</button></td></tr>`).join("")}
+    </table>` : `<p class="small">Noch keine Belohnung festgelegt.</p>`}
+    <div class="row rw-add"><input class="input rw-at" data-p="${p.id}" inputmode="numeric" placeholder="💎" maxlength="4"><input class="input rw-text" data-p="${p.id}" placeholder="z. B. 15 Minuten mehr Zockzeit" maxlength="120"><button class="wide-btn rw-btn" data-p="${p.id}">Hinzufügen</button></div>
+  </details>`;
+}
+function gradesHtml() {
+  return `<details class="psec" data-key="sec-grades"><summary><h3>📝 Notenspiegel für Proben</h3></summary>
+    <p class="small">Eine Probe gibt es pro Klassenstufe eines Fachs, sobald ${PROBE_MIN_UNITS} Themen ganz geschafft sind: ${PROBE_SIZE} gemischte Aufgaben aus den geschafften Themen, ohne Hilfe. Ab so viel Prozent gibt es die Note. Voreinstellung ist ein in bayerischen Grundschulen häufiger Richtwert; jede Schule legt ihren eigenen fest.</p>
+    <div class="grade-row">${store.gradeScale().map((v, i) => `<label>Note ${i + 1} ab<input class="input grade-in" data-i="${i}" inputmode="numeric" value="${v}" maxlength="3"> %</label>`).join("")}<label>Note 6 darunter</label></div>
+    <button class="wide-btn" id="gradesave">Notenspiegel speichern</button>
+  </details>`;
+}
+
+// Alles, was ein Kind betrifft, in einem Kasten
+function childHtml(p) {
+  const pr = store.profile(p.id);
+  return `<details class="psec child-sec" data-key="kid-${p.id}"><summary><h3>${p.id === "entdecker" ? "👧" : "👦"} ${esc(pname(p))} <span class="small">${pr.name ? `· ${p.title} ` : ""}· ⭐ ${store.totalStars(p.id)} · 💎 ${store.diamonds(p.id)}</span></h3></summary>
+    ${evalChild(p)}
+    ${troubleChild(p)}
+    ${rewardsChild(p)}
+    <details class="fold sub-fold" data-key="set-${p.id}"><summary>⚙️ Einstellungen</summary>
+      <div class="voice-row"><span>Name</span><input class="input name-input" data-p="${p.id}" value="${esc(pr.name || "")}" placeholder="${esc(p.title)}" maxlength="20" autocomplete="off"></div>
+      <div class="voice-row"><span>🎯 Bestehen ab</span><select class="input pass-sel" data-p="${p.id}">
+        ${[70, 80, 90, 100].map((v) => `<option value="${v}" ${store.passMark(p.id) === v ? "selected" : ""}>${v} %</option>`).join("")}
+      </select></div>
+      <div class="voice-row"><span>🔊 Vorlesen</span>${voiceSel(p)}</div>
+      <p class="small">Bestehen: So viel muss beim ersten Versuch richtig sein, damit die nächste Lektion aufgeht. Vorlesen: <b>Vorlesen</b> liest jede neue Aufgabenstellung einmal vor, danach per 🔊. <b>Erst selbst lesen</b>: Der 🔊-Knopf geht erst nach ein paar Sekunden. <b>Aus</b>: keine deutsche Stimme.</p>
+    </details>
+    <details class="fold sub-fold" data-key="un-${p.id}"><summary>👁️ Freigeschaltet</summary>
+      <p class="small">Was soll ${esc(pname(p))} sehen? Ausgeschaltetes verschwindet, der Fortschritt bleibt gespeichert.</p>
+      ${content.subjects.map((sub) => `<details class="fold sub-fold" data-key="un-${p.id}-${sub.id}"><summary>${esc(sub.title)}${store.isEnabled(p.id, sub.id) ? "" : ` <span class="small">(aus)</span>`}</summary>
+        <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${esc(sub.title)} anzeigen</label>
+        ${sub.stages.map((st) => `
+          <div class="unlock-topics">
+            <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${st.id}" ${store.isEnabled(p.id, st.id, stageDefault(p.id, st)) ? "checked" : ""}> ${esc(st.title)}</label>
+            <div class="unlock-topics">
+              ${st.units.map((u) => `<label class="field check"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${u.id}" ${store.isEnabled(p.id, u.id) ? "checked" : ""}> ${esc(u.title_de)}</label>`).join("")}
+            </div>
+          </div>`).join("")}</details>`).join("")}
+    </details>
+  </details>`;
+}
+function voiceSel(p) {
+  return `<select class="input voice-sel" data-p="${p.id}">
+    ${[["auto", "Vorlesen"], ["selbst", "Erst selbst lesen"], ["aus", "Aus"]].map(([v, l]) => `<option value="${v}" ${voiceMode(p.id) === v ? "selected" : ""}>${l}</option>`).join("")}
+  </select>`;
+}
+
 // Welche Kästen im Elternbereich offen sind, bleibt bis zum Schließen der App erhalten
 const openFolds = new Set();
 function rememberFolds() {
@@ -1301,22 +1560,7 @@ function showParents(msg = "") {
       </header>
       ${msg ? `<p class="notice">${msg}</p>` : ""}
       ${content.errors.length ? `<section class="errors"><h3>⚠️ Probleme mit den Inhalten</h3><ul>${content.errors.map((e) => `<li>${esc(e)}</li>`).join("")}</ul></section>` : ""}
-      <details class="psec" data-key="sec-92848"><summary><h3>Freigeschaltet</h3></summary>
-        <p class="small">Was soll das Kind sehen? Ausgeschaltetes verschwindet, der Fortschritt bleibt gespeichert.</p>
-        <div class="unlock">
-          ${PROFILES.map((p) => `<details class="unlock-col fold" data-key="un-${p.id}"><summary><h4>${esc(pname(p))}</h4></summary>
-            ${content.subjects.map((sub) => `<details class="fold sub-fold" data-key="un-${p.id}-${sub.id}"><summary>${esc(sub.title)}${store.isEnabled(p.id, sub.id) ? "" : ` <span class="small">(aus)</span>`}</summary>
-              <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${esc(sub.title)} anzeigen</label>
-              ${sub.stages.map((st) => `
-                <div class="unlock-topics">
-                  <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${st.id}" ${store.isEnabled(p.id, st.id, stageDefault(p.id, st)) ? "checked" : ""}> ${esc(st.title)}</label>
-                  <div class="unlock-topics">
-                    ${st.units.map((u) => `<label class="field check"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${u.id}" ${store.isEnabled(p.id, u.id) ? "checked" : ""}> ${esc(u.title_de)}</label>`).join("")}
-                  </div>
-                </div>`).join("")}</details>`).join("")}
-          </details>`).join("")}
-        </div>
-      </details>
+      ${PROFILES.map(childHtml).join("")}
       <details class="psec" data-key="sec-2996"><summary><h3>Lernstand</h3></summary>
         <p class="small">Lernkartei: Jede Aufgabe wandert bei richtiger Antwort einen Kasten weiter (1 → 5), bei falscher zurück in Kasten 1. Eine Einheit ist geschafft 🏆, wenn alles mindestens in Kasten 3 ist. Fällig heute: ${PROFILES.map((p) => `${esc(pname(p))} ${store.dueCards(p.id).length}`).join(", ")}.</p>
         ${content.subjects.flatMap((s) => s.stages.map((st) => ({ s, st }))).map(({ s, st }) => `<details class="fold sub-fold" data-key="ls-${st.id}"><summary>${esc(s.title)} · ${esc(st.title)}</summary>
@@ -1330,7 +1574,7 @@ function showParents(msg = "") {
             ${unitTable(u)}
           </details>`).join("")}</details>`).join("")}
       </details>
-      ${troubleHtml()}
+      ${gradesHtml()}
       <details class="psec" data-key="sec-59838"><summary><h3>📷 Fotomappe</h3></summary>
         <p class="small">Fotos von Heft-Aufgaben. „Nochmal“ gibt die Aufgabe zurück: Sie kommt beim nächsten Üben im Fach wieder. Die Fotos liegen nur auf diesem Gerät und sind nicht in der Sicherungsdatei.</p>
         <div id="photos"><p class="small">Lade Fotos …</p></div>
@@ -1346,22 +1590,13 @@ function showParents(msg = "") {
         </div>
         ${saved ? `<p class="small">Zuletzt gespeichert: ${new Date(saved).toLocaleString("de-DE")}</p>` : ""}
       </details>
-      <details class="psec" data-key="sec-9942"><summary><h3>👧👦 Namen</h3></summary>
-        <p class="small">Steht auf der Startseite statt der Klasse. Der Name bleibt auf diesem Gerät und kommt mit der Sicherungsdatei auf das andere Gerät.</p>
-        ${PROFILES.map((p) => `<div class="voice-row"><span>${esc(p.title)}</span><input class="input name-input" data-p="${p.id}" value="${esc(store.profile(p.id).name || "")}" placeholder="Name" maxlength="20" autocomplete="off"></div>`).join("")}
-      </details>
-      <details class="psec" data-key="sec-33521"><summary><h3>🔊 Aufgaben vorlesen</h3></summary>
-        <p class="small">Für Kinder, die noch nicht lesen können. <b>Vorlesen</b>: Jede Aufgabe wird automatisch vorgelesen. <b>Erst selbst lesen</b>: Das Kind soll die Aufgabe zuerst selbst lesen, der 🔊-Knopf geht erst nach ein paar Sekunden. Am Ende steht, wie viele Aufgaben es allein gelesen hat. <b>Aus</b>: keine deutsche Stimme. Englische Wörter werden immer vorgesprochen.</p>
-        ${[...PROFILES, TEST_PROFILE].map((p) => `<div class="voice-row"><span>${esc(pname(p))}</span><select class="input voice-sel" data-p="${p.id}">
-          ${[["auto", "Vorlesen"], ["selbst", "Erst selbst lesen"], ["aus", "Aus"]].map(([v, l]) => `<option value="${v}" ${voiceMode(p.id) === v ? "selected" : ""}>${l}</option>`).join("")}
-        </select></div>`).join("")}
-      </details>
       <details class="psec" data-key="sec-18526"><summary><h3>Stimme</h3></summary>
         <p class="small">${v.supported ? (v.british ? `Britische Stimme gefunden: ${esc(v.name)}` : "Keine britische Stimme gefunden. Bitte in den Android-Einstellungen unter „Sprachausgabe“ (Google) die Sprache „Englisch (Vereinigtes Königreich)“ herunterladen, dann funktioniert sie auch offline.") : "Dieses Gerät unterstützt keine Sprachausgabe."} Liegt für einen Inhalt eine Aufnahme im Ordner audio/en, wird stattdessen die Aufnahme abgespielt.</p>
         <button class="wide-btn" id="test">🔊 Stimme testen</button>
       </details>
       <details class="psec" data-key="sec-78279"><summary><h3>🧪 Testmodus</h3></summary>
         <p class="small">Zum Ausprobieren ohne den Fortschritt der Kinder zu verändern. Der Testmodus sieht alle Fächer und Stufen und hat einen eigenen Lernstand. Fällig im Test: ${store.dueCards(TEST_PROFILE.id).length}.</p>
+        <div class="voice-row"><span>🔊 Vorlesen im Test</span>${voiceSel(TEST_PROFILE)}</div>
         <div class="row">
           <button class="wide-btn" id="testmode">🧪 Testmodus starten</button>
           <button class="wide-btn" id="testreset">Test-Fortschritt löschen</button>
@@ -1383,6 +1618,32 @@ function showParents(msg = "") {
   on(".name-input", "change", (e) => {
     store.profile(e.target.dataset.p).name = e.target.value.trim();
     store.touchPrefs(e.target.dataset.p);
+    store.save();
+  });
+  on(".rw-btn", "click", (e) => {
+    const pid = e.currentTarget.dataset.p;
+    const at = parseInt(app.querySelector(`.rw-at[data-p="${pid}"]`).value, 10);
+    const text = app.querySelector(`.rw-text[data-p="${pid}"]`).value.trim();
+    if (!(at > 0) || !text) return alert("Bitte Anzahl Diamanten und einen Text eingeben.");
+    store.addReward(pid, at, text);
+    store.save();
+    showParents("✅ Belohnung gespeichert.");
+  });
+  on(".rw-del", "click", (e) => {
+    if (!confirm("Diese Belohnung löschen?")) return;
+    store.removeReward(e.currentTarget.dataset.p, e.currentTarget.dataset.id);
+    store.save();
+    showParents("Belohnung gelöscht.");
+  });
+  $("gradesave").onclick = () => {
+    const v = [...app.querySelectorAll(".grade-in")].map((x) => parseInt(x.value, 10));
+    if (v.some((x) => !(x >= 0 && x <= 100)) || v.some((x, i) => i && x >= v[i - 1])) return alert("Bitte Werte von 0 bis 100 eingeben, von Note 1 nach Note 5 absteigend.");
+    store.setGradeScale(v);
+    store.save();
+    showParents("✅ Notenspiegel gespeichert.");
+  };
+  on(".pass-sel", "change", (e) => {
+    store.setPassMark(e.target.dataset.p, e.target.value);
     store.save();
   });
   on(".voice-sel", "change", (e) => {

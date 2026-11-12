@@ -684,3 +684,37 @@ table.words td .emo { font-size: 28px; }
 .pic-choices .mid-pic:has(.emo + .emo) { font-size: clamp(26px, 7.5vw, 48px); }
 /* Sobald eine Antwort mehrere Bilder hat: alle Antworten gleich groß (Größe soll nichts verraten) */
 .pic-choices:has(.emo + .emo) .mid-pic { font-size: clamp(30px, 8.5vw, 56px); }
+
+/* ---- Version 24: Diamanten, Bestehen, Auswertung ---- */
+.gems { font-size: 54px; letter-spacing: 6px; animation: gempop .5s ease-out; }
+.gem-text { font-size: 22px; font-weight: 900; color: var(--gold); margin: 0; }
+.fail-text { font-size: 19px; font-weight: 700; background: #fff3c4; color: #3a1f00; border-radius: 14px; padding: 12px 16px; line-height: 1.4; }
+table.eval { font-size: 14px; }
+table.eval tr.fail td { color: #b3261e; }
+@keyframes gempop { 0% { transform: scale(.4); opacity: 0; } 70% { transform: scale(1.15); } 100% { transform: scale(1); opacity: 1; } }
+
+/* ---- Version 25: Belohnungen, Probe ---- */
+.reward-overlay { position: fixed; inset: 0; z-index: 60; background: rgba(25, 5, 60, .72); display: flex; align-items: center; justify-content: center; padding: 16px; overflow: hidden; }
+.reward-card { position: relative; z-index: 2; background: #fff; color: #2a1250; border-radius: 24px; padding: 24px 22px; max-width: 420px; width: 100%; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,.35); animation: gempop .5s ease-out; }
+.reward-card h2 { color: #7a3fe0; margin: 4px 0; }
+.reward-card .small { color: #5b4a7a; }
+.reward-gem { font-size: 64px; }
+.reward-text { font-size: 24px; font-weight: 900; background: #fff3c4; border-radius: 14px; padding: 12px; margin: 10px 0; }
+.fireworks { position: absolute; left: 50%; top: 32%; width: 0; height: 0; z-index: 1; }
+.fireworks.second { left: 30%; top: 62%; }
+.fireworks i { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c);
+  animation: spark 1.4s ease-out var(--d) infinite; opacity: 0; }
+.fireworks.second i { animation-delay: calc(var(--d) + .7s); }
+@keyframes spark { 0% { transform: translate(0, 0) scale(1); opacity: 1; } 80% { opacity: 1; } 100% { transform: translate(var(--x), var(--y)) scale(.3); opacity: 0; } }
+.probe-btn { margin: 4px 0 18px; background: var(--gold); color: #3a1f00; font-weight: 900; }
+.probe-hint { color: var(--muted); font-size: 15px; margin: 2px 4px 18px; }
+.grade { font-size: 96px; font-weight: 900; width: 150px; height: 150px; line-height: 150px; border-radius: 50%; background: #fff; margin: 6px auto; color: #2a1250; box-shadow: var(--shadow); }
+.grade-1, .grade-2 { color: #1f8a4c; } .grade-5, .grade-6 { color: #b3261e; }
+.grade-word { font-size: 22px; font-weight: 800; margin: 0; }
+.choice.sel { border-color: var(--gold); background: var(--card-sel); }
+.rw-add { gap: 6px; flex-wrap: wrap; } .rw-add .rw-at { width: 70px; flex: none; } .rw-add .rw-text { flex: 1; min-width: 160px; }
+.grade-row { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 8px 0; color: var(--card-ink); }
+.grade-row label { display: flex; align-items: center; gap: 6px; font-weight: 700; }
+.grade-row .grade-in { width: 64px; text-align: center; }
+.parents .voice-row > span { color: var(--card-ink); font-weight: 700; }
+.parents .child-sec > summary h3 .small { font-weight: 600; }
