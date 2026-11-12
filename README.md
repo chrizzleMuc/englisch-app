@@ -46,6 +46,9 @@ Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede E
 
 Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.
 
+## Version 26
+- Vorlesen: Die gleiche Aufgabenstellung wird pro Lektion nur beim ersten Mal von selbst vorgelesen. Danach nur auf Tipp aufs 🔊.
+
 ## Version 25
 - Lektionen nur der Reihe nach: Die nächste Lektion öffnet sich erst, wenn die vorige bestanden ist (Testmodus ausgenommen).
 - Bestehen ab 90 % beim ersten Versuch, pro Kind im Elternbereich einstellbar (70/80/90/100 %). Unter der Marke: "Fast geschafft", nochmal üben, Fehler kommen zuerst.

@@ -8,7 +8,7 @@ import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 25;
+const APP_VERSION = 26;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -271,6 +271,7 @@ function buildLesson(u, n) {
 }
 
 function startLesson(unitId, n, focus = []) {
+  resetSpoken();
   const u = unitById(unitId);
   const school = isSchool(u);
   const isTest = school && !!u.lessons[n].test;
@@ -784,14 +785,21 @@ function taskHead(text) {
   return `${m === "selbst" ? `<p class="read-self">📖 Lies die Aufgabe selbst!</p>` : ""}
     <div class="task-row"><p class="task">${esc(text)}</p><button class="speaker again ${m === "selbst" ? "waiting" : ""}" aria-label="Vorlesen" ${m === "selbst" ? "disabled" : ""}>🔊</button></div>`;
 }
-function wireVoice(token, say) {
+// Gleiche Aufgabenstellung wird pro Lektion nur einmal von selbst vorgelesen,
+// danach nur noch auf Tipp aufs 🔊 (Wunsch Christin: sonst nervt es ringsherum)
+let spokenTasks = new Set();
+const resetSpoken = () => (spokenTasks = new Set());
+function wireVoice(token, say, key) {
   const m = voiceMode();
   if (m === "aus") return;
   on(".again", "click", () => {
     token.heard = true;
     say();
   });
-  if (m === "auto") setTimeout(() => alive(token) && say(), 250);
+  const k = String(key || "").trim().toLowerCase();
+  const fresh = !k || !spokenTasks.has(k);
+  if (k) spokenTasks.add(k);
+  if (m === "auto" && fresh) setTimeout(() => alive(token) && say(), 250);
   else
     setTimeout(() => {
       if (alive(token)) app.querySelectorAll(".again").forEach((b) => {
@@ -821,7 +829,7 @@ STEPS.type = (lesson, step) => {
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="check" ${q.choose ? "hidden" : ""}>Prüfen ✓</button>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
-  wireVoice(token, () => sayDe(q.say || q.task || q.prompt));
+  wireVoice(token, () => sayDe(q.say || q.task || q.prompt), q.task || q.say || q.prompt);
   const showInput = () => {
     $("before").textContent = [q.before, chosen].filter(Boolean).join(" ");
     $("tr").hidden = false;
@@ -894,7 +902,7 @@ STEPS.choice = (lesson, step) => {
     <div class="choices ${q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(o)}">${q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
-  wireVoice(token, () => sayDe(q.say || q.task || q.prompt));
+  wireVoice(token, () => sayDe(q.say || q.task || q.prompt), q.task || q.say || q.prompt);
   on(".choices .choice", "click", async (e) => {
     if (locked) return;
     const el = e.currentTarget;
@@ -940,7 +948,7 @@ STEPS.syllables = (lesson, step) => {
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="check">Fertig ✓</button>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
-  wireVoice(token, () => sayDe("Wo trennst du das Wort " + q.word + "?"));
+  wireVoice(token, () => sayDe("Wo trennst du das Wort " + q.word + "?"), "syllables");
   on(".gap", "click", (e) => {
     const i = +e.currentTarget.dataset.i;
     if (cuts.has(i)) cuts.delete(i);
@@ -986,7 +994,7 @@ STEPS.pairs = (lesson, step) => {
       <div class="pcol">${right.map((p) => `<button class="pbtn" data-side="b" data-id="${p.id}">${esc(p.b)}</button>`).join("")}</div>
     </div>
     <div class="feedback" id="fb"></div>`);
-  wireVoice(token, () => sayDe(t.say || t.task || "Was gehört zusammen?"));
+  wireVoice(token, () => sayDe(t.say || t.task || "Was gehört zusammen?"), t.task || t.say || "pairs");
   on(".pbtn", "click", async (e) => {
     const el = e.currentTarget;
     if (el.classList.contains("done")) return;
@@ -1034,7 +1042,7 @@ STEPS.sort = (lesson, step) => {
     <div class="prompt-card"><span class="prompt-text" id="cur"></span></div>
     <div class="bins">${t.groups.map((g) => `<button class="bin" data-g="${esc(g)}"><span class="bin-title">${esc(g)}</span><span class="bin-items"></span></button>`).join("")}</div>
     <div class="feedback" id="fb"></div>`);
-  wireVoice(token, () => sayDe(t.say || t.task || "Wohin gehört das Wort?"));
+  wireVoice(token, () => sayDe(t.say || t.task || "Wohin gehört das Wort?"), t.task || t.say || "sort");
   const show = () => ($("cur").textContent = order[i].text);
   show();
   on(".bin", "click", async (e) => {
@@ -1073,7 +1081,7 @@ STEPS.photo = (lesson, step) => {
     
     <label class="go-btn photo-btn" id="camlabel">📷 Fertig? Foto machen<input type="file" accept="image/*" capture="environment" id="cam" hidden></label>
     <div id="after"></div>`);
-  wireVoice(token, () => sayDe(t.say || t.task));
+  wireVoice(token, () => sayDe(t.say || t.task), t.task || t.say);
   $("cam").onchange = async (e) => {
     const f = e.target.files[0];
     if (!f) return;
@@ -1191,6 +1199,7 @@ function probeReady(pid, st) {
 }
 
 function startProbe(stageId) {
+  resetSpoken();
   const pid = current.profile;
   const sub = content.subjects.find((x) => x.stages.some((st) => st.id === stageId));
   const st = sub.stages.find((x) => x.id === stageId);
