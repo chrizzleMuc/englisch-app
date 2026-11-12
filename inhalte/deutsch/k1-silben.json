@@ -59,18 +59,18 @@
     },
     {
      "kind": "choice",
-     "id": "k1-kl-teddy",
+     "id": "k1-kl-baer",
      "task": "Wie viele Silben? Klatsch mit!",
-     "prompt": "Teddy",
-     "pic": "🧸",
-     "say": "Teddy. Wie viele Silben hat Teddy? Klatsch mit!",
+     "prompt": "Bär",
+     "pic": "🐻",
+     "say": "Bär. Wie viele Silben hat Bär? Klatsch mit!",
      "options": [
       "👏",
       "👏👏",
       "👏👏👏"
      ],
      "keepOrder": true,
-     "answer": "👏👏",
+     "answer": "👏",
      "picOptions": true
     },
     {
@@ -103,22 +103,6 @@
      ],
      "keepOrder": true,
      "answer": "👏",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-kl-esel",
-     "task": "Wie viele Silben? Klatsch mit!",
-     "prompt": "Esel",
-     "pic": "🫏",
-     "say": "Esel. Wie viele Silben hat Esel? Klatsch mit!",
-     "options": [
-      "👏",
-      "👏👏",
-      "👏👏👏"
-     ],
-     "keepOrder": true,
-     "answer": "👏👏",
      "picOptions": true
     },
     {
@@ -756,21 +740,6 @@
       "Lo"
      ],
      "answer": "Li",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-as-leopard",
-     "task": "Mit welcher Silbe fängt das Wort an?",
-     "prompt": "Leopard",
-     "pic": "🐆",
-     "say": "Leopard. Mit welcher Silbe fängt Leopard an?",
-     "options": [
-      "Le",
-      "Li",
-      "La"
-     ],
-     "answer": "Le",
      "bigOptions": true
     }
    ]

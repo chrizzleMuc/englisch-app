@@ -143,20 +143,6 @@
    "tasks": [
     {
      "kind": "choice",
-     "id": "k1-le-esel",
-     "task": "Lies das Wort. Welches Bild passt?",
-     "prompt": "Esel",
-     "say": "Lies das Wort. Welches Bild passt?",
-     "options": [
-      "🫏",
-      "🚕",
-      "🌽"
-     ],
-     "answer": "🫏",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
      "id": "k1-le-leiter",
      "task": "Lies das Wort. Welches Bild passt?",
      "prompt": "Leiter",
@@ -261,7 +247,7 @@
      "say": "Lies das Wort. Welches Bild passt?",
      "options": [
       "🐜",
-      "🫏",
+      "🍎",
       "🛋️"
      ],
      "answer": "🐜",
@@ -481,7 +467,7 @@
      "options": [
       "🚀",
       "🌹",
-      "🫏"
+      "🍎"
      ],
      "answer": "🚀",
      "picOptions": true
@@ -512,20 +498,6 @@
       "🐯"
      ],
      "answer": "🚂",
-     "picOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-sl-esel",
-     "task": "Lies Silbe für Silbe. Welches Bild passt?",
-     "prompt": "E · sel",
-     "say": "Lies Silbe für Silbe. Welches Bild passt?",
-     "options": [
-      "🫏",
-      "🐯",
-      "🤖"
-     ],
-     "answer": "🫏",
      "picOptions": true
     },
     {
@@ -585,7 +557,7 @@
      "options": [
       "🐯",
       "🚕",
-      "🫏"
+      "🍎"
      ],
      "answer": "🐯",
      "picOptions": true
@@ -599,7 +571,7 @@
      "options": [
       "🧦",
       "🐯",
-      "🫏"
+      "🍎"
      ],
      "answer": "🧦",
      "picOptions": true
@@ -612,7 +584,7 @@
      "say": "Lies Silbe für Silbe. Welches Bild passt?",
      "options": [
       "🤖",
-      "🫏",
+      "🍎",
       "🥗"
      ],
      "answer": "🤖",
@@ -694,20 +666,6 @@
    "title": "Welcher Satz passt?",
    "icon": "🖼️",
    "tasks": [
-    {
-     "kind": "choice",
-     "id": "k1-sz-10",
-     "task": "Welcher Satz passt zum Bild?",
-     "prompt": "Der Esel ist müde.",
-     "pic": "🫏",
-     "say": "Welcher Satz passt zum Bild?",
-     "options": [
-      "Der Esel ist müde.",
-      "Die Ameise ist am Ast.",
-      "Die Sonne scheint."
-     ],
-     "answer": "Der Esel ist müde."
-    },
     {
      "kind": "choice",
      "id": "k1-sz-6",

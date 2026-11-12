@@ -673,3 +673,14 @@ table.words td .emo { font-size: 28px; }
   border-radius: 14px; padding: 12px 16px; box-shadow: 0 8px 24px rgba(30,0,80,.3); text-align: center; }
 #cloudbox .input { width: 100%; margin: 6px 0; }
 #cloudbox .row .input { flex: 1; margin: 0; }
+
+/* ---- Version 23: größere Bilder ---- */
+.pic-card .huge-pic { font-size: clamp(100px, 28vw, 160px); }
+.pic-choices .choice { min-height: 130px; }
+.pic-choices .mid-pic { font-size: clamp(72px, 20vw, 110px); }
+/* mehrere Bilder in einer Antwort (z. B. Klatschen) etwas kleiner, damit sie nebeneinander passen */
+.pic-choices .mid-pic:has(.emo + .emo) { font-size: clamp(30px, 8.5vw, 56px); }
+.pic-choices { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.pic-choices .mid-pic:has(.emo + .emo) { font-size: clamp(26px, 7.5vw, 48px); }
+/* Sobald eine Antwort mehrere Bilder hat: alle Antworten gleich groß (Größe soll nichts verraten) */
+.pic-choices:has(.emo + .emo) .mid-pic { font-size: clamp(30px, 8.5vw, 56px); }

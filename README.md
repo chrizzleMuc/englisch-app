@@ -46,6 +46,10 @@ Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede E
 
 Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.
 
+## Version 23
+- Bilder in Aufgaben deutlich größer (Fragebild und Bild-Antworten).
+- Schlecht erkennbare Bilder entfernt: Esel, Leopard, Teddy (beim Klatschen jetzt „Bär“ mit einer Silbe). Wo sie nur falsche Antwort waren, ersetzt durch eindeutige Bilder.
+
 ## Version 22
 - Online-Abgleich holt bei offener App jede Minute den Stand der anderen Geräte und zeigt ihn auf Start- und Fachseite gleich an.
 
