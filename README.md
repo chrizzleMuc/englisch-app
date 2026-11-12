@@ -47,6 +47,8 @@ Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede E
 Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.
 
 ## Version 26
+- Elternbereich nach Kind geordnet: je Kind ein Kasten mit Auswertung, „Das klappt noch nicht“, Belohnungen, Einstellungen (Name, Bestehen, Vorlesen) und Freigeschaltet.
+- Lautsprecher sagt bei schon bekannter Aufgabe nur das Wort (z. B. „Affe“).
 - Vorlesen: Die gleiche Aufgabenstellung wird pro Lektion nur beim ersten Mal von selbst vorgelesen. Danach nur auf Tipp aufs 🔊.
 
 ## Version 25

@@ -716,3 +716,5 @@ table.eval tr.fail td { color: #b3261e; }
 .grade-row { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 8px 0; color: var(--card-ink); }
 .grade-row label { display: flex; align-items: center; gap: 6px; font-weight: 700; }
 .grade-row .grade-in { width: 64px; text-align: center; }
+.parents .voice-row > span { color: var(--card-ink); font-weight: 700; }
+.parents .child-sec > summary h3 .small { font-weight: 600; }

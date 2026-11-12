@@ -1391,22 +1391,18 @@ function unitTable(u) {
   </table>`;
 }
 
-function troubleHtml() {
-  const rows = PROFILES.map((p) => {
-    const list = store.troubleCards(p.id).filter((c) => item(c.id));
-    if (!list.length) return `<p class="small"><b>${esc(pname(p))}:</b> nichts, prima!</p>`;
-    return `<p class="small"><b>${esc(pname(p))}:</b></p><table class="words">
+function troubleChild(p) {
+  const list = store.troubleCards(p.id).filter((c) => item(c.id));
+  return `<details class="fold sub-fold" data-key="tr-${p.id}"><summary>⚠️ Das klappt noch nicht <span class="small">· ${list.length || "nichts, prima!"}</span></summary>
+    <p class="small">Aufgaben, die mindestens zweimal falsch waren. Sie kommen öfter dran (spätestens alle 2 Tage), bis sie dreimal hintereinander richtig waren.</p>
+    ${list.length ? `<table class="words">
       <tr><th>Aufgabe</th><th>Lösung</th><th>falsch</th></tr>
       ${list.map((c) => {
         const it = item(c.id);
         const [a, b] = it.kind === "task" ? describe(it.q) : [it.en, it.de || ""];
         return `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td>${c.wrong}×</td></tr>`;
       }).join("")}
-    </table>`;
-  }).join("");
-  return `<details class="psec" data-key="sec-49314"><summary><h3>⚠️ Das klappt noch nicht</h3></summary>
-    <p class="small">Aufgaben, die mindestens zweimal falsch waren. Sie kommen öfter dran (spätestens alle 2 Tage), bis sie dreimal hintereinander richtig waren.</p>
-    ${rows}
+    </table>` : ""}
   </details>`;
 }
 
@@ -1466,57 +1462,82 @@ function lessonName(uid, n) {
   const l = lessonsOf(u)[n];
   return `${u.title_de} · ${l ? l.title : n + 1}`;
 }
-function evalHtml() {
-  const fmt = (t) => new Date(t).toLocaleString("de-DE", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
-  const dur = (sec) => (sec >= 60 ? Math.round(sec / 60) + " min" : sec + " s");
-  return `<details class="psec" data-key="sec-eval"><summary><h3>📊 Auswertung</h3></summary>
-    <p class="small">Jeder Durchgang einer Lektion mit Ergebnis beim ersten Versuch, Fehlklicks und Dauer. Darunter die Aufgaben, bei denen am häufigsten falsch getippt wurde, mit der falschen Antwort.</p>
-    ${PROFILES.map((p) => {
-      const log = (store.profile(p.id).log || []).slice().sort((a, b) => b.at - a.at);
-      const days = new Set(log.filter((x) => Date.now() - x.at < 7 * 86400000).map((x) => new Date(x.at).toDateString())).size;
-      const week = log.filter((x) => Date.now() - x.at < 7 * 86400000);
-      const avg = week.length ? Math.round(week.reduce((n, x) => n + x.pct, 0) / week.length) : null;
-      const hard = Object.entries(store.profile(p.id).cards)
-        .filter(([id, c]) => c.miss && item(id))
-        .sort((a, b) => b[1].miss - a[1].miss)
-        .slice(0, 10);
-      return `<details class="fold sub-fold" data-key="ev-${p.id}"><summary>${esc(pname(p))} <span class="small">${week.length ? `· 7 Tage: ${week.length} Durchgänge an ${days} Tagen, ⌀ ${avg} %` : "· noch keine Durchgänge"}</span></summary>
-        ${log.length ? `<table class="words eval"><tr><th>Wann</th><th>Lektion</th><th>Ergebnis</th><th>Fehl&shy;klicks</th><th>Dauer</th></tr>
-          ${log.slice(0, 15).map((x) => `<tr class="${x.ok ? "" : "fail"}"><td>${fmt(x.at)}</td><td>${esc(lessonName(x.u, x.n))}</td><td>${x.pct} % ${x.note ? `· Note ${x.note}` : x.ok ? "✓" : "✗"}</td><td>${x.wrong}</td><td>${dur(x.sec)}</td></tr>`).join("")}
-        </table>` : ""}
-        ${hard.length ? `<p class="small"><b>Am häufigsten falsch:</b></p><table class="words eval"><tr><th>Aufgabe</th><th>Richtig</th><th>Getippt</th><th>falsch</th></tr>
-          ${hard.map(([id, c]) => {
-            const it = item(id);
-            const [a, b] = it.kind === "task" ? describe(it.q) : [it.en, it.de || ""];
-            const picks = Object.entries(c.picks || {}).sort((x, y) => y[1] - x[1]).slice(0, 3).map(([k, v]) => `${esc(k)}${v > 1 ? ` (${v}×)` : ""}`).join(", ");
-            return `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td>${picks || "–"}</td><td>${c.miss}×</td></tr>`;
-          }).join("")}</table>` : ""}
-      </details>`;
-    }).join("")}
-  </details>
-  <details class="psec" data-key="sec-pass"><summary><h3>🎯 Bestehen</h3></summary>
-    <p class="small">So viel muss beim ersten Versuch richtig sein, damit eine Lektion als geschafft gilt und die nächste aufgeht. Darunter heißt es „Nochmal üben“.</p>
-    ${PROFILES.map((p) => `<div class="voice-row"><span>${esc(pname(p))}</span><select class="input pass-sel" data-p="${p.id}">
-      ${[70, 80, 90, 100].map((v) => `<option value="${v}" ${store.passMark(p.id) === v ? "selected" : ""}>${v} %</option>`).join("")}
-    </select></div>`).join("")}
-  </details>
-  <details class="psec" data-key="sec-rewards"><summary><h3>🎁 Belohnungen</h3></summary>
-    <p class="small">Lege fest, was es ab wie vielen Diamanten gibt. Ist die Zahl erreicht, sieht das Kind ein Feuerwerk mit deinem Text.</p>
-    ${PROFILES.map((p) => {
-      const pr = store.profile(p.id);
-      return `<details class="fold sub-fold" data-key="rw-${p.id}"><summary>${esc(pname(p))} <span class="small">· jetzt ${store.diamonds(p.id)} 💎</span></summary>
-        ${pr.rewards.length ? `<table class="words eval"><tr><th>ab</th><th>Belohnung</th><th></th><th></th></tr>
-          ${pr.rewards.map((r) => `<tr><td>${r.at} 💎</td><td>${esc(r.text)}</td><td>${pr.rewardsGot[r.id] ? `✅ ${new Date(pr.rewardsGot[r.id]).toLocaleDateString("de-DE")}` : ""}</td><td><button class="link-btn rw-del" data-p="${p.id}" data-id="${r.id}" aria-label="Löschen">✕</button></td></tr>`).join("")}
-        </table>` : `<p class="small">Noch keine Belohnung festgelegt.</p>`}
-        <div class="row rw-add"><input class="input rw-at" data-p="${p.id}" inputmode="numeric" placeholder="💎" maxlength="4"><input class="input rw-text" data-p="${p.id}" placeholder="z. B. 15 Minuten mehr Zockzeit" maxlength="120"><button class="wide-btn rw-btn" data-p="${p.id}">Hinzufügen</button></div>
-      </details>`;
-    }).join("")}
-  </details>
-  <details class="psec" data-key="sec-grades"><summary><h3>📝 Notenspiegel für Proben</h3></summary>
+const fmtWhen = (t) => new Date(t).toLocaleString("de-DE", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+const fmtDur = (sec) => (sec >= 60 ? Math.round(sec / 60) + " min" : sec + " s");
+function evalChild(p) {
+  const fmt = fmtWhen;
+  const dur = fmtDur;
+  const log = (store.profile(p.id).log || []).slice().sort((a, b) => b.at - a.at);
+  const days = new Set(log.filter((x) => Date.now() - x.at < 7 * 86400000).map((x) => new Date(x.at).toDateString())).size;
+  const week = log.filter((x) => Date.now() - x.at < 7 * 86400000);
+  const avg = week.length ? Math.round(week.reduce((n, x) => n + x.pct, 0) / week.length) : null;
+  const hard = Object.entries(store.profile(p.id).cards)
+    .filter(([id, c]) => c.miss && item(id))
+    .sort((a, b) => b[1].miss - a[1].miss)
+    .slice(0, 10);
+  return `<details class="fold sub-fold" data-key="ev-${p.id}"><summary>📊 Auswertung <span class="small">${week.length ? `· 7 Tage: ${week.length} Durchgänge an ${days} Tagen, ⌀ ${avg} %` : "· noch keine Durchgänge"}</span></summary>
+    ${log.length ? `<table class="words eval"><tr><th>Wann</th><th>Lektion</th><th>Ergebnis</th><th>Fehl&shy;klicks</th><th>Dauer</th></tr>
+      ${log.slice(0, 15).map((x) => `<tr class="${x.ok ? "" : "fail"}"><td>${fmt(x.at)}</td><td>${esc(lessonName(x.u, x.n))}</td><td>${x.pct} % ${x.note ? `· Note ${x.note}` : x.ok ? "✓" : "✗"}</td><td>${x.wrong}</td><td>${dur(x.sec)}</td></tr>`).join("")}
+    </table>` : ""}
+    ${hard.length ? `<p class="small"><b>Am häufigsten falsch:</b></p><table class="words eval"><tr><th>Aufgabe</th><th>Richtig</th><th>Getippt</th><th>falsch</th></tr>
+      ${hard.map(([id, c]) => {
+        const it = item(id);
+        const [a, b] = it.kind === "task" ? describe(it.q) : [it.en, it.de || ""];
+        const picks = Object.entries(c.picks || {}).sort((x, y) => y[1] - x[1]).slice(0, 3).map(([k, v]) => `${esc(k)}${v > 1 ? ` (${v}×)` : ""}`).join(", ");
+        return `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td>${picks || "–"}</td><td>${c.miss}×</td></tr>`;
+      }).join("")}</table>` : ""}
+  </details>`;
+}
+function rewardsChild(p) {
+  const pr = store.profile(p.id);
+  return `<details class="fold sub-fold" data-key="rw-${p.id}"><summary>🎁 Belohnungen <span class="small">· jetzt ${store.diamonds(p.id)} 💎</span></summary>
+    ${pr.rewards.length ? `<table class="words eval"><tr><th>ab</th><th>Belohnung</th><th></th><th></th></tr>
+      ${pr.rewards.map((r) => `<tr><td>${r.at} 💎</td><td>${esc(r.text)}</td><td>${pr.rewardsGot[r.id] ? `✅ ${new Date(pr.rewardsGot[r.id]).toLocaleDateString("de-DE")}` : ""}</td><td><button class="link-btn rw-del" data-p="${p.id}" data-id="${r.id}" aria-label="Löschen">✕</button></td></tr>`).join("")}
+    </table>` : `<p class="small">Noch keine Belohnung festgelegt.</p>`}
+    <div class="row rw-add"><input class="input rw-at" data-p="${p.id}" inputmode="numeric" placeholder="💎" maxlength="4"><input class="input rw-text" data-p="${p.id}" placeholder="z. B. 15 Minuten mehr Zockzeit" maxlength="120"><button class="wide-btn rw-btn" data-p="${p.id}">Hinzufügen</button></div>
+  </details>`;
+}
+function gradesHtml() {
+  return `<details class="psec" data-key="sec-grades"><summary><h3>📝 Notenspiegel für Proben</h3></summary>
     <p class="small">Eine Probe gibt es pro Klassenstufe eines Fachs, sobald ${PROBE_MIN_UNITS} Themen ganz geschafft sind: ${PROBE_SIZE} gemischte Aufgaben aus den geschafften Themen, ohne Hilfe. Ab so viel Prozent gibt es die Note. Voreinstellung ist ein in bayerischen Grundschulen häufiger Richtwert; jede Schule legt ihren eigenen fest.</p>
     <div class="grade-row">${store.gradeScale().map((v, i) => `<label>Note ${i + 1} ab<input class="input grade-in" data-i="${i}" inputmode="numeric" value="${v}" maxlength="3"> %</label>`).join("")}<label>Note 6 darunter</label></div>
     <button class="wide-btn" id="gradesave">Notenspiegel speichern</button>
   </details>`;
+}
+
+// Alles, was ein Kind betrifft, in einem Kasten
+function childHtml(p) {
+  const pr = store.profile(p.id);
+  return `<details class="psec child-sec" data-key="kid-${p.id}"><summary><h3>${p.id === "entdecker" ? "👧" : "👦"} ${esc(pname(p))} <span class="small">${pr.name ? `· ${p.title} ` : ""}· ⭐ ${store.totalStars(p.id)} · 💎 ${store.diamonds(p.id)}</span></h3></summary>
+    ${evalChild(p)}
+    ${troubleChild(p)}
+    ${rewardsChild(p)}
+    <details class="fold sub-fold" data-key="set-${p.id}"><summary>⚙️ Einstellungen</summary>
+      <div class="voice-row"><span>Name</span><input class="input name-input" data-p="${p.id}" value="${esc(pr.name || "")}" placeholder="${esc(p.title)}" maxlength="20" autocomplete="off"></div>
+      <div class="voice-row"><span>🎯 Bestehen ab</span><select class="input pass-sel" data-p="${p.id}">
+        ${[70, 80, 90, 100].map((v) => `<option value="${v}" ${store.passMark(p.id) === v ? "selected" : ""}>${v} %</option>`).join("")}
+      </select></div>
+      <div class="voice-row"><span>🔊 Vorlesen</span>${voiceSel(p)}</div>
+      <p class="small">Bestehen: So viel muss beim ersten Versuch richtig sein, damit die nächste Lektion aufgeht. Vorlesen: <b>Vorlesen</b> liest jede neue Aufgabenstellung einmal vor, danach per 🔊. <b>Erst selbst lesen</b>: Der 🔊-Knopf geht erst nach ein paar Sekunden. <b>Aus</b>: keine deutsche Stimme.</p>
+    </details>
+    <details class="fold sub-fold" data-key="un-${p.id}"><summary>👁️ Freigeschaltet</summary>
+      <p class="small">Was soll ${esc(pname(p))} sehen? Ausgeschaltetes verschwindet, der Fortschritt bleibt gespeichert.</p>
+      ${content.subjects.map((sub) => `<details class="fold sub-fold" data-key="un-${p.id}-${sub.id}"><summary>${esc(sub.title)}${store.isEnabled(p.id, sub.id) ? "" : ` <span class="small">(aus)</span>`}</summary>
+        <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${esc(sub.title)} anzeigen</label>
+        ${sub.stages.map((st) => `
+          <div class="unlock-topics">
+            <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${st.id}" ${store.isEnabled(p.id, st.id, stageDefault(p.id, st)) ? "checked" : ""}> ${esc(st.title)}</label>
+            <div class="unlock-topics">
+              ${st.units.map((u) => `<label class="field check"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${u.id}" ${store.isEnabled(p.id, u.id) ? "checked" : ""}> ${esc(u.title_de)}</label>`).join("")}
+            </div>
+          </div>`).join("")}</details>`).join("")}
+    </details>
+  </details>`;
+}
+function voiceSel(p) {
+  return `<select class="input voice-sel" data-p="${p.id}">
+    ${[["auto", "Vorlesen"], ["selbst", "Erst selbst lesen"], ["aus", "Aus"]].map(([v, l]) => `<option value="${v}" ${voiceMode(p.id) === v ? "selected" : ""}>${l}</option>`).join("")}
+  </select>`;
 }
 
 // Welche Kästen im Elternbereich offen sind, bleibt bis zum Schließen der App erhalten
@@ -1539,22 +1560,7 @@ function showParents(msg = "") {
       </header>
       ${msg ? `<p class="notice">${msg}</p>` : ""}
       ${content.errors.length ? `<section class="errors"><h3>⚠️ Probleme mit den Inhalten</h3><ul>${content.errors.map((e) => `<li>${esc(e)}</li>`).join("")}</ul></section>` : ""}
-      <details class="psec" data-key="sec-92848"><summary><h3>Freigeschaltet</h3></summary>
-        <p class="small">Was soll das Kind sehen? Ausgeschaltetes verschwindet, der Fortschritt bleibt gespeichert.</p>
-        <div class="unlock">
-          ${PROFILES.map((p) => `<details class="unlock-col fold" data-key="un-${p.id}"><summary><h4>${esc(pname(p))}</h4></summary>
-            ${content.subjects.map((sub) => `<details class="fold sub-fold" data-key="un-${p.id}-${sub.id}"><summary>${esc(sub.title)}${store.isEnabled(p.id, sub.id) ? "" : ` <span class="small">(aus)</span>`}</summary>
-              <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${sub.id}" ${store.isEnabled(p.id, sub.id) ? "checked" : ""}> ${esc(sub.title)} anzeigen</label>
-              ${sub.stages.map((st) => `
-                <div class="unlock-topics">
-                  <label class="field check subj"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${st.id}" ${store.isEnabled(p.id, st.id, stageDefault(p.id, st)) ? "checked" : ""}> ${esc(st.title)}</label>
-                  <div class="unlock-topics">
-                    ${st.units.map((u) => `<label class="field check"><input type="checkbox" class="en-box" data-p="${p.id}" data-id="${u.id}" ${store.isEnabled(p.id, u.id) ? "checked" : ""}> ${esc(u.title_de)}</label>`).join("")}
-                  </div>
-                </div>`).join("")}</details>`).join("")}
-          </details>`).join("")}
-        </div>
-      </details>
+      ${PROFILES.map(childHtml).join("")}
       <details class="psec" data-key="sec-2996"><summary><h3>Lernstand</h3></summary>
         <p class="small">Lernkartei: Jede Aufgabe wandert bei richtiger Antwort einen Kasten weiter (1 → 5), bei falscher zurück in Kasten 1. Eine Einheit ist geschafft 🏆, wenn alles mindestens in Kasten 3 ist. Fällig heute: ${PROFILES.map((p) => `${esc(pname(p))} ${store.dueCards(p.id).length}`).join(", ")}.</p>
         ${content.subjects.flatMap((s) => s.stages.map((st) => ({ s, st }))).map(({ s, st }) => `<details class="fold sub-fold" data-key="ls-${st.id}"><summary>${esc(s.title)} · ${esc(st.title)}</summary>
@@ -1568,8 +1574,7 @@ function showParents(msg = "") {
             ${unitTable(u)}
           </details>`).join("")}</details>`).join("")}
       </details>
-      ${evalHtml()}
-      ${troubleHtml()}
+      ${gradesHtml()}
       <details class="psec" data-key="sec-59838"><summary><h3>📷 Fotomappe</h3></summary>
         <p class="small">Fotos von Heft-Aufgaben. „Nochmal“ gibt die Aufgabe zurück: Sie kommt beim nächsten Üben im Fach wieder. Die Fotos liegen nur auf diesem Gerät und sind nicht in der Sicherungsdatei.</p>
         <div id="photos"><p class="small">Lade Fotos …</p></div>
@@ -1585,22 +1590,13 @@ function showParents(msg = "") {
         </div>
         ${saved ? `<p class="small">Zuletzt gespeichert: ${new Date(saved).toLocaleString("de-DE")}</p>` : ""}
       </details>
-      <details class="psec" data-key="sec-9942"><summary><h3>👧👦 Namen</h3></summary>
-        <p class="small">Steht auf der Startseite statt der Klasse. Der Name bleibt auf diesem Gerät und kommt mit der Sicherungsdatei auf das andere Gerät.</p>
-        ${PROFILES.map((p) => `<div class="voice-row"><span>${esc(p.title)}</span><input class="input name-input" data-p="${p.id}" value="${esc(store.profile(p.id).name || "")}" placeholder="Name" maxlength="20" autocomplete="off"></div>`).join("")}
-      </details>
-      <details class="psec" data-key="sec-33521"><summary><h3>🔊 Aufgaben vorlesen</h3></summary>
-        <p class="small">Für Kinder, die noch nicht lesen können. <b>Vorlesen</b>: Jede Aufgabe wird automatisch vorgelesen. <b>Erst selbst lesen</b>: Das Kind soll die Aufgabe zuerst selbst lesen, der 🔊-Knopf geht erst nach ein paar Sekunden. Am Ende steht, wie viele Aufgaben es allein gelesen hat. <b>Aus</b>: keine deutsche Stimme. Englische Wörter werden immer vorgesprochen.</p>
-        ${[...PROFILES, TEST_PROFILE].map((p) => `<div class="voice-row"><span>${esc(pname(p))}</span><select class="input voice-sel" data-p="${p.id}">
-          ${[["auto", "Vorlesen"], ["selbst", "Erst selbst lesen"], ["aus", "Aus"]].map(([v, l]) => `<option value="${v}" ${voiceMode(p.id) === v ? "selected" : ""}>${l}</option>`).join("")}
-        </select></div>`).join("")}
-      </details>
       <details class="psec" data-key="sec-18526"><summary><h3>Stimme</h3></summary>
         <p class="small">${v.supported ? (v.british ? `Britische Stimme gefunden: ${esc(v.name)}` : "Keine britische Stimme gefunden. Bitte in den Android-Einstellungen unter „Sprachausgabe“ (Google) die Sprache „Englisch (Vereinigtes Königreich)“ herunterladen, dann funktioniert sie auch offline.") : "Dieses Gerät unterstützt keine Sprachausgabe."} Liegt für einen Inhalt eine Aufnahme im Ordner audio/en, wird stattdessen die Aufnahme abgespielt.</p>
         <button class="wide-btn" id="test">🔊 Stimme testen</button>
       </details>
       <details class="psec" data-key="sec-78279"><summary><h3>🧪 Testmodus</h3></summary>
         <p class="small">Zum Ausprobieren ohne den Fortschritt der Kinder zu verändern. Der Testmodus sieht alle Fächer und Stufen und hat einen eigenen Lernstand. Fällig im Test: ${store.dueCards(TEST_PROFILE.id).length}.</p>
+        <div class="voice-row"><span>🔊 Vorlesen im Test</span>${voiceSel(TEST_PROFILE)}</div>
         <div class="row">
           <button class="wide-btn" id="testmode">🧪 Testmodus starten</button>
           <button class="wide-btn" id="testreset">Test-Fortschritt löschen</button>
