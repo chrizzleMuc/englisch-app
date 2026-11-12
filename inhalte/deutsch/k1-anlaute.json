@@ -227,21 +227,6 @@
     },
     {
      "kind": "choice",
-     "id": "k1-an-esel",
-     "task": "Womit fängt das Wort an?",
-     "prompt": "Esel",
-     "pic": "🫏",
-     "say": "Esel. Womit fängt Esel an?",
-     "options": [
-      "E e",
-      "U u",
-      "A a"
-     ],
-     "answer": "E e",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
      "id": "k1-an-oktopus",
      "task": "Womit fängt das Wort an?",
      "prompt": "Oktopus",
@@ -443,21 +428,6 @@
     },
     {
      "kind": "choice",
-     "id": "k1-an-teddy",
-     "task": "Womit fängt das Wort an?",
-     "prompt": "Teddy",
-     "pic": "🧸",
-     "say": "Teddy. Womit fängt Teddy an?",
-     "options": [
-      "T t",
-      "O o",
-      "M m"
-     ],
-     "answer": "T t",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
      "id": "k1-an-tuer",
      "task": "Womit fängt das Wort an?",
      "prompt": "Tür",
@@ -482,21 +452,6 @@
       "L l",
       "T t",
       "M m"
-     ],
-     "answer": "L l",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-an-leopard",
-     "task": "Womit fängt das Wort an?",
-     "prompt": "Leopard",
-     "pic": "🐆",
-     "say": "Leopard. Womit fängt Leopard an?",
-     "options": [
-      "L l",
-      "O o",
-      "A a"
      ],
      "answer": "L l",
      "bigOptions": true
@@ -821,21 +776,6 @@
    "tasks": [
     {
      "kind": "choice",
-     "id": "k1-an-nicht-e0",
-     "task": "Welches Bild fängt NICHT mit E an?",
-     "prompt": "E e",
-     "say": "Welches Bild fängt nicht mit E an?",
-     "options": [
-      "🦆",
-      "🫏",
-      "🪜"
-     ],
-     "answer": "🪜",
-     "picOptions": true,
-     "explain": "Leiter fängt mit L an. Esel und Ente fangen mit E an."
-    },
-    {
-     "kind": "choice",
      "id": "k1-an-nicht-u1",
      "task": "Welches Bild fängt NICHT mit U an?",
      "prompt": "U u",
@@ -1019,36 +959,6 @@
      "answer": "🌙",
      "picOptions": true,
      "explain": "Mond fängt mit M an. Ufo und Uhr fangen mit U an."
-    },
-    {
-     "kind": "choice",
-     "id": "k1-an-nicht-l1",
-     "task": "Welches Bild fängt NICHT mit L an?",
-     "prompt": "L l",
-     "say": "Welches Bild fängt nicht mit L an?",
-     "options": [
-      "🦙",
-      "🐜",
-      "🐆"
-     ],
-     "answer": "🐜",
-     "picOptions": true,
-     "explain": "Ameise fängt mit A an. Lama und Leopard fangen mit L an."
-    },
-    {
-     "kind": "choice",
-     "id": "k1-an-nicht-m0",
-     "task": "Welches Bild fängt NICHT mit M an?",
-     "prompt": "M m",
-     "say": "Welches Bild fängt nicht mit M an?",
-     "options": [
-      "🌽",
-      "🐆",
-      "🥕"
-     ],
-     "answer": "🐆",
-     "picOptions": true,
-     "explain": "Leopard fängt mit L an. Mais und Möhre fangen mit M an."
     },
     {
      "kind": "choice",

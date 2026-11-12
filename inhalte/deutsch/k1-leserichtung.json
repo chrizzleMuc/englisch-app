@@ -270,22 +270,6 @@
     },
     {
      "kind": "choice",
-     "id": "k1-lr-gap-esel",
-     "task": "Welche Silbe fehlt?",
-     "prompt": "E __",
-     "say": "Esel. Welche Silbe fehlt? Lies von links nach rechts.",
-     "options": [
-      "sel",
-      "les"
-     ],
-     "answer": "sel",
-     "pic": "🫏",
-     "showText": true,
-     "bigOptions": true,
-     "explain": "Esel: Esel. Lies immer von links nach rechts."
-    },
-    {
-     "kind": "choice",
      "id": "k1-lr-gap-salat",
      "task": "Welche Silbe fehlt?",
      "prompt": "Sa __",
@@ -687,21 +671,6 @@
      ],
      "answer": "Lama",
      "pic": "🦙",
-     "bigOptions": true
-    },
-    {
-     "kind": "choice",
-     "id": "k1-lr-wort-esel",
-     "task": "Welches Wort passt zum Bild?",
-     "prompt": "Esel",
-     "say": "Welches Wort passt zum Bild? Lies genau von links nach rechts.",
-     "options": [
-      "Esel",
-      "Lese",
-      "Seel"
-     ],
-     "answer": "Esel",
-     "pic": "🫏",
      "bigOptions": true
     },
     {
