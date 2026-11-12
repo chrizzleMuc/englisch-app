@@ -789,16 +789,23 @@ function taskHead(text) {
 // danach nur noch auf Tipp aufs 🔊 (Wunsch Christin: sonst nervt es ringsherum)
 let spokenTasks = new Set();
 const resetSpoken = () => (spokenTasks = new Set());
-function wireVoice(token, say, key) {
+// Wort vorne im Vorlesetext ("Affe. Wie viele Silben hat Affe?") → "Affe"
+function sayWord(text) {
+  const m = /^([^.?!]{1,30})\. (.+)$/.exec(String(text || ""));
+  return m && m[2].includes(m[1]) ? m[1] : "";
+}
+function wireVoice(token, say, key, word) {
   const m = voiceMode();
   if (m === "aus") return;
-  on(".again", "click", () => {
-    token.heard = true;
-    say();
-  });
   const k = String(key || "").trim().toLowerCase();
   const fresh = !k || !spokenTasks.has(k);
   if (k) spokenTasks.add(k);
+  // Aufgabe schon bekannt: der Lautsprecher sagt nur noch das Wort
+  on(".again", "click", () => {
+    token.heard = true;
+    if (!fresh && word) sayDe(word);
+    else say();
+  });
   if (m === "auto" && fresh) setTimeout(() => alive(token) && say(), 250);
   else
     setTimeout(() => {
@@ -829,7 +836,7 @@ STEPS.type = (lesson, step) => {
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="check" ${q.choose ? "hidden" : ""}>Prüfen ✓</button>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
-  wireVoice(token, () => sayDe(q.say || q.task || q.prompt), q.task || q.say || q.prompt);
+  wireVoice(token, () => sayDe(q.say || q.task || q.prompt), q.task || q.say || q.prompt, sayWord(q.say));
   const showInput = () => {
     $("before").textContent = [q.before, chosen].filter(Boolean).join(" ");
     $("tr").hidden = false;
@@ -902,7 +909,7 @@ STEPS.choice = (lesson, step) => {
     <div class="choices ${q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(o)}">${q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
-  wireVoice(token, () => sayDe(q.say || q.task || q.prompt), q.task || q.say || q.prompt);
+  wireVoice(token, () => sayDe(q.say || q.task || q.prompt), q.task || q.say || q.prompt, sayWord(q.say));
   on(".choices .choice", "click", async (e) => {
     if (locked) return;
     const el = e.currentTarget;
