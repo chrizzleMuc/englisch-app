@@ -8,7 +8,7 @@ import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 23;
+const APP_VERSION = 25;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -70,7 +70,7 @@ function showProfiles() {
         ${PROFILES.map((p) => `<button class="profile-card" data-id="${p.id}">
             <span class="pname">${esc(pname(p))}</span>
             ${pname(p) !== p.title ? `<span class="pclass">${esc(p.title)}</span>` : ""}
-            <span class="small">⭐ ${store.totalStars(p.id)}</span>
+            <span class="small">⭐ ${store.totalStars(p.id)} · 💎 ${store.diamonds(p.id)}</span>
           </button>`).join("")}
       </div>
       <button class="link-btn" id="parents">🔒 Elternbereich</button>
@@ -113,6 +113,7 @@ function homeHeader(p) {
         <span class="who">${p.test ? `<span class="test-badge">🧪 Test</span>` : esc(pname(p))}</span>
         <span class="stat">🔥 ${store.streakCount(p.id)}</span>
         <span class="stat">⭐ ${store.totalStars(p.id)}</span>
+        <span class="stat">💎 ${store.diamonds(p.id)}</span>
       </header>`;
 }
 
@@ -139,12 +140,16 @@ function showHome(subjectId = current.subject) {
               <span class="dots small-dots">${Array.from({ length: nl }, (_, n) => `<span class="dot ${n < done ? "on" : ""}"></span>`).join("")}</span>
             </button>`;
           }).join("")}
-        </div>`).join("")}
+        </div>
+        ${st.units.some(isSchool) ? (probeReady(p.id, st)
+          ? `<button class="wide-btn probe-btn" data-st="${st.id}">📝 Probe schreiben</button>`
+          : `<p class="probe-hint">📝 Probe: Schaffe erst ${Math.min(PROBE_MIN_UNITS, st.units.filter(isSchool).length)} Themen ganz (alle Lektionen), dann kannst du eine Probe schreiben.</p>`) : ""}`).join("")}
       ${stagesFor(p.id, sub).some((st) => st.units.some((u) => u.words.length)) ? `<button class="wide-btn album-btn" id="album">📒 Mein Sticker-Album</button>` : ""}
     </div>`);
   current.view = "home";
   $("back").onclick = () => (many ? showSubjects(subs) : showProfiles());
   if ($("album")) $("album").onclick = showAlbum;
+  on(".probe-btn", "click", (e) => startProbe(e.currentTarget.dataset.st));
   on(".topic[data-id]", "click", (e) => {
     chime("pop");
     showUnit(e.currentTarget.dataset.id);
@@ -175,7 +180,8 @@ function showUnit(unitId) {
   const pid = current.profile;
   const sub = content.subjects.find((x) => x.id === u.subject);
   const lessons = lessonsOf(u);
-  const isOpen = (i) => isSchool(u) || isTestUser() || i === 0 || store.lessonDone(pid, u.id, i - 1);
+  // Nächste Lektion erst, wenn die vorherige geschafft ist (Schulfächer: mit Bestehensgrenze)
+  const isOpen = (i) => isTestUser() || i === 0 || store.lessonDone(pid, u.id, i - 1);
   const cur = lessons.findIndex((_, i) => isOpen(i) && !store.lessonDone(pid, u.id, i));
   // Pfad schlängelt sich wie eine Treppe nach links und rechts
   const sway = [0, -70, -105, -70, 0, 70, 105, 70];
@@ -264,13 +270,16 @@ function buildLesson(u, n) {
   return steps.map((s) => ({ unit: u.id, ...s }));
 }
 
-function startLesson(unitId, n) {
+function startLesson(unitId, n, focus = []) {
   const u = unitById(unitId);
   const school = isSchool(u);
   const isTest = school && !!u.lessons[n].test;
   const review = isTest ? [] : reviewSteps(current.profile, u.subject);
-  const steps = [...review, ...buildLesson(u, n)];
-  const lesson = { u, n, steps, pos: 0, reviewCount: review.length, school, isTest, right: 0, total: 0, missed: [] };
+  let own = buildLesson(u, n);
+  // Nach "Nochmal üben": was vorher falsch war, kommt zuerst
+  if (focus.length) own = [...own.filter((st) => focus.includes(st.q?.id)), ...own.filter((st) => !focus.includes(st.q?.id))];
+  const steps = [...review, ...own];
+  const lesson = { u, n, steps, pos: 0, reviewCount: review.length, school, isTest, right: 0, total: 0, missed: [], wrongClicks: 0, started: Date.now() };
   nextStep(lesson);
 }
 
@@ -283,14 +292,17 @@ function lessonFrame(lesson, inner) {
         <button class="icon-btn" id="quit" aria-label="Beenden">✖</button>
         <div class="progress"><span style="width:${pct}%"></span></div>
       </header>
-      ${step?.review ? `<p class="review-tag">🔁 Wiederholung</p>` : step?.retry ? `<p class="review-tag">🔁 Nochmal, weil es vorhin nicht geklappt hat</p>` : ""}
+      ${lesson.exam ? `<p class="review-tag">📝 Probe · Aufgabe ${lesson.pos + 1} von ${lesson.steps.length}</p>` : step?.review ? `<p class="review-tag">🔁 Wiederholung</p>` : step?.retry ? `<p class="review-tag">🔁 Nochmal, weil es vorhin nicht geklappt hat</p>` : ""}
       ${inner}
     </div>`;
 }
 
 function lessonRender(lesson, inner) {
   const token = render(lessonFrame(lesson, inner));
-  $("quit").onclick = () => showUnit(lesson.u.id);
+  $("quit").onclick = () => {
+    if (lesson.exam && !confirm("Probe wirklich abbrechen? Sie wird nicht gewertet.")) return;
+    lesson.exam ? showHome(lesson.subject.id) : showUnit(lesson.u.id);
+  };
   return token;
 }
 
@@ -678,23 +690,26 @@ STEPS.rhyme = (lesson, step) => {
 
 // ---------- Ende der Lektion ----------
 function finishLesson(lesson) {
+  if (lesson.exam) return finishProbe(lesson);
   if (lesson.school) return finishSchoolLesson(lesson);
   const pid = current.profile;
   const first = !store.lessonDone(pid, lesson.u.id, lesson.n);
   store.setLessonDone(pid, lesson.u.id, lesson.n);
+  const gained = store.awardLesson(pid, lesson.u.id, lesson.n, 2);
   const streak = store.touchStreak(pid);
   store.save();
   const isLast = lesson.n === 4;
   render(`
     <div class="screen center result" style="--c:${lesson.u.color}">
       <h2>${pick(PRAISE)}</h2>
-      <div class="result-stars"><span class="star on">★</span></div>
+      ${gained ? `<div class="gems">${"💎".repeat(gained)}</div><p class="gem-text">+${gained} Diamanten</p>` : `<div class="result-stars"><span class="star on">★</span></div>`}
       <p class="sub">🔥 ${streak.count} ${streak.count === 1 ? "Tag" : "Tage"} in Folge</p>
       ${isLast && first ? `<p class="sub">Neuer Sticker für dein Album:</p><div class="stickers"><span class="sticker big-sticker">${pic(lesson.u.image)}</span></div>` : ""}
       ${lesson.n === 0 && first ? `<p class="sub">Neue Wörter im Album:</p><div class="stickers">${lesson.u.words.map((w) => `<span class="sticker">${pic(w.image)}</span>`).join("")}</div>` : ""}
       <button class="go-btn" id="next">Weiter ➜</button>
     </div>`);
   chime("win");
+  showRewards(pid);
   setTimeout(() => sayEn(pick(PRAISE_EN)), 600);
   $("next").onclick = () => showUnit(lesson.u.id);
 }
@@ -737,6 +752,29 @@ function score(lesson, step, id, correct) {
     if (!lesson.missed.includes(id)) lesson.missed.push(id);
     if (!lesson.isTest) lesson.steps.push({ ...singleStep(item(id).q), unit: item(id).unit, retry: true });
   }
+}
+
+// Falsch getippt: zählt für die Auswertung (Fehlklicks pro Durchgang, häufige falsche Antworten)
+function miss(lesson, step, id, picked) {
+  chime("bad");
+  lesson.wrongClicks++;
+  if (id && !step.review) {
+    store.missPick(current.profile, id, picked);
+    store.save();
+  }
+}
+
+// Probe: Antwort wird nur gemerkt, keine Rückmeldung, gleich weiter
+async function examAnswer(lesson, step, id, correct, picked, token) {
+  score(lesson, step, id, correct);
+  if (!correct) {
+    lesson.wrongClicks++;
+    store.missPick(current.profile, id, picked);
+    store.save();
+  }
+  chime("pop");
+  await wait(350);
+  if (alive(token)) advance(lesson);
 }
 
 // Aufgabenzeile mit Vorlese-Knopf (je nach Einstellung des Profils)
@@ -793,6 +831,13 @@ STEPS.type = (lesson, step) => {
   on("#ch .choice", "click", (e) => {
     if (chosen) return;
     const el = e.currentTarget;
+    if (lesson.exam) {
+      chosen = el.dataset.v;
+      if (chosen !== q.choose.answer) first = false;
+      el.classList.add("sel");
+      app.querySelectorAll("#ch .choice").forEach((b) => (b.disabled = true));
+      return showInput();
+    }
     if (el.dataset.v === q.choose.answer) {
       chosen = el.dataset.v;
       el.classList.add("right");
@@ -804,7 +849,7 @@ STEPS.type = (lesson, step) => {
       first = false;
       el.classList.add("wrong");
       el.disabled = true;
-      chime("bad");
+      miss(lesson, step, q.id, el.dataset.v);
       $("fb").innerHTML = `<span class="try">Hmm, probier das andere!</span>`;
     }
   });
@@ -816,6 +861,7 @@ STEPS.type = (lesson, step) => {
     const ok = typed === norm(q.answer) || typed === full || (q.also || []).some((a) => norm(a) === typed);
     $("ans").disabled = true;
     $("check").hidden = true;
+    if (lesson.exam) return examAnswer(lesson, step, q.id, ok && first, $("ans").value, token);
     if (ok) {
       $("ans").classList.add("right");
       chime("good");
@@ -825,7 +871,7 @@ STEPS.type = (lesson, step) => {
       if (alive(token)) advance(lesson);
     } else {
       $("ans").classList.add("wrong");
-      chime("bad");
+      miss(lesson, step, q.id, $("ans").value);
       $("fb").innerHTML = `<span class="try">Richtig ist:</span> <span class="solution">${esc(full)}</span>`;
       score(lesson, step, q.id, false);
       $("next").hidden = false;
@@ -852,6 +898,11 @@ STEPS.choice = (lesson, step) => {
   on(".choices .choice", "click", async (e) => {
     if (locked) return;
     const el = e.currentTarget;
+    if (lesson.exam) {
+      locked = true;
+      el.classList.add("sel");
+      return examAnswer(lesson, step, q.id, el.dataset.v === q.answer, el.dataset.v, token);
+    }
     if (el.dataset.v === q.answer) {
       locked = true;
       el.classList.add("right");
@@ -869,7 +920,7 @@ STEPS.choice = (lesson, step) => {
       first = false;
       el.classList.add("wrong");
       el.disabled = true;
-      chime("bad");
+      miss(lesson, step, q.id, el.dataset.v);
       $("fb").innerHTML = `<span class="try">Nicht ganz. Versuch es nochmal!</span>`;
     }
   });
@@ -901,6 +952,7 @@ STEPS.syllables = (lesson, step) => {
     const built = letters.map((ch, i) => ch + (cuts.has(i) ? "-" : "")).join("");
     app.querySelectorAll(".gap").forEach((b) => (b.disabled = true));
     $("check").hidden = true;
+    if (lesson.exam) return examAnswer(lesson, step, q.id, built === q.answer, built, token);
     if (built === q.answer) {
       chime("good");
       $("syl").classList.add("right");
@@ -909,7 +961,7 @@ STEPS.syllables = (lesson, step) => {
       await wait(900);
       if (alive(token)) advance(lesson);
     } else {
-      chime("bad");
+      miss(lesson, step, q.id, built);
       $("fb").innerHTML = `<span class="try">Richtig ist:</span> <span class="solution">${esc(q.answer.includes("-") ? q.answer : q.answer + " (nicht trennbar)")}</span>`;
       score(lesson, step, q.id, false);
       $("next").hidden = false;
@@ -962,7 +1014,7 @@ STEPS.pairs = (lesson, step) => {
       }
     } else {
       wrong.add(leftBtn.dataset.id);
-      chime("bad");
+      miss(lesson, step, leftBtn.dataset.id, (a === leftBtn ? el : a).textContent);
       [a, el].forEach((b) => {
         b.classList.add("wrong");
         setTimeout(() => b.classList.remove("wrong"), 500);
@@ -1002,7 +1054,7 @@ STEPS.sort = (lesson, step) => {
       if (alive(token)) advance(lesson);
     } else {
       first = false;
-      chime("bad");
+      miss(lesson, step, it.id, el.dataset.g);
       el.classList.add("wrong");
       setTimeout(() => el.classList.remove("wrong"), 500);
       $("fb").innerHTML = `<span class="try">Nicht ganz. Wo passt es besser?</span>`;
@@ -1054,26 +1106,132 @@ STEPS.photo = (lesson, step) => {
 // ---------- Ende einer Schul-Lektion ----------
 function finishSchoolLesson(lesson) {
   const pid = current.profile;
-  store.setLessonDone(pid, lesson.u.id, lesson.n);
+  const u = lesson.u;
+  const pct = lesson.total ? Math.round((lesson.right / lesson.total) * 100) : 100;
+  const mark = store.passMark(pid);
+  const passed = pct >= mark;
+  // Diamanten für Qualität: alles richtig 3, bestanden 2, darunter 1 (Test-Lektion doppelt)
+  const base = pct === 100 ? 3 : passed ? 2 : 1;
+  let gained = lesson.total ? store.awardLesson(pid, u.id, lesson.n, lesson.isTest ? base * 2 : base) : 0;
+  if (passed) {
+    store.setLessonDone(pid, u.id, lesson.n);
+    if (lesson.reviewCount) gained += store.awardDailyBonus(pid);
+  }
+  store.logAttempt(pid, {
+    u: u.id, n: lesson.n, pct, right: lesson.right, total: lesson.total,
+    wrong: lesson.wrongClicks, sec: Math.round((Date.now() - lesson.started) / 1000), ok: passed
+  });
   const streak = store.touchStreak(pid);
   store.save();
   const missed = lesson.missed.map((id) => item(id)?.q).filter(Boolean);
+  const hasNext = lesson.n + 1 < u.lessons.length;
   render(`
-    <div class="screen center result" style="--c:${lesson.u.color}">
-      <h2>${lesson.isTest ? "Test geschafft!" : pick(PRAISE)}</h2>
-      <div class="result-stars"><span class="star on">★</span></div>
+    <div class="screen center result" style="--c:${u.color}">
+      <h2>${passed ? (lesson.isTest ? "Test geschafft!" : pick(PRAISE)) : "Fast geschafft!"}</h2>
+      ${passed
+        ? (gained ? `<div class="gems">${"💎".repeat(Math.min(gained, 7))}</div><p class="gem-text">+${gained} Diamanten</p>` : `<div class="result-stars"><span class="star on">★</span></div><p class="sub">Diamanten hast du hier schon alle.</p>`)
+        : `${gained ? `<div class="gems">${"💎".repeat(gained)}</div><p class="gem-text">+${gained} ${gained === 1 ? "Diamant" : "Diamanten"}</p>` : ""}<p class="fail-text">Du hattest ${pct} %. Zum Weiterkommen brauchst du ${mark} %.<br>Übe die Lektion noch einmal, dann klappt es!</p>`}
       ${lesson.total ? `<p class="score">${lesson.right} von ${lesson.total} gleich richtig</p>` : ""}
       ${lesson.selfRead ? `<p class="self-read">📖 ${lesson.selfRead} ${lesson.selfRead === 1 ? "Aufgabe" : "Aufgaben"} ganz allein gelesen. Toll!</p>` : ""}
       <p class="sub">🔥 ${streak.count} ${streak.count === 1 ? "Tag" : "Tage"} in Folge</p>
-      ${missed.length ? `<p class="sub">${lesson.isTest ? "Das üben wir noch:" : "Das kommt in den nächsten Tagen nochmal dran:"}</p>
+      ${missed.length ? `<p class="sub">${passed ? (lesson.isTest ? "Das üben wir noch:" : "Das kommt in den nächsten Tagen nochmal dran:") : "Darauf achtest du beim nächsten Mal:"}</p>
         <div class="missed">${missed.map((q) => {
           const [a, b] = describe(q);
           return `<div><span>${esc(a)}</span> → <b>${esc(b)}</b></div>`;
         }).join("")}</div>` : ""}
-      <button class="go-btn" id="next">Weiter ➜</button>
+      ${passed ? "" : `<button class="go-btn" id="again">🔁 Nochmal üben</button>`}
+      <button class="${passed ? "go-btn" : "wide-btn"}" id="next">${passed && hasNext ? "Weiter ➜" : "Zurück zur Übersicht"}</button>
     </div>`);
+  chime(passed ? "win" : "pop");
+  showRewards(pid);
+  if ($("again")) $("again").onclick = () => startLesson(u.id, lesson.n, lesson.missed);
+  $("next").onclick = () => showUnit(u.id);
+}
+
+// ---------- Belohnung erreicht: Feuerwerk und Text ----------
+function showRewards(pid) {
+  const got = store.newRewards(pid);
+  if (!got.length) return;
+  store.save();
+  const box = document.createElement("div");
+  box.className = "reward-overlay";
+  const sparks = Array.from({ length: 36 }, (_, i) => {
+    const a = (i / 36) * Math.PI * 2;
+    const r = 90 + (i % 3) * 45;
+    const col = ["#ffd23f", "#ff6bcb", "#7cf3ff", "#a5ff7c", "#ffffff"][i % 5];
+    return `<i style="--x:${Math.round(Math.cos(a) * r)}px;--y:${Math.round(Math.sin(a) * r)}px;--c:${col};--d:${(i % 4) * 0.12}s"></i>`;
+  }).join("");
+  box.innerHTML = `<div class="fireworks">${sparks}</div><div class="fireworks second">${sparks}</div>
+    <div class="reward-card">
+      <div class="reward-gem">🎁</div>
+      <h2>Geschafft!</h2>
+      <p class="small">Du hast ${got[got.length - 1].at} 💎 gesammelt.</p>
+      ${got.map((r) => `<p class="reward-text">${esc(r.text)}</p>`).join("")}
+      <p class="small">Zeig das Mama oder Papa!</p>
+      <button class="go-btn" id="rewardok">Juhu! 🎉</button>
+    </div>`;
+  document.body.appendChild(box);
   chime("win");
-  $("next").onclick = () => showUnit(lesson.u.id);
+  setTimeout(() => chime("win"), 700);
+  box.querySelector("#rewardok").onclick = () => box.remove();
+}
+
+// ---------- Probe: Arbeit über mehrere Einheiten mit Note ----------
+const PROBE_SIZE = 20;
+const PROBE_MIN_UNITS = 2;
+function unitComplete(pid, u) {
+  return lessonsOf(u).every((_, n) => store.lessonDone(pid, u.id, n));
+}
+function probeUnits(pid, st) {
+  return st.units.filter((u) => isSchool(u) && (isTestUser() || unitComplete(pid, u)));
+}
+function probeReady(pid, st) {
+  const need = Math.min(PROBE_MIN_UNITS, st.units.filter(isSchool).length);
+  return need > 0 && probeUnits(pid, st).length >= need;
+}
+
+function startProbe(stageId) {
+  const pid = current.profile;
+  const sub = content.subjects.find((x) => x.stages.some((st) => st.id === stageId));
+  const st = sub.stages.find((x) => x.id === stageId);
+  const units = probeUnits(pid, st);
+  // Aus jeder geschafften Einheit gleich viele Aufgaben, gemischt
+  const per = Math.max(2, Math.ceil(PROBE_SIZE / units.length));
+  const pool = units.flatMap((u) => shuffle(u.singles).slice(0, per).map((q) => ({ ...singleStep(q), unit: u.id })));
+  const steps = shuffle(pool).slice(0, PROBE_SIZE);
+  const lesson = { u: units[0], n: 0, steps, pos: 0, reviewCount: 0, school: true, isTest: true, exam: true, stage: st, subject: sub,
+    right: 0, total: 0, missed: [], wrongClicks: 0, started: Date.now() };
+  nextStep(lesson);
+}
+
+function finishProbe(lesson) {
+  const pid = current.profile;
+  const pct = lesson.total ? Math.round((lesson.right / lesson.total) * 100) : 0;
+  const note = store.gradeFor(pct);
+  const gained = store.awardLesson(pid, "probe:" + lesson.stage.id, 0, [6, 4, 2, 1, 1, 1][note - 1]);
+  store.logAttempt(pid, { u: "probe:" + lesson.stage.id, n: 0, pct, right: lesson.right, total: lesson.total, wrong: lesson.wrongClicks,
+    sec: Math.round((Date.now() - lesson.started) / 1000), ok: note <= 4, note });
+  store.touchStreak(pid);
+  store.save();
+  const missed = lesson.missed.map((id) => item(id)?.q).filter(Boolean);
+  const words = ["sehr gut", "gut", "befriedigend", "ausreichend", "mangelhaft", "ungenügend"];
+  render(`
+    <div class="screen center result">
+      <h2>📝 Probe: ${esc(lesson.stage.title)}</h2>
+      <div class="grade grade-${note}">${note}</div>
+      <p class="grade-word">${words[note - 1]}</p>
+      <p class="score">${lesson.right} von ${lesson.total} richtig (${pct} %)</p>
+      ${gained ? `<div class="gems">${"💎".repeat(gained)}</div><p class="gem-text">+${gained} ${gained === 1 ? "Diamant" : "Diamanten"}</p>` : ""}
+      ${missed.length ? `<p class="sub">Das war noch falsch:</p>
+        <div class="missed">${missed.map((q) => {
+          const [a, b] = describe(q);
+          return `<div><span>${esc(a)}</span> → <b>${esc(b)}</b></div>`;
+        }).join("")}</div>` : `<p class="sub">Alles richtig! 🎉</p>`}
+      <button class="go-btn" id="next">Fertig ➜</button>
+    </div>`);
+  chime(note <= 3 ? "win" : "pop");
+  showRewards(pid);
+  $("next").onclick = () => showHome(lesson.subject.id);
 }
 
 // ---------- Sticker-Album ----------
@@ -1281,6 +1439,70 @@ async function fillPhotos() {
   );
 }
 
+// ---------- Auswertung: Durchgänge und schwierigste Aufgaben ----------
+function lessonName(uid, n) {
+  if (String(uid).startsWith("probe:")) {
+    const st = content.subjects.flatMap((x) => x.stages).find((x) => x.id === uid.slice(6));
+    return "📝 Probe " + (st ? st.title : "");
+  }
+  const u = unitById(uid);
+  if (!u) return uid;
+  const l = lessonsOf(u)[n];
+  return `${u.title_de} · ${l ? l.title : n + 1}`;
+}
+function evalHtml() {
+  const fmt = (t) => new Date(t).toLocaleString("de-DE", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+  const dur = (sec) => (sec >= 60 ? Math.round(sec / 60) + " min" : sec + " s");
+  return `<details class="psec" data-key="sec-eval"><summary><h3>📊 Auswertung</h3></summary>
+    <p class="small">Jeder Durchgang einer Lektion mit Ergebnis beim ersten Versuch, Fehlklicks und Dauer. Darunter die Aufgaben, bei denen am häufigsten falsch getippt wurde, mit der falschen Antwort.</p>
+    ${PROFILES.map((p) => {
+      const log = (store.profile(p.id).log || []).slice().sort((a, b) => b.at - a.at);
+      const days = new Set(log.filter((x) => Date.now() - x.at < 7 * 86400000).map((x) => new Date(x.at).toDateString())).size;
+      const week = log.filter((x) => Date.now() - x.at < 7 * 86400000);
+      const avg = week.length ? Math.round(week.reduce((n, x) => n + x.pct, 0) / week.length) : null;
+      const hard = Object.entries(store.profile(p.id).cards)
+        .filter(([id, c]) => c.miss && item(id))
+        .sort((a, b) => b[1].miss - a[1].miss)
+        .slice(0, 10);
+      return `<details class="fold sub-fold" data-key="ev-${p.id}"><summary>${esc(pname(p))} <span class="small">${week.length ? `· 7 Tage: ${week.length} Durchgänge an ${days} Tagen, ⌀ ${avg} %` : "· noch keine Durchgänge"}</span></summary>
+        ${log.length ? `<table class="words eval"><tr><th>Wann</th><th>Lektion</th><th>Ergebnis</th><th>Fehl&shy;klicks</th><th>Dauer</th></tr>
+          ${log.slice(0, 15).map((x) => `<tr class="${x.ok ? "" : "fail"}"><td>${fmt(x.at)}</td><td>${esc(lessonName(x.u, x.n))}</td><td>${x.pct} % ${x.note ? `· Note ${x.note}` : x.ok ? "✓" : "✗"}</td><td>${x.wrong}</td><td>${dur(x.sec)}</td></tr>`).join("")}
+        </table>` : ""}
+        ${hard.length ? `<p class="small"><b>Am häufigsten falsch:</b></p><table class="words eval"><tr><th>Aufgabe</th><th>Richtig</th><th>Getippt</th><th>falsch</th></tr>
+          ${hard.map(([id, c]) => {
+            const it = item(id);
+            const [a, b] = it.kind === "task" ? describe(it.q) : [it.en, it.de || ""];
+            const picks = Object.entries(c.picks || {}).sort((x, y) => y[1] - x[1]).slice(0, 3).map(([k, v]) => `${esc(k)}${v > 1 ? ` (${v}×)` : ""}`).join(", ");
+            return `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td>${picks || "–"}</td><td>${c.miss}×</td></tr>`;
+          }).join("")}</table>` : ""}
+      </details>`;
+    }).join("")}
+  </details>
+  <details class="psec" data-key="sec-pass"><summary><h3>🎯 Bestehen</h3></summary>
+    <p class="small">So viel muss beim ersten Versuch richtig sein, damit eine Lektion als geschafft gilt und die nächste aufgeht. Darunter heißt es „Nochmal üben“.</p>
+    ${PROFILES.map((p) => `<div class="voice-row"><span>${esc(pname(p))}</span><select class="input pass-sel" data-p="${p.id}">
+      ${[70, 80, 90, 100].map((v) => `<option value="${v}" ${store.passMark(p.id) === v ? "selected" : ""}>${v} %</option>`).join("")}
+    </select></div>`).join("")}
+  </details>
+  <details class="psec" data-key="sec-rewards"><summary><h3>🎁 Belohnungen</h3></summary>
+    <p class="small">Lege fest, was es ab wie vielen Diamanten gibt. Ist die Zahl erreicht, sieht das Kind ein Feuerwerk mit deinem Text.</p>
+    ${PROFILES.map((p) => {
+      const pr = store.profile(p.id);
+      return `<details class="fold sub-fold" data-key="rw-${p.id}"><summary>${esc(pname(p))} <span class="small">· jetzt ${store.diamonds(p.id)} 💎</span></summary>
+        ${pr.rewards.length ? `<table class="words eval"><tr><th>ab</th><th>Belohnung</th><th></th><th></th></tr>
+          ${pr.rewards.map((r) => `<tr><td>${r.at} 💎</td><td>${esc(r.text)}</td><td>${pr.rewardsGot[r.id] ? `✅ ${new Date(pr.rewardsGot[r.id]).toLocaleDateString("de-DE")}` : ""}</td><td><button class="link-btn rw-del" data-p="${p.id}" data-id="${r.id}" aria-label="Löschen">✕</button></td></tr>`).join("")}
+        </table>` : `<p class="small">Noch keine Belohnung festgelegt.</p>`}
+        <div class="row rw-add"><input class="input rw-at" data-p="${p.id}" inputmode="numeric" placeholder="💎" maxlength="4"><input class="input rw-text" data-p="${p.id}" placeholder="z. B. 15 Minuten mehr Zockzeit" maxlength="120"><button class="wide-btn rw-btn" data-p="${p.id}">Hinzufügen</button></div>
+      </details>`;
+    }).join("")}
+  </details>
+  <details class="psec" data-key="sec-grades"><summary><h3>📝 Notenspiegel für Proben</h3></summary>
+    <p class="small">Eine Probe gibt es pro Klassenstufe eines Fachs, sobald ${PROBE_MIN_UNITS} Themen ganz geschafft sind: ${PROBE_SIZE} gemischte Aufgaben aus den geschafften Themen, ohne Hilfe. Ab so viel Prozent gibt es die Note. Voreinstellung ist ein in bayerischen Grundschulen häufiger Richtwert; jede Schule legt ihren eigenen fest.</p>
+    <div class="grade-row">${store.gradeScale().map((v, i) => `<label>Note ${i + 1} ab<input class="input grade-in" data-i="${i}" inputmode="numeric" value="${v}" maxlength="3"> %</label>`).join("")}<label>Note 6 darunter</label></div>
+    <button class="wide-btn" id="gradesave">Notenspiegel speichern</button>
+  </details>`;
+}
+
 // Welche Kästen im Elternbereich offen sind, bleibt bis zum Schließen der App erhalten
 const openFolds = new Set();
 function rememberFolds() {
@@ -1330,6 +1552,7 @@ function showParents(msg = "") {
             ${unitTable(u)}
           </details>`).join("")}</details>`).join("")}
       </details>
+      ${evalHtml()}
       ${troubleHtml()}
       <details class="psec" data-key="sec-59838"><summary><h3>📷 Fotomappe</h3></summary>
         <p class="small">Fotos von Heft-Aufgaben. „Nochmal“ gibt die Aufgabe zurück: Sie kommt beim nächsten Üben im Fach wieder. Die Fotos liegen nur auf diesem Gerät und sind nicht in der Sicherungsdatei.</p>
@@ -1383,6 +1606,32 @@ function showParents(msg = "") {
   on(".name-input", "change", (e) => {
     store.profile(e.target.dataset.p).name = e.target.value.trim();
     store.touchPrefs(e.target.dataset.p);
+    store.save();
+  });
+  on(".rw-btn", "click", (e) => {
+    const pid = e.currentTarget.dataset.p;
+    const at = parseInt(app.querySelector(`.rw-at[data-p="${pid}"]`).value, 10);
+    const text = app.querySelector(`.rw-text[data-p="${pid}"]`).value.trim();
+    if (!(at > 0) || !text) return alert("Bitte Anzahl Diamanten und einen Text eingeben.");
+    store.addReward(pid, at, text);
+    store.save();
+    showParents("✅ Belohnung gespeichert.");
+  });
+  on(".rw-del", "click", (e) => {
+    if (!confirm("Diese Belohnung löschen?")) return;
+    store.removeReward(e.currentTarget.dataset.p, e.currentTarget.dataset.id);
+    store.save();
+    showParents("Belohnung gelöscht.");
+  });
+  $("gradesave").onclick = () => {
+    const v = [...app.querySelectorAll(".grade-in")].map((x) => parseInt(x.value, 10));
+    if (v.some((x) => !(x >= 0 && x <= 100)) || v.some((x, i) => i && x >= v[i - 1])) return alert("Bitte Werte von 0 bis 100 eingeben, von Note 1 nach Note 5 absteigend.");
+    store.setGradeScale(v);
+    store.save();
+    showParents("✅ Notenspiegel gespeichert.");
+  };
+  on(".pass-sel", "change", (e) => {
+    store.setPassMark(e.target.dataset.p, e.target.value);
     store.save();
   });
   on(".voice-sel", "change", (e) => {

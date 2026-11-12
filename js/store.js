@@ -75,6 +75,11 @@ export function profile(id) {
   p.on = p.on || {};
   p.redo = p.redo || {};
   p.streak = p.streak || { count: 0, last: null, jokerWeek: null };
+  p.best = p.best || {};
+  p.bonus = p.bonus || {};
+  p.log = p.log || [];
+  p.rewards = p.rewards || [];
+  p.rewardsGot = p.rewardsGot || {};
   return p;
 }
 
@@ -159,6 +164,101 @@ export function setLessonDone(pid, unitId, n) {
   const p = profile(pid);
   p.lessons[unitId] = p.lessons[unitId] || [];
   p.lessons[unitId][n] = true;
+}
+
+// ---------- Bestehen, Diamanten, Auswertung ----------
+export const PASS_DEFAULT = 90;
+export function passMark(pid) {
+  return Number(profile(pid).pass) || PASS_DEFAULT;
+}
+export function setPassMark(pid, v) {
+  const p = profile(pid);
+  p.pass = Number(v);
+  p.prefsAt = Date.now();
+}
+
+// Diamanten: pro Lektion zählt das beste Ergebnis (höchstens einmal), dazu Tagesboni.
+// Gibt zurück, wie viele Diamanten neu dazukommen.
+export function awardLesson(pid, unitId, n, diamonds) {
+  const p = profile(pid);
+  p.best[unitId] = p.best[unitId] || {};
+  const before = Number(p.best[unitId][n]) || 0;
+  if (diamonds > before) p.best[unitId][n] = diamonds;
+  return Math.max(0, diamonds - before);
+}
+export function awardDailyBonus(pid) {
+  const p = profile(pid);
+  if (p.bonus[today()]) return 0;
+  p.bonus[today()] = 1;
+  return 1;
+}
+export function diamonds(pid) {
+  const p = profile(pid);
+  let n = Object.keys(p.bonus).length;
+  for (const u of Object.values(p.best)) for (const v of Object.values(u)) n += Number(v) || 0;
+  return n;
+}
+
+// ---------- Belohnungen (von Eltern festgelegt) ----------
+export function addReward(pid, at, text) {
+  const p = profile(pid);
+  p.rewards.push({ id: Date.now().toString(36), at: Number(at), text: String(text).trim().slice(0, 120) });
+  p.rewards.sort((a, b) => a.at - b.at);
+  p.prefsAt = Date.now();
+}
+export function removeReward(pid, id) {
+  const p = profile(pid);
+  p.rewards = p.rewards.filter((r) => r.id !== id);
+  p.prefsAt = Date.now();
+}
+// Neu erreichte Belohnungen (werden als erreicht markiert)
+export function newRewards(pid) {
+  const p = profile(pid);
+  const d = diamonds(pid);
+  const got = [];
+  for (const r of p.rewards) {
+    if (d >= r.at && !p.rewardsGot[r.id]) {
+      p.rewardsGot[r.id] = Date.now();
+      got.push(r);
+    }
+  }
+  return got;
+}
+
+// ---------- Notenspiegel für Proben ----------
+export const GRADE_DEFAULT = [95, 80, 65, 50, 25]; // ab so viel % gibt es Note 1, 2, 3, 4, 5; darunter 6
+export function gradeScale() {
+  const g = state.settings.grades;
+  return Array.isArray(g) && g.length === 5 ? g.map(Number) : GRADE_DEFAULT;
+}
+export function setGradeScale(list) {
+  state.settings.grades = list.map(Number);
+  state.settings.at = Date.now();
+}
+export function gradeFor(pct) {
+  const g = gradeScale();
+  for (let i = 0; i < 5; i++) if (pct >= g[i]) return i + 1;
+  return 6;
+}
+
+// Falsch angetippte Antwort merken (für die Auswertung im Elternbereich)
+export function missPick(pid, id, picked) {
+  const p = profile(pid);
+  const c = p.cards[id] || (p.cards[id] = { box: 1, due: today(), last: null });
+  c.miss = (c.miss || 0) + 1;
+  if (picked !== undefined && picked !== null && String(picked).trim()) {
+    const k = String(picked).trim().slice(0, 40);
+    c.picks = c.picks || {};
+    c.picks[k] = (c.picks[k] || 0) + 1;
+  }
+  c.at = Date.now();
+}
+
+// Ein Durchgang einer Lektion (Kind, Datum, Ergebnis, Fehlklicks, Dauer)
+export function logAttempt(pid, entry) {
+  const p = profile(pid);
+  p.log.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), at: Date.now(), ...entry });
+  if (p.log.length > 400) p.log = p.log.slice(-400);
 }
 
 export function totalStars(pid) {
@@ -251,7 +351,7 @@ export function savedAt() {
 // Zurücksetzen merkt sich den Zeitpunkt, damit der Online-Abgleich den alten Stand nicht zurückholt
 export function resetProfile(pid) {
   const keep = state.profiles[pid] || {};
-  state.profiles[pid] = { name: keep.name, voice: keep.voice, prefsAt: keep.prefsAt, resetAt: Date.now() };
+  state.profiles[pid] = { name: keep.name, voice: keep.voice, pass: keep.pass, prefsAt: keep.prefsAt, resetAt: Date.now() };
   save();
 }
 
@@ -259,6 +359,6 @@ export function resetAll() {
   const ids = Object.keys(state.profiles);
   const old = state.profiles;
   state = blank();
-  for (const id of ids) state.profiles[id] = { name: old[id].name, voice: old[id].voice, prefsAt: old[id].prefsAt, resetAt: Date.now() };
+  for (const id of ids) state.profiles[id] = { name: old[id].name, voice: old[id].voice, pass: old[id].pass, prefsAt: old[id].prefsAt, resetAt: Date.now() };
   save();
 }

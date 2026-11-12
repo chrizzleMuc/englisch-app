@@ -149,7 +149,7 @@ function mergeProfile(a = {}, b = {}) {
   const fresh = (p) => num(p.resetAt) === resetAt; // Stand nach dem letzten Zurücksetzen
   const prefs = num(b.prefsAt) > num(a.prefsAt) ? b : a;
   const out = { ...a, ...b };
-  for (const k of ["name", "voice", "on", "off", "redo", "prefsAt"]) if (prefs[k] !== undefined) out[k] = prefs[k];
+  for (const k of ["name", "voice", "pass", "rewards", "on", "off", "redo", "prefsAt"]) if (prefs[k] !== undefined) out[k] = prefs[k];
   out.resetAt = resetAt || undefined;
 
   // Aufgaben: die zuletzt geübte Fassung gewinnt; vor dem Zurücksetzen Geübtes fällt weg
@@ -172,6 +172,27 @@ function mergeProfile(a = {}, b = {}) {
   }
   out.lessons = lessons;
 
+  // Diamanten: bestes Ergebnis pro Lektion, Tagesboni vereinigen (nur nach dem letzten Zurücksetzen)
+  const best = {};
+  const bonus = {};
+  for (const src of [a, b].filter(fresh)) {
+    for (const [u, m] of Object.entries(src.best || {})) {
+      best[u] = best[u] || {};
+      for (const [n, v] of Object.entries(m || {})) best[u][n] = Math.max(num(best[u][n]), num(v));
+    }
+    Object.assign(bonus, src.bonus || {});
+  }
+  const rewardsGot = {};
+  for (const src of [a, b].filter(fresh)) Object.assign(rewardsGot, src.rewardsGot || {});
+  out.rewardsGot = rewardsGot;
+  out.best = best;
+  out.bonus = bonus;
+
+  // Durchgänge (Auswertung): vereinigen, doppelte weg, die neuesten 400
+  const seen = new Map();
+  for (const x of [...(a.log || []), ...(b.log || [])]) if (x && x.id && num(x.at) >= resetAt) seen.set(x.id, x);
+  out.log = [...seen.values()].sort((x, y) => x.at - y.at).slice(-400);
+
   // Tagesserie: die mit dem späteren Tag
   const sa = fresh(a) ? a.streak : null;
   const sb = fresh(b) ? b.streak : null;
@@ -186,7 +207,7 @@ export function merge(local, remote) {
   const profiles = {};
   for (const id of ids) profiles[id] = mergeProfile(remote.profiles[id], local.profiles?.[id]);
   const newer = (remote.savedAt || "") > (local.savedAt || "") ? remote : local;
-  return { ...local, profiles, settings: { ...(remote.settings || {}), ...(local.settings || {}) }, savedAt: newer.savedAt };
+  return { ...local, profiles, settings: num(remote.settings?.at) > num(local.settings?.at) ? { ...(local.settings || {}), ...remote.settings } : { ...(remote.settings || {}), ...(local.settings || {}) }, savedAt: newer.savedAt };
 }
 
 // ---------- Abgleich ----------

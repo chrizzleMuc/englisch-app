@@ -46,6 +46,15 @@ Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede E
 
 Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.
 
+## Version 25
+- Lektionen nur der Reihe nach: Die nächste Lektion öffnet sich erst, wenn die vorige bestanden ist (Testmodus ausgenommen).
+- Bestehen ab 90 % beim ersten Versuch, pro Kind im Elternbereich einstellbar (70/80/90/100 %). Unter der Marke: "Fast geschafft", nochmal üben, Fehler kommen zuerst.
+- Sterne zählen weiter geschaffte Lektionen. Neu: Diamanten für Qualität (3 = alles gleich richtig, 2 = bestanden, 1 = unter der Marke), pro Lektion zählt das beste Ergebnis.
+- Belohnungen: Eltern legen fest "ab X Diamanten: Text". Beim Erreichen erscheint ein Feuerwerk mit dem Text.
+- Probe: Sobald 2 Themen einer Stufe ganz geschafft sind, gibt es eine Probe mit 20 gemischten Aufgaben ohne Rückmeldung und mit Note. Notenspiegel im Elternbereich (Standard 1 ab 95, 2 ab 80, 3 ab 65, 4 ab 50, 5 ab 25 %).
+- Auswertung im Elternbereich: letzte Durchgänge mit Ergebnis, Fehlklicks und Dauer, häufigste Fehler mit der falsch getippten Antwort.
+- Alles davon wird online mit abgeglichen.
+
 ## Version 23
 - Bilder in Aufgaben deutlich größer (Fragebild und Bild-Antworten).
 - Schlecht erkennbare Bilder entfernt: Esel, Leopard, Teddy (beim Klatschen jetzt „Bär“ mit einer Silbe). Wo sie nur falsche Antwort waren, ersetzt durch eindeutige Bilder.
