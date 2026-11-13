@@ -9,7 +9,7 @@ import { pic } from "./pics.js";
 import { vis, visText } from "./mathpics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 27;
+const APP_VERSION = 28;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 

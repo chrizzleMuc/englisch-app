@@ -133,6 +133,67 @@
      ]
     }
    ]
+  },
+  {
+   "title": "Pferdeweide: la le li lo",
+   "icon": "🐴",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-pferd",
+     "task": "Lies die Silben. Tipp eine Farbe an, dann die passenden Flächen.",
+     "prompt": "Ausmalbild Pferdeweide: la, le, li, lo",
+     "image": "img/malen/pferd.png",
+     "map": "img/malen/pferd-map.png",
+     "regions": {
+      "1": "li",
+      "2": "li",
+      "3": "la",
+      "4": "le",
+      "5": "la",
+      "6": "li",
+      "7": "la",
+      "8": "le",
+      "9": "le",
+      "10": "la",
+      "11": "la",
+      "12": "le",
+      "13": "la",
+      "14": "li",
+      "15": "le",
+      "16": "la",
+      "17": "lo",
+      "18": "la",
+      "19": "lo",
+      "20": "lo",
+      "21": "lo",
+      "22": "lo",
+      "23": "lo"
+     },
+     "colors": [
+      {
+       "key": "la",
+       "label": "la",
+       "color": "#8d5a32"
+      },
+      {
+       "key": "le",
+       "label": "le",
+       "color": "#2e7d32"
+      },
+      {
+       "key": "li",
+       "label": "li",
+       "color": "#5aa9f0"
+      },
+      {
+       "key": "lo",
+       "label": "lo",
+       "color": "#9bd36a"
+      }
+     ]
+    }
+   ]
   }
  ]
 }

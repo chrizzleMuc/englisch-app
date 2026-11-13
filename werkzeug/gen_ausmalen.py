@@ -11,5 +11,6 @@ u = {"id": "d1-ausmalen", "type": "schule", "title_de": "Ausmalbilder: Silben le
      "lessons": [
        {"title": "Eichhörnchen: im am mi ma", "icon": "🎨", "tasks": [bild("k1-mal-eichhoernchen", "eichhoernchen", "Eichhörnchen", [("im", "braun"), ("am", "dunkelgruen"), ("mi", "blau"), ("ma", "hellgruen")])]},
        {"title": "Pirateninsel: im am mi ma", "icon": "⛵", "tasks": [bild("k1-mal-piraten", "piraten", "Pirateninsel", [("im", "braun"), ("am", "dunkelgruen"), ("mi", "blau"), ("ma", "hellgruen")])]},
+       {"title": "Pferdeweide: la le li lo", "icon": "🐴", "tasks": [bild("k1-mal-pferd", "pferd", "Pferdeweide", [("la", "braun"), ("le", "dunkelgruen"), ("li", "blau"), ("lo", "hellgruen")])]},
      ]}
 json.dump(u, open(sys.argv[1] if len(sys.argv) > 1 else "inhalte/deutsch/k1-ausmalen.json", "w"), ensure_ascii=False, indent=1)
