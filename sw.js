@@ -1,5 +1,5 @@
 // Offline-Speicher: Bei jeder Änderung an der App VERSION erhöhen.
-const VERSION = "learnino-27";
+const VERSION = "learnino-28";
 const FILES = [
   "./",
   "index.html",
@@ -21,6 +21,16 @@ const FILES = [
   "img/malen/eichhoernchen-map.png",
   "img/malen/piraten.png",
   "img/malen/piraten-map.png",
+  "img/malen/pferd.png",
+  "img/malen/pferd-map.png",
+  "img/malen/zoo.png",
+  "img/malen/zoo-map.png",
+  "img/malen/wasser.png",
+  "img/malen/wasser-map.png",
+  "img/malen/weltall.png",
+  "img/malen/weltall-map.png",
+  "img/malen/wald.png",
+  "img/malen/wald-map.png",
   "img/emoji/1f91d.webp",
   "img/emoji/26aa.webp",
   "img/emoji/1f319.webp",

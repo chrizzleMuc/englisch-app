@@ -31,7 +31,7 @@ cent = []
 for i, (sl, sz) in enumerate(zip(nd.find_objects(dl), sizes)):
     h = sl[0].stop - sl[0].start; w = sl[1].stop - sl[1].start
     if sz < 1500 and h < 60 and w < 60: cent.append(((sl[0].start + sl[0].stop) / 2, (sl[1].start + sl[1].stop) / 2, sl))
-used = set(); words = []
+used = set(); words = []; feats = []
 for k in range(len(cent)):
     if k in used: continue
     grp = [k]; used.add(k); ch = True
@@ -47,25 +47,50 @@ for k in range(len(cent)):
         else: parts.append((sl[1].start, sl[1].stop))
     ws = [b - a for a, b in parts]
     box = [min(s[1].start for s in sls), min(s[0].start for s in sls), max(s[1].stop for s in sls), max(s[0].stop for s in sls)]
-    lab_ = None
-    if len(ws) == 2:
-        a, b = ws
-        lab_ = "im" if a < 12 else "mi" if b < 12 else ("am" if a < b else "ma")
+    # Buchstaben erkennen: Teile nach x, je Teil Merkmale
+    letters = []
+    for a, b in parts:
+        sub = dark[box[1]:box[3], a:b]
+        h, w = sub.shape
+        _, ncomp = nd.label(sub, structure=np.ones((3, 3)))
+        holes, nh = nd.label(~sub)
+        inner = [k for k in range(1, nh + 1) if not ((holes == k)[0].any() or (holes == k)[-1].any() or (holes == k)[:, 0].any() or (holes == k)[:, -1].any())]
+        top = int(np.argmax(sub.any(1)))  # erste dunkle Zeile im Wortkasten
+        if w < 14:
+            letters.append("i" if ncomp >= 2 else "l")
+        elif not inner and w > 1.2 * (h - top):
+            letters.append("m")
+        elif not inner:
+            letters.append("n")
+        elif inner:
+            ys = np.where(holes == inner[0])[0]
+            hy = (ys.mean() - top) / max(1, h - top)
+            body = sub[top:]
+            cov = body[:, -max(3, w // 6):].any(1).mean()  # Anteil Zeilen mit Strich ganz rechts (a hat einen geraden Stamm)
+            if hy < 0.45: letters.append("e")
+            elif cov > 0.8: letters.append("a")
+            else: letters.append("o")
+            feats.append((letters[-1], round(float(cov), 2), round(float(hy), 2), box[:2]))
+        else:
+            letters.append("?")
+    lab_ = "".join(letters)
+    if len(letters) == 4 and letters[-1] in "aeio": lab_ = "sch" + letters[-1]  # s, c, h werden nicht einzeln erkannt
     words.append((box, ws, lab_))
 # 2) Flächen
 line = (im < 170) | cut
 lab, n = nd.label(~line)
 fs = nd.sum(np.ones_like(lab), lab, range(n + 1))
-owner = {}; problems = []
+owner = {}; problems = []; first = {}
 for box, ws, l in words:
-    if l is None: problems.append(("unklar", box, ws)); continue
+    if "?" in l or len(l) not in (2, 4): problems.append(("unklar", box, ws, l)); continue
     bx0, by0, bx1, by1 = box
     ring = lab[max(0, by0 - 14):by1 + 14, max(0, bx0 - 14):bx1 + 14]
     vals, cnt = np.unique(ring[ring > 0], return_counts=True)
     vals = [v for v, c in sorted(zip(vals, cnt), key=lambda t: -t[1]) if fs[v] > 3000]
     if not vals: problems.append(("keine Fläche", box, l)); continue
     r = vals[0]
-    if r in owner and owner[r] != l: problems.append(("zwei Silben in einer Fläche", box, owner[r], l))
+    if r in owner and owner[r] != l: problems.append(("zwei Silben in einer Fläche", box, owner[r], l, "erstes Wort", first[r]))
+    first.setdefault(r, box)
     owner[r] = l
 assign = {}
 for fx, fy, tx, ty in opt("force"):
@@ -80,10 +105,16 @@ for _ in range(4):
         best = [(c, v) for v, c in zip(vals, cnt) if v > 0 and v != r and (v in owner or v in assign)]
         if best:
             v = max(best)[1]; assign[r] = v if v in owner else assign[v]
-ids = sorted(owner); idx = {r: i + 1 for i, r in enumerate(ids)}
+ids = sorted(r for r in owner if r not in assign); idx = {r: i + 1 for i, r in enumerate(ids)}  # erzwungene Flächen gehen im Ziel auf
 reg = np.zeros_like(lab)
 for r in ids: reg[lab == r] = idx[r]
-for r, v in assign.items(): reg[lab == r] = idx[v]
+def fin(v):
+    seen = set()
+    while v in assign and v not in seen: seen.add(v); v = assign[v]
+    return v
+for r in assign: reg[lab == r] = idx[fin(r)]
+print(sorted(((b[1]//60, b[0]), l) for b, w, l in words))
+for f in feats: print(f)
 print(f"{len(words)} Wörter, {len(ids)} Flächen mit Silbe, {len(assign)} Kleinteile zugeordnet")
 for p in problems: print("PROBLEM", p)
 os.makedirs(out, exist_ok=True)
@@ -91,7 +122,9 @@ Image.fromarray(im.astype("uint8"), "L").quantize(16).save(f"{out}/{name}.png", 
 mp = np.zeros((H, W, 3), "uint8"); mp[..., 0] = reg
 Image.fromarray(mp, "RGB").save(f"{out}/{name}-map.png", optimize=True)
 json.dump({str(idx[r]): owner[r] for r in ids}, open(f"{out}/{name}.json", "w"))
-COL = {"im": (141, 90, 50), "am": (46, 125, 50), "mi": (90, 169, 240), "ma": (155, 211, 106)}
+KEYS = sorted(set(owner.values())); PAL = [(141, 90, 50), (46, 125, 50), (90, 169, 240), (155, 211, 106), (229, 72, 77), (242, 194, 48)]
+COL = {k: PAL[i % len(PAL)] for i, k in enumerate(KEYS)}
+print("Silben:", KEYS)
 dbg = np.stack([im] * 3, -1).astype(float)
 for r in ids:
     m = reg == idx[r]; dbg[m] = np.array(COL[owner[r]]) * (im[m][:, None] / 255.0)
