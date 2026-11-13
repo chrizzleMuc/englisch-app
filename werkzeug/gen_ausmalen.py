@@ -13,5 +13,8 @@ u = {"id": "d1-ausmalen", "type": "schule", "title_de": "Ausmalbilder: Silben le
        {"title": "Pirateninsel: im am mi ma", "icon": "⛵", "tasks": [bild("k1-mal-piraten", "piraten", "Pirateninsel", [("im", "braun"), ("am", "dunkelgruen"), ("mi", "blau"), ("ma", "hellgruen")])]},
        {"title": "Pferdeweide: la le li lo", "icon": "🐴", "tasks": [bild("k1-mal-pferd", "pferd", "Pferdeweide", [("la", "braun"), ("le", "dunkelgruen"), ("li", "blau"), ("lo", "hellgruen")])]},
        {"title": "Im Zoo: na ne ni no", "icon": "🦁", "tasks": [bild("k1-mal-zoo", "zoo", "Im Zoo", [("na", "gelb"), ("ne", "grau"), ("ni", "blau"), ("no", "gruen")])]},
+       {"title": "Unter Wasser: ma mi la li", "icon": "🐢", "tasks": [bild("k1-mal-wasser", "wasser", "Unter Wasser", [("ma", "orange"), ("mi", "blau"), ("la", "rot"), ("li", "gruen")])]},
+       {"title": "Im Weltall: an na in ni", "icon": "🚀", "tasks": [bild("k1-mal-weltall", "weltall", "Im Weltall", [("an", "rot"), ("na", "gelb"), ("in", "blau"), ("ni", "grau")])]},
+       {"title": "Im Wald: scha sche schi scho", "icon": "🐻", "tasks": [bild("k1-mal-wald", "wald", "Im Wald", [("scha", "braun"), ("sche", "dunkelgruen"), ("schi", "blau"), ("scho", "hellgruen")])]},
      ]}
 json.dump(u, open(sys.argv[1] if len(sys.argv) > 1 else "inhalte/deutsch/k1-ausmalen.json", "w"), ensure_ascii=False, indent=1)

@@ -74,6 +74,7 @@ for k in range(len(cent)):
         else:
             letters.append("?")
     lab_ = "".join(letters)
+    if len(letters) == 4 and letters[-1] in "aeio": lab_ = "sch" + letters[-1]  # s, c, h werden nicht einzeln erkannt
     words.append((box, ws, lab_))
 # 2) Flächen
 line = (im < 170) | cut
@@ -81,7 +82,7 @@ lab, n = nd.label(~line)
 fs = nd.sum(np.ones_like(lab), lab, range(n + 1))
 owner = {}; problems = []; first = {}
 for box, ws, l in words:
-    if "?" in l or len(l) != 2: problems.append(("unklar", box, ws, l)); continue
+    if "?" in l or len(l) not in (2, 4): problems.append(("unklar", box, ws, l)); continue
     bx0, by0, bx1, by1 = box
     ring = lab[max(0, by0 - 14):by1 + 14, max(0, bx0 - 14):bx1 + 14]
     vals, cnt = np.unique(ring[ring > 0], return_counts=True)

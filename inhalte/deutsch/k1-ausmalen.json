@@ -251,6 +251,189 @@
      ]
     }
    ]
+  },
+  {
+   "title": "Unter Wasser: ma mi la li",
+   "icon": "🐢",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-wasser",
+     "task": "Lies die Silben. Tipp eine Farbe an, dann die passenden Flächen.",
+     "prompt": "Ausmalbild Unter Wasser: ma, mi, la, li",
+     "image": "img/malen/wasser.png",
+     "map": "img/malen/wasser-map.png",
+     "regions": {
+      "1": "mi",
+      "2": "mi",
+      "3": "mi",
+      "4": "ma",
+      "5": "li",
+      "6": "li",
+      "7": "ma",
+      "8": "li",
+      "9": "mi",
+      "10": "ma",
+      "11": "li",
+      "12": "mi",
+      "13": "li",
+      "14": "li",
+      "15": "li",
+      "16": "ma",
+      "17": "ma",
+      "18": "li",
+      "19": "li",
+      "20": "li",
+      "21": "la",
+      "22": "la",
+      "23": "li",
+      "24": "ma",
+      "25": "la",
+      "26": "la",
+      "27": "la",
+      "28": "la"
+     },
+     "colors": [
+      {
+       "key": "ma",
+       "label": "ma",
+       "color": "#f28b30"
+      },
+      {
+       "key": "mi",
+       "label": "mi",
+       "color": "#5aa9f0"
+      },
+      {
+       "key": "la",
+       "label": "la",
+       "color": "#e5484d"
+      },
+      {
+       "key": "li",
+       "label": "li",
+       "color": "#4caf50"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Im Weltall: an na in ni",
+   "icon": "🚀",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-weltall",
+     "task": "Lies die Silben. Tipp eine Farbe an, dann die passenden Flächen.",
+     "prompt": "Ausmalbild Im Weltall: an, na, in, ni",
+     "image": "img/malen/weltall.png",
+     "map": "img/malen/weltall-map.png",
+     "regions": {
+      "1": "in",
+      "2": "in",
+      "3": "in",
+      "4": "na",
+      "5": "an",
+      "6": "na",
+      "7": "ni",
+      "8": "ni",
+      "9": "ni",
+      "10": "in",
+      "11": "in",
+      "12": "an",
+      "13": "ni",
+      "14": "an",
+      "15": "an",
+      "16": "ni",
+      "17": "an",
+      "18": "an",
+      "19": "in",
+      "20": "na",
+      "21": "na",
+      "22": "na"
+     },
+     "colors": [
+      {
+       "key": "an",
+       "label": "an",
+       "color": "#e5484d"
+      },
+      {
+       "key": "na",
+       "label": "na",
+       "color": "#f2c230"
+      },
+      {
+       "key": "in",
+       "label": "in",
+       "color": "#5aa9f0"
+      },
+      {
+       "key": "ni",
+       "label": "ni",
+       "color": "#9aa0ad"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Im Wald: scha sche schi scho",
+   "icon": "🐻",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-wald",
+     "task": "Lies die Silben. Tipp eine Farbe an, dann die passenden Flächen.",
+     "prompt": "Ausmalbild Im Wald: scha, sche, schi, scho",
+     "image": "img/malen/wald.png",
+     "map": "img/malen/wald-map.png",
+     "regions": {
+      "1": "sche",
+      "2": "schi",
+      "3": "sche",
+      "4": "scha",
+      "5": "scha",
+      "6": "schi",
+      "7": "scha",
+      "8": "schi",
+      "9": "scha",
+      "10": "scha",
+      "11": "scha",
+      "12": "scha",
+      "13": "scho",
+      "14": "scho",
+      "15": "sche",
+      "16": "sche",
+      "17": "scha",
+      "18": "scha",
+      "19": "scho"
+     },
+     "colors": [
+      {
+       "key": "scha",
+       "label": "scha",
+       "color": "#8d5a32"
+      },
+      {
+       "key": "sche",
+       "label": "sche",
+       "color": "#2e7d32"
+      },
+      {
+       "key": "schi",
+       "label": "schi",
+       "color": "#5aa9f0"
+      },
+      {
+       "key": "scho",
+       "label": "scho",
+       "color": "#9bd36a"
+      }
+     ]
+    }
+   ]
   }
  ]
 }
