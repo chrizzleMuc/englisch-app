@@ -43,8 +43,15 @@ Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede E
 - `sort` – Wörter in Gruppen sortieren (z. B. Wortfamilien)
 - `syllables` – Wort in Silben trennen (`answer` mit Bindestrichen)
 - `photo` – im Heft schreiben, Foto als Nachweis (Fotomappe im Elternbereich)
+- `column` – schriftlich rechnen (`nums`, `op` „+“ oder „-“): Ziffer für Ziffer ab den Einern, Plus mit Übertrag, Minus mit Entbündeln (bayerisches Verfahren)
+- `chain` – Rechenweg in Schritten (`prompt`, `lines` = Liste aus [Text, Ergebnis])
 
 Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.
+
+## Version 29
+- Mathe 3. Klasse stark erweitert (Gliederung nach Anton-Übersicht, abgeglichen mit LehrplanPLUS Bayern): Zahlen bis 1000 entdecken, Rechenwege, schriftlich plus und minus, Mal und geteilt mit großen Zahlen (inkl. Punkt vor Strich), Längen und Gewichte, Uhrzeit, Geld, Körper/Linien/Symmetrie, Daten und Zufall. Neue Stufe „3. Klasse · Extra für Profis“ (großes Einmaleins, Vielfache und Teiler, Flächeninhalt, Kommazahlen).
+- Neue Aufgabenarten `column` und `chain`, neue Mathe-Bilder (Stellentafel, Hunderter/Zehner/Einer, Zahlenstrahl, Tausendertafel, Malkreuz, Körper, Würfelnetze, Würfelgebäude, Linien, Kästchenflächen).
+- Erzeuger: `werkzeug/gen_mathe_k3.py` (JSON nicht von Hand ändern, sondern das Skript).
 
 ## Version 26
 - Elternbereich nach Kind geordnet: je Kind ein Kasten mit Auswertung, „Das klappt noch nicht“, Belohnungen, Einstellungen (Name, Bestehen, Vorlesen) und Freigeschaltet.

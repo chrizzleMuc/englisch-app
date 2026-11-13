@@ -87,8 +87,24 @@
             "mathe/k3-rechnen1000.json",
             "mathe/k3-rechenwege.json",
             "mathe/k3-schriftlich.json",
+            "mathe/k3-mal-geteilt.json",
             "mathe/k3-sachaufgaben.json",
-            "mathe/k3-groessen.json"
+            "mathe/k3-groessen.json",
+            "mathe/k3-laengen-gewichte.json",
+            "mathe/k3-uhrzeit.json",
+            "mathe/k3-geld.json",
+            "mathe/k3-geometrie.json",
+            "mathe/k3-daten.json"
+          ]
+        },
+        {
+          "id": "mathe-k3-extra",
+          "title": "3. Klasse · Extra für Profis",
+          "kinder": [
+            "pirat"
+          ],
+          "units": [
+            "mathe/k3-extra.json"
           ]
         }
       ]

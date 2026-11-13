@@ -784,3 +784,10 @@ table.eval tr.fail td { color: #b3261e; }
 .chain-in { width: 120px; font-size: 24px; font-weight: 800; text-align: center; padding: 8px; }
 .chain-in.right { border-color: var(--good); background: #e9f9ef; }
 .chain-in.wrong { border-color: var(--bad); background: #fff3bf; }
+.vis-card .vis-kreuz { width: min(100%, 300px); }
+.vis-card .vis-solid { width: min(55vw, 210px); }
+.vis-choices .vis-solid { max-height: 130px; }
+.vis-card .vis-net, .vis-choices .vis-net { max-height: 170px; }
+.vis-card .vis-bau { width: auto; max-width: 100%; max-height: 220px; }
+.vis-card .vis-lines, .vis-choices .vis-lines { max-height: 180px; }
+.vis-card .vis-area { width: auto; max-width: 100%; max-height: 240px; }

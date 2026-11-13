@@ -18,6 +18,12 @@
 //   st:352        Stellentafel H Z E mit Ziffern (? = Lücke)    stp:352  Stellentafel mit Plättchen
 //   hze:352       Hunderterplatten, Zehnerstangen, Einerwürfel
 //   strahl:300:400:350   Zahlenstrahl von 300 bis 400, Pfeil mit ? bei 350 (optional :Teilstrich-Abstand)
+//   kreuz:5:10,3  Malkreuz 5 · (10 + 3)
+//   koerper:wuerfel  Körper (wuerfel, quader, kugel, zylinder, kegel, pyramide)
+//   netz:1,0;0,1;1,1;2,1;3,1;1,2   Körpernetz aus Quadraten (Spalte,Zeile)
+//   bau:2,1;1,1   Würfelgebäude, Höhen je Feld, Reihen von hinten nach vorn
+//   linien:parallel   zwei Linien (parallel, parallel2, senkrecht, schief)
+//   flaeche:4x3   Fläche aus Kästchen (oder einzelne Kästchen 0,0;1,0;...)
 //   tafel:340:362 Ausschnitt der Tausendertafel ab 340 (5 Spalten, 3 Reihen), ? bei 362
 import { pic } from "./pics.js";
 
@@ -360,6 +366,116 @@ function thousandGrid(arg) {
   return svg(cols * cw + 8, rows * ch + 8, out, "vis-tafel");
 }
 
+// Malkreuz: kreuz:5:10,3  → 5 mal (10 und 3), Ergebnisfelder mit ?
+function malkreuz(arg) {
+  const [a, parts] = arg.split(":");
+  const ps = parts.split(",");
+  const cw = 92;
+  const ch = 58;
+  let out = "";
+  const cell = (x, y, v, fill, col) => `<rect x="${x}" y="${y}" width="${cw}" height="${ch}" fill="${fill}" stroke="${C.line}" stroke-width="2.5"/><text x="${x + cw / 2}" y="${y + 40}" text-anchor="middle" font-size="28" font-weight="900" fill="${col}" ${FONT}>${esc(v)}</text>`;
+  out += cell(4, 4, "·", "#efe6ff", C.ink);
+  ps.forEach((v, i) => (out += cell(4 + (i + 1) * cw, 4, v, "#e3ecff", C.blue)));
+  out += cell(4, 4 + ch, a, "#fde4e4", C.red);
+  ps.forEach((v, i) => (out += cell(4 + (i + 1) * cw, 4 + ch, "?", "#ffe9a8", "#b07a00")));
+  return svg((ps.length + 1) * cw + 8, 2 * ch + 8, out, "vis-kreuz");
+}
+
+// Geometrische Körper (vereinfachte 3D-Zeichnung)
+function solid(arg) {
+  const st = `stroke="${C.line}" stroke-width="3" stroke-linejoin="round"`;
+  const hid = `stroke="${C.line}" stroke-width="2" stroke-dasharray="6 5" fill="none"`;
+  const A = "#b9a3f5";
+  const B = "#9a7ff0";
+  const T = "#d9ccfb";
+  let o = "";
+  switch (arg) {
+    case "wuerfel":
+      o = `<polygon points="40,70 140,70 140,170 40,170" fill="${A}" ${st}/><polygon points="40,70 80,35 180,35 140,70" fill="${T}" ${st}/><polygon points="140,70 180,35 180,135 140,170" fill="${B}" ${st}/><polyline points="40,170 80,135 180,135" ${hid}/><line x1="80" y1="35" x2="80" y2="135" ${hid}/>`;
+      break;
+    case "quader":
+      o = `<polygon points="20,85 150,85 150,165 20,165" fill="${A}" ${st}/><polygon points="20,85 55,55 185,55 150,85" fill="${T}" ${st}/><polygon points="150,85 185,55 185,135 150,165" fill="${B}" ${st}/><polyline points="20,165 55,135 185,135" ${hid}/><line x1="55" y1="55" x2="55" y2="135" ${hid}/>`;
+      break;
+    case "kugel":
+      o = `<defs><radialGradient id="kg" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#efe8ff"/><stop offset="1" stop-color="${B}"/></radialGradient></defs><circle cx="100" cy="100" r="72" fill="url(#kg)" ${st}/><ellipse cx="100" cy="100" rx="72" ry="18" fill="none" stroke="${C.line}" stroke-width="1.5" stroke-dasharray="6 5"/>`;
+      break;
+    case "zylinder":
+      o = `<path d="M45 50 L45 155 A55 16 0 0 0 155 155 L155 50" fill="${A}" ${st}/><ellipse cx="100" cy="50" rx="55" ry="16" fill="${T}" ${st}/><path d="M45 155 A55 16 0 0 1 155 155" ${hid}/>`;
+      break;
+    case "kegel":
+      o = `<path d="M100 22 L40 160 A60 17 0 0 0 160 160 Z" fill="${A}" ${st}/><path d="M40 160 A60 17 0 0 1 160 160" ${hid}/>`;
+      break;
+    case "pyramide":
+      o = `<polygon points="100,20 30,160 130,175" fill="${A}" ${st}/><polygon points="100,20 130,175 175,140" fill="${B}" ${st}/><polyline points="30,160 75,128 175,140" ${hid}/><line x1="100" y1="20" x2="75" y2="128" ${hid}/>`;
+      break;
+  }
+  return svg(200, 190, o, "vis-solid");
+}
+
+// Netz: Quadrate auf Kästchen, "netz:1,0;0,1;1,1;2,1;3,1;1,2" (Spalte,Zeile)
+function net(arg) {
+  const cells = arg.split(";").map((c) => c.split(",").map(Number));
+  const s = 44;
+  const w = Math.max(...cells.map((c) => c[0])) + 1;
+  const h = Math.max(...cells.map((c) => c[1])) + 1;
+  const out = cells.map(([x, y]) => `<rect x="${4 + x * s}" y="${4 + y * s}" width="${s}" height="${s}" fill="#b9a3f5" stroke="${C.line}" stroke-width="3"/>`).join("");
+  return svg(w * s + 8, h * s + 8, out, "vis-net");
+}
+
+// Würfelgebäude: "bau:2,1,1;1,0,0" = Höhen je Feld, Reihen von hinten nach vorn
+function building(arg) {
+  const rows = arg.split(";").map((r) => r.split(",").map(Number));
+  const s = 34;
+  const dx = s * 0.5;
+  const dy = s * 0.5;
+  const maxH = Math.max(...rows.flat());
+  const cols = Math.max(...rows.map((r) => r.length));
+  const W = cols * s + rows.length * dx + 10;
+  const H = maxH * s + rows.length * dy + s + 10;
+  let out = "";
+  const cube = (x, y) =>
+    `<polygon points="${x},${y} ${x + s},${y} ${x + s},${y + s} ${x},${y + s}" fill="#3b6fd8" stroke="#1d3f8f" stroke-width="2"/>` +
+    `<polygon points="${x},${y} ${x + dx},${y - dy} ${x + s + dx},${y - dy} ${x + s},${y}" fill="#7fa6f0" stroke="#1d3f8f" stroke-width="2"/>` +
+    `<polygon points="${x + s},${y} ${x + s + dx},${y - dy} ${x + s + dx},${y + s - dy} ${x + s},${y + s}" fill="#2a56b8" stroke="#1d3f8f" stroke-width="2"/>`;
+  rows.forEach((r, ri) => {
+    const back = rows.length - 1 - ri;
+    r.forEach((hgt, ci) => {
+      for (let k = 0; k < hgt; k++) {
+        const x = 5 + ci * s + back * dx;
+        const y = H - 5 - s - (rows.length - 1 - back) * 0 - back * dy - k * s;
+        out += cube(x, y);
+      }
+    });
+  });
+  return svg(W, H, out, "vis-bau");
+}
+
+// Zwei Linien: parallel, senkrecht oder schief
+function lines(arg) {
+  const grid = Array.from({ length: 9 }, (_, i) => `<line x1="${10 + i * 25}" y1="10" x2="${10 + i * 25}" y2="190" stroke="#e1d6fa"/><line x1="10" y1="${10 + i * 22.5}" x2="210" y2="${10 + i * 22.5}" stroke="#e1d6fa"/>`).join("");
+  const L = { parallel: [[35, 40, 185, 90], [35, 110, 185, 160]], senkrecht: [[30, 100, 190, 100], [110, 25, 110, 175]], schief: [[30, 60, 190, 120], [60, 170, 170, 30]], parallel2: [[60, 20, 110, 180], [120, 20, 170, 180]] }[arg] || [];
+  const out = L.map(([a, b, c, d], i) => `<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="${i ? C.red : C.blue}" stroke-width="6" stroke-linecap="round"/>`).join("");
+  return svg(220, 200, grid + out, "vis-lines");
+}
+
+// Fläche aus Kästchen: "flaeche:4x3" Rechteck oder "flaeche:0,0;1,0;1,1" einzelne Kästchen
+function area(arg) {
+  let cells;
+  if (/^\d+x\d+$/.test(arg)) {
+    const [w, h] = arg.split("x").map(Number);
+    cells = [];
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) cells.push([x, y]);
+  } else cells = arg.split(";").map((c) => c.split(",").map(Number));
+  const s = 36;
+  const w = Math.max(...cells.map((c) => c[0])) + 2;
+  const h = Math.max(...cells.map((c) => c[1])) + 2;
+  let out = "";
+  for (let x = 0; x <= w; x++) out += `<line x1="${4 + x * s}" y1="4" x2="${4 + x * s}" y2="${4 + h * s}" stroke="#d9ccf5"/>`;
+  for (let y = 0; y <= h; y++) out += `<line x1="4" y1="${4 + y * s}" x2="${4 + w * s}" y2="${4 + y * s}" stroke="#d9ccf5"/>`;
+  out += cells.map(([x, y]) => `<rect x="${4 + (x + 0.5) * s}" y="${4 + (y + 0.5) * s}" width="${s}" height="${s}" fill="#a77bff" stroke="${C.line}" stroke-width="2"/>`).join("");
+  return svg(w * s + 8, h * s + 8, out, "vis-area");
+}
+
 export function vis(code) {
   if (!code) return "";
   const i = code.indexOf(":");
@@ -386,6 +502,12 @@ export function vis(code) {
     case "hze": return blocks(arg);
     case "strahl": return numberLine(arg);
     case "tafel": return thousandGrid(arg);
+    case "kreuz": return malkreuz(arg);
+    case "koerper": return solid(arg);
+    case "netz": return net(arg);
+    case "bau": return building(arg);
+    case "linien": return lines(arg);
+    case "flaeche": return area(arg);
     default: return `<span>${esc(code)}</span>`;
   }
 }
@@ -405,6 +527,10 @@ export function visText(code) {
   if (kind === "st" || kind === "stp") return `Stellentafel ${arg}`;
   if (kind === "hze") return `${arg} (Hunderter, Zehner, Einer)`;
   if (kind === "strahl") return `Zahlenstrahl ${arg.split(":")[0]} bis ${arg.split(":")[1]}`;
+  if (kind === "koerper" || kind === "linien") return arg;
+  if (kind === "netz") return "Netz";
+  if (kind === "bau") return `Würfelgebäude ${arg}`;
+  if (kind === "flaeche") return `Fläche ${arg}`;
   if (kind === "tafel") return `Tausendertafel ab ${arg.split(":")[0]}`;
   if (kind === "lage") return `${arg.split(":")[0]} ${arg.split(":")[1]}`;
   return arg;

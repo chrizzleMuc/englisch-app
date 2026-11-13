@@ -1,0 +1,402 @@
+{
+ "id": "m3-extra",
+ "type": "schule",
+ "title_de": "Für Profis: schon 4. Klasse",
+ "image": "🚀",
+ "color": "#7b3fe4",
+ "lessons": [
+  {
+   "title": "Großes Einmaleins",
+   "icon": "🚀",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-ex-g1x1-12-4",
+     "task": "Großes Einmaleins: Rechne. Tipp: 10 · … und dann den Rest.",
+     "prompt": "4 · 12 =",
+     "answer": "48",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-g1x1-15-3",
+     "task": "Großes Einmaleins: Rechne. Tipp: 10 · … und dann den Rest.",
+     "prompt": "3 · 15 =",
+     "answer": "45",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-g1x1-13-5",
+     "task": "Großes Einmaleins: Rechne. Tipp: 10 · … und dann den Rest.",
+     "prompt": "5 · 13 =",
+     "answer": "65",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-g1x1-16-2",
+     "task": "Großes Einmaleins: Rechne. Tipp: 10 · … und dann den Rest.",
+     "prompt": "2 · 16 =",
+     "answer": "32",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-g1x1-11-7",
+     "task": "Großes Einmaleins: Rechne. Tipp: 10 · … und dann den Rest.",
+     "prompt": "7 · 11 =",
+     "answer": "77",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-g1x1-14-6",
+     "task": "Großes Einmaleins: Rechne. Tipp: 10 · … und dann den Rest.",
+     "prompt": "6 · 14 =",
+     "answer": "84",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-g1x1-17-3",
+     "task": "Großes Einmaleins: Rechne. Tipp: 10 · … und dann den Rest.",
+     "prompt": "3 · 17 =",
+     "answer": "51",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-g1x1-18-5",
+     "task": "Großes Einmaleins: Rechne. Tipp: 10 · … und dann den Rest.",
+     "prompt": "5 · 18 =",
+     "answer": "90",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-g1x1-19-4",
+     "task": "Großes Einmaleins: Rechne. Tipp: 10 · … und dann den Rest.",
+     "prompt": "4 · 19 =",
+     "answer": "76",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-g1x1-12-8",
+     "task": "Großes Einmaleins: Rechne. Tipp: 10 · … und dann den Rest.",
+     "prompt": "8 · 12 =",
+     "answer": "96",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Vielfache und Teiler",
+   "icon": "🔍",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-ex-teiler-24",
+     "task": "Welche Zahl ist ein Teiler? (Sie geht ohne Rest auf.)",
+     "options": [
+      "4",
+      "5",
+      "7"
+     ],
+     "answer": "4",
+     "prompt": "24",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-ex-teiler-35",
+     "task": "Welche Zahl ist ein Teiler? (Sie geht ohne Rest auf.)",
+     "options": [
+      "3",
+      "6",
+      "7"
+     ],
+     "answer": "7",
+     "prompt": "35",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-ex-teiler-36",
+     "task": "Welche Zahl ist ein Teiler? (Sie geht ohne Rest auf.)",
+     "options": [
+      "5",
+      "8",
+      "9"
+     ],
+     "answer": "9",
+     "prompt": "36",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-ex-teiler-40",
+     "task": "Welche Zahl ist ein Teiler? (Sie geht ohne Rest auf.)",
+     "options": [
+      "3",
+      "6",
+      "8"
+     ],
+     "answer": "8",
+     "prompt": "40",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-ex-teiler-27",
+     "task": "Welche Zahl ist ein Teiler? (Sie geht ohne Rest auf.)",
+     "options": [
+      "2",
+      "3",
+      "5"
+     ],
+     "answer": "3",
+     "prompt": "27",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-ex-teiler-42",
+     "task": "Welche Zahl ist ein Teiler? (Sie geht ohne Rest auf.)",
+     "options": [
+      "4",
+      "5",
+      "6"
+     ],
+     "answer": "6",
+     "prompt": "42",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-ex-vielf-6",
+     "task": "Welche Zahl ist ein Vielfaches von 6?",
+     "options": [
+      "32",
+      "42",
+      "44"
+     ],
+     "answer": "42",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-ex-vielf-7",
+     "task": "Welche Zahl ist ein Vielfaches von 7?",
+     "options": [
+      "54",
+      "56",
+      "47"
+     ],
+     "answer": "56",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-ex-vielf-8",
+     "task": "Welche Zahl ist ein Vielfaches von 8?",
+     "options": [
+      "62",
+      "64",
+      "68"
+     ],
+     "answer": "64",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-ex-vielf-9",
+     "task": "Welche Zahl ist ein Vielfaches von 9?",
+     "options": [
+      "81",
+      "82",
+      "91"
+     ],
+     "answer": "81",
+     "keepOrder": true,
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Flächeninhalt",
+   "icon": "🟪",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-ex-fl-4x3",
+     "task": "Wie viele Kästchen groß ist die Fläche?",
+     "prompt": "",
+     "answer": "12",
+     "num": true,
+     "vis": "flaeche:4x3"
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-fl-5x2",
+     "task": "Wie viele Kästchen groß ist die Fläche?",
+     "prompt": "",
+     "answer": "10",
+     "num": true,
+     "vis": "flaeche:5x2"
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-fl-3x3",
+     "task": "Wie viele Kästchen groß ist die Fläche?",
+     "prompt": "",
+     "answer": "9",
+     "num": true,
+     "vis": "flaeche:3x3"
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-fl-6x2",
+     "task": "Wie viele Kästchen groß ist die Fläche?",
+     "prompt": "",
+     "answer": "12",
+     "num": true,
+     "vis": "flaeche:6x2"
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-fl-00_10_20_01_02",
+     "task": "Wie viele Kästchen groß ist die Fläche?",
+     "prompt": "",
+     "answer": "5",
+     "num": true,
+     "vis": "flaeche:0,0;1,0;2,0;0,1;0,2"
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-fl-00_10_11_21_22_32",
+     "task": "Wie viele Kästchen groß ist die Fläche?",
+     "prompt": "",
+     "answer": "6",
+     "num": true,
+     "vis": "flaeche:0,0;1,0;1,1;2,1;2,2;3,2"
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-fl-00_10_20_01_11_21_12",
+     "task": "Wie viele Kästchen groß ist die Fläche?",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "flaeche:0,0;1,0;2,0;0,1;1,1;2,1;1,2"
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-flr-4-5",
+     "task": "Ein Rechteck ist so viele Kästchen lang und breit. Wie viele Kästchen hat es? Tipp: Länge mal Breite.",
+     "prompt": "4 Kästchen lang, 5 Kästchen breit",
+     "answer": "20",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-flr-7-3",
+     "task": "Ein Rechteck ist so viele Kästchen lang und breit. Wie viele Kästchen hat es? Tipp: Länge mal Breite.",
+     "prompt": "7 Kästchen lang, 3 Kästchen breit",
+     "answer": "21",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-flr-6-6",
+     "task": "Ein Rechteck ist so viele Kästchen lang und breit. Wie viele Kästchen hat es? Tipp: Länge mal Breite.",
+     "prompt": "6 Kästchen lang, 6 Kästchen breit",
+     "answer": "36",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Kommazahlen",
+   "icon": "🔸",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-ex-komma-0,5-2",
+     "task": "Kommazahlen: 0,5 ist die Hälfte von 1. Rechne.",
+     "prompt": "2 · 0,5 =",
+     "answer": "1",
+     "also": [
+      "1"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-komma-0,5-4",
+     "task": "Kommazahlen: 0,5 ist die Hälfte von 1. Rechne.",
+     "prompt": "4 · 0,5 =",
+     "answer": "2",
+     "also": [
+      "2"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-komma-1,5-2",
+     "task": "Kommazahlen: 0,5 ist die Hälfte von 1. Rechne.",
+     "prompt": "2 · 1,5 =",
+     "answer": "3",
+     "also": [
+      "3"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-komma-2,5-4",
+     "task": "Kommazahlen: 0,5 ist die Hälfte von 1. Rechne.",
+     "prompt": "4 · 2,5 =",
+     "answer": "10",
+     "also": [
+      "10"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-komma-0,5-5",
+     "task": "Kommazahlen: 0,5 ist die Hälfte von 1. Rechne.",
+     "prompt": "5 · 0,5 =",
+     "answer": "2,5",
+     "also": [
+      "2.5"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-komma-1,5-3",
+     "task": "Kommazahlen: 0,5 ist die Hälfte von 1. Rechne.",
+     "prompt": "3 · 1,5 =",
+     "answer": "4,5",
+     "also": [
+      "4.5"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

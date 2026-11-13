@@ -1,0 +1,318 @@
+{
+ "id": "m3-daten",
+ "type": "schule",
+ "title_de": "Daten und Zufall",
+ "image": "📊",
+ "color": "#2a9d8f",
+ "lessons": [
+  {
+   "title": "Diagramme lesen",
+   "icon": "📊",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-dz-most-0",
+     "task": "Lieblingsobst der Klasse 3b: Was haben die meisten gewählt?",
+     "options": [
+      "🍎",
+      "🍌",
+      "🍓",
+      "🍊"
+     ],
+     "answer": "🍓",
+     "vis": "balken:🍎=6,🍌=3,🍓=8,🍊=5",
+     "picOptions": true,
+     "keepOrder": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-diff-0",
+     "task": "Lieblingsobst der Klasse 3b: Wie viele Kinder mehr haben Apfel gewählt als Banane?",
+     "prompt": "",
+     "answer": "3",
+     "num": true,
+     "vis": "balken:🍎=6,🍌=3,🍓=8,🍊=5"
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-sum-0",
+     "task": "Lieblingsobst der Klasse 3b: Wie viele Kinder sind es zusammen?",
+     "prompt": "",
+     "answer": "22",
+     "num": true,
+     "vis": "balken:🍎=6,🍌=3,🍓=8,🍊=5"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-dz-most-1",
+     "task": "Lieblings-AG: Was haben die meisten gewählt?",
+     "options": [
+      "⚽",
+      "🎨",
+      "🎵",
+      "📚"
+     ],
+     "answer": "⚽",
+     "vis": "balken:⚽=7,🎨=4,🎵=5,📚=2",
+     "picOptions": true,
+     "keepOrder": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-diff-1",
+     "task": "Lieblings-AG: Wie viele Kinder mehr haben Fußball gewählt als Malen?",
+     "prompt": "",
+     "answer": "3",
+     "num": true,
+     "vis": "balken:⚽=7,🎨=4,🎵=5,📚=2"
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-sum-1",
+     "task": "Lieblings-AG: Wie viele Kinder sind es zusammen?",
+     "prompt": "",
+     "answer": "18",
+     "num": true,
+     "vis": "balken:⚽=7,🎨=4,🎵=5,📚=2"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-dz-most-2",
+     "task": "Haustiere in der Klasse: Was haben die meisten gewählt?",
+     "options": [
+      "🐶",
+      "🐱",
+      "🐰",
+      "🐟"
+     ],
+     "answer": "🐶",
+     "vis": "balken:🐶=9,🐱=6,🐰=3,🐟=2",
+     "picOptions": true,
+     "keepOrder": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-diff-2",
+     "task": "Haustiere in der Klasse: Wie viele Kinder mehr haben Hund gewählt als Katze?",
+     "prompt": "",
+     "answer": "3",
+     "num": true,
+     "vis": "balken:🐶=9,🐱=6,🐰=3,🐟=2"
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-sum-2",
+     "task": "Haustiere in der Klasse: Wie viele Kinder sind es zusammen?",
+     "prompt": "",
+     "answer": "20",
+     "num": true,
+     "vis": "balken:🐶=9,🐱=6,🐰=3,🐟=2"
+    }
+   ]
+  },
+  {
+   "title": "Strichlisten",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-dz-strich-7",
+     "task": "Wie viele Striche sind es? Ein Bündel hat 5.",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "strich:7"
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-strich-12",
+     "task": "Wie viele Striche sind es? Ein Bündel hat 5.",
+     "prompt": "",
+     "answer": "12",
+     "num": true,
+     "vis": "strich:12"
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-strich-15",
+     "task": "Wie viele Striche sind es? Ein Bündel hat 5.",
+     "prompt": "",
+     "answer": "15",
+     "num": true,
+     "vis": "strich:15"
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-strich-9",
+     "task": "Wie viele Striche sind es? Ein Bündel hat 5.",
+     "prompt": "",
+     "answer": "9",
+     "num": true,
+     "vis": "strich:9"
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-strich-18",
+     "task": "Wie viele Striche sind es? Ein Bündel hat 5.",
+     "prompt": "",
+     "answer": "18",
+     "num": true,
+     "vis": "strich:18"
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-strich-23",
+     "task": "Wie viele Striche sind es? Ein Bündel hat 5.",
+     "prompt": "",
+     "answer": "23",
+     "num": true,
+     "vis": "strich:23"
+    }
+   ]
+  },
+  {
+   "title": "Wahrscheinlichkeit",
+   "icon": "🎲",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-dz-w-🔴*7+⚪*",
+     "task": "Du ziehst ohne hinzuschauen. Was ziehst du wahrscheinlicher?",
+     "options": [
+      "🔴",
+      "⚪"
+     ],
+     "answer": "🔴",
+     "vis": "menge:🔴*7+⚪*2",
+     "picOptions": true,
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-dz-w-🔴*2+⚪*",
+     "task": "Du ziehst ohne hinzuschauen. Was ziehst du wahrscheinlicher?",
+     "options": [
+      "🔴",
+      "⚪"
+     ],
+     "answer": "⚪",
+     "vis": "menge:🔴*2+⚪*6",
+     "picOptions": true,
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-dz-smu-2",
+     "task": "Sicher, möglich oder unmöglich?",
+     "options": [
+      "sicher",
+      "möglich",
+      "unmöglich"
+     ],
+     "answer": "sicher",
+     "prompt": "Im Säckchen sind nur rote Kugeln. Du ziehst eine rote Kugel.",
+     "showText": true,
+     "keepOrder": true,
+     "vis": "menge:🔴*5"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-dz-smu-3",
+     "task": "Sicher, möglich oder unmöglich?",
+     "options": [
+      "sicher",
+      "möglich",
+      "unmöglich"
+     ],
+     "answer": "unmöglich",
+     "prompt": "Im Säckchen sind nur rote Kugeln. Du ziehst eine weiße Kugel.",
+     "showText": true,
+     "keepOrder": true,
+     "vis": "menge:🔴*5"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-dz-smu-4",
+     "task": "Sicher, möglich oder unmöglich?",
+     "options": [
+      "sicher",
+      "möglich",
+      "unmöglich"
+     ],
+     "answer": "möglich",
+     "prompt": "Im Säckchen sind rote und weiße Kugeln. Du ziehst eine weiße Kugel.",
+     "showText": true,
+     "keepOrder": true,
+     "vis": "menge:🔴*3+⚪*3"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-dz-smu-5",
+     "task": "Sicher, möglich oder unmöglich?",
+     "options": [
+      "sicher",
+      "möglich",
+      "unmöglich"
+     ],
+     "answer": "unmöglich",
+     "prompt": "Du drehst ein Glücksrad mit den Zahlen 1 bis 8. Du drehst eine 9.",
+     "showText": true,
+     "keepOrder": true,
+     "pic": "🎯"
+    }
+   ]
+  },
+  {
+   "title": "Kombinieren",
+   "icon": "🧩",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-dz-komb-0",
+     "task": "Knobelaufgabe: Probiere alle Möglichkeiten aus.",
+     "prompt": "Mia hat 3 T-Shirts und 2 Hosen. Wie viele verschiedene Kombinationen kann sie anziehen?",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-komb-1",
+     "task": "Knobelaufgabe: Probiere alle Möglichkeiten aus.",
+     "prompt": "Es gibt 2 Eissorten und 3 Soßen. Jedes Eis bekommt eine Sorte und eine Soße. Wie viele Möglichkeiten gibt es?",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-komb-2",
+     "task": "Knobelaufgabe: Probiere alle Möglichkeiten aus.",
+     "prompt": "4 Kinder geben sich zur Begrüßung je einmal die Hand. Wie oft werden Hände geschüttelt?",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-komb-3",
+     "task": "Knobelaufgabe: Probiere alle Möglichkeiten aus.",
+     "prompt": "Bilde zweistellige Zahlen aus den Ziffern 1, 2 und 3. Jede Ziffer nur einmal pro Zahl. Wie viele Zahlen gibt es?",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-dz-komb-4",
+     "task": "Knobelaufgabe: Probiere alle Möglichkeiten aus.",
+     "prompt": "Ein Menü: 2 Vorspeisen, 2 Hauptgerichte, 2 Nachspeisen. Wie viele verschiedene Menüs gibt es?",
+     "answer": "8",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}
