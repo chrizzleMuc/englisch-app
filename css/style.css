@@ -740,12 +740,9 @@ table.eval tr.fail td { color: #b3261e; }
 .pcolor span { font-size: 26px; font-weight: 900; color: #fff; text-shadow: 0 1px 3px rgba(0, 0, 0, .55); }
 .pcolor.sel { border-color: #2a1a4f; transform: translateY(-3px) scale(1.06); outline: 4px solid #ffc83d; }
 .paint-wrap { background: #fff; border-radius: 20px; padding: 8px; box-shadow: 0 6px 0 var(--line); }
-.paint { display: block; width: 100%; max-height: 62vh; touch-action: manipulation; }
-.pcell { cursor: pointer; }
-.pcell rect { fill: #fff; stroke: #b9a8e0; stroke-width: 2; transition: fill .2s; }
-.pcell text { font: 800 22px system-ui, sans-serif; fill: #2a1a4f; pointer-events: none; }
-.pcell.done text { fill: rgba(255, 255, 255, .85); }
-.pcell.wrong rect { fill: #ffd6d6; stroke: #e5484d; }
+.paint { display: block; width: 100%; height: auto; border-radius: 12px; touch-action: manipulation; cursor: pointer; }
+.paint.shake { animation: pshake .35s; }
+@keyframes pshake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
 .vis-card .vis-amount { width: auto; max-width: 100%; max-height: 200px; }
 .vis-choices .vis-amount { max-height: 120px; }
 .vis-choices .vis-place { max-height: 190px; }

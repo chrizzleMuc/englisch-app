@@ -54,11 +54,12 @@ function checkSchool(unit, path) {
       if (t.kind === "sort" && (!(t.groups || []).length || !(t.items || []).length)) err("Eine Sortier-Aufgabe braucht groups und items.");
       if (t.kind === "sort") for (const it of t.items || []) if (!t.groups.includes(it.group)) err(`${it.id}: Gruppe "${it.group}" gibt es nicht.`);
       if (t.kind === "choice" && !(t.options || []).includes(t.answer)) err(`${t.id}: Die Antwort steht nicht bei den Auswahlmöglichkeiten.`);
-      // Ausmalbild: kommt in die Lernkartei (Wiederholung), aber nicht in Tests
+      // Ausmalbild: kommt in die Lernkartei (Wiederholung), aber nicht in Tests.
+      // image = Strichzeichnung, map = gleiches Bild, Grauwert = Nummer der Fläche (0 = Linie), regions = Nummer → Silbe
       if (t.kind === "paint") {
         const keys = (t.colors || []).map((c) => c.key);
-        if (!t.id || !(t.grid || []).length || !keys.length) err("Ein Ausmalbild braucht id, grid und colors.");
-        for (const row of t.grid || []) for (const ch of row) if (!keys.includes(ch)) err(`${t.id}: Im Bild steht "${ch}", dafür gibt es keine Farbe.`);
+        if (!t.id || !t.image || !t.map || !t.regions || !keys.length) err("Ein Ausmalbild braucht id, image, map, regions und colors.");
+        for (const [r, k] of Object.entries(t.regions || {})) if (!keys.includes(k)) err(`${t.id}: Fläche ${r} hat "${k}", dafür gibt es keine Farbe.`);
         if (content.items.has(t.id)) err(`Die ID ${t.id} gibt es doppelt.`);
         content.items.set(t.id, { id: t.id, kind: "task", unit: unit.id, q: t });
         continue;

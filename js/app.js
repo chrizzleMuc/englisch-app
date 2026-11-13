@@ -1040,50 +1040,99 @@ STEPS.pairs = (lesson, step) => {
   });
 };
 
-// ---------- Übung: Ausmalbild (Silbe lesen, passende Farbe einmalen) ----------
-// grid: Zeilen aus Buchstaben, jeder Buchstabe ist eine Farbe aus colors ({key, label, color}).
-STEPS.paint = (lesson, step) => {
+// ---------- Übung: Ausmalbild (Silbe lesen, Farbe wählen, Fläche antippen) ----------
+// Strichzeichnung (image) + Flächenkarte (map, Grauwert = Flächennummer) + regions {Nummer: Silbe}
+const loadImg = (src) =>
+  new Promise((ok, bad) => {
+    const i = new Image();
+    i.onload = () => ok(i);
+    i.onerror = () => bad(new Error("Bild fehlt: " + src));
+    i.src = src;
+  });
+const hex = (c) => [1, 3, 5].map((i) => parseInt(c.slice(i, i + 2), 16));
+
+STEPS.paint = async (lesson, step) => {
   const t = step.t || step.q;
   const byKey = Object.fromEntries(t.colors.map((c) => [c.key, c]));
-  const rows = t.grid.length;
-  const cols = Math.max(...t.grid.map((r) => r.length));
-  const S = 64;
   let cur = null;
   let misses = 0;
-  let left = 0;
-  let cells = "";
-  t.grid.forEach((row, y) =>
-    [...row].forEach((k, x) => {
-      left++;
-      cells += `<g class="pcell" data-k="${k}" data-x="${x}" data-y="${y}"><rect x="${x * S + 2}" y="${y * S + 2}" width="${S - 4}" height="${S - 4}" rx="10"/><text x="${x * S + S / 2}" y="${y * S + S / 2 + 8}" text-anchor="middle">${esc(byKey[k].label)}</text></g>`;
-    }),
-  );
+  const done = new Set();
+  const total = Object.keys(t.regions).length;
   const token = lessonRender(lesson, `
-    ${taskHead(t.task || "Male aus! Tipp zuerst eine Farbe an, dann die Felder mit dieser Silbe.")}
-    <div class="paint-pal">${shuffle(t.colors).map((c) => `<button class="pcolor" data-k="${c.key}" style="--pc:${c.color}"><span>${esc(c.label)}</span></button>`).join("")}</div>
-    <div class="paint-wrap"><svg class="paint" viewBox="0 0 ${cols * S} ${rows * S}" xmlns="http://www.w3.org/2000/svg">${cells}</svg></div>
+    ${taskHead(t.task || "Lies die Silben. Tipp eine Farbe an, dann die passenden Flächen.")}
+    <div class="paint-pal">${t.colors.map((c) => `<button class="pcolor" data-k="${c.key}" style="--pc:${c.color}"><span>${esc(c.label)}</span></button>`).join("")}</div>
+    <div class="paint-wrap"><canvas class="paint" id="pc"></canvas><p class="hint" id="pload">Bild wird geladen …</p></div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
   wireVoice(token, () => sayDe(t.say || t.task || "Male aus!"), t.task || "paint");
+  $("next").onclick = () => advance(lesson);
   on(".pcolor", "click", (e) => {
     app.querySelectorAll(".pcolor").forEach((b) => b.classList.remove("sel"));
     e.currentTarget.classList.add("sel");
     cur = e.currentTarget.dataset.k;
     chime("pop");
   });
-  on(".pcell", "click", async (e) => {
-    const g = e.currentTarget;
-    if (g.classList.contains("done")) return;
+  let base, map;
+  try {
+    [base, map] = await Promise.all([loadImg(t.image), loadImg(t.map)]);
+  } catch (e) {
+    if (alive(token)) $("pload").textContent = e.message;
+    return;
+  }
+  if (!alive(token)) return;
+  $("pload").remove();
+  const cv = $("pc");
+  const W = (cv.width = base.naturalWidth);
+  const H = (cv.height = base.naturalHeight);
+  const ctx = cv.getContext("2d", { willReadFrequently: true });
+  ctx.drawImage(map, 0, 0);
+  const ids = ctx.getImageData(0, 0, W, H).data;
+  ctx.drawImage(base, 0, 0);
+  const img = ctx.getImageData(0, 0, W, H);
+  const lum = new Uint8Array(W * H);
+  for (let i = 0; i < W * H; i++) lum[i] = img.data[i * 4];
+  const regionAt = (x, y) => {
+    // Linie getroffen? Dann im kleinen Umkreis die nächste Fläche suchen
+    for (let r = 0; r <= 14; r += 2)
+      for (let dy = -r; dy <= r; dy += 2)
+        for (let dx = -r; dx <= r; dx += 2) {
+          const xx = x + dx;
+          const yy = y + dy;
+          if (xx < 0 || yy < 0 || xx >= W || yy >= H) continue;
+          const id = ids[(yy * W + xx) * 4];
+          if (id) return id;
+        }
+    return 0;
+  };
+  const fill = (id, color) => {
+    const [r, g, b] = hex(color);
+    const d = img.data;
+    for (let i = 0; i < W * H; i++) {
+      if (ids[i * 4] !== id) continue;
+      const l = lum[i] / 255;
+      d[i * 4] = r * l;
+      d[i * 4 + 1] = g * l;
+      d[i * 4 + 2] = b * l;
+    }
+    ctx.putImageData(img, 0, 0);
+  };
+  cv.addEventListener("click", async (e) => {
+    const box = cv.getBoundingClientRect();
+    const x = Math.round(((e.clientX - box.left) / box.width) * W);
+    const y = Math.round(((e.clientY - box.top) / box.height) * H);
+    const id = regionAt(x, y);
+    if (!id || done.has(id)) return;
+    const want = t.regions[id];
     if (!cur) {
       $("fb").innerHTML = `<span class="try">Tipp zuerst oben eine Farbe an!</span>`;
       return;
     }
-    if (g.dataset.k === cur) {
-      g.classList.add("done");
-      g.querySelector("rect").style.fill = byKey[cur].color;
+    if (want === cur) {
+      done.add(id);
+      fill(id, byKey[cur].color);
       chime("pop");
       $("fb").innerHTML = "";
-      if (--left === 0) {
+      if (done.size === total) {
         // einmal werten, ohne Wiederholung am Ende der Lektion (das Bild wäre zu lang)
         const ok = misses <= 1;
         if (!step.retry) {
@@ -1100,13 +1149,12 @@ STEPS.paint = (lesson, step) => {
       }
     } else {
       misses++;
-      miss(lesson, step, t.id, byKey[cur].label + " statt " + byKey[g.dataset.k].label);
-      g.classList.add("wrong");
-      setTimeout(() => g.classList.remove("wrong"), 500);
-      $("fb").innerHTML = `<span class="try">Lies genau: Hier steht <b>${esc(byKey[g.dataset.k].label)}</b>.</span>`;
+      miss(lesson, step, t.id, byKey[cur].label + " statt " + byKey[want].label);
+      $("fb").innerHTML = `<span class="try">Lies genau: Hier steht <b>${esc(byKey[want].label)}</b>.</span>`;
+      cv.classList.add("shake");
+      setTimeout(() => cv.classList.remove("shake"), 400);
     }
   });
-  $("next").onclick = () => advance(lesson);
 };
 
 // ---------- Übung: Sortieren ----------
