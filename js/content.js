@@ -7,7 +7,7 @@ export const content = { subjects: [], items: new Map(), units: new Map(), photo
 // Eine Schul-Einheit hat "type": "schule" und eine Liste "lessons" mit Aufgaben ("tasks").
 // Jede bewertbare Aufgabe kommt als Einzelfrage in die Lernkartei (content.items, kind "task").
 
-const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint"];
+const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint", "column", "chain"];
 
 function sharedStart(a, b) {
   const wa = a.split(" ");
@@ -53,6 +53,14 @@ function checkSchool(unit, path) {
       if (t.kind === "pairs" && !(t.pairs || []).length) err("Eine Paare-Aufgabe hat keine Paare.");
       if (t.kind === "sort" && (!(t.groups || []).length || !(t.items || []).length)) err("Eine Sortier-Aufgabe braucht groups und items.");
       if (t.kind === "sort") for (const it of t.items || []) if (!t.groups.includes(it.group)) err(`${it.id}: Gruppe "${it.group}" gibt es nicht.`);
+      // Schriftlich rechnen: Aufgabe und Ergebnis als Text für Elternbereich und Auswertung
+      if (t.kind === "column") {
+        const nums = t.nums || [];
+        if (nums.length < 2 || !["+", "-"].includes(t.op) || (t.op === "-" && (nums.length !== 2 || nums[0] < nums[1]))) err(`${t.id}: Schriftliche Aufgabe braucht nums und op (+ oder -).`);
+        t.prompt = nums.join(t.op === "+" ? " + " : " − ");
+        t.answer = String(t.op === "+" ? nums.reduce((a, b) => a + b, 0) : nums[0] - nums[1]);
+      }
+      if (t.kind === "chain" && !(t.lines || []).length) err(`${t.id}: Rechenweg ohne Schritte.`);
       if (t.kind === "choice" && !(t.options || []).includes(t.answer)) err(`${t.id}: Die Antwort steht nicht bei den Auswahlmöglichkeiten.`);
       // Ausmalbild: kommt in die Lernkartei (Wiederholung), aber nicht in Tests.
       // image = Strichzeichnung, map = gleiches Bild, Grauwert = Nummer der Fläche (0 = Linie), regions = Nummer → Silbe

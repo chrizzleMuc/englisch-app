@@ -14,6 +14,11 @@
 //   zug:3,4,?,6   Zahlenzug (Waggons)
 //   haus:7;3,?    Zahlenhaus: Dach 7, Stockwerk 3 und ?
 //   menge:🍎*5+🍎*3   Dinge zum Zählen, in Fünferreihen (mit + zwischen zwei Gruppen)
+// 3. Klasse:
+//   st:352        Stellentafel H Z E mit Ziffern (? = Lücke)    stp:352  Stellentafel mit Plättchen
+//   hze:352       Hunderterplatten, Zehnerstangen, Einerwürfel
+//   strahl:300:400:350   Zahlenstrahl von 300 bis 400, Pfeil mit ? bei 350 (optional :Teilstrich-Abstand)
+//   tafel:340:362 Ausschnitt der Tausendertafel ab 340 (5 Spalten, 3 Reihen), ? bei 362
 import { pic } from "./pics.js";
 
 const C = { red: "#e5484d", blue: "#3b6fd8", empty: "#ffffff", line: "#5b3fa6", ink: "#2a1a4f", soft: "#f6f0ff", gold: "#f2b733", silver: "#c9ccd6", copper: "#c77b45" };
@@ -249,6 +254,112 @@ function train(arg) {
   return svg(80 + vals.length * cw, 96, out, "vis-train");
 }
 
+
+// ---------- 3. Klasse ----------
+const PLACE = [
+  { k: "H", col: "#3b6fd8", bg: "#e3ecff" },
+  { k: "Z", col: "#2a9d8f", bg: "#dcf3ef" },
+  { k: "E", col: "#e5484d", bg: "#fde4e4" },
+];
+const FONT = 'font-family="system-ui,sans-serif"';
+
+// Stellentafel: Ziffern oder Plättchen (Punkte)
+function placeTable(arg, dots) {
+  const d = arg.padStart(3, " ").slice(-3).split("");
+  const cw = dots ? 120 : 84;
+  const hh = 44;
+  const bh = dots ? 92 : 70;
+  let out = "";
+  d.forEach((v, i) => {
+    const p = PLACE[i];
+    const x = 4 + i * cw;
+    out += `<rect x="${x}" y="4" width="${cw}" height="${hh}" fill="${p.bg}" stroke="${C.line}" stroke-width="3"/><text x="${x + cw / 2}" y="37" text-anchor="middle" font-size="28" font-weight="900" fill="${p.col}" ${FONT}>${p.k}</text>`;
+    const q = v === "?";
+    out += `<rect x="${x}" y="${4 + hh}" width="${cw}" height="${bh}" fill="${q ? "#ffe9a8" : "#fff"}" stroke="${C.line}" stroke-width="3"/>`;
+    if (dots && !q) {
+      const n = Number(v) || 0;
+      for (let k = 0; k < n; k++) {
+        const cx = x + 22 + (k % 4) * 25;
+        const cy = 4 + hh + 22 + Math.floor(k / 4) * 25;
+        out += `<circle cx="${cx}" cy="${cy}" r="10" fill="${p.col}"/>`;
+      }
+    } else if (v.trim()) {
+      out += `<text x="${x + cw / 2}" y="${4 + hh + bh / 2 + 15}" text-anchor="middle" font-size="44" font-weight="900" fill="${q ? "#b07a00" : C.ink}" ${FONT}>${esc(v)}</text>`;
+    }
+  });
+  return svg(cw * 3 + 8, hh + bh + 8, out, "vis-st");
+}
+
+// Hunderterplatten, Zehnerstangen, Einerwürfel
+function blocks(arg) {
+  const n = Number(arg) || 0;
+  const [h, z, e] = [Math.floor(n / 100), Math.floor(n / 10) % 10, n % 10];
+  const u = 9;
+  let x = 6;
+  let out = "";
+  const H = 10 * u + 12;
+  const cube = (cx, cy, fill) => `<rect x="${cx}" y="${cy}" width="${u}" height="${u}" fill="${fill}" stroke="rgba(0,0,0,.28)" stroke-width="1"/>`;
+  for (let i = 0; i < h; i++) {
+    for (let r = 0; r < 10; r++) for (let c = 0; c < 10; c++) out += cube(x + c * u, 6 + r * u, PLACE[0].col);
+    x += 10 * u + 10;
+  }
+  for (let i = 0; i < z; i++) {
+    for (let r = 0; r < 10; r++) out += cube(x, 6 + r * u, PLACE[1].col);
+    x += u + 8;
+  }
+  if (e) x += 4;
+  for (let i = 0; i < e; i++) {
+    out += cube(x + (i % 2) * (u + 3), 6 + 10 * u - (Math.floor(i / 2) + 1) * (u + 3), PLACE[2].col);
+  }
+  if (e) x += 2 * u + 8;
+  return svg(Math.max(x, 40), H, out, "vis-hze");
+}
+
+// Zahlenstrahl mit Pfeil auf der gesuchten Zahl
+function numberLine(arg) {
+  const [a, b, q, stepArg] = arg.split(":").map(Number);
+  const W = 560;
+  const x0 = 24;
+  const x1 = W - 24;
+  const span = b - a;
+  const step = stepArg || (span <= 100 ? 10 : span <= 200 ? 10 : 50);
+  const X = (v) => x0 + ((v - a) / span) * (x1 - x0);
+  let out = `<line x1="${x0 - 10}" y1="80" x2="${x1 + 14}" y2="80" stroke="${C.ink}" stroke-width="4"/><polygon points="${x1 + 20},80 ${x1 + 8},73 ${x1 + 8},87" fill="${C.ink}"/>`;
+  const fine = step / 5 >= 1 && (span / step) * 5 <= 60 ? step / 5 : 0;
+  if (fine) for (let v = a; v <= b; v += fine) out += `<line x1="${X(v)}" y1="74" x2="${X(v)}" y2="86" stroke="${C.ink}" stroke-width="1.5"/>`;
+  for (let v = a; v <= b; v += step) {
+    const big = (v - a) % (step * 5) === 0 || v === b;
+    out += `<line x1="${X(v)}" y1="${big ? 64 : 68}" x2="${X(v)}" y2="${big ? 96 : 92}" stroke="${C.ink}" stroke-width="${big ? 3.5 : 2.5}"/>`;
+    if (big) out += `<text x="${X(v)}" y="122" text-anchor="middle" font-size="20" font-weight="800" fill="${C.ink}" ${FONT}>${v}</text>`;
+  }
+  if (!isNaN(q)) {
+    const x = X(q);
+    out += `<rect x="${x - 28}" y="6" width="56" height="34" rx="9" fill="#ffe9a8" stroke="${C.line}" stroke-width="3"/><text x="${x}" y="32" text-anchor="middle" font-size="24" font-weight="900" fill="#b07a00" ${FONT}>?</text><line x1="${x}" y1="40" x2="${x}" y2="66" stroke="${C.red}" stroke-width="4"/><polygon points="${x},72 ${x - 7},60 ${x + 7},60" fill="${C.red}"/>`;
+  }
+  return svg(W, 132, out, "vis-line");
+}
+
+// Ausschnitt der Tausendertafel: erste Zahl steht da, ? bei der gesuchten
+function thousandGrid(arg) {
+  const [start, q, colsArg, rowsArg] = arg.split(":").map(Number);
+  const cols = colsArg || 5;
+  const rows = rowsArg || 3;
+  const cw = 84;
+  const ch = 54;
+  let out = "";
+  for (let r = 0; r < rows; r++)
+    for (let c = 0; c < cols; c++) {
+      const v = start + r * 10 + c;
+      const isQ = v === q;
+      const shown = r === 0 && c === 0;
+      const x = 4 + c * cw;
+      const y = 4 + r * ch;
+      out += `<rect x="${x}" y="${y}" width="${cw}" height="${ch}" fill="${isQ ? "#ffe9a8" : shown ? "#e3ecff" : "#fff"}" stroke="${C.line}" stroke-width="2.5"/>`;
+      if (shown || isQ) out += `<text x="${x + cw / 2}" y="${y + 37}" text-anchor="middle" font-size="26" font-weight="900" fill="${isQ ? "#b07a00" : C.ink}" ${FONT}>${isQ ? "?" : v}</text>`;
+    }
+  return svg(cols * cw + 8, rows * ch + 8, out, "vis-tafel");
+}
+
 export function vis(code) {
   if (!code) return "";
   const i = code.indexOf(":");
@@ -270,6 +381,11 @@ export function vis(code) {
     case "sym": return symmetry(arg);
     case "balken": return bars(arg);
     case "zug": return train(arg);
+    case "st": return placeTable(arg, false);
+    case "stp": return placeTable(arg, true);
+    case "hze": return blocks(arg);
+    case "strahl": return numberLine(arg);
+    case "tafel": return thousandGrid(arg);
     default: return `<span>${esc(code)}</span>`;
   }
 }
@@ -286,6 +402,10 @@ export function visText(code) {
   if (kind === "geld") return arg.split(",").map((v) => (Number(v) >= 1 ? `${v} €` : `${Math.round(Number(v) * 100)} ct`)).join(" + ");
   if (kind === "feld" || kind === "zf") return `${arg} Punkte`;
   if (kind === "menge") return arg.split("+").map((g) => g.split("*").reverse().join(" × ")).join(" + ");
+  if (kind === "st" || kind === "stp") return `Stellentafel ${arg}`;
+  if (kind === "hze") return `${arg} (Hunderter, Zehner, Einer)`;
+  if (kind === "strahl") return `Zahlenstrahl ${arg.split(":")[0]} bis ${arg.split(":")[1]}`;
+  if (kind === "tafel") return `Tausendertafel ab ${arg.split(":")[0]}`;
   if (kind === "lage") return `${arg.split(":")[0]} ${arg.split(":")[1]}`;
   return arg;
 }

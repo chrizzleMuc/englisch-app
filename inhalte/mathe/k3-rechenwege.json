@@ -1,0 +1,845 @@
+{
+ "id": "m3-rechenwege",
+ "type": "schule",
+ "title_de": "Rechenwege bis 1000",
+ "image": "🪜",
+ "color": "#d0632f",
+ "lessons": [
+  {
+   "title": "Mit Hundertern",
+   "icon": "💯",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-rw-hp-300-400",
+     "task": "Rechne mit Hundertern.",
+     "prompt": "300 + 400 =",
+     "answer": "700",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hp-500-200",
+     "task": "Rechne mit Hundertern.",
+     "prompt": "500 + 200 =",
+     "answer": "700",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hp-100-600",
+     "task": "Rechne mit Hundertern.",
+     "prompt": "100 + 600 =",
+     "answer": "700",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hp-700-300",
+     "task": "Rechne mit Hundertern.",
+     "prompt": "700 + 300 =",
+     "answer": "1000",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hp-200-250",
+     "task": "Rechne mit Hundertern.",
+     "prompt": "200 + 250 =",
+     "answer": "450",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hm-900-200",
+     "task": "Rechne mit Hundertern.",
+     "prompt": "900 − 200 =",
+     "answer": "700",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hm-700-300",
+     "task": "Rechne mit Hundertern.",
+     "prompt": "700 − 300 =",
+     "answer": "400",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hm-1000-400",
+     "task": "Rechne mit Hundertern.",
+     "prompt": "1000 − 400 =",
+     "answer": "600",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hm-800-500",
+     "task": "Rechne mit Hundertern.",
+     "prompt": "800 − 500 =",
+     "answer": "300",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hm-650-300",
+     "task": "Rechne mit Hundertern.",
+     "prompt": "650 − 300 =",
+     "answer": "350",
+     "num": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Hunderter und Zehner",
+   "icon": "🔟",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-rw-hzp-160-200",
+     "task": "Rechne.",
+     "prompt": "160 + 200 =",
+     "answer": "360",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hzp-170-720",
+     "task": "Rechne.",
+     "prompt": "170 + 720 =",
+     "answer": "890",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hzp-340-250",
+     "task": "Rechne.",
+     "prompt": "340 + 250 =",
+     "answer": "590",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hzp-480-130",
+     "task": "Rechne.",
+     "prompt": "480 + 130 =",
+     "answer": "610",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hzp-560-270",
+     "task": "Rechne.",
+     "prompt": "560 + 270 =",
+     "answer": "830",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hzp-290-340",
+     "task": "Rechne.",
+     "prompt": "290 + 340 =",
+     "answer": "630",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hzm-300-150",
+     "task": "Rechne.",
+     "prompt": "300 − 150 =",
+     "answer": "150",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hzm-700-430",
+     "task": "Rechne.",
+     "prompt": "700 − 430 =",
+     "answer": "270",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hzm-850-320",
+     "task": "Rechne.",
+     "prompt": "850 − 320 =",
+     "answer": "530",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hzm-640-280",
+     "task": "Rechne.",
+     "prompt": "640 − 280 =",
+     "answer": "360",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hzm-510-160",
+     "task": "Rechne.",
+     "prompt": "510 − 160 =",
+     "answer": "350",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-hzm-920-450",
+     "task": "Rechne.",
+     "prompt": "920 − 450 =",
+     "answer": "470",
+     "num": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Plus in Schritten",
+   "icon": "🪜",
+   "tasks": [
+    {
+     "kind": "chain",
+     "id": "m3-rw-hsp-478-245",
+     "task": "Rechne in Schritten: erst die Hunderter, dann die Zehner, dann die Einer.",
+     "prompt": "478 + 245",
+     "lines": [
+      [
+       "478 + 200 =",
+       "678"
+      ],
+      [
+       "678 + 40 =",
+       "718"
+      ],
+      [
+       "718 + 5 =",
+       "723"
+      ]
+     ],
+     "answer": "723"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-hsp-356-127",
+     "task": "Rechne in Schritten: erst die Hunderter, dann die Zehner, dann die Einer.",
+     "prompt": "356 + 127",
+     "lines": [
+      [
+       "356 + 100 =",
+       "456"
+      ],
+      [
+       "456 + 20 =",
+       "476"
+      ],
+      [
+       "476 + 7 =",
+       "483"
+      ]
+     ],
+     "answer": "483"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-hsp-514-268",
+     "task": "Rechne in Schritten: erst die Hunderter, dann die Zehner, dann die Einer.",
+     "prompt": "514 + 268",
+     "lines": [
+      [
+       "514 + 200 =",
+       "714"
+      ],
+      [
+       "714 + 60 =",
+       "774"
+      ],
+      [
+       "774 + 8 =",
+       "782"
+      ]
+     ],
+     "answer": "782"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-hsp-233-449",
+     "task": "Rechne in Schritten: erst die Hunderter, dann die Zehner, dann die Einer.",
+     "prompt": "233 + 449",
+     "lines": [
+      [
+       "233 + 400 =",
+       "633"
+      ],
+      [
+       "633 + 40 =",
+       "673"
+      ],
+      [
+       "673 + 9 =",
+       "682"
+      ]
+     ],
+     "answer": "682"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-hsp-162-375",
+     "task": "Rechne in Schritten: erst die Hunderter, dann die Zehner, dann die Einer.",
+     "prompt": "162 + 375",
+     "lines": [
+      [
+       "162 + 300 =",
+       "462"
+      ],
+      [
+       "462 + 70 =",
+       "532"
+      ],
+      [
+       "532 + 5 =",
+       "537"
+      ]
+     ],
+     "answer": "537"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-hsp-605-287",
+     "task": "Rechne in Schritten: erst die Hunderter, dann die Zehner, dann die Einer.",
+     "prompt": "605 + 287",
+     "lines": [
+      [
+       "605 + 200 =",
+       "805"
+      ],
+      [
+       "805 + 80 =",
+       "885"
+      ],
+      [
+       "885 + 7 =",
+       "892"
+      ]
+     ],
+     "answer": "892"
+    }
+   ]
+  },
+  {
+   "title": "Minus in Schritten",
+   "icon": "🪜",
+   "tasks": [
+    {
+     "kind": "chain",
+     "id": "m3-rw-hsm-579-348",
+     "task": "Rechne in Schritten: erst die Hunderter, dann die Zehner, dann die Einer.",
+     "prompt": "579 − 348",
+     "lines": [
+      [
+       "579 − 300 =",
+       "279"
+      ],
+      [
+       "279 − 40 =",
+       "239"
+      ],
+      [
+       "239 − 8 =",
+       "231"
+      ]
+     ],
+     "answer": "231"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-hsm-634-215",
+     "task": "Rechne in Schritten: erst die Hunderter, dann die Zehner, dann die Einer.",
+     "prompt": "634 − 215",
+     "lines": [
+      [
+       "634 − 200 =",
+       "434"
+      ],
+      [
+       "434 − 10 =",
+       "424"
+      ],
+      [
+       "424 − 5 =",
+       "419"
+      ]
+     ],
+     "answer": "419"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-hsm-812-456",
+     "task": "Rechne in Schritten: erst die Hunderter, dann die Zehner, dann die Einer.",
+     "prompt": "812 − 456",
+     "lines": [
+      [
+       "812 − 400 =",
+       "412"
+      ],
+      [
+       "412 − 50 =",
+       "362"
+      ],
+      [
+       "362 − 6 =",
+       "356"
+      ]
+     ],
+     "answer": "356"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-hsm-745-382",
+     "task": "Rechne in Schritten: erst die Hunderter, dann die Zehner, dann die Einer.",
+     "prompt": "745 − 382",
+     "lines": [
+      [
+       "745 − 300 =",
+       "445"
+      ],
+      [
+       "445 − 80 =",
+       "365"
+      ],
+      [
+       "365 − 2 =",
+       "363"
+      ]
+     ],
+     "answer": "363"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-hsm-903-264",
+     "task": "Rechne in Schritten: erst die Hunderter, dann die Zehner, dann die Einer.",
+     "prompt": "903 − 264",
+     "lines": [
+      [
+       "903 − 200 =",
+       "703"
+      ],
+      [
+       "703 − 60 =",
+       "643"
+      ],
+      [
+       "643 − 4 =",
+       "639"
+      ]
+     ],
+     "answer": "639"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-hsm-561-129",
+     "task": "Rechne in Schritten: erst die Hunderter, dann die Zehner, dann die Einer.",
+     "prompt": "561 − 129",
+     "lines": [
+      [
+       "561 − 100 =",
+       "461"
+      ],
+      [
+       "461 − 20 =",
+       "441"
+      ],
+      [
+       "441 − 9 =",
+       "432"
+      ]
+     ],
+     "answer": "432"
+    }
+   ]
+  },
+  {
+   "title": "Geschickt rechnen",
+   "icon": "💡",
+   "tasks": [
+    {
+     "kind": "chain",
+     "id": "m3-rw-vt-m-944-98",
+     "task": "Rechne geschickt: 98 ist fast 100.",
+     "prompt": "944 − 98",
+     "lines": [
+      [
+       "944 − 100 =",
+       "844"
+      ],
+      [
+       "844 + 2 =",
+       "846"
+      ]
+     ],
+     "answer": "846"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-vt-p-527-199",
+     "task": "Rechne geschickt: 199 ist fast 200.",
+     "prompt": "527 + 199",
+     "lines": [
+      [
+       "527 + 200 =",
+       "727"
+      ],
+      [
+       "727 − 1 =",
+       "726"
+      ]
+     ],
+     "answer": "726"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-vt-p-365-99",
+     "task": "Rechne geschickt: 99 ist fast 100.",
+     "prompt": "365 + 99",
+     "lines": [
+      [
+       "365 + 100 =",
+       "465"
+      ],
+      [
+       "465 − 1 =",
+       "464"
+      ]
+     ],
+     "answer": "464"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-vt-m-812-297",
+     "task": "Rechne geschickt: 297 ist fast 300.",
+     "prompt": "812 − 297",
+     "lines": [
+      [
+       "812 − 300 =",
+       "512"
+      ],
+      [
+       "512 + 3 =",
+       "515"
+      ]
+     ],
+     "answer": "515"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-vt-p-436-198",
+     "task": "Rechne geschickt: 198 ist fast 200.",
+     "prompt": "436 + 198",
+     "lines": [
+      [
+       "436 + 200 =",
+       "636"
+      ],
+      [
+       "636 − 2 =",
+       "634"
+      ]
+     ],
+     "answer": "634"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-vt-m-703-99",
+     "task": "Rechne geschickt: 99 ist fast 100.",
+     "prompt": "703 − 99",
+     "lines": [
+      [
+       "703 − 100 =",
+       "603"
+      ],
+      [
+       "603 + 1 =",
+       "604"
+      ]
+     ],
+     "answer": "604"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-vt-p-458-39",
+     "task": "Rechne geschickt: 39 ist fast 40.",
+     "prompt": "458 + 39",
+     "lines": [
+      [
+       "458 + 40 =",
+       "498"
+      ],
+      [
+       "498 − 1 =",
+       "497"
+      ]
+     ],
+     "answer": "497"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-rw-vt-m-621-58",
+     "task": "Rechne geschickt: 58 ist fast 60.",
+     "prompt": "621 − 58",
+     "lines": [
+      [
+       "621 − 60 =",
+       "561"
+      ],
+      [
+       "561 + 2 =",
+       "563"
+      ]
+     ],
+     "answer": "563"
+    }
+   ]
+  },
+  {
+   "title": "Überprüfen",
+   "icon": "🔍",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-rw-uk-580-120",
+     "task": "Prüfe 580 + 120 = 700 mit der Umkehraufgabe.",
+     "prompt": "700 − 120 =",
+     "answer": "580",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-uk-345-230",
+     "task": "Prüfe 345 + 230 = 575 mit der Umkehraufgabe.",
+     "prompt": "575 − 230 =",
+     "answer": "345",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-uk-760-190",
+     "task": "Prüfe 760 + 190 = 950 mit der Umkehraufgabe.",
+     "prompt": "950 − 190 =",
+     "answer": "760",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-uk-415-385",
+     "task": "Prüfe 415 + 385 = 800 mit der Umkehraufgabe.",
+     "prompt": "800 − 385 =",
+     "answer": "415",
+     "num": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-rw-pr-456-237",
+     "task": "Stimmt das? Prüfe mit der Umkehraufgabe.",
+     "options": [
+      "stimmt",
+      "stimmt nicht"
+     ],
+     "answer": "stimmt nicht",
+     "prompt": "456 + 237 = 683",
+     "keepOrder": true,
+     "explain": "Richtig ist 693."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-rw-pr-318-245",
+     "task": "Stimmt das? Prüfe mit der Umkehraufgabe.",
+     "options": [
+      "stimmt",
+      "stimmt nicht"
+     ],
+     "answer": "stimmt",
+     "prompt": "318 + 245 = 563",
+     "keepOrder": true,
+     "explain": "Richtig ist 563."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-rw-pr-702-150",
+     "task": "Stimmt das? Prüfe mit der Umkehraufgabe.",
+     "options": [
+      "stimmt",
+      "stimmt nicht"
+     ],
+     "answer": "stimmt",
+     "prompt": "702 + 150 = 852",
+     "keepOrder": true,
+     "explain": "Richtig ist 852."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-rw-pr-634-218",
+     "task": "Stimmt das? Prüfe mit der Umkehraufgabe.",
+     "options": [
+      "stimmt",
+      "stimmt nicht"
+     ],
+     "answer": "stimmt nicht",
+     "prompt": "634 − 218 = 426",
+     "keepOrder": true,
+     "explain": "Richtig ist 416."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-rw-pr-900-345",
+     "task": "Stimmt das? Prüfe mit der Umkehraufgabe.",
+     "options": [
+      "stimmt",
+      "stimmt nicht"
+     ],
+     "answer": "stimmt nicht",
+     "prompt": "900 − 345 = 565",
+     "keepOrder": true,
+     "explain": "Richtig ist 555."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-rw-pr-527-136",
+     "task": "Stimmt das? Prüfe mit der Umkehraufgabe.",
+     "options": [
+      "stimmt",
+      "stimmt nicht"
+     ],
+     "answer": "stimmt",
+     "prompt": "527 − 136 = 391",
+     "keepOrder": true,
+     "explain": "Richtig ist 391."
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Rechenbegriffe",
+   "icon": "📖",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-rw-bg-summe",
+     "task": "Wie heißt das Ergebnis einer Plusaufgabe?",
+     "options": [
+      "Summe",
+      "Differenz",
+      "Produkt"
+     ],
+     "answer": "Summe",
+     "prompt": "250 + 130 = 380"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-rw-bg-diff",
+     "task": "Wie heißt das Ergebnis einer Minusaufgabe?",
+     "options": [
+      "Summe",
+      "Differenz",
+      "Produkt"
+     ],
+     "answer": "Differenz",
+     "prompt": "500 − 120 = 380"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-rw-bg-addieren",
+     "task": "Wie heißt das Rechnen mit plus?",
+     "options": [
+      "addieren",
+      "subtrahieren",
+      "multiplizieren"
+     ],
+     "answer": "addieren"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-rw-bg-subtrahieren",
+     "task": "Wie heißt das Rechnen mit minus?",
+     "options": [
+      "addieren",
+      "subtrahieren",
+      "dividieren"
+     ],
+     "answer": "subtrahieren"
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-bg-s-250-130",
+     "task": "Rechne.",
+     "prompt": "Die Summe von 250 und 130 ist",
+     "answer": "380",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-bg-s-400-350",
+     "task": "Rechne.",
+     "prompt": "Die Summe von 400 und 350 ist",
+     "answer": "750",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-bg-s-612-200",
+     "task": "Rechne.",
+     "prompt": "Die Summe von 612 und 200 ist",
+     "answer": "812",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-bg-d-500-120",
+     "task": "Rechne.",
+     "prompt": "Die Differenz von 500 und 120 ist",
+     "answer": "380",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-bg-d-870-300",
+     "task": "Rechne.",
+     "prompt": "Die Differenz von 870 und 300 ist",
+     "answer": "570",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-rw-bg-d-640-40",
+     "task": "Rechne.",
+     "prompt": "Die Differenz von 640 und 40 ist",
+     "answer": "600",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "📸",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "m3-rw-foto",
+     "task": "Rechne im Heft in Schritten und schreib jeden Schritt auf: 367 + 245, 712 − 358, 586 + 99.",
+     "say": "Rechne im Heft in Schritten und schreib jeden Schritt auf.",
+     "show": [
+      "367 + 245",
+      "712 − 358",
+      "586 + 99"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 14
+  }
+ ]
+}

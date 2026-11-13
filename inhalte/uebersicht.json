@@ -83,7 +83,10 @@
             "mathe/k3-einmaleins.json",
             "mathe/k3-rechnen100.json",
             "mathe/k3-zahlen1000.json",
+            "mathe/k3-zahlen1000-entdecken.json",
             "mathe/k3-rechnen1000.json",
+            "mathe/k3-rechenwege.json",
+            "mathe/k3-schriftlich.json",
             "mathe/k3-sachaufgaben.json",
             "mathe/k3-groessen.json"
           ]
