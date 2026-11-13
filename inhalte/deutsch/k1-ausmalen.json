@@ -1,0 +1,272 @@
+{
+ "id": "d1-ausmalen",
+ "type": "schule",
+ "title_de": "Ausmalbilder: Silben lesen",
+ "image": "🎨",
+ "color": "#8e5cd9",
+ "lessons": [
+  {
+   "title": "Pilz: ma mi am im",
+   "icon": "🎨",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-pilz",
+     "task": "Male aus! Tipp zuerst eine Farbe an, dann die Felder mit dieser Silbe.",
+     "prompt": "Ausmalbild Pilz: ma, mi, am, im",
+     "grid": [
+      "..RRR..",
+      ".RRRRR.",
+      "RRRRRRR",
+      "..SSS..",
+      "..SSS..",
+      "GGSSSGG",
+      "GGGGGGG"
+     ],
+     "colors": [
+      {
+       "key": "R",
+       "label": "ma",
+       "color": "#e5484d"
+      },
+      {
+       "key": "S",
+       "label": "mi",
+       "color": "#8d5a32"
+      },
+      {
+       "key": "G",
+       "label": "am",
+       "color": "#3f9d4a"
+      },
+      {
+       "key": ".",
+       "label": "im",
+       "color": "#5aa9f0"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Baum: mo mu om um",
+   "icon": "🌳",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-baum",
+     "task": "Male aus! Tipp zuerst eine Farbe an, dann die Felder mit dieser Silbe.",
+     "prompt": "Ausmalbild Baum: mo, mu, om, um",
+     "grid": [
+      "..GGG..",
+      ".GGGGG.",
+      "GGGGGGG",
+      ".GGGGG.",
+      "...B...",
+      "...B...",
+      "LLLBLLL"
+     ],
+     "colors": [
+      {
+       "key": "G",
+       "label": "mo",
+       "color": "#3f9d4a"
+      },
+      {
+       "key": "B",
+       "label": "mu",
+       "color": "#8d5a32"
+      },
+      {
+       "key": "L",
+       "label": "om",
+       "color": "#9bd36a"
+      },
+      {
+       "key": ".",
+       "label": "um",
+       "color": "#5aa9f0"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Fisch: la al le",
+   "icon": "🐟",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-fisch",
+     "task": "Male aus! Tipp zuerst eine Farbe an, dann die Felder mit dieser Silbe.",
+     "prompt": "Ausmalbild Fisch: la, al, le",
+     "grid": [
+      ".......",
+      "..OO..O",
+      ".OOOOOO",
+      "OSOOOOO",
+      ".OOOOOO",
+      "..OO..O",
+      "......."
+     ],
+     "colors": [
+      {
+       "key": "O",
+       "label": "la",
+       "color": "#f28b30"
+      },
+      {
+       "key": "S",
+       "label": "al",
+       "color": "#8e5cd9"
+      },
+      {
+       "key": ".",
+       "label": "le",
+       "color": "#5aa9f0"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Haus: ro re ri ra or",
+   "icon": "🏠",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-haus",
+     "task": "Male aus! Tipp zuerst eine Farbe an, dann die Felder mit dieser Silbe.",
+     "prompt": "Ausmalbild Haus: ro, re, ri, ra, or",
+     "grid": [
+      "...R...",
+      "..RRR..",
+      ".RRRRR.",
+      ".WWWWW.",
+      ".WBWBW.",
+      ".WWBWW.",
+      "GGGBGGG"
+     ],
+     "colors": [
+      {
+       "key": "R",
+       "label": "ro",
+       "color": "#e5484d"
+      },
+      {
+       "key": "W",
+       "label": "re",
+       "color": "#f2c230"
+      },
+      {
+       "key": "B",
+       "label": "ri",
+       "color": "#8d5a32"
+      },
+      {
+       "key": "G",
+       "label": "ra",
+       "color": "#3f9d4a"
+      },
+      {
+       "key": ".",
+       "label": "or",
+       "color": "#5aa9f0"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Blume: so os sa as si se",
+   "icon": "🌷",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-blume",
+     "task": "Male aus! Tipp zuerst eine Farbe an, dann die Felder mit dieser Silbe.",
+     "prompt": "Ausmalbild Blume: so, os, sa, as, si, se",
+     "grid": [
+      "...Y...",
+      "..YOY..",
+      "...Y...",
+      "...S...",
+      ".LLS...",
+      "...SLL.",
+      "GGGSGGG"
+     ],
+     "colors": [
+      {
+       "key": "Y",
+       "label": "so",
+       "color": "#f28ab8"
+      },
+      {
+       "key": "O",
+       "label": "os",
+       "color": "#f2c230"
+      },
+      {
+       "key": "S",
+       "label": "sa",
+       "color": "#3f9d4a"
+      },
+      {
+       "key": "L",
+       "label": "as",
+       "color": "#9bd36a"
+      },
+      {
+       "key": "G",
+       "label": "si",
+       "color": "#8d5a32"
+      },
+      {
+       "key": ".",
+       "label": "se",
+       "color": "#5aa9f0"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sonne: ti it te",
+   "icon": "🌞",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-sonne",
+     "task": "Male aus! Tipp zuerst eine Farbe an, dann die Felder mit dieser Silbe.",
+     "prompt": "Ausmalbild Sonne: ti, it, te",
+     "grid": [
+      "Y..Y..Y",
+      ".YYYYY.",
+      ".YOOOY.",
+      "YYOOOYY",
+      ".YOOOY.",
+      ".YYYYY.",
+      "Y..Y..Y"
+     ],
+     "colors": [
+      {
+       "key": "Y",
+       "label": "ti",
+       "color": "#f2c230"
+      },
+      {
+       "key": "O",
+       "label": "it",
+       "color": "#f28b30"
+      },
+      {
+       "key": ".",
+       "label": "te",
+       "color": "#5aa9f0"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -18,7 +18,8 @@
             "deutsch/k1-leserichtung.json",
             "deutsch/k1-lesen.json",
             "deutsch/k1-buchstaben2.json",
-            "deutsch/k1-lesen2.json"
+            "deutsch/k1-lesen2.json",
+            "deutsch/k1-ausmalen.json"
           ]
         },
         {
@@ -47,6 +48,31 @@
       "image": "🔢",
       "color": "#3b6fd8",
       "stages": [
+        {
+          "id": "mathe-k1",
+          "title": "1. Klasse · Rechnen",
+          "kinder": [
+            "entdecker"
+          ],
+          "units": [
+            "mathe/k1-zahlen10.json",
+            "mathe/k1-rechnen10.json",
+            "mathe/k1-zahlen20.json",
+            "mathe/k1-rechnen20.json",
+            "mathe/k1-groessen.json",
+            "mathe/k1-formen.json"
+          ]
+        },
+        {
+          "id": "mathe-k1-extra",
+          "title": "1. Klasse · Extra",
+          "kinder": [
+            "entdecker"
+          ],
+          "units": [
+            "mathe/k1-zehnerzahlen.json"
+          ]
+        },
         {
           "id": "mathe-k3",
           "title": "3. Klasse · Rechnen",

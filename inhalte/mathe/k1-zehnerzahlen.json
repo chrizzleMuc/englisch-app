@@ -1,0 +1,499 @@
+{
+ "id": "m1-zehnerzahlen",
+ "type": "schule",
+ "title_de": "Extra: Zehnerzahlen bis 100",
+ "image": "💯",
+ "color": "#5b3fa6",
+ "lessons": [
+  {
+   "title": "Zehnerzahlen erkennen",
+   "icon": "🔟",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-zz-erk-0",
+     "task": "Wie viel ist das? Jedes Bild ist ein Zehner.",
+     "options": [
+      "30",
+      "3",
+      "40"
+     ],
+     "answer": "30",
+     "vis": "menge:🔟*3",
+     "prompt": "3 Zehner",
+     "bigOptions": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-erk-1",
+     "task": "Wie viel ist das?",
+     "prompt": "5 Zehner =",
+     "answer": "50",
+     "num": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-zz-erk-2",
+     "task": "Wie viel ist das? Jedes Bild ist ein Zehner.",
+     "options": [
+      "20",
+      "2",
+      "30"
+     ],
+     "answer": "20",
+     "vis": "menge:🔟*2",
+     "prompt": "2 Zehner",
+     "bigOptions": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-erk-3",
+     "task": "Wie viel ist das?",
+     "prompt": "7 Zehner =",
+     "answer": "70",
+     "num": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-zz-erk-4",
+     "task": "Wie viel ist das? Jedes Bild ist ein Zehner.",
+     "options": [
+      "40",
+      "4",
+      "50"
+     ],
+     "answer": "40",
+     "vis": "menge:🔟*4",
+     "prompt": "4 Zehner",
+     "bigOptions": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-erk-5",
+     "task": "Wie viel ist das?",
+     "prompt": "9 Zehner =",
+     "answer": "90",
+     "num": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-zz-erk-6",
+     "task": "Wie viel ist das? Jedes Bild ist ein Zehner.",
+     "options": [
+      "60",
+      "6",
+      "70"
+     ],
+     "answer": "60",
+     "vis": "menge:🔟*6",
+     "prompt": "6 Zehner",
+     "bigOptions": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-erk-7",
+     "task": "Wie viel ist das?",
+     "prompt": "8 Zehner =",
+     "answer": "80",
+     "num": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-zz-erk-8",
+     "task": "Wie viel ist das? Jedes Bild ist ein Zehner.",
+     "options": [
+      "10",
+      "1",
+      "20"
+     ],
+     "answer": "10",
+     "vis": "menge:🔟*1",
+     "prompt": "1 Zehner",
+     "bigOptions": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-erk-9",
+     "task": "Wie viel ist das?",
+     "prompt": "10 Zehner =",
+     "answer": "100",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Zehnerzahlen vergleichen",
+   "icon": "⚖️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-zz-vgl-0",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "<",
+     "prompt": "30 ☐ 50",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-zz-vgl-1",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": ">",
+     "prompt": "80 ☐ 20",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-zz-vgl-2",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "=",
+     "prompt": "40 ☐ 40",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-zz-vgl-3",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "<",
+     "prompt": "10 ☐ 70",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-zz-vgl-4",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": ">",
+     "prompt": "90 ☐ 60",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-zz-vgl-5",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "=",
+     "prompt": "50 ☐ 50",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-zz-vgl-6",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "<",
+     "prompt": "20 ☐ 30",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-zz-vgl-7",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": ">",
+     "prompt": "100 ☐ 90",
+     "keepOrder": true,
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Zehnerfolge",
+   "icon": "🚂",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-zz-folge-0",
+     "task": "Welche Zehnerzahl fehlt?",
+     "prompt": "",
+     "answer": "40",
+     "num": true,
+     "vis": "zug:10,20,30,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-folge-1",
+     "task": "Welche Zehnerzahl fehlt?",
+     "prompt": "",
+     "answer": "50",
+     "num": true,
+     "vis": "zug:30,40,?,60"
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-folge-2",
+     "task": "Welche Zehnerzahl fehlt?",
+     "prompt": "",
+     "answer": "90",
+     "num": true,
+     "vis": "zug:60,70,80,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-folge-3",
+     "task": "Welche Zehnerzahl fehlt?",
+     "prompt": "",
+     "answer": "80",
+     "num": true,
+     "vis": "zug:100,90,?,70"
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-folge-4",
+     "task": "Welche Zehnerzahl fehlt?",
+     "prompt": "",
+     "answer": "20",
+     "num": true,
+     "vis": "zug:50,40,30,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-folge-5",
+     "task": "Welche Zehnerzahl fehlt?",
+     "prompt": "",
+     "answer": "40",
+     "num": true,
+     "vis": "zug:20,30,?,50"
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-folge-6",
+     "task": "Welche Zehnerzahl fehlt?",
+     "prompt": "",
+     "answer": "100",
+     "num": true,
+     "vis": "zug:70,80,90,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-folge-7",
+     "task": "Welche Zehnerzahl fehlt?",
+     "prompt": "",
+     "answer": "70",
+     "num": true,
+     "vis": "zug:90,80,?,60"
+    }
+   ]
+  },
+  {
+   "title": "Plus mit Zehnern",
+   "icon": "➕",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-zz-40p40",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "40 + 40 =",
+     "answer": "80",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-20p50",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "20 + 50 =",
+     "answer": "70",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-20p30",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "20 + 30 =",
+     "answer": "50",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-10p30",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "10 + 30 =",
+     "answer": "40",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-30p20",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "30 + 20 =",
+     "answer": "50",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-20p40",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "20 + 40 =",
+     "answer": "60",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-10p40",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "10 + 40 =",
+     "answer": "50",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-60p40",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "60 + 40 =",
+     "answer": "100",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-80p10",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "80 + 10 =",
+     "answer": "90",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-50p50",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "50 + 50 =",
+     "answer": "100",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Minus mit Zehnern",
+   "icon": "➖",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-zz-60m30",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "60 − 30 =",
+     "answer": "30",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-80m50",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "80 − 50 =",
+     "answer": "30",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-90m60",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "90 − 60 =",
+     "answer": "30",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-100m50",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "100 − 50 =",
+     "answer": "50",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-70m50",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "70 − 50 =",
+     "answer": "20",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-80m60",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "80 − 60 =",
+     "answer": "20",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-100m70",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "100 − 70 =",
+     "answer": "30",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-100m40",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "100 − 40 =",
+     "answer": "60",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-70m40",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "70 − 40 =",
+     "answer": "30",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-zz-70m30",
+     "task": "Rechne. Denk an die kleine Aufgabe.",
+     "prompt": "70 − 30 =",
+     "answer": "40",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 10
+  }
+ ]
+}

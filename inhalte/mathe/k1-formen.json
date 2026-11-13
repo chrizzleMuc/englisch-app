@@ -1,0 +1,778 @@
+{
+ "id": "m1-formen",
+ "type": "schule",
+ "title_de": "Formen, Muster und Daten",
+ "image": "🟦",
+ "color": "#c2417a",
+ "lessons": [
+  {
+   "title": "Formen erkennen",
+   "icon": "🟦",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-geo-form-0",
+     "task": "Tipp auf den Kreis.",
+     "options": [
+      "form:kreis",
+      "form:quadrat",
+      "form:rechteck"
+     ],
+     "answer": "form:kreis",
+     "visOptions": true,
+     "prompt": "den Kreis"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-form-1",
+     "task": "Tipp auf das Dreieck.",
+     "options": [
+      "form:dreieck",
+      "form:kreis",
+      "form:rechteck"
+     ],
+     "answer": "form:dreieck",
+     "visOptions": true,
+     "prompt": "das Dreieck"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-form-2",
+     "task": "Tipp auf das Quadrat.",
+     "options": [
+      "form:quadrat",
+      "form:dreieck",
+      "form:rechteck"
+     ],
+     "answer": "form:quadrat",
+     "visOptions": true,
+     "prompt": "das Quadrat"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-form-3",
+     "task": "Tipp auf das Rechteck.",
+     "options": [
+      "form:rechteck",
+      "form:kreis",
+      "form:quadrat"
+     ],
+     "answer": "form:rechteck",
+     "visOptions": true,
+     "prompt": "das Rechteck"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-form-4",
+     "task": "Tipp auf das Dreieck.",
+     "options": [
+      "form:dreieck",
+      "form:quadrat",
+      "form:rechteck"
+     ],
+     "answer": "form:dreieck",
+     "visOptions": true,
+     "prompt": "das Dreieck"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-form-5",
+     "task": "Tipp auf den Kreis.",
+     "options": [
+      "form:kreis",
+      "form:dreieck",
+      "form:rechteck"
+     ],
+     "answer": "form:kreis",
+     "visOptions": true,
+     "prompt": "den Kreis"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-form-6",
+     "task": "Tipp auf das Rechteck.",
+     "options": [
+      "form:rechteck",
+      "form:quadrat",
+      "form:kreis"
+     ],
+     "answer": "form:rechteck",
+     "visOptions": true,
+     "prompt": "das Rechteck"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-form-7",
+     "task": "Tipp auf das Quadrat.",
+     "options": [
+      "form:quadrat",
+      "form:kreis",
+      "form:rechteck"
+     ],
+     "answer": "form:quadrat",
+     "visOptions": true,
+     "prompt": "das Quadrat"
+    }
+   ]
+  },
+  {
+   "title": "Formen zählen",
+   "icon": "🔢",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-geo-zaehl-0",
+     "task": "Wie viele Kreise siehst du?",
+     "options": [
+      "1",
+      "2",
+      "3"
+     ],
+     "answer": "1",
+     "vis": "formen:rechteck,kreis,dreieck,quadrat,quadrat,quadrat",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-zaehl-1",
+     "task": "Wie viele Dreiecke siehst du?",
+     "options": [
+      "1",
+      "3",
+      "4"
+     ],
+     "answer": "1",
+     "vis": "formen:quadrat,quadrat,rechteck,quadrat,kreis,dreieck",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-zaehl-2",
+     "task": "Wie viele Quadrate siehst du?",
+     "options": [
+      "0",
+      "1",
+      "3"
+     ],
+     "answer": "3",
+     "vis": "formen:rechteck,dreieck,quadrat,kreis,quadrat,quadrat",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-zaehl-3",
+     "task": "Wie viele Rechtecke siehst du?",
+     "options": [
+      "1",
+      "3",
+      "4"
+     ],
+     "answer": "1",
+     "vis": "formen:dreieck,kreis,dreieck,rechteck,kreis,quadrat",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-zaehl-4",
+     "task": "Wie viele Kreise siehst du?",
+     "options": [
+      "0",
+      "2",
+      "5"
+     ],
+     "answer": "2",
+     "vis": "formen:dreieck,kreis,quadrat,kreis,dreieck,rechteck",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-zaehl-5",
+     "task": "Wie viele Dreiecke siehst du?",
+     "options": [
+      "0",
+      "1",
+      "3"
+     ],
+     "answer": "3",
+     "vis": "formen:quadrat,rechteck,dreieck,dreieck,dreieck,kreis",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-zaehl-6",
+     "task": "Wie viele Quadrate siehst du?",
+     "options": [
+      "3",
+      "4",
+      "6"
+     ],
+     "answer": "6",
+     "vis": "formen:quadrat,quadrat,quadrat,quadrat,quadrat,quadrat",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-zaehl-7",
+     "task": "Wie viele Rechtecke siehst du?",
+     "options": [
+      "1",
+      "2",
+      "3"
+     ],
+     "answer": "1",
+     "vis": "formen:quadrat,dreieck,dreieck,rechteck,dreieck,quadrat",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Links, rechts, oben, unten",
+   "icon": "📦",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-geo-lage-0",
+     "task": "Die Katze ist unter der Kiste. Welches Bild passt?",
+     "options": [
+      "lage:🐱:unten:📦",
+      "lage:🐱:oben:📦",
+      "lage:🐱:links:📦"
+     ],
+     "answer": "lage:🐱:unten:📦",
+     "visOptions": true,
+     "prompt": "Die Katze ist unter der Kiste"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-lage-1",
+     "task": "Die Katze ist links von der Kiste. Welches Bild passt?",
+     "options": [
+      "lage:🐱:links:📦",
+      "lage:🐱:unten:📦",
+      "lage:🐱:oben:📦"
+     ],
+     "answer": "lage:🐱:links:📦",
+     "visOptions": true,
+     "prompt": "Die Katze ist links von der Kiste"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-lage-2",
+     "task": "Der Hund ist unter der Kiste. Welches Bild passt?",
+     "options": [
+      "lage:🐶:unten:📦",
+      "lage:🐶:rechts:📦",
+      "lage:🐶:oben:📦"
+     ],
+     "answer": "lage:🐶:unten:📦",
+     "visOptions": true,
+     "prompt": "Der Hund ist unter der Kiste"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-lage-3",
+     "task": "Der Hund ist auf der Kiste. Welches Bild passt?",
+     "options": [
+      "lage:🐶:oben:📦",
+      "lage:🐶:unten:📦",
+      "lage:🐶:rechts:📦"
+     ],
+     "answer": "lage:🐶:oben:📦",
+     "visOptions": true,
+     "prompt": "Der Hund ist auf der Kiste"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-lage-4",
+     "task": "Die Maus ist links von der Kiste. Welches Bild passt?",
+     "options": [
+      "lage:🐭:links:📦",
+      "lage:🐭:rechts:📦",
+      "lage:🐭:unten:📦"
+     ],
+     "answer": "lage:🐭:links:📦",
+     "visOptions": true,
+     "prompt": "Die Maus ist links von der Kiste"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-lage-5",
+     "task": "Die Maus ist unter der Kiste. Welches Bild passt?",
+     "options": [
+      "lage:🐭:unten:📦",
+      "lage:🐭:oben:📦",
+      "lage:🐭:rechts:📦"
+     ],
+     "answer": "lage:🐭:unten:📦",
+     "visOptions": true,
+     "prompt": "Die Maus ist unter der Kiste"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-lage-6",
+     "task": "Der Frosch ist rechts von der Kiste. Welches Bild passt?",
+     "options": [
+      "lage:🐸:rechts:📦",
+      "lage:🐸:unten:📦",
+      "lage:🐸:links:📦"
+     ],
+     "answer": "lage:🐸:rechts:📦",
+     "visOptions": true,
+     "prompt": "Der Frosch ist rechts von der Kiste"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-lage-7",
+     "task": "Der Frosch ist unter der Kiste. Welches Bild passt?",
+     "options": [
+      "lage:🐸:unten:📦",
+      "lage:🐸:links:📦",
+      "lage:🐸:oben:📦"
+     ],
+     "answer": "lage:🐸:unten:📦",
+     "visOptions": true,
+     "prompt": "Der Frosch ist unter der Kiste"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-lage-8",
+     "task": "Der Hase ist links von der Kiste. Welches Bild passt?",
+     "options": [
+      "lage:🐰:links:📦",
+      "lage:🐰:rechts:📦",
+      "lage:🐰:unten:📦"
+     ],
+     "answer": "lage:🐰:links:📦",
+     "visOptions": true,
+     "prompt": "Der Hase ist links von der Kiste"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-lage-9",
+     "task": "Der Hase ist auf der Kiste. Welches Bild passt?",
+     "options": [
+      "lage:🐰:oben:📦",
+      "lage:🐰:links:📦",
+      "lage:🐰:unten:📦"
+     ],
+     "answer": "lage:🐰:oben:📦",
+     "visOptions": true,
+     "prompt": "Der Hase ist auf der Kiste"
+    }
+   ]
+  },
+  {
+   "title": "Muster fortsetzen",
+   "icon": "🧩",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-geo-muster-0",
+     "task": "Was kommt als Nächstes?",
+     "options": [
+      "🔴",
+      "🟦",
+      "⭐"
+     ],
+     "answer": "🔴",
+     "vis": "reihe:🔴🟦🔴🟦🔴🟦?",
+     "picOptions": true,
+     "prompt": "🔴🟦🔴🟦🔴🟦"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-muster-1",
+     "task": "Was kommt als Nächstes?",
+     "options": [
+      "🍎",
+      "🍌",
+      "⭐"
+     ],
+     "answer": "🍌",
+     "vis": "reihe:🍎🍌🍎🍌🍎?",
+     "picOptions": true,
+     "prompt": "🍎🍌🍎🍌🍎"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-muster-2",
+     "task": "Was kommt als Nächstes?",
+     "options": [
+      "⭐",
+      "🌙",
+      "🐸"
+     ],
+     "answer": "⭐",
+     "vis": "reihe:⭐⭐🌙⭐?",
+     "picOptions": true,
+     "prompt": "⭐⭐🌙⭐"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-muster-3",
+     "task": "Was kommt als Nächstes?",
+     "options": [
+      "🟨",
+      "🟩",
+      "⭐"
+     ],
+     "answer": "🟨",
+     "vis": "reihe:🟨🟩🟩🟨🟩🟩?",
+     "picOptions": true,
+     "prompt": "🟨🟩🟩🟨🟩🟩"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-muster-4",
+     "task": "Was kommt als Nächstes?",
+     "options": [
+      "🐸",
+      "🦆",
+      "⭐"
+     ],
+     "answer": "🐸",
+     "vis": "reihe:🐸🦆🐸🦆🐸🦆?",
+     "picOptions": true,
+     "prompt": "🐸🦆🐸🦆🐸🦆"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-muster-5",
+     "task": "Was kommt als Nächstes?",
+     "options": [
+      "🔴",
+      "🟦",
+      "⭐"
+     ],
+     "answer": "🔴",
+     "vis": "reihe:🔴🔴🟦🔴?",
+     "picOptions": true,
+     "prompt": "🔴🔴🟦🔴"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-muster-6",
+     "task": "Was kommt als Nächstes?",
+     "options": [
+      "🍓",
+      "🍎",
+      "🍌"
+     ],
+     "answer": "🍓",
+     "vis": "reihe:🍓🍎🍌🍓🍎🍌?",
+     "picOptions": true,
+     "prompt": "🍓🍎🍌🍓🍎🍌"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-muster-7",
+     "task": "Was kommt als Nächstes?",
+     "options": [
+      "🟦",
+      "🟨",
+      "⭐"
+     ],
+     "answer": "🟨",
+     "vis": "reihe:🟦🟨🟦🟨🟦?",
+     "picOptions": true,
+     "prompt": "🟦🟨🟦🟨🟦"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-muster-8",
+     "task": "Was kommt als Nächstes?",
+     "options": [
+      "⚽",
+      "🎈",
+      "⭐"
+     ],
+     "answer": "🎈",
+     "vis": "reihe:⚽🎈🎈⚽?",
+     "picOptions": true,
+     "prompt": "⚽🎈🎈⚽"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-muster-9",
+     "task": "Was kommt als Nächstes?",
+     "options": [
+      "🌙",
+      "⭐",
+      "🐸"
+     ],
+     "answer": "⭐",
+     "vis": "reihe:🌙⭐🌙⭐🌙?",
+     "picOptions": true,
+     "prompt": "🌙⭐🌙⭐🌙"
+    }
+   ]
+  },
+  {
+   "title": "Symmetrie",
+   "icon": "🦋",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-geo-sym-0",
+     "task": "Ist die Figur symmetrisch? Passen beide Hälften genau aufeinander?",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "vis": "sym:herz",
+     "picOptions": true,
+     "keepOrder": true,
+     "prompt": "herz"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-sym-1",
+     "task": "Ist die Figur symmetrisch? Passen beide Hälften genau aufeinander?",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "vis": "sym:schief",
+     "picOptions": true,
+     "keepOrder": true,
+     "prompt": "schief"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-sym-2",
+     "task": "Ist die Figur symmetrisch? Passen beide Hälften genau aufeinander?",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "vis": "sym:haus",
+     "picOptions": true,
+     "keepOrder": true,
+     "prompt": "haus"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-sym-3",
+     "task": "Ist die Figur symmetrisch? Passen beide Hälften genau aufeinander?",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "vis": "sym:fahne",
+     "picOptions": true,
+     "keepOrder": true,
+     "prompt": "fahne"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-sym-4",
+     "task": "Ist die Figur symmetrisch? Passen beide Hälften genau aufeinander?",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "vis": "sym:stern",
+     "picOptions": true,
+     "keepOrder": true,
+     "prompt": "stern"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-sym-5",
+     "task": "Ist die Figur symmetrisch? Passen beide Hälften genau aufeinander?",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "vis": "sym:welle",
+     "picOptions": true,
+     "keepOrder": true,
+     "prompt": "welle"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-sym-6",
+     "task": "Ist die Figur symmetrisch? Passen beide Hälften genau aufeinander?",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "vis": "sym:blatt",
+     "picOptions": true,
+     "keepOrder": true,
+     "prompt": "blatt"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-sym-7",
+     "task": "Ist die Figur symmetrisch? Passen beide Hälften genau aufeinander?",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "vis": "sym:stiefel",
+     "picOptions": true,
+     "keepOrder": true,
+     "prompt": "stiefel"
+    }
+   ]
+  },
+  {
+   "title": "Daten und Strichlisten",
+   "icon": "🔢",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-geo-daten-max-0",
+     "task": "Wovon gibt es am meisten?",
+     "options": [
+      "🍎",
+      "🍌",
+      "🍓"
+     ],
+     "answer": "🍓",
+     "vis": "balken:🍎=4,🍌=2,🍓=5",
+     "picOptions": true,
+     "prompt": "🍎=4,🍌=2,🍓=5"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-daten-max-1",
+     "task": "Wovon gibt es am meisten?",
+     "options": [
+      "🐶",
+      "🐱",
+      "🐰"
+     ],
+     "answer": "🐱",
+     "vis": "balken:🐶=3,🐱=6,🐰=2",
+     "picOptions": true,
+     "prompt": "🐶=3,🐱=6,🐰=2"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-daten-max-2",
+     "task": "Wovon gibt es am meisten?",
+     "options": [
+      "⚽",
+      "🎈",
+      "🚗"
+     ],
+     "answer": "⚽",
+     "vis": "balken:⚽=5,🎈=3,🚗=1",
+     "picOptions": true,
+     "prompt": "⚽=5,🎈=3,🚗=1"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-daten-max-3",
+     "task": "Wovon gibt es am meisten?",
+     "options": [
+      "🍦",
+      "🍪",
+      "🍰"
+     ],
+     "answer": "🍰",
+     "vis": "balken:🍦=2,🍪=4,🍰=6",
+     "picOptions": true,
+     "prompt": "🍦=2,🍪=4,🍰=6"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-daten-n-0",
+     "task": "Wie viele Bananen sind es? Schau auf die Säule.",
+     "options": [
+      "2",
+      "4",
+      "5"
+     ],
+     "answer": "2",
+     "vis": "balken:🍎=4,🍌=2,🍓=5",
+     "prompt": "🍎=4,🍌=2,🍓=5: Bananen",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-daten-n-1",
+     "task": "Wie viele Hunde sind es? Schau auf die Säule.",
+     "options": [
+      "2",
+      "3",
+      "6"
+     ],
+     "answer": "3",
+     "vis": "balken:🐶=3,🐱=6,🐰=2",
+     "prompt": "🐶=3,🐱=6,🐰=2: Hunde",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-daten-n-2",
+     "task": "Wie viele Kekse sind es? Schau auf die Säule.",
+     "options": [
+      "1",
+      "2",
+      "4"
+     ],
+     "answer": "4",
+     "vis": "balken:🍦=2,🍪=4,🍰=6",
+     "prompt": "🍦=2,🍪=4,🍰=6: Kekse",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-strich-0",
+     "task": "Strichliste: Wie viele Striche sind es? Fünf Striche sind ein Bündel.",
+     "options": [
+      "9",
+      "5",
+      "7"
+     ],
+     "answer": "7",
+     "vis": "strich:7",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-strich-1",
+     "task": "Strichliste: Wie viele Striche sind es? Fünf Striche sind ein Bündel.",
+     "options": [
+      "1",
+      "4",
+      "5"
+     ],
+     "answer": "4",
+     "vis": "strich:4",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-geo-strich-2",
+     "task": "Strichliste: Wie viele Striche sind es? Fünf Striche sind ein Bündel.",
+     "options": [
+      "10",
+      "12",
+      "15"
+     ],
+     "answer": "12",
+     "vis": "strich:12",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

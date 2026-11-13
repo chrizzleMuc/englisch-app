@@ -6,9 +6,10 @@ import { content, loadContent } from "./content.js";
 import * as store from "./store.js";
 import * as photos from "./photos.js";
 import { pic } from "./pics.js";
+import { vis, visText } from "./mathpics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 26;
+const APP_VERSION = 27;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -725,16 +726,16 @@ const singleStep = (q) => ({ kind: q.kind, q });
 
 // Frage und richtige Antwort als Text (für Elternbereich und Ergebnis)
 function describe(q) {
-  if (q.kind === "type") return [q.prompt, [q.before, q.choose?.answer, q.answer].filter(Boolean).join(" ")];
+  if (q.kind === "type") return [q.prompt || visText(q.vis), [q.before, q.choose?.answer, q.answer].filter(Boolean).join(" ")];
   if (q.kind === "syllables") return [q.word, q.answer];
-  return [q.prompt || q.say, q.answer];
+  return [q.prompt || q.say || visText(q.vis), q.visOptions ? visText(q.answer) : q.answer];
 }
 
 function buildSchoolLesson(u, n) {
   const l = u.lessons[n];
   if (l.test) return shuffle(u.singles).slice(0, l.count || 12).map((q) => ({ ...singleStep(q), unit: u.id }));
   if (l.pick) return shuffle(u.singles.filter((q) => q.id.startsWith(l.pick))).slice(0, l.count || 10).map((q) => ({ ...singleStep(q), unit: u.id }));
-  let steps = l.tasks.map((t) => (["pairs", "sort", "photo"].includes(t.kind) ? { kind: t.kind, t } : singleStep(t)));
+  let steps = l.tasks.map((t) => (["pairs", "sort", "photo", "paint"].includes(t.kind) ? { kind: t.kind, t } : singleStep(t)));
   if (l.mix) steps = shuffle(steps);
   return steps.map((s) => ({ unit: u.id, ...s }));
 }
@@ -827,7 +828,8 @@ STEPS.type = (lesson, step) => {
   let chosen = q.choose ? null : "";
   const token = lessonRender(lesson, `
     ${taskHead(q.task || "Schreib die Antwort!")}
-    ${promptCard(q.prompt)}
+    ${q.vis ? `<div class="prompt-card vis-card">${vis(q.vis)}</div>` : ""}
+    ${q.prompt ? promptCard(q.prompt) : ""}
     ${q.choose ? `<div class="choices text-choices" id="ch">${q.choose.options.map((o) => `<button class="choice" data-v="${esc(o)}"><span class="word">${esc(o)}</span></button>`).join("")}</div>` : ""}
     <div class="type-row" id="tr" ${q.choose ? "hidden" : ""}>
       <span class="before" id="before">${esc(q.before || "")}</span>
@@ -905,8 +907,8 @@ STEPS.choice = (lesson, step) => {
   const opts = q.keepOrder ? q.options : shuffle(q.options);
   const token = lessonRender(lesson, `
     ${taskHead(q.task || "Was ist richtig?")}
-    ${q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : promptCard(q.prompt)}
-    <div class="choices ${q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(o)}">${q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
+    ${q.vis ? `<div class="prompt-card vis-card">${vis(q.vis)}${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.prompt && (!q.visOptions || q.showText) ? promptCard(q.prompt) : ""}
+    <div class="choices ${q.visOptions ? "vis-choices" : q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(q.visOptions ? visText(o) : o)}">${q.visOptions ? vis(o) : q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
   wireVoice(token, () => sayDe(q.say || q.task || q.prompt), q.task || q.say || q.prompt, sayWord(q.say));
@@ -1036,6 +1038,75 @@ STEPS.pairs = (lesson, step) => {
       });
     }
   });
+};
+
+// ---------- Übung: Ausmalbild (Silbe lesen, passende Farbe einmalen) ----------
+// grid: Zeilen aus Buchstaben, jeder Buchstabe ist eine Farbe aus colors ({key, label, color}).
+STEPS.paint = (lesson, step) => {
+  const t = step.t || step.q;
+  const byKey = Object.fromEntries(t.colors.map((c) => [c.key, c]));
+  const rows = t.grid.length;
+  const cols = Math.max(...t.grid.map((r) => r.length));
+  const S = 64;
+  let cur = null;
+  let misses = 0;
+  let left = 0;
+  let cells = "";
+  t.grid.forEach((row, y) =>
+    [...row].forEach((k, x) => {
+      left++;
+      cells += `<g class="pcell" data-k="${k}" data-x="${x}" data-y="${y}"><rect x="${x * S + 2}" y="${y * S + 2}" width="${S - 4}" height="${S - 4}" rx="10"/><text x="${x * S + S / 2}" y="${y * S + S / 2 + 8}" text-anchor="middle">${esc(byKey[k].label)}</text></g>`;
+    }),
+  );
+  const token = lessonRender(lesson, `
+    ${taskHead(t.task || "Male aus! Tipp zuerst eine Farbe an, dann die Felder mit dieser Silbe.")}
+    <div class="paint-pal">${shuffle(t.colors).map((c) => `<button class="pcolor" data-k="${c.key}" style="--pc:${c.color}"><span>${esc(c.label)}</span></button>`).join("")}</div>
+    <div class="paint-wrap"><svg class="paint" viewBox="0 0 ${cols * S} ${rows * S}" xmlns="http://www.w3.org/2000/svg">${cells}</svg></div>
+    <div class="feedback" id="fb"></div>
+    <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
+  wireVoice(token, () => sayDe(t.say || t.task || "Male aus!"), t.task || "paint");
+  on(".pcolor", "click", (e) => {
+    app.querySelectorAll(".pcolor").forEach((b) => b.classList.remove("sel"));
+    e.currentTarget.classList.add("sel");
+    cur = e.currentTarget.dataset.k;
+    chime("pop");
+  });
+  on(".pcell", "click", async (e) => {
+    const g = e.currentTarget;
+    if (g.classList.contains("done")) return;
+    if (!cur) {
+      $("fb").innerHTML = `<span class="try">Tipp zuerst oben eine Farbe an!</span>`;
+      return;
+    }
+    if (g.dataset.k === cur) {
+      g.classList.add("done");
+      g.querySelector("rect").style.fill = byKey[cur].color;
+      chime("pop");
+      $("fb").innerHTML = "";
+      if (--left === 0) {
+        // einmal werten, ohne Wiederholung am Ende der Lektion (das Bild wäre zu lang)
+        const ok = misses <= 1;
+        if (!step.retry) {
+          store.grade(current.profile, t.id, ok);
+          store.save();
+          if (!step.review) {
+            lesson.total++;
+            if (ok) lesson.right++;
+          }
+        }
+        chime("win");
+        $("fb").innerHTML = `<span class="ok">${pick(PRAISE)} Dein Bild ist fertig!</span>`;
+        $("next").hidden = false;
+      }
+    } else {
+      misses++;
+      miss(lesson, step, t.id, byKey[cur].label + " statt " + byKey[g.dataset.k].label);
+      g.classList.add("wrong");
+      setTimeout(() => g.classList.remove("wrong"), 500);
+      $("fb").innerHTML = `<span class="try">Lies genau: Hier steht <b>${esc(byKey[g.dataset.k].label)}</b>.</span>`;
+    }
+  });
+  $("next").onclick = () => advance(lesson);
 };
 
 // ---------- Übung: Sortieren ----------

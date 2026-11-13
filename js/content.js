@@ -7,7 +7,7 @@ export const content = { subjects: [], items: new Map(), units: new Map(), photo
 // Eine Schul-Einheit hat "type": "schule" und eine Liste "lessons" mit Aufgaben ("tasks").
 // Jede bewertbare Aufgabe kommt als Einzelfrage in die Lernkartei (content.items, kind "task").
 
-const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo"];
+const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint"];
 
 function sharedStart(a, b) {
   const wa = a.split(" ");
@@ -54,6 +54,15 @@ function checkSchool(unit, path) {
       if (t.kind === "sort" && (!(t.groups || []).length || !(t.items || []).length)) err("Eine Sortier-Aufgabe braucht groups und items.");
       if (t.kind === "sort") for (const it of t.items || []) if (!t.groups.includes(it.group)) err(`${it.id}: Gruppe "${it.group}" gibt es nicht.`);
       if (t.kind === "choice" && !(t.options || []).includes(t.answer)) err(`${t.id}: Die Antwort steht nicht bei den Auswahlmöglichkeiten.`);
+      // Ausmalbild: kommt in die Lernkartei (Wiederholung), aber nicht in Tests
+      if (t.kind === "paint") {
+        const keys = (t.colors || []).map((c) => c.key);
+        if (!t.id || !(t.grid || []).length || !keys.length) err("Ein Ausmalbild braucht id, grid und colors.");
+        for (const row of t.grid || []) for (const ch of row) if (!keys.includes(ch)) err(`${t.id}: Im Bild steht "${ch}", dafür gibt es keine Farbe.`);
+        if (content.items.has(t.id)) err(`Die ID ${t.id} gibt es doppelt.`);
+        content.items.set(t.id, { id: t.id, kind: "task", unit: unit.id, q: t });
+        continue;
+      }
       if (t.kind === "photo") {
         if (!t.id) err("Eine Foto-Aufgabe hat keine id.");
         content.photoTasks.set(t.id, { ...t, unit: unit.id });

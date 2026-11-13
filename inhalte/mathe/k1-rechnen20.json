@@ -1,0 +1,732 @@
+{
+ "id": "m1-rechnen20",
+ "type": "schule",
+ "title_de": "Rechnen bis 20",
+ "image": "🚀",
+ "color": "#e5484d",
+ "lessons": [
+  {
+   "title": "Verwandte Aufgaben",
+   "icon": "🔟",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r20-verw-p0",
+     "task": "Verwandte Aufgabe: Die kleine Aufgabe hilft.",
+     "prompt": "5 + 3 = 8\n15 + 3 =",
+     "answer": "18",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-verw-p1",
+     "task": "Verwandte Aufgabe: Die kleine Aufgabe hilft.",
+     "prompt": "2 + 4 = 6\n12 + 4 =",
+     "answer": "16",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-verw-p2",
+     "task": "Verwandte Aufgabe: Die kleine Aufgabe hilft.",
+     "prompt": "6 + 2 = 8\n16 + 2 =",
+     "answer": "18",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-verw-p3",
+     "task": "Verwandte Aufgabe: Die kleine Aufgabe hilft.",
+     "prompt": "3 + 3 = 6\n13 + 3 =",
+     "answer": "16",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-verw-p4",
+     "task": "Verwandte Aufgabe: Die kleine Aufgabe hilft.",
+     "prompt": "4 + 5 = 9\n14 + 5 =",
+     "answer": "19",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-verw-m0",
+     "task": "Verwandte Aufgabe: Die kleine Aufgabe hilft.",
+     "prompt": "5 − 3 = 2\n15 − 3 =",
+     "answer": "12",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-verw-m1",
+     "task": "Verwandte Aufgabe: Die kleine Aufgabe hilft.",
+     "prompt": "8 − 4 = 4\n18 − 4 =",
+     "answer": "14",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-verw-m2",
+     "task": "Verwandte Aufgabe: Die kleine Aufgabe hilft.",
+     "prompt": "7 − 2 = 5\n17 − 2 =",
+     "answer": "15",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-verw-m3",
+     "task": "Verwandte Aufgabe: Die kleine Aufgabe hilft.",
+     "prompt": "9 − 6 = 3\n19 − 6 =",
+     "answer": "13",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-verw-m4",
+     "task": "Verwandte Aufgabe: Die kleine Aufgabe hilft.",
+     "prompt": "6 − 5 = 1\n16 − 5 =",
+     "answer": "11",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Plus bis 20",
+   "icon": "➕",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r20-10p7",
+     "task": "Rechne.",
+     "prompt": "10 + 7 =",
+     "answer": "17",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-14p2",
+     "task": "Rechne.",
+     "prompt": "14 + 2 =",
+     "answer": "16",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-12p6",
+     "task": "Rechne.",
+     "prompt": "12 + 6 =",
+     "answer": "18",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-14p1",
+     "task": "Rechne.",
+     "prompt": "14 + 1 =",
+     "answer": "15",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-15p2",
+     "task": "Rechne.",
+     "prompt": "15 + 2 =",
+     "answer": "17",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-10p8",
+     "task": "Rechne.",
+     "prompt": "10 + 8 =",
+     "answer": "18",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-13p1",
+     "task": "Rechne.",
+     "prompt": "13 + 1 =",
+     "answer": "14",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-13p6",
+     "task": "Rechne.",
+     "prompt": "13 + 6 =",
+     "answer": "19",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-10p5",
+     "task": "Rechne.",
+     "prompt": "10 + 5 =",
+     "answer": "15",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-16p1",
+     "task": "Rechne.",
+     "prompt": "16 + 1 =",
+     "answer": "17",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-11p3",
+     "task": "Rechne.",
+     "prompt": "11 + 3 =",
+     "answer": "14",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-15p1",
+     "task": "Rechne.",
+     "prompt": "15 + 1 =",
+     "answer": "16",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Minus bis 20",
+   "icon": "➖",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r20-15m4",
+     "task": "Rechne minus.",
+     "prompt": "15 − 4 =",
+     "answer": "11",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-15m2",
+     "task": "Rechne minus.",
+     "prompt": "15 − 2 =",
+     "answer": "13",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-19m5",
+     "task": "Rechne minus.",
+     "prompt": "19 − 5 =",
+     "answer": "14",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-13m3",
+     "task": "Rechne minus.",
+     "prompt": "13 − 3 =",
+     "answer": "10",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-13m1",
+     "task": "Rechne minus.",
+     "prompt": "13 − 1 =",
+     "answer": "12",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-17m6",
+     "task": "Rechne minus.",
+     "prompt": "17 − 6 =",
+     "answer": "11",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-18m4",
+     "task": "Rechne minus.",
+     "prompt": "18 − 4 =",
+     "answer": "14",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-16m5",
+     "task": "Rechne minus.",
+     "prompt": "16 − 5 =",
+     "answer": "11",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-11m1",
+     "task": "Rechne minus.",
+     "prompt": "11 − 1 =",
+     "answer": "10",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-16m6",
+     "task": "Rechne minus.",
+     "prompt": "16 − 6 =",
+     "answer": "10",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-18m2",
+     "task": "Rechne minus.",
+     "prompt": "18 − 2 =",
+     "answer": "16",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-18m1",
+     "task": "Rechne minus.",
+     "prompt": "18 − 1 =",
+     "answer": "17",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Plus über die 10",
+   "icon": "🚀",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r20-9p3",
+     "task": "Rechne. Fülle zuerst bis 10 auf.",
+     "prompt": "9 + 3 =",
+     "answer": "12",
+     "num": true,
+     "vis": "zf:9+3"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-3p8",
+     "task": "Rechne. Fülle zuerst bis 10 auf.",
+     "prompt": "3 + 8 =",
+     "answer": "11",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-6p9",
+     "task": "Rechne. Fülle zuerst bis 10 auf.",
+     "prompt": "6 + 9 =",
+     "answer": "15",
+     "num": true,
+     "vis": "zf:6+9"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-9p9",
+     "task": "Rechne. Fülle zuerst bis 10 auf.",
+     "prompt": "9 + 9 =",
+     "answer": "18",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-5p9",
+     "task": "Rechne. Fülle zuerst bis 10 auf.",
+     "prompt": "5 + 9 =",
+     "answer": "14",
+     "num": true,
+     "vis": "zf:5+9"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-9p7",
+     "task": "Rechne. Fülle zuerst bis 10 auf.",
+     "prompt": "9 + 7 =",
+     "answer": "16",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-6p7",
+     "task": "Rechne. Fülle zuerst bis 10 auf.",
+     "prompt": "6 + 7 =",
+     "answer": "13",
+     "num": true,
+     "vis": "zf:6+7"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-4p8",
+     "task": "Rechne. Fülle zuerst bis 10 auf.",
+     "prompt": "4 + 8 =",
+     "answer": "12",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-9p4",
+     "task": "Rechne. Fülle zuerst bis 10 auf.",
+     "prompt": "9 + 4 =",
+     "answer": "13",
+     "num": true,
+     "vis": "zf:9+4"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-8p8",
+     "task": "Rechne. Fülle zuerst bis 10 auf.",
+     "prompt": "8 + 8 =",
+     "answer": "16",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-9p8",
+     "task": "Rechne. Fülle zuerst bis 10 auf.",
+     "prompt": "9 + 8 =",
+     "answer": "17",
+     "num": true,
+     "vis": "zf:9+8"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-6p5",
+     "task": "Rechne. Fülle zuerst bis 10 auf.",
+     "prompt": "6 + 5 =",
+     "answer": "11",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Minus über die 10",
+   "icon": "🛝",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r20-13m8",
+     "task": "Rechne. Geh zuerst bis 10 zurück.",
+     "prompt": "13 − 8 =",
+     "answer": "5",
+     "num": true,
+     "vis": "zf:13"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-14m7",
+     "task": "Rechne. Geh zuerst bis 10 zurück.",
+     "prompt": "14 − 7 =",
+     "answer": "7",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-12m3",
+     "task": "Rechne. Geh zuerst bis 10 zurück.",
+     "prompt": "12 − 3 =",
+     "answer": "9",
+     "num": true,
+     "vis": "zf:12"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-17m9",
+     "task": "Rechne. Geh zuerst bis 10 zurück.",
+     "prompt": "17 − 9 =",
+     "answer": "8",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-16m7",
+     "task": "Rechne. Geh zuerst bis 10 zurück.",
+     "prompt": "16 − 7 =",
+     "answer": "9",
+     "num": true,
+     "vis": "zf:16"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-14m5",
+     "task": "Rechne. Geh zuerst bis 10 zurück.",
+     "prompt": "14 − 5 =",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-13m4",
+     "task": "Rechne. Geh zuerst bis 10 zurück.",
+     "prompt": "13 − 4 =",
+     "answer": "9",
+     "num": true,
+     "vis": "zf:13"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-12m6",
+     "task": "Rechne. Geh zuerst bis 10 zurück.",
+     "prompt": "12 − 6 =",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-14m6",
+     "task": "Rechne. Geh zuerst bis 10 zurück.",
+     "prompt": "14 − 6 =",
+     "answer": "8",
+     "num": true,
+     "vis": "zf:14"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-12m7",
+     "task": "Rechne. Geh zuerst bis 10 zurück.",
+     "prompt": "12 − 7 =",
+     "answer": "5",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-13m9",
+     "task": "Rechne. Geh zuerst bis 10 zurück.",
+     "prompt": "13 − 9 =",
+     "answer": "4",
+     "num": true,
+     "vis": "zf:13"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-18m9",
+     "task": "Rechne. Geh zuerst bis 10 zurück.",
+     "prompt": "18 − 9 =",
+     "answer": "9",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Gemischt",
+   "icon": "🔁",
+   "pick": "m1-r20-",
+   "count": 14
+  },
+  {
+   "title": "Zahlenmauern",
+   "icon": "🧱",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r20-mauer-0",
+     "task": "Zahlenmauer: Rechne die beiden Steine unten zusammen.",
+     "prompt": "",
+     "answer": "13",
+     "num": true,
+     "vis": "mauer:?;8,5"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-mauer-1",
+     "task": "Zahlenmauer: Rechne die beiden Steine unten zusammen.",
+     "prompt": "",
+     "answer": "13",
+     "num": true,
+     "vis": "mauer:?;6,7"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-mauer-2",
+     "task": "Zahlenmauer: Rechne die beiden Steine unten zusammen.",
+     "prompt": "",
+     "answer": "18",
+     "num": true,
+     "vis": "mauer:?;9,9"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-mauer-3",
+     "task": "Zahlenmauer: Rechne die beiden Steine unten zusammen.",
+     "prompt": "",
+     "answer": "17",
+     "num": true,
+     "vis": "mauer:?;12,5"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-mauer3-0",
+     "task": "Zahlenmauer: Welche Zahl steht ganz oben?",
+     "prompt": "",
+     "answer": "13",
+     "num": true,
+     "vis": "mauer:?;7,6;3,4,2"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-mauer3-1",
+     "task": "Zahlenmauer: Welche Zahl steht ganz oben?",
+     "prompt": "",
+     "answer": "13",
+     "num": true,
+     "vis": "mauer:?;7,6;5,2,4"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-mauer3-2",
+     "task": "Zahlenmauer: Welche Zahl steht ganz oben?",
+     "prompt": "",
+     "answer": "15",
+     "num": true,
+     "vis": "mauer:?;7,8;2,5,3"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r20-mauer3-3",
+     "task": "Zahlenmauer: Welche Zahl steht ganz oben?",
+     "prompt": "",
+     "answer": "16",
+     "num": true,
+     "vis": "mauer:?;7,9;4,3,6"
+    }
+   ]
+  },
+  {
+   "title": "Rechengeschichten",
+   "icon": "💬",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-r20-sach-0",
+     "task": "Im Korb liegen 5 Äpfel. Mama legt 3 dazu. Wie viele Äpfel sind es jetzt?",
+     "options": [
+      "8",
+      "11",
+      "7"
+     ],
+     "answer": "8",
+     "vis": "menge:🍎*5+🍎*3",
+     "prompt": "Im Korb liegen 5 Äpfel. Mama legt 3 dazu. Wie viele Äpfel sind es jetzt?",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-r20-sach-1",
+     "task": "Auf dem Teich schwimmen 7 Enten. 2 fliegen weg. Wie viele bleiben?",
+     "options": [
+      "8",
+      "5",
+      "6"
+     ],
+     "answer": "5",
+     "vis": "menge:🦆*7",
+     "prompt": "Auf dem Teich schwimmen 7 Enten. 2 fliegen weg. Wie viele bleiben?",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-r20-sach-2",
+     "task": "Nathan hat 9 Murmeln. Eleanor hat 4. Wie viele haben sie zusammen?",
+     "options": [
+      "12",
+      "13",
+      "15"
+     ],
+     "answer": "13",
+     "prompt": "Nathan hat 9 Murmeln. Eleanor hat 4. Wie viele haben sie zusammen?",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-r20-sach-3",
+     "task": "Auf dem Tisch sind 12 Kekse. 4 werden gegessen. Wie viele sind noch da?",
+     "options": [
+      "8",
+      "9",
+      "6"
+     ],
+     "answer": "8",
+     "vis": "menge:🍪*12",
+     "prompt": "Auf dem Tisch sind 12 Kekse. 4 werden gegessen. Wie viele sind noch da?",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-r20-sach-4",
+     "task": "Am Baum hängen 6 Birnen und 6 Äpfel. Wie viel Obst ist es zusammen?",
+     "options": [
+      "11",
+      "12",
+      "14"
+     ],
+     "answer": "12",
+     "prompt": "Am Baum hängen 6 Birnen und 6 Äpfel. Wie viel Obst ist es zusammen?",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-r20-sach-5",
+     "task": "Im Bus sitzen 15 Kinder. 5 steigen aus. Wie viele sitzen noch im Bus?",
+     "options": [
+      "8",
+      "10",
+      "11"
+     ],
+     "answer": "10",
+     "vis": "menge:🚌*1",
+     "prompt": "Im Bus sitzen 15 Kinder. 5 steigen aus. Wie viele sitzen noch im Bus?",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-r20-sach-6",
+     "task": "Eleanor hat 8 Sticker. Sie bekommt 7 dazu. Wie viele hat sie jetzt?",
+     "options": [
+      "17",
+      "14",
+      "15"
+     ],
+     "answer": "15",
+     "vis": "menge:⭐*8+⭐*7",
+     "prompt": "Eleanor hat 8 Sticker. Sie bekommt 7 dazu. Wie viele hat sie jetzt?",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-r20-sach-7",
+     "task": "Es gibt 14 Luftballons. 6 platzen. Wie viele sind noch ganz?",
+     "options": [
+      "8",
+      "11",
+      "7"
+     ],
+     "answer": "8",
+     "vis": "menge:🎈*14",
+     "prompt": "Es gibt 14 Luftballons. 6 platzen. Wie viele sind noch ganz?",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "m1-r20-heft",
+     "task": "Rechne diese Aufgaben in deinem Heft: 8 + 5, 9 + 4, 7 + 6, 14 − 6, 13 − 5, 15 − 7. Male bei einer Aufgabe ein Zwanzigerfeld dazu."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 14
+  }
+ ]
+}
