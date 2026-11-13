@@ -19,6 +19,8 @@ const FILES = [
   "js/mathpics.js",
   "img/malen/eichhoernchen.png",
   "img/malen/eichhoernchen-map.png",
+  "img/malen/piraten.png",
+  "img/malen/piraten-map.png",
   "img/emoji/1f91d.webp",
   "img/emoji/26aa.webp",
   "img/emoji/1f319.webp",

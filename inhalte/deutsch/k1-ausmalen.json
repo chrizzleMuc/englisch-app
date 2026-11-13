@@ -70,6 +70,69 @@
      ]
     }
    ]
+  },
+  {
+   "title": "Pirateninsel: im am mi ma",
+   "icon": "⛵",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-piraten",
+     "task": "Lies die Silben. Tipp eine Farbe an, dann die passenden Flächen.",
+     "prompt": "Ausmalbild Pirateninsel: im, am, mi, ma",
+     "image": "img/malen/piraten.png",
+     "map": "img/malen/piraten-map.png",
+     "regions": {
+      "1": "mi",
+      "2": "mi",
+      "3": "am",
+      "4": "am",
+      "5": "mi",
+      "6": "im",
+      "7": "mi",
+      "8": "ma",
+      "9": "am",
+      "10": "am",
+      "11": "im",
+      "12": "ma",
+      "13": "mi",
+      "14": "im",
+      "15": "im",
+      "16": "am",
+      "17": "im",
+      "18": "ma",
+      "19": "ma",
+      "20": "ma",
+      "21": "im",
+      "22": "im",
+      "23": "im",
+      "24": "mi",
+      "25": "mi"
+     },
+     "colors": [
+      {
+       "key": "im",
+       "label": "im",
+       "color": "#8d5a32"
+      },
+      {
+       "key": "am",
+       "label": "am",
+       "color": "#2e7d32"
+      },
+      {
+       "key": "mi",
+       "label": "mi",
+       "color": "#5aa9f0"
+      },
+      {
+       "key": "ma",
+       "label": "ma",
+       "color": "#9bd36a"
+      }
+     ]
+    }
+   ]
   }
  ]
 }
