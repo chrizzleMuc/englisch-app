@@ -23,6 +23,8 @@ const FILES = [
   "img/malen/piraten-map.png",
   "img/malen/pferd.png",
   "img/malen/pferd-map.png",
+  "img/malen/zoo.png",
+  "img/malen/zoo-map.png",
   "img/emoji/1f91d.webp",
   "img/emoji/26aa.webp",
   "img/emoji/1f319.webp",

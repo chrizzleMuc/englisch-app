@@ -58,8 +58,10 @@ for k in range(len(cent)):
         top = int(np.argmax(sub.any(1)))  # erste dunkle Zeile im Wortkasten
         if w < 14:
             letters.append("i" if ncomp >= 2 else "l")
-        elif w > 32 and not inner:
+        elif not inner and w > 1.2 * (h - top):
             letters.append("m")
+        elif not inner:
+            letters.append("n")
         elif inner:
             ys = np.where(holes == inner[0])[0]
             hy = (ys.mean() - top) / max(1, h - top)
@@ -102,10 +104,14 @@ for _ in range(4):
         best = [(c, v) for v, c in zip(vals, cnt) if v > 0 and v != r and (v in owner or v in assign)]
         if best:
             v = max(best)[1]; assign[r] = v if v in owner else assign[v]
-ids = sorted(owner); idx = {r: i + 1 for i, r in enumerate(ids)}
+ids = sorted(r for r in owner if r not in assign); idx = {r: i + 1 for i, r in enumerate(ids)}  # erzwungene Flächen gehen im Ziel auf
 reg = np.zeros_like(lab)
 for r in ids: reg[lab == r] = idx[r]
-for r, v in assign.items(): reg[lab == r] = idx[v]
+def fin(v):
+    seen = set()
+    while v in assign and v not in seen: seen.add(v); v = assign[v]
+    return v
+for r in assign: reg[lab == r] = idx[fin(r)]
 print(sorted(((b[1]//60, b[0]), l) for b, w, l in words))
 for f in feats: print(f)
 print(f"{len(words)} Wörter, {len(ids)} Flächen mit Silbe, {len(assign)} Kleinteile zugeordnet")

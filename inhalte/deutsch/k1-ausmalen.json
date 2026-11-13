@@ -194,6 +194,63 @@
      ]
     }
    ]
+  },
+  {
+   "title": "Im Zoo: na ne ni no",
+   "icon": "🦁",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-zoo",
+     "task": "Lies die Silben. Tipp eine Farbe an, dann die passenden Flächen.",
+     "prompt": "Ausmalbild Im Zoo: na, ne, ni, no",
+     "image": "img/malen/zoo.png",
+     "map": "img/malen/zoo-map.png",
+     "regions": {
+      "1": "ni",
+      "2": "ni",
+      "3": "na",
+      "4": "ne",
+      "5": "no",
+      "6": "na",
+      "7": "no",
+      "8": "no",
+      "9": "ne",
+      "10": "na",
+      "11": "ne",
+      "12": "ne",
+      "13": "ne",
+      "14": "ne",
+      "15": "ne",
+      "16": "na",
+      "17": "no",
+      "18": "no",
+      "19": "no"
+     },
+     "colors": [
+      {
+       "key": "na",
+       "label": "na",
+       "color": "#f2c230"
+      },
+      {
+       "key": "ne",
+       "label": "ne",
+       "color": "#9aa0ad"
+      },
+      {
+       "key": "ni",
+       "label": "ni",
+       "color": "#5aa9f0"
+      },
+      {
+       "key": "no",
+       "label": "no",
+       "color": "#4caf50"
+      }
+     ]
+    }
+   ]
   }
  ]
 }
