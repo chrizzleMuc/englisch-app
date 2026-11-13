@@ -6,9 +6,10 @@ import { content, loadContent } from "./content.js";
 import * as store from "./store.js";
 import * as photos from "./photos.js";
 import { pic } from "./pics.js";
+import { vis, visText } from "./mathpics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 26;
+const APP_VERSION = 27;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -725,16 +726,16 @@ const singleStep = (q) => ({ kind: q.kind, q });
 
 // Frage und richtige Antwort als Text (für Elternbereich und Ergebnis)
 function describe(q) {
-  if (q.kind === "type") return [q.prompt, [q.before, q.choose?.answer, q.answer].filter(Boolean).join(" ")];
+  if (q.kind === "type") return [q.prompt || visText(q.vis), [q.before, q.choose?.answer, q.answer].filter(Boolean).join(" ")];
   if (q.kind === "syllables") return [q.word, q.answer];
-  return [q.prompt || q.say, q.answer];
+  return [q.prompt || q.say || visText(q.vis), q.visOptions ? visText(q.answer) : q.answer];
 }
 
 function buildSchoolLesson(u, n) {
   const l = u.lessons[n];
   if (l.test) return shuffle(u.singles).slice(0, l.count || 12).map((q) => ({ ...singleStep(q), unit: u.id }));
   if (l.pick) return shuffle(u.singles.filter((q) => q.id.startsWith(l.pick))).slice(0, l.count || 10).map((q) => ({ ...singleStep(q), unit: u.id }));
-  let steps = l.tasks.map((t) => (["pairs", "sort", "photo"].includes(t.kind) ? { kind: t.kind, t } : singleStep(t)));
+  let steps = l.tasks.map((t) => (["pairs", "sort", "photo", "paint"].includes(t.kind) ? { kind: t.kind, t } : singleStep(t)));
   if (l.mix) steps = shuffle(steps);
   return steps.map((s) => ({ unit: u.id, ...s }));
 }
@@ -827,7 +828,8 @@ STEPS.type = (lesson, step) => {
   let chosen = q.choose ? null : "";
   const token = lessonRender(lesson, `
     ${taskHead(q.task || "Schreib die Antwort!")}
-    ${promptCard(q.prompt)}
+    ${q.vis ? `<div class="prompt-card vis-card">${vis(q.vis)}</div>` : ""}
+    ${q.prompt ? promptCard(q.prompt) : ""}
     ${q.choose ? `<div class="choices text-choices" id="ch">${q.choose.options.map((o) => `<button class="choice" data-v="${esc(o)}"><span class="word">${esc(o)}</span></button>`).join("")}</div>` : ""}
     <div class="type-row" id="tr" ${q.choose ? "hidden" : ""}>
       <span class="before" id="before">${esc(q.before || "")}</span>
@@ -905,8 +907,8 @@ STEPS.choice = (lesson, step) => {
   const opts = q.keepOrder ? q.options : shuffle(q.options);
   const token = lessonRender(lesson, `
     ${taskHead(q.task || "Was ist richtig?")}
-    ${q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : promptCard(q.prompt)}
-    <div class="choices ${q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(o)}">${q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
+    ${q.vis ? `<div class="prompt-card vis-card">${vis(q.vis)}${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.prompt && (!q.visOptions || q.showText) ? promptCard(q.prompt) : ""}
+    <div class="choices ${q.visOptions ? "vis-choices" : q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(q.visOptions ? visText(o) : o)}">${q.visOptions ? vis(o) : q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
   wireVoice(token, () => sayDe(q.say || q.task || q.prompt), q.task || q.say || q.prompt, sayWord(q.say));
@@ -1034,6 +1036,123 @@ STEPS.pairs = (lesson, step) => {
         b.classList.add("wrong");
         setTimeout(() => b.classList.remove("wrong"), 500);
       });
+    }
+  });
+};
+
+// ---------- Übung: Ausmalbild (Silbe lesen, Farbe wählen, Fläche antippen) ----------
+// Strichzeichnung (image) + Flächenkarte (map, Grauwert = Flächennummer) + regions {Nummer: Silbe}
+const loadImg = (src) =>
+  new Promise((ok, bad) => {
+    const i = new Image();
+    i.onload = () => ok(i);
+    i.onerror = () => bad(new Error("Bild fehlt: " + src));
+    i.src = src;
+  });
+const hex = (c) => [1, 3, 5].map((i) => parseInt(c.slice(i, i + 2), 16));
+
+STEPS.paint = async (lesson, step) => {
+  const t = step.t || step.q;
+  const byKey = Object.fromEntries(t.colors.map((c) => [c.key, c]));
+  let cur = null;
+  let misses = 0;
+  const done = new Set();
+  const total = Object.keys(t.regions).length;
+  const token = lessonRender(lesson, `
+    ${taskHead(t.task || "Lies die Silben. Tipp eine Farbe an, dann die passenden Flächen.")}
+    <div class="paint-pal">${t.colors.map((c) => `<button class="pcolor" data-k="${c.key}" style="--pc:${c.color}"><span>${esc(c.label)}</span></button>`).join("")}</div>
+    <div class="paint-wrap"><canvas class="paint" id="pc"></canvas><p class="hint" id="pload">Bild wird geladen …</p></div>
+    <div class="feedback" id="fb"></div>
+    <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
+  wireVoice(token, () => sayDe(t.say || t.task || "Male aus!"), t.task || "paint");
+  $("next").onclick = () => advance(lesson);
+  on(".pcolor", "click", (e) => {
+    app.querySelectorAll(".pcolor").forEach((b) => b.classList.remove("sel"));
+    e.currentTarget.classList.add("sel");
+    cur = e.currentTarget.dataset.k;
+    chime("pop");
+  });
+  let base, map;
+  try {
+    [base, map] = await Promise.all([loadImg(t.image), loadImg(t.map)]);
+  } catch (e) {
+    if (alive(token)) $("pload").textContent = e.message;
+    return;
+  }
+  if (!alive(token)) return;
+  $("pload").remove();
+  const cv = $("pc");
+  const W = (cv.width = base.naturalWidth);
+  const H = (cv.height = base.naturalHeight);
+  const ctx = cv.getContext("2d", { willReadFrequently: true });
+  ctx.drawImage(map, 0, 0);
+  const ids = ctx.getImageData(0, 0, W, H).data;
+  ctx.drawImage(base, 0, 0);
+  const img = ctx.getImageData(0, 0, W, H);
+  const lum = new Uint8Array(W * H);
+  for (let i = 0; i < W * H; i++) lum[i] = img.data[i * 4];
+  const regionAt = (x, y) => {
+    // Linie getroffen? Dann im kleinen Umkreis die nächste Fläche suchen
+    for (let r = 0; r <= 14; r += 2)
+      for (let dy = -r; dy <= r; dy += 2)
+        for (let dx = -r; dx <= r; dx += 2) {
+          const xx = x + dx;
+          const yy = y + dy;
+          if (xx < 0 || yy < 0 || xx >= W || yy >= H) continue;
+          const id = ids[(yy * W + xx) * 4];
+          if (id) return id;
+        }
+    return 0;
+  };
+  const fill = (id, color) => {
+    const [r, g, b] = hex(color);
+    const d = img.data;
+    for (let i = 0; i < W * H; i++) {
+      if (ids[i * 4] !== id) continue;
+      const l = lum[i] / 255;
+      d[i * 4] = r * l;
+      d[i * 4 + 1] = g * l;
+      d[i * 4 + 2] = b * l;
+    }
+    ctx.putImageData(img, 0, 0);
+  };
+  cv.addEventListener("click", async (e) => {
+    const box = cv.getBoundingClientRect();
+    const x = Math.round(((e.clientX - box.left) / box.width) * W);
+    const y = Math.round(((e.clientY - box.top) / box.height) * H);
+    const id = regionAt(x, y);
+    if (!id || done.has(id)) return;
+    const want = t.regions[id];
+    if (!cur) {
+      $("fb").innerHTML = `<span class="try">Tipp zuerst oben eine Farbe an!</span>`;
+      return;
+    }
+    if (want === cur) {
+      done.add(id);
+      fill(id, byKey[cur].color);
+      chime("pop");
+      $("fb").innerHTML = "";
+      if (done.size === total) {
+        // einmal werten, ohne Wiederholung am Ende der Lektion (das Bild wäre zu lang)
+        const ok = misses <= 1;
+        if (!step.retry) {
+          store.grade(current.profile, t.id, ok);
+          store.save();
+          if (!step.review) {
+            lesson.total++;
+            if (ok) lesson.right++;
+          }
+        }
+        chime("win");
+        $("fb").innerHTML = `<span class="ok">${pick(PRAISE)} Dein Bild ist fertig!</span>`;
+        $("next").hidden = false;
+      }
+    } else {
+      misses++;
+      miss(lesson, step, t.id, byKey[cur].label + " statt " + byKey[want].label);
+      $("fb").innerHTML = `<span class="try">Lies genau: Hier steht <b>${esc(byKey[want].label)}</b>.</span>`;
+      cv.classList.add("shake");
+      setTimeout(() => cv.classList.remove("shake"), 400);
     }
   });
 };

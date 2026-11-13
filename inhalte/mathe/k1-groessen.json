@@ -1,0 +1,719 @@
+{
+ "id": "m1-groessen",
+ "type": "schule",
+ "title_de": "Geld und Uhr",
+ "image": "⏰",
+ "color": "#f2a33a",
+ "lessons": [
+  {
+   "title": "Münzen erkennen",
+   "icon": "💶",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-gr-muenze-0",
+     "task": "Wo ist die 1 Euro-Münze?",
+     "options": [
+      "geld:1",
+      "geld:2",
+      "geld:0.5"
+     ],
+     "answer": "geld:1",
+     "visOptions": true,
+     "prompt": "1 Euro"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-muenze-1",
+     "task": "Wo ist die 2 Euro-Münze?",
+     "options": [
+      "geld:2",
+      "geld:1",
+      "geld:0.2"
+     ],
+     "answer": "geld:2",
+     "visOptions": true,
+     "prompt": "2 Euro"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-muenze-2",
+     "task": "Wo ist die 50 Cent-Münze?",
+     "options": [
+      "geld:0.5",
+      "geld:0.2",
+      "geld:1"
+     ],
+     "answer": "geld:0.5",
+     "visOptions": true,
+     "prompt": "50 Cent"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-muenze-3",
+     "task": "Wo ist die 10 Cent-Münze?",
+     "options": [
+      "geld:0.1",
+      "geld:0.01",
+      "geld:0.5"
+     ],
+     "answer": "geld:0.1",
+     "visOptions": true,
+     "prompt": "10 Cent"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-muenze-4",
+     "task": "Wo ist die 20 Cent-Münze?",
+     "options": [
+      "geld:0.2",
+      "geld:0.02",
+      "geld:2"
+     ],
+     "answer": "geld:0.2",
+     "visOptions": true,
+     "prompt": "20 Cent"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-muenze-5",
+     "task": "Wo ist die 5 Cent-Münze?",
+     "options": [
+      "geld:0.05",
+      "geld:0.5",
+      "geld:0.1"
+     ],
+     "answer": "geld:0.05",
+     "visOptions": true,
+     "prompt": "5 Cent"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-muenze-6",
+     "task": "Wo ist die 1 Euro-Münze?",
+     "options": [
+      "geld:1",
+      "geld:0.1",
+      "geld:0.01"
+     ],
+     "answer": "geld:1",
+     "visOptions": true,
+     "prompt": "1 Euro"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-muenze-7",
+     "task": "Wo ist die 2 Euro-Münze?",
+     "options": [
+      "geld:2",
+      "geld:0.2",
+      "geld:0.05"
+     ],
+     "answer": "geld:2",
+     "visOptions": true,
+     "prompt": "2 Euro"
+    }
+   ]
+  },
+  {
+   "title": "Scheine erkennen",
+   "icon": "💶",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-gr-schein-0",
+     "task": "Wo ist der 5-Euro-Schein?",
+     "options": [
+      "geld:5",
+      "geld:10",
+      "geld:20"
+     ],
+     "answer": "geld:5",
+     "visOptions": true,
+     "prompt": "5 Euro"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-schein-1",
+     "task": "Wo ist der 10-Euro-Schein?",
+     "options": [
+      "geld:10",
+      "geld:5",
+      "geld:20"
+     ],
+     "answer": "geld:10",
+     "visOptions": true,
+     "prompt": "10 Euro"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-schein-2",
+     "task": "Wo ist der 20-Euro-Schein?",
+     "options": [
+      "geld:20",
+      "geld:10",
+      "geld:5"
+     ],
+     "answer": "geld:20",
+     "visOptions": true,
+     "prompt": "20 Euro"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-schein-3",
+     "task": "Wo ist der 5-Euro-Schein?",
+     "options": [
+      "geld:5",
+      "geld:20",
+      "geld:10"
+     ],
+     "answer": "geld:5",
+     "visOptions": true,
+     "prompt": "5 Euro"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-schein-4",
+     "task": "Wo ist der 10-Euro-Schein?",
+     "options": [
+      "geld:10",
+      "geld:20",
+      "geld:5"
+     ],
+     "answer": "geld:10",
+     "visOptions": true,
+     "prompt": "10 Euro"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-schein-5",
+     "task": "Wo ist der 20-Euro-Schein?",
+     "options": [
+      "geld:20",
+      "geld:5",
+      "geld:10"
+     ],
+     "answer": "geld:20",
+     "visOptions": true,
+     "prompt": "20 Euro"
+    }
+   ]
+  },
+  {
+   "title": "Geld zählen",
+   "icon": "🧮",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-gr-zaehl-0",
+     "task": "Wie viel Euro sind das zusammen?",
+     "prompt": "",
+     "answer": "3",
+     "num": true,
+     "vis": "geld:2,1"
+    },
+    {
+     "kind": "type",
+     "id": "m1-gr-zaehl-1",
+     "task": "Wie viel Euro sind das zusammen?",
+     "prompt": "",
+     "answer": "3",
+     "num": true,
+     "vis": "geld:1,1,1"
+    },
+    {
+     "kind": "type",
+     "id": "m1-gr-zaehl-2",
+     "task": "Wie viel Euro sind das zusammen?",
+     "prompt": "",
+     "answer": "5",
+     "num": true,
+     "vis": "geld:2,2,1"
+    },
+    {
+     "kind": "type",
+     "id": "m1-gr-zaehl-3",
+     "task": "Wie viel Euro sind das zusammen?",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "geld:5,2"
+    },
+    {
+     "kind": "type",
+     "id": "m1-gr-zaehl-4",
+     "task": "Wie viel Euro sind das zusammen?",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "geld:5,1,1"
+    },
+    {
+     "kind": "type",
+     "id": "m1-gr-zaehl-5",
+     "task": "Wie viel Euro sind das zusammen?",
+     "prompt": "",
+     "answer": "12",
+     "num": true,
+     "vis": "geld:10,2"
+    },
+    {
+     "kind": "type",
+     "id": "m1-gr-zaehl-6",
+     "task": "Wie viel Euro sind das zusammen?",
+     "prompt": "",
+     "answer": "15",
+     "num": true,
+     "vis": "geld:10,5"
+    },
+    {
+     "kind": "type",
+     "id": "m1-gr-zaehl-7",
+     "task": "Wie viel Euro sind das zusammen?",
+     "prompt": "",
+     "answer": "12",
+     "num": true,
+     "vis": "geld:5,5,2"
+    },
+    {
+     "kind": "type",
+     "id": "m1-gr-zaehl-8",
+     "task": "Wie viel Euro sind das zusammen?",
+     "prompt": "",
+     "answer": "18",
+     "num": true,
+     "vis": "geld:10,5,2,1"
+    },
+    {
+     "kind": "type",
+     "id": "m1-gr-zaehl-9",
+     "task": "Wie viel Euro sind das zusammen?",
+     "prompt": "",
+     "answer": "8",
+     "num": true,
+     "vis": "geld:2,2,2,2"
+    }
+   ]
+  },
+  {
+   "title": "Einkaufen",
+   "icon": "💶",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-gr-kauf-0",
+     "task": "Ein Eis kostet 2 €. Du bezahlst mit 5 €. Wie viel Euro bekommst du zurück?",
+     "options": [
+      "3 €",
+      "4 €",
+      "6 €"
+     ],
+     "answer": "3 €",
+     "vis": "menge:🍦*1",
+     "prompt": "Ein Eis kostet 2 €. Du bezahlst mit 5 €. Wie viel Euro bekommst du zurück?",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-kauf-1",
+     "task": "Ein Ball kostet 7 €. Ein Buch kostet 5 €. Wie viel kostet beides zusammen?",
+     "options": [
+      "9 €",
+      "10 €",
+      "12 €"
+     ],
+     "answer": "12 €",
+     "vis": "menge:⚽*1+📖*1",
+     "prompt": "Ein Ball kostet 7 €. Ein Buch kostet 5 €. Wie viel kostet beides zusammen?",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-kauf-2",
+     "task": "Du hast 10 €. Ein Spielzeug kostet 6 €. Wie viel Euro bleiben übrig?",
+     "options": [
+      "1 €",
+      "4 €",
+      "7 €"
+     ],
+     "answer": "4 €",
+     "vis": "menge:🧸*1",
+     "prompt": "Du hast 10 €. Ein Spielzeug kostet 6 €. Wie viel Euro bleiben übrig?",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-kauf-3",
+     "task": "Eine Brezel kostet 1 €. Du kaufst 3 Brezeln. Wie viel Euro kostet das?",
+     "options": [
+      "3 €",
+      "4 €",
+      "5 €"
+     ],
+     "answer": "3 €",
+     "vis": "menge:🥨*3",
+     "prompt": "Eine Brezel kostet 1 €. Du kaufst 3 Brezeln. Wie viel Euro kostet das?",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-kauf-4",
+     "task": "Ein Buch kostet 8 €. Du hast 5 €. Wie viel Euro fehlen dir?",
+     "options": [
+      "3 €",
+      "5 €",
+      "6 €"
+     ],
+     "answer": "3 €",
+     "vis": "menge:📖*1",
+     "prompt": "Ein Buch kostet 8 €. Du hast 5 €. Wie viel Euro fehlen dir?",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-kauf-5",
+     "task": "Du hast 20 €. Du kaufst ein Spiel für 10 €. Wie viel Euro bleiben übrig?",
+     "options": [
+      "8 €",
+      "10 €",
+      "12 €"
+     ],
+     "answer": "10 €",
+     "vis": "menge:🎲*1",
+     "prompt": "Du hast 20 €. Du kaufst ein Spiel für 10 €. Wie viel Euro bleiben übrig?",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Die Uhr lesen",
+   "icon": "⏰",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhr-0",
+     "task": "Wie spät ist es? Der kurze rote Zeiger zeigt die Stunde.",
+     "options": [
+      "2 Uhr",
+      "3 Uhr",
+      "12 Uhr"
+     ],
+     "answer": "3 Uhr",
+     "vis": "uhr:3",
+     "bigOptions": false
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhr-1",
+     "task": "Wie spät ist es? Der kurze rote Zeiger zeigt die Stunde.",
+     "options": [
+      "1 Uhr",
+      "2 Uhr",
+      "7 Uhr"
+     ],
+     "answer": "7 Uhr",
+     "vis": "uhr:7",
+     "bigOptions": false
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhr-2",
+     "task": "Wie spät ist es? Der kurze rote Zeiger zeigt die Stunde.",
+     "options": [
+      "2 Uhr",
+      "11 Uhr",
+      "12 Uhr"
+     ],
+     "answer": "12 Uhr",
+     "vis": "uhr:12",
+     "bigOptions": false
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhr-3",
+     "task": "Wie spät ist es? Der kurze rote Zeiger zeigt die Stunde.",
+     "options": [
+      "9 Uhr",
+      "3 Uhr",
+      "4 Uhr"
+     ],
+     "answer": "9 Uhr",
+     "vis": "uhr:9",
+     "bigOptions": false
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhr-4",
+     "task": "Wie spät ist es? Der kurze rote Zeiger zeigt die Stunde.",
+     "options": [
+      "1 Uhr",
+      "4 Uhr",
+      "9 Uhr"
+     ],
+     "answer": "1 Uhr",
+     "vis": "uhr:1",
+     "bigOptions": false
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhr-5",
+     "task": "Wie spät ist es? Der kurze rote Zeiger zeigt die Stunde.",
+     "options": [
+      "1 Uhr",
+      "11 Uhr",
+      "6 Uhr"
+     ],
+     "answer": "6 Uhr",
+     "vis": "uhr:6",
+     "bigOptions": false
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhr-6",
+     "task": "Wie spät ist es? Der kurze rote Zeiger zeigt die Stunde.",
+     "options": [
+      "10 Uhr",
+      "12 Uhr",
+      "7 Uhr"
+     ],
+     "answer": "10 Uhr",
+     "vis": "uhr:10",
+     "bigOptions": false
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhr-7",
+     "task": "Wie spät ist es? Der kurze rote Zeiger zeigt die Stunde.",
+     "options": [
+      "9 Uhr",
+      "2 Uhr",
+      "4 Uhr"
+     ],
+     "answer": "4 Uhr",
+     "vis": "uhr:4",
+     "bigOptions": false
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhr-8",
+     "task": "Wie spät ist es? Der kurze rote Zeiger zeigt die Stunde.",
+     "options": [
+      "8 Uhr",
+      "3 Uhr",
+      "12 Uhr"
+     ],
+     "answer": "8 Uhr",
+     "vis": "uhr:8",
+     "bigOptions": false
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhr-9",
+     "task": "Wie spät ist es? Der kurze rote Zeiger zeigt die Stunde.",
+     "options": [
+      "1 Uhr",
+      "2 Uhr",
+      "3 Uhr"
+     ],
+     "answer": "2 Uhr",
+     "vis": "uhr:2",
+     "bigOptions": false
+    }
+   ]
+  },
+  {
+   "title": "Uhrzeit finden",
+   "icon": "⏰",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhrzeig-0",
+     "task": "Wo ist es 5 Uhr?",
+     "options": [
+      "uhr:5",
+      "uhr:6",
+      "uhr:3"
+     ],
+     "answer": "uhr:5",
+     "visOptions": true,
+     "prompt": "5 Uhr"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhrzeig-1",
+     "task": "Wo ist es 11 Uhr?",
+     "options": [
+      "uhr:11",
+      "uhr:5",
+      "uhr:7"
+     ],
+     "answer": "uhr:11",
+     "visOptions": true,
+     "prompt": "11 Uhr"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhrzeig-2",
+     "task": "Wo ist es 2 Uhr?",
+     "options": [
+      "uhr:2",
+      "uhr:11",
+      "uhr:6"
+     ],
+     "answer": "uhr:2",
+     "visOptions": true,
+     "prompt": "2 Uhr"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhrzeig-3",
+     "task": "Wo ist es 8 Uhr?",
+     "options": [
+      "uhr:8",
+      "uhr:6",
+      "uhr:4"
+     ],
+     "answer": "uhr:8",
+     "visOptions": true,
+     "prompt": "8 Uhr"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhrzeig-4",
+     "task": "Wo ist es 12 Uhr?",
+     "options": [
+      "uhr:12",
+      "uhr:2",
+      "uhr:8"
+     ],
+     "answer": "uhr:12",
+     "visOptions": true,
+     "prompt": "12 Uhr"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhrzeig-5",
+     "task": "Wo ist es 6 Uhr?",
+     "options": [
+      "uhr:6",
+      "uhr:3",
+      "uhr:7"
+     ],
+     "answer": "uhr:6",
+     "visOptions": true,
+     "prompt": "6 Uhr"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhrzeig-6",
+     "task": "Wo ist es 9 Uhr?",
+     "options": [
+      "uhr:9",
+      "uhr:7",
+      "uhr:11"
+     ],
+     "answer": "uhr:9",
+     "visOptions": true,
+     "prompt": "9 Uhr"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-uhrzeig-7",
+     "task": "Wo ist es 3 Uhr?",
+     "options": [
+      "uhr:3",
+      "uhr:2",
+      "uhr:12"
+     ],
+     "answer": "uhr:3",
+     "visOptions": true,
+     "prompt": "3 Uhr"
+    }
+   ]
+  },
+  {
+   "title": "Halbe Stunden",
+   "icon": "⏰",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-gr-halb-0",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt nach unten: Es ist halb.",
+     "options": [
+      "halb 3",
+      "2 Uhr",
+      "halb 2"
+     ],
+     "answer": "halb 3",
+     "vis": "uhr:2:30"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-halb-1",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt nach unten: Es ist halb.",
+     "options": [
+      "halb 8",
+      "7 Uhr",
+      "halb 7"
+     ],
+     "answer": "halb 8",
+     "vis": "uhr:7:30"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-halb-2",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt nach unten: Es ist halb.",
+     "options": [
+      "halb 11",
+      "10 Uhr",
+      "halb 10"
+     ],
+     "answer": "halb 11",
+     "vis": "uhr:10:30"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-halb-3",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt nach unten: Es ist halb.",
+     "options": [
+      "halb 5",
+      "4 Uhr",
+      "halb 4"
+     ],
+     "answer": "halb 5",
+     "vis": "uhr:4:30"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-halb-4",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt nach unten: Es ist halb.",
+     "options": [
+      "halb 1",
+      "12 Uhr",
+      "halb 12"
+     ],
+     "answer": "halb 1",
+     "vis": "uhr:12:30"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-gr-halb-5",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt nach unten: Es ist halb.",
+     "options": [
+      "halb 10",
+      "9 Uhr",
+      "halb 9"
+     ],
+     "answer": "halb 10",
+     "vis": "uhr:9:30"
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

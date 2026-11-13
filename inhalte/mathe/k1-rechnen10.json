@@ -1,0 +1,767 @@
+{
+ "id": "m1-rechnen10",
+ "type": "schule",
+ "title_de": "Rechnen bis 10",
+ "image": "➕",
+ "color": "#2a9d8f",
+ "lessons": [
+  {
+   "title": "Plus bis 5",
+   "icon": "➕",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r10-1p4",
+     "task": "Rechne.",
+     "prompt": "1 + 4 =",
+     "answer": "5",
+     "num": true,
+     "vis": "feld:1+4"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-2p3",
+     "task": "Rechne.",
+     "prompt": "2 + 3 =",
+     "answer": "5",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-1p2",
+     "task": "Rechne.",
+     "prompt": "1 + 2 =",
+     "answer": "3",
+     "num": true,
+     "vis": "feld:1+2"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-4p1",
+     "task": "Rechne.",
+     "prompt": "4 + 1 =",
+     "answer": "5",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-2p2",
+     "task": "Rechne.",
+     "prompt": "2 + 2 =",
+     "answer": "4",
+     "num": true,
+     "vis": "feld:2+2"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-2p1",
+     "task": "Rechne.",
+     "prompt": "2 + 1 =",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-1p3",
+     "task": "Rechne.",
+     "prompt": "1 + 3 =",
+     "answer": "4",
+     "num": true,
+     "vis": "feld:1+3"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-3p2",
+     "task": "Rechne.",
+     "prompt": "3 + 2 =",
+     "answer": "5",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-3p1",
+     "task": "Rechne.",
+     "prompt": "3 + 1 =",
+     "answer": "4",
+     "num": true,
+     "vis": "feld:3+1"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-1p1",
+     "task": "Rechne.",
+     "prompt": "1 + 1 =",
+     "answer": "2",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Plus bis 10",
+   "icon": "➕",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r10-3p4",
+     "task": "Rechne.",
+     "prompt": "3 + 4 =",
+     "answer": "7",
+     "num": true,
+     "vis": "feld:3+4"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-3p6",
+     "task": "Rechne.",
+     "prompt": "3 + 6 =",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-2p6",
+     "task": "Rechne.",
+     "prompt": "2 + 6 =",
+     "answer": "8",
+     "num": true,
+     "vis": "feld:2+6"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-8p1",
+     "task": "Rechne.",
+     "prompt": "8 + 1 =",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-6p3",
+     "task": "Rechne.",
+     "prompt": "6 + 3 =",
+     "answer": "9",
+     "num": true,
+     "vis": "feld:6+3"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-5p1",
+     "task": "Rechne.",
+     "prompt": "5 + 1 =",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-2p7",
+     "task": "Rechne.",
+     "prompt": "2 + 7 =",
+     "answer": "9",
+     "num": true,
+     "vis": "feld:2+7"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-5p5",
+     "task": "Rechne.",
+     "prompt": "5 + 5 =",
+     "answer": "10",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-5p3",
+     "task": "Rechne.",
+     "prompt": "5 + 3 =",
+     "answer": "8",
+     "num": true,
+     "vis": "feld:5+3"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-6p2",
+     "task": "Rechne.",
+     "prompt": "6 + 2 =",
+     "answer": "8",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-4p3",
+     "task": "Rechne.",
+     "prompt": "4 + 3 =",
+     "answer": "7",
+     "num": true,
+     "vis": "feld:4+3"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-2p5",
+     "task": "Rechne.",
+     "prompt": "2 + 5 =",
+     "answer": "7",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Minus bis 5",
+   "icon": "➖",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r10-5m1",
+     "task": "Rechne minus.",
+     "prompt": "5 − 1 =",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-5m2",
+     "task": "Rechne minus.",
+     "prompt": "5 − 2 =",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-5m4",
+     "task": "Rechne minus.",
+     "prompt": "5 − 4 =",
+     "answer": "1",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-2m1",
+     "task": "Rechne minus.",
+     "prompt": "2 − 1 =",
+     "answer": "1",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-4m2",
+     "task": "Rechne minus.",
+     "prompt": "4 − 2 =",
+     "answer": "2",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-4m1",
+     "task": "Rechne minus.",
+     "prompt": "4 − 1 =",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-5m3",
+     "task": "Rechne minus.",
+     "prompt": "5 − 3 =",
+     "answer": "2",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-3m2",
+     "task": "Rechne minus.",
+     "prompt": "3 − 2 =",
+     "answer": "1",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-3m1",
+     "task": "Rechne minus.",
+     "prompt": "3 − 1 =",
+     "answer": "2",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-4m3",
+     "task": "Rechne minus.",
+     "prompt": "4 − 3 =",
+     "answer": "1",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Minus bis 10",
+   "icon": "➖",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r10-10m1",
+     "task": "Rechne minus.",
+     "prompt": "10 − 1 =",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-6m3",
+     "task": "Rechne minus.",
+     "prompt": "6 − 3 =",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-10m7",
+     "task": "Rechne minus.",
+     "prompt": "10 − 7 =",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-8m2",
+     "task": "Rechne minus.",
+     "prompt": "8 − 2 =",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-9m6",
+     "task": "Rechne minus.",
+     "prompt": "9 − 6 =",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-10m3",
+     "task": "Rechne minus.",
+     "prompt": "10 − 3 =",
+     "answer": "7",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-9m3",
+     "task": "Rechne minus.",
+     "prompt": "9 − 3 =",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-10m4",
+     "task": "Rechne minus.",
+     "prompt": "10 − 4 =",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-7m3",
+     "task": "Rechne minus.",
+     "prompt": "7 − 3 =",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-7m4",
+     "task": "Rechne minus.",
+     "prompt": "7 − 4 =",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-6m2",
+     "task": "Rechne minus.",
+     "prompt": "6 − 2 =",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-9m8",
+     "task": "Rechne minus.",
+     "prompt": "9 − 8 =",
+     "answer": "1",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Ergänzen",
+   "icon": "❓",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r10-erg-0",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "3 + ☐ = 7",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-erg-1",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "5 + ☐ = 9",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-erg-2",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "2 + ☐ = 6",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-erg-3",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "4 + ☐ = 10",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-erg-4",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "6 + ☐ = 8",
+     "answer": "2",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-erg-5",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "1 + ☐ = 5",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-erg-6",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "7 + ☐ = 10",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-erg-7",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "2 + ☐ = 9",
+     "answer": "7",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-erg-8",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "5 + ☐ = 7",
+     "answer": "2",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-erg-9",
+     "task": "Welche Zahl fehlt?",
+     "prompt": "3 + ☐ = 8",
+     "answer": "5",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Tausch- und Nachbaraufgaben",
+   "icon": "🔁",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-r10-tausch-0",
+     "task": "Welche Aufgabe ist die Tauschaufgabe?",
+     "options": [
+      "5 + 3",
+      "3 + 6",
+      "5 − 3"
+     ],
+     "answer": "5 + 3",
+     "prompt": "3 + 5"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-r10-tausch-1",
+     "task": "Welche Aufgabe ist die Tauschaufgabe?",
+     "options": [
+      "7 + 2",
+      "2 + 8",
+      "7 − 2"
+     ],
+     "answer": "7 + 2",
+     "prompt": "2 + 7"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-r10-tausch-2",
+     "task": "Welche Aufgabe ist die Tauschaufgabe?",
+     "options": [
+      "1 + 6",
+      "6 + 2",
+      "6 − 1"
+     ],
+     "answer": "1 + 6",
+     "prompt": "6 + 1"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-r10-tausch-3",
+     "task": "Welche Aufgabe ist die Tauschaufgabe?",
+     "options": [
+      "5 + 4",
+      "4 + 6",
+      "5 − 4"
+     ],
+     "answer": "5 + 4",
+     "prompt": "4 + 5"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-r10-tausch-4",
+     "task": "Welche Aufgabe ist die Tauschaufgabe?",
+     "options": [
+      "8 + 1",
+      "1 + 9",
+      "8 − 1"
+     ],
+     "answer": "8 + 1",
+     "prompt": "1 + 8"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-nachbar-0",
+     "task": "Nachbaraufgabe: Rechne geschickt.",
+     "prompt": "2 + 6 = 8\n3 + 6 =",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-nachbar-1",
+     "task": "Nachbaraufgabe: Rechne geschickt.",
+     "prompt": "3 + 4 = 7\n4 + 4 =",
+     "answer": "8",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-nachbar-2",
+     "task": "Nachbaraufgabe: Rechne geschickt.",
+     "prompt": "5 + 2 = 7\n6 + 2 =",
+     "answer": "8",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-nachbar-3",
+     "task": "Nachbaraufgabe: Rechne geschickt.",
+     "prompt": "1 + 7 = 8\n2 + 7 =",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-nachbar-4",
+     "task": "Nachbaraufgabe: Rechne geschickt.",
+     "prompt": "4 + 4 = 8\n5 + 4 =",
+     "answer": "9",
+     "num": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Umkehraufgaben",
+   "icon": "🔁",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r10-umkehr-0",
+     "task": "Umkehraufgabe: Rechne zurück.",
+     "prompt": "2 + 5 = 7\n7 − 5 =",
+     "answer": "2",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-umkehr-1",
+     "task": "Umkehraufgabe: Rechne zurück.",
+     "prompt": "3 + 4 = 7\n7 − 4 =",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-umkehr-2",
+     "task": "Umkehraufgabe: Rechne zurück.",
+     "prompt": "6 + 3 = 9\n9 − 3 =",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-umkehr-3",
+     "task": "Umkehraufgabe: Rechne zurück.",
+     "prompt": "1 + 8 = 9\n9 − 8 =",
+     "answer": "1",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-umkehr-4",
+     "task": "Umkehraufgabe: Rechne zurück.",
+     "prompt": "4 + 5 = 9\n9 − 5 =",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-umkehr-5",
+     "task": "Umkehraufgabe: Rechne zurück.",
+     "prompt": "7 + 2 = 9\n9 − 2 =",
+     "answer": "7",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-umkehr-6",
+     "task": "Umkehraufgabe: Rechne zurück.",
+     "prompt": "5 + 5 = 10\n10 − 5 =",
+     "answer": "5",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-umkehr-7",
+     "task": "Umkehraufgabe: Rechne zurück.",
+     "prompt": "3 + 6 = 9\n9 − 6 =",
+     "answer": "3",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Plus und minus gemischt",
+   "icon": "🔁",
+   "pick": "m1-r10-",
+   "count": 12
+  },
+  {
+   "title": "Zahlenmauern",
+   "icon": "🧱",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-r10-mauer-0",
+     "task": "Zahlenmauer: Rechne die beiden Steine unten zusammen.",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "mauer:?;3,4"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-mauer-1",
+     "task": "Zahlenmauer: Rechne die beiden Steine unten zusammen.",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "mauer:?;2,5"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-mauer-2",
+     "task": "Zahlenmauer: Rechne die beiden Steine unten zusammen.",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "mauer:?;1,6"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-mauer-3",
+     "task": "Zahlenmauer: Rechne die beiden Steine unten zusammen.",
+     "prompt": "",
+     "answer": "8",
+     "num": true,
+     "vis": "mauer:?;4,4"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-mauer-4",
+     "task": "Zahlenmauer: Rechne die beiden Steine unten zusammen.",
+     "prompt": "",
+     "answer": "8",
+     "num": true,
+     "vis": "mauer:?;5,3"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-mauer-5",
+     "task": "Zahlenmauer: Rechne die beiden Steine unten zusammen.",
+     "prompt": "",
+     "answer": "4",
+     "num": true,
+     "vis": "mauer:?;2,2"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-mauer3-0",
+     "task": "Zahlenmauer: Welche Zahl steht ganz oben?",
+     "prompt": "",
+     "answer": "8",
+     "num": true,
+     "vis": "mauer:?;3,5;1,2,3"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-mauer3-1",
+     "task": "Zahlenmauer: Welche Zahl steht ganz oben?",
+     "prompt": "",
+     "answer": "6",
+     "num": true,
+     "vis": "mauer:?;3,3;2,1,2"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-mauer3-2",
+     "task": "Zahlenmauer: Welche Zahl steht ganz oben?",
+     "prompt": "",
+     "answer": "8",
+     "num": true,
+     "vis": "mauer:?;4,4;1,3,1"
+    },
+    {
+     "kind": "type",
+     "id": "m1-r10-mauer3-3",
+     "task": "Zahlenmauer: Welche Zahl steht ganz oben?",
+     "prompt": "",
+     "answer": "9",
+     "num": true,
+     "vis": "mauer:?;4,5;2,2,3"
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

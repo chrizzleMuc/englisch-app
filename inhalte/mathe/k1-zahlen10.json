@@ -1,0 +1,1056 @@
+{
+ "id": "m1-zahlen10",
+ "type": "schule",
+ "title_de": "Zahlen bis 10",
+ "image": "🖐️",
+ "color": "#3b6fd8",
+ "lessons": [
+  {
+   "title": "Zählen bis 5",
+   "icon": "🖐️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl5-0",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "2",
+      "3",
+      "4"
+     ],
+     "answer": "3",
+     "vis": "menge:🍎*3",
+     "prompt": "3 × 🍎",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl5-1",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "1",
+      "2",
+      "3"
+     ],
+     "answer": "1",
+     "vis": "menge:🍓*1",
+     "prompt": "1 × 🍓",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl5-2",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "3",
+      "4",
+      "5"
+     ],
+     "answer": "5",
+     "vis": "menge:⭐*5",
+     "prompt": "5 × ⭐",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl5-3",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "1",
+      "2",
+      "3"
+     ],
+     "answer": "2",
+     "vis": "menge:🐟*2",
+     "prompt": "2 × 🐟",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl5-4",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "1",
+      "4",
+      "6"
+     ],
+     "answer": "4",
+     "vis": "menge:🎈*4",
+     "prompt": "4 × 🎈",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl5-5",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "1",
+      "3",
+      "5"
+     ],
+     "answer": "3",
+     "vis": "menge:🍌*3",
+     "prompt": "3 × 🍌",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl5-6",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "2",
+      "3",
+      "5"
+     ],
+     "answer": "5",
+     "vis": "menge:🦆*5",
+     "prompt": "5 × 🦆",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl5-7",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "2",
+      "3",
+      "4"
+     ],
+     "answer": "2",
+     "vis": "menge:🐸*2",
+     "prompt": "2 × 🐸",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl5-8",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "4",
+      "5",
+      "6"
+     ],
+     "answer": "4",
+     "vis": "menge:🚗*4",
+     "prompt": "4 × 🚗",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl5-9",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "1",
+      "2",
+      "3"
+     ],
+     "answer": "1",
+     "vis": "menge:⚽*1",
+     "prompt": "1 × ⚽",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Zählen bis 10",
+   "icon": "🔟",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl10-0",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "8",
+      "10",
+      "7"
+     ],
+     "answer": "7",
+     "vis": "menge:🐟*7",
+     "prompt": "7 × 🐟",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl10-1",
+     "task": "Wie viele Punkte sind es?",
+     "options": [
+      "9",
+      "6",
+      "7"
+     ],
+     "answer": "6",
+     "vis": "feld:6",
+     "prompt": "6 Punkte",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl10-2",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "9",
+      "10",
+      "6"
+     ],
+     "answer": "9",
+     "vis": "menge:🍌*9",
+     "prompt": "9 × 🍌",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl10-3",
+     "task": "Wie viele Punkte sind es?",
+     "options": [
+      "8",
+      "9",
+      "10"
+     ],
+     "answer": "8",
+     "vis": "feld:8",
+     "prompt": "8 Punkte",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl10-4",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "8",
+      "10",
+      "7"
+     ],
+     "answer": "10",
+     "vis": "menge:🐸*10",
+     "prompt": "10 × 🐸",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl10-5",
+     "task": "Wie viele Punkte sind es?",
+     "options": [
+      "8",
+      "9",
+      "6"
+     ],
+     "answer": "6",
+     "vis": "feld:6",
+     "prompt": "6 Punkte",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl10-6",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "8",
+      "10",
+      "7"
+     ],
+     "answer": "8",
+     "vis": "menge:⚽*8",
+     "prompt": "8 × ⚽",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl10-7",
+     "task": "Wie viele Punkte sind es?",
+     "options": [
+      "9",
+      "5",
+      "7"
+     ],
+     "answer": "7",
+     "vis": "feld:7",
+     "prompt": "7 Punkte",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl10-8",
+     "task": "Wie viele sind es? Zähle!",
+     "options": [
+      "8",
+      "9",
+      "7"
+     ],
+     "answer": "9",
+     "vis": "menge:🍓*9",
+     "prompt": "9 × 🍓",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zaehl10-9",
+     "task": "Wie viele Punkte sind es?",
+     "options": [
+      "8",
+      "9",
+      "10"
+     ],
+     "answer": "10",
+     "vis": "feld:10",
+     "prompt": "10 Punkte",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Zahlen zeigen",
+   "icon": "🔴",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-z10-zeig-0",
+     "task": "Welches Feld zeigt die Zahl?",
+     "options": [
+      "feld:4",
+      "feld:6",
+      "feld:7"
+     ],
+     "answer": "feld:4",
+     "prompt": "4",
+     "showText": true,
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zeig-1",
+     "task": "Welches Feld zeigt die Zahl?",
+     "options": [
+      "feld:9",
+      "feld:10",
+      "feld:7"
+     ],
+     "answer": "feld:7",
+     "prompt": "7",
+     "showText": true,
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zeig-2",
+     "task": "Welches Feld zeigt die Zahl?",
+     "options": [
+      "feld:8",
+      "feld:9",
+      "feld:6"
+     ],
+     "answer": "feld:9",
+     "prompt": "9",
+     "showText": true,
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zeig-3",
+     "task": "Welches Feld zeigt die Zahl?",
+     "options": [
+      "feld:3",
+      "feld:4",
+      "feld:6"
+     ],
+     "answer": "feld:3",
+     "prompt": "3",
+     "showText": true,
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zeig-4",
+     "task": "Welches Feld zeigt die Zahl?",
+     "options": [
+      "feld:8",
+      "feld:4",
+      "feld:6"
+     ],
+     "answer": "feld:6",
+     "prompt": "6",
+     "showText": true,
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zeig-5",
+     "task": "Welches Feld zeigt die Zahl?",
+     "options": [
+      "feld:9",
+      "feld:10",
+      "feld:7"
+     ],
+     "answer": "feld:10",
+     "prompt": "10",
+     "showText": true,
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zeig-6",
+     "task": "Welches Feld zeigt die Zahl?",
+     "options": [
+      "feld:8",
+      "feld:10",
+      "feld:7"
+     ],
+     "answer": "feld:8",
+     "prompt": "8",
+     "showText": true,
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-zeig-7",
+     "task": "Welches Feld zeigt die Zahl?",
+     "options": [
+      "feld:8",
+      "feld:5",
+      "feld:6"
+     ],
+     "answer": "feld:5",
+     "prompt": "5",
+     "showText": true,
+     "visOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Nachbarzahlen",
+   "icon": "🚂",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-z10-nach-0",
+     "task": "Welche Zahl kommt danach?",
+     "prompt": "",
+     "answer": "4",
+     "num": true,
+     "vis": "zug:3,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-nach-1",
+     "task": "Welche Zahl kommt davor?",
+     "prompt": "",
+     "answer": "5",
+     "num": true,
+     "vis": "zug:?,6"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-nach-2",
+     "task": "Welche Zahl kommt danach?",
+     "prompt": "",
+     "answer": "9",
+     "num": true,
+     "vis": "zug:8,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-nach-3",
+     "task": "Welche Zahl kommt davor?",
+     "prompt": "",
+     "answer": "0",
+     "num": true,
+     "vis": "zug:?,1"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-nach-4",
+     "task": "Welche Zahl kommt danach?",
+     "prompt": "",
+     "answer": "6",
+     "num": true,
+     "vis": "zug:5,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-nach-5",
+     "task": "Welche Zahl kommt davor?",
+     "prompt": "",
+     "answer": "8",
+     "num": true,
+     "vis": "zug:?,9"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-nach-6",
+     "task": "Welche Zahl kommt danach?",
+     "prompt": "",
+     "answer": "5",
+     "num": true,
+     "vis": "zug:4,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-nach-7",
+     "task": "Welche Zahl kommt davor?",
+     "prompt": "",
+     "answer": "6",
+     "num": true,
+     "vis": "zug:?,7"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-nach-8",
+     "task": "Welche Zahl kommt danach?",
+     "prompt": "",
+     "answer": "3",
+     "num": true,
+     "vis": "zug:2,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-nach-9",
+     "task": "Welche Zahl kommt davor?",
+     "prompt": "",
+     "answer": "5",
+     "num": true,
+     "vis": "zug:?,6"
+    }
+   ]
+  },
+  {
+   "title": "Reihenfolge",
+   "icon": "🔢",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-z10-reihe-0",
+     "task": "Welche Zahl fehlt im Zug?",
+     "prompt": "",
+     "answer": "2",
+     "num": true,
+     "vis": "zug:1,?,3,4"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-reihe-1",
+     "task": "Welche Zahl fehlt im Zug?",
+     "prompt": "",
+     "answer": "5",
+     "num": true,
+     "vis": "zug:3,4,?,6"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-reihe-2",
+     "task": "Welche Zahl fehlt im Zug?",
+     "prompt": "",
+     "answer": "8",
+     "num": true,
+     "vis": "zug:5,6,7,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-reihe-3",
+     "task": "Welche Zahl fehlt im Zug?",
+     "prompt": "",
+     "answer": "8",
+     "num": true,
+     "vis": "zug:7,?,9,10"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-reihe-4",
+     "task": "Welche Zahl fehlt im Zug?",
+     "prompt": "",
+     "answer": "8",
+     "num": true,
+     "vis": "zug:10,9,?,7"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-reihe-5",
+     "task": "Welche Zahl fehlt im Zug?",
+     "prompt": "",
+     "answer": "3",
+     "num": true,
+     "vis": "zug:6,5,4,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-reihe-6",
+     "task": "Welche Zahl fehlt im Zug?",
+     "prompt": "",
+     "answer": "3",
+     "num": true,
+     "vis": "zug:2,?,4,5"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-reihe-7",
+     "task": "Welche Zahl fehlt im Zug?",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "zug:9,8,?,6"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-reihe-8",
+     "task": "Welche Zahl fehlt im Zug?",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "zug:4,5,6,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-reihe-9",
+     "task": "Welche Zahl fehlt im Zug?",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "zug:8,?,6,5"
+    }
+   ]
+  },
+  {
+   "title": "Zahlen zerlegen",
+   "icon": "🏠",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-z10-haus-0",
+     "task": "Zahlenhaus: Welche Zahl fehlt?",
+     "prompt": "",
+     "answer": "3",
+     "num": true,
+     "vis": "haus:5;?,2"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-haus-1",
+     "task": "Zahlenhaus: Welche Zahl fehlt?",
+     "prompt": "",
+     "answer": "2",
+     "num": true,
+     "vis": "haus:6;4,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-haus-2",
+     "task": "Zahlenhaus: Welche Zahl fehlt?",
+     "prompt": "",
+     "answer": "4",
+     "num": true,
+     "vis": "haus:7;?,3"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-haus-3",
+     "task": "Zahlenhaus: Welche Zahl fehlt?",
+     "prompt": "",
+     "answer": "3",
+     "num": true,
+     "vis": "haus:4;1,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-haus-4",
+     "task": "Zahlenhaus: Welche Zahl fehlt?",
+     "prompt": "",
+     "answer": "3",
+     "num": true,
+     "vis": "haus:8;?,5"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-haus-5",
+     "task": "Zahlenhaus: Welche Zahl fehlt?",
+     "prompt": "",
+     "answer": "5",
+     "num": true,
+     "vis": "haus:9;4,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-haus-6",
+     "task": "Zahlenhaus: Welche Zahl fehlt?",
+     "prompt": "",
+     "answer": "5",
+     "num": true,
+     "vis": "haus:6;?,1"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-haus-7",
+     "task": "Zahlenhaus: Welche Zahl fehlt?",
+     "prompt": "",
+     "answer": "2",
+     "num": true,
+     "vis": "haus:7;5,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-haus-8",
+     "task": "Zahlenhaus: Welche Zahl fehlt?",
+     "prompt": "",
+     "answer": "6",
+     "num": true,
+     "vis": "haus:8;?,2"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-haus-9",
+     "task": "Zahlenhaus: Welche Zahl fehlt?",
+     "prompt": "",
+     "answer": "3",
+     "num": true,
+     "vis": "haus:9;6,?"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-haus-10",
+     "task": "Zahlenhaus: Welche Zahl fehlt?",
+     "prompt": "",
+     "answer": "2",
+     "num": true,
+     "vis": "haus:5;?,3"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-haus-11",
+     "task": "Zahlenhaus: Welche Zahl fehlt?",
+     "prompt": "",
+     "answer": "6",
+     "num": true,
+     "vis": "haus:10;4,?"
+    }
+   ]
+  },
+  {
+   "title": "Partnerzahlen",
+   "icon": "🤝",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m1-z10-partner-0",
+     "task": "Wie viele Punkte fehlen bis 10?",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "feld:3"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-partner-1",
+     "task": "Partnerzahlen: Zusammen sind es 10.",
+     "prompt": "7 + ☐ = 10",
+     "answer": "3",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-partner-2",
+     "task": "Wie viele Punkte fehlen bis 10?",
+     "prompt": "",
+     "answer": "5",
+     "num": true,
+     "vis": "feld:5"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-partner-3",
+     "task": "Partnerzahlen: Zusammen sind es 10.",
+     "prompt": "1 + ☐ = 10",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-partner-4",
+     "task": "Wie viele Punkte fehlen bis 10?",
+     "prompt": "",
+     "answer": "2",
+     "num": true,
+     "vis": "feld:8"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-partner-5",
+     "task": "Partnerzahlen: Zusammen sind es 10.",
+     "prompt": "4 + ☐ = 10",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-partner-6",
+     "task": "Wie viele Punkte fehlen bis 10?",
+     "prompt": "",
+     "answer": "4",
+     "num": true,
+     "vis": "feld:6"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-partner-7",
+     "task": "Partnerzahlen: Zusammen sind es 10.",
+     "prompt": "2 + ☐ = 10",
+     "answer": "8",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-partner-8",
+     "task": "Wie viele Punkte fehlen bis 10?",
+     "prompt": "",
+     "answer": "1",
+     "num": true,
+     "vis": "feld:9"
+    },
+    {
+     "kind": "type",
+     "id": "m1-z10-partner-9",
+     "task": "Partnerzahlen: Zusammen sind es 10.",
+     "prompt": "0 + ☐ = 10",
+     "answer": "10",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Vergleichen",
+   "icon": "⚖️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m1-z10-vgl-0",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "<",
+     "prompt": "3 ☐ 5",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-vgl-1",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": ">",
+     "prompt": "7 ☐ 4",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-vgl-2",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "=",
+     "prompt": "6 ☐ 6",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-vgl-3",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "<",
+     "prompt": "2 ☐ 9",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-vgl-4",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": ">",
+     "prompt": "8 ☐ 1",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-vgl-5",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "=",
+     "prompt": "5 ☐ 5",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-vgl-6",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "<",
+     "prompt": "4 ☐ 7",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-vgl-7",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": ">",
+     "prompt": "10 ☐ 6",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-vgl-8",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "<",
+     "prompt": "1 ☐ 2",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-vgl-9",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "=",
+     "prompt": "9 ☐ 9",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-vgl-10",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "<",
+     "prompt": "0 ☐ 3",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-vgl-11",
+     "task": "Was passt in die Lücke? Kleiner, größer oder gleich?",
+     "options": [
+      "<",
+      ">",
+      "="
+     ],
+     "answer": "<",
+     "prompt": "6 ☐ 8",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-mehr-0",
+     "task": "Wo sind mehr?",
+     "options": [
+      "menge:🍎*3",
+      "menge:🍎*5"
+     ],
+     "answer": "menge:🍎*5",
+     "visOptions": true,
+     "prompt": "3 oder 5"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-mehr-1",
+     "task": "Wo sind mehr?",
+     "options": [
+      "menge:🍓*6",
+      "menge:🍓*4"
+     ],
+     "answer": "menge:🍓*6",
+     "visOptions": true,
+     "prompt": "6 oder 4"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-mehr-2",
+     "task": "Wo sind mehr?",
+     "options": [
+      "menge:⭐*2",
+      "menge:⭐*7"
+     ],
+     "answer": "menge:⭐*7",
+     "visOptions": true,
+     "prompt": "2 oder 7"
+    },
+    {
+     "kind": "choice",
+     "id": "m1-z10-mehr-3",
+     "task": "Wo sind mehr?",
+     "options": [
+      "menge:🐟*8",
+      "menge:🐟*5"
+     ],
+     "answer": "menge:🐟*8",
+     "visOptions": true,
+     "prompt": "8 oder 5"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "m1-z10-heft",
+     "task": "Schreib die Zahlen von 1 bis 10 in dein Heft. Jede Zahl eine ganze Reihe. Schön langsam!"
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "id": "d1-ausmalen",
+ "type": "schule",
+ "title_de": "Ausmalbilder: Silben lesen",
+ "image": "🎨",
+ "color": "#8e5cd9",
+ "lessons": [
+  {
+   "title": "Eichhörnchen: im am mi ma",
+   "icon": "🎨",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-eichhoernchen",
+     "task": "Lies die Silben. Tipp eine Farbe an, dann die passenden Flächen.",
+     "prompt": "Ausmalbild Eichhörnchen: im, am, mi, ma",
+     "image": "img/malen/eichhoernchen.png",
+     "map": "img/malen/eichhoernchen-map.png",
+     "regions": {
+      "1": "mi",
+      "2": "mi",
+      "3": "am",
+      "4": "am",
+      "5": "am",
+      "6": "am",
+      "7": "am",
+      "8": "im",
+      "9": "mi",
+      "10": "mi",
+      "11": "im",
+      "12": "im",
+      "13": "mi",
+      "14": "im",
+      "15": "am",
+      "16": "am",
+      "17": "am",
+      "18": "im",
+      "19": "ma",
+      "20": "im",
+      "21": "im",
+      "22": "mi",
+      "23": "ma",
+      "24": "ma",
+      "25": "im",
+      "26": "ma",
+      "27": "ma",
+      "28": "ma"
+     },
+     "colors": [
+      {
+       "key": "im",
+       "label": "im",
+       "color": "#8d5a32"
+      },
+      {
+       "key": "am",
+       "label": "am",
+       "color": "#2e7d32"
+      },
+      {
+       "key": "mi",
+       "label": "mi",
+       "color": "#5aa9f0"
+      },
+      {
+       "key": "ma",
+       "label": "ma",
+       "color": "#9bd36a"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pirateninsel: im am mi ma",
+   "icon": "⛵",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "k1-mal-piraten",
+     "task": "Lies die Silben. Tipp eine Farbe an, dann die passenden Flächen.",
+     "prompt": "Ausmalbild Pirateninsel: im, am, mi, ma",
+     "image": "img/malen/piraten.png",
+     "map": "img/malen/piraten-map.png",
+     "regions": {
+      "1": "mi",
+      "2": "mi",
+      "3": "am",
+      "4": "am",
+      "5": "mi",
+      "6": "im",
+      "7": "mi",
+      "8": "ma",
+      "9": "am",
+      "10": "am",
+      "11": "im",
+      "12": "ma",
+      "13": "mi",
+      "14": "im",
+      "15": "im",
+      "16": "am",
+      "17": "im",
+      "18": "ma",
+      "19": "ma",
+      "20": "ma",
+      "21": "im",
+      "22": "im",
+      "23": "im",
+      "24": "mi",
+      "25": "mi"
+     },
+     "colors": [
+      {
+       "key": "im",
+       "label": "im",
+       "color": "#8d5a32"
+      },
+      {
+       "key": "am",
+       "label": "am",
+       "color": "#2e7d32"
+      },
+      {
+       "key": "mi",
+       "label": "mi",
+       "color": "#5aa9f0"
+      },
+      {
+       "key": "ma",
+       "label": "ma",
+       "color": "#9bd36a"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

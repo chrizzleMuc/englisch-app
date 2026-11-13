@@ -1,5 +1,5 @@
 // Offline-Speicher: Bei jeder Änderung an der App VERSION erhöhen.
-const VERSION = "learnino-26";
+const VERSION = "learnino-27";
 const FILES = [
   "./",
   "index.html",
@@ -16,6 +16,13 @@ const FILES = [
   "js/content.js",
   "js/photos.js",
   "js/pics.js",
+  "js/mathpics.js",
+  "img/malen/eichhoernchen.png",
+  "img/malen/eichhoernchen-map.png",
+  "img/malen/piraten.png",
+  "img/malen/piraten-map.png",
+  "img/emoji/1f91d.webp",
+  "img/emoji/26aa.webp",
   "img/emoji/1f319.webp",
   "img/emoji/1f31e.webp",
   "img/emoji/1f327.webp",
@@ -250,6 +257,7 @@ const FILES = [
   "img/emoji/38-20e3.webp",
   "img/emoji/39-20e3.webp",
   "inhalte/deutsch/k1-anlaute.json",
+  "inhalte/deutsch/k1-ausmalen.json",
   "inhalte/deutsch/k1-buchstaben2.json",
   "inhalte/deutsch/k1-lesen.json",
   "inhalte/deutsch/k1-lesen2.json",
@@ -271,6 +279,13 @@ const FILES = [
   "inhalte/englisch/s1-festivals.json",
   "inhalte/englisch/s1-hello.json",
   "inhalte/englisch/s1-numbers.json",
+  "inhalte/mathe/k1-zahlen10.json",
+  "inhalte/mathe/k1-rechnen10.json",
+  "inhalte/mathe/k1-zahlen20.json",
+  "inhalte/mathe/k1-rechnen20.json",
+  "inhalte/mathe/k1-groessen.json",
+  "inhalte/mathe/k1-formen.json",
+  "inhalte/mathe/k1-zehnerzahlen.json",
   "inhalte/mathe/k3-einmaleins.json",
   "inhalte/mathe/k3-groessen.json",
   "inhalte/mathe/k3-rechnen100.json",
