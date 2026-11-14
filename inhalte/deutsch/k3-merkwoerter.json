@@ -1,0 +1,618 @@
+{
+ "id": "d3-merkwoerter",
+ "type": "schule",
+ "title_de": "Merkwörter mit langem i",
+ "image": "🔑",
+ "color": "#c2588f",
+ "lessons": [
+  {
+   "title": "Langes i ohne e",
+   "icon": "🐅",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-mw-li-das-k-no",
+     "task": "i oder ie?",
+     "prompt": "das K_no",
+     "options": [
+      "i",
+      "ie"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Kino – langes i ohne e. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-li-der-t-ger",
+     "task": "i oder ie?",
+     "prompt": "der T_ger",
+     "options": [
+      "i",
+      "ie"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Tiger – langes i ohne e. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-li-der-gel",
+     "task": "i oder ie?",
+     "prompt": "der _gel",
+     "options": [
+      "I",
+      "Ie"
+     ],
+     "answer": "I",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Igel – langes i ohne e. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-li-der-b-ber",
+     "task": "i oder ie?",
+     "prompt": "der B_ber",
+     "options": [
+      "i",
+      "ie"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Biber – langes i ohne e. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-li-das-krokod-l",
+     "task": "i oder ie?",
+     "prompt": "das Krokod_l",
+     "options": [
+      "i",
+      "ie"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Krokodil – langes i ohne e. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-li-die-masch-ne",
+     "task": "i oder ie?",
+     "prompt": "die Masch_ne",
+     "options": [
+      "i",
+      "ie"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Maschine – langes i ohne e. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-li-das-benz-n",
+     "task": "i oder ie?",
+     "prompt": "das Benz_n",
+     "options": [
+      "i",
+      "ie"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Benzin – langes i ohne e. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-li-der-kam-n",
+     "task": "i oder ie?",
+     "prompt": "der Kam_n",
+     "options": [
+      "i",
+      "ie"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Kamin – langes i ohne e. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-li-die-mus-k",
+     "task": "i oder ie?",
+     "prompt": "die Mus_k",
+     "options": [
+      "i",
+      "ie"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Musik – langes i ohne e. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-li-die-mandar-ne",
+     "task": "i oder ie?",
+     "prompt": "die Mandar_ne",
+     "options": [
+      "i",
+      "ie"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Mandarine – langes i ohne e. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-li-die-med-zin",
+     "task": "i oder ie?",
+     "prompt": "die Med_zin",
+     "options": [
+      "i",
+      "ie"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Medizin – langes i ohne e. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-li-die-fabr-k",
+     "task": "i oder ie?",
+     "prompt": "die Fabr_k",
+     "options": [
+      "i",
+      "ie"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Fabrik – langes i ohne e. Merkwort!"
+    }
+   ]
+  },
+  {
+   "title": "i, ie oder ih",
+   "icon": "🐝",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-das-k-no",
+     "task": "i, ie oder ih?",
+     "prompt": "das K_no",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Kino – Merkwort mit langem i ohne e."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-der-t-ger",
+     "task": "i, ie oder ih?",
+     "prompt": "der T_ger",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Tiger – Merkwort mit langem i ohne e."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-der-b-ber",
+     "task": "i, ie oder ih?",
+     "prompt": "der B_ber",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Biber – Merkwort mit langem i ohne e."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-das-krokod-l",
+     "task": "i, ie oder ih?",
+     "prompt": "das Krokod_l",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Krokodil – Merkwort mit langem i ohne e."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-die-masch-ne",
+     "task": "i, ie oder ih?",
+     "prompt": "die Masch_ne",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "i",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Maschine – Merkwort mit langem i ohne e."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-die-b-ne",
+     "task": "i, ie oder ih?",
+     "prompt": "die B_ne",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "ie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Biene – Meistens schreibt man langes i als ie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-die-w-se",
+     "task": "i, ie oder ih?",
+     "prompt": "die W_se",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "ie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Wiese – Meistens schreibt man langes i als ie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-der-sp-gel",
+     "task": "i, ie oder ih?",
+     "prompt": "der Sp_gel",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "ie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Spiegel – Meistens schreibt man langes i als ie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-die-z-ge",
+     "task": "i, ie oder ih?",
+     "prompt": "die Z_ge",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "ie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Ziege – Meistens schreibt man langes i als ie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-das-t-r",
+     "task": "i, ie oder ih?",
+     "prompt": "das T_r",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "ie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Tier – Meistens schreibt man langes i als ie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-sch-f",
+     "task": "i, ie oder ih?",
+     "prompt": "sch_f",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "ie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "schief – Meistens schreibt man langes i als ie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-der-br-f",
+     "task": "i, ie oder ih?",
+     "prompt": "der Br_f",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "ie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Brief – Meistens schreibt man langes i als ie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-fl-gen",
+     "task": "i, ie oder ih?",
+     "prompt": "fl_gen",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "ie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "fliegen – Meistens schreibt man langes i als ie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-r",
+     "task": "i, ie oder ih?",
+     "prompt": "_r",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "ih",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ihr – ihr, ihm, ihn, ihnen schreibt man mit ih."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-m",
+     "task": "i, ie oder ih?",
+     "prompt": "_m",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "ih",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ihm – ihr, ihm, ihn, ihnen schreibt man mit ih."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-n",
+     "task": "i, ie oder ih?",
+     "prompt": "_n",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "ih",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ihn – ihr, ihm, ihn, ihnen schreibt man mit ih."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-mx-nen",
+     "task": "i, ie oder ih?",
+     "prompt": "_nen",
+     "options": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "answer": "ih",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ihnen – ihr, ihm, ihn, ihnen schreibt man mit ih."
+    },
+    {
+     "kind": "sort",
+     "task": "Sortiere die Wörter.",
+     "review": "i, ie oder ih?",
+     "groups": [
+      "i",
+      "ie",
+      "ih"
+     ],
+     "items": [
+      {
+       "id": "d3-mw-so-das-kino",
+       "text": "das Kino",
+       "group": "i"
+      },
+      {
+       "id": "d3-mw-so-der-tiger",
+       "text": "der Tiger",
+       "group": "i"
+      },
+      {
+       "id": "d3-mw-so-das-krokodil",
+       "text": "das Krokodil",
+       "group": "i"
+      },
+      {
+       "id": "d3-mw-so-die-biene",
+       "text": "die Biene",
+       "group": "ie"
+      },
+      {
+       "id": "d3-mw-so-die-wiese",
+       "text": "die Wiese",
+       "group": "ie"
+      },
+      {
+       "id": "d3-mw-so-fliegen",
+       "text": "fliegen",
+       "group": "ie"
+      },
+      {
+       "id": "d3-mw-so-ihr",
+       "text": "ihr",
+       "group": "ih"
+      },
+      {
+       "id": "d3-mw-so-ihm",
+       "text": "ihm",
+       "group": "ih"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Richtig geschrieben?",
+   "icon": "👀",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-mw-rg-kino",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "options": [
+      "Kino",
+      "Kieno"
+     ],
+     "answer": "Kino",
+     "keepOrder": false,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-rg-2-tiger",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "options": [
+      "Tiger",
+      "Tieger"
+     ],
+     "answer": "Tiger",
+     "keepOrder": false,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-rg-3-igel",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "options": [
+      "Igel",
+      "Iegel"
+     ],
+     "answer": "Igel",
+     "keepOrder": false,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-rg-4-biene",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "options": [
+      "Biene",
+      "Bine"
+     ],
+     "answer": "Biene",
+     "keepOrder": false,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-rg-5-musik",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "options": [
+      "Musik",
+      "Musiek"
+     ],
+     "answer": "Musik",
+     "keepOrder": false,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-rg-6-ihm",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "options": [
+      "ihm",
+      "iem"
+     ],
+     "answer": "ihm",
+     "keepOrder": false,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-rg-7-maschine",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "options": [
+      "Maschine",
+      "Maschiene"
+     ],
+     "answer": "Maschine",
+     "keepOrder": false,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-mw-rg-8-wiese",
+     "task": "Welches Wort ist richtig geschrieben?",
+     "options": [
+      "Wiese",
+      "Wise"
+     ],
+     "answer": "Wiese",
+     "keepOrder": false,
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-mw-foto",
+     "task": "Schreib diese Merkwörter in dein Heft: Kino, Tiger, Igel, Krokodil, Maschine, Musik, ihr, ihm. Markiere das i."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

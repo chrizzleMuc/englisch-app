@@ -1,0 +1,430 @@
+{
+ "id": "d3-fehler-finden",
+ "type": "schule",
+ "title_de": "Fehler finden und berichtigen",
+ "image": "🔍",
+ "color": "#3f8f6f",
+ "lessons": [
+  {
+   "title": "Fehler finden 1",
+   "icon": "🔎",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-der-hunt-bellt-laut",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Der Hunt bellt laut.",
+     "options": [
+      "Der",
+      "Hunt",
+      "bellt"
+     ],
+     "answer": "Hunt",
+     "keepOrder": true,
+     "explain": "Richtig: Hund. Verlängern: die Hunde → Hund"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-im-walt-wohnt-ein-fuchs",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Im Walt wohnt ein Fuchs.",
+     "options": [
+      "Walt",
+      "wohnt",
+      "ein"
+     ],
+     "answer": "Walt",
+     "keepOrder": true,
+     "explain": "Richtig: Wald. Verlängern: die Wälder → Wald"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-das-kint-spielt",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Das Kint spielt.",
+     "options": [
+      "Das",
+      "Kint",
+      "spielt"
+     ],
+     "answer": "Kint",
+     "keepOrder": true,
+     "explain": "Richtig: Kind. Verlängern: die Kinder → Kind"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-der-zuk-faehrt-schnell",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Der Zuk fährt schnell.",
+     "options": [
+      "Der",
+      "Zuk",
+      "fährt"
+     ],
+     "answer": "Zuk",
+     "keepOrder": true,
+     "explain": "Richtig: Zug. Verlängern: die Züge → Zug"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-mein-korp-ist-voll",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Mein Korp ist voll.",
+     "options": [
+      "Mein",
+      "Korp",
+      "ist"
+     ],
+     "answer": "Korp",
+     "keepOrder": true,
+     "explain": "Richtig: Korb. Verlängern: die Körbe → Korb"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-die-keckse-sind-lecker",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Die Keckse sind lecker.",
+     "options": [
+      "Die",
+      "Keckse",
+      "sind"
+     ],
+     "answer": "Keckse",
+     "keepOrder": true,
+     "explain": "Richtig: Kekse. Keks schreibt man mit ks."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-wir-schwimen-im-see",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Wir schwimen im See.",
+     "options": [
+      "Wir",
+      "schwimen",
+      "See"
+     ],
+     "answer": "schwimen",
+     "keepOrder": true,
+     "explain": "Richtig: schwimmen. Kurzer Selbstlaut: schwim-men → mm"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-die-kaze-schlaeft",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Die Kaze schläft.",
+     "options": [
+      "Die",
+      "Kaze",
+      "schläft"
+     ],
+     "answer": "Kaze",
+     "keepOrder": true,
+     "explain": "Richtig: Katze. Kurzer Selbstlaut: Kat-ze → tz"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-ich-backe-einen-kuchen-mit-z",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Ich backe einen Kuchen mit Zuker.",
+     "options": [
+      "Ich",
+      "backe",
+      "Zuker"
+     ],
+     "answer": "Zuker",
+     "keepOrder": true,
+     "explain": "Richtig: Zucker. Kurzer Selbstlaut: Zu-cker → ck"
+    }
+   ]
+  },
+  {
+   "title": "Fehler finden 2",
+   "icon": "🔎",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-die-beume-sind-gruen",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Die Beume sind grün.",
+     "options": [
+      "Die",
+      "Beume",
+      "sind"
+     ],
+     "answer": "Beume",
+     "keepOrder": true,
+     "explain": "Richtig: Bäume. Ableiten: der Baum → die Bäume"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-die-hende-sind-kalt",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Die Hende sind kalt.",
+     "options": [
+      "Die",
+      "Hende",
+      "sind"
+     ],
+     "answer": "Hende",
+     "keepOrder": true,
+     "explain": "Richtig: Hände. Ableiten: die Hand → die Hände"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-der-tieger-bruellt",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Der Tieger brüllt.",
+     "options": [
+      "Der",
+      "Tieger",
+      "brüllt"
+     ],
+     "answer": "Tieger",
+     "keepOrder": true,
+     "explain": "Richtig: Tiger. Tiger ist ein Merkwort mit i."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-wir-fahren-auf-der-schtrasse",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Wir fahren auf der Schtraße.",
+     "options": [
+      "Wir",
+      "fahren",
+      "Schtraße"
+     ],
+     "answer": "Schtraße",
+     "keepOrder": true,
+     "explain": "Richtig: Straße. Am Anfang schreibt man St, nicht Scht."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-die-kwalle-schwimmt",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Die kwalle schwimmt.",
+     "options": [
+      "Die",
+      "kwalle",
+      "schwimmt"
+     ],
+     "answer": "kwalle",
+     "keepOrder": true,
+     "explain": "Richtig: Qualle. Qualle mit Qu – und groß, weil es ein Nomen ist."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-am-abend-lese-ich",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "am Abend lese ich.",
+     "options": [
+      "am",
+      "Abend",
+      "lese"
+     ],
+     "answer": "am",
+     "keepOrder": true,
+     "explain": "Richtig: Am. Am Satzanfang schreibt man groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-wir-spielen-im-garten",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Wir spielen im garten.",
+     "options": [
+      "Wir",
+      "spielen",
+      "garten"
+     ],
+     "answer": "garten",
+     "keepOrder": true,
+     "explain": "Richtig: Garten. Garten ist ein Nomen: groß!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-der-vogel-flikt-hoch",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Der Vogel flikt hoch.",
+     "options": [
+      "Der",
+      "Vogel",
+      "flikt"
+     ],
+     "answer": "flikt",
+     "keepOrder": true,
+     "explain": "Richtig: fliegt. Verlängern: fliegen → fliegt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ff-fi-der-ball-ist-rund-und-bunnt",
+     "task": "Welches Wort ist falsch geschrieben?",
+     "prompt": "Der Ball ist rund und bunnt.",
+     "options": [
+      "Der",
+      "Ball",
+      "bunnt"
+     ],
+     "answer": "bunnt",
+     "keepOrder": true,
+     "explain": "Richtig: bunt. Nach dem kurzen u hörst du schon zwei Mitlaute (n, t): nichts verdoppeln."
+    }
+   ]
+  },
+  {
+   "title": "Richtig schreiben 1",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-der-hunt-bellt-laut-hund",
+     "task": "Schreib das falsche Wort richtig: „Hunt“",
+     "prompt": "Der Hunt bellt laut.",
+     "answer": "Hund"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-im-walt-wohnt-ein-fuchs-wald",
+     "task": "Schreib das falsche Wort richtig: „Walt“",
+     "prompt": "Im Walt wohnt ein Fuchs.",
+     "answer": "Wald"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-das-kint-spielt-kind",
+     "task": "Schreib das falsche Wort richtig: „Kint“",
+     "prompt": "Das Kint spielt.",
+     "answer": "Kind"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-der-zuk-faehrt-schnell-zug",
+     "task": "Schreib das falsche Wort richtig: „Zuk“",
+     "prompt": "Der Zuk fährt schnell.",
+     "answer": "Zug"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-mein-korp-ist-voll-korb",
+     "task": "Schreib das falsche Wort richtig: „Korp“",
+     "prompt": "Mein Korp ist voll.",
+     "answer": "Korb"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-die-keckse-sind-lecker-kekse",
+     "task": "Schreib das falsche Wort richtig: „Keckse“",
+     "prompt": "Die Keckse sind lecker.",
+     "answer": "Kekse"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-wir-schwimen-im-see-schwimme",
+     "task": "Schreib das falsche Wort richtig: „schwimen“",
+     "prompt": "Wir schwimen im See.",
+     "answer": "schwimmen"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-die-kaze-schlaeft-katze",
+     "task": "Schreib das falsche Wort richtig: „Kaze“",
+     "prompt": "Die Kaze schläft.",
+     "answer": "Katze"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-ich-backe-einen-kuchen-mit-z",
+     "task": "Schreib das falsche Wort richtig: „Zuker“",
+     "prompt": "Ich backe einen Kuchen mit Zuker.",
+     "answer": "Zucker"
+    }
+   ]
+  },
+  {
+   "title": "Richtig schreiben 2",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-die-beume-sind-gruen-baeume",
+     "task": "Schreib das falsche Wort richtig: „Beume“",
+     "prompt": "Die Beume sind grün.",
+     "answer": "Bäume"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-die-hende-sind-kalt-haende",
+     "task": "Schreib das falsche Wort richtig: „Hende“",
+     "prompt": "Die Hende sind kalt.",
+     "answer": "Hände"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-der-tieger-bruellt-tiger",
+     "task": "Schreib das falsche Wort richtig: „Tieger“",
+     "prompt": "Der Tieger brüllt.",
+     "answer": "Tiger"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-wir-fahren-auf-der-schtrasse",
+     "task": "Schreib das falsche Wort richtig: „Schtraße“",
+     "prompt": "Wir fahren auf der Schtraße.",
+     "answer": "Straße"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-die-kwalle-schwimmt-qualle",
+     "task": "Schreib das falsche Wort richtig: „kwalle“",
+     "prompt": "Die kwalle schwimmt.",
+     "answer": "Qualle"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-am-abend-lese-ich-am",
+     "task": "Schreib das falsche Wort richtig: „am“",
+     "prompt": "am Abend lese ich.",
+     "answer": "Am"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-wir-spielen-im-garten-garten",
+     "task": "Schreib das falsche Wort richtig: „garten“",
+     "prompt": "Wir spielen im garten.",
+     "answer": "Garten"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-der-vogel-flikt-hoch-fliegt",
+     "task": "Schreib das falsche Wort richtig: „flikt“",
+     "prompt": "Der Vogel flikt hoch.",
+     "answer": "fliegt"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ff-sc-der-ball-ist-rund-und-bunnt",
+     "task": "Schreib das falsche Wort richtig: „bunnt“",
+     "prompt": "Der Ball ist rund und bunnt.",
+     "answer": "bunt"
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-ff-foto",
+     "task": "Nimm einen Text aus deinem Heft. Such 3 Fehler oder schwierige Wörter und schreib dazu, wie du es prüfst (verlängern, ableiten, Merkwort)."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

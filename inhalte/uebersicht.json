@@ -37,7 +37,24 @@
             "deutsch/k3-ableiten.json",
             "deutsch/k3-vorsilben.json",
             "deutsch/k3-unregelmaessige-verben.json",
-            "deutsch/k3-worttrennung.json"
+            "deutsch/k3-worttrennung.json",
+            "deutsch/k3-besondere-laute.json",
+            "deutsch/k3-merkwoerter.json",
+            "deutsch/k3-grossschreibung.json",
+            "deutsch/k3-fehler-finden.json"
+          ]
+        },
+        {
+          "id": "deutsch-k3-grammatik",
+          "title": "3. Klasse · Grammatik",
+          "kinder": [
+            "pirat"
+          ],
+          "units": [
+            "deutsch/k3-artikel-pronomen.json",
+            "deutsch/k3-verben.json",
+            "deutsch/k3-nomen-endungen.json",
+            "deutsch/k3-adjektive.json"
           ]
         }
       ]

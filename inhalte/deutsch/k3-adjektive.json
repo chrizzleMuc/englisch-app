@@ -1,0 +1,1052 @@
+{
+ "id": "d3-adjektive",
+ "type": "schule",
+ "title_de": "Adjektive",
+ "image": "🎨",
+ "color": "#2f9fb0",
+ "lessons": [
+  {
+   "title": "Adjektive erkennen",
+   "icon": "🔎",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ad-er-der-kleine-hund-bellt",
+     "task": "Welches Wort ist ein Adjektiv?",
+     "prompt": "Der kleine Hund bellt.",
+     "options": [
+      "kleine",
+      "Hund",
+      "bellt"
+     ],
+     "answer": "kleine",
+     "keepOrder": true,
+     "explain": "Adjektive sagen, wie etwas ist."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-er-die-suppe-ist-heiss",
+     "task": "Welches Wort ist ein Adjektiv?",
+     "prompt": "Die Suppe ist heiß.",
+     "options": [
+      "Suppe",
+      "ist",
+      "heiß"
+     ],
+     "answer": "heiß",
+     "keepOrder": true,
+     "explain": "Adjektive sagen, wie etwas ist."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-er-ein-bunter-vogel-singt",
+     "task": "Welches Wort ist ein Adjektiv?",
+     "prompt": "Ein bunter Vogel singt.",
+     "options": [
+      "bunter",
+      "Vogel",
+      "singt"
+     ],
+     "answer": "bunter",
+     "keepOrder": true,
+     "explain": "Adjektive sagen, wie etwas ist."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-er-mein-bruder-rennt-schnell",
+     "task": "Welches Wort ist ein Adjektiv?",
+     "prompt": "Mein Bruder rennt schnell.",
+     "options": [
+      "Bruder",
+      "rennt",
+      "schnell"
+     ],
+     "answer": "schnell",
+     "keepOrder": true,
+     "explain": "Adjektive sagen, wie etwas ist."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-er-die-alte-burg-steht-am-berg",
+     "task": "Welches Wort ist ein Adjektiv?",
+     "prompt": "Die alte Burg steht am Berg.",
+     "options": [
+      "alte",
+      "Burg",
+      "steht"
+     ],
+     "answer": "alte",
+     "keepOrder": true,
+     "explain": "Adjektive sagen, wie etwas ist."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-er-der-drache-ist-gruen-und-gef",
+     "task": "Welches Wort ist ein Adjektiv?",
+     "prompt": "Der Drache ist grün und gefährlich.",
+     "options": [
+      "Drache",
+      "ist",
+      "gefährlich"
+     ],
+     "answer": "gefährlich",
+     "keepOrder": true,
+     "explain": "Adjektive sagen, wie etwas ist."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-er-wir-essen-suesse-kirschen",
+     "task": "Welches Wort ist ein Adjektiv?",
+     "prompt": "Wir essen süße Kirschen.",
+     "options": [
+      "essen",
+      "süße",
+      "Kirschen"
+     ],
+     "answer": "süße",
+     "keepOrder": true,
+     "explain": "Adjektive sagen, wie etwas ist."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-er-das-wasser-ist-kalt",
+     "task": "Welches Wort ist ein Adjektiv?",
+     "prompt": "Das Wasser ist kalt.",
+     "options": [
+      "Wasser",
+      "ist",
+      "kalt"
+     ],
+     "answer": "kalt",
+     "keepOrder": true,
+     "explain": "Adjektive sagen, wie etwas ist."
+    },
+    {
+     "kind": "sort",
+     "task": "Welche Wortart?",
+     "review": "Nomen, Verb oder Adjektiv?",
+     "groups": [
+      "Nomen",
+      "Verb",
+      "Adjektiv"
+     ],
+     "items": [
+      {
+       "id": "d3-ad-ws-der-baum",
+       "text": "der Baum",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-ad-ws-die-wolke",
+       "text": "die Wolke",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-ad-ws-laufen",
+       "text": "laufen",
+       "group": "Verb"
+      },
+      {
+       "id": "d3-ad-ws-lachen",
+       "text": "lachen",
+       "group": "Verb"
+      },
+      {
+       "id": "d3-ad-ws-weich",
+       "text": "weich",
+       "group": "Adjektiv"
+      },
+      {
+       "id": "d3-ad-ws-laut",
+       "text": "laut",
+       "group": "Adjektiv"
+      },
+      {
+       "id": "d3-ad-ws-das-glueck",
+       "text": "das Glück",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-ad-ws-schwimmen",
+       "text": "schwimmen",
+       "group": "Verb"
+      },
+      {
+       "id": "d3-ad-ws-lustig",
+       "text": "lustig",
+       "group": "Adjektiv"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Gegensatzpaare",
+   "icon": "↔️",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Finde das Gegenteil.",
+     "review": "Gegensatzpaare",
+     "pairs": [
+      {
+       "id": "d3-ad-g1-gross",
+       "a": "groß",
+       "b": "klein"
+      },
+      {
+       "id": "d3-ad-g1-heiss",
+       "a": "heiß",
+       "b": "kalt"
+      },
+      {
+       "id": "d3-ad-g1-laut",
+       "a": "laut",
+       "b": "leise"
+      },
+      {
+       "id": "d3-ad-g1-schnell",
+       "a": "schnell",
+       "b": "langsam"
+      },
+      {
+       "id": "d3-ad-g1-hell",
+       "a": "hell",
+       "b": "dunkel"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Finde das Gegenteil.",
+     "review": "Gegensatzpaare",
+     "pairs": [
+      {
+       "id": "d3-ad-g2-nass",
+       "a": "nass",
+       "b": "trocken"
+      },
+      {
+       "id": "d3-ad-g2-dick",
+       "a": "dick",
+       "b": "dünn"
+      },
+      {
+       "id": "d3-ad-g2-hart",
+       "a": "hart",
+       "b": "weich"
+      },
+      {
+       "id": "d3-ad-g2-voll",
+       "a": "voll",
+       "b": "leer"
+      },
+      {
+       "id": "d3-ad-g2-alt",
+       "a": "alt",
+       "b": "jung"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-gg-schwer",
+     "task": "Was ist das Gegenteil?",
+     "prompt": "schwer",
+     "options": [
+      "leicht",
+      "dick",
+      "laut"
+     ],
+     "answer": "leicht",
+     "bigOptions": true,
+     "explain": "schwer ↔ leicht"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-gg-frueh",
+     "task": "Was ist das Gegenteil?",
+     "prompt": "früh",
+     "options": [
+      "spät",
+      "schnell",
+      "kurz"
+     ],
+     "answer": "spät",
+     "bigOptions": true,
+     "explain": "früh ↔ spät"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-gg-lang",
+     "task": "Was ist das Gegenteil?",
+     "prompt": "lang",
+     "options": [
+      "kurz",
+      "klein",
+      "dünn"
+     ],
+     "answer": "kurz",
+     "bigOptions": true,
+     "explain": "lang ↔ kurz"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-gg-fleissig",
+     "task": "Was ist das Gegenteil?",
+     "prompt": "fleißig",
+     "options": [
+      "faul",
+      "müde",
+      "lustig"
+     ],
+     "answer": "faul",
+     "bigOptions": true,
+     "explain": "fleißig ↔ faul"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-gg-sauber",
+     "task": "Was ist das Gegenteil?",
+     "prompt": "sauber",
+     "options": [
+      "schmutzig",
+      "nass",
+      "kalt"
+     ],
+     "answer": "schmutzig",
+     "bigOptions": true,
+     "explain": "sauber ↔ schmutzig"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-gg-mutig",
+     "task": "Was ist das Gegenteil?",
+     "prompt": "mutig",
+     "options": [
+      "ängstlich",
+      "traurig",
+      "leise"
+     ],
+     "answer": "ängstlich",
+     "bigOptions": true,
+     "explain": "mutig ↔ ängstlich"
+    }
+   ]
+  },
+  {
+   "title": "Adjektive anpassen",
+   "icon": "🏰",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ad-an-ein-hund",
+     "task": "Welche Form passt?",
+     "prompt": "ein ___ Hund",
+     "options": [
+      "kleiner",
+      "kleine",
+      "kleines"
+     ],
+     "answer": "kleiner",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ein kleiner Hund"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-an-eine-katze",
+     "task": "Welche Form passt?",
+     "prompt": "eine ___ Katze",
+     "options": [
+      "kleiner",
+      "kleine",
+      "kleines"
+     ],
+     "answer": "kleine",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "eine kleine Katze"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-an-ein-pferd",
+     "task": "Welche Form passt?",
+     "prompt": "ein ___ Pferd",
+     "options": [
+      "kleiner",
+      "kleine",
+      "kleines"
+     ],
+     "answer": "kleines",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ein kleines Pferd"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-an-der-baum",
+     "task": "Welche Form passt?",
+     "prompt": "der ___ Baum",
+     "options": [
+      "großer",
+      "große",
+      "großes"
+     ],
+     "answer": "große",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der große Baum"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-an-die-burg",
+     "task": "Welche Form passt?",
+     "prompt": "die ___ Burg",
+     "options": [
+      "alter",
+      "alte",
+      "altes"
+     ],
+     "answer": "alte",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die alte Burg"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-an-ein-zauberer",
+     "task": "Welche Form passt?",
+     "prompt": "ein ___ Zauberer",
+     "options": [
+      "alter",
+      "alte",
+      "altes"
+     ],
+     "answer": "alter",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ein alter Zauberer"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-an-ein-haus",
+     "task": "Welche Form passt?",
+     "prompt": "ein ___ Haus",
+     "options": [
+      "roter",
+      "rote",
+      "rotes"
+     ],
+     "answer": "rotes",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ein rotes Haus"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-an-eine-blume",
+     "task": "Welche Form passt?",
+     "prompt": "eine ___ Blume",
+     "options": [
+      "gelber",
+      "gelbe",
+      "gelbes"
+     ],
+     "answer": "gelbe",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "eine gelbe Blume"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-an-das-wasser",
+     "task": "Welche Form passt?",
+     "prompt": "das ___ Wasser",
+     "options": [
+      "kalter",
+      "kalte",
+      "kaltes"
+     ],
+     "answer": "kalte",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das kalte Wasser"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-an-ein-ball",
+     "task": "Welche Form passt?",
+     "prompt": "ein ___ Ball",
+     "options": [
+      "bunter",
+      "bunte",
+      "buntes"
+     ],
+     "answer": "bunter",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ein bunter Ball"
+    }
+   ]
+  },
+  {
+   "title": "-ig und -lich",
+   "icon": "🦋",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ad-il-die-lust-lust",
+     "task": "-ig oder -lich?",
+     "prompt": "die Lust → lust…",
+     "options": [
+      "-ig",
+      "-lich"
+     ],
+     "answer": "-ig",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "lustig (verlängern: lustige)"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-il-der-freund-freund",
+     "task": "-ig oder -lich?",
+     "prompt": "der Freund → freund…",
+     "options": [
+      "-ig",
+      "-lich"
+     ],
+     "answer": "-lich",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "freundlich"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-il-der-hunger-hungr",
+     "task": "-ig oder -lich?",
+     "prompt": "der Hunger → hungr…",
+     "options": [
+      "-ig",
+      "-lich"
+     ],
+     "answer": "-ig",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "hungrig (verlängern: hungrige)"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-il-die-gefahr-gefaehr",
+     "task": "-ig oder -lich?",
+     "prompt": "die Gefahr → gefähr…",
+     "options": [
+      "-ig",
+      "-lich"
+     ],
+     "answer": "-lich",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "gefährlich"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-il-die-sonne-sonn",
+     "task": "-ig oder -lich?",
+     "prompt": "die Sonne → sonn…",
+     "options": [
+      "-ig",
+      "-lich"
+     ],
+     "answer": "-ig",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "sonnig (verlängern: sonnige)"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-il-der-schreck-schreck",
+     "task": "-ig oder -lich?",
+     "prompt": "der Schreck → schreck…",
+     "options": [
+      "-ig",
+      "-lich"
+     ],
+     "answer": "-lich",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "schrecklich"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-il-der-mut-mut",
+     "task": "-ig oder -lich?",
+     "prompt": "der Mut → mut…",
+     "options": [
+      "-ig",
+      "-lich"
+     ],
+     "answer": "-ig",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "mutig (verlängern: mutige)"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-il-die-freude-froeh",
+     "task": "-ig oder -lich?",
+     "prompt": "die Freude → fröh…",
+     "options": [
+      "-ig",
+      "-lich"
+     ],
+     "answer": "-lich",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "fröhlich"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-il-der-wind-wind",
+     "task": "-ig oder -lich?",
+     "prompt": "der Wind → wind…",
+     "options": [
+      "-ig",
+      "-lich"
+     ],
+     "answer": "-ig",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "windig (verlängern: windige)"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-il-die-angst-aengst",
+     "task": "-ig oder -lich?",
+     "prompt": "die Angst → ängst…",
+     "options": [
+      "-ig",
+      "-lich"
+     ],
+     "answer": "-lich",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ängstlich"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-il-der-durst-durst",
+     "task": "-ig oder -lich?",
+     "prompt": "der Durst → durst…",
+     "options": [
+      "-ig",
+      "-lich"
+     ],
+     "answer": "-ig",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "durstig (verlängern: durstige)"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-il-die-ehre-ehr",
+     "task": "-ig oder -lich?",
+     "prompt": "die Ehre → ehr…",
+     "options": [
+      "-ig",
+      "-lich"
+     ],
+     "answer": "-lich",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ehrlich"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-ic-lusti",
+     "task": "g oder ch? Verlängere!",
+     "prompt": "lusti_",
+     "options": [
+      "g",
+      "ch"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "lustig – verlängern: lustige"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-ic-billi",
+     "task": "g oder ch? Verlängere!",
+     "prompt": "billi_",
+     "options": [
+      "g",
+      "ch"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "billig – verlängern: billige"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-ic-eisi",
+     "task": "g oder ch? Verlängere!",
+     "prompt": "eisi_",
+     "options": [
+      "g",
+      "ch"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "eisig – verlängern: eisige"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-ic-trauri",
+     "task": "g oder ch? Verlängere!",
+     "prompt": "trauri_",
+     "options": [
+      "g",
+      "ch"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "traurig – verlängern: traurige"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-ic-ferti",
+     "task": "g oder ch? Verlängere!",
+     "prompt": "ferti_",
+     "options": [
+      "g",
+      "ch"
+     ],
+     "answer": "g",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "fertig – verlängern: fertige"
+    }
+   ]
+  },
+  {
+   "title": "Zusammengesetzte Adjektive",
+   "icon": "⚡",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ad-zs-so-schnell-wie-der-blitz-bli",
+     "task": "Bilde ein zusammengesetztes Adjektiv.",
+     "prompt": "so schnell wie der Blitz",
+     "answer": "blitzschnell"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zs-so-kalt-wie-eis-eiskalt",
+     "task": "Bilde ein zusammengesetztes Adjektiv.",
+     "prompt": "so kalt wie Eis",
+     "answer": "eiskalt"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zs-so-weiss-wie-schnee-schneewe",
+     "task": "Bilde ein zusammengesetztes Adjektiv.",
+     "prompt": "so weiß wie Schnee",
+     "answer": "schneeweiß"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zs-so-stark-wie-ein-baer-baeren",
+     "task": "Bilde ein zusammengesetztes Adjektiv.",
+     "prompt": "so stark wie ein Bär",
+     "answer": "bärenstark"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zs-so-leicht-wie-eine-feder-fed",
+     "task": "Bilde ein zusammengesetztes Adjektiv.",
+     "prompt": "so leicht wie eine Feder",
+     "answer": "federleicht"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zs-so-rund-wie-eine-kugel-kugel",
+     "task": "Bilde ein zusammengesetztes Adjektiv.",
+     "prompt": "so rund wie eine Kugel",
+     "answer": "kugelrund"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zf-hell-blau-hellblau",
+     "task": "Setz zusammen. Schreib klein!",
+     "prompt": "hell + blau",
+     "answer": "hellblau"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zf-dunkel-rot-dunkelrot",
+     "task": "Setz zusammen. Schreib klein!",
+     "prompt": "dunkel + rot",
+     "answer": "dunkelrot"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zf-nass-kalt-nasskalt",
+     "task": "Setz zusammen. Schreib klein!",
+     "prompt": "nass + kalt",
+     "answer": "nasskalt"
+    }
+   ]
+  },
+  {
+   "title": "Noch mehr zusammensetzen",
+   "icon": "⚡",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ad-zs-so-suess-wie-zucker-zuckersu",
+     "task": "Bilde ein zusammengesetztes Adjektiv.",
+     "prompt": "so süß wie Zucker",
+     "answer": "zuckersüß"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zs-so-glatt-wie-ein-spiegel-spi",
+     "task": "Bilde ein zusammengesetztes Adjektiv.",
+     "prompt": "so glatt wie ein Spiegel",
+     "answer": "spiegelglatt"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zs-so-blau-wie-der-himmel-himme",
+     "task": "Bilde ein zusammengesetztes Adjektiv.",
+     "prompt": "so blau wie der Himmel",
+     "answer": "himmelblau"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zs-so-gross-wie-ein-riese-riese",
+     "task": "Bilde ein zusammengesetztes Adjektiv.",
+     "prompt": "so groß wie ein Riese",
+     "answer": "riesengroß"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zf-klatschen-nass-klatschnass",
+     "task": "Setz zusammen. Schreib klein!",
+     "prompt": "klatschen + nass",
+     "answer": "klatschnass"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zf-blitzen-blank-blitzblank",
+     "task": "Setz zusammen. Schreib klein!",
+     "prompt": "blitzen + blank",
+     "answer": "blitzblank"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-zf-hell-gruen-hellgruen",
+     "task": "Setz zusammen. Schreib klein!",
+     "prompt": "hell + grün",
+     "answer": "hellgrün"
+    }
+   ]
+  },
+  {
+   "title": "Steigern",
+   "icon": "📈",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ad-sg-klein-kleiner-am-kleinsten",
+     "task": "Steigere das Adjektiv.",
+     "prompt": "klein – kleiner – am …",
+     "answer": "kleinsten",
+     "before": "am"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-sg-schnell-schneller-am-schnell",
+     "task": "Steigere das Adjektiv.",
+     "prompt": "schnell – schneller – am …",
+     "answer": "schnellsten",
+     "before": "am"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-sg-gross-groesser-am-groessten",
+     "task": "Steigere das Adjektiv.",
+     "prompt": "groß – größer – am …",
+     "answer": "größten",
+     "before": "am"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-sg-alt-aelter-am-aeltesten",
+     "task": "Steigere das Adjektiv.",
+     "prompt": "alt – älter – am …",
+     "answer": "ältesten",
+     "before": "am"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-sg-lang-laenger-am-laengsten",
+     "task": "Steigere das Adjektiv.",
+     "prompt": "lang – länger – am …",
+     "answer": "längsten",
+     "before": "am"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-sg-warm-waermer-am-waermsten",
+     "task": "Steigere das Adjektiv.",
+     "prompt": "warm – wärmer – am …",
+     "answer": "wärmsten",
+     "before": "am"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-sg-gut-besser-am-besten",
+     "task": "Steigere das Adjektiv.",
+     "prompt": "gut – besser – am …",
+     "answer": "besten",
+     "before": "am"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-sg-viel-mehr-am-meisten",
+     "task": "Steigere das Adjektiv.",
+     "prompt": "viel – mehr – am …",
+     "answer": "meisten",
+     "before": "am"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-sg-gern-lieber-am-liebsten",
+     "task": "Steigere das Adjektiv.",
+     "prompt": "gern – lieber – am …",
+     "answer": "liebsten",
+     "before": "am"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ad-sg-hoch-hoeher-am-hoechsten",
+     "task": "Steigere das Adjektiv.",
+     "prompt": "hoch – höher – am …",
+     "answer": "höchsten",
+     "before": "am"
+    }
+   ]
+  },
+  {
+   "title": "Vergleichen",
+   "icon": "⚖️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ad-vg-der-elefant-ist-als-die-maus",
+     "task": "Was passt?",
+     "prompt": "Der Elefant ist ___ als die Maus. (groß)",
+     "options": [
+      "größer",
+      "großer",
+      "am größten"
+     ],
+     "answer": "größer",
+     "explain": "Der Elefant ist größer als die Maus."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-vg-die-schnecke-ist-langsam-die",
+     "task": "Was passt?",
+     "prompt": "Die Schnecke ist ___ langsam ___ die Raupe. (gleich)",
+     "options": [
+      "so – wie",
+      "so – als"
+     ],
+     "answer": "so – wie",
+     "explain": "Die Schnecke ist so langsam wie die Raupe. Gleich: so … wie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-vg-ein-gepard-ist-als-ein-pferd",
+     "task": "Was passt?",
+     "prompt": "Ein Gepard ist ___ als ein Pferd. (schnell)",
+     "options": [
+      "schneller",
+      "schnellster",
+      "am schnellsten"
+     ],
+     "answer": "schneller",
+     "explain": "Ein Gepard ist schneller als ein Pferd."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-vg-der-wal-ist-das-tier-im-meer",
+     "task": "Was passt?",
+     "prompt": "Der Wal ist das ___ Tier im Meer. (groß)",
+     "options": [
+      "größte",
+      "größer",
+      "großte"
+     ],
+     "answer": "größte",
+     "explain": "Der Wal ist das größte Tier im Meer."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-vg-mein-opa-ist-als-mein-papa-a",
+     "task": "Was passt?",
+     "prompt": "Mein Opa ist ___ als mein Papa. (alt)",
+     "options": [
+      "älter",
+      "alter",
+      "am ältesten"
+     ],
+     "answer": "älter",
+     "explain": "Mein Opa ist älter als mein Papa."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ad-vg-eis-mag-ich-als-spinat-gern",
+     "task": "Was passt?",
+     "prompt": "Eis mag ich ___ als Spinat. (gern)",
+     "options": [
+      "lieber",
+      "gerner",
+      "am liebsten"
+     ],
+     "answer": "lieber",
+     "explain": "Eis mag ich lieber als Spinat."
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-ad-foto",
+     "task": "Beschreibe dein Lieblingstier mit mindestens 5 Adjektiven (z. B. Mein Hund ist klein, braun und frech.)"
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}
