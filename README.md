@@ -48,6 +48,11 @@ Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede E
 
 Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.
 
+## Version 32
+- Deutsch 3. Klasse: neue Stufe „3. Klasse · Sätze und Lesen“ mit Satzarten und Satzzeichen (inkl. Komma bei Aufzählungen), Subjekt und Prädikat (Umstellprobe, Satzglieder zählen), wörtliche Rede (Begleitsatz vorne/hinten) und Blitzlesen.
+- Neue Aufgabenarten `build` (Satz aus Bausteinen bauen, jede richtige Reihenfolge zählt) und `flash` (Wort kurz zeigen, dann aus ähnlichen Wörtern wählen).
+- Erzeuger: `werkzeug/gen_deutsch_k3c.py`.
+
 ## Version 31
 - Mathe 3. Klasse stark erweitert (Gliederung nach Anton-Übersicht, abgeglichen mit LehrplanPLUS Bayern): Zahlen bis 1000 entdecken, Rechenwege, schriftlich plus und minus, Mal und geteilt mit großen Zahlen (inkl. Punkt vor Strich), Längen und Gewichte, Uhrzeit, Geld, Körper/Linien/Symmetrie, Daten und Zufall. Neue Stufe „3. Klasse · Extra für Profis“ (großes Einmaleins, Vielfache und Teiler, Flächeninhalt, Kommazahlen).
 - Neue Aufgabenarten `column` und `chain`, neue Mathe-Bilder (Stellentafel, Hunderter/Zehner/Einer, Zahlenstrahl, Tausendertafel, Malkreuz, Körper, Würfelnetze, Würfelgebäude, Linien, Kästchenflächen).

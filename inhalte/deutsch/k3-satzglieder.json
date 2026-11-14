@@ -1,0 +1,941 @@
+{
+ "id": "d3-satzglieder",
+ "type": "schule",
+ "title_de": "Subjekt und Prädikat",
+ "image": "🧩",
+ "color": "#c0498f",
+ "lessons": [
+  {
+   "title": "Das Prädikat finden",
+   "icon": "🏃",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-der-kleine-hund-bellt-laut",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Der kleine Hund bellt laut.",
+     "options": [
+      "Der kleine Hund",
+      "bellt",
+      "laut"
+     ],
+     "answer": "bellt",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: bellt. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-meine-schwester-liest-ein-bu",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Meine Schwester liest ein Buch.",
+     "options": [
+      "Meine Schwester",
+      "liest",
+      "ein Buch"
+     ],
+     "answer": "liest",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: liest. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-im-sommer-schwimmen-wir-im-s",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Im Sommer schwimmen wir im See.",
+     "options": [
+      "Im Sommer",
+      "schwimmen",
+      "wir",
+      "im See"
+     ],
+     "answer": "schwimmen",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: schwimmen. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-der-baecker-backt-frische-br",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Der Bäcker backt frische Brötchen.",
+     "options": [
+      "Der Bäcker",
+      "backt",
+      "frische Brötchen"
+     ],
+     "answer": "backt",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: backt. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-am-morgen-kraeht-der-hahn",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Am Morgen kräht der Hahn.",
+     "options": [
+      "Am Morgen",
+      "kräht",
+      "der Hahn"
+     ],
+     "answer": "kräht",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: kräht. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-die-kinder-spielen-im-garten",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Die Kinder spielen im Garten.",
+     "options": [
+      "Die Kinder",
+      "spielen",
+      "im Garten"
+     ],
+     "answer": "spielen",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: spielen. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-opa-repariert-das-fahrrad",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Opa repariert das Fahrrad.",
+     "options": [
+      "Opa",
+      "repariert",
+      "das Fahrrad"
+     ],
+     "answer": "repariert",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: repariert. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-heute-schreiben-wir-eine-pro",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Heute schreiben wir eine Probe.",
+     "options": [
+      "Heute",
+      "schreiben",
+      "wir",
+      "eine Probe"
+     ],
+     "answer": "schreiben",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: schreiben. Im Aussagesatz steht es an zweiter Stelle."
+    }
+   ]
+  },
+  {
+   "title": "Noch mehr Prädikate",
+   "icon": "🏃",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-der-fuchs-schleicht-durch-de",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Der Fuchs schleicht durch den Wald.",
+     "options": [
+      "Der Fuchs",
+      "schleicht",
+      "durch den Wald"
+     ],
+     "answer": "schleicht",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: schleicht. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-nach-der-schule-isst-ben-nud",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Nach der Schule isst Ben Nudeln.",
+     "options": [
+      "Nach der Schule",
+      "isst",
+      "Ben",
+      "Nudeln"
+     ],
+     "answer": "isst",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: isst. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-die-sonne-scheint-hell",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Die Sonne scheint hell.",
+     "options": [
+      "Die Sonne",
+      "scheint",
+      "hell"
+     ],
+     "answer": "scheint",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: scheint. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-im-herbst-sammeln-die-eichho",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Im Herbst sammeln die Eichhörnchen Nüsse.",
+     "options": [
+      "Im Herbst",
+      "sammeln",
+      "die Eichhörnchen",
+      "Nüsse"
+     ],
+     "answer": "sammeln",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: sammeln. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-mein-freund-schenkt-mir-eine",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Mein Freund schenkt mir einen Stift.",
+     "options": [
+      "Mein Freund",
+      "schenkt",
+      "mir",
+      "einen Stift"
+     ],
+     "answer": "schenkt",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: schenkt. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-der-lehrer-erklaert-die-aufg",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Der Lehrer erklärt die Aufgabe.",
+     "options": [
+      "Der Lehrer",
+      "erklärt",
+      "die Aufgabe"
+     ],
+     "answer": "erklärt",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: erklärt. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-leise-schleicht-die-katze-zu",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Leise schleicht die Katze zur Tür.",
+     "options": [
+      "Leise",
+      "schleicht",
+      "die Katze",
+      "zur Tür"
+     ],
+     "answer": "schleicht",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: schleicht. Im Aussagesatz steht es an zweiter Stelle."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-pr-die-voegel-bauen-ein-nest",
+     "task": "Tippe das Prädikat an (Was tut jemand?).",
+     "prompt": "Die Vögel bauen ein Nest.",
+     "options": [
+      "Die Vögel",
+      "bauen",
+      "ein Nest"
+     ],
+     "answer": "bauen",
+     "keepOrder": true,
+     "explain": "Das Prädikat ist das Verb: bauen. Im Aussagesatz steht es an zweiter Stelle."
+    }
+   ]
+  },
+  {
+   "title": "Das Subjekt finden",
+   "icon": "🙋",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-der-kleine-hund-bellt-laut",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Der kleine Hund bellt laut.",
+     "options": [
+      "Der kleine Hund",
+      "bellt",
+      "laut"
+     ],
+     "answer": "Der kleine Hund",
+     "keepOrder": true,
+     "explain": "Wer oder was bellt? Der kleine Hund. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-meine-schwester-liest-ein-bu",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Meine Schwester liest ein Buch.",
+     "options": [
+      "Meine Schwester",
+      "liest",
+      "ein Buch"
+     ],
+     "answer": "Meine Schwester",
+     "keepOrder": true,
+     "explain": "Wer oder was liest? Meine Schwester. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-im-sommer-schwimmen-wir-im-s",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Im Sommer schwimmen wir im See.",
+     "options": [
+      "Im Sommer",
+      "schwimmen",
+      "wir",
+      "im See"
+     ],
+     "answer": "wir",
+     "keepOrder": true,
+     "explain": "Wer oder was schwimmen? Wir. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-der-baecker-backt-frische-br",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Der Bäcker backt frische Brötchen.",
+     "options": [
+      "Der Bäcker",
+      "backt",
+      "frische Brötchen"
+     ],
+     "answer": "Der Bäcker",
+     "keepOrder": true,
+     "explain": "Wer oder was backt? Der Bäcker. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-am-morgen-kraeht-der-hahn",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Am Morgen kräht der Hahn.",
+     "options": [
+      "Am Morgen",
+      "kräht",
+      "der Hahn"
+     ],
+     "answer": "der Hahn",
+     "keepOrder": true,
+     "explain": "Wer oder was kräht? Der Hahn. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-die-kinder-spielen-im-garten",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Die Kinder spielen im Garten.",
+     "options": [
+      "Die Kinder",
+      "spielen",
+      "im Garten"
+     ],
+     "answer": "Die Kinder",
+     "keepOrder": true,
+     "explain": "Wer oder was spielen? Die Kinder. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-opa-repariert-das-fahrrad",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Opa repariert das Fahrrad.",
+     "options": [
+      "Opa",
+      "repariert",
+      "das Fahrrad"
+     ],
+     "answer": "Opa",
+     "keepOrder": true,
+     "explain": "Wer oder was repariert? Opa. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-heute-schreiben-wir-eine-pro",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Heute schreiben wir eine Probe.",
+     "options": [
+      "Heute",
+      "schreiben",
+      "wir",
+      "eine Probe"
+     ],
+     "answer": "wir",
+     "keepOrder": true,
+     "explain": "Wer oder was schreiben? Wir. Das ist das Subjekt."
+    }
+   ]
+  },
+  {
+   "title": "Noch mehr Subjekte",
+   "icon": "🙋",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-der-fuchs-schleicht-durch-de",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Der Fuchs schleicht durch den Wald.",
+     "options": [
+      "Der Fuchs",
+      "schleicht",
+      "durch den Wald"
+     ],
+     "answer": "Der Fuchs",
+     "keepOrder": true,
+     "explain": "Wer oder was schleicht? Der Fuchs. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-nach-der-schule-isst-ben-nud",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Nach der Schule isst Ben Nudeln.",
+     "options": [
+      "Nach der Schule",
+      "isst",
+      "Ben",
+      "Nudeln"
+     ],
+     "answer": "Ben",
+     "keepOrder": true,
+     "explain": "Wer oder was isst? Ben. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-die-sonne-scheint-hell",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Die Sonne scheint hell.",
+     "options": [
+      "Die Sonne",
+      "scheint",
+      "hell"
+     ],
+     "answer": "Die Sonne",
+     "keepOrder": true,
+     "explain": "Wer oder was scheint? Die Sonne. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-im-herbst-sammeln-die-eichho",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Im Herbst sammeln die Eichhörnchen Nüsse.",
+     "options": [
+      "Im Herbst",
+      "sammeln",
+      "die Eichhörnchen",
+      "Nüsse"
+     ],
+     "answer": "die Eichhörnchen",
+     "keepOrder": true,
+     "explain": "Wer oder was sammeln? Die Eichhörnchen. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-mein-freund-schenkt-mir-eine",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Mein Freund schenkt mir einen Stift.",
+     "options": [
+      "Mein Freund",
+      "schenkt",
+      "mir",
+      "einen Stift"
+     ],
+     "answer": "Mein Freund",
+     "keepOrder": true,
+     "explain": "Wer oder was schenkt? Mein Freund. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-der-lehrer-erklaert-die-aufg",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Der Lehrer erklärt die Aufgabe.",
+     "options": [
+      "Der Lehrer",
+      "erklärt",
+      "die Aufgabe"
+     ],
+     "answer": "Der Lehrer",
+     "keepOrder": true,
+     "explain": "Wer oder was erklärt? Der Lehrer. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-leise-schleicht-die-katze-zu",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Leise schleicht die Katze zur Tür.",
+     "options": [
+      "Leise",
+      "schleicht",
+      "die Katze",
+      "zur Tür"
+     ],
+     "answer": "die Katze",
+     "keepOrder": true,
+     "explain": "Wer oder was schleicht? Die Katze. Das ist das Subjekt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-su-die-voegel-bauen-ein-nest",
+     "task": "Tippe das Subjekt an (Wer oder was?).",
+     "prompt": "Die Vögel bauen ein Nest.",
+     "options": [
+      "Die Vögel",
+      "bauen",
+      "ein Nest"
+     ],
+     "answer": "Die Vögel",
+     "keepOrder": true,
+     "explain": "Wer oder was bauen? Die Vögel. Das ist das Subjekt."
+    }
+   ]
+  },
+  {
+   "title": "Sätze umstellen",
+   "icon": "🔀",
+   "tasks": [
+    {
+     "kind": "build",
+     "id": "d3-sg-um-laut-bellt-der-kleine-hund",
+     "task": "Stell den Satz um! Ein anderes Satzglied soll vorne stehen.",
+     "tiles": [
+      "der kleine Hund",
+      "bellt",
+      "laut"
+     ],
+     "answers": [
+      [
+       "laut",
+       "bellt",
+       "der kleine Hund"
+      ]
+     ],
+     "end": ".",
+     "show": "Der kleine Hund bellt laut.",
+     "hint": "Nimm ein anderes Satzglied nach vorne. Das Verb bleibt an zweiter Stelle."
+    },
+    {
+     "kind": "build",
+     "id": "d3-sg-um-ein-buch-liest-meine-schwest",
+     "task": "Stell den Satz um! Ein anderes Satzglied soll vorne stehen.",
+     "tiles": [
+      "meine Schwester",
+      "liest",
+      "ein Buch"
+     ],
+     "answers": [
+      [
+       "ein Buch",
+       "liest",
+       "meine Schwester"
+      ]
+     ],
+     "end": ".",
+     "show": "Meine Schwester liest ein Buch.",
+     "hint": "Nimm ein anderes Satzglied nach vorne. Das Verb bleibt an zweiter Stelle."
+    },
+    {
+     "kind": "build",
+     "id": "d3-sg-um-wir-schwimmen-im-sommer-im-s",
+     "task": "Stell den Satz um! Ein anderes Satzglied soll vorne stehen.",
+     "tiles": [
+      "im Sommer",
+      "schwimmen",
+      "wir",
+      "im See"
+     ],
+     "answers": [
+      [
+       "wir",
+       "schwimmen",
+       "im Sommer",
+       "im See"
+      ],
+      [
+       "wir",
+       "schwimmen",
+       "im See",
+       "im Sommer"
+      ],
+      [
+       "im See",
+       "schwimmen",
+       "wir",
+       "im Sommer"
+      ]
+     ],
+     "end": ".",
+     "show": "Im Sommer schwimmen wir im See.",
+     "hint": "Nimm ein anderes Satzglied nach vorne. Das Verb bleibt an zweiter Stelle."
+    },
+    {
+     "kind": "build",
+     "id": "d3-sg-um-frische-broetchen-backt-der",
+     "task": "Stell den Satz um! Ein anderes Satzglied soll vorne stehen.",
+     "tiles": [
+      "der Bäcker",
+      "backt",
+      "frische Brötchen"
+     ],
+     "answers": [
+      [
+       "frische Brötchen",
+       "backt",
+       "der Bäcker"
+      ]
+     ],
+     "end": ".",
+     "show": "Der Bäcker backt frische Brötchen.",
+     "hint": "Nimm ein anderes Satzglied nach vorne. Das Verb bleibt an zweiter Stelle."
+    },
+    {
+     "kind": "build",
+     "id": "d3-sg-um-der-hahn-kraeht-am-morgen",
+     "task": "Stell den Satz um! Ein anderes Satzglied soll vorne stehen.",
+     "tiles": [
+      "am Morgen",
+      "kräht",
+      "der Hahn"
+     ],
+     "answers": [
+      [
+       "der Hahn",
+       "kräht",
+       "am Morgen"
+      ]
+     ],
+     "end": ".",
+     "show": "Am Morgen kräht der Hahn.",
+     "hint": "Nimm ein anderes Satzglied nach vorne. Das Verb bleibt an zweiter Stelle."
+    }
+   ]
+  },
+  {
+   "title": "Noch mehr umstellen",
+   "icon": "🔀",
+   "tasks": [
+    {
+     "kind": "build",
+     "id": "d3-sg-um-im-garten-spielen-die-kinder",
+     "task": "Stell den Satz um! Ein anderes Satzglied soll vorne stehen.",
+     "tiles": [
+      "die Kinder",
+      "spielen",
+      "im Garten"
+     ],
+     "answers": [
+      [
+       "im Garten",
+       "spielen",
+       "die Kinder"
+      ]
+     ],
+     "end": ".",
+     "show": "Die Kinder spielen im Garten.",
+     "hint": "Nimm ein anderes Satzglied nach vorne. Das Verb bleibt an zweiter Stelle."
+    },
+    {
+     "kind": "build",
+     "id": "d3-sg-um-das-fahrrad-repariert-opa",
+     "task": "Stell den Satz um! Ein anderes Satzglied soll vorne stehen.",
+     "tiles": [
+      "Opa",
+      "repariert",
+      "das Fahrrad"
+     ],
+     "answers": [
+      [
+       "das Fahrrad",
+       "repariert",
+       "Opa"
+      ]
+     ],
+     "end": ".",
+     "show": "Opa repariert das Fahrrad.",
+     "hint": "Nimm ein anderes Satzglied nach vorne. Das Verb bleibt an zweiter Stelle."
+    },
+    {
+     "kind": "build",
+     "id": "d3-sg-um-wir-schreiben-heute-eine-pro",
+     "task": "Stell den Satz um! Ein anderes Satzglied soll vorne stehen.",
+     "tiles": [
+      "heute",
+      "schreiben",
+      "wir",
+      "eine Probe"
+     ],
+     "answers": [
+      [
+       "wir",
+       "schreiben",
+       "heute",
+       "eine Probe"
+      ],
+      [
+       "wir",
+       "schreiben",
+       "eine Probe",
+       "heute"
+      ],
+      [
+       "eine Probe",
+       "schreiben",
+       "wir",
+       "heute"
+      ]
+     ],
+     "end": ".",
+     "show": "Heute schreiben wir eine Probe.",
+     "hint": "Nimm ein anderes Satzglied nach vorne. Das Verb bleibt an zweiter Stelle."
+    },
+    {
+     "kind": "build",
+     "id": "d3-sg-um-durch-den-wald-schleicht-der",
+     "task": "Stell den Satz um! Ein anderes Satzglied soll vorne stehen.",
+     "tiles": [
+      "der Fuchs",
+      "schleicht",
+      "durch den Wald"
+     ],
+     "answers": [
+      [
+       "durch den Wald",
+       "schleicht",
+       "der Fuchs"
+      ]
+     ],
+     "end": ".",
+     "show": "Der Fuchs schleicht durch den Wald.",
+     "hint": "Nimm ein anderes Satzglied nach vorne. Das Verb bleibt an zweiter Stelle."
+    },
+    {
+     "kind": "build",
+     "id": "d3-sg-um-ben-isst-nach-der-schule-nud",
+     "task": "Stell den Satz um! Ein anderes Satzglied soll vorne stehen.",
+     "tiles": [
+      "nach der Schule",
+      "isst",
+      "Ben",
+      "Nudeln"
+     ],
+     "answers": [
+      [
+       "Ben",
+       "isst",
+       "nach der Schule",
+       "Nudeln"
+      ],
+      [
+       "Ben",
+       "isst",
+       "Nudeln",
+       "nach der Schule"
+      ],
+      [
+       "Nudeln",
+       "isst",
+       "nach der Schule",
+       "Ben"
+      ],
+      [
+       "Nudeln",
+       "isst",
+       "Ben",
+       "nach der Schule"
+      ]
+     ],
+     "end": ".",
+     "show": "Nach der Schule isst Ben Nudeln.",
+     "hint": "Nimm ein anderes Satzglied nach vorne. Das Verb bleibt an zweiter Stelle."
+    }
+   ]
+  },
+  {
+   "title": "Satzglieder zählen",
+   "icon": "🔢",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-sg-za-am-morgen-kraeht-der-hahn",
+     "task": "Wie viele Satzglieder hat der Satz? Tipp: Stell ihn in Gedanken um.",
+     "prompt": "Am Morgen kräht der Hahn.",
+     "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "answer": "3",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Am Morgen | kräht | der Hahn"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-za-die-kinder-spielen-im-garten",
+     "task": "Wie viele Satzglieder hat der Satz? Tipp: Stell ihn in Gedanken um.",
+     "prompt": "Die Kinder spielen im Garten.",
+     "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "answer": "3",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Die Kinder | spielen | im Garten"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-za-opa-repariert-das-fahrrad",
+     "task": "Wie viele Satzglieder hat der Satz? Tipp: Stell ihn in Gedanken um.",
+     "prompt": "Opa repariert das Fahrrad.",
+     "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "answer": "3",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Opa | repariert | das Fahrrad"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-za-heute-schreiben-wir-eine-pro",
+     "task": "Wie viele Satzglieder hat der Satz? Tipp: Stell ihn in Gedanken um.",
+     "prompt": "Heute schreiben wir eine Probe.",
+     "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "answer": "4",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Heute | schreiben | wir | eine Probe"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-za-der-fuchs-schleicht-durch-de",
+     "task": "Wie viele Satzglieder hat der Satz? Tipp: Stell ihn in Gedanken um.",
+     "prompt": "Der Fuchs schleicht durch den Wald.",
+     "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "answer": "3",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Der Fuchs | schleicht | durch den Wald"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-za-nach-der-schule-isst-ben-nud",
+     "task": "Wie viele Satzglieder hat der Satz? Tipp: Stell ihn in Gedanken um.",
+     "prompt": "Nach der Schule isst Ben Nudeln.",
+     "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "answer": "4",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Nach der Schule | isst | Ben | Nudeln"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-za-die-sonne-scheint-hell",
+     "task": "Wie viele Satzglieder hat der Satz? Tipp: Stell ihn in Gedanken um.",
+     "prompt": "Die Sonne scheint hell.",
+     "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "answer": "3",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Die Sonne | scheint | hell"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-za-im-herbst-sammeln-die-eichho",
+     "task": "Wie viele Satzglieder hat der Satz? Tipp: Stell ihn in Gedanken um.",
+     "prompt": "Im Herbst sammeln die Eichhörnchen Nüsse.",
+     "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "answer": "4",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Im Herbst | sammeln | die Eichhörnchen | Nüsse"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-za-mein-freund-schenkt-mir-eine",
+     "task": "Wie viele Satzglieder hat der Satz? Tipp: Stell ihn in Gedanken um.",
+     "prompt": "Mein Freund schenkt mir einen Stift.",
+     "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "answer": "4",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Mein Freund | schenkt | mir | einen Stift"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sg-za-der-lehrer-erklaert-die-aufg",
+     "task": "Wie viele Satzglieder hat der Satz? Tipp: Stell ihn in Gedanken um.",
+     "prompt": "Der Lehrer erklärt die Aufgabe.",
+     "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "answer": "3",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Der Lehrer | erklärt | die Aufgabe"
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-sg-foto",
+     "task": "Schreib 4 Sätze über deinen Tag. Unterstreiche in jedem Satz das Prädikat (Verb) und das Subjekt (Wer oder was?)."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

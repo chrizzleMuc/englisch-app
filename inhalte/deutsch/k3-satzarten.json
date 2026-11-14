@@ -1,0 +1,1005 @@
+{
+ "id": "d3-satzarten",
+ "type": "schule",
+ "title_de": "Satzarten und Satzzeichen",
+ "image": "❓",
+ "color": "#7a4fd6",
+ "lessons": [
+  {
+   "title": "Punkt, Frage- oder Ausrufezeichen?",
+   "icon": "❗",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-wir-gehen-heute-ins-kino",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Wir gehen heute ins Kino _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": ".",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wir gehen heute ins Kino. Aussagesatz: Er erzählt etwas. Am Ende steht ein Punkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-wann-beginnt-der-film",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Wann beginnt der Film _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": "?",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wann beginnt der Film? Fragesatz: Jemand will etwas wissen. Am Ende steht ein Fragezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-pass-auf-da-kommt-ein-auto",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Pass auf, da kommt ein Auto _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": "!",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Pass auf, da kommt ein Auto! Ausruf oder Aufforderung: Jemand ruft oder will, dass du etwas tust. Am Ende steht ein Ausrufezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-mein-bruder-spielt-fussball",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Mein Bruder spielt Fußball _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": ".",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Mein Bruder spielt Fußball. Aussagesatz: Er erzählt etwas. Am Ende steht ein Punkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-hast-du-deine-hausaufgaben-g",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Hast du deine Hausaufgaben gemacht _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": "?",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Hast du deine Hausaufgaben gemacht? Fragesatz: Jemand will etwas wissen. Am Ende steht ein Fragezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-hurra-wir-haben-ferien",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Hurra, wir haben Ferien _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": "!",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Hurra, wir haben Ferien! Ausruf oder Aufforderung: Jemand ruft oder will, dass du etwas tust. Am Ende steht ein Ausrufezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-die-katze-schlaeft-auf-dem-s",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Die Katze schläft auf dem Sofa _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": ".",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Die Katze schläft auf dem Sofa. Aussagesatz: Er erzählt etwas. Am Ende steht ein Punkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-wo-wohnt-der-igel-im-winter",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Wo wohnt der Igel im Winter _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": "?",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wo wohnt der Igel im Winter? Fragesatz: Jemand will etwas wissen. Am Ende steht ein Fragezeichen."
+    }
+   ]
+  },
+  {
+   "title": "Noch mehr Satzzeichen",
+   "icon": "❓",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-komm-sofort-her",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Komm sofort her _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": "!",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Komm sofort her! Ausruf oder Aufforderung: Jemand ruft oder will, dass du etwas tust. Am Ende steht ein Ausrufezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-im-herbst-fallen-die-blaette",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Im Herbst fallen die Blätter _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": ".",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Im Herbst fallen die Blätter. Aussagesatz: Er erzählt etwas. Am Ende steht ein Punkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-warum-ist-der-himmel-blau",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Warum ist der Himmel blau _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": "?",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Warum ist der Himmel blau? Fragesatz: Jemand will etwas wissen. Am Ende steht ein Fragezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-au-das-tut-weh",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Au, das tut weh _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": "!",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Au, das tut weh! Ausruf oder Aufforderung: Jemand ruft oder will, dass du etwas tust. Am Ende steht ein Ausrufezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-magst-du-erdbeereis",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Magst du Erdbeereis _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": "?",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Magst du Erdbeereis? Fragesatz: Jemand will etwas wissen. Am Ende steht ein Fragezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-raeum-dein-zimmer-auf",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Räum dein Zimmer auf _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": "!",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Räum dein Zimmer auf! Ausruf oder Aufforderung: Jemand ruft oder will, dass du etwas tust. Am Ende steht ein Ausrufezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-der-bus-faehrt-um-acht-uhr",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Der Bus fährt um acht Uhr _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": ".",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Der Bus fährt um acht Uhr. Aussagesatz: Er erzählt etwas. Am Ende steht ein Punkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sz-wie-viele-beine-hat-eine-spi",
+     "task": "Welches Zeichen gehört ans Ende?",
+     "prompt": "Wie viele Beine hat eine Spinne _",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ],
+     "answer": "?",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wie viele Beine hat eine Spinne? Fragesatz: Jemand will etwas wissen. Am Ende steht ein Fragezeichen."
+    }
+   ]
+  },
+  {
+   "title": "Satzarten sortieren",
+   "icon": "🗂️",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "In welche Gruppe gehört der Satz?",
+     "review": "Welche Satzart ist das?",
+     "groups": [
+      "Aussagesatz",
+      "Fragesatz",
+      "Ausruf/Aufforderung"
+     ],
+     "items": [
+      {
+       "id": "d3-sa-so-der-hase-hoppelt-ueber-die-w",
+       "text": "Der Hase hoppelt über die Wiese.",
+       "group": "Aussagesatz"
+      },
+      {
+       "id": "d3-sa-so-wer-hat-meinen-stift",
+       "text": "Wer hat meinen Stift?",
+       "group": "Fragesatz"
+      },
+      {
+       "id": "d3-sa-so-halt-stopp",
+       "text": "Halt, stopp!",
+       "group": "Ausruf/Aufforderung"
+      },
+      {
+       "id": "d3-sa-so-morgen-besuchen-wir-oma",
+       "text": "Morgen besuchen wir Oma.",
+       "group": "Aussagesatz"
+      },
+      {
+       "id": "d3-sa-so-kannst-du-mir-helfen",
+       "text": "Kannst du mir helfen?",
+       "group": "Fragesatz"
+      },
+      {
+       "id": "d3-sa-so-mach-bitte-das-fenster-zu",
+       "text": "Mach bitte das Fenster zu!",
+       "group": "Ausruf/Aufforderung"
+      }
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "In welche Gruppe gehört der Satz?",
+     "review": "Welche Satzart ist das?",
+     "groups": [
+      "Aussagesatz",
+      "Fragesatz",
+      "Ausruf/Aufforderung"
+     ],
+     "items": [
+      {
+       "id": "d3-sa-so-ich-habe-einen-wackelzahn",
+       "text": "Ich habe einen Wackelzahn.",
+       "group": "Aussagesatz"
+      },
+      {
+       "id": "d3-sa-so-was-gibt-es-zum-essen",
+       "text": "Was gibt es zum Essen?",
+       "group": "Fragesatz"
+      },
+      {
+       "id": "d3-sa-so-toll-ein-regenbogen",
+       "text": "Toll, ein Regenbogen!",
+       "group": "Ausruf/Aufforderung"
+      },
+      {
+       "id": "d3-sa-so-der-wind-ist-heute-kalt",
+       "text": "Der Wind ist heute kalt.",
+       "group": "Aussagesatz"
+      },
+      {
+       "id": "d3-sa-so-gehst-du-mit-auf-den-spielpl",
+       "text": "Gehst du mit auf den Spielplatz?",
+       "group": "Fragesatz"
+      },
+      {
+       "id": "d3-sa-so-sei-bitte-leise",
+       "text": "Sei bitte leise!",
+       "group": "Ausruf/Aufforderung"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Fragewörter",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-sa-wf-wohnst-du",
+     "task": "Welches Fragewort passt?",
+     "prompt": "___ wohnst du?",
+     "options": [
+      "Wo",
+      "Wer",
+      "Wann"
+     ],
+     "answer": "Wo",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wo wohnst du?"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-wf-hat-an-der-tuer-geklingelt",
+     "task": "Welches Fragewort passt?",
+     "prompt": "___ hat an der Tür geklingelt?",
+     "options": [
+      "Wer",
+      "Wie",
+      "Wo"
+     ],
+     "answer": "Wer",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wer hat an der Tür geklingelt?"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-wf-faengt-die-schule-an",
+     "task": "Welches Fragewort passt?",
+     "prompt": "___ fängt die Schule an?",
+     "options": [
+      "Wann",
+      "Was",
+      "Wer"
+     ],
+     "answer": "Wann",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wann fängt die Schule an?"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-wf-isst-du-am-liebsten",
+     "task": "Welches Fragewort passt?",
+     "prompt": "___ isst du am liebsten?",
+     "options": [
+      "Was",
+      "Wo",
+      "Wann"
+     ],
+     "answer": "Was",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Was isst du am liebsten?"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-wf-heisst-deine-lehrerin",
+     "task": "Welches Fragewort passt?",
+     "prompt": "___ heißt deine Lehrerin?",
+     "options": [
+      "Wie",
+      "Wer",
+      "Wo"
+     ],
+     "answer": "Wie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wie heißt deine Lehrerin?"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-wf-weint-das-baby",
+     "task": "Welches Fragewort passt?",
+     "prompt": "___ weint das Baby?",
+     "options": [
+      "Warum",
+      "Was",
+      "Wer"
+     ],
+     "answer": "Warum",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Warum weint das Baby?"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-wf-faehrt-der-zug-hin",
+     "task": "Welches Fragewort passt?",
+     "prompt": "___ fährt der Zug hin?",
+     "options": [
+      "Wohin",
+      "Wann",
+      "Wer"
+     ],
+     "answer": "Wohin",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wohin fährt der Zug hin?"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-wf-alt-bist-du",
+     "task": "Welches Fragewort passt?",
+     "prompt": "___ alt bist du?",
+     "options": [
+      "Wie",
+      "Was",
+      "Wo"
+     ],
+     "answer": "Wie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wie alt bist du?"
+    }
+   ]
+  },
+  {
+   "title": "Wo endet der Satz?",
+   "icon": "🛑",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-sa-sg-lena-malt-ein-bild-es-ist-bu",
+     "task": "Hier fehlt ein Punkt. Nach welchem Wort endet der erste Satz?",
+     "prompt": "Lena malt ein Bild es ist bunt",
+     "options": [
+      "malt",
+      "Bild",
+      "es"
+     ],
+     "answer": "Bild",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Lena malt ein Bild. Es ist bunt. Nach dem Punkt schreibt man groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sg-der-hund-bellt-er-will-spiel",
+     "task": "Hier fehlt ein Punkt. Nach welchem Wort endet der erste Satz?",
+     "prompt": "Der Hund bellt er will spielen",
+     "options": [
+      "Hund",
+      "bellt",
+      "er"
+     ],
+     "answer": "bellt",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Der Hund bellt. Er will spielen. Nach dem Punkt schreibt man groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sg-wir-backen-kekse-sie-schmeck",
+     "task": "Hier fehlt ein Punkt. Nach welchem Wort endet der erste Satz?",
+     "prompt": "Wir backen Kekse sie schmecken lecker",
+     "options": [
+      "backen",
+      "Kekse",
+      "sie"
+     ],
+     "answer": "Kekse",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wir backen Kekse. Sie schmecken lecker. Nach dem Punkt schreibt man groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sg-tim-hat-hunger-er-isst-einen",
+     "task": "Hier fehlt ein Punkt. Nach welchem Wort endet der erste Satz?",
+     "prompt": "Tim hat Hunger er isst einen Apfel",
+     "options": [
+      "hat",
+      "Hunger",
+      "er"
+     ],
+     "answer": "Hunger",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Tim hat Hunger. Er isst einen Apfel. Nach dem Punkt schreibt man groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sg-es-regnet-stark-wir-bleiben",
+     "task": "Hier fehlt ein Punkt. Nach welchem Wort endet der erste Satz?",
+     "prompt": "Es regnet stark wir bleiben drinnen",
+     "options": [
+      "regnet",
+      "stark",
+      "wir"
+     ],
+     "answer": "stark",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Es regnet stark. Wir bleiben drinnen. Nach dem Punkt schreibt man groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sg-oma-kommt-morgen-wir-freuen",
+     "task": "Hier fehlt ein Punkt. Nach welchem Wort endet der erste Satz?",
+     "prompt": "Oma kommt morgen wir freuen uns",
+     "options": [
+      "kommt",
+      "morgen",
+      "wir"
+     ],
+     "answer": "morgen",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Oma kommt morgen. Wir freuen uns. Nach dem Punkt schreibt man groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sg-der-ball-rollt-weg-die-katze",
+     "task": "Hier fehlt ein Punkt. Nach welchem Wort endet der erste Satz?",
+     "prompt": "Der Ball rollt weg die Katze rennt hinterher",
+     "options": [
+      "rollt",
+      "weg",
+      "die"
+     ],
+     "answer": "weg",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Der Ball rollt weg. Die Katze rennt hinterher. Nach dem Punkt schreibt man groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-sg-im-garten-bluehen-rosen-sie",
+     "task": "Hier fehlt ein Punkt. Nach welchem Wort endet der erste Satz?",
+     "prompt": "Im Garten blühen Rosen sie duften gut",
+     "options": [
+      "blühen",
+      "Rosen",
+      "sie"
+     ],
+     "answer": "Rosen",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Im Garten blühen Rosen. Sie duften gut. Nach dem Punkt schreibt man groß."
+    }
+   ]
+  },
+  {
+   "title": "Komma bei Aufzählungen",
+   "icon": "✏️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-sa-ko-ich-kaufe-aepfel-birnen-und",
+     "task": "Wo fehlt das Komma?",
+     "prompt": "Ich kaufe Äpfel Birnen und Bananen.",
+     "options": [
+      "nach Äpfel",
+      "nach Birnen",
+      "nach und"
+     ],
+     "answer": "nach Äpfel",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Ich kaufe Äpfel, Birnen und Bananen. Vor „und“ steht kein Komma."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-ko-lisa-hat-einen-hund-eine-kat",
+     "task": "Wo fehlt das Komma?",
+     "prompt": "Lisa hat einen Hund eine Katze und zwei Hasen.",
+     "options": [
+      "nach Hund",
+      "nach Katze",
+      "nach zwei"
+     ],
+     "answer": "nach Hund",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Lisa hat einen Hund, eine Katze und zwei Hasen. Vor „und“ steht kein Komma."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-ko-im-maeppchen-sind-stifte-ein",
+     "task": "Wo fehlt das Komma?",
+     "prompt": "Im Mäppchen sind Stifte ein Lineal und ein Radiergummi.",
+     "options": [
+      "nach Stifte",
+      "nach Lineal",
+      "nach Mäppchen"
+     ],
+     "answer": "nach Stifte",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Im Mäppchen sind Stifte, ein Lineal und ein Radiergummi. Vor „und“ steht kein Komma."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-ko-der-ball-ist-rund-bunt-und-w",
+     "task": "Wo fehlt das Komma?",
+     "prompt": "Der Ball ist rund bunt und weich.",
+     "options": [
+      "nach rund",
+      "nach bunt",
+      "nach Ball"
+     ],
+     "answer": "nach rund",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Der Ball ist rund, bunt und weich. Vor „und“ steht kein Komma."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-kz-im-zoo-sehen-wir-affen-loewe",
+     "task": "Wie viele Kommas fehlen?",
+     "prompt": "Im Zoo sehen wir Affen Löwen Zebras und Elefanten.",
+     "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+     ],
+     "answer": "2",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Im Zoo sehen wir Affen, Löwen, Zebras und Elefanten."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-kz-zum-fruehstueck-gibt-es-brot",
+     "task": "Wie viele Kommas fehlen?",
+     "prompt": "Zum Frühstück gibt es Brot Butter Honig Käse und Milch.",
+     "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+     ],
+     "answer": "3",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Zum Frühstück gibt es Brot, Butter, Honig, Käse und Milch."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-sa-kz-wir-spielen-fangen-und-verst",
+     "task": "Wie viele Kommas fehlen?",
+     "prompt": "Wir spielen Fangen und Verstecken.",
+     "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+     ],
+     "answer": "0",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wir spielen Fangen und Verstecken. Bei nur zwei Dingen mit „und“ braucht man kein Komma."
+    }
+   ]
+  },
+  {
+   "title": "Sätze und Fragen bauen",
+   "icon": "🧱",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "build",
+     "id": "d3-sa-ab-der-igel-schlaeft-im-winter",
+     "task": "Bau einen Aussagesatz!",
+     "tiles": [
+      "der Igel",
+      "schläft",
+      "im Winter"
+     ],
+     "answers": [
+      [
+       "der Igel",
+       "schläft",
+       "im Winter"
+      ],
+      [
+       "im Winter",
+       "schläft",
+       "der Igel"
+      ]
+     ],
+     "end": ".",
+     "hint": "Das Verb steht im Aussagesatz an zweiter Stelle. Probier es nochmal!"
+    },
+    {
+     "kind": "build",
+     "id": "d3-sa-ab-meine-oma-strickt-einen-scha",
+     "task": "Bau einen Aussagesatz!",
+     "tiles": [
+      "meine Oma",
+      "strickt",
+      "einen Schal"
+     ],
+     "answers": [
+      [
+       "meine Oma",
+       "strickt",
+       "einen Schal"
+      ],
+      [
+       "einen Schal",
+       "strickt",
+       "meine Oma"
+      ]
+     ],
+     "end": ".",
+     "hint": "Das Verb steht im Aussagesatz an zweiter Stelle. Probier es nochmal!"
+    },
+    {
+     "kind": "build",
+     "id": "d3-sa-ab-die-kinder-bauen-im-sand-ein",
+     "task": "Bau einen Aussagesatz!",
+     "tiles": [
+      "die Kinder",
+      "bauen",
+      "im Sand",
+      "eine Burg"
+     ],
+     "answers": [
+      [
+       "die Kinder",
+       "bauen",
+       "im Sand",
+       "eine Burg"
+      ],
+      [
+       "die Kinder",
+       "bauen",
+       "eine Burg",
+       "im Sand"
+      ],
+      [
+       "im Sand",
+       "bauen",
+       "die Kinder",
+       "eine Burg"
+      ],
+      [
+       "im Sand",
+       "bauen",
+       "eine Burg",
+       "die Kinder"
+      ],
+      [
+       "eine Burg",
+       "bauen",
+       "die Kinder",
+       "im Sand"
+      ],
+      [
+       "eine Burg",
+       "bauen",
+       "im Sand",
+       "die Kinder"
+      ]
+     ],
+     "end": ".",
+     "hint": "Das Verb steht im Aussagesatz an zweiter Stelle. Probier es nochmal!"
+    },
+    {
+     "kind": "build",
+     "id": "d3-sa-ab-am-abend-liest-papa-ein-buch",
+     "task": "Bau einen Aussagesatz!",
+     "tiles": [
+      "am Abend",
+      "liest",
+      "Papa",
+      "ein Buch"
+     ],
+     "answers": [
+      [
+       "am Abend",
+       "liest",
+       "Papa",
+       "ein Buch"
+      ],
+      [
+       "am Abend",
+       "liest",
+       "ein Buch",
+       "Papa"
+      ],
+      [
+       "Papa",
+       "liest",
+       "am Abend",
+       "ein Buch"
+      ],
+      [
+       "Papa",
+       "liest",
+       "ein Buch",
+       "am Abend"
+      ],
+      [
+       "ein Buch",
+       "liest",
+       "am Abend",
+       "Papa"
+      ],
+      [
+       "ein Buch",
+       "liest",
+       "Papa",
+       "am Abend"
+      ]
+     ],
+     "end": ".",
+     "hint": "Das Verb steht im Aussagesatz an zweiter Stelle. Probier es nochmal!"
+    },
+    {
+     "kind": "build",
+     "id": "d3-sa-fb-kommst-du-morgen",
+     "task": "Bau eine Frage!",
+     "tiles": [
+      "kommst",
+      "du",
+      "morgen"
+     ],
+     "answers": [
+      [
+       "kommst",
+       "du",
+       "morgen"
+      ]
+     ],
+     "end": "?",
+     "explain": "Ja-Nein-Frage: Das Verb steht ganz vorne.",
+     "hint": "Bei einer Frage steht das Verb oder das Fragewort vorne. Probier es nochmal!"
+    },
+    {
+     "kind": "build",
+     "id": "d3-sa-fb-wo-wohnt-der-igel",
+     "task": "Bau eine Frage!",
+     "tiles": [
+      "wo",
+      "wohnt",
+      "der Igel"
+     ],
+     "answers": [
+      [
+       "wo",
+       "wohnt",
+       "der Igel"
+      ]
+     ],
+     "end": "?",
+     "explain": "W-Frage: Das Fragewort steht vorne, dann das Verb.",
+     "hint": "Bei einer Frage steht das Verb oder das Fragewort vorne. Probier es nochmal!"
+    },
+    {
+     "kind": "build",
+     "id": "d3-sa-fb-hast-du-einen-hund",
+     "task": "Bau eine Frage!",
+     "tiles": [
+      "hast",
+      "du",
+      "einen Hund"
+     ],
+     "answers": [
+      [
+       "hast",
+       "du",
+       "einen Hund"
+      ]
+     ],
+     "end": "?",
+     "explain": "Ja-Nein-Frage: Das Verb steht ganz vorne.",
+     "hint": "Bei einer Frage steht das Verb oder das Fragewort vorne. Probier es nochmal!"
+    },
+    {
+     "kind": "build",
+     "id": "d3-sa-fb-wann-beginnt-die-schule",
+     "task": "Bau eine Frage!",
+     "tiles": [
+      "wann",
+      "beginnt",
+      "die Schule"
+     ],
+     "answers": [
+      [
+       "wann",
+       "beginnt",
+       "die Schule"
+      ]
+     ],
+     "end": "?",
+     "explain": "W-Frage: Das Fragewort steht vorne, dann das Verb.",
+     "hint": "Bei einer Frage steht das Verb oder das Fragewort vorne. Probier es nochmal!"
+    },
+    {
+     "kind": "build",
+     "id": "d3-sa-fb-kann-tom-schwimmen",
+     "task": "Bau eine Frage!",
+     "tiles": [
+      "kann",
+      "Tom",
+      "schwimmen"
+     ],
+     "answers": [
+      [
+       "kann",
+       "Tom",
+       "schwimmen"
+      ]
+     ],
+     "end": "?",
+     "explain": "Ja-Nein-Frage: Das Verb steht ganz vorne.",
+     "hint": "Bei einer Frage steht das Verb oder das Fragewort vorne. Probier es nochmal!"
+    },
+    {
+     "kind": "build",
+     "id": "d3-sa-fb-warum-weint-das-baby",
+     "task": "Bau eine Frage!",
+     "tiles": [
+      "warum",
+      "weint",
+      "das Baby"
+     ],
+     "answers": [
+      [
+       "warum",
+       "weint",
+       "das Baby"
+      ]
+     ],
+     "end": "?",
+     "explain": "W-Frage: Das Fragewort steht vorne, dann das Verb.",
+     "hint": "Bei einer Frage steht das Verb oder das Fragewort vorne. Probier es nochmal!"
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}
