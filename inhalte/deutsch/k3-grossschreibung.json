@@ -1,0 +1,451 @@
+{
+ "id": "d3-grossschreibung",
+ "type": "schule",
+ "title_de": "Großschreibung: Satzanfang und Zeitangaben",
+ "image": "👑",
+ "color": "#d18a1f",
+ "lessons": [
+  {
+   "title": "Satzanfang",
+   "icon": "🔠",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-gs-sa",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "options": [
+      "Am Morgen scheint die Sonne.",
+      "am Morgen scheint die Sonne."
+     ],
+     "answer": "Am Morgen scheint die Sonne.",
+     "explain": "Am Satzanfang schreibt man immer groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-sa-2",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "options": [
+      "Heute gehen wir ins Schwimmbad.",
+      "heute gehen wir ins Schwimmbad."
+     ],
+     "answer": "Heute gehen wir ins Schwimmbad.",
+     "explain": "Am Satzanfang schreibt man immer groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-sa-3",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "options": [
+      "Mein Bruder spielt Fußball.",
+      "mein Bruder spielt Fußball."
+     ],
+     "answer": "Mein Bruder spielt Fußball.",
+     "explain": "Am Satzanfang schreibt man immer groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-sa-4",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "options": [
+      "Gestern hat es geregnet.",
+      "gestern hat es geregnet."
+     ],
+     "answer": "Gestern hat es geregnet.",
+     "explain": "Am Satzanfang schreibt man immer groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-sa-5",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "options": [
+      "Wo ist mein Schuh?",
+      "wo ist mein Schuh?"
+     ],
+     "answer": "Wo ist mein Schuh?",
+     "explain": "Am Satzanfang schreibt man immer groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-sa-6",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "options": [
+      "Komm schnell her!",
+      "komm schnell her!"
+     ],
+     "answer": "Komm schnell her!",
+     "explain": "Am Satzanfang schreibt man immer groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-sa-7",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "options": [
+      "Leider ist der Kuchen alle.",
+      "leider ist der Kuchen alle."
+     ],
+     "answer": "Leider ist der Kuchen alle.",
+     "explain": "Am Satzanfang schreibt man immer groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-sa-8",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "options": [
+      "Nach der Schule esse ich Nudeln.",
+      "nach der Schule esse ich Nudeln."
+     ],
+     "answer": "Nach der Schule esse ich Nudeln.",
+     "explain": "Am Satzanfang schreibt man immer groß."
+    }
+   ]
+  },
+  {
+   "title": "Nach dem Punkt",
+   "icon": "⏺️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-gs-np-wir-spielen-im-garten-ann-re",
+     "task": "Groß oder klein?",
+     "prompt": "Wir spielen im Garten. _ann regnet es.",
+     "options": [
+      "D",
+      "d"
+     ],
+     "answer": "D",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Nach einem Punkt, Ausrufezeichen oder Fragezeichen fängt ein neuer Satz an: groß!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-np-der-hund-bellt-ie-katze-renn",
+     "task": "Groß oder klein?",
+     "prompt": "Der Hund bellt. _ie Katze rennt weg.",
+     "options": [
+      "D",
+      "d"
+     ],
+     "answer": "D",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Nach einem Punkt, Ausrufezeichen oder Fragezeichen fängt ein neuer Satz an: groß!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-np-ich-habe-hunger-st-das-essen",
+     "task": "Groß oder klein?",
+     "prompt": "Ich habe Hunger. _st das Essen fertig?",
+     "options": [
+      "I",
+      "i"
+     ],
+     "answer": "I",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Nach einem Punkt, Ausrufezeichen oder Fragezeichen fängt ein neuer Satz an: groß!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-np-pass-auf-ort-kommt-ein-auto",
+     "task": "Groß oder klein?",
+     "prompt": "Pass auf! _ort kommt ein Auto.",
+     "options": [
+      "D",
+      "d"
+     ],
+     "answer": "D",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Nach einem Punkt, Ausrufezeichen oder Fragezeichen fängt ein neuer Satz an: groß!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-np-wir-gehen-in-den-zoo-ort-seh",
+     "task": "Groß oder klein?",
+     "prompt": "Wir gehen in den Zoo. _ort sehen wir Affen.",
+     "options": [
+      "D",
+      "d"
+     ],
+     "answer": "D",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Nach einem Punkt, Ausrufezeichen oder Fragezeichen fängt ein neuer Satz an: groß!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-np-was-machst-du-ch-lese-ein-bu",
+     "task": "Groß oder klein?",
+     "prompt": "Was machst du? _ch lese ein Buch.",
+     "options": [
+      "I",
+      "i"
+     ],
+     "answer": "I",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Nach einem Punkt, Ausrufezeichen oder Fragezeichen fängt ein neuer Satz an: groß!"
+    }
+   ]
+  },
+  {
+   "title": "Zeitangaben 1",
+   "icon": "🕰️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-gs-zt-wir-treffen-uns-heute-bend",
+     "task": "Groß oder klein?",
+     "prompt": "Wir treffen uns heute _bend.",
+     "options": [
+      "A",
+      "a"
+     ],
+     "answer": "A",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "heute Abend – Abend ist hier ein Nomen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-zt-bends-lese-ich-gern",
+     "task": "Groß oder klein?",
+     "prompt": "_bends lese ich gern.",
+     "options": [
+      "A",
+      "a"
+     ],
+     "answer": "A",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Am Satzanfang immer groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-zt-ich-gehe-orgens-zur-schule",
+     "task": "Groß oder klein?",
+     "prompt": "Ich gehe _orgens zur Schule.",
+     "options": [
+      "M",
+      "m"
+     ],
+     "answer": "m",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "morgens (mit s) schreibt man klein."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-zt-am-ontag-haben-wir-sport",
+     "task": "Groß oder klein?",
+     "prompt": "Am _ontag haben wir Sport.",
+     "options": [
+      "M",
+      "m"
+     ],
+     "answer": "M",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "am Montag – nach „am“ kommt ein Nomen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-zt-wir-schwimmen-ontags",
+     "task": "Groß oder klein?",
+     "prompt": "Wir schwimmen _ontags.",
+     "options": [
+      "M",
+      "m"
+     ],
+     "answer": "m",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "montags (mit s) schreibt man klein."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-zt-gestern-ittag-gab-es-suppe",
+     "task": "Groß oder klein?",
+     "prompt": "Gestern _ittag gab es Suppe.",
+     "options": [
+      "M",
+      "m"
+     ],
+     "answer": "M",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "gestern Mittag – Mittag ist ein Nomen."
+    }
+   ]
+  },
+  {
+   "title": "Zeitangaben 2",
+   "icon": "🕰️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-gs-zt-in-der-acht-schlafe-ich",
+     "task": "Groß oder klein?",
+     "prompt": "In der _acht schlafe ich.",
+     "options": [
+      "N",
+      "n"
+     ],
+     "answer": "N",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "in der Nacht – nach „der“ kommt ein Nomen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-zt-eulen-jagen-achts",
+     "task": "Groß oder klein?",
+     "prompt": "Eulen jagen _achts.",
+     "options": [
+      "N",
+      "n"
+     ],
+     "answer": "n",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "nachts (mit s) schreibt man klein."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-zt-jeden-orgen-esse-ich-muesli",
+     "task": "Groß oder klein?",
+     "prompt": "Jeden _orgen esse ich Müsli.",
+     "options": [
+      "M",
+      "m"
+     ],
+     "answer": "M",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "jeden Morgen – Morgen ist ein Nomen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-zt-am-achmittag-spielen-wir",
+     "task": "Groß oder klein?",
+     "prompt": "Am _achmittag spielen wir.",
+     "options": [
+      "N",
+      "n"
+     ],
+     "answer": "N",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "am Nachmittag – nach „am“ kommt ein Nomen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-zt-ich-gehe-ittwochs-zum-turnen",
+     "task": "Groß oder klein?",
+     "prompt": "Ich gehe _ittwochs zum Turnen.",
+     "options": [
+      "M",
+      "m"
+     ],
+     "answer": "m",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "mittwochs (mit s) schreibt man klein."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-gs-zt-morgen-rueh-fahren-wir-los",
+     "task": "Groß oder klein?",
+     "prompt": "Morgen _rüh fahren wir los.",
+     "options": [
+      "F",
+      "f"
+     ],
+     "answer": "f",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "morgen früh – früh schreibt man klein."
+    }
+   ]
+  },
+  {
+   "title": "Mit oder ohne s",
+   "icon": "🌙",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Groß oder klein?",
+     "review": "Zeitangaben",
+     "groups": [
+      "groß",
+      "klein"
+     ],
+     "items": [
+      {
+       "id": "d3-gs-zs-am-abend",
+       "text": "am Abend",
+       "group": "groß"
+      },
+      {
+       "id": "d3-gs-zs-heute-morgen",
+       "text": "heute Morgen",
+       "group": "groß"
+      },
+      {
+       "id": "d3-gs-zs-am-sonntag",
+       "text": "am Sonntag",
+       "group": "groß"
+      },
+      {
+       "id": "d3-gs-zs-in-der-nacht",
+       "text": "in der Nacht",
+       "group": "groß"
+      },
+      {
+       "id": "d3-gs-zs-abends",
+       "text": "abends",
+       "group": "klein"
+      },
+      {
+       "id": "d3-gs-zs-sonntags",
+       "text": "sonntags",
+       "group": "klein"
+      },
+      {
+       "id": "d3-gs-zs-nachts",
+       "text": "nachts",
+       "group": "klein"
+      },
+      {
+       "id": "d3-gs-zs-morgens",
+       "text": "morgens",
+       "group": "klein"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-gs-foto",
+     "task": "Schreib 4 Sätze über deine Woche in dein Heft. Benutze: am Montag, abends, heute Morgen, sonntags."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

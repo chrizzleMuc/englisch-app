@@ -1,0 +1,505 @@
+{
+ "id": "d3-nomen-endungen",
+ "type": "schule",
+ "title_de": "Nomen mit -nis und gemischten Endungen",
+ "image": "🧩",
+ "color": "#8c5a2b",
+ "lessons": [
+  {
+   "title": "-nis",
+   "icon": "🔐",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ne-ni-geheim-das-geheimnis",
+     "task": "Bilde ein Nomen mit -nis. Mit Artikel!",
+     "prompt": "geheim",
+     "answer": "das Geheimnis"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ne-ni-erleben-das-erlebnis",
+     "task": "Bilde ein Nomen mit -nis. Mit Artikel!",
+     "prompt": "erleben",
+     "answer": "das Erlebnis"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ne-ni-ergeben-das-ergebnis",
+     "task": "Bilde ein Nomen mit -nis. Mit Artikel!",
+     "prompt": "ergeben",
+     "answer": "das Ergebnis"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ne-ni-hindern-das-hindernis",
+     "task": "Bilde ein Nomen mit -nis. Mit Artikel!",
+     "prompt": "hindern",
+     "answer": "das Hindernis"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ne-ni-finster-die-finsternis",
+     "task": "Bilde ein Nomen mit -nis. Mit Artikel!",
+     "prompt": "finster",
+     "answer": "die Finsternis"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ne-ni-wild-die-wildnis",
+     "task": "Bilde ein Nomen mit -nis. Mit Artikel!",
+     "prompt": "wild",
+     "answer": "die Wildnis"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ne-ni-erlauben-die-erlaubnis",
+     "task": "Bilde ein Nomen mit -nis. Mit Artikel!",
+     "prompt": "erlauben",
+     "answer": "die Erlaubnis"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ne-ni-verstehen-das-verstaendnis",
+     "task": "Bilde ein Nomen mit -nis. Mit Artikel!",
+     "prompt": "verstehen",
+     "answer": "das Verständnis"
+    }
+   ]
+  },
+  {
+   "title": "-nis oder -nisse",
+   "icon": "👥",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ne-nm-das-geheimnis-die-geheimni-e",
+     "task": "Mehrzahl: s oder ss?",
+     "prompt": "das Geheimnis → die Geheimni_e",
+     "options": [
+      "s",
+      "ss"
+     ],
+     "answer": "ss",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "In der Mehrzahl wird -nis zu -nisse."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-nm-das-erlebnis-die-erlebni-e",
+     "task": "Mehrzahl: s oder ss?",
+     "prompt": "das Erlebnis → die Erlebni_e",
+     "options": [
+      "s",
+      "ss"
+     ],
+     "answer": "ss",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "In der Mehrzahl wird -nis zu -nisse."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-nm-das-zeugnis-die-zeugni-e",
+     "task": "Mehrzahl: s oder ss?",
+     "prompt": "das Zeugnis → die Zeugni_e",
+     "options": [
+      "s",
+      "ss"
+     ],
+     "answer": "ss",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "In der Mehrzahl wird -nis zu -nisse."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-nm-das-ergebnis-die-ergebni-e",
+     "task": "Mehrzahl: s oder ss?",
+     "prompt": "das Ergebnis → die Ergebni_e",
+     "options": [
+      "s",
+      "ss"
+     ],
+     "answer": "ss",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "In der Mehrzahl wird -nis zu -nisse."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-nm-das-hindernis-die-hinderni-e",
+     "task": "Mehrzahl: s oder ss?",
+     "prompt": "das Hindernis → die Hinderni_e",
+     "options": [
+      "s",
+      "ss"
+     ],
+     "answer": "ss",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "In der Mehrzahl wird -nis zu -nisse."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-ne-das-ergebni",
+     "task": "Einzahl: s oder ss?",
+     "prompt": "das Ergebni_",
+     "options": [
+      "s",
+      "ss"
+     ],
+     "answer": "s",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "In der Einzahl schreibt man -nis mit einem s."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-ne-die-wildni",
+     "task": "Einzahl: s oder ss?",
+     "prompt": "die Wildni_",
+     "options": [
+      "s",
+      "ss"
+     ],
+     "answer": "s",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "In der Einzahl schreibt man -nis mit einem s."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-ne-das-zeugni",
+     "task": "Einzahl: s oder ss?",
+     "prompt": "das Zeugni_",
+     "options": [
+      "s",
+      "ss"
+     ],
+     "answer": "s",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "In der Einzahl schreibt man -nis mit einem s."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-ne-das-hinderni",
+     "task": "Einzahl: s oder ss?",
+     "prompt": "das Hinderni_",
+     "options": [
+      "s",
+      "ss"
+     ],
+     "answer": "s",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "In der Einzahl schreibt man -nis mit einem s."
+    }
+   ]
+  },
+  {
+   "title": "Welche Endung?",
+   "icon": "🔚",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-frei-die-das-frei",
+     "task": "Welche Endung passt?",
+     "prompt": "frei → die/das Frei…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-heit",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "frei → Freiheit"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-wohnen-die-das-wohn",
+     "task": "Welche Endung passt?",
+     "prompt": "wohnen → die/das Wohn…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-ung",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "wohnen → Wohnung"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-freundlich-die-das-freundlic",
+     "task": "Welche Endung passt?",
+     "prompt": "freundlich → die/das Freundlich…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-keit",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "freundlich → Freundlichkeit"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-geheim-die-das-geheim",
+     "task": "Welche Endung passt?",
+     "prompt": "geheim → die/das Geheim…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-nis",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "geheim → Geheimnis"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-krank-die-das-krank",
+     "task": "Welche Endung passt?",
+     "prompt": "krank → die/das Krank…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-heit",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "krank → Krankheit"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-sauber-die-das-sauber",
+     "task": "Welche Endung passt?",
+     "prompt": "sauber → die/das Sauber…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-keit",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "sauber → Sauberkeit"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-hoffen-die-das-hoffn",
+     "task": "Welche Endung passt?",
+     "prompt": "hoffen → die/das Hoffn…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-ung",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "hoffen → Hoffnung"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-finster-die-das-finster",
+     "task": "Welche Endung passt?",
+     "prompt": "finster → die/das Finster…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-nis",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "finster → Finsternis"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-einsam-die-das-einsam",
+     "task": "Welche Endung passt?",
+     "prompt": "einsam → die/das Einsam…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-keit",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "einsam → Einsamkeit"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-dunkel-die-das-dunkel",
+     "task": "Welche Endung passt?",
+     "prompt": "dunkel → die/das Dunkel…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-heit",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "dunkel → Dunkelheit"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-zeichnen-die-das-zeichn",
+     "task": "Welche Endung passt?",
+     "prompt": "zeichnen → die/das Zeichn…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-ung",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "zeichnen → Zeichnung"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-wild-die-das-wild",
+     "task": "Welche Endung passt?",
+     "prompt": "wild → die/das Wild…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-nis",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "wild → Wildnis"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-ehrlich-die-das-ehrlich",
+     "task": "Welche Endung passt?",
+     "prompt": "ehrlich → die/das Ehrlich…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-keit",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "ehrlich → Ehrlichkeit"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ne-en-erleben-die-das-erleb",
+     "task": "Welche Endung passt?",
+     "prompt": "erleben → die/das Erleb…",
+     "options": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "answer": "-nis",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "erleben → Erlebnis"
+    },
+    {
+     "kind": "sort",
+     "task": "Sortiere nach der Endung.",
+     "review": "-ung, -heit, -keit oder -nis?",
+     "groups": [
+      "-ung",
+      "-heit",
+      "-keit",
+      "-nis"
+     ],
+     "items": [
+      {
+       "id": "d3-ne-es-die-zeitung",
+       "text": "die Zeitung",
+       "group": "-ung"
+      },
+      {
+       "id": "d3-ne-es-die-rechnung",
+       "text": "die Rechnung",
+       "group": "-ung"
+      },
+      {
+       "id": "d3-ne-es-die-gesundheit",
+       "text": "die Gesundheit",
+       "group": "-heit"
+      },
+      {
+       "id": "d3-ne-es-die-schoenheit",
+       "text": "die Schönheit",
+       "group": "-heit"
+      },
+      {
+       "id": "d3-ne-es-die-froehlichkeit",
+       "text": "die Fröhlichkeit",
+       "group": "-keit"
+      },
+      {
+       "id": "d3-ne-es-die-muedigkeit",
+       "text": "die Müdigkeit",
+       "group": "-keit"
+      },
+      {
+       "id": "d3-ne-es-das-ereignis",
+       "text": "das Ereignis",
+       "group": "-nis"
+      },
+      {
+       "id": "d3-ne-es-die-kenntnis",
+       "text": "die Kenntnis",
+       "group": "-nis"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-ne-foto",
+     "task": "Schreib je 2 Nomen mit -ung, -heit, -keit und -nis mit Artikel in dein Heft."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 12
+  }
+ ]
+}
