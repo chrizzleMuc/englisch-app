@@ -7,7 +7,7 @@ export const content = { subjects: [], items: new Map(), units: new Map(), photo
 // Eine Schul-Einheit hat "type": "schule" und eine Liste "lessons" mit Aufgaben ("tasks").
 // Jede bewertbare Aufgabe kommt als Einzelfrage in die Lernkartei (content.items, kind "task").
 
-const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint", "column", "chain"];
+const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint", "column", "chain", "build", "flash"];
 
 function sharedStart(a, b) {
   const wa = a.split(" ");
@@ -59,6 +59,18 @@ function checkSchool(unit, path) {
         if (nums.length < 2 || !["+", "-"].includes(t.op) || (t.op === "-" && (nums.length !== 2 || nums[0] < nums[1]))) err(`${t.id}: Schriftliche Aufgabe braucht nums und op (+ oder -).`);
         t.prompt = nums.join(t.op === "+" ? " + " : " − ");
         t.answer = String(t.op === "+" ? nums.reduce((a, b) => a + b, 0) : nums[0] - nums[1]);
+      }
+      // Satz bauen: Antworten sind Listen von Bausteinen (alle Bausteine, andere Reihenfolge)
+      if (t.kind === "build") {
+        const key = (a) => [...a].map((w) => w.toLowerCase()).sort().join("|");
+        if (!(t.tiles || []).length || !(t.answers || []).length) err(`${t.id}: Satz bauen braucht tiles und answers.`);
+        for (const a of t.answers || []) if (key(a) !== key(t.tiles || [])) err(`${t.id}: Eine Lösung passt nicht zu den Bausteinen.`);
+        t.prompt = t.prompt || t.tiles.join(" / ");
+        t.answer = (t.answers[0] || []).map((w, i) => (i ? w : w[0].toUpperCase() + w.slice(1))).join(" ").replace(/ ([,.!?:])/g, "$1") + (t.end || "");
+      }
+      if (t.kind === "flash") {
+        if (!t.word || !(t.options || []).includes(t.answer)) err(`${t.id}: Blitzlesen braucht word und die Antwort bei options.`);
+        t.prompt = t.prompt || t.word;
       }
       if (t.kind === "chain" && !(t.lines || []).length) err(`${t.id}: Rechenweg ohne Schritte.`);
       if (t.kind === "choice" && !(t.options || []).includes(t.answer)) err(`${t.id}: Die Antwort steht nicht bei den Auswahlmöglichkeiten.`);

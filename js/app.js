@@ -9,7 +9,7 @@ import { pic } from "./pics.js";
 import { vis, visText } from "./mathpics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 31;
+const APP_VERSION = 32;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -719,7 +719,8 @@ function finishLesson(lesson) {
 // ================= Schulfächer (Deutsch, Mathe, HSU …) =================
 // Aufgabenarten: pairs (Paare finden), type (eintippen, optional vorher hat/ist wählen),
 // choice (auswählen, z. B. "Stimmt das?"), sort (in Gruppen sortieren),
-// syllables (Silben trennen), photo (im Heft schreiben + Foto als Nachweis).
+// syllables (Silben trennen), photo (im Heft schreiben + Foto als Nachweis),
+// build (Satz aus Bausteinen bauen), flash (Blitzlesen).
 
 const norm = (s) => String(s || "").normalize("NFC").replace(/\s+/g, " ").trim();
 const singleStep = (q) => ({ kind: q.kind, q });
@@ -939,6 +940,146 @@ STEPS.choice = (lesson, step) => {
       el.disabled = true;
       miss(lesson, step, q.id, el.dataset.v);
       $("fb").innerHTML = `<span class="try">Nicht ganz. Versuch es nochmal!</span>`;
+    }
+  });
+  $("next").onclick = () => advance(lesson);
+};
+
+// ---------- Übung: Satz bauen (Satzglieder antippen, in die richtige Reihenfolge bringen) ----------
+// Aufgabe: { kind: "build", tiles: ["der Hund", "bellt", "laut"], answers: [["der Hund","bellt","laut"], …], end: ".", show? (Satz oben) }
+// Der erste Baustein im Satz bekommt automatisch einen großen Anfangsbuchstaben.
+const capFirst = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
+function buildText(parts, end) {
+  return parts.map((p, i) => (i === 0 ? capFirst(p) : p)).join(" ").replace(/ ([,.!?:])/g, "$1") + (end || "");
+}
+STEPS.build = (lesson, step) => {
+  const q = step.q;
+  let first = true;
+  const pool = shuffle(q.tiles.map((text, i) => ({ text, i })));
+  let placed = [];
+  const token = lessonRender(lesson, `
+    ${taskHead(q.task || "Bau den Satz!")}
+    ${q.show ? promptCard(q.show) : ""}
+    <div class="build-line" id="line"></div>
+    <div class="build-pool" id="pool"></div>
+    <div class="feedback" id="fb"></div>
+    <button class="go-btn" id="check" disabled>Prüfen ✓</button>
+    <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
+  wireVoice(token, () => sayDe(q.say || q.task || "Bau den Satz!"), q.task || q.say || "build");
+  const draw = () => {
+    const words = placed.map((t) => t.text);
+    $("line").innerHTML = placed.length
+      ? placed.map((t, k) => `<button class="tile placed" data-k="${k}">${esc(k === 0 ? capFirst(t.text) : t.text)}</button>`).join("") + (q.end ? `<span class="build-end">${esc(q.end)}</span>` : "")
+      : `<span class="build-empty">Tipp unten die Bausteine an.</span>`;
+    $("pool").innerHTML = pool.map((t) => `<button class="tile" data-i="${t.i}" ${placed.includes(t) ? "disabled" : ""}>${esc(t.text)}</button>`).join("");
+    $("check").disabled = words.length !== q.tiles.length;
+    on("#pool .tile", "click", (e) => {
+      const t = pool.find((x) => x.i === +e.currentTarget.dataset.i);
+      if (placed.includes(t)) return;
+      placed.push(t);
+      chime("pop");
+      draw();
+    });
+    on("#line .tile", "click", (e) => {
+      if ($("check").hidden) return;
+      placed.splice(+e.currentTarget.dataset.k, 1);
+      draw();
+    });
+  };
+  draw();
+  const same = (a, b) => a.length === b.length && a.every((w, k) => norm(w).toLowerCase() === norm(b[k]).toLowerCase());
+  $("check").onclick = async () => {
+    const words = placed.map((t) => t.text);
+    const ok = q.answers.some((a) => same(a, words));
+    const built = buildText(words, q.end);
+    if (lesson.exam) {
+      $("check").hidden = true;
+      return examAnswer(lesson, step, q.id, ok, built, token);
+    }
+    if (ok) {
+      $("check").hidden = true;
+      $("line").classList.add("right");
+      chime("good");
+      score(lesson, step, q.id, first);
+      $("fb").innerHTML = `<span class="ok">${first ? pick(PRAISE) : "Genau."}</span>${q.explain ? `<p class="explain">${esc(q.explain)}</p>` : ""}`;
+      if (q.explain) $("next").hidden = false;
+      else {
+        await wait(900);
+        if (alive(token)) advance(lesson);
+      }
+    } else if (first) {
+      first = false;
+      miss(lesson, step, q.id, built);
+      $("line").classList.add("shake");
+      setTimeout(() => $("line")?.classList.remove("shake"), 400);
+      $("fb").innerHTML = `<span class="try">${esc(q.hint || "Nicht ganz. Tipp einen Baustein an, um ihn zurückzulegen, und versuch es nochmal!")}</span>`;
+    } else {
+      $("check").hidden = true;
+      miss(lesson, step, q.id, built);
+      $("fb").innerHTML = `<span class="try">Richtig ist zum Beispiel:</span> <span class="solution">${esc(buildText(q.answers[0], q.end))}</span>`;
+      score(lesson, step, q.id, false);
+      $("next").hidden = false;
+    }
+  };
+  $("next").onclick = () => advance(lesson);
+};
+
+// ---------- Übung: Blitzlesen (Wort kurz zeigen, dann aus ähnlichen Wörtern auswählen) ----------
+// Aufgabe: { kind: "flash", word: "Haus", ms: 900, options: ["Haus", "Maus", "Hals"], answer: "Haus" }
+STEPS.flash = (lesson, step) => {
+  const q = step.q;
+  let first = true;
+  let locked = false;
+  let shows = 0;
+  const opts = shuffle(q.options);
+  const token = lessonRender(lesson, `
+    ${taskHead(q.task || "Blitzlesen: Was stand da?")}
+    <div class="prompt-card flash-card" id="fc"><button class="go-btn flash-go" id="go">👀 Los!</button></div>
+    <div class="choices text-choices ${opts.some((o) => o.length > 14) ? "flash-long" : ""}" id="opts" hidden>${opts.map((o) => `<button class="choice" data-v="${esc(o)}"><span class="word">${esc(o)}</span></button>`).join("")}</div>
+    <div class="feedback" id="fb"></div>
+    <button class="go-btn" id="again" hidden>👀 Nochmal zeigen</button>
+    <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
+  wireVoice(token, () => sayDe(q.task || "Blitzlesen: Was stand da?"), q.task || "flash");
+  const flash = async () => {
+    shows++;
+    $("again").hidden = true;
+    $("opts").hidden = true;
+    $("fc").innerHTML = `<span class="prompt-text flash-word">${esc(q.word)}</span>`;
+    await wait(q.ms || 1000);
+    if (!alive(token)) return;
+    $("fc").innerHTML = `<span class="flash-gone">⚡</span>`;
+    $("opts").hidden = false;
+    if (!lesson.exam && shows < 2) $("again").hidden = false;
+  };
+  $("go").onclick = flash;
+  $("again").onclick = () => {
+    first = false;
+    flash();
+  };
+  on("#opts .choice", "click", async (e) => {
+    if (locked) return;
+    const el = e.currentTarget;
+    if (lesson.exam) {
+      locked = true;
+      el.classList.add("sel");
+      return examAnswer(lesson, step, q.id, el.dataset.v === q.answer, el.dataset.v, token);
+    }
+    if (el.dataset.v === q.answer) {
+      locked = true;
+      el.classList.add("right");
+      $("again").hidden = true;
+      chime("good");
+      score(lesson, step, q.id, first);
+      $("fc").innerHTML = `<span class="prompt-text flash-word">${esc(q.word)}</span>`;
+      $("fb").innerHTML = `<span class="ok">${first ? pick(PRAISE) : "Genau."}</span>`;
+      await wait(900);
+      if (alive(token)) advance(lesson);
+    } else {
+      first = false;
+      el.classList.add("wrong");
+      el.disabled = true;
+      miss(lesson, step, q.id, el.dataset.v);
+      $("fb").innerHTML = `<span class="try">Nicht ganz. Schau genau auf die Buchstaben!</span>`;
     }
   });
   $("next").onclick = () => advance(lesson);

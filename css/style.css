@@ -791,3 +791,22 @@ table.eval tr.fail td { color: #b3261e; }
 .vis-card .vis-bau { width: auto; max-width: 100%; max-height: 220px; }
 .vis-card .vis-lines, .vis-choices .vis-lines { max-height: 180px; }
 .vis-card .vis-area { width: auto; max-width: 100%; max-height: 240px; }
+
+/* Satz bauen (Bausteine) und Blitzlesen */
+.build-line { min-height: 92px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; padding: 14px; border-radius: 22px; border: 3px dashed rgba(255, 255, 255, .55); background: rgba(255, 255, 255, .12); }
+.build-line.right { border: 3px solid var(--good); background: var(--ok-bg); }
+.build-line.shake { animation: shake .35s; }
+.build-empty { color: var(--muted); font-size: 17px; }
+.build-end { font-size: clamp(24px, 5vw, 32px); font-weight: 800; color: #fff; }
+.build-line.right .build-end { color: var(--card-ink); }
+.build-pool { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.tile { background: var(--card); color: var(--card-ink); border: 3px solid transparent; border-radius: 16px; padding: 12px 16px; font-size: clamp(19px, 4vw, 26px); font-weight: 800; box-shadow: var(--shadow); }
+.tile.placed { border-color: var(--gold); background: var(--card-sel); }
+.tile:disabled { opacity: .25; box-shadow: none; }
+.tile:active { transform: translateY(3px); }
+.flash-card { min-height: 150px; }
+.flash-word { font-size: clamp(40px, 9vw, 64px); font-weight: 800; letter-spacing: .02em; }
+.flash-gone { font-size: 56px; opacity: .5; }
+.flash-go { margin: 0; }
+.flash-long { grid-template-columns: 1fr; }
+.choices[hidden], .build-pool[hidden] { display: none; }

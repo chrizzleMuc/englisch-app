@@ -1,0 +1,700 @@
+{
+ "id": "d3-blitzlesen",
+ "type": "schule",
+ "title_de": "Blitzlesen",
+ "image": "⚡",
+ "color": "#d9a400",
+ "lessons": [
+  {
+   "title": "Kurze Wörter",
+   "icon": "⚡",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "flash",
+     "id": "d3-bz-k-haus",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Haus",
+     "ms": 900,
+     "options": [
+      "Haus",
+      "Maus",
+      "Hals"
+     ],
+     "answer": "Haus"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-k-baum",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Baum",
+     "ms": 900,
+     "options": [
+      "Baum",
+      "Raum",
+      "Bauch"
+     ],
+     "answer": "Baum"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-k-hund",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Hund",
+     "ms": 900,
+     "options": [
+      "Hund",
+      "Mund",
+      "Hand"
+     ],
+     "answer": "Hund"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-k-tisch",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Tisch",
+     "ms": 900,
+     "options": [
+      "Tisch",
+      "Fisch",
+      "Tasche"
+     ],
+     "answer": "Tisch"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-k-wald",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Wald",
+     "ms": 900,
+     "options": [
+      "Wald",
+      "Wand",
+      "Welt"
+     ],
+     "answer": "Wald"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-k-rose",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Rose",
+     "ms": 900,
+     "options": [
+      "Rose",
+      "Hose",
+      "Dose"
+     ],
+     "answer": "Rose"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-k-nase",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Nase",
+     "ms": 900,
+     "options": [
+      "Nase",
+      "Hase",
+      "Vase"
+     ],
+     "answer": "Nase"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-k-kanne",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Kanne",
+     "ms": 900,
+     "options": [
+      "Kanne",
+      "Tanne",
+      "Wanne"
+     ],
+     "answer": "Kanne"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-k-ziege",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Ziege",
+     "ms": 900,
+     "options": [
+      "Ziege",
+      "Wiege",
+      "Fliege"
+     ],
+     "answer": "Ziege"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-k-ball",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Ball",
+     "ms": 900,
+     "options": [
+      "Ball",
+      "Bild",
+      "Fall"
+     ],
+     "answer": "Ball"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-k-stein",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Stein",
+     "ms": 900,
+     "options": [
+      "Stein",
+      "Stern",
+      "Schein"
+     ],
+     "answer": "Stein"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-k-zahn",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Zahn",
+     "ms": 900,
+     "options": [
+      "Zahn",
+      "Zahl",
+      "Zaun"
+     ],
+     "answer": "Zahn"
+    }
+   ]
+  },
+  {
+   "title": "Lange Wörter",
+   "icon": "🚀",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "flash",
+     "id": "d3-bz-l-schneemann",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Schneemann",
+     "ms": 1100,
+     "options": [
+      "Schneemann",
+      "Schneeball",
+      "Schneeflocke"
+     ],
+     "answer": "Schneemann"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-l-kinderwagen",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Kinderwagen",
+     "ms": 1100,
+     "options": [
+      "Kinderwagen",
+      "Kindergarten",
+      "Kinderzimmer"
+     ],
+     "answer": "Kinderwagen"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-l-sonnenblume",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Sonnenblume",
+     "ms": 1100,
+     "options": [
+      "Sonnenblume",
+      "Sonnenbrille",
+      "Sonnenschein"
+     ],
+     "answer": "Sonnenblume"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-l-regenbogen",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Regenbogen",
+     "ms": 1100,
+     "options": [
+      "Regenbogen",
+      "Regenschirm",
+      "Regentropfen"
+     ],
+     "answer": "Regenbogen"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-l-feuerwehr",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Feuerwehr",
+     "ms": 1100,
+     "options": [
+      "Feuerwehr",
+      "Feuerwerk",
+      "Feuerstein"
+     ],
+     "answer": "Feuerwehr"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-l-briefmarke",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Briefmarke",
+     "ms": 1100,
+     "options": [
+      "Briefmarke",
+      "Briefkasten",
+      "Brieftaube"
+     ],
+     "answer": "Briefmarke"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-l-bahnhof",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Bahnhof",
+     "ms": 1100,
+     "options": [
+      "Bahnhof",
+      "Bauernhof",
+      "Bahnsteig"
+     ],
+     "answer": "Bahnhof"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-l-tierheim",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Tierheim",
+     "ms": 1100,
+     "options": [
+      "Tierheim",
+      "Tierarzt",
+      "Tiergarten"
+     ],
+     "answer": "Tierheim"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-l-turnschuh",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Turnschuh",
+     "ms": 1100,
+     "options": [
+      "Turnschuh",
+      "Handschuh",
+      "Turnhalle"
+     ],
+     "answer": "Turnschuh"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-l-haustuer",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Haustür",
+     "ms": 1100,
+     "options": [
+      "Haustür",
+      "Hausnummer",
+      "Hausaufgabe"
+     ],
+     "answer": "Haustür"
+    }
+   ]
+  },
+  {
+   "title": "Fast gleich!",
+   "icon": "👀",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "flash",
+     "id": "d3-bz-f-biene",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Biene",
+     "ms": 700,
+     "options": [
+      "Biene",
+      "Birne",
+      "Bienen"
+     ],
+     "answer": "Biene"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-f-stuhl",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Stuhl",
+     "ms": 700,
+     "options": [
+      "Stuhl",
+      "Stahl",
+      "Stall"
+     ],
+     "answer": "Stuhl"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-f-wiese",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Wiese",
+     "ms": 700,
+     "options": [
+      "Wiese",
+      "Riese",
+      "Wiesel"
+     ],
+     "answer": "Wiese"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-f-leiter",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Leiter",
+     "ms": 700,
+     "options": [
+      "Leiter",
+      "Liter",
+      "Leute"
+     ],
+     "answer": "Leiter"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-f-nebel",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Nebel",
+     "ms": 700,
+     "options": [
+      "Nebel",
+      "Nabel",
+      "Nadel"
+     ],
+     "answer": "Nebel"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-f-feder",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Feder",
+     "ms": 700,
+     "options": [
+      "Feder",
+      "Fieber",
+      "Felder"
+     ],
+     "answer": "Feder"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-f-bruder",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Bruder",
+     "ms": 700,
+     "options": [
+      "Bruder",
+      "Ruder",
+      "Butter"
+     ],
+     "answer": "Bruder"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-f-mantel",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Mantel",
+     "ms": 700,
+     "options": [
+      "Mantel",
+      "Mandel",
+      "Marder"
+     ],
+     "answer": "Mantel"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-f-kiste",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Kiste",
+     "ms": 700,
+     "options": [
+      "Kiste",
+      "Küste",
+      "Kasse"
+     ],
+     "answer": "Kiste"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-f-mond",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Mond",
+     "ms": 700,
+     "options": [
+      "Mond",
+      "Mund",
+      "Mode"
+     ],
+     "answer": "Mond"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-f-ofen",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Ofen",
+     "ms": 700,
+     "options": [
+      "Ofen",
+      "offen",
+      "Ufer"
+     ],
+     "answer": "Ofen"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-f-schaf",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Schaf",
+     "ms": 700,
+     "options": [
+      "Schaf",
+      "Schal",
+      "Schiff"
+     ],
+     "answer": "Schaf"
+    }
+   ]
+  },
+  {
+   "title": "Wortgruppen",
+   "icon": "🧺",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "flash",
+     "id": "d3-bz-g-der-rote-ball",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "der rote Ball",
+     "ms": 1300,
+     "options": [
+      "der rote Ball",
+      "der rote Bus",
+      "die rote Bank"
+     ],
+     "answer": "der rote Ball"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-g-ein-kleiner-hund",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "ein kleiner Hund",
+     "ms": 1300,
+     "options": [
+      "ein kleiner Hund",
+      "ein kleiner Mund",
+      "ein kluger Hund"
+     ],
+     "answer": "ein kleiner Hund"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-g-im-gruenen-wald",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "im grünen Wald",
+     "ms": 1300,
+     "options": [
+      "im grünen Wald",
+      "im grünen Feld",
+      "am grünen Wald"
+     ],
+     "answer": "im grünen Wald"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-g-drei-bunte-voegel",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "drei bunte Vögel",
+     "ms": 1300,
+     "options": [
+      "drei bunte Vögel",
+      "drei bunte Kugeln",
+      "zwei bunte Vögel"
+     ],
+     "answer": "drei bunte Vögel"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-g-auf-dem-tisch",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "auf dem Tisch",
+     "ms": 1300,
+     "options": [
+      "auf dem Tisch",
+      "unter dem Tisch",
+      "auf dem Teich"
+     ],
+     "answer": "auf dem Tisch"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-g-mit-dem-fahrrad",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "mit dem Fahrrad",
+     "ms": 1300,
+     "options": [
+      "mit dem Fahrrad",
+      "mit dem Fußball",
+      "auf dem Fahrrad"
+     ],
+     "answer": "mit dem Fahrrad"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-g-eine-warme-jacke",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "eine warme Jacke",
+     "ms": 1300,
+     "options": [
+      "eine warme Jacke",
+      "eine warme Decke",
+      "keine warme Jacke"
+     ],
+     "answer": "eine warme Jacke"
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-g-hinter-dem-haus",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "hinter dem Haus",
+     "ms": 1300,
+     "options": [
+      "hinter dem Haus",
+      "hinter der Maus",
+      "neben dem Haus"
+     ],
+     "answer": "hinter dem Haus"
+    }
+   ]
+  },
+  {
+   "title": "Kurze Sätze",
+   "icon": "📜",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "flash",
+     "id": "d3-bz-s-der-hund-schlaeft-im-korb",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Der Hund schläft im Korb.",
+     "ms": 1800,
+     "options": [
+      "Der Hund schläft im Korb.",
+      "Der Hund spielt im Korb.",
+      "Der Hund schläft im Dorf."
+     ],
+     "answer": "Der Hund schläft im Korb."
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-s-lisa-trinkt-warmen-tee",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Lisa trinkt warmen Tee.",
+     "ms": 1800,
+     "options": [
+      "Lisa trinkt warmen Tee.",
+      "Lisa trinkt warme Milch.",
+      "Lisa kocht warmen Tee."
+     ],
+     "answer": "Lisa trinkt warmen Tee."
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-s-wir-fahren-ans-meer",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Wir fahren ans Meer.",
+     "ms": 1800,
+     "options": [
+      "Wir fahren ans Meer.",
+      "Wir fahren aufs Meer.",
+      "Wir laufen ans Meer."
+     ],
+     "answer": "Wir fahren ans Meer."
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-s-die-katze-faengt-eine-maus",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Die Katze fängt eine Maus.",
+     "ms": 1800,
+     "options": [
+      "Die Katze fängt eine Maus.",
+      "Die Katze sieht eine Maus.",
+      "Die Katze fängt eine Laus."
+     ],
+     "answer": "Die Katze fängt eine Maus."
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-s-im-winter-schneit-es-oft",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Im Winter schneit es oft.",
+     "ms": 1800,
+     "options": [
+      "Im Winter schneit es oft.",
+      "Im Winter regnet es oft.",
+      "Im Sommer schneit es oft."
+     ],
+     "answer": "Im Winter schneit es oft."
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-s-opa-liest-die-zeitung",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Opa liest die Zeitung.",
+     "ms": 1800,
+     "options": [
+      "Opa liest die Zeitung.",
+      "Oma liest die Zeitung.",
+      "Opa liest die Zeitschrift."
+     ],
+     "answer": "Opa liest die Zeitung."
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-s-der-zug-kommt-zu-spaet",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Der Zug kommt zu spät.",
+     "ms": 1800,
+     "options": [
+      "Der Zug kommt zu spät.",
+      "Der Zug kommt zu früh.",
+      "Der Bus kommt zu spät."
+     ],
+     "answer": "Der Zug kommt zu spät."
+    },
+    {
+     "kind": "flash",
+     "id": "d3-bz-s-mein-bruder-baut-eine-burg",
+     "task": "Blitzlesen: Was stand da?",
+     "word": "Mein Bruder baut eine Burg.",
+     "ms": 1800,
+     "options": [
+      "Mein Bruder baut eine Burg.",
+      "Mein Bruder malt eine Burg.",
+      "Mein Vater baut eine Burg."
+     ],
+     "answer": "Mein Bruder baut eine Burg."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

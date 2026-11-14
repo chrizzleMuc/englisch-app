@@ -56,6 +56,19 @@
             "deutsch/k3-nomen-endungen.json",
             "deutsch/k3-adjektive.json"
           ]
+        },
+        {
+          "id": "deutsch-k3-saetze",
+          "title": "3. Klasse · Sätze und Lesen",
+          "kinder": [
+            "pirat"
+          ],
+          "units": [
+            "deutsch/k3-satzarten.json",
+            "deutsch/k3-satzglieder.json",
+            "deutsch/k3-woertliche-rede.json",
+            "deutsch/k3-blitzlesen.json"
+          ]
         }
       ]
     },

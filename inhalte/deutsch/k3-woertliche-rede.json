@@ -1,0 +1,696 @@
+{
+ "id": "d3-woertliche-rede",
+ "type": "schule",
+ "title_de": "Wörtliche Rede",
+ "image": "💬",
+ "color": "#e07a2e",
+ "lessons": [
+  {
+   "title": "Wer sagt was?",
+   "icon": "🗣️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-wr-wr-mia-ruft-ich-habe-gewonnen",
+     "task": "Tippe an, was die Person genau sagt.",
+     "prompt": "Mia ruft: „Ich habe gewonnen!“",
+     "options": [
+      "Mia ruft:",
+      "„Ich habe gewonnen!“"
+     ],
+     "answer": "„Ich habe gewonnen!“",
+     "keepOrder": true,
+     "explain": "Was jemand genau sagt, steht in Redezeichen „ … “. Das ist die wörtliche Rede."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-wr-papa-sagt-das-essen-ist-fert",
+     "task": "Tippe an, was die Person genau sagt.",
+     "prompt": "Papa sagt: „Das Essen ist fertig.“",
+     "options": [
+      "Papa sagt:",
+      "„Das Essen ist fertig.“"
+     ],
+     "answer": "„Das Essen ist fertig.“",
+     "keepOrder": true,
+     "explain": "Was jemand genau sagt, steht in Redezeichen „ … “. Das ist die wörtliche Rede."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-wr-lukas-fragt-kommst-du-mit",
+     "task": "Tippe an, was die Person genau sagt.",
+     "prompt": "Lukas fragt: „Kommst du mit?“",
+     "options": [
+      "Lukas fragt:",
+      "„Kommst du mit?“"
+     ],
+     "answer": "„Kommst du mit?“",
+     "keepOrder": true,
+     "explain": "Was jemand genau sagt, steht in Redezeichen „ … “. Das ist die wörtliche Rede."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-wr-die-lehrerin-sagt-packt-eure",
+     "task": "Tippe an, was die Person genau sagt.",
+     "prompt": "Die Lehrerin sagt: „Packt eure Hefte aus.“",
+     "options": [
+      "Die Lehrerin sagt:",
+      "„Packt eure Hefte aus.“"
+     ],
+     "answer": "„Packt eure Hefte aus.“",
+     "keepOrder": true,
+     "explain": "Was jemand genau sagt, steht in Redezeichen „ … “. Das ist die wörtliche Rede."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-wr-oma-fragt-wer-moechte-kuchen",
+     "task": "Tippe an, was die Person genau sagt.",
+     "prompt": "Oma fragt: „Wer möchte Kuchen?“",
+     "options": [
+      "Oma fragt:",
+      "„Wer möchte Kuchen?“"
+     ],
+     "answer": "„Wer möchte Kuchen?“",
+     "keepOrder": true,
+     "explain": "Was jemand genau sagt, steht in Redezeichen „ … “. Das ist die wörtliche Rede."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-wr-ben-fluestert-das-baby-schla",
+     "task": "Tippe an, was die Person genau sagt.",
+     "prompt": "Ben flüstert: „Das Baby schläft.“",
+     "options": [
+      "Ben flüstert:",
+      "„Das Baby schläft.“"
+     ],
+     "answer": "„Das Baby schläft.“",
+     "keepOrder": true,
+     "explain": "Was jemand genau sagt, steht in Redezeichen „ … “. Das ist die wörtliche Rede."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-bs-ich-habe-hunger-sagt-ben",
+     "task": "Tippe den Begleitsatz an. Er sagt, wer spricht.",
+     "prompt": "„Ich habe Hunger“, sagt Ben.",
+     "options": [
+      "„Ich habe Hunger“,",
+      "sagt Ben."
+     ],
+     "answer": "sagt Ben.",
+     "keepOrder": true,
+     "explain": "Der Begleitsatz verrät, wer spricht. Er steht hier hinten."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-bs-wo-ist-mein-schuh-fragt-lea",
+     "task": "Tippe den Begleitsatz an. Er sagt, wer spricht.",
+     "prompt": "„Wo ist mein Schuh?“, fragt Lea.",
+     "options": [
+      "„Wo ist mein Schuh?“,",
+      "fragt Lea."
+     ],
+     "answer": "fragt Lea.",
+     "keepOrder": true,
+     "explain": "Der Begleitsatz verrät, wer spricht. Er steht hier hinten."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-bs-hilfe-ruft-der-junge",
+     "task": "Tippe den Begleitsatz an. Er sagt, wer spricht.",
+     "prompt": "„Hilfe!“, ruft der Junge.",
+     "options": [
+      "„Hilfe!“,",
+      "ruft der Junge."
+     ],
+     "answer": "ruft der Junge.",
+     "keepOrder": true,
+     "explain": "Der Begleitsatz verrät, wer spricht. Er steht hier hinten."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-bs-morgen-regnet-es-sagt-opa",
+     "task": "Tippe den Begleitsatz an. Er sagt, wer spricht.",
+     "prompt": "„Morgen regnet es“, sagt Opa.",
+     "options": [
+      "„Morgen regnet es“,",
+      "sagt Opa."
+     ],
+     "answer": "sagt Opa.",
+     "keepOrder": true,
+     "explain": "Der Begleitsatz verrät, wer spricht. Er steht hier hinten."
+    }
+   ]
+  },
+  {
+   "title": "Redezeichen und Doppelpunkt",
+   "icon": "✏️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-wr-dp-mia-ruft-ich-habe-gewonnen",
+     "task": "Welches Zeichen fehlt?",
+     "prompt": "Mia ruft _ „Ich habe gewonnen!“",
+     "options": [
+      ":",
+      ",",
+      "."
+     ],
+     "answer": ":",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Steht der Begleitsatz vorne, kommt danach ein Doppelpunkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-dp-papa-sagt-das-essen-ist-fert",
+     "task": "Welches Zeichen fehlt?",
+     "prompt": "Papa sagt _ „Das Essen ist fertig.“",
+     "options": [
+      ":",
+      ",",
+      "."
+     ],
+     "answer": ":",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Steht der Begleitsatz vorne, kommt danach ein Doppelpunkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-dp-lukas-fragt-kommst-du-mit",
+     "task": "Welches Zeichen fehlt?",
+     "prompt": "Lukas fragt _ „Kommst du mit?“",
+     "options": [
+      ":",
+      ",",
+      "."
+     ],
+     "answer": ":",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Steht der Begleitsatz vorne, kommt danach ein Doppelpunkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-dp-die-lehrerin-sagt-packt-eure",
+     "task": "Welches Zeichen fehlt?",
+     "prompt": "Die Lehrerin sagt _ „Packt eure Hefte aus.“",
+     "options": [
+      ":",
+      ",",
+      "."
+     ],
+     "answer": ":",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Steht der Begleitsatz vorne, kommt danach ein Doppelpunkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-dp-oma-fragt-wer-moechte-kuchen",
+     "task": "Welches Zeichen fehlt?",
+     "prompt": "Oma fragt _ „Wer möchte Kuchen?“",
+     "options": [
+      ":",
+      ",",
+      "."
+     ],
+     "answer": ":",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Steht der Begleitsatz vorne, kommt danach ein Doppelpunkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-dp-ben-fluestert-das-baby-schla",
+     "task": "Welches Zeichen fehlt?",
+     "prompt": "Ben flüstert _ „Das Baby schläft.“",
+     "options": [
+      ":",
+      ",",
+      "."
+     ],
+     "answer": ":",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Steht der Begleitsatz vorne, kommt danach ein Doppelpunkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-dp-der-trainer-ruft-lauf-schnel",
+     "task": "Welches Zeichen fehlt?",
+     "prompt": "Der Trainer ruft _ „Lauf schneller!“",
+     "options": [
+      ":",
+      ",",
+      "."
+     ],
+     "answer": ":",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Steht der Begleitsatz vorne, kommt danach ein Doppelpunkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-dp-lea-sagt-ich-mag-pferde",
+     "task": "Welches Zeichen fehlt?",
+     "prompt": "Lea sagt _ „Ich mag Pferde.“",
+     "options": [
+      ":",
+      ",",
+      "."
+     ],
+     "answer": ":",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Steht der Begleitsatz vorne, kommt danach ein Doppelpunkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-an-papa-sagt-das-essen-ist-fert",
+     "task": "Welches Zeichen fehlt?",
+     "prompt": "Papa sagt: _Das Essen ist fertig.“",
+     "options": [
+      "„",
+      "“",
+      ":"
+     ],
+     "answer": "„",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Am Anfang der wörtlichen Rede stehen die Redezeichen unten: „"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-ab-oma-fragt-wer-moechte-kuchen",
+     "task": "Welches Zeichen fehlt?",
+     "prompt": "Oma fragt: „Wer möchte Kuchen?_",
+     "options": [
+      "„",
+      "“",
+      ","
+     ],
+     "answer": "“",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Am Ende der wörtlichen Rede stehen die Redezeichen oben: “"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-an-mia-ruft-ich-habe-gewonnen",
+     "task": "Welches Zeichen fehlt?",
+     "prompt": "Mia ruft: _Ich habe gewonnen!“",
+     "options": [
+      "„",
+      "“",
+      ":"
+     ],
+     "answer": "„",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Am Anfang der wörtlichen Rede stehen die Redezeichen unten: „"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-ab-lea-sagt-ich-mag-pferde",
+     "task": "Welches Zeichen fehlt?",
+     "prompt": "Lea sagt: „Ich mag Pferde._",
+     "options": [
+      "„",
+      "“",
+      ","
+     ],
+     "answer": "“",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Am Ende der wörtlichen Rede stehen die Redezeichen oben: “"
+    }
+   ]
+  },
+  {
+   "title": "Begleitsatz vorne",
+   "icon": "⬅️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-wr-rv-mia-ruft-ich-habe-gewonnen",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Mia ruft … Ich habe gewonnen!",
+     "options": [
+      "Mia ruft: „Ich habe gewonnen!“",
+      "Mia ruft „Ich habe gewonnen!“",
+      "Mia ruft: „Ich habe gewonnen“!"
+     ],
+     "answer": "Mia ruft: „Ich habe gewonnen!“",
+     "explain": "Richtig: Mia ruft: „Ich habe gewonnen!“ – Doppelpunkt nach dem Begleitsatz, das Satzzeichen steht innerhalb der Redezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-rv-papa-sagt-das-essen-ist-fert",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Papa sagt … Das Essen ist fertig.",
+     "options": [
+      "Papa sagt: „Das Essen ist fertig.“",
+      "Papa sagt: „Das Essen ist fertig“.",
+      "Papa sagt: Das Essen ist fertig."
+     ],
+     "answer": "Papa sagt: „Das Essen ist fertig.“",
+     "explain": "Richtig: Papa sagt: „Das Essen ist fertig.“ – Doppelpunkt nach dem Begleitsatz, das Satzzeichen steht innerhalb der Redezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-rv-lukas-fragt-kommst-du-mit",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Lukas fragt … Kommst du mit?",
+     "options": [
+      "Lukas fragt: „Kommst du mit?“",
+      "Lukas fragt: Kommst du mit?",
+      "Lukas fragt „Kommst du mit?“"
+     ],
+     "answer": "Lukas fragt: „Kommst du mit?“",
+     "explain": "Richtig: Lukas fragt: „Kommst du mit?“ – Doppelpunkt nach dem Begleitsatz, das Satzzeichen steht innerhalb der Redezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-rv-die-lehrerin-sagt-packt-eure",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Die Lehrerin sagt … Packt eure Hefte aus.",
+     "options": [
+      "Die Lehrerin sagt: „Packt eure Hefte aus.“",
+      "Die Lehrerin sagt „Packt eure Hefte aus.“",
+      "Die Lehrerin sagt: „Packt eure Hefte aus“."
+     ],
+     "answer": "Die Lehrerin sagt: „Packt eure Hefte aus.“",
+     "explain": "Richtig: Die Lehrerin sagt: „Packt eure Hefte aus.“ – Doppelpunkt nach dem Begleitsatz, das Satzzeichen steht innerhalb der Redezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-rv-oma-fragt-wer-moechte-kuchen",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Oma fragt … Wer möchte Kuchen?",
+     "options": [
+      "Oma fragt: „Wer möchte Kuchen?“",
+      "Oma fragt: „Wer möchte Kuchen“?",
+      "Oma fragt: Wer möchte Kuchen?"
+     ],
+     "answer": "Oma fragt: „Wer möchte Kuchen?“",
+     "explain": "Richtig: Oma fragt: „Wer möchte Kuchen?“ – Doppelpunkt nach dem Begleitsatz, das Satzzeichen steht innerhalb der Redezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-rv-ben-fluestert-das-baby-schla",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Ben flüstert … Das Baby schläft.",
+     "options": [
+      "Ben flüstert: „Das Baby schläft.“",
+      "Ben flüstert: Das Baby schläft.",
+      "Ben flüstert „Das Baby schläft.“"
+     ],
+     "answer": "Ben flüstert: „Das Baby schläft.“",
+     "explain": "Richtig: Ben flüstert: „Das Baby schläft.“ – Doppelpunkt nach dem Begleitsatz, das Satzzeichen steht innerhalb der Redezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-rv-der-trainer-ruft-lauf-schnel",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Der Trainer ruft … Lauf schneller!",
+     "options": [
+      "Der Trainer ruft: „Lauf schneller!“",
+      "Der Trainer ruft „Lauf schneller!“",
+      "Der Trainer ruft: „Lauf schneller“!"
+     ],
+     "answer": "Der Trainer ruft: „Lauf schneller!“",
+     "explain": "Richtig: Der Trainer ruft: „Lauf schneller!“ – Doppelpunkt nach dem Begleitsatz, das Satzzeichen steht innerhalb der Redezeichen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-rv-lea-sagt-ich-mag-pferde",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Lea sagt … Ich mag Pferde.",
+     "options": [
+      "Lea sagt: „Ich mag Pferde.“",
+      "Lea sagt: „Ich mag Pferde“.",
+      "Lea sagt: Ich mag Pferde."
+     ],
+     "answer": "Lea sagt: „Ich mag Pferde.“",
+     "explain": "Richtig: Lea sagt: „Ich mag Pferde.“ – Doppelpunkt nach dem Begleitsatz, das Satzzeichen steht innerhalb der Redezeichen."
+    }
+   ]
+  },
+  {
+   "title": "Begleitsatz hinten",
+   "icon": "➡️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-wr-rh-ich-habe-hunger-sagt-ben",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Ich habe Hunger. … sagt Ben",
+     "options": [
+      "„Ich habe Hunger“, sagt Ben.",
+      "„Ich habe Hunger.“, sagt Ben.",
+      "„Ich habe Hunger“ sagt Ben."
+     ],
+     "answer": "„Ich habe Hunger“, sagt Ben.",
+     "explain": "Richtig: „Ich habe Hunger“, sagt Ben. – Steht der Begleitsatz hinten, kommt nach den Redezeichen ein Komma. Der Punkt der Rede fällt weg, Frage- und Ausrufezeichen bleiben."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-rh-wo-ist-mein-schuh-fragt-lea",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Wo ist mein Schuh? … fragt Lea",
+     "options": [
+      "„Wo ist mein Schuh?“, fragt Lea.",
+      "„Wo ist mein Schuh?“. Fragt Lea.",
+      "Wo ist mein Schuh?, fragt Lea."
+     ],
+     "answer": "„Wo ist mein Schuh?“, fragt Lea.",
+     "explain": "Richtig: „Wo ist mein Schuh?“, fragt Lea. – Steht der Begleitsatz hinten, kommt nach den Redezeichen ein Komma. Der Punkt der Rede fällt weg, Frage- und Ausrufezeichen bleiben."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-rh-hilfe-ruft-der-junge",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Hilfe! … ruft der Junge",
+     "options": [
+      "„Hilfe!“, ruft der Junge.",
+      "Hilfe!, ruft der Junge.",
+      "„Hilfe!“ ruft der Junge."
+     ],
+     "answer": "„Hilfe!“, ruft der Junge.",
+     "explain": "Richtig: „Hilfe!“, ruft der Junge. – Steht der Begleitsatz hinten, kommt nach den Redezeichen ein Komma. Der Punkt der Rede fällt weg, Frage- und Ausrufezeichen bleiben."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-rh-morgen-regnet-es-sagt-opa",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Morgen regnet es. … sagt Opa",
+     "options": [
+      "„Morgen regnet es“, sagt Opa.",
+      "„Morgen regnet es.“, sagt Opa.",
+      "„Morgen regnet es“ sagt Opa."
+     ],
+     "answer": "„Morgen regnet es“, sagt Opa.",
+     "explain": "Richtig: „Morgen regnet es“, sagt Opa. – Steht der Begleitsatz hinten, kommt nach den Redezeichen ein Komma. Der Punkt der Rede fällt weg, Frage- und Ausrufezeichen bleiben."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-rh-hast-du-zeit-fragt-mama",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Hast du Zeit? … fragt Mama",
+     "options": [
+      "„Hast du Zeit?“, fragt Mama.",
+      "„Hast du Zeit?“. Fragt Mama.",
+      "Hast du Zeit?, fragt Mama."
+     ],
+     "answer": "„Hast du Zeit?“, fragt Mama.",
+     "explain": "Richtig: „Hast du Zeit?“, fragt Mama. – Steht der Begleitsatz hinten, kommt nach den Redezeichen ein Komma. Der Punkt der Rede fällt weg, Frage- und Ausrufezeichen bleiben."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-rh-vorsicht-heiss-ruft-der-koch",
+     "task": "Welcher Satz ist richtig geschrieben?",
+     "prompt": "Vorsicht, heiß! … ruft der Koch",
+     "options": [
+      "„Vorsicht, heiß!“, ruft der Koch.",
+      "Vorsicht, heiß!, ruft der Koch.",
+      "„Vorsicht, heiß!“ ruft der Koch."
+     ],
+     "answer": "„Vorsicht, heiß!“, ruft der Koch.",
+     "explain": "Richtig: „Vorsicht, heiß!“, ruft der Koch. – Steht der Begleitsatz hinten, kommt nach den Redezeichen ein Komma. Der Punkt der Rede fällt weg, Frage- und Ausrufezeichen bleiben."
+    }
+   ]
+  },
+  {
+   "title": "Statt „sagt“",
+   "icon": "🎭",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Was passt zusammen?",
+     "review": "Wie spricht man, wenn …",
+     "pairs": [
+      {
+       "id": "d3-wr-sp-ganz-leise",
+       "a": "ganz leise",
+       "b": "flüstern"
+      },
+      {
+       "id": "d3-wr-sp-sehr-laut",
+       "a": "sehr laut",
+       "b": "schreien"
+      },
+      {
+       "id": "d3-wr-sp-man-etwas-wissen-will",
+       "a": "man etwas wissen will",
+       "b": "fragen"
+      },
+      {
+       "id": "d3-wr-sp-man-sich-sehr-freut",
+       "a": "man sich sehr freut",
+       "b": "jubeln"
+      },
+      {
+       "id": "d3-wr-sp-man-sich-beklagt",
+       "a": "man sich beklagt",
+       "b": "jammern"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-sa-der-opa-wo-ist-meine-brille",
+     "task": "Welches Wort passt besser als „sagt“?",
+     "prompt": "Der Opa ___: „Wo ist meine Brille?“",
+     "options": [
+      "fragt",
+      "ruft",
+      "flüstert"
+     ],
+     "answer": "fragt",
+     "bigOptions": true,
+     "explain": "Der Opa fragt: „Wo ist meine Brille?“"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-sa-mama-psst-das-baby-schlaeft",
+     "task": "Welches Wort passt besser als „sagt“?",
+     "prompt": "Mama ___: „Psst, das Baby schläft.“",
+     "options": [
+      "flüstert",
+      "schreit",
+      "fragt"
+     ],
+     "answer": "flüstert",
+     "bigOptions": true,
+     "explain": "Mama flüstert: „Psst, das Baby schläft.“"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-sa-feuer-feuer-der-mann",
+     "task": "Welches Wort passt besser als „sagt“?",
+     "prompt": "„Feuer, Feuer!“, ___ der Mann.",
+     "options": [
+      "schreit",
+      "flüstert",
+      "fragt"
+     ],
+     "answer": "schreit",
+     "bigOptions": true,
+     "explain": "„Feuer, Feuer!“, schreit der Mann."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-sa-lisa-darf-ich-mitspielen",
+     "task": "Welches Wort passt besser als „sagt“?",
+     "prompt": "Lisa ___: „Darf ich mitspielen?“",
+     "options": [
+      "fragt",
+      "befiehlt",
+      "lacht"
+     ],
+     "answer": "fragt",
+     "bigOptions": true,
+     "explain": "Lisa fragt: „Darf ich mitspielen?“"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-sa-der-polizist-halt-stehen-ble",
+     "task": "Welches Wort passt besser als „sagt“?",
+     "prompt": "Der Polizist ___: „Halt, stehen bleiben!“",
+     "options": [
+      "befiehlt",
+      "flüstert",
+      "fragt"
+     ],
+     "answer": "befiehlt",
+     "bigOptions": true,
+     "explain": "Der Polizist befiehlt: „Halt, stehen bleiben!“"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-sa-ich-verstehe-das-nicht-tim",
+     "task": "Welches Wort passt besser als „sagt“?",
+     "prompt": "„Ich verstehe das nicht“, ___ Tim.",
+     "options": [
+      "jammert",
+      "jubelt",
+      "befiehlt"
+     ],
+     "answer": "jammert",
+     "bigOptions": true,
+     "explain": "„Ich verstehe das nicht“, jammert Tim."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-sa-tor-wir-haben-gewonnen-die-f",
+     "task": "Welches Wort passt besser als „sagt“?",
+     "prompt": "„Tor! Wir haben gewonnen!“, ___ die Fans.",
+     "options": [
+      "jubeln",
+      "flüstern",
+      "fragen"
+     ],
+     "answer": "jubeln",
+     "bigOptions": true,
+     "explain": "„Tor! Wir haben gewonnen!“, jubeln die Fans."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wr-sa-der-lehrer-das-wort-schreibt",
+     "task": "Welches Wort passt besser als „sagt“?",
+     "prompt": "Der Lehrer ___: „Das Wort schreibt man mit ie.“",
+     "options": [
+      "erklärt",
+      "schreit",
+      "jubelt"
+     ],
+     "answer": "erklärt",
+     "bigOptions": true,
+     "explain": "Der Lehrer erklärt: „Das Wort schreibt man mit ie.“"
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-wr-foto",
+     "task": "Schreib ein kleines Gespräch zwischen dir und einem Freund: 4 Sätze mit wörtlicher Rede. Denk an Doppelpunkt und Redezeichen „ “."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}
