@@ -1,0 +1,690 @@
+{
+ "id": "d3-artikel-pronomen",
+ "type": "schule",
+ "title_de": "Artikel und Pronomen",
+ "image": "👉",
+ "color": "#4a7bd0",
+ "lessons": [
+  {
+   "title": "der, die, das",
+   "icon": "📌",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ap-ar-tisch",
+     "task": "Welcher Artikel passt?",
+     "prompt": "___ Tisch",
+     "options": [
+      "der",
+      "die",
+      "das"
+     ],
+     "answer": "der",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Tisch"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ar-sonne",
+     "task": "Welcher Artikel passt?",
+     "prompt": "___ Sonne",
+     "options": [
+      "der",
+      "die",
+      "das"
+     ],
+     "answer": "die",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Sonne"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ar-haus",
+     "task": "Welcher Artikel passt?",
+     "prompt": "___ Haus",
+     "options": [
+      "der",
+      "die",
+      "das"
+     ],
+     "answer": "das",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Haus"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ar-loeffel",
+     "task": "Welcher Artikel passt?",
+     "prompt": "___ Löffel",
+     "options": [
+      "der",
+      "die",
+      "das"
+     ],
+     "answer": "der",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Löffel"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ar-gabel",
+     "task": "Welcher Artikel passt?",
+     "prompt": "___ Gabel",
+     "options": [
+      "der",
+      "die",
+      "das"
+     ],
+     "answer": "die",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Gabel"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ar-messer",
+     "task": "Welcher Artikel passt?",
+     "prompt": "___ Messer",
+     "options": [
+      "der",
+      "die",
+      "das"
+     ],
+     "answer": "das",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Messer"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ar-schrank",
+     "task": "Welcher Artikel passt?",
+     "prompt": "___ Schrank",
+     "options": [
+      "der",
+      "die",
+      "das"
+     ],
+     "answer": "der",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Schrank"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ar-brille",
+     "task": "Welcher Artikel passt?",
+     "prompt": "___ Brille",
+     "options": [
+      "der",
+      "die",
+      "das"
+     ],
+     "answer": "die",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Brille"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ar-fenster",
+     "task": "Welcher Artikel passt?",
+     "prompt": "___ Fenster",
+     "options": [
+      "der",
+      "die",
+      "das"
+     ],
+     "answer": "das",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Fenster"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ar-mond",
+     "task": "Welcher Artikel passt?",
+     "prompt": "___ Mond",
+     "options": [
+      "der",
+      "die",
+      "das"
+     ],
+     "answer": "der",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Mond"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ar-blume",
+     "task": "Welcher Artikel passt?",
+     "prompt": "___ Blume",
+     "options": [
+      "der",
+      "die",
+      "das"
+     ],
+     "answer": "die",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Blume"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ar-auto",
+     "task": "Welcher Artikel passt?",
+     "prompt": "___ Auto",
+     "options": [
+      "der",
+      "die",
+      "das"
+     ],
+     "answer": "das",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Auto"
+    }
+   ]
+  },
+  {
+   "title": "ein oder eine",
+   "icon": "1️⃣",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Bestimmter oder unbestimmter Artikel?",
+     "review": "Bestimmt oder unbestimmt?",
+     "groups": [
+      "bestimmt (der, die, das)",
+      "unbestimmt (ein, eine)"
+     ],
+     "items": [
+      {
+       "id": "d3-ap-bu-der-hund",
+       "text": "der Hund",
+       "group": "bestimmt (der, die, das)"
+      },
+      {
+       "id": "d3-ap-bu-die-katze",
+       "text": "die Katze",
+       "group": "bestimmt (der, die, das)"
+      },
+      {
+       "id": "d3-ap-bu-das-pferd",
+       "text": "das Pferd",
+       "group": "bestimmt (der, die, das)"
+      },
+      {
+       "id": "d3-ap-bu-der-baum",
+       "text": "der Baum",
+       "group": "bestimmt (der, die, das)"
+      },
+      {
+       "id": "d3-ap-bu-ein-apfel",
+       "text": "ein Apfel",
+       "group": "unbestimmt (ein, eine)"
+      },
+      {
+       "id": "d3-ap-bu-eine-maus",
+       "text": "eine Maus",
+       "group": "unbestimmt (ein, eine)"
+      },
+      {
+       "id": "d3-ap-bu-ein-buch",
+       "text": "ein Buch",
+       "group": "unbestimmt (ein, eine)"
+      },
+      {
+       "id": "d3-ap-bu-eine-tasse",
+       "text": "eine Tasse",
+       "group": "unbestimmt (ein, eine)"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ub-tisch",
+     "task": "Welcher unbestimmte Artikel passt?",
+     "prompt": "___ Tisch",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Tisch → ein Tisch"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ub-sonne",
+     "task": "Welcher unbestimmte Artikel passt?",
+     "prompt": "___ Sonne",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "eine",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Sonne → eine Sonne"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ub-haus",
+     "task": "Welcher unbestimmte Artikel passt?",
+     "prompt": "___ Haus",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Haus → ein Haus"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ub-loeffel",
+     "task": "Welcher unbestimmte Artikel passt?",
+     "prompt": "___ Löffel",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Löffel → ein Löffel"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ub-gabel",
+     "task": "Welcher unbestimmte Artikel passt?",
+     "prompt": "___ Gabel",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "eine",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Gabel → eine Gabel"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ub-messer",
+     "task": "Welcher unbestimmte Artikel passt?",
+     "prompt": "___ Messer",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Messer → ein Messer"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ub-schrank",
+     "task": "Welcher unbestimmte Artikel passt?",
+     "prompt": "___ Schrank",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "ein",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Schrank → ein Schrank"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-ub-brille",
+     "task": "Welcher unbestimmte Artikel passt?",
+     "prompt": "___ Brille",
+     "options": [
+      "ein",
+      "eine"
+     ],
+     "answer": "eine",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Brille → eine Brille"
+    }
+   ]
+  },
+  {
+   "title": "Pronomen erkennen",
+   "icon": "🔎",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ap-pe-gestern-hat-sie-einen-kuchen",
+     "task": "Welches Wort ist ein Pronomen?",
+     "prompt": "Gestern hat sie einen Kuchen gebacken.",
+     "options": [
+      "Gestern",
+      "sie",
+      "Kuchen"
+     ],
+     "answer": "sie",
+     "keepOrder": true,
+     "explain": "Pronomen sind Fürwörter: ich, du, er, sie, es, wir, ihr, sie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pe-wir-gehen-heute-schwimmen",
+     "task": "Welches Wort ist ein Pronomen?",
+     "prompt": "Wir gehen heute schwimmen.",
+     "options": [
+      "Wir",
+      "gehen",
+      "heute"
+     ],
+     "answer": "Wir",
+     "keepOrder": true,
+     "explain": "Pronomen sind Fürwörter: ich, du, er, sie, es, wir, ihr, sie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pe-morgen-besuchst-du-oma",
+     "task": "Welches Wort ist ein Pronomen?",
+     "prompt": "Morgen besuchst du Oma.",
+     "options": [
+      "Morgen",
+      "du",
+      "Oma"
+     ],
+     "answer": "du",
+     "keepOrder": true,
+     "explain": "Pronomen sind Fürwörter: ich, du, er, sie, es, wir, ihr, sie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pe-der-ball-ist-rot-er-rollt-we",
+     "task": "Welches Wort ist ein Pronomen?",
+     "prompt": "Der Ball ist rot. Er rollt weg.",
+     "options": [
+      "Ball",
+      "rot",
+      "Er"
+     ],
+     "answer": "Er",
+     "keepOrder": true,
+     "explain": "Pronomen sind Fürwörter: ich, du, er, sie, es, wir, ihr, sie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pe-das-baby-lacht-weil-es-hunge",
+     "task": "Welches Wort ist ein Pronomen?",
+     "prompt": "Das Baby lacht, weil es Hunger hat.",
+     "options": [
+      "Baby",
+      "lacht",
+      "es"
+     ],
+     "answer": "es",
+     "keepOrder": true,
+     "explain": "Pronomen sind Fürwörter: ich, du, er, sie, es, wir, ihr, sie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pe-habt-ihr-den-hasen-gesehen",
+     "task": "Welches Wort ist ein Pronomen?",
+     "prompt": "Habt ihr den Hasen gesehen?",
+     "options": [
+      "Habt",
+      "ihr",
+      "Hasen"
+     ],
+     "answer": "ihr",
+     "keepOrder": true,
+     "explain": "Pronomen sind Fürwörter: ich, du, er, sie, es, wir, ihr, sie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pe-ich-male-einen-drachen",
+     "task": "Welches Wort ist ein Pronomen?",
+     "prompt": "Ich male einen Drachen.",
+     "options": [
+      "Ich",
+      "male",
+      "Drachen"
+     ],
+     "answer": "Ich",
+     "keepOrder": true,
+     "explain": "Pronomen sind Fürwörter: ich, du, er, sie, es, wir, ihr, sie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pe-die-kinder-spielen-bis-sie-m",
+     "task": "Welches Wort ist ein Pronomen?",
+     "prompt": "Die Kinder spielen, bis sie müde sind.",
+     "options": [
+      "Kinder",
+      "spielen",
+      "sie"
+     ],
+     "answer": "sie",
+     "keepOrder": true,
+     "explain": "Pronomen sind Fürwörter: ich, du, er, sie, es, wir, ihr, sie."
+    }
+   ]
+  },
+  {
+   "title": "Pronomen verwenden",
+   "icon": "🔁",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ap-pv-lisa-malt-ein-bild-malt-ein",
+     "task": "Welches Pronomen passt?",
+     "prompt": "Lisa malt ein Bild. ___ malt ein Haus.",
+     "options": [
+      "Er",
+      "Sie",
+      "Es"
+     ],
+     "answer": "Sie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Lisa → sie"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pv-der-hund-bellt-hat-hunger",
+     "task": "Welches Pronomen passt?",
+     "prompt": "Der Hund bellt. ___ hat Hunger.",
+     "options": [
+      "Er",
+      "Sie",
+      "Es"
+     ],
+     "answer": "Er",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Hund → er"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pv-das-pferd-rennt-ist-schnell",
+     "task": "Welches Pronomen passt?",
+     "prompt": "Das Pferd rennt. ___ ist schnell.",
+     "options": [
+      "Er",
+      "Sie",
+      "Es"
+     ],
+     "answer": "Es",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Pferd → es"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pv-tom-und-ich-spielen-bauen-ei",
+     "task": "Welches Pronomen passt?",
+     "prompt": "Tom und ich spielen. ___ bauen eine Burg.",
+     "options": [
+      "Wir",
+      "Ihr",
+      "Sie"
+     ],
+     "answer": "Wir",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Tom und ich → wir"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pv-die-kinder-lachen-sind-froeh",
+     "task": "Welches Pronomen passt?",
+     "prompt": "Die Kinder lachen. ___ sind fröhlich.",
+     "options": [
+      "Wir",
+      "Ihr",
+      "Sie"
+     ],
+     "answer": "Sie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Kinder → sie"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pv-ben-und-mia-kommt-mit",
+     "task": "Welches Pronomen passt?",
+     "prompt": "Ben und Mia, kommt ___ mit?",
+     "options": [
+      "wir",
+      "ihr",
+      "sie"
+     ],
+     "answer": "ihr",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Wenn man mehrere anspricht: ihr"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pv-die-blume-blueht-ist-gelb",
+     "task": "Welches Pronomen passt?",
+     "prompt": "Die Blume blüht. ___ ist gelb.",
+     "options": [
+      "Er",
+      "Sie",
+      "Es"
+     ],
+     "answer": "Sie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Blume → sie"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pv-opa-liest-traegt-eine-brille",
+     "task": "Welches Pronomen passt?",
+     "prompt": "Opa liest. ___ trägt eine Brille.",
+     "options": [
+      "Er",
+      "Sie",
+      "Es"
+     ],
+     "answer": "Er",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Opa → er"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pv-das-auto-ist-neu-glaenzt",
+     "task": "Welches Pronomen passt?",
+     "prompt": "Das Auto ist neu. ___ glänzt.",
+     "options": [
+      "Er",
+      "Sie",
+      "Es"
+     ],
+     "answer": "Es",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Auto → es"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ap-pv-mama-und-papa-kochen-machen",
+     "task": "Welches Pronomen passt?",
+     "prompt": "Mama und Papa kochen. ___ machen Suppe.",
+     "options": [
+      "Wir",
+      "Ihr",
+      "Sie"
+     ],
+     "answer": "Sie",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Mama und Papa → sie"
+    },
+    {
+     "kind": "pairs",
+     "task": "Ersetze durch ein Pronomen.",
+     "review": "Welches Pronomen passt?",
+     "pairs": [
+      {
+       "id": "d3-ap-pp-der-vater",
+       "a": "der Vater",
+       "b": "er"
+      },
+      {
+       "id": "d3-ap-pp-die-lehrerin",
+       "a": "die Lehrerin",
+       "b": "sie"
+      },
+      {
+       "id": "d3-ap-pp-das-kind",
+       "a": "das Kind",
+       "b": "es"
+      },
+      {
+       "id": "d3-ap-pp-mia-und-ich",
+       "a": "Mia und ich",
+       "b": "wir"
+      },
+      {
+       "id": "d3-ap-pp-du-und-ben",
+       "a": "du und Ben",
+       "b": "ihr"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-ap-foto",
+     "task": "Schreib 3 Sätze über ein Tier. Benutze im zweiten und dritten Satz ein Pronomen statt dem Namen (er, sie, es)."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

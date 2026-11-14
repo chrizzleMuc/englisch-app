@@ -1,0 +1,1096 @@
+{
+ "id": "d3-besondere-laute",
+ "type": "schule",
+ "title_de": "Besondere Laute: sp, st, qu, v, x",
+ "image": "🔤",
+ "color": "#7a52c7",
+ "lessons": [
+  {
+   "title": "Sp und St",
+   "icon": "🕷️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-der-ern",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "der …ern",
+     "options": [
+      "St",
+      "Scht"
+     ],
+     "answer": "St",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Stern: Man spricht „Scht“, man schreibt „St“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-der-ein",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "der …ein",
+     "options": [
+      "St",
+      "Scht"
+     ],
+     "answer": "St",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Stein: Man spricht „Scht“, man schreibt „St“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-der-uhl",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "der …uhl",
+     "options": [
+      "St",
+      "Scht"
+     ],
+     "answer": "St",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Stuhl: Man spricht „Scht“, man schreibt „St“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-der-ift",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "der …ift",
+     "options": [
+      "St",
+      "Scht"
+     ],
+     "answer": "St",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Stift: Man spricht „Scht“, man schreibt „St“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-die-rasse",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "die …raße",
+     "options": [
+      "St",
+      "Scht"
+     ],
+     "answer": "St",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Straße: Man spricht „Scht“, man schreibt „St“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-der-iefel",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "der …iefel",
+     "options": [
+      "St",
+      "Scht"
+     ],
+     "answer": "St",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Stiefel: Man spricht „Scht“, man schreibt „St“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-ark",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "…ark",
+     "options": [
+      "st",
+      "scht"
+     ],
+     "answer": "st",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "stark: Man spricht „scht“, man schreibt „st“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-olpern",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "…olpern",
+     "options": [
+      "st",
+      "scht"
+     ],
+     "answer": "st",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "stolpern: Man spricht „scht“, man schreibt „st“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-der-ort",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "der …ort",
+     "options": [
+      "Sp",
+      "Schp"
+     ],
+     "answer": "Sp",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Sport: Man spricht „Schp“, man schreibt „Sp“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-das-iel",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "das …iel",
+     "options": [
+      "Sp",
+      "Schp"
+     ],
+     "answer": "Sp",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Spiel: Man spricht „Schp“, man schreibt „Sp“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-die-inne",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "die …inne",
+     "options": [
+      "Sp",
+      "Schp"
+     ],
+     "answer": "Sp",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Spinne: Man spricht „Schp“, man schreibt „Sp“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-der-iegel",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "der …iegel",
+     "options": [
+      "Sp",
+      "Schp"
+     ],
+     "answer": "Sp",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Spiegel: Man spricht „Schp“, man schreibt „Sp“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-der-ass",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "der …aß",
+     "options": [
+      "Sp",
+      "Schp"
+     ],
+     "answer": "Sp",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Spaß: Man spricht „Schp“, man schreibt „Sp“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-ringen",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "…ringen",
+     "options": [
+      "sp",
+      "schp"
+     ],
+     "answer": "sp",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "springen: Man spricht „schp“, man schreibt „sp“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-itz",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "…itz",
+     "options": [
+      "sp",
+      "schp"
+     ],
+     "answer": "sp",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "spitz: Man spricht „schp“, man schreibt „sp“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-sp-aren",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "…aren",
+     "options": [
+      "sp",
+      "schp"
+     ],
+     "answer": "sp",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "sparen: Man spricht „schp“, man schreibt „sp“."
+    }
+   ]
+  },
+  {
+   "title": "qu",
+   "icon": "🪼",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-bl-qu-die-alle",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "die …alle",
+     "options": [
+      "Qu",
+      "Kw"
+     ],
+     "answer": "Qu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Qualle: „kw“ schreibt man immer „qu“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-qu-der-ark",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "der …ark",
+     "options": [
+      "Qu",
+      "Kw"
+     ],
+     "answer": "Qu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Quark: „kw“ schreibt man immer „qu“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-qu-die-elle",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "die …elle",
+     "options": [
+      "Qu",
+      "Kw"
+     ],
+     "answer": "Qu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Quelle: „kw“ schreibt man immer „qu“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-qu-das-adrat",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "das …adrat",
+     "options": [
+      "Qu",
+      "Kw"
+     ],
+     "answer": "Qu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Quadrat: „kw“ schreibt man immer „qu“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-qu-der-atsch",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "der …atsch",
+     "options": [
+      "Qu",
+      "Kw"
+     ],
+     "answer": "Qu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Quatsch: „kw“ schreibt man immer „qu“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-qu-aken",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "…aken",
+     "options": [
+      "qu",
+      "kw"
+     ],
+     "answer": "qu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "quaken: „kw“ schreibt man immer „qu“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-qu-er",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "…er",
+     "options": [
+      "qu",
+      "kw"
+     ],
+     "answer": "qu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "quer: „kw“ schreibt man immer „qu“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-qu-be-em",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "be…em",
+     "options": [
+      "qu",
+      "kw"
+     ],
+     "answer": "qu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "bequem: „kw“ schreibt man immer „qu“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-qu-ietschen",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "…ietschen",
+     "options": [
+      "qu",
+      "kw"
+     ],
+     "answer": "qu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "quietschen: „kw“ schreibt man immer „qu“."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-qu-das-a-arium",
+     "task": "Wie schreibt man es richtig?",
+     "prompt": "das A…arium",
+     "options": [
+      "qu",
+      "kw"
+     ],
+     "answer": "qu",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Aquarium: „kw“ schreibt man immer „qu“."
+    },
+    {
+     "kind": "pairs",
+     "task": "Was gehört zusammen?",
+     "review": "Wörter mit qu",
+     "pairs": [
+      {
+       "id": "d3-bl-qp-die-ente",
+       "a": "die Ente",
+       "b": "quakt"
+      },
+      {
+       "id": "d3-bl-qp-die-tuer",
+       "a": "die Tür",
+       "b": "quietscht"
+      },
+      {
+       "id": "d3-bl-qp-die-qualle",
+       "a": "die Qualle",
+       "b": "schwimmt im Meer"
+      },
+      {
+       "id": "d3-bl-qp-das-quadrat",
+       "a": "das Quadrat",
+       "b": "hat vier gleiche Seiten"
+      },
+      {
+       "id": "d3-bl-qp-der-quark",
+       "a": "der Quark",
+       "b": "ist weiß und cremig"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "V oder F",
+   "icon": "🐦",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-der-ogel",
+     "task": "V oder F?",
+     "prompt": "der _ogel",
+     "options": [
+      "V",
+      "F"
+     ],
+     "answer": "V",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Vogel – Wörter mit V muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-der-ater",
+     "task": "V oder F?",
+     "prompt": "der _ater",
+     "options": [
+      "V",
+      "F"
+     ],
+     "answer": "V",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Vater – Wörter mit V muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-iel",
+     "task": "V oder F?",
+     "prompt": "_iel",
+     "options": [
+      "v",
+      "f"
+     ],
+     "answer": "v",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "viel – Wörter mit V muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-ier",
+     "task": "V oder F?",
+     "prompt": "_ier",
+     "options": [
+      "v",
+      "f"
+     ],
+     "answer": "v",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "vier – Wörter mit V muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-oll",
+     "task": "V oder F?",
+     "prompt": "_oll",
+     "options": [
+      "v",
+      "f"
+     ],
+     "answer": "v",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "voll – Wörter mit V muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-ergessen",
+     "task": "V oder F?",
+     "prompt": "_ergessen",
+     "options": [
+      "v",
+      "f"
+     ],
+     "answer": "v",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "vergessen – Wörter mit V muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-die-orsicht",
+     "task": "V oder F?",
+     "prompt": "die _orsicht",
+     "options": [
+      "V",
+      "F"
+     ],
+     "answer": "V",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Vorsicht – Wörter mit V muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-erstecken",
+     "task": "V oder F?",
+     "prompt": "_erstecken",
+     "options": [
+      "v",
+      "f"
+     ],
+     "answer": "v",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "verstecken – Wörter mit V muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-der-isch",
+     "task": "V oder F?",
+     "prompt": "der _isch",
+     "options": [
+      "V",
+      "F"
+     ],
+     "answer": "F",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Fisch – Hier schreibt man ganz normal f."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-die-eder",
+     "task": "V oder F?",
+     "prompt": "die _eder",
+     "options": [
+      "V",
+      "F"
+     ],
+     "answer": "F",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Feder – Hier schreibt man ganz normal f."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-das-enster",
+     "task": "V oder F?",
+     "prompt": "das _enster",
+     "options": [
+      "V",
+      "F"
+     ],
+     "answer": "F",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Fenster – Hier schreibt man ganz normal f."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-die-erien",
+     "task": "V oder F?",
+     "prompt": "die _erien",
+     "options": [
+      "V",
+      "F"
+     ],
+     "answer": "F",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Ferien – Hier schreibt man ganz normal f."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-ertig",
+     "task": "V oder F?",
+     "prompt": "_ertig",
+     "options": [
+      "v",
+      "f"
+     ],
+     "answer": "f",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "fertig – Hier schreibt man ganz normal f."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-der-uchs",
+     "task": "V oder F?",
+     "prompt": "der _uchs",
+     "options": [
+      "V",
+      "F"
+     ],
+     "answer": "F",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Fuchs – Hier schreibt man ganz normal f."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-allen",
+     "task": "V oder F?",
+     "prompt": "_allen",
+     "options": [
+      "v",
+      "f"
+     ],
+     "answer": "f",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "fallen – Hier schreibt man ganz normal f."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vf-uer",
+     "task": "V oder F?",
+     "prompt": "_ür",
+     "options": [
+      "v",
+      "f"
+     ],
+     "answer": "f",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "für – Hier schreibt man ganz normal f."
+    }
+   ]
+  },
+  {
+   "title": "V oder W",
+   "icon": "🌋",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-bl-vw-die-ase",
+     "task": "V oder W?",
+     "prompt": "die _ase",
+     "options": [
+      "V",
+      "W"
+     ],
+     "answer": "V",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Vase – Hier klingt das v wie w. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vw-der-ulkan",
+     "task": "V oder W?",
+     "prompt": "der _ulkan",
+     "options": [
+      "V",
+      "W"
+     ],
+     "answer": "V",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Vulkan – Hier klingt das v wie w. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vw-das-kla-ier",
+     "task": "V oder W?",
+     "prompt": "das Kla_ier",
+     "options": [
+      "v",
+      "w"
+     ],
+     "answer": "v",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Klavier – Hier klingt das v wie w. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vw-der-pullo-er",
+     "task": "V oder W?",
+     "prompt": "der Pullo_er",
+     "options": [
+      "v",
+      "w"
+     ],
+     "answer": "v",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Pullover – Hier klingt das v wie w. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vw-die-anille",
+     "task": "V oder W?",
+     "prompt": "die _anille",
+     "options": [
+      "V",
+      "W"
+     ],
+     "answer": "V",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Vanille – Hier klingt das v wie w. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vw-das-ideo",
+     "task": "V oder W?",
+     "prompt": "das _ideo",
+     "options": [
+      "V",
+      "W"
+     ],
+     "answer": "V",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Video – Hier klingt das v wie w. Merkwort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vw-die-olke",
+     "task": "V oder W?",
+     "prompt": "die _olke",
+     "options": [
+      "V",
+      "W"
+     ],
+     "answer": "W",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Wolke – Hier schreibt man ganz normal w."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vw-der-al",
+     "task": "V oder W?",
+     "prompt": "der _al",
+     "options": [
+      "V",
+      "W"
+     ],
+     "answer": "W",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Wal – Hier schreibt man ganz normal w."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vw-die-moe-e",
+     "task": "V oder W?",
+     "prompt": "die Mö_e",
+     "options": [
+      "v",
+      "w"
+     ],
+     "answer": "w",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Möwe – Hier schreibt man ganz normal w."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-vw-die-loe-in",
+     "task": "V oder W?",
+     "prompt": "die Lö_in",
+     "options": [
+      "v",
+      "w"
+     ],
+     "answer": "w",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Löwin – Hier schreibt man ganz normal w."
+    }
+   ]
+  },
+  {
+   "title": "x, chs, ks",
+   "icon": "🦊",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-die-he-e",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "die He_e",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "x",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Hexe – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-das-ta-i",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "das Ta_i",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "x",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Taxi – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-bo-en",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "bo_en",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "x",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "boxen – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-mi-en",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "mi_en",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "x",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "mixen – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-das-le-ikon",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "das Le_ikon",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "x",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "das Lexikon – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-der-fu",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "der Fu_",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "chs",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Fuchs – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-der-da",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "der Da_",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "chs",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Dachs – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-wa-en",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "wa_en",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "chs",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "wachsen – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-se",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "se_",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "chs",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "sechs – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-der-o-e",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "der O_e",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "chs",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Ochse – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-die-bue-e",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "die Bü_e",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "chs",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "die Büchse – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-der-ke",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "der Ke_",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "ks",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Keks – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-lin",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "lin_",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "ks",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "links – das muss man sich merken."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-bl-x-der-kle",
+     "task": "Wie schreibt man den x-Laut?",
+     "prompt": "der Kle_",
+     "options": [
+      "x",
+      "chs",
+      "ks",
+      "cks"
+     ],
+     "answer": "cks",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "der Klecks – das muss man sich merken."
+    },
+    {
+     "kind": "sort",
+     "task": "Sortiere nach der Schreibweise.",
+     "review": "x oder chs?",
+     "groups": [
+      "x",
+      "chs"
+     ],
+     "items": [
+      {
+       "id": "d3-bl-xs-die-hexe",
+       "text": "die Hexe",
+       "group": "x"
+      },
+      {
+       "id": "d3-bl-xs-das-taxi",
+       "text": "das Taxi",
+       "group": "x"
+      },
+      {
+       "id": "d3-bl-xs-mixen",
+       "text": "mixen",
+       "group": "x"
+      },
+      {
+       "id": "d3-bl-xs-der-boxer",
+       "text": "der Boxer",
+       "group": "x"
+      },
+      {
+       "id": "d3-bl-xs-der-fuchs",
+       "text": "der Fuchs",
+       "group": "chs"
+      },
+      {
+       "id": "d3-bl-xs-wachsen",
+       "text": "wachsen",
+       "group": "chs"
+      },
+      {
+       "id": "d3-bl-xs-sechs",
+       "text": "sechs",
+       "group": "chs"
+      },
+      {
+       "id": "d3-bl-xs-der-dachs",
+       "text": "der Dachs",
+       "group": "chs"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-bl-foto",
+     "task": "Schreib je 3 Wörter mit Sp, St, qu und V in dein Heft und kreise die besondere Stelle ein."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}

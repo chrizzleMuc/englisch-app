@@ -1,0 +1,557 @@
+{
+ "id": "d3-verben",
+ "type": "schule",
+ "title_de": "Verben: Gegenwart und Vergangenheit",
+ "image": "⚽",
+ "color": "#d0573f",
+ "lessons": [
+  {
+   "title": "Gegenwart: schwache Verben",
+   "icon": "🖍️",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Was gehört zusammen?",
+     "review": "Verb in der Gegenwart",
+     "pairs": [
+      {
+       "id": "d3-vb-sp-ich",
+       "a": "ich",
+       "b": "male"
+      },
+      {
+       "id": "d3-vb-sp-du",
+       "a": "du",
+       "b": "malst"
+      },
+      {
+       "id": "d3-vb-sp-er",
+       "a": "er",
+       "b": "malt"
+      },
+      {
+       "id": "d3-vb-sp-wir",
+       "a": "wir",
+       "b": "malen"
+      }
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sg-malen-du-malst",
+     "task": "Schreib die richtige Form.",
+     "prompt": "malen – du",
+     "answer": "malst",
+     "before": "du"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sg-spielen-er-spielt",
+     "task": "Schreib die richtige Form.",
+     "prompt": "spielen – er",
+     "answer": "spielt",
+     "before": "er"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sg-lachen-wir-lachen",
+     "task": "Schreib die richtige Form.",
+     "prompt": "lachen – wir",
+     "answer": "lachen",
+     "before": "wir"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sg-kaufen-ihr-kauft",
+     "task": "Schreib die richtige Form.",
+     "prompt": "kaufen – ihr",
+     "answer": "kauft",
+     "before": "ihr"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sg-hoeren-ich-hoere",
+     "task": "Schreib die richtige Form.",
+     "prompt": "hören – ich",
+     "answer": "höre",
+     "before": "ich"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sg-bauen-mia-baut",
+     "task": "Schreib die richtige Form.",
+     "prompt": "bauen – Mia",
+     "answer": "baut",
+     "before": "Mia"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sg-suchen-du-suchst",
+     "task": "Schreib die richtige Form.",
+     "prompt": "suchen – du",
+     "answer": "suchst",
+     "before": "du"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sg-lernen-ihr-lernt",
+     "task": "Schreib die richtige Form.",
+     "prompt": "lernen – ihr",
+     "answer": "lernt",
+     "before": "ihr"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sg-wohnen-er-wohnt",
+     "task": "Schreib die richtige Form.",
+     "prompt": "wohnen – er",
+     "answer": "wohnt",
+     "before": "er"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sg-tanzen-du-tanzt",
+     "task": "Schreib die richtige Form.",
+     "prompt": "tanzen – du",
+     "answer": "tanzt",
+     "before": "du"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sg-rennen-wir-rennen",
+     "task": "Schreib die richtige Form.",
+     "prompt": "rennen – wir",
+     "answer": "rennen",
+     "before": "wir"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sg-singen-es-singt",
+     "task": "Schreib die richtige Form.",
+     "prompt": "singen – es",
+     "answer": "singt",
+     "before": "es"
+    }
+   ]
+  },
+  {
+   "title": "Gegenwart: starke Verben",
+   "icon": "📖",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-vb-st-essen-er",
+     "task": "Was ist richtig?",
+     "prompt": "essen – er …",
+     "options": [
+      "er isst",
+      "er esst"
+     ],
+     "answer": "er isst",
+     "bigOptions": true,
+     "explain": "Bei essen ändert sich der Selbstlaut: er isst."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vb-st-lesen-sie",
+     "task": "Was ist richtig?",
+     "prompt": "lesen – sie …",
+     "options": [
+      "sie liest",
+      "sie lest"
+     ],
+     "answer": "sie liest",
+     "bigOptions": true,
+     "explain": "Bei lesen ändert sich der Selbstlaut: sie liest."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vb-st-geben-du",
+     "task": "Was ist richtig?",
+     "prompt": "geben – du …",
+     "options": [
+      "du gibst",
+      "du gebst"
+     ],
+     "answer": "du gibst",
+     "bigOptions": true,
+     "explain": "Bei geben ändert sich der Selbstlaut: du gibst."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vb-st-fahren-er",
+     "task": "Was ist richtig?",
+     "prompt": "fahren – er …",
+     "options": [
+      "er fährt",
+      "er fahrt"
+     ],
+     "answer": "er fährt",
+     "bigOptions": true,
+     "explain": "Bei fahren ändert sich der Selbstlaut: er fährt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vb-st-laufen-sie",
+     "task": "Was ist richtig?",
+     "prompt": "laufen – sie …",
+     "options": [
+      "sie läuft",
+      "sie lauft"
+     ],
+     "answer": "sie läuft",
+     "bigOptions": true,
+     "explain": "Bei laufen ändert sich der Selbstlaut: sie läuft."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vb-st-sehen-du",
+     "task": "Was ist richtig?",
+     "prompt": "sehen – du …",
+     "options": [
+      "du siehst",
+      "du sehst"
+     ],
+     "answer": "du siehst",
+     "bigOptions": true,
+     "explain": "Bei sehen ändert sich der Selbstlaut: du siehst."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vb-st-schlafen-es",
+     "task": "Was ist richtig?",
+     "prompt": "schlafen – es …",
+     "options": [
+      "es schläft",
+      "es schlaft"
+     ],
+     "answer": "es schläft",
+     "bigOptions": true,
+     "explain": "Bei schlafen ändert sich der Selbstlaut: es schläft."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vb-st-nehmen-er",
+     "task": "Was ist richtig?",
+     "prompt": "nehmen – er …",
+     "options": [
+      "er nimmt",
+      "er nehmt"
+     ],
+     "answer": "er nimmt",
+     "bigOptions": true,
+     "explain": "Bei nehmen ändert sich der Selbstlaut: er nimmt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vb-st-helfen-du",
+     "task": "Was ist richtig?",
+     "prompt": "helfen – du …",
+     "options": [
+      "du hilfst",
+      "du helfst"
+     ],
+     "answer": "du hilfst",
+     "bigOptions": true,
+     "explain": "Bei helfen ändert sich der Selbstlaut: du hilfst."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vb-st-tragen-sie",
+     "task": "Was ist richtig?",
+     "prompt": "tragen – sie …",
+     "options": [
+      "sie trägt",
+      "sie tragt"
+     ],
+     "answer": "sie trägt",
+     "bigOptions": true,
+     "explain": "Bei tragen ändert sich der Selbstlaut: sie trägt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vb-st-fallen-er",
+     "task": "Was ist richtig?",
+     "prompt": "fallen – er …",
+     "options": [
+      "er fällt",
+      "er fallt"
+     ],
+     "answer": "er fällt",
+     "bigOptions": true,
+     "explain": "Bei fallen ändert sich der Selbstlaut: er fällt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-vb-st-sprechen-du",
+     "task": "Was ist richtig?",
+     "prompt": "sprechen – du …",
+     "options": [
+      "du sprichst",
+      "du sprechst"
+     ],
+     "answer": "du sprichst",
+     "bigOptions": true,
+     "explain": "Bei sprechen ändert sich der Selbstlaut: du sprichst."
+    }
+   ]
+  },
+  {
+   "title": "Starke Verben schreiben",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-vb-sy-essen-er-isst",
+     "task": "Schreib die richtige Form.",
+     "prompt": "essen – er",
+     "answer": "isst",
+     "before": "er"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sy-lesen-sie-liest",
+     "task": "Schreib die richtige Form.",
+     "prompt": "lesen – sie",
+     "answer": "liest",
+     "before": "sie"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sy-geben-du-gibst",
+     "task": "Schreib die richtige Form.",
+     "prompt": "geben – du",
+     "answer": "gibst",
+     "before": "du"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sy-fahren-er-faehrt",
+     "task": "Schreib die richtige Form.",
+     "prompt": "fahren – er",
+     "answer": "fährt",
+     "before": "er"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sy-laufen-sie-laeuft",
+     "task": "Schreib die richtige Form.",
+     "prompt": "laufen – sie",
+     "answer": "läuft",
+     "before": "sie"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sy-sehen-du-siehst",
+     "task": "Schreib die richtige Form.",
+     "prompt": "sehen – du",
+     "answer": "siehst",
+     "before": "du"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sy-schlafen-es-schlaeft",
+     "task": "Schreib die richtige Form.",
+     "prompt": "schlafen – es",
+     "answer": "schläft",
+     "before": "es"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sy-nehmen-er-nimmt",
+     "task": "Schreib die richtige Form.",
+     "prompt": "nehmen – er",
+     "answer": "nimmt",
+     "before": "er"
+    }
+   ]
+  },
+  {
+   "title": "Vergangenheit mit -te",
+   "icon": "⏪",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-vb-sv-heute-ich-spiele-spielte",
+     "task": "Schreib in der Vergangenheit.",
+     "prompt": "heute: ich spiele",
+     "answer": "spielte",
+     "before": "gestern: ich"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sv-heute-wir-lachen-lachten",
+     "task": "Schreib in der Vergangenheit.",
+     "prompt": "heute: wir lachen",
+     "answer": "lachten",
+     "before": "gestern: wir"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sv-heute-ich-kaufe-kaufte",
+     "task": "Schreib in der Vergangenheit.",
+     "prompt": "heute: ich kaufe",
+     "answer": "kaufte",
+     "before": "gestern: ich"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sv-heute-er-malt-malte",
+     "task": "Schreib in der Vergangenheit.",
+     "prompt": "heute: er malt",
+     "answer": "malte",
+     "before": "gestern: er"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sv-heute-du-hoerst-hoertest",
+     "task": "Schreib in der Vergangenheit.",
+     "prompt": "heute: du hörst",
+     "answer": "hörtest",
+     "before": "gestern: du"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sv-heute-sie-wohnt-wohnte",
+     "task": "Schreib in der Vergangenheit.",
+     "prompt": "heute: sie wohnt",
+     "answer": "wohnte",
+     "before": "gestern: sie"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sv-heute-wir-bauen-bauten",
+     "task": "Schreib in der Vergangenheit.",
+     "prompt": "heute: wir bauen",
+     "answer": "bauten",
+     "before": "gestern: wir"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sv-heute-er-sagt-sagte",
+     "task": "Schreib in der Vergangenheit.",
+     "prompt": "heute: er sagt",
+     "answer": "sagte",
+     "before": "gestern: er"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sv-heute-ich-lerne-lernte",
+     "task": "Schreib in der Vergangenheit.",
+     "prompt": "heute: ich lerne",
+     "answer": "lernte",
+     "before": "gestern: ich"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sv-heute-sie-tanzt-tanzte",
+     "task": "Schreib in der Vergangenheit.",
+     "prompt": "heute: sie tanzt",
+     "answer": "tanzte",
+     "before": "gestern: sie"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sv-heute-ihr-macht-machtet",
+     "task": "Schreib in der Vergangenheit.",
+     "prompt": "heute: ihr macht",
+     "answer": "machtet",
+     "before": "gestern: ihr"
+    },
+    {
+     "kind": "type",
+     "id": "d3-vb-sv-heute-ich-hole-holte",
+     "task": "Schreib in der Vergangenheit.",
+     "prompt": "heute: ich hole",
+     "answer": "holte",
+     "before": "gestern: ich"
+    }
+   ]
+  },
+  {
+   "title": "Schwach oder stark?",
+   "icon": "⚖️",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Schwaches oder starkes Verb?",
+     "review": "Schwach oder stark?",
+     "groups": [
+      "schwach (-te)",
+      "stark (neuer Selbstlaut)"
+     ],
+     "items": [
+      {
+       "id": "d3-vb-ss-suchte",
+       "text": "suchte",
+       "group": "schwach (-te)"
+      },
+      {
+       "id": "d3-vb-ss-lachte",
+       "text": "lachte",
+       "group": "schwach (-te)"
+      },
+      {
+       "id": "d3-vb-ss-spielte",
+       "text": "spielte",
+       "group": "schwach (-te)"
+      },
+      {
+       "id": "d3-vb-ss-kaufte",
+       "text": "kaufte",
+       "group": "schwach (-te)"
+      },
+      {
+       "id": "d3-vb-ss-hoerte",
+       "text": "hörte",
+       "group": "schwach (-te)"
+      },
+      {
+       "id": "d3-vb-ss-rief",
+       "text": "rief",
+       "group": "stark (neuer Selbstlaut)"
+      },
+      {
+       "id": "d3-vb-ss-ging",
+       "text": "ging",
+       "group": "stark (neuer Selbstlaut)"
+      },
+      {
+       "id": "d3-vb-ss-fand",
+       "text": "fand",
+       "group": "stark (neuer Selbstlaut)"
+      },
+      {
+       "id": "d3-vb-ss-schrieb",
+       "text": "schrieb",
+       "group": "stark (neuer Selbstlaut)"
+      },
+      {
+       "id": "d3-vb-ss-sang",
+       "text": "sang",
+       "group": "stark (neuer Selbstlaut)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-vb-foto",
+     "task": "Schreib auf, was du gestern gemacht hast: 4 Sätze in der Vergangenheit (z. B. Ich spielte …, Ich ging …)."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 15
+  }
+ ]
+}
