@@ -1,0 +1,584 @@
+{
+ "id": "m3-geometrie",
+ "type": "schule",
+ "title_de": "Körper, Linien, Symmetrie",
+ "image": "🧊",
+ "color": "#d6457a",
+ "lessons": [
+  {
+   "title": "Körper erkennen",
+   "icon": "🧊",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-geo-k-wuerfel",
+     "task": "Wie heißt der Körper?",
+     "options": [
+      "Würfel",
+      "Quader",
+      "Pyramide"
+     ],
+     "answer": "Würfel",
+     "vis": "koerper:wuerfel"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-k-quader",
+     "task": "Wie heißt der Körper?",
+     "options": [
+      "Quader",
+      "Zylinder",
+      "Kugel"
+     ],
+     "answer": "Quader",
+     "vis": "koerper:quader"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-k-kugel",
+     "task": "Wie heißt der Körper?",
+     "options": [
+      "Kugel",
+      "Würfel",
+      "Kegel"
+     ],
+     "answer": "Kugel",
+     "vis": "koerper:kugel"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-k-zylinder",
+     "task": "Wie heißt der Körper?",
+     "options": [
+      "Zylinder",
+      "Kegel",
+      "Würfel"
+     ],
+     "answer": "Zylinder",
+     "vis": "koerper:zylinder"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-k-kegel",
+     "task": "Wie heißt der Körper?",
+     "options": [
+      "Kegel",
+      "Kugel",
+      "Pyramide"
+     ],
+     "answer": "Kegel",
+     "vis": "koerper:kegel"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-k-pyramide",
+     "task": "Wie heißt der Körper?",
+     "options": [
+      "Pyramide",
+      "Kegel",
+      "Zylinder"
+     ],
+     "answer": "Pyramide",
+     "vis": "koerper:pyramide"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-k-name-zyl",
+     "task": "Welcher Körper ist ein Zylinder?",
+     "options": [
+      "koerper:zylinder",
+      "koerper:kegel",
+      "koerper:quader"
+     ],
+     "answer": "koerper:zylinder",
+     "prompt": "Zylinder",
+     "showText": true,
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-k-name-pyr",
+     "task": "Welcher Körper ist eine Pyramide?",
+     "options": [
+      "koerper:wuerfel",
+      "koerper:pyramide",
+      "koerper:kegel"
+     ],
+     "answer": "koerper:pyramide",
+     "prompt": "Pyramide",
+     "showText": true,
+     "visOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Ecken, Kanten, Flächen",
+   "icon": "📐",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-geo-ekf-0",
+     "task": "Wie viele Ecken hat ein Würfel?",
+     "options": [
+      "6",
+      "8",
+      "12"
+     ],
+     "answer": "8",
+     "vis": "koerper:wuerfel",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-ekf-1",
+     "task": "Wie viele Kanten hat ein Würfel?",
+     "options": [
+      "8",
+      "10",
+      "12"
+     ],
+     "answer": "12",
+     "vis": "koerper:wuerfel",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-ekf-2",
+     "task": "Wie viele Flächen hat ein Würfel?",
+     "options": [
+      "4",
+      "6",
+      "8"
+     ],
+     "answer": "6",
+     "vis": "koerper:wuerfel",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-ekf-3",
+     "task": "Wie viele Ecken hat ein Quader?",
+     "options": [
+      "4",
+      "8",
+      "12"
+     ],
+     "answer": "8",
+     "vis": "koerper:quader",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-ekf-4",
+     "task": "Wie viele Ecken hat eine Kugel?",
+     "options": [
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": "0",
+     "vis": "koerper:kugel",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-ekf-5",
+     "task": "Wie viele Flächen hat eine Pyramide mit quadratischer Grundfläche?",
+     "options": [
+      "4",
+      "5",
+      "6"
+     ],
+     "answer": "5",
+     "vis": "koerper:pyramide",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-roll",
+     "task": "Welcher Körper kann rollen?",
+     "options": [
+      "koerper:wuerfel",
+      "koerper:kugel",
+      "koerper:pyramide"
+     ],
+     "answer": "koerper:kugel",
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-quadrat",
+     "task": "Bei welchem Körper sind alle Flächen gleich große Quadrate?",
+     "options": [
+      "koerper:quader",
+      "koerper:wuerfel",
+      "koerper:zylinder"
+     ],
+     "answer": "koerper:wuerfel",
+     "visOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Würfelnetze",
+   "icon": "🗳️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-geo-netz-0",
+     "task": "Welches Netz kann man zu einem Würfel falten?",
+     "options": [
+      "netz:1,0;0,1;1,1;2,1;3,1;1,2",
+      "netz:0,0;1,0;2,0;3,0;4,0;2,1",
+      "netz:0,0;1,0;0,1;1,1;2,1;3,1"
+     ],
+     "answer": "netz:1,0;0,1;1,1;2,1;3,1;1,2",
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-netz-1",
+     "task": "Welches Netz kann man zu einem Würfel falten?",
+     "options": [
+      "netz:0,0;0,1;1,1;2,1;3,1;3,2",
+      "netz:0,0;1,0;0,1;1,1;2,1;3,1",
+      "netz:0,0;1,0;2,0;3,0;0,1;3,1"
+     ],
+     "answer": "netz:0,0;0,1;1,1;2,1;3,1;3,2",
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-netz-2",
+     "task": "Welches Netz kann man zu einem Würfel falten?",
+     "options": [
+      "netz:0,1;1,1;2,1;3,1;0,0;0,2",
+      "netz:0,0;1,0;2,0;3,0;0,1;3,1",
+      "netz:0,0;1,0;2,0;0,1;1,1;2,1"
+     ],
+     "answer": "netz:0,1;1,1;2,1;3,1;0,0;0,2",
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-netz-3",
+     "task": "Welches Netz kann man zu einem Würfel falten?",
+     "options": [
+      "netz:0,0;1,0;1,1;2,1;2,2;3,2",
+      "netz:0,0;1,0;2,0;0,1;1,1;2,1",
+      "netz:0,0;1,0;2,0;3,0;4,0;2,1"
+     ],
+     "answer": "netz:0,0;1,0;1,1;2,1;2,2;3,2",
+     "visOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-netz-4",
+     "task": "Welches Netz kann man zu einem Würfel falten?",
+     "options": [
+      "netz:0,1;1,1;2,1;3,1;1,0;2,2",
+      "netz:0,0;1,0;2,0;3,0;4,0;2,1",
+      "netz:0,0;1,0;0,1;1,1;2,1;3,1"
+     ],
+     "answer": "netz:0,1;1,1;2,1;3,1;1,0;2,2",
+     "visOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Bauen mit Würfeln",
+   "icon": "🧱",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-geo-bau-0",
+     "task": "Wie viele Würfel sind es? Denk auch an die versteckten Würfel!",
+     "prompt": "",
+     "answer": "5",
+     "num": true,
+     "vis": "bau:2,1;1,1"
+    },
+    {
+     "kind": "type",
+     "id": "m3-geo-bau-1",
+     "task": "Wie viele Würfel sind es? Denk auch an die versteckten Würfel!",
+     "prompt": "",
+     "answer": "4",
+     "num": true,
+     "vis": "bau:1,1,1;1,0,0"
+    },
+    {
+     "kind": "type",
+     "id": "m3-geo-bau-2",
+     "task": "Wie viele Würfel sind es? Denk auch an die versteckten Würfel!",
+     "prompt": "",
+     "answer": "6",
+     "num": true,
+     "vis": "bau:3,2,1"
+    },
+    {
+     "kind": "type",
+     "id": "m3-geo-bau-3",
+     "task": "Wie viele Würfel sind es? Denk auch an die versteckten Würfel!",
+     "prompt": "",
+     "answer": "8",
+     "num": true,
+     "vis": "bau:2,2;2,2"
+    },
+    {
+     "kind": "type",
+     "id": "m3-geo-bau-4",
+     "task": "Wie viele Würfel sind es? Denk auch an die versteckten Würfel!",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "bau:2,3;1,1"
+    },
+    {
+     "kind": "type",
+     "id": "m3-geo-bau-5",
+     "task": "Wie viele Würfel sind es? Denk auch an die versteckten Würfel!",
+     "prompt": "",
+     "answer": "7",
+     "num": true,
+     "vis": "bau:3,1,1;1,1,0"
+    }
+   ]
+  },
+  {
+   "title": "Geraden und Strecken",
+   "icon": "📏",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-geo-lin-0",
+     "task": "Wie liegen die zwei Linien zueinander?",
+     "options": [
+      "parallel",
+      "senkrecht",
+      "weder noch"
+     ],
+     "answer": "parallel",
+     "vis": "linien:parallel",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-lin-1",
+     "task": "Wie liegen die zwei Linien zueinander?",
+     "options": [
+      "parallel",
+      "senkrecht",
+      "weder noch"
+     ],
+     "answer": "senkrecht",
+     "vis": "linien:senkrecht",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-lin-2",
+     "task": "Wie liegen die zwei Linien zueinander?",
+     "options": [
+      "parallel",
+      "senkrecht",
+      "weder noch"
+     ],
+     "answer": "weder noch",
+     "vis": "linien:schief",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-lin-3",
+     "task": "Wie liegen die zwei Linien zueinander?",
+     "options": [
+      "parallel",
+      "senkrecht",
+      "weder noch"
+     ],
+     "answer": "parallel",
+     "vis": "linien:parallel2",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-lin-4",
+     "task": "Wie liegen die zwei Linien zueinander?",
+     "options": [
+      "parallel",
+      "senkrecht",
+      "weder noch"
+     ],
+     "answer": "senkrecht",
+     "vis": "linien:senkrecht",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-lin-5",
+     "task": "Wie liegen die zwei Linien zueinander?",
+     "options": [
+      "parallel",
+      "senkrecht",
+      "weder noch"
+     ],
+     "answer": "weder noch",
+     "vis": "linien:schief",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-gs-6",
+     "task": "Stimmt das?",
+     "options": [
+      "stimmt",
+      "stimmt nicht"
+     ],
+     "answer": "stimmt",
+     "prompt": "Eine Gerade hat keinen Anfang und kein Ende.",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-gs-7",
+     "task": "Stimmt das?",
+     "options": [
+      "stimmt",
+      "stimmt nicht"
+     ],
+     "answer": "stimmt",
+     "prompt": "Eine Strecke hat zwei Endpunkte.",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-gs-8",
+     "task": "Stimmt das?",
+     "options": [
+      "stimmt",
+      "stimmt nicht"
+     ],
+     "answer": "stimmt nicht",
+     "prompt": "Parallele Linien treffen sich irgendwann.",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-gs-9",
+     "task": "Stimmt das?",
+     "options": [
+      "stimmt",
+      "stimmt nicht"
+     ],
+     "answer": "stimmt",
+     "prompt": "Senkrechte Linien bilden einen rechten Winkel.",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Achsensymmetrie",
+   "icon": "🦋",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-geo-sym-0",
+     "task": "Ist die rote Linie eine Spiegelachse?",
+     "options": [
+      "ja",
+      "nein"
+     ],
+     "answer": "ja",
+     "vis": "sym:herz",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-sym-1",
+     "task": "Ist die rote Linie eine Spiegelachse?",
+     "options": [
+      "ja",
+      "nein"
+     ],
+     "answer": "nein",
+     "vis": "sym:schief",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-sym-2",
+     "task": "Ist die rote Linie eine Spiegelachse?",
+     "options": [
+      "ja",
+      "nein"
+     ],
+     "answer": "ja",
+     "vis": "sym:stern",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-sym-3",
+     "task": "Ist die rote Linie eine Spiegelachse?",
+     "options": [
+      "ja",
+      "nein"
+     ],
+     "answer": "nein",
+     "vis": "sym:fahne",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-sym-4",
+     "task": "Ist die rote Linie eine Spiegelachse?",
+     "options": [
+      "ja",
+      "nein"
+     ],
+     "answer": "ja",
+     "vis": "sym:blatt",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-geo-sym-5",
+     "task": "Ist die rote Linie eine Spiegelachse?",
+     "options": [
+      "ja",
+      "nein"
+     ],
+     "answer": "nein",
+     "vis": "sym:stiefel",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "📸",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "m3-geo-foto",
+     "task": "Zeichne im Heft ein Würfelnetz auf Kästchenpapier (jede Fläche 2 × 2 Kästchen). Schneide es aus, falte es und mach ein Foto vom Würfel.",
+     "say": "Zeichne ein Würfelnetz, schneide es aus und falte einen Würfel.",
+     "show": []
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

@@ -1,0 +1,253 @@
+{
+ "id": "m3-geld",
+ "type": "schule",
+ "title_de": "Rechnen mit Geld",
+ "image": "💶",
+ "color": "#c08a1e",
+ "lessons": [
+  {
+   "title": "Euro mit Komma",
+   "icon": "💶",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-gd-komma-3-50",
+     "task": "Schreib mit Komma.",
+     "prompt": "3 € 50 ct = _ €",
+     "answer": "3,50",
+     "also": [
+      "3.50"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-komma-12-5",
+     "task": "Schreib mit Komma.",
+     "prompt": "12 € 5 ct = _ €",
+     "answer": "12,05",
+     "also": [
+      "12.05"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-komma-7-99",
+     "task": "Schreib mit Komma.",
+     "prompt": "7 € 99 ct = _ €",
+     "answer": "7,99",
+     "also": [
+      "7.99"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-komma-20-40",
+     "task": "Schreib mit Komma.",
+     "prompt": "20 € 40 ct = _ €",
+     "answer": "20,40",
+     "also": [
+      "20.40"
+     ]
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-ct-4k20€-xct",
+     "task": "Wie viele Cent sind das?",
+     "prompt": "4,20 € = _ ct",
+     "answer": "420",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-ct-0k75€-xct",
+     "task": "Wie viele Cent sind das?",
+     "prompt": "0,75 € = _ ct",
+     "answer": "75",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-ct-10k05€-xct",
+     "task": "Wie viele Cent sind das?",
+     "prompt": "10,05 € = _ ct",
+     "answer": "1005",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-ct-2k50€-xct",
+     "task": "Wie viele Cent sind das?",
+     "prompt": "2,50 € = _ ct",
+     "answer": "250",
+     "num": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Geld zählen",
+   "icon": "🪙",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-gd-sum-370",
+     "task": "Wie viel Geld ist das? Schreib in Cent.",
+     "prompt": "",
+     "answer": "370",
+     "num": true,
+     "vis": "geld:2,1,0.5,0.2"
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-sum-910",
+     "task": "Wie viel Geld ist das? Schreib in Cent.",
+     "prompt": "",
+     "answer": "910",
+     "num": true,
+     "vis": "geld:5,2,2,0.1"
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-sum-1655",
+     "task": "Wie viel Geld ist das? Schreib in Cent.",
+     "prompt": "",
+     "answer": "1655",
+     "num": true,
+     "vis": "geld:10,5,1,0.5,0.05"
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-sum-300",
+     "task": "Wie viel Geld ist das? Schreib in Cent.",
+     "prompt": "",
+     "answer": "300",
+     "num": true,
+     "vis": "geld:1,1,0.5,0.2,0.2,0.1"
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-sum-2250",
+     "task": "Wie viel Geld ist das? Schreib in Cent.",
+     "prompt": "",
+     "answer": "2250",
+     "num": true,
+     "vis": "geld:20,2,0.5"
+    }
+   ]
+  },
+  {
+   "title": "Rückgeld",
+   "icon": "🧾",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-gd-rueck-10-640",
+     "task": "Wie viel Rückgeld bekommst du? Schreib in Cent.",
+     "prompt": "Du zahlst mit 10 €. Es kostet 6,40 €.",
+     "answer": "360",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-rueck-5-375",
+     "task": "Wie viel Rückgeld bekommst du? Schreib in Cent.",
+     "prompt": "Du zahlst mit 5 €. Es kostet 3,75 €.",
+     "answer": "125",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-rueck-20-1290",
+     "task": "Wie viel Rückgeld bekommst du? Schreib in Cent.",
+     "prompt": "Du zahlst mit 20 €. Es kostet 12,90 €.",
+     "answer": "710",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-rueck-10-235",
+     "task": "Wie viel Rückgeld bekommst du? Schreib in Cent.",
+     "prompt": "Du zahlst mit 10 €. Es kostet 2,35 €.",
+     "answer": "765",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-rueck-50-3400",
+     "task": "Wie viel Rückgeld bekommst du? Schreib in Cent.",
+     "prompt": "Du zahlst mit 50 €. Es kostet 34,00 €.",
+     "answer": "1600",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-rueck-5-114",
+     "task": "Wie viel Rückgeld bekommst du? Schreib in Cent.",
+     "prompt": "Du zahlst mit 5 €. Es kostet 1,15 €.",
+     "answer": "385",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Einkaufen",
+   "icon": "🛒",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-gd-sach-0",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Ein Heft kostet 1,20 €. Lea kauft 3 Hefte. Wie viel Cent zahlt sie?",
+     "answer": "360",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-sach-1",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Ein Eis kostet 1,50 €. Wie viel Cent kosten 4 Eis?",
+     "answer": "600",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-sach-2",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Tim hat 8 € gespart. Ein Buch kostet 12 €. Wie viele Euro fehlen ihm noch?",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-sach-3",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "4 Freunde teilen sich eine Pizza für 16 €. Wie viele Euro zahlt jeder?",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-sach-4",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Oma kauft Brot für 3,40 € und Butter für 2,10 €. Wie viel Cent zahlt sie zusammen?",
+     "answer": "550",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-gd-sach-5",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Eine Kinokarte kostet 7,50 €. Wie viel Cent kosten 2 Karten?",
+     "answer": "1500",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

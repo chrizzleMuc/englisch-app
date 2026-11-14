@@ -1,0 +1,616 @@
+{
+ "id": "m3-schriftlich",
+ "type": "schule",
+ "title_de": "Schriftlich plus und minus",
+ "image": "🧮",
+ "color": "#2f8f6b",
+ "lessons": [
+  {
+   "title": "Plus ohne Übertrag",
+   "icon": "➕",
+   "tasks": [
+    {
+     "kind": "column",
+     "id": "m3-sr-p0-310-318",
+     "nums": [
+      310,
+      318
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p0-600-141",
+     "nums": [
+      600,
+      141
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p0-330-346",
+     "nums": [
+      330,
+      346
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p0-549-120",
+     "nums": [
+      549,
+      120
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p0-365-102",
+     "nums": [
+      365,
+      102
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p0-438-300",
+     "nums": [
+      438,
+      300
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    }
+   ]
+  },
+  {
+   "title": "Plus mit Übertrag",
+   "icon": "➕",
+   "tasks": [
+    {
+     "kind": "column",
+     "id": "m3-sr-p1-458-318",
+     "nums": [
+      458,
+      318
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p1-222-193",
+     "nums": [
+      222,
+      193
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p1-352-197",
+     "nums": [
+      352,
+      197
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p1-507-354",
+     "nums": [
+      507,
+      354
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p1-395-383",
+     "nums": [
+      395,
+      383
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p1-452-254",
+     "nums": [
+      452,
+      254
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p1-422-118",
+     "nums": [
+      422,
+      118
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p1-119-277",
+     "nums": [
+      119,
+      277
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    }
+   ]
+  },
+  {
+   "title": "Zwei Überträge",
+   "icon": "➕",
+   "tasks": [
+    {
+     "kind": "column",
+     "id": "m3-sr-p2-313-197",
+     "nums": [
+      313,
+      197
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p2-469-333",
+     "nums": [
+      469,
+      333
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p2-274-187",
+     "nums": [
+      274,
+      187
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p2-367-395",
+     "nums": [
+      367,
+      395
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p2-155-345",
+     "nums": [
+      155,
+      345
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p2-496-126",
+     "nums": [
+      496,
+      126
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich. Fang bei den Einern an!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p3-463-370-13",
+     "nums": [
+      463,
+      370,
+      13
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich mit drei Zahlen."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p3-131-122-81",
+     "nums": [
+      131,
+      122,
+      81
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich mit drei Zahlen."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-p3-353-162-41",
+     "nums": [
+      353,
+      162,
+      41
+     ],
+     "op": "+",
+     "task": "Rechne schriftlich mit drei Zahlen."
+    }
+   ]
+  },
+  {
+   "title": "Minus ohne Entbündeln",
+   "icon": "➖",
+   "tasks": [
+    {
+     "kind": "column",
+     "id": "m3-sr-m0-688-310",
+     "nums": [
+      688,
+      310
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m0-722-311",
+     "nums": [
+      722,
+      311
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m0-777-140",
+     "nums": [
+      777,
+      140
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m0-458-347",
+     "nums": [
+      458,
+      347
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m0-344-222",
+     "nums": [
+      344,
+      222
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m0-968-102",
+     "nums": [
+      968,
+      102
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    }
+   ]
+  },
+  {
+   "title": "Minus mit Entbündeln",
+   "icon": "➖",
+   "tasks": [
+    {
+     "kind": "column",
+     "id": "m3-sr-m1-592-405",
+     "nums": [
+      592,
+      405
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m1-492-119",
+     "nums": [
+      492,
+      119
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m1-563-135",
+     "nums": [
+      563,
+      135
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m1-753-517",
+     "nums": [
+      753,
+      517
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m1-341-117",
+     "nums": [
+      341,
+      117
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m1-311-141",
+     "nums": [
+      311,
+      141
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m1-846-394",
+     "nums": [
+      846,
+      394
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m1-466-285",
+     "nums": [
+      466,
+      285
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    }
+   ]
+  },
+  {
+   "title": "Zweimal entbündeln",
+   "icon": "➖",
+   "tasks": [
+    {
+     "kind": "column",
+     "id": "m3-sr-m2-674-199",
+     "nums": [
+      674,
+      199
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m2-912-225",
+     "nums": [
+      912,
+      225
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m2-641-345",
+     "nums": [
+      641,
+      345
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m2-932-238",
+     "nums": [
+      932,
+      238
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m2-451-155",
+     "nums": [
+      451,
+      155
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m2-814-177",
+     "nums": [
+      814,
+      177
+     ],
+     "op": "-",
+     "task": "Rechne schriftlich. Fang bei den Einern an! Reicht es nicht, entbündle."
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m0z-505-219",
+     "nums": [
+      505,
+      219
+     ],
+     "op": "-",
+     "task": "Profi-Aufgabe: Hier steht eine Null. Entbündle über die Null hinweg!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m0z-800-261",
+     "nums": [
+      800,
+      261
+     ],
+     "op": "-",
+     "task": "Profi-Aufgabe: Hier steht eine Null. Entbündle über die Null hinweg!"
+    },
+    {
+     "kind": "column",
+     "id": "m3-sr-m0z-400-215",
+     "nums": [
+      400,
+      215
+     ],
+     "op": "-",
+     "task": "Profi-Aufgabe: Hier steht eine Null. Entbündle über die Null hinweg!"
+    }
+   ]
+  },
+  {
+   "title": "Überschlag",
+   "icon": "🤔",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-sr-ub-456-278",
+     "task": "Kann das stimmen? Mach einen Überschlag: 500 + 300 = 800.",
+     "options": [
+      "kann stimmen",
+      "kann nicht stimmen"
+     ],
+     "answer": "kann nicht stimmen",
+     "prompt": "456 + 278 = 634",
+     "keepOrder": true,
+     "explain": "Richtig ist 734."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sr-ub-382-415",
+     "task": "Kann das stimmen? Mach einen Überschlag: 400 + 400 = 800.",
+     "options": [
+      "kann stimmen",
+      "kann nicht stimmen"
+     ],
+     "answer": "kann stimmen",
+     "prompt": "382 + 415 = 797",
+     "keepOrder": true,
+     "explain": "Richtig ist 797."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sr-ub-619-247",
+     "task": "Kann das stimmen? Mach einen Überschlag: 600 + 200 = 800.",
+     "options": [
+      "kann stimmen",
+      "kann nicht stimmen"
+     ],
+     "answer": "kann stimmen",
+     "prompt": "619 + 247 = 866",
+     "keepOrder": true,
+     "explain": "Richtig ist 866."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sr-ub-735-168",
+     "task": "Kann das stimmen? Mach einen Überschlag: 700 + 200 = 900.",
+     "options": [
+      "kann stimmen",
+      "kann nicht stimmen"
+     ],
+     "answer": "kann nicht stimmen",
+     "prompt": "735 + 168 = 803",
+     "keepOrder": true,
+     "explain": "Richtig ist 903."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sr-ub-528-293",
+     "task": "Kann das stimmen? Mach einen Überschlag: 500 + 300 = 800.",
+     "options": [
+      "kann stimmen",
+      "kann nicht stimmen"
+     ],
+     "answer": "kann nicht stimmen",
+     "prompt": "528 + 293 = 921",
+     "keepOrder": true,
+     "explain": "Richtig ist 821."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-sr-ub-247-386",
+     "task": "Kann das stimmen? Mach einen Überschlag: 200 + 400 = 600.",
+     "options": [
+      "kann stimmen",
+      "kann nicht stimmen"
+     ],
+     "answer": "kann nicht stimmen",
+     "prompt": "247 + 386 = 533",
+     "keepOrder": true,
+     "explain": "Richtig ist 633."
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "📸",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "m3-sr-foto",
+     "task": "Rechne schriftlich im Heft, mit Überschlag: 465 + 278, 539 + 186, 724 − 359, 803 − 467.",
+     "say": "Rechne die Aufgaben schriftlich im Heft. Schreib zuerst den Überschlag.",
+     "show": [
+      "465 + 278",
+      "539 + 186",
+      "724 − 359",
+      "803 − 467"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

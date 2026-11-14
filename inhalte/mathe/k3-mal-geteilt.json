@@ -1,0 +1,1096 @@
+{
+ "id": "m3-mal-geteilt",
+ "type": "schule",
+ "title_de": "Mal und geteilt mit großen Zahlen",
+ "image": "✖️",
+ "color": "#3b6fd8",
+ "lessons": [
+  {
+   "title": "Verdoppeln und halbieren",
+   "icon": "🪞",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-mg-dop-34",
+     "task": "Verdopple.",
+     "prompt": "Das Doppelte von 34 ist",
+     "answer": "68",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-dop-45",
+     "task": "Verdopple.",
+     "prompt": "Das Doppelte von 45 ist",
+     "answer": "90",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-dop-120",
+     "task": "Verdopple.",
+     "prompt": "Das Doppelte von 120 ist",
+     "answer": "240",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-dop-260",
+     "task": "Verdopple.",
+     "prompt": "Das Doppelte von 260 ist",
+     "answer": "520",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-dop-175",
+     "task": "Verdopple.",
+     "prompt": "Das Doppelte von 175 ist",
+     "answer": "350",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-dop-380",
+     "task": "Verdopple.",
+     "prompt": "Das Doppelte von 380 ist",
+     "answer": "760",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-hal-68",
+     "task": "Halbiere.",
+     "prompt": "Die Hälfte von 68 ist",
+     "answer": "34",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-hal-90",
+     "task": "Halbiere.",
+     "prompt": "Die Hälfte von 90 ist",
+     "answer": "45",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-hal-340",
+     "task": "Halbiere.",
+     "prompt": "Die Hälfte von 340 ist",
+     "answer": "170",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-hal-500",
+     "task": "Halbiere.",
+     "prompt": "Die Hälfte von 500 ist",
+     "answer": "250",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-hal-726",
+     "task": "Halbiere.",
+     "prompt": "Die Hälfte von 726 ist",
+     "answer": "363",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-hal-150",
+     "task": "Halbiere.",
+     "prompt": "Die Hälfte von 150 ist",
+     "answer": "75",
+     "num": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Gerade und ungerade",
+   "icon": "⚖️",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Ist die Zahl gerade oder ungerade? Schau auf die Einer!",
+     "review": "Gerade oder ungerade?",
+     "groups": [
+      "gerade",
+      "ungerade"
+     ],
+     "items": [
+      {
+       "id": "m3-mg-gu-12",
+       "text": "12",
+       "group": "gerade"
+      },
+      {
+       "id": "m3-mg-gu-37",
+       "text": "37",
+       "group": "ungerade"
+      },
+      {
+       "id": "m3-mg-gu-58",
+       "text": "58",
+       "group": "gerade"
+      },
+      {
+       "id": "m3-mg-gu-81",
+       "text": "81",
+       "group": "ungerade"
+      },
+      {
+       "id": "m3-mg-gu-140",
+       "text": "140",
+       "group": "gerade"
+      },
+      {
+       "id": "m3-mg-gu-263",
+       "text": "263",
+       "group": "ungerade"
+      },
+      {
+       "id": "m3-mg-gu-396",
+       "text": "396",
+       "group": "gerade"
+      },
+      {
+       "id": "m3-mg-gu-405",
+       "text": "405",
+       "group": "ungerade"
+      },
+      {
+       "id": "m3-mg-gu-774",
+       "text": "774",
+       "group": "gerade"
+      },
+      {
+       "id": "m3-mg-gu-919",
+       "text": "919",
+       "group": "ungerade"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Mal mit Zehnerzahlen",
+   "icon": "✖️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-mg-mz-7-70",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "7 · 70 =",
+     "answer": "490",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-mz-9-90",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "9 · 90 =",
+     "answer": "810",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-mz-8-80",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "8 · 80 =",
+     "answer": "640",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-mz-6-40",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "6 · 40 =",
+     "answer": "240",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-mz-30-5",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "30 · 5 =",
+     "answer": "150",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-mz-4-90",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "4 · 90 =",
+     "answer": "360",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-mz-50-7",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "50 · 7 =",
+     "answer": "350",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-mz-3-60",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "3 · 60 =",
+     "answer": "180",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-mz-80-6",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "80 · 6 =",
+     "answer": "480",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-mz-9-20",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "9 · 20 =",
+     "answer": "180",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Geteilt mit Zehnerzahlen",
+   "icon": "➗",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-mg-gz-490-70",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "490 : 70 =",
+     "answer": "7",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-gz-360-60",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "360 : 60 =",
+     "answer": "6",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-gz-200-50",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "200 : 50 =",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-gz-160-80",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "160 : 80 =",
+     "answer": "2",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-gz-420-7",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "420 : 7 =",
+     "answer": "60",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-gz-240-6",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "240 : 6 =",
+     "answer": "40",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-gz-350-5",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "350 : 5 =",
+     "answer": "70",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-gz-810-90",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "810 : 90 =",
+     "answer": "9",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-gz-480-8",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "480 : 8 =",
+     "answer": "60",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-gz-280-40",
+     "task": "Rechne. Denk an das kleine Einmaleins!",
+     "prompt": "280 : 40 =",
+     "answer": "7",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Malkreuz",
+   "icon": "✖️",
+   "tasks": [
+    {
+     "kind": "chain",
+     "id": "m3-mg-hm-5-13",
+     "task": "Rechne in Schritten: erst mit den Zehnern, dann mit den Einern.",
+     "prompt": "5 · 13",
+     "lines": [
+      [
+       "5 · 10 =",
+       "50"
+      ],
+      [
+       "5 · 3 =",
+       "15"
+      ],
+      [
+       "50 + 15 =",
+       "65"
+      ]
+     ],
+     "answer": "65",
+     "vis": "kreuz:5:10,3"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hm-4-17",
+     "task": "Rechne in Schritten: erst mit den Zehnern, dann mit den Einern.",
+     "prompt": "4 · 17",
+     "lines": [
+      [
+       "4 · 10 =",
+       "40"
+      ],
+      [
+       "4 · 7 =",
+       "28"
+      ],
+      [
+       "40 + 28 =",
+       "68"
+      ]
+     ],
+     "answer": "68",
+     "vis": "kreuz:4:10,7"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hm-6-14",
+     "task": "Rechne in Schritten: erst mit den Zehnern, dann mit den Einern.",
+     "prompt": "6 · 14",
+     "lines": [
+      [
+       "6 · 10 =",
+       "60"
+      ],
+      [
+       "6 · 4 =",
+       "24"
+      ],
+      [
+       "60 + 24 =",
+       "84"
+      ]
+     ],
+     "answer": "84",
+     "vis": "kreuz:6:10,4"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hm-3-26",
+     "task": "Rechne in Schritten: erst mit den Zehnern, dann mit den Einern.",
+     "prompt": "3 · 26",
+     "lines": [
+      [
+       "3 · 20 =",
+       "60"
+      ],
+      [
+       "3 · 6 =",
+       "18"
+      ],
+      [
+       "60 + 18 =",
+       "78"
+      ]
+     ],
+     "answer": "78",
+     "vis": "kreuz:3:20,6"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hm-7-15",
+     "task": "Rechne in Schritten: erst mit den Zehnern, dann mit den Einern.",
+     "prompt": "7 · 15",
+     "lines": [
+      [
+       "7 · 10 =",
+       "70"
+      ],
+      [
+       "7 · 5 =",
+       "35"
+      ],
+      [
+       "70 + 35 =",
+       "105"
+      ]
+     ],
+     "answer": "105",
+     "vis": "kreuz:7:10,5"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hm-8-12",
+     "task": "Rechne in Schritten: erst mit den Zehnern, dann mit den Einern.",
+     "prompt": "8 · 12",
+     "lines": [
+      [
+       "8 · 10 =",
+       "80"
+      ],
+      [
+       "8 · 2 =",
+       "16"
+      ],
+      [
+       "80 + 16 =",
+       "96"
+      ]
+     ],
+     "answer": "96",
+     "vis": "kreuz:8:10,2"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hm3-4-125",
+     "task": "Rechne in Schritten: Hunderter, Zehner, Einer.",
+     "prompt": "4 · 125",
+     "lines": [
+      [
+       "4 · 100 =",
+       "400"
+      ],
+      [
+       "4 · 20 =",
+       "80"
+      ],
+      [
+       "4 · 5 =",
+       "20"
+      ],
+      [
+       "400 + 80 + 20 =",
+       "500"
+      ]
+     ],
+     "answer": "500",
+     "vis": "kreuz:4:100,20,5"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hm3-3-214",
+     "task": "Rechne in Schritten: Hunderter, Zehner, Einer.",
+     "prompt": "3 · 214",
+     "lines": [
+      [
+       "3 · 200 =",
+       "600"
+      ],
+      [
+       "3 · 10 =",
+       "30"
+      ],
+      [
+       "3 · 4 =",
+       "12"
+      ],
+      [
+       "600 + 30 + 12 =",
+       "642"
+      ]
+     ],
+     "answer": "642",
+     "vis": "kreuz:3:200,10,4"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hm3-2-342",
+     "task": "Rechne in Schritten: Hunderter, Zehner, Einer.",
+     "prompt": "2 · 342",
+     "lines": [
+      [
+       "2 · 300 =",
+       "600"
+      ],
+      [
+       "2 · 40 =",
+       "80"
+      ],
+      [
+       "2 · 2 =",
+       "4"
+      ],
+      [
+       "600 + 80 + 4 =",
+       "684"
+      ]
+     ],
+     "answer": "684",
+     "vis": "kreuz:2:300,40,2"
+    }
+   ]
+  },
+  {
+   "title": "Geteilt in Schritten",
+   "icon": "➗",
+   "tasks": [
+    {
+     "kind": "chain",
+     "id": "m3-mg-hg-126-3",
+     "task": "Rechne in Schritten: Teile die Zahl in zwei leichte Teile.",
+     "prompt": "126 : 3",
+     "lines": [
+      [
+       "120 : 3 =",
+       "40"
+      ],
+      [
+       "6 : 3 =",
+       "2"
+      ],
+      [
+       "40 + 2 =",
+       "42"
+      ]
+     ],
+     "answer": "42"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hg-84-4",
+     "task": "Rechne in Schritten: Teile die Zahl in zwei leichte Teile.",
+     "prompt": "84 : 4",
+     "lines": [
+      [
+       "80 : 4 =",
+       "20"
+      ],
+      [
+       "4 : 4 =",
+       "1"
+      ],
+      [
+       "20 + 1 =",
+       "21"
+      ]
+     ],
+     "answer": "21"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hg-96-3",
+     "task": "Rechne in Schritten: Teile die Zahl in zwei leichte Teile.",
+     "prompt": "96 : 3",
+     "lines": [
+      [
+       "90 : 3 =",
+       "30"
+      ],
+      [
+       "6 : 3 =",
+       "2"
+      ],
+      [
+       "30 + 2 =",
+       "32"
+      ]
+     ],
+     "answer": "32"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hg-175-5",
+     "task": "Rechne in Schritten: Teile die Zahl in zwei leichte Teile.",
+     "prompt": "175 : 5",
+     "lines": [
+      [
+       "150 : 5 =",
+       "30"
+      ],
+      [
+       "25 : 5 =",
+       "5"
+      ],
+      [
+       "30 + 5 =",
+       "35"
+      ]
+     ],
+     "answer": "35"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hg-148-4",
+     "task": "Rechne in Schritten: Teile die Zahl in zwei leichte Teile.",
+     "prompt": "148 : 4",
+     "lines": [
+      [
+       "120 : 4 =",
+       "30"
+      ],
+      [
+       "28 : 4 =",
+       "7"
+      ],
+      [
+       "30 + 7 =",
+       "37"
+      ]
+     ],
+     "answer": "37"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-hg-192-6",
+     "task": "Rechne in Schritten: Teile die Zahl in zwei leichte Teile.",
+     "prompt": "192 : 6",
+     "lines": [
+      [
+       "180 : 6 =",
+       "30"
+      ],
+      [
+       "12 : 6 =",
+       "2"
+      ],
+      [
+       "30 + 2 =",
+       "32"
+      ]
+     ],
+     "answer": "32"
+    }
+   ]
+  },
+  {
+   "title": "Teilen mit Rest",
+   "icon": "🍪",
+   "tasks": [
+    {
+     "kind": "chain",
+     "id": "m3-mg-rest-47-6",
+     "task": "Teile mit Rest.",
+     "prompt": "47 : 6",
+     "lines": [
+      [
+       "47 : 6 =",
+       "7"
+      ],
+      [
+       "Rest",
+       "5"
+      ]
+     ],
+     "answer": "5"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-rest-38-5",
+     "task": "Teile mit Rest.",
+     "prompt": "38 : 5",
+     "lines": [
+      [
+       "38 : 5 =",
+       "7"
+      ],
+      [
+       "Rest",
+       "3"
+      ]
+     ],
+     "answer": "3"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-rest-59-7",
+     "task": "Teile mit Rest.",
+     "prompt": "59 : 7",
+     "lines": [
+      [
+       "59 : 7 =",
+       "8"
+      ],
+      [
+       "Rest",
+       "3"
+      ]
+     ],
+     "answer": "3"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-rest-26-4",
+     "task": "Teile mit Rest.",
+     "prompt": "26 : 4",
+     "lines": [
+      [
+       "26 : 4 =",
+       "6"
+      ],
+      [
+       "Rest",
+       "2"
+      ]
+     ],
+     "answer": "2"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-rest-71-9",
+     "task": "Teile mit Rest.",
+     "prompt": "71 : 9",
+     "lines": [
+      [
+       "71 : 9 =",
+       "7"
+      ],
+      [
+       "Rest",
+       "8"
+      ]
+     ],
+     "answer": "8"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-mg-rest-45-8",
+     "task": "Teile mit Rest.",
+     "prompt": "45 : 8",
+     "lines": [
+      [
+       "45 : 8 =",
+       "5"
+      ],
+      [
+       "Rest",
+       "5"
+      ]
+     ],
+     "answer": "5"
+    }
+   ]
+  },
+  {
+   "title": "Gleich oder ungleich?",
+   "icon": "⚖️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-mg-gl-43+8-45+6",
+     "task": "Größer, kleiner oder gleich? Rechne beide Seiten aus.",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "=",
+     "prompt": "43 + 8  ?  45 + 6",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "43 + 8 = 51 und 45 + 6 = 51."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-mg-gl-7·8-60−5",
+     "task": "Größer, kleiner oder gleich? Rechne beide Seiten aus.",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": ">",
+     "prompt": "7 · 8  ?  60 − 5",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "7 · 8 = 56 und 60 − 5 = 55."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-mg-gl-300+250-600−40",
+     "task": "Größer, kleiner oder gleich? Rechne beide Seiten aus.",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "<",
+     "prompt": "300 + 250  ?  600 − 40",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "300 + 250 = 550 und 600 − 40 = 560."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-mg-gl-9·9-80",
+     "task": "Größer, kleiner oder gleich? Rechne beide Seiten aus.",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": ">",
+     "prompt": "9 · 9  ?  80",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "9 · 9 = 81 und 80 = 80."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-mg-gl-72:8-3·3",
+     "task": "Größer, kleiner oder gleich? Rechne beide Seiten aus.",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "=",
+     "prompt": "72 : 8  ?  3 · 3",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "72 : 8 = 9 und 3 · 3 = 9."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-mg-gl-500−120-400−30",
+     "task": "Größer, kleiner oder gleich? Rechne beide Seiten aus.",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": ">",
+     "prompt": "500 − 120  ?  400 − 30",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "500 − 120 = 380 und 400 − 30 = 370."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-mg-gl-6·70-400+30",
+     "task": "Größer, kleiner oder gleich? Rechne beide Seiten aus.",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "<",
+     "prompt": "6 · 70  ?  400 + 30",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "6 · 70 = 420 und 400 + 30 = 430."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-mg-gl-250+250-5·100",
+     "task": "Größer, kleiner oder gleich? Rechne beide Seiten aus.",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "=",
+     "prompt": "250 + 250  ?  5 · 100",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "250 + 250 = 500 und 5 · 100 = 500."
+    }
+   ]
+  },
+  {
+   "title": "Punkt vor Strich",
+   "icon": "⚫",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-ex-pvs-7+5·3",
+     "task": "Punkt vor Strich: Rechne zuerst mal und geteilt!",
+     "prompt": "7 + 5 · 3 =",
+     "answer": "22",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-pvs-20−4·3",
+     "task": "Punkt vor Strich: Rechne zuerst mal und geteilt!",
+     "prompt": "20 − 4 · 3 =",
+     "answer": "8",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-pvs-6·4+8",
+     "task": "Punkt vor Strich: Rechne zuerst mal und geteilt!",
+     "prompt": "6 · 4 + 8 =",
+     "answer": "32",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-pvs-30:5+7",
+     "task": "Punkt vor Strich: Rechne zuerst mal und geteilt!",
+     "prompt": "30 : 5 + 7 =",
+     "answer": "13",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-pvs-50−36:4",
+     "task": "Punkt vor Strich: Rechne zuerst mal und geteilt!",
+     "prompt": "50 − 36 : 4 =",
+     "answer": "41",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-pvs-8+2·9",
+     "task": "Punkt vor Strich: Rechne zuerst mal und geteilt!",
+     "prompt": "8 + 2 · 9 =",
+     "answer": "26",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-pvs-9·3−7",
+     "task": "Punkt vor Strich: Rechne zuerst mal und geteilt!",
+     "prompt": "9 · 3 − 7 =",
+     "answer": "20",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-pvs-100−10·6",
+     "task": "Punkt vor Strich: Rechne zuerst mal und geteilt!",
+     "prompt": "100 − 10 · 6 =",
+     "answer": "40",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-pvs-4·5+3·6",
+     "task": "Punkt vor Strich: Rechne zuerst mal und geteilt!",
+     "prompt": "4 · 5 + 3 · 6 =",
+     "answer": "38",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-ex-pvs-60:6−2·4",
+     "task": "Punkt vor Strich: Rechne zuerst mal und geteilt!",
+     "prompt": "60 : 6 − 2 · 4 =",
+     "answer": "2",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Sachaufgaben",
+   "icon": "📮",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-mg-sach-0",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Ein Bus hat 48 Sitzplätze. Wie viele Plätze haben 6 Busse?",
+     "answer": "288",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-sach-1",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Im Zoo bekommen 4 Elefanten zusammen 360 kg Heu. Jeder gleich viel. Wie viel kg bekommt ein Elefant?",
+     "answer": "90",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-sach-2",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Eine Packung hat 24 Stifte. Die Lehrerin kauft 5 Packungen. Wie viele Stifte sind das?",
+     "answer": "120",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-sach-3",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "140 Kinder fahren ins Schullandheim. In jedes Zimmer passen 7 Kinder. Wie viele Zimmer brauchen sie?",
+     "answer": "20",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-sach-4",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Ein Briefträger trägt am Tag 125 Briefe aus. Wie viele Briefe sind es in 3 Tagen?",
+     "answer": "375",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-mg-sach-5",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "96 Äpfel werden gerecht auf 8 Kisten verteilt. Wie viele Äpfel kommen in eine Kiste?",
+     "answer": "12",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "📸",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "m3-mg-foto",
+     "task": "Rechne im Heft mit dem Malkreuz: 6 · 23, 4 · 37, 3 · 125. Schreib zu 3 · 125 eine Rechengeschichte.",
+     "say": "Rechne im Heft mit dem Malkreuz.",
+     "show": [
+      "6 · 23",
+      "4 · 37",
+      "3 · 125"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 14
+  }
+ ]
+}

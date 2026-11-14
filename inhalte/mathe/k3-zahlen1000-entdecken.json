@@ -1,0 +1,636 @@
+{
+ "id": "m3-zahlen-entdecken",
+ "type": "schule",
+ "title_de": "Zahlen bis 1000 entdecken",
+ "image": "🧱",
+ "color": "#5b6cd6",
+ "lessons": [
+  {
+   "title": "Hunderter, Zehner, Einer",
+   "icon": "🧱",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-zd-hze-247",
+     "task": "Wie viel ist das? Zähle Hunderter, Zehner und Einer.",
+     "prompt": "",
+     "answer": "247",
+     "num": true,
+     "vis": "hze:247"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-hze-315",
+     "task": "Wie viel ist das? Zähle Hunderter, Zehner und Einer.",
+     "prompt": "",
+     "answer": "315",
+     "num": true,
+     "vis": "hze:315"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-hze-162",
+     "task": "Wie viel ist das? Zähle Hunderter, Zehner und Einer.",
+     "prompt": "",
+     "answer": "162",
+     "num": true,
+     "vis": "hze:162"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-hze-403",
+     "task": "Wie viel ist das? Zähle Hunderter, Zehner und Einer.",
+     "prompt": "",
+     "answer": "403",
+     "num": true,
+     "vis": "hze:403"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-hze-530",
+     "task": "Wie viel ist das? Zähle Hunderter, Zehner und Einer.",
+     "prompt": "",
+     "answer": "530",
+     "num": true,
+     "vis": "hze:530"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-hze-128",
+     "task": "Wie viel ist das? Zähle Hunderter, Zehner und Einer.",
+     "prompt": "",
+     "answer": "128",
+     "num": true,
+     "vis": "hze:128"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-hze-361",
+     "task": "Wie viel ist das? Zähle Hunderter, Zehner und Einer.",
+     "prompt": "",
+     "answer": "361",
+     "num": true,
+     "vis": "hze:361"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-hze-212",
+     "task": "Wie viel ist das? Zähle Hunderter, Zehner und Einer.",
+     "prompt": "",
+     "answer": "212",
+     "num": true,
+     "vis": "hze:212"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-hze-450",
+     "task": "Wie viel ist das? Zähle Hunderter, Zehner und Einer.",
+     "prompt": "",
+     "answer": "450",
+     "num": true,
+     "vis": "hze:450"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-hze-236",
+     "task": "Wie viel ist das? Zähle Hunderter, Zehner und Einer.",
+     "prompt": "",
+     "answer": "236",
+     "num": true,
+     "vis": "hze:236"
+    }
+   ]
+  },
+  {
+   "title": "Stellentafel",
+   "icon": "🔢",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-zd-stp-352",
+     "task": "Welche Zahl ist in der Stellentafel?",
+     "prompt": "",
+     "answer": "352",
+     "num": true,
+     "vis": "stp:352"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-stp-418",
+     "task": "Welche Zahl ist in der Stellentafel?",
+     "prompt": "",
+     "answer": "418",
+     "num": true,
+     "vis": "stp:418"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-stp-263",
+     "task": "Welche Zahl ist in der Stellentafel?",
+     "prompt": "",
+     "answer": "263",
+     "num": true,
+     "vis": "stp:263"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-stp-507",
+     "task": "Welche Zahl ist in der Stellentafel?",
+     "prompt": "",
+     "answer": "507",
+     "num": true,
+     "vis": "stp:507"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-stp-640",
+     "task": "Welche Zahl ist in der Stellentafel?",
+     "prompt": "",
+     "answer": "640",
+     "num": true,
+     "vis": "stp:640"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-stp-135",
+     "task": "Welche Zahl ist in der Stellentafel?",
+     "prompt": "",
+     "answer": "135",
+     "num": true,
+     "vis": "stp:135"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-stz-638",
+     "task": "Wie viele Zehner hat die Zahl?",
+     "prompt": "638",
+     "answer": "3",
+     "num": true,
+     "vis": "st:638"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-stz-472",
+     "task": "Wie viele Hunderter hat die Zahl?",
+     "prompt": "472",
+     "answer": "4",
+     "num": true,
+     "vis": "st:472"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-stz-905",
+     "task": "Wie viele Einer hat die Zahl?",
+     "prompt": "905",
+     "answer": "5",
+     "num": true,
+     "vis": "st:905"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-stz-260",
+     "task": "Wie viele Zehner hat die Zahl?",
+     "prompt": "260",
+     "answer": "6",
+     "num": true,
+     "vis": "st:260"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-stz-781",
+     "task": "Wie viele Hunderter hat die Zahl?",
+     "prompt": "781",
+     "answer": "7",
+     "num": true,
+     "vis": "st:781"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-stz-349",
+     "task": "Wie viele Einer hat die Zahl?",
+     "prompt": "349",
+     "answer": "9",
+     "num": true,
+     "vis": "st:349"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Zahlenstrahl",
+   "icon": "📏",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-zd-zs-0-300",
+     "task": "Welche Zahl zeigt der Pfeil?",
+     "options": [
+      "200",
+      "300",
+      "400"
+     ],
+     "answer": "300",
+     "vis": "strahl:0:1000:300:100",
+     "prompt": "Zahlenstrahl 0 bis 1000",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zs-0-750",
+     "task": "Welche Zahl zeigt der Pfeil?",
+     "options": [
+      "750",
+      "650",
+      "850"
+     ],
+     "answer": "750",
+     "vis": "strahl:0:1000:750:100",
+     "prompt": "Zahlenstrahl 0 bis 1000",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zs-0-450",
+     "task": "Welche Zahl zeigt der Pfeil?",
+     "options": [
+      "550",
+      "350",
+      "450"
+     ],
+     "answer": "450",
+     "vis": "strahl:0:1000:450:100",
+     "prompt": "Zahlenstrahl 0 bis 1000",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zs-300-370",
+     "task": "Welche Zahl zeigt der Pfeil?",
+     "options": [
+      "380",
+      "370",
+      "360"
+     ],
+     "answer": "370",
+     "vis": "strahl:300:400:370:10",
+     "prompt": "Zahlenstrahl 300 bis 400",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zs-600-640",
+     "task": "Welche Zahl zeigt der Pfeil?",
+     "options": [
+      "650",
+      "640",
+      "630"
+     ],
+     "answer": "640",
+     "vis": "strahl:600:700:640:10",
+     "prompt": "Zahlenstrahl 600 bis 700",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zs-200-285",
+     "task": "Welche Zahl zeigt der Pfeil?",
+     "options": [
+      "285",
+      "295",
+      "275"
+     ],
+     "answer": "285",
+     "vis": "strahl:200:300:285:10",
+     "prompt": "Zahlenstrahl 200 bis 300",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zs-800-815",
+     "task": "Welche Zahl zeigt der Pfeil?",
+     "options": [
+      "825",
+      "815",
+      "805"
+     ],
+     "answer": "815",
+     "vis": "strahl:800:900:815:10",
+     "prompt": "Zahlenstrahl 800 bis 900",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zs-500-555",
+     "task": "Welche Zahl zeigt der Pfeil?",
+     "options": [
+      "555",
+      "545",
+      "565"
+     ],
+     "answer": "555",
+     "vis": "strahl:500:600:555:10",
+     "prompt": "Zahlenstrahl 500 bis 600",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zs-0-900",
+     "task": "Welche Zahl zeigt der Pfeil?",
+     "options": [
+      "800",
+      "900",
+      "1000"
+     ],
+     "answer": "900",
+     "vis": "strahl:0:1000:900:100",
+     "prompt": "Zahlenstrahl 0 bis 1000",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zs-100-130",
+     "task": "Welche Zahl zeigt der Pfeil?",
+     "options": [
+      "140",
+      "130",
+      "120"
+     ],
+     "answer": "130",
+     "vis": "strahl:100:200:130:10",
+     "prompt": "Zahlenstrahl 100 bis 200",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Tausendertafel",
+   "icon": "🟨",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-zd-tt-362",
+     "task": "Welche Zahl gehört in das gelbe Feld? Tipp: nach rechts +1, nach unten +10.",
+     "prompt": "",
+     "answer": "362",
+     "num": true,
+     "vis": "tafel:340:362"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-tt-533",
+     "task": "Welche Zahl gehört in das gelbe Feld? Tipp: nach rechts +1, nach unten +10.",
+     "prompt": "",
+     "answer": "533",
+     "num": true,
+     "vis": "tafel:510:533"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-tt-744",
+     "task": "Welche Zahl gehört in das gelbe Feld? Tipp: nach rechts +1, nach unten +10.",
+     "prompt": "",
+     "answer": "744",
+     "num": true,
+     "vis": "tafel:720:744"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-tt-251",
+     "task": "Welche Zahl gehört in das gelbe Feld? Tipp: nach rechts +1, nach unten +10.",
+     "prompt": "",
+     "answer": "251",
+     "num": true,
+     "vis": "tafel:230:251"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-tt-874",
+     "task": "Welche Zahl gehört in das gelbe Feld? Tipp: nach rechts +1, nach unten +10.",
+     "prompt": "",
+     "answer": "874",
+     "num": true,
+     "vis": "tafel:860:874"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-tt-482",
+     "task": "Welche Zahl gehört in das gelbe Feld? Tipp: nach rechts +1, nach unten +10.",
+     "prompt": "",
+     "answer": "482",
+     "num": true,
+     "vis": "tafel:450:482"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-tt-193",
+     "task": "Welche Zahl gehört in das gelbe Feld? Tipp: nach rechts +1, nach unten +10.",
+     "prompt": "",
+     "answer": "193",
+     "num": true,
+     "vis": "tafel:170:193"
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-tt-622",
+     "task": "Welche Zahl gehört in das gelbe Feld? Tipp: nach rechts +1, nach unten +10.",
+     "prompt": "",
+     "answer": "622",
+     "num": true,
+     "vis": "tafel:610:622"
+    }
+   ]
+  },
+  {
+   "title": "Zahlwörter",
+   "icon": "✍️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-zd-zw-347",
+     "task": "Schreib die Zahl mit Ziffern.",
+     "prompt": "dreihundertsiebenundvierzig",
+     "answer": "347",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-zw-512",
+     "task": "Schreib die Zahl mit Ziffern.",
+     "prompt": "fünfhundertzwölf",
+     "answer": "512",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-zw-609",
+     "task": "Schreib die Zahl mit Ziffern.",
+     "prompt": "sechshundertneun",
+     "answer": "609",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-zw-870",
+     "task": "Schreib die Zahl mit Ziffern.",
+     "prompt": "achthundertsiebzig",
+     "answer": "870",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-zw-128",
+     "task": "Schreib die Zahl mit Ziffern.",
+     "prompt": "einhundertachtundzwanzig",
+     "answer": "128",
+     "num": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zwc-436",
+     "task": "Welches Zahlwort passt?",
+     "options": [
+      "vierhundertsechsunddreißig",
+      "vierhundertdreiundsechzig",
+      "fünfhundertsechsunddreißig"
+     ],
+     "answer": "vierhundertsechsunddreißig",
+     "prompt": "436",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zwc-703",
+     "task": "Welches Zahlwort passt?",
+     "options": [
+      "siebenhundertdrei",
+      "siebenhundertdreißig",
+      "achthundertdrei"
+     ],
+     "answer": "siebenhundertdrei",
+     "prompt": "703",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zwc-951",
+     "task": "Welches Zahlwort passt?",
+     "options": [
+      "neunhunderteinundfünfzig",
+      "neunhundertfünfzehn",
+      "achthunderteinundfünfzig"
+     ],
+     "answer": "neunhunderteinundfünfzig",
+     "prompt": "951",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-zd-zwc-260",
+     "task": "Welches Zahlwort passt?",
+     "options": [
+      "zweihundertsechzig",
+      "zweihundertsechs",
+      "dreihundertsechzig"
+     ],
+     "answer": "zweihundertsechzig",
+     "prompt": "260",
+     "showText": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Zahlenrätsel",
+   "icon": "🧩",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-zd-raetsel-0",
+     "task": "Zahlenrätsel: Welche Zahl bin ich?",
+     "prompt": "Ich habe 4 Hunderter, 0 Zehner und 9 Einer.",
+     "answer": "409",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-raetsel-1",
+     "task": "Zahlenrätsel: Welche Zahl bin ich?",
+     "prompt": "Ich bin 10 größer als 395.",
+     "answer": "405",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-raetsel-2",
+     "task": "Zahlenrätsel: Welche Zahl bin ich?",
+     "prompt": "Ich bin 100 kleiner als 830.",
+     "answer": "730",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-raetsel-3",
+     "task": "Zahlenrätsel: Welche Zahl bin ich?",
+     "prompt": "Ich liege genau in der Mitte zwischen 400 und 500.",
+     "answer": "450",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-raetsel-4",
+     "task": "Zahlenrätsel: Welche Zahl bin ich?",
+     "prompt": "Ich bin die größte Zahl mit den Ziffern 3, 8 und 1.",
+     "answer": "831",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-raetsel-5",
+     "task": "Zahlenrätsel: Welche Zahl bin ich?",
+     "prompt": "Ich bin die kleinste dreistellige Zahl.",
+     "answer": "100",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-raetsel-6",
+     "task": "Zahlenrätsel: Welche Zahl bin ich?",
+     "prompt": "Ich habe 7 Hunderter. Meine Zehner und Einer sind beide 5.",
+     "answer": "755",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-zd-raetsel-7",
+     "task": "Zahlenrätsel: Welche Zahl bin ich?",
+     "prompt": "Ich bin der Nachfolger von 699.",
+     "answer": "700",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Ins Heft",
+   "icon": "📸",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "m3-zd-foto",
+     "task": "Zeichne im Heft eine Stellentafel (H, Z, E). Trag diese Zahlen mit Plättchen ein: 324, 150, 506.",
+     "say": "Zeichne eine Stellentafel ins Heft und trag die Zahlen mit Plättchen ein.",
+     "show": [
+      "324",
+      "150",
+      "506"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 14
+  }
+ ]
+}

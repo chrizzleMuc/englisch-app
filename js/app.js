@@ -9,7 +9,7 @@ import { pic } from "./pics.js";
 import { vis, visText } from "./mathpics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 30;
+const APP_VERSION = 31;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -1038,6 +1038,238 @@ STEPS.pairs = (lesson, step) => {
       });
     }
   });
+};
+
+// ---------- Übung: Schriftlich rechnen (Plus mit Übertrag, Minus mit Entbündeln wie in Bayern) ----------
+// Aufgabe: { kind: "column", nums: [574, 166], op: "+" }  oder  op: "-" (zwei Zahlen)
+// Das Kind rechnet Spalte für Spalte von rechts (Einer) nach links und tippt jede Ziffer ein.
+// Plus: nach jeder Spalte den Übertrag eintragen (oder „kein Übertrag“).
+// Minus: reicht die obere Ziffer nicht, zuerst „Entbündeln“ (1 aus der Nachbarstelle holen).
+const PLACE_NAMES = ["E", "Z", "H", "T"];
+function columnPlan(q) {
+  const add = q.op === "+";
+  const res = add ? q.nums.reduce((a, b) => a + b, 0) : q.nums[0] - q.nums[1];
+  const n = Math.max(...q.nums.map((x) => String(x).length), String(res).length);
+  const dig = (x) => String(x).padStart(n, " ").split("").reverse().map((c) => (c === " " ? null : Number(c)));
+  return { add, res, n, rows: q.nums.map(dig), resDigits: dig(res) };
+}
+
+STEPS.column = (lesson, step) => {
+  const q = step.q;
+  const P = columnPlan(q);
+  const n = P.n;
+  const top = P.rows[0].map((d) => d ?? 0); // Minus: wird beim Entbündeln verändert
+  const note = Array(n).fill(""); // Minus: neue Zahl über der Stelle
+  const crossed = Array(n).fill(false);
+  const result = Array(n).fill("");
+  const carry = Array(n).fill("");
+  const bad = Array(n).fill(false);
+  let first = true;
+  let tries = 0;
+  // Ablauf: Liste von Feldern, die nacheinander dran sind
+  const seq = [];
+  for (let i = 0; i < n; i++) {
+    if (P.add || P.resDigits[i] !== null || i === 0) seq.push({ t: "res", i });
+    if (P.add && i < n - 1) seq.push({ t: "carry", i: i + 1 });
+  }
+  // Plus: Ergebnis der Spalte mit Übertrag
+  const colSum = (i) => P.rows.reduce((s, r) => s + (r[i] || 0), 0) + (i > 0 ? Number(carryNeed(i)) : 0);
+  const carryNeed = (i) => Math.floor((P.rows.reduce((s, r) => s + (r[i - 1] || 0), 0) + (i > 1 ? Number(carryNeed(i - 1)) : 0)) / 10);
+  const bottom = (i) => P.rows[1]?.[i] || 0;
+  const needBorrow = (i) => !P.add && top[i] < bottom(i);
+  let pos = 0;
+
+  function borrow(i) {
+    // nächste Stelle links, die etwas hergeben kann (über Nullen hinweg)
+    let j = i + 1;
+    while (j < n && top[j] === 0) j++;
+    if (j >= n) return;
+    for (let k = j; k > i; k--) {
+      top[k] -= 1;
+      crossed[k] = true;
+      note[k] = String(top[k]);
+      top[k - 1] += 10;
+    }
+    crossed[i] = true;
+    note[i] = String(top[i]);
+  }
+
+  const cellHtml = (cls, text, attrs = "") => `<span class="cc ${cls}" ${attrs}>${esc(text)}</span>`;
+  function gridHtml() {
+    const cur = seq[pos];
+    const cols = `repeat(${n + 1}, var(--cw))`;
+    let h = `<div class="cgrid" style="grid-template-columns:${cols}">`;
+    h += cellHtml("op", "");
+    for (let i = n - 1; i >= 0; i--) h += cellHtml(`head p${PLACE_NAMES[i]}`, PLACE_NAMES[i]);
+    if (!P.add) {
+      h += cellHtml("op", "");
+      for (let i = n - 1; i >= 0; i--) h += cellHtml("note", note[i]);
+    }
+    P.rows.forEach((r, ri) => {
+      h += cellHtml("op", ri === P.rows.length - 1 ? (P.add ? "+" : "−") : "");
+      for (let i = n - 1; i >= 0; i--) h += cellHtml(`num ${ri === 0 && crossed[i] ? "crossed" : ""}`, r[i] ?? "");
+    });
+    if (P.add) {
+      h += cellHtml("op", "");
+      for (let i = n - 1; i >= 0; i--) h += cellHtml(`carry ${cur && cur.t === "carry" && cur.i === i ? "active" : ""} ${i === 0 ? "none" : ""}`, carry[i]);
+    }
+    h += `<span class="cline" style="grid-column:1 / span ${n + 1}"></span>`;
+    h += cellHtml("op", "");
+    for (let i = n - 1; i >= 0; i--) h += cellHtml(`res ${cur && cur.t === "res" && cur.i === i ? "active" : ""} ${bad[i] ? "shown" : ""}`, result[i]);
+    return h + "</div>";
+  }
+
+  const token = lessonRender(lesson, `
+    ${taskHead(q.task || (P.add ? "Rechne schriftlich. Fang bei den Einern an!" : "Rechne schriftlich. Fang bei den Einern an!"))}
+    <div class="prompt-card column-card"><div id="cg">${gridHtml()}</div></div>
+    <div class="keypad" id="kp">
+      ${[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((d) => `<button class="key" data-d="${d}">${d}</button>`).join("")}
+      <button class="key wide" id="special"></button>
+    </div>
+    <div class="feedback" id="fb"></div>
+    <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
+  wireVoice(token, () => sayDe(q.task || "Rechne schriftlich. Fang bei den Einern an!"), "column");
+
+  function redraw() {
+    $("cg").innerHTML = gridHtml();
+    const cur = seq[pos];
+    const sp = $("special");
+    if (!cur) {
+      $("kp").hidden = true;
+      return;
+    }
+    sp.hidden = false;
+    if (cur.t === "carry") sp.textContent = "Kein Übertrag ➜";
+    else if (!P.add) sp.textContent = "Entbündeln";
+    else sp.hidden = true;
+  }
+
+  const expected = (cur) => (cur.t === "carry" ? carryNeed(cur.i) : P.add ? colSum(cur.i) % 10 : top[cur.i] - bottom(cur.i));
+
+  async function finish() {
+    redraw();
+    if (lesson.exam) return examAnswer(lesson, step, q.id, first, result.slice().reverse().join(""), token);
+    chime("good");
+    $("fb").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
+    score(lesson, step, q.id, first);
+    await wait(1100);
+    if (alive(token)) advance(lesson);
+  }
+
+  function put(cur, v) {
+    if (cur.t === "carry") carry[cur.i] = v === 0 ? "" : String(v);
+    else result[cur.i] = String(v);
+    tries = 0;
+    pos++;
+    if (pos >= seq.length) return finish();
+    redraw();
+  }
+
+  function wrong(msg, picked) {
+    first = false;
+    if (lesson.exam) return;
+    miss(lesson, step, q.id, picked);
+    $("fb").innerHTML = `<span class="try">${esc(msg)}</span>`;
+    const a = app.querySelector(".cc.active");
+    if (a) {
+      a.classList.add("wrong");
+      setTimeout(() => a.classList.remove("wrong"), 500);
+    }
+  }
+
+  function press(v) {
+    const cur = seq[pos];
+    if (!cur) return;
+    // Minus: obere Ziffer reicht nicht, aber nicht entbündelt
+    if (!P.add && cur.t === "res" && needBorrow(cur.i)) {
+      if (lesson.exam) {
+        first = false;
+        borrow(cur.i);
+        return press(v);
+      }
+      return wrong(`${top[cur.i]} − ${bottom(cur.i)} geht nicht. Entbündle zuerst!`, String(v));
+    }
+    const exp = expected(cur);
+    if (v === exp) {
+      chime("pop");
+      $("fb").innerHTML = "";
+      return put(cur, v);
+    }
+    if (lesson.exam) {
+      first = false;
+      return put(cur, v);
+    }
+    tries++;
+    if (tries >= 2) {
+      wrong("", String(v));
+      bad[cur.i] = cur.t === "res";
+      const hint = cur.t === "carry" ? (exp ? "Hier gibt es einen Übertrag: 1." : "Hier gibt es keinen Übertrag.") : `Richtig ist ${exp}.`;
+      $("fb").innerHTML = `<span class="try">${hint}</span>`;
+      return put(cur, exp);
+    }
+    wrong(cur.t === "carry" ? "Schau nochmal: Waren es 10 oder mehr?" : "Nicht ganz. Rechne die Spalte nochmal!", String(v));
+  }
+
+  on("#kp .key[data-d]", "click", (e) => press(Number(e.currentTarget.dataset.d)));
+  $("special").onclick = () => {
+    const cur = seq[pos];
+    if (!cur) return;
+    if (cur.t === "carry") return press(0);
+    if (needBorrow(cur.i)) {
+      borrow(cur.i);
+      chime("pop");
+      $("fb").innerHTML = `<span class="ok">Entbündelt! Jetzt ${top[cur.i]} − ${bottom(cur.i)}.</span>`;
+      if (lesson.exam) $("fb").innerHTML = "";
+      return redraw();
+    }
+    wrong(`Das geht ohne Entbündeln: ${top[cur.i]} − ${bottom(cur.i)}.`, "Entbündeln");
+  };
+  $("next").onclick = () => advance(lesson);
+  redraw();
+};
+
+// ---------- Übung: Rechenweg in Schritten (halbschriftlich) ----------
+// Aufgabe: { kind: "chain", prompt: "478 + 245", lines: [["478 + 200 =", "678"], ["678 + 40 =", "718"], ["718 + 5 =", "723"]], answer: "723" }
+STEPS.chain = (lesson, step) => {
+  const q = step.q;
+  const token = lessonRender(lesson, `
+    ${taskHead(q.task || "Rechne in Schritten.")}
+    ${q.vis ? `<div class="prompt-card vis-card">${vis(q.vis)}</div>` : ""}
+    <div class="prompt-card chain-card">
+      <div class="chain-main">${esc(q.prompt)} = <span class="chain-q">?</span></div>
+      ${q.lines.map(([t], k) => `<label class="chain-line"><span>${esc(t)}</span><input class="input chain-in" data-k="${k}" inputmode="numeric" pattern="[0-9]*" autocomplete="off"></label>`).join("")}
+    </div>
+    <div class="feedback" id="fb"></div>
+    <button class="go-btn" id="check">Prüfen ✓</button>
+    <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
+  wireVoice(token, () => sayDe(q.task || "Rechne in Schritten."), q.task || "chain");
+  const ins = [...app.querySelectorAll(".chain-in")];
+  ins.forEach((el, k) => el.addEventListener("keydown", (e) => e.key === "Enter" && (ins[k + 1] ? ins[k + 1].focus() : $("check").click())));
+  setTimeout(() => alive(token) && ins[0]?.focus(), 300);
+  $("check").onclick = async () => {
+    if (ins.some((el) => !norm(el.value))) return;
+    const oks = ins.map((el, k) => norm(el.value) === norm(q.lines[k][1]));
+    const all = oks.every(Boolean);
+    ins.forEach((el) => (el.disabled = true));
+    $("check").hidden = true;
+    if (lesson.exam) return examAnswer(lesson, step, q.id, all, ins.map((el) => el.value).join(" | "), token);
+    ins.forEach((el, k) => el.classList.add(oks[k] ? "right" : "wrong"));
+    if (all) {
+      chime("good");
+      $("fb").innerHTML = `<span class="ok">${pick(PRAISE)}</span>`;
+      score(lesson, step, q.id, true);
+      app.querySelector(".chain-q").textContent = q.answer;
+      await wait(1100);
+      if (alive(token)) advance(lesson);
+    } else {
+      miss(lesson, step, q.id, ins.map((el) => el.value).join(" | "));
+      ins.forEach((el, k) => !oks[k] && (el.value = q.lines[k][1]));
+      $("fb").innerHTML = `<span class="try">Schau dir die gelben Zahlen an, so ist es richtig.</span>`;
+      score(lesson, step, q.id, false);
+      $("next").hidden = false;
+    }
+  };
+  $("next").onclick = () => advance(lesson);
 };
 
 // ---------- Übung: Ausmalbild (Silbe lesen, Farbe wählen, Fläche antippen) ----------

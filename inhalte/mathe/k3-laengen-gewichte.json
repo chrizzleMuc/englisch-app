@@ -1,0 +1,385 @@
+{
+ "id": "m3-laengen-gewichte",
+ "type": "schule",
+ "title_de": "Längen und Gewichte",
+ "image": "⚖️",
+ "color": "#4f772d",
+ "lessons": [
+  {
+   "title": "Kilometer und Meter",
+   "icon": "🛣️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-lg-km-1-0",
+     "task": "Wie viele Meter sind das? 1 km = 1000 m.",
+     "prompt": "1 km = _ m",
+     "answer": "1000",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-km-2-0",
+     "task": "Wie viele Meter sind das? 1 km = 1000 m.",
+     "prompt": "2 km = _ m",
+     "answer": "2000",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-km-3-500",
+     "task": "Wie viele Meter sind das? 1 km = 1000 m.",
+     "prompt": "3 km 500 m = _ m",
+     "answer": "3500",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-km-1-250",
+     "task": "Wie viele Meter sind das? 1 km = 1000 m.",
+     "prompt": "1 km 250 m = _ m",
+     "answer": "1250",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-km-4-50",
+     "task": "Wie viele Meter sind das? 1 km = 1000 m.",
+     "prompt": "4 km 50 m = _ m",
+     "answer": "4050",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-um-1m-xcm",
+     "task": "Rechne um.",
+     "prompt": "1 m = _ cm",
+     "answer": "100",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-um-5cm-xmm",
+     "task": "Rechne um.",
+     "prompt": "5 cm = _ mm",
+     "answer": "50",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-um-4m7cm-xcm",
+     "task": "Rechne um.",
+     "prompt": "4 m 7 cm = _ cm",
+     "answer": "407",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Längen vergleichen",
+   "icon": "📏",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-lg-einh-km",
+     "task": "Welche Einheit passt?",
+     "options": [
+      "mm",
+      "cm",
+      "m",
+      "km"
+     ],
+     "answer": "km",
+     "prompt": "Wie weit ist es mit dem Fahrrad zur Oma?",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-lg-einh-cm",
+     "task": "Welche Einheit passt?",
+     "options": [
+      "mm",
+      "cm",
+      "m",
+      "km"
+     ],
+     "answer": "cm",
+     "prompt": "Wie lang ist ein Bleistift?",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-lg-einh-mm",
+     "task": "Welche Einheit passt?",
+     "options": [
+      "mm",
+      "cm",
+      "m",
+      "km"
+     ],
+     "answer": "mm",
+     "prompt": "Wie dick ist eine Münze?",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-lg-einh-m",
+     "task": "Welche Einheit passt?",
+     "options": [
+      "mm",
+      "cm",
+      "m",
+      "km"
+     ],
+     "answer": "m",
+     "prompt": "Wie hoch ist ein Haus?",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-lg-vgl-1km-900m",
+     "task": "Was ist länger?",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": ">",
+     "prompt": "1 km  ?  900 m",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-lg-vgl-3m-300cm",
+     "task": "Was ist länger?",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "=",
+     "prompt": "3 m  ?  300 cm",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-lg-vgl-45mm-5cm",
+     "task": "Was ist länger?",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "<",
+     "prompt": "45 mm  ?  5 cm",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-lg-vgl-2km-2500m",
+     "task": "Was ist länger?",
+     "options": [
+      "<",
+      "=",
+      ">"
+     ],
+     "answer": "<",
+     "prompt": "2 km  ?  2500 m",
+     "keepOrder": true,
+     "bigOptions": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Gewichte",
+   "icon": "⚖️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-lg-gw--eine-Tafel-Scho",
+     "task": "Schätze: Was passt am besten?",
+     "options": [
+      "100 g",
+      "100 kg",
+      "1 g"
+     ],
+     "answer": "100 g",
+     "prompt": "Wie schwer ist eine Tafel Schokolade?"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-lg-gw--ein-Kind-in-der",
+     "task": "Schätze: Was passt am besten?",
+     "options": [
+      "30 g",
+      "30 kg",
+      "300 kg"
+     ],
+     "answer": "30 kg",
+     "prompt": "Wie schwer ist ein Kind in der 3. Klasse?"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-lg-gw--ein-Apfel?",
+     "task": "Schätze: Was passt am besten?",
+     "options": [
+      "2 g",
+      "200 g",
+      "20 kg"
+     ],
+     "answer": "200 g",
+     "prompt": "Wie schwer ist ein Apfel?"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-lg-gw--ein-Auto?",
+     "task": "Schätze: Was passt am besten?",
+     "options": [
+      "10 kg",
+      "100 g",
+      "1000 kg"
+     ],
+     "answer": "1000 kg",
+     "prompt": "Wie schwer ist ein Auto?"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-lg-gw--ein-Brief?",
+     "task": "Schätze: Was passt am besten?",
+     "options": [
+      "20 g",
+      "2 kg",
+      "200 kg"
+     ],
+     "answer": "20 g",
+     "prompt": "Wie schwer ist ein Brief?"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-lg-gw--eine-Packung-Me",
+     "task": "Schätze: Was passt am besten?",
+     "options": [
+      "1 g",
+      "1 kg",
+      "100 kg"
+     ],
+     "answer": "1 kg",
+     "prompt": "Wie schwer ist eine Packung Mehl?"
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-kgg-1kg-xg",
+     "task": "Rechne um. 1 kg = 1000 g.",
+     "prompt": "1 kg = _ g",
+     "answer": "1000",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-kgg-3kg-xg",
+     "task": "Rechne um. 1 kg = 1000 g.",
+     "prompt": "3 kg = _ g",
+     "answer": "3000",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-kgg-2kg500g-xg",
+     "task": "Rechne um. 1 kg = 1000 g.",
+     "prompt": "2 kg 500 g = _ g",
+     "answer": "2500",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-kgg-1kg250g-xg",
+     "task": "Rechne um. 1 kg = 1000 g.",
+     "prompt": "1 kg 250 g = _ g",
+     "answer": "1250",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-kgg-4000g-xkg",
+     "task": "Rechne um. 1 kg = 1000 g.",
+     "prompt": "4000 g = _ kg",
+     "answer": "4",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-kgg-HalbesKilogramm-xg",
+     "task": "Rechne um. 1 kg = 1000 g.",
+     "prompt": "Halbes Kilogramm = _ g",
+     "answer": "500",
+     "num": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Sachaufgaben",
+   "icon": "🗺️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-lg-sach-0",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Leni läuft zur Schule 800 m und wieder zurück. Wie viele Meter läuft sie insgesamt?",
+     "answer": "1600",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-sach-1",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Ein Seil ist 5 m lang. Papa schneidet 1 m 20 cm ab. Wie viele Zentimeter sind übrig?",
+     "answer": "380",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-sach-2",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Ein Rucksack wiegt 2 kg. Ben packt eine Trinkflasche mit 750 g dazu. Wie viel Gramm wiegt der Rucksack jetzt?",
+     "answer": "2750",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-sach-3",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Mama kauft 3 Packungen Nudeln zu je 500 g. Wie viel Gramm sind das?",
+     "answer": "1500",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-sach-4",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Der Wanderweg ist 6 km lang. Familie Huber hat schon 3500 m geschafft. Wie viele Meter fehlen noch?",
+     "answer": "2500",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-lg-sach-5",
+     "task": "Lies genau und rechne. Schreib nur die Zahl.",
+     "prompt": "Ein Brett ist 2 m lang. Es wird in 4 gleich lange Stücke gesägt. Wie viele Zentimeter ist ein Stück lang?",
+     "answer": "50",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

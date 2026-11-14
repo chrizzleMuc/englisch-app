@@ -1,0 +1,354 @@
+{
+ "id": "m3-uhrzeit",
+ "type": "schule",
+ "title_de": "Uhrzeit und Zeitdauer",
+ "image": "⏰",
+ "color": "#8a4fd6",
+ "lessons": [
+  {
+   "title": "Uhr lesen",
+   "icon": "🕒",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-uz-lesen-3-15",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt die Minuten.",
+     "options": [
+      "3:45",
+      "4:15",
+      "3:15"
+     ],
+     "answer": "3:15",
+     "vis": "uhr:3:15",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-uz-lesen-7-45",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt die Minuten.",
+     "options": [
+      "7:15",
+      "8:45",
+      "7:45"
+     ],
+     "answer": "7:45",
+     "vis": "uhr:7:45",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-uz-lesen-10-25",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt die Minuten.",
+     "options": [
+      "10:25",
+      "11:25",
+      "10:55"
+     ],
+     "answer": "10:25",
+     "vis": "uhr:10:25",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-uz-lesen-1-50",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt die Minuten.",
+     "options": [
+      "1:50",
+      "2:50",
+      "1:20"
+     ],
+     "answer": "1:50",
+     "vis": "uhr:1:50",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-uz-lesen-8-5",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt die Minuten.",
+     "options": [
+      "9:05",
+      "8:05",
+      "8:35"
+     ],
+     "answer": "8:05",
+     "vis": "uhr:8:5",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-uz-lesen-11-35",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt die Minuten.",
+     "options": [
+      "12:35",
+      "11:05",
+      "11:35"
+     ],
+     "answer": "11:35",
+     "vis": "uhr:11:35",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-uz-lesen-5-40",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt die Minuten.",
+     "options": [
+      "5:10",
+      "5:40",
+      "6:40"
+     ],
+     "answer": "5:40",
+     "vis": "uhr:5:40",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-uz-lesen-2-10",
+     "task": "Wie spät ist es? Der lange blaue Zeiger zeigt die Minuten.",
+     "options": [
+      "2:10",
+      "3:10",
+      "2:40"
+     ],
+     "answer": "2:10",
+     "vis": "uhr:2:10",
+     "bigOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Stunden und Minuten",
+   "icon": "⏱️",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-uz-24-3",
+     "task": "Wie heißt die Uhrzeit am Nachmittag oder Abend?",
+     "prompt": "3 Uhr nachmittags = _ Uhr",
+     "answer": "15",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-24-7",
+     "task": "Wie heißt die Uhrzeit am Nachmittag oder Abend?",
+     "prompt": "7 Uhr nachmittags = _ Uhr",
+     "answer": "19",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-24-9",
+     "task": "Wie heißt die Uhrzeit am Nachmittag oder Abend?",
+     "prompt": "9 Uhr nachmittags = _ Uhr",
+     "answer": "21",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-24-5",
+     "task": "Wie heißt die Uhrzeit am Nachmittag oder Abend?",
+     "prompt": "5 Uhr nachmittags = _ Uhr",
+     "answer": "17",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-24-11",
+     "task": "Wie heißt die Uhrzeit am Nachmittag oder Abend?",
+     "prompt": "11 Uhr nachmittags = _ Uhr",
+     "answer": "23",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-24-1",
+     "task": "Wie heißt die Uhrzeit am Nachmittag oder Abend?",
+     "prompt": "1 Uhr nachmittags = _ Uhr",
+     "answer": "13",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-um-1h-xmin",
+     "task": "Wie viel ist das?",
+     "prompt": "1 h = _ min",
+     "answer": "60",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-um-1min-xs",
+     "task": "Wie viel ist das?",
+     "prompt": "1 min = _ s",
+     "answer": "60",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-um-einehalbeStunde-xmin",
+     "task": "Wie viel ist das?",
+     "prompt": "eine halbe Stunde = _ min",
+     "answer": "30",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-um-eineViertelstunde-xmin",
+     "task": "Wie viel ist das?",
+     "prompt": "eine Viertelstunde = _ min",
+     "answer": "15",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-um-2h-xmin",
+     "task": "Wie viel ist das?",
+     "prompt": "2 h = _ min",
+     "answer": "120",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-um-1Tag-xh",
+     "task": "Wie viel ist das?",
+     "prompt": "1 Tag = _ h",
+     "answer": "24",
+     "num": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Zeitdauer",
+   "icon": "⏳",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-uz-dauer-8:00-8:45",
+     "task": "Wie lange dauert es? Schreib die Minuten.",
+     "prompt": "von 8:00 Uhr bis 8:45 Uhr = _ min",
+     "answer": "45",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-dauer-9:15-10:00",
+     "task": "Wie lange dauert es? Schreib die Minuten.",
+     "prompt": "von 9:15 Uhr bis 10:00 Uhr = _ min",
+     "answer": "45",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-dauer-14:30-15:10",
+     "task": "Wie lange dauert es? Schreib die Minuten.",
+     "prompt": "von 14:30 Uhr bis 15:10 Uhr = _ min",
+     "answer": "40",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-dauer-7:50-8:20",
+     "task": "Wie lange dauert es? Schreib die Minuten.",
+     "prompt": "von 7:50 Uhr bis 8:20 Uhr = _ min",
+     "answer": "30",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-dauer-10:40-11:25",
+     "task": "Wie lange dauert es? Schreib die Minuten.",
+     "prompt": "von 10:40 Uhr bis 11:25 Uhr = _ min",
+     "answer": "45",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-dauer-16:15-17:45",
+     "task": "Wie lange dauert es? Schreib die Minuten.",
+     "prompt": "von 16:15 Uhr bis 17:45 Uhr = _ min",
+     "answer": "90",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-ende-8:15-30",
+     "task": "Wann ist es zu Ende? Schreib die Uhrzeit mit Doppelpunkt, z. B. 9:05.",
+     "prompt": "Beginn 8:15 Uhr, Dauer 30 min. Ende: _ Uhr",
+     "answer": "8:45"
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-ende-11:40-25",
+     "task": "Wann ist es zu Ende? Schreib die Uhrzeit mit Doppelpunkt, z. B. 9:05.",
+     "prompt": "Beginn 11:40 Uhr, Dauer 25 min. Ende: _ Uhr",
+     "answer": "12:05"
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-ende-13:50-45",
+     "task": "Wann ist es zu Ende? Schreib die Uhrzeit mit Doppelpunkt, z. B. 9:05.",
+     "prompt": "Beginn 13:50 Uhr, Dauer 45 min. Ende: _ Uhr",
+     "answer": "14:35"
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-ende-17:35-50",
+     "task": "Wann ist es zu Ende? Schreib die Uhrzeit mit Doppelpunkt, z. B. 9:05.",
+     "prompt": "Beginn 17:35 Uhr, Dauer 50 min. Ende: _ Uhr",
+     "answer": "18:25"
+    }
+   ]
+  },
+  {
+   "title": "Sachaufgaben",
+   "icon": "🚆",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-uz-sach-0",
+     "task": "Lies genau und rechne.",
+     "prompt": "Der Film beginnt um 15:30 Uhr und dauert 90 Minuten. Um wie viel Uhr ist er zu Ende? (z. B. 9:05)",
+     "answer": "17:00"
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-sach-1",
+     "task": "Lies genau und rechne.",
+     "prompt": "Der Zug fährt um 7:48 Uhr ab und kommt um 8:21 Uhr an. Wie viele Minuten dauert die Fahrt?",
+     "answer": "33",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-sach-2",
+     "task": "Lies genau und rechne.",
+     "prompt": "Die Pause beginnt um 9:35 Uhr und dauert 20 Minuten. Wann ist sie zu Ende? (z. B. 9:05)",
+     "answer": "9:55"
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-sach-3",
+     "task": "Lies genau und rechne.",
+     "prompt": "Nathan übt jeden Tag 15 Minuten Flöte. Wie viele Minuten sind das in 4 Tagen?",
+     "answer": "60",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-uz-sach-4",
+     "task": "Lies genau und rechne.",
+     "prompt": "Das Fußballtraining geht von 16:00 Uhr bis 17:30 Uhr. Wie viele Minuten sind das?",
+     "answer": "90",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

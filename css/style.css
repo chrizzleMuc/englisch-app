@@ -747,3 +747,47 @@ table.eval tr.fail td { color: #b3261e; }
 .vis-choices .vis-amount { max-height: 120px; }
 .vis-choices .vis-place { max-height: 190px; }
 .vis-card .vis-row { width: 100%; max-height: 90px; }
+
+/* 3. Klasse: Stellentafel, Zahlenstrahl, Tausendertafel */
+.vis-card .vis-st { width: min(100%, 300px); }
+.vis-card .vis-hze { width: auto; max-width: 100%; max-height: 130px; }
+.vis-card .vis-line { width: 100%; max-height: 150px; }
+.vis-card .vis-tafel { width: min(100%, 440px); }
+
+/* Schriftlich rechnen */
+.column-card { padding: 18px 12px; }
+.cgrid { --cw: clamp(48px, 13vw, 66px); display: grid; gap: 0; font-weight: 900; color: #2a1a4f; }
+.cc { width: var(--cw); height: var(--cw); display: flex; align-items: center; justify-content: center; font-size: calc(var(--cw) * .62); background: #fff; border: 1px solid #d9ccf5; }
+.cc.op { background: transparent; border-color: transparent; font-size: calc(var(--cw) * .7); color: #3b1f8a; }
+.cc.head { height: calc(var(--cw) * .7); font-size: calc(var(--cw) * .45); }
+.cc.head.pH { color: #3b6fd8; background: #e3ecff; } .cc.head.pZ { color: #2a9d8f; background: #dcf3ef; } .cc.head.pE { color: #e5484d; background: #fde4e4; } .cc.head.pT { color: #7b3fe4; background: #efe6ff; }
+.cc.note { height: calc(var(--cw) * .62); font-size: calc(var(--cw) * .42); color: #e5484d; background: transparent; border-color: transparent; }
+.cc.num.crossed { color: #9a8cc2; text-decoration: line-through; text-decoration-color: #e5484d; text-decoration-thickness: 4px; }
+.cc.carry { height: calc(var(--cw) * .58); font-size: calc(var(--cw) * .4); color: #e5484d; background: #fbf8ff; }
+.cc.carry.none { background: transparent; border-color: transparent; }
+.cline { height: 4px; background: #2a1a4f; margin: 3px 0; border-radius: 2px; }
+.cc.active { background: #fff3bf; outline: 4px solid var(--gold, #ffd23f); outline-offset: -4px; position: relative; z-index: 1; }
+.cc.shown { color: #c77b00; }
+.cc.wrong { background: #fdecea; animation: shake .35s; }
+.keypad { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; width: min(100%, 460px); margin: 0 auto; }
+.keypad[hidden] { display: none; }
+.keypad .key { min-height: 58px; border-radius: 14px; background: var(--card); color: var(--card-ink); font-size: 28px; font-weight: 900; box-shadow: 0 4px 0 rgba(40, 8, 110, .25); }
+.keypad .key:active { transform: translateY(3px); box-shadow: 0 1px 0 rgba(40, 8, 110, .25); }
+.keypad .key.wide { grid-column: 1 / -1; font-size: 20px; background: var(--gold, #ffd23f); color: #2a1a4f; }
+.keypad .key[hidden] { display: none; }
+
+/* Rechenweg in Schritten */
+.chain-card { flex-direction: column; align-items: stretch; gap: 10px; color: var(--card-ink); max-width: 460px; width: 100%; margin: 0 auto; }
+.chain-main { font-size: 30px; font-weight: 900; text-align: center; margin-bottom: 4px; }
+.chain-q { color: #b07a00; }
+.chain-line { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 24px; font-weight: 800; }
+.chain-in { width: 120px; font-size: 24px; font-weight: 800; text-align: center; padding: 8px; }
+.chain-in.right { border-color: var(--good); background: #e9f9ef; }
+.chain-in.wrong { border-color: var(--bad); background: #fff3bf; }
+.vis-card .vis-kreuz { width: min(100%, 300px); }
+.vis-card .vis-solid { width: min(55vw, 210px); }
+.vis-choices .vis-solid { max-height: 130px; }
+.vis-card .vis-net, .vis-choices .vis-net { max-height: 170px; }
+.vis-card .vis-bau { width: auto; max-width: 100%; max-height: 220px; }
+.vis-card .vis-lines, .vis-choices .vis-lines { max-height: 180px; }
+.vis-card .vis-area { width: auto; max-width: 100%; max-height: 240px; }
