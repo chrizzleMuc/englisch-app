@@ -1,0 +1,360 @@
+{
+ "id": "m3-wdh-k2",
+ "type": "schule",
+ "title_de": "Wiederholung 2. Klasse",
+ "image": "🔁",
+ "color": "#7a4fd6",
+ "einstreuen": true,
+ "lessons": [
+  {
+   "title": "Tausch und Umkehr",
+   "icon": "🔄",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-wk-t-0",
+     "task": "Welche Tauschaufgabe passt?",
+     "options": [
+      "4 + 5 = 9",
+      "9 − 4 = 5",
+      "5 − 4 = 1"
+     ],
+     "answer": "4 + 5 = 9",
+     "prompt": "5 + 4 = 9"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-t-1",
+     "task": "Welche Tauschaufgabe passt?",
+     "options": [
+      "5 · 4 = 20",
+      "20 : 5 = 4",
+      "4 + 5 = 9"
+     ],
+     "answer": "5 · 4 = 20",
+     "prompt": "4 · 5 = 20"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-u-0",
+     "task": "Welche Umkehraufgabe passt?",
+     "options": [
+      "9 − 4 = 5",
+      "4 + 5 = 9",
+      "9 + 4 = 13"
+     ],
+     "answer": "9 − 4 = 5",
+     "prompt": "5 + 4 = 9"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-u-1",
+     "task": "Welche Umkehraufgabe passt?",
+     "options": [
+      "20 : 4 = 5",
+      "4 · 5 = 20",
+      "20 − 4 = 16"
+     ],
+     "answer": "20 : 4 = 5",
+     "prompt": "5 · 4 = 20"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-u-2",
+     "task": "Welche Umkehraufgabe passt?",
+     "options": [
+      "42 : 6 = 7",
+      "6 · 7 = 42",
+      "42 − 6 = 36"
+     ],
+     "answer": "42 : 6 = 7",
+     "prompt": "7 · 6 = 42"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-t-2",
+     "task": "Bei welcher Rechnung darf man NICHT tauschen?",
+     "options": [
+      "9 − 4",
+      "9 + 4",
+      "9 · 4"
+     ],
+     "answer": "9 − 4",
+     "explain": "Tauschen geht nur bei plus und mal."
+    }
+   ]
+  },
+  {
+   "title": "Hundertertafel",
+   "icon": "💯",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "m3-wk-h-0",
+     "task": "Ein Feld nach rechts. Welche Zahl?",
+     "prompt": "34",
+     "answer": "35",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-wk-h-1",
+     "task": "Ein Feld nach unten. Welche Zahl?",
+     "prompt": "34",
+     "answer": "44",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-wk-h-2",
+     "task": "Ein Feld nach oben. Welche Zahl?",
+     "prompt": "67",
+     "answer": "57",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-wk-h-3",
+     "task": "Ein Feld nach links. Welche Zahl?",
+     "prompt": "80",
+     "answer": "79",
+     "num": true
+    },
+    {
+     "kind": "type",
+     "id": "m3-wk-h-4",
+     "task": "Zwei Felder nach unten. Welche Zahl?",
+     "prompt": "18",
+     "answer": "38",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Über den Zehner",
+   "icon": "🪜",
+   "tasks": [
+    {
+     "kind": "chain",
+     "id": "m3-wk-z-0",
+     "task": "Rechne erst die Zehner, dann die Einer.",
+     "prompt": "37 + 25",
+     "lines": [
+      [
+       "37 + 20 =",
+       "57"
+      ],
+      [
+       "57 + 5 =",
+       "62"
+      ]
+     ],
+     "answer": "62"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-wk-z-1",
+     "task": "Rechne erst die Zehner, dann die Einer.",
+     "prompt": "48 + 36",
+     "lines": [
+      [
+       "48 + 30 =",
+       "78"
+      ],
+      [
+       "78 + 6 =",
+       "84"
+      ]
+     ],
+     "answer": "84"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-wk-z-2",
+     "task": "Rechne erst die Zehner, dann die Einer.",
+     "prompt": "62 − 25",
+     "lines": [
+      [
+       "62 − 20 =",
+       "42"
+      ],
+      [
+       "42 − 5 =",
+       "37"
+      ]
+     ],
+     "answer": "37"
+    },
+    {
+     "kind": "chain",
+     "id": "m3-wk-z-3",
+     "task": "Rechne erst die Zehner, dann die Einer.",
+     "prompt": "91 − 46",
+     "lines": [
+      [
+       "91 − 40 =",
+       "51"
+      ],
+      [
+       "51 − 6 =",
+       "45"
+      ]
+     ],
+     "answer": "45"
+    }
+   ]
+  },
+  {
+   "title": "Körper",
+   "icon": "🧊",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-wk-k-0",
+     "task": "Wie heißt der Körper?",
+     "options": [
+      "Kugel",
+      "Kegel",
+      "Zylinder"
+     ],
+     "answer": "Kugel",
+     "vis": "koerper:kugel"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-k-1",
+     "task": "Wie heißt der Körper?",
+     "options": [
+      "Kegel",
+      "Pyramide",
+      "Kugel"
+     ],
+     "answer": "Kegel",
+     "vis": "koerper:kegel"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-k-2",
+     "task": "Wie heißt der Körper?",
+     "options": [
+      "Zylinder",
+      "Quader",
+      "Kegel"
+     ],
+     "answer": "Zylinder",
+     "vis": "koerper:zylinder"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-k-3",
+     "task": "Wie viele Flächen hat ein Würfel?",
+     "options": [
+      "6",
+      "8",
+      "12"
+     ],
+     "answer": "6",
+     "vis": "koerper:wuerfel",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-k-4",
+     "task": "Was ist eine Kante?",
+     "options": [
+      "eine Linie, wo zwei Flächen zusammenstoßen",
+      "eine Spitze",
+      "eine Seite"
+     ],
+     "answer": "eine Linie, wo zwei Flächen zusammenstoßen"
+    }
+   ]
+  },
+  {
+   "title": "Uhr und Längen",
+   "icon": "⏰",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-wk-u9-0",
+     "task": "Wie spät ist es?",
+     "options": [
+      "halb zehn",
+      "halb neun",
+      "neun Uhr"
+     ],
+     "answer": "halb zehn",
+     "vis": "uhr:9:30"
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-u9-1",
+     "task": "Wie schreibt man Viertel vor zehn?",
+     "options": [
+      "9:45",
+      "10:15",
+      "9:15"
+     ],
+     "answer": "9:45",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-u9-2",
+     "task": "Wie schreibt man Viertel nach neun am Abend?",
+     "options": [
+      "21:15",
+      "9:15",
+      "20:45"
+     ],
+     "answer": "21:15",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-u9-3",
+     "task": "Wie viele Minuten hat eine Stunde?",
+     "options": [
+      "60",
+      "100",
+      "24"
+     ],
+     "answer": "60",
+     "keepOrder": true,
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "m3-wk-m-0",
+     "task": "Wo legst du das Lineal beim Messen an?",
+     "options": [
+      "an der 0",
+      "an der 1",
+      "an der Kante"
+     ],
+     "answer": "an der 0",
+     "explain": "Nullpunkt beachten!"
+    },
+    {
+     "kind": "type",
+     "id": "m3-wk-m-1",
+     "task": "Wie viele Zentimeter?",
+     "prompt": "1 m = ? cm",
+     "answer": "100",
+     "num": true
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

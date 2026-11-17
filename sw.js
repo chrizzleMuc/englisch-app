@@ -272,6 +272,8 @@ const FILES = [
   "inhalte/deutsch/k3-wortarten.json",
   "inhalte/deutsch/k3-regel-detektiv.json",
   "inhalte/mathe/k3-regel-detektiv.json",
+  "inhalte/deutsch/k3-wdh-k2.json",
+  "inhalte/mathe/k3-wdh-k2.json",
   "inhalte/deutsch/k1-anlaute.json",
   "inhalte/deutsch/k1-ausmalen.json",
   "inhalte/deutsch/k1-buchstaben2.json",

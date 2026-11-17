@@ -7,14 +7,15 @@
    "merke": [
     "**Nomen** sind Namen für Menschen, Tiere, Dinge und Gefühle. Man schreibt sie **groß**.",
     "**Verben** sagen, was jemand **tut** oder was **passiert**. Man schreibt sie klein.",
-    "**Adjektive** sagen, **wie** etwas ist. Man schreibt sie klein."
+    "**Adjektive** sagen, **wie** etwas ist. Man schreibt sie klein.",
+    "**Artikel** sind die Begleiter der Nomen: **der, die, das, ein, eine**."
    ],
    "beispiele": [
-    "der **Hund** – er **rennt** – er ist **schnell**"
+    "**der** **Hund** – er **rennt** – er ist **schnell**"
    ],
    "lektionen": [
     "d3-wortarten/Nomen, Verb oder Adjektiv?",
-    "d3-wortarten/Alle drei Wortarten"
+    "d3-wortarten/Alle vier Wortarten"
    ],
    "trick": "Passt **der, die** oder **das** davor? → Nomen. Passt **ich** davor? → Verb. Passt **„Wie ist …?“**? → Adjektiv."
   },
@@ -100,8 +101,8 @@
    "merke": [
     "**Verben** sagen, was jemand **tut** oder was **passiert**: rennen, lachen, regnen.",
     "Man schreibt sie **klein**.",
-    "Die **Grundform** endet auf **-en** oder **-n**: spielen, wandern.",
-    "Das Verb **verändert sich**, je nachdem wer etwas tut: ich spiel**e**, du spiel**st**, er spiel**t**."
+    "Die **Grundform** endet meist auf **-en**, manchmal auf **-eln** oder **-ern**: spielen, lächeln, wandern.",
+    "Der **Wortstamm** bleibt gleich, die **Endung** passt sich der Person an: ich spiel**e**, du spiel**st**, er spiel**t**."
    ],
    "beispiele": [
     "ich **lache**, du **lachst**, sie **lacht**"
@@ -109,7 +110,7 @@
    "lektionen": [
     "d3-verben/Gegenwart: schwache Verben",
     "d3-verben/Gegenwart: starke Verben",
-    "d3-wortarten/Verben grün anmalen"
+    "d3-wortarten/Verben rot anmalen"
    ],
    "trick": "ich-Probe: Passt **ich** davor, ist es ein Verb."
   },
@@ -158,6 +159,7 @@
    "merke": [
     "**Adjektive** sagen, **wie** etwas ist: groß, rot, lustig, schnell.",
     "Man schreibt sie **klein**.",
+    "Sie können **vor einem Nomen** stehen und **verändern sich** dann: der klein**e** Hund, ein klein**er** Hund.",
     "**Aber:** Am **Satzanfang** schreibt man jedes Wort groß."
    ],
    "beispiele": [
@@ -169,7 +171,7 @@
     "d3-adjektive/Adjektive erkennen",
     "d3-adjektive/Gegensatzpaare",
     "d3-adjektive/Adjektive anpassen",
-    "d3-wortarten/Adjektive rot anmalen"
+    "d3-wortarten/Adjektive grün anmalen"
    ],
    "trick": "Frag **„Wie ist …?“** – Wie ist der Hund? **klein**"
   },
@@ -239,7 +241,8 @@
    ],
    "lektionen": [
     "d3-artikel-pronomen/der, die, das",
-    "d3-artikel-pronomen/ein oder eine"
+    "d3-artikel-pronomen/ein oder eine",
+    "d3-wortarten/Artikel gelb anmalen"
    ]
   },
   {
@@ -365,6 +368,7 @@
    "title": "Wörter trennen",
    "merke": [
     "Man trennt nach **Silben**: Ta-fel, Blu-me.",
+    "In jeder Silbe steht **mindestens ein Vokal** (a, e, i, o, u) oder ein **Umlaut** (ä, ö, ü).",
     "**ch, ck, sch** bleiben zusammen: Sa-che, Zu-cker, Fla-sche.",
     "Ein **einzelner Buchstabe** wird nicht abgetrennt: Ofen, nicht O-fen."
    ],
@@ -430,7 +434,7 @@
    "title": "Satzarten und Satzzeichen",
    "merke": [
     "Am Ende eines **Aussagesatzes** steht ein **Punkt**.",
-    "Am Ende einer **Frage** steht ein **Fragezeichen**.",
+    "Am Ende einer **Frage** steht ein **Fragezeichen**. Fragen beginnen oft mit **wer, wie, was, warum, wann**.",
     "Nach einem **Ausruf** oder einer **Aufforderung** steht ein **Ausrufezeichen**.",
     "Bei einer **Aufzählung** steht ein **Komma**, aber nicht vor **und**."
    ],
@@ -474,6 +478,38 @@
    ],
    "lektionen": [
     "d3-woertliche-rede"
+   ]
+  },
+  {
+   "id": "wortfamilie",
+   "icon": "🌳",
+   "title": "Wortstamm, Wortfamilie, Wortbaustein",
+   "merke": [
+    "Der **Wortstamm** ist der Teil, der in verwandten Wörtern **gleich** oder ähnlich geschrieben wird.",
+    "Wörter mit dem gleichen Wortstamm gehören zu einer **Wortfamilie**.",
+    "**Wortbausteine** hängt man vorne oder hinten an den Wortstamm: **ver**-, **ab**-, -**ung**, -**zeug**."
+   ],
+   "beispiele": [
+    "**spiel**en, Spiel**platz**, **mit**spielen, Spiel**zeug**"
+   ],
+   "lektionen": [
+    "d3-wdh-k2/Wortfamilien"
+   ],
+   "trick": "Findest du den Wortstamm, weißt du oft, wie man das Wort schreibt."
+  },
+  {
+   "id": "laute",
+   "icon": "🔊",
+   "title": "Vokale, Konsonanten, Umlaute, Doppellaute",
+   "merke": [
+    "**Vokale** (Selbstlaute): **a, e, i, o, u**. Man kann sie kurz (Ku**ss**) oder lang (H**a**se) sprechen.",
+    "**Umlaute**: **ä, ö, ü**. Sie kommen von a, o, u.",
+    "**Doppellaute**: **au, ei, eu**.",
+    "Alle anderen Buchstaben sind **Konsonanten** (Mitlaute): b, d, f, k, m …"
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "d3-wdh-k2/Laute"
    ]
   },
   {
@@ -604,6 +640,7 @@
    "merke": [
     "1 km = **1000** m",
     "1 m = **100** cm, 1 cm = **10** mm",
+    "Beim Messen das Lineal an der **0** anlegen, nicht an der Kante (**Nullpunkt** beachten).",
     "1 kg = **1000** g"
    ],
    "beispiele": [
@@ -622,9 +659,14 @@
    "merke": [
     "1 Stunde hat **60** Minuten.",
     "Eine halbe Stunde sind **30** Minuten, eine Viertelstunde **15** Minuten.",
-    "1 Minute hat **60** Sekunden, 1 Tag hat **24** Stunden."
+    "1 Minute hat **60** Sekunden, 1 Tag hat **24** Stunden.",
+    "Nachmittags und abends zählt man weiter: 9 Uhr abends ist **21 Uhr**."
    ],
-   "beispiele": [],
+   "beispiele": [
+    "9:15 = **Viertel nach** neun",
+    "9:30 = **halb** zehn",
+    "9:45 = **Viertel vor** zehn"
+   ],
    "lektionen": [
     "m3-uhrzeit/Stunden und Minuten",
     "m3-uhrzeit/Zeitdauer"
@@ -646,6 +688,71 @@
    "lektionen": [
     "m3-geld/Euro mit Komma",
     "m3-groessen/Euro und Cent"
+   ]
+  },
+  {
+   "id": "tausch-umkehr",
+   "icon": "🔄",
+   "title": "Tauschaufgabe und Umkehraufgabe",
+   "merke": [
+    "Bei **plus** und **mal** darf man die Zahlen **tauschen**. Das Ergebnis bleibt gleich.",
+    "Die **Umkehraufgabe** rechnet rückwärts: **minus** macht plus rückgängig, **geteilt** macht mal rückgängig.",
+    "Mit der Umkehraufgabe kannst du dein Ergebnis **prüfen**."
+   ],
+   "beispiele": [
+    "5 + 4 = 9 → 4 + 5 = 9",
+    "5 · 4 = 20 → 20 : 4 = 5"
+   ],
+   "lektionen": [
+    "m3-wdh-k2/Tausch und Umkehr"
+   ]
+  },
+  {
+   "id": "hundertertafel",
+   "icon": "💯",
+   "title": "Die Hundertertafel",
+   "merke": [
+    "Ein Feld nach **rechts**: **+ 1**.",
+    "Ein Feld nach **unten**: **+ 10**.",
+    "Nach links: − 1. Nach oben: − 10."
+   ],
+   "beispiele": [
+    "34 → rechts 35 → unten 45"
+   ],
+   "lektionen": [
+    "m3-wdh-k2/Hundertertafel"
+   ]
+  },
+  {
+   "id": "ueber-zehner",
+   "icon": "🪜",
+   "title": "Plus und minus über den Zehner",
+   "merke": [
+    "Zerlege die zweite Zahl in **Zehner** und **Einer**.",
+    "Rechne **erst die Zehner**, dann die **Einer**."
+   ],
+   "beispiele": [
+    "37 + 25 = 37 + **20** + **5** = 62",
+    "62 − 25 = 62 − **20** − **5** = 37"
+   ],
+   "lektionen": [
+    "m3-wdh-k2/Über den Zehner"
+   ]
+  },
+  {
+   "id": "koerper",
+   "icon": "🧊",
+   "title": "Geometrische Körper",
+   "merke": [
+    "Körper heißen: **Kugel, Würfel, Quader, Zylinder, Pyramide, Kegel, Prisma**.",
+    "Eine **Ecke** ist eine Spitze, eine **Kante** ist eine Linie, eine **Fläche** ist eine Seite zum Anfassen.",
+    "Ein Würfel hat **8** Ecken, **12** Kanten und **6** Flächen."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "m3-geometrie/Körper erkennen",
+    "m3-geometrie/Ecken, Kanten, Flächen",
+    "m3-wdh-k2/Körper"
    ]
   },
   {

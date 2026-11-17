@@ -52,7 +52,9 @@ Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pi
 - **Regeln**: Regelkarten („Merke!“) in `inhalte/regeln.json`. Die Karte kommt vor der ersten Lektion eines Themas, solange sie noch nicht geschafft ist. Nach einem Fehler gibt es den Knopf „Regel ansehen“. Alle Regeln stehen im „Regelheft“ auf der Fachseite. Für Eleanor werden die Karten vorgelesen.
 - **Regel-Detektiv** (Deutsch und Mathe 3. Klasse): „Welche Regel hilft?“
 - **Wortarten-Werkstatt** (Deutsch 3. Klasse): Nomen, Verben, Adjektive sortieren, im Text anmalen (neue Aufgabenart `mark`, Wörter in eckigen Klammern: `[Hund|Nomen]`) und ein Ausmalbild nach Wortarten (`werkzeug/malen/wortarten.py` macht aus einem Silben-Malbild ein Wortarten-Malbild).
-- Erzeuger: `werkzeug/gen_regeln.py` (Regeln, Wortarten, Regel-Detektiv; Farben der Wortarten stehen dort oben).
+- **Wiederholung 2. Klasse** (Deutsch und Mathe, nach den Merkblättern der Schule, in eigenen Worten): Wortfamilien, Laute, Grundform, Fragewörter, Tausch- und Umkehraufgabe, Hundertertafel, über den Zehner, Körper, Uhr und Längen. Einheiten mit `"einstreuen": true` liefern in jeder zweiten Lektion eine Frage „Weißt du das noch?“ vorneweg.
+- Wortarten-Farben wie in der Schule: Nomen blau, Verben rot, Adjektive grün, Artikel gelb.
+- Erzeuger: `werkzeug/gen_regeln.py` (Regeln, Wortarten, Regel-Detektiv, Wiederholung; Farben der Wortarten stehen dort).
 
 ## Version 32
 - Deutsch 3. Klasse: neue Stufe „3. Klasse · Sätze und Lesen“ mit Satzarten und Satzzeichen (inkl. Komma bei Aufzählungen), Subjekt und Prädikat (Umstellprobe, Satzglieder zählen), wörtliche Rede (Begleitsatz vorne/hinten) und Blitzlesen.

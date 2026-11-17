@@ -3,7 +3,7 @@
  "type": "schule",
  "title_de": "Wortarten-Werkstatt",
  "image": "🔤",
- "color": "#e5484d",
+ "color": "#3b6fd8",
  "lessons": [
   {
    "title": "Nomen, Verb oder Adjektiv?",
@@ -115,19 +115,19 @@
    ]
   },
   {
-   "title": "Adjektive rot anmalen",
+   "title": "Adjektive grün anmalen",
    "icon": "🖍️",
    "tasks": [
     {
      "kind": "mark",
      "id": "d3-wa-adj-0",
-     "task": "Male alle Adjektive rot an!",
+     "task": "Male alle Adjektive grün an!",
      "text": "Der [kleine|Adjektiv] Hund bellt [laut|Adjektiv]. Er hat ein [weiches|Adjektiv] Fell.",
      "colors": [
       {
        "key": "Adjektiv",
        "label": "Adjektiv",
-       "color": "#e5484d"
+       "color": "#1f9d5c"
       }
      ],
      "explain": "Adjektive sagen, wie etwas ist."
@@ -135,13 +135,13 @@
     {
      "kind": "mark",
      "id": "d3-wa-adj-1",
-     "task": "Male alle Adjektive rot an!",
+     "task": "Male alle Adjektive grün an!",
      "text": "Im [dunklen|Adjektiv] Wald steht ein [alter|Adjektiv] Baum. Seine Blätter sind [gelb|Adjektiv] und [rot|Adjektiv].",
      "colors": [
       {
        "key": "Adjektiv",
        "label": "Adjektiv",
-       "color": "#e5484d"
+       "color": "#1f9d5c"
       }
      ],
      "explain": "Adjektive sagen, wie etwas ist."
@@ -149,13 +149,13 @@
     {
      "kind": "mark",
      "id": "d3-wa-adj-2",
-     "task": "Male alle Adjektive rot an!",
+     "task": "Male alle Adjektive grün an!",
      "text": "Lena trinkt [heißen|Adjektiv] Kakao. Danach ist sie [satt|Adjektiv] und [müde|Adjektiv].",
      "colors": [
       {
        "key": "Adjektiv",
        "label": "Adjektiv",
-       "color": "#e5484d"
+       "color": "#1f9d5c"
       }
      ],
      "explain": "Adjektive sagen, wie etwas ist."
@@ -163,13 +163,13 @@
     {
      "kind": "mark",
      "id": "d3-wa-adj-3",
-     "task": "Male alle Adjektive rot an!",
+     "task": "Male alle Adjektive grün an!",
      "text": "Die [bunten|Adjektiv] Fische schwimmen [schnell|Adjektiv] durch das [klare|Adjektiv] Wasser.",
      "colors": [
       {
        "key": "Adjektiv",
        "label": "Adjektiv",
-       "color": "#e5484d"
+       "color": "#1f9d5c"
       }
      ],
      "explain": "Adjektive sagen, wie etwas ist."
@@ -225,19 +225,19 @@
    ]
   },
   {
-   "title": "Verben grün anmalen",
+   "title": "Verben rot anmalen",
    "icon": "🖍️",
    "tasks": [
     {
      "kind": "mark",
      "id": "d3-wa-verb-0",
-     "task": "Male alle Verben grün an!",
+     "task": "Male alle Verben rot an!",
      "text": "Die Kinder [spielen|Verb] im Hof. Paul [wirft|Verb] den Ball und Mia [fängt|Verb] ihn.",
      "colors": [
       {
        "key": "Verb",
        "label": "Verb",
-       "color": "#1f9d5c"
+       "color": "#e5484d"
       }
      ],
      "explain": "Verben sagen, was jemand tut."
@@ -245,13 +245,13 @@
     {
      "kind": "mark",
      "id": "d3-wa-verb-1",
-     "task": "Male alle Verben grün an!",
+     "task": "Male alle Verben rot an!",
      "text": "Am Abend [liest|Verb] Papa ein Buch vor. Ich [kuschle|Verb] mich ins Bett und [schlafe|Verb] ein.",
      "colors": [
       {
        "key": "Verb",
        "label": "Verb",
-       "color": "#1f9d5c"
+       "color": "#e5484d"
       }
      ],
      "explain": "Verben sagen, was jemand tut."
@@ -259,13 +259,13 @@
     {
      "kind": "mark",
      "id": "d3-wa-verb-2",
-     "task": "Male alle Verben grün an!",
+     "task": "Male alle Verben rot an!",
      "text": "Der Vogel [baut|Verb] ein Nest. Bald [schlüpfen|Verb] die Küken.",
      "colors": [
       {
        "key": "Verb",
        "label": "Verb",
-       "color": "#1f9d5c"
+       "color": "#e5484d"
       }
      ],
      "explain": "Verben sagen, was jemand tut."
@@ -273,15 +273,63 @@
    ]
   },
   {
-   "title": "Alle drei Wortarten",
+   "title": "Artikel gelb anmalen",
+   "icon": "🖍️",
+   "tasks": [
+    {
+     "kind": "mark",
+     "id": "d3-wa-art-0",
+     "task": "Male alle Artikel gelb an!",
+     "text": "[Der|Artikel] Bauer füttert [die|Artikel] Hühner. [Ein|Artikel] Hahn kräht laut.",
+     "colors": [
+      {
+       "key": "Artikel",
+       "label": "Artikel",
+       "color": "#f2b705"
+      }
+     ],
+     "explain": "Artikel sind Begleiter: der, die, das, ein, eine."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-art-1",
+     "task": "Male alle Artikel gelb an!",
+     "text": "[Die|Artikel] Lehrerin liest [eine|Artikel] Geschichte vor. [Das|Artikel] Buch ist spannend.",
+     "colors": [
+      {
+       "key": "Artikel",
+       "label": "Artikel",
+       "color": "#f2b705"
+      }
+     ],
+     "explain": "Artikel sind Begleiter: der, die, das, ein, eine."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-art-2",
+     "task": "Male alle Artikel gelb an!",
+     "text": "[Ein|Artikel] Igel sucht [das|Artikel] Futter unter [der|Artikel] Hecke.",
+     "colors": [
+      {
+       "key": "Artikel",
+       "label": "Artikel",
+       "color": "#f2b705"
+      }
+     ],
+     "explain": "Artikel sind Begleiter: der, die, das, ein, eine."
+    }
+   ]
+  },
+  {
+   "title": "Alle vier Wortarten",
    "icon": "🌈",
    "mix": true,
    "tasks": [
     {
      "kind": "mark",
      "id": "d3-wa-alle-0",
-     "task": "Male Nomen blau, Verben grün und Adjektive rot an!",
-     "text": "Der [Hund|Nomen] [rennt|Verb] [schnell|Adjektiv] über die [Wiese|Nomen].",
+     "task": "Male Nomen blau, Verben rot, Adjektive grün und Artikel gelb an!",
+     "text": "[Der|Artikel] [Hund|Nomen] [rennt|Verb] [schnell|Adjektiv] über [die|Artikel] [Wiese|Nomen].",
      "colors": [
       {
        "key": "Nomen",
@@ -291,20 +339,25 @@
       {
        "key": "Verb",
        "label": "Verb",
-       "color": "#1f9d5c"
+       "color": "#e5484d"
       },
       {
        "key": "Adjektiv",
        "label": "Adjektiv",
-       "color": "#e5484d"
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Artikel",
+       "label": "Artikel",
+       "color": "#f2b705"
       }
      ]
     },
     {
      "kind": "mark",
      "id": "d3-wa-alle-1",
-     "task": "Male Nomen blau, Verben grün und Adjektive rot an!",
-     "text": "Die [kleine|Adjektiv] [Katze|Nomen] [trinkt|Verb] [frische|Adjektiv] [Milch|Nomen].",
+     "task": "Male Nomen blau, Verben rot, Adjektive grün und Artikel gelb an!",
+     "text": "[Die|Artikel] [kleine|Adjektiv] [Katze|Nomen] [trinkt|Verb] [frische|Adjektiv] [Milch|Nomen].",
      "colors": [
       {
        "key": "Nomen",
@@ -314,20 +367,25 @@
       {
        "key": "Verb",
        "label": "Verb",
-       "color": "#1f9d5c"
+       "color": "#e5484d"
       },
       {
        "key": "Adjektiv",
        "label": "Adjektiv",
-       "color": "#e5484d"
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Artikel",
+       "label": "Artikel",
+       "color": "#f2b705"
       }
      ]
     },
     {
      "kind": "mark",
      "id": "d3-wa-alle-2",
-     "task": "Male Nomen blau, Verben grün und Adjektive rot an!",
-     "text": "Im [Sommer|Nomen] [schwimmen|Verb] wir im [kalten|Adjektiv] [See|Nomen].",
+     "task": "Male Nomen blau, Verben rot, Adjektive grün und Artikel gelb an!",
+     "text": "Wir [schwimmen|Verb] in [dem|Artikel] [kalten|Adjektiv] [See|Nomen].",
      "colors": [
       {
        "key": "Nomen",
@@ -337,20 +395,25 @@
       {
        "key": "Verb",
        "label": "Verb",
-       "color": "#1f9d5c"
+       "color": "#e5484d"
       },
       {
        "key": "Adjektiv",
        "label": "Adjektiv",
-       "color": "#e5484d"
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Artikel",
+       "label": "Artikel",
+       "color": "#f2b705"
       }
      ]
     },
     {
      "kind": "mark",
      "id": "d3-wa-alle-3",
-     "task": "Male Nomen blau, Verben grün und Adjektive rot an!",
-     "text": "Mein [Bruder|Nomen] [malt|Verb] ein [buntes|Adjektiv] [Bild|Nomen].",
+     "task": "Male Nomen blau, Verben rot, Adjektive grün und Artikel gelb an!",
+     "text": "[Der|Artikel] [Junge|Nomen] [malt|Verb] [ein|Artikel] [buntes|Adjektiv] [Bild|Nomen].",
      "colors": [
       {
        "key": "Nomen",
@@ -360,20 +423,25 @@
       {
        "key": "Verb",
        "label": "Verb",
-       "color": "#1f9d5c"
+       "color": "#e5484d"
       },
       {
        "key": "Adjektiv",
        "label": "Adjektiv",
-       "color": "#e5484d"
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Artikel",
+       "label": "Artikel",
+       "color": "#f2b705"
       }
      ]
     },
     {
      "kind": "mark",
      "id": "d3-wa-alle-4",
-     "task": "Male Nomen blau, Verben grün und Adjektive rot an!",
-     "text": "Der [Mond|Nomen] [leuchtet|Verb] [hell|Adjektiv] am [Himmel|Nomen].",
+     "task": "Male Nomen blau, Verben rot, Adjektive grün und Artikel gelb an!",
+     "text": "[Der|Artikel] [Mond|Nomen] [leuchtet|Verb] [hell|Adjektiv] in [der|Artikel] [Nacht|Nomen].",
      "colors": [
       {
        "key": "Nomen",
@@ -383,20 +451,25 @@
       {
        "key": "Verb",
        "label": "Verb",
-       "color": "#1f9d5c"
+       "color": "#e5484d"
       },
       {
        "key": "Adjektiv",
        "label": "Adjektiv",
-       "color": "#e5484d"
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Artikel",
+       "label": "Artikel",
+       "color": "#f2b705"
       }
      ]
     },
     {
      "kind": "mark",
      "id": "d3-wa-alle-5",
-     "task": "Male Nomen blau, Verben grün und Adjektive rot an!",
-     "text": "Die [Kinder|Nomen] [lachen|Verb] [laut|Adjektiv] über den [lustigen|Adjektiv] [Witz|Nomen].",
+     "task": "Male Nomen blau, Verben rot, Adjektive grün und Artikel gelb an!",
+     "text": "[Die|Artikel] [Kinder|Nomen] [lachen|Verb] [laut|Adjektiv] über [den|Artikel] [lustigen|Adjektiv] [Witz|Nomen].",
      "colors": [
       {
        "key": "Nomen",
@@ -406,12 +479,17 @@
       {
        "key": "Verb",
        "label": "Verb",
-       "color": "#1f9d5c"
+       "color": "#e5484d"
       },
       {
        "key": "Adjektiv",
        "label": "Adjektiv",
-       "color": "#e5484d"
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Artikel",
+       "label": "Artikel",
+       "color": "#f2b705"
       }
      ]
     }
@@ -424,42 +502,41 @@
     {
      "kind": "paint",
      "id": "d3-wa-mal-pferd",
-     "task": "Lies jedes Wort. Nomen blau, Verben grün, Adjektive rot!",
+     "task": "Lies jedes Wort. Nomen blau, Verben rot, Adjektive grün!",
      "prompt": "Ausmalbild Pferdeweide: Wortarten",
      "image": "img/malen/pferd-wortarten.png",
      "map": "img/malen/pferd-wortarten-map.png",
      "regions": {
       "6": "Nomen",
-      "11": "Adjektiv",
-      "17": "Verb",
+      "11": "Verb",
+      "17": "Adjektiv",
       "1": "Nomen",
-      "19": "Verb",
-      "3": "Adjektiv",
-      "22": "Verb",
-      "23": "Verb",
-      "21": "Verb",
+      "19": "Adjektiv",
+      "3": "Verb",
+      "22": "Adjektiv",
+      "23": "Adjektiv",
+      "21": "Adjektiv",
       "2": "Nomen",
-      "4": "Verb",
-      "9": "Verb",
-      "12": "Verb",
-      "8": "Verb",
-      "10": "Adjektiv",
-      "15": "Verb",
+      "4": "Adjektiv",
+      "9": "Adjektiv",
+      "12": "Adjektiv",
+      "8": "Adjektiv",
+      "10": "Verb",
+      "15": "Adjektiv",
       "13": "",
       "18": "",
-      "7": "Adjektiv",
-      "20": "",
+      "7": "Verb",
+      "20": "Adjektiv",
       "16": "",
       "14": "",
       "5": ""
      },
      "prefill": {
       "13": "#8d5a32",
-      "18": "Adjektiv",
-      "20": "Verb",
-      "16": "Adjektiv",
+      "18": "Verb",
+      "16": "Verb",
       "14": "Nomen",
-      "5": "Adjektiv"
+      "5": "Verb"
      },
      "wordHint": true,
      "regel": "wortarten",
@@ -472,12 +549,12 @@
       {
        "key": "Verb",
        "label": "Verb",
-       "color": "#1f9d5c"
+       "color": "#e5484d"
       },
       {
        "key": "Adjektiv",
        "label": "Adjektiv",
-       "color": "#e5484d"
+       "color": "#1f9d5c"
       }
      ]
     }

@@ -286,6 +286,16 @@ function startLesson(unitId, n, focus = []) {
   // Regelkarte nur bei der ersten Lektion mit dieser Regel (nicht vor jeder Lektion einer Einheit)
   const regel = school && !isTest && u.lessons[n].regel !== u.lessons[n - 1]?.regel && u.lessons[n].regel;
   if (regel && content.rules.has(regel) && (!store.lessonDone(current.profile, u.id, n) || isTestUser())) own.unshift({ kind: "rule", id: regel, unit: u.id });
+  // Ab und zu (jede zweite Lektion) eine Aufgabe aus "Wiederholung 2. Klasse" einstreuen (Wunsch Christin)
+  if (school && !isTest && !u.einstreuen && Math.random() < 0.5) {
+    const sub = content.subjects.find((x) => x.id === u.subject);
+    const pool = stagesFor(current.profile, sub).flatMap((st) => st.units).filter((x) => x.einstreuen)
+      .flatMap((x) => x.singles.map((q) => ({ q, unit: x.id }))).filter(({ q }) => !review.some((r) => r.q?.id === q.id));
+    if (pool.length) {
+      const { q, unit } = pick(pool);
+      review.push({ ...singleStep(q), review: true, unit, mixin: true });
+    }
+  }
   const steps = [...review, ...own];
   const lesson = { u, n, steps, pos: 0, reviewCount: review.length, school, isTest, right: 0, total: 0, missed: [], wrongClicks: 0, started: Date.now() };
   nextStep(lesson);
@@ -300,7 +310,7 @@ function lessonFrame(lesson, inner) {
         <button class="icon-btn" id="quit" aria-label="Beenden">✖</button>
         <div class="progress"><span style="width:${pct}%"></span></div>
       </header>
-      ${lesson.exam ? `<p class="review-tag">📝 Probe · Aufgabe ${lesson.pos + 1} von ${lesson.steps.length}</p>` : step?.review ? `<p class="review-tag">🔁 Wiederholung</p>` : step?.retry ? `<p class="review-tag">🔁 Nochmal, weil es vorhin nicht geklappt hat</p>` : ""}
+      ${lesson.exam ? `<p class="review-tag">📝 Probe · Aufgabe ${lesson.pos + 1} von ${lesson.steps.length}</p>` : step?.mixin ? `<p class="review-tag">🔁 Weißt du das noch? (2. Klasse)</p>` : step?.review ? `<p class="review-tag">🔁 Wiederholung</p>` : step?.retry ? `<p class="review-tag">🔁 Nochmal, weil es vorhin nicht geklappt hat</p>` : ""}
       ${inner}
     </div>`;
 }

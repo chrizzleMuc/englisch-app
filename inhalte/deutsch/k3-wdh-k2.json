@@ -1,0 +1,335 @@
+{
+ "id": "d3-wdh-k2",
+ "type": "schule",
+ "title_de": "Wiederholung 2. Klasse",
+ "image": "🔁",
+ "color": "#7a4fd6",
+ "einstreuen": true,
+ "lessons": [
+  {
+   "title": "Wortfamilien",
+   "icon": "🌳",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-wk-wf-0",
+     "task": "Welches Wort gehört zur Wortfamilie?",
+     "options": [
+      "Spielplatz",
+      "Spiegel",
+      "Spinne"
+     ],
+     "answer": "Spielplatz",
+     "prompt": "spielen",
+     "explain": "Spielplatz hat den Wortstamm spiel."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-wf-1",
+     "task": "Welches Wort gehört zur Wortfamilie?",
+     "options": [
+      "Fahrrad",
+      "Farbe",
+      "fallen"
+     ],
+     "answer": "Fahrrad",
+     "prompt": "fahren",
+     "explain": "Fahrrad hat den Wortstamm fahr."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-wf-2",
+     "task": "Welches Wort gehört zur Wortfamilie?",
+     "options": [
+      "Bäcker",
+      "Becher",
+      "Bach"
+     ],
+     "answer": "Bäcker",
+     "prompt": "backen",
+     "explain": "Bäcker kommt von backen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-wf-3",
+     "task": "Welches Wort gehört NICHT dazu?",
+     "options": [
+      "Besen",
+      "vorlesen",
+      "Lesezeichen"
+     ],
+     "answer": "Besen",
+     "prompt": "lesen, Leser, Lesebuch, …",
+     "explain": "Besen reimt sich nur, der Wortstamm ist ein anderer."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-ws-0",
+     "task": "Was ist der Wortstamm?",
+     "options": [
+      "schlaf",
+      "aus",
+      "en"
+     ],
+     "answer": "schlaf",
+     "prompt": "Schläfer, schlafen, ausschlafen"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-ws-1",
+     "task": "Was ist der Wortstamm?",
+     "options": [
+      "mal",
+      "be",
+      "er"
+     ],
+     "answer": "mal",
+     "prompt": "Malerin, malen, bemalt"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-wb-0",
+     "task": "Welcher Wortbaustein ist vorne angehängt?",
+     "options": [
+      "ver",
+      "lauf",
+      "en"
+     ],
+     "answer": "ver",
+     "prompt": "verlaufen",
+     "explain": "ver- ist ein Wortbaustein, lauf ist der Wortstamm."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-wb-1",
+     "task": "Welcher Wortbaustein ist hinten angehängt?",
+     "options": [
+      "zeug",
+      "werk",
+      "wer"
+     ],
+     "answer": "zeug",
+     "prompt": "Werkzeug"
+    }
+   ]
+  },
+  {
+   "title": "Laute",
+   "icon": "🔊",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-wk-l-0",
+     "task": "Welcher Buchstabe ist ein Vokal?",
+     "options": [
+      "o",
+      "t",
+      "m"
+     ],
+     "answer": "o",
+     "explain": "Vokale sind a, e, i, o, u.",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-l-1",
+     "task": "Welcher Buchstabe ist ein Konsonant?",
+     "options": [
+      "k",
+      "a",
+      "u"
+     ],
+     "answer": "k",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-l-2",
+     "task": "Was ist ein Umlaut?",
+     "options": [
+      "ü",
+      "ei",
+      "u"
+     ],
+     "answer": "ü",
+     "explain": "Umlaute sind ä, ö, ü.",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-l-3",
+     "task": "Was ist ein Doppellaut?",
+     "options": [
+      "eu",
+      "ö",
+      "ck"
+     ],
+     "answer": "eu",
+     "explain": "Doppellaute sind au, ei, eu.",
+     "bigOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-l-4",
+     "task": "Ist der Vokal kurz oder lang?",
+     "options": [
+      "kurz",
+      "lang"
+     ],
+     "answer": "lang",
+     "prompt": "Hase",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-l-5",
+     "task": "Ist der Vokal kurz oder lang?",
+     "options": [
+      "kurz",
+      "lang"
+     ],
+     "answer": "kurz",
+     "prompt": "Kuss",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-l-6",
+     "task": "Ist der Vokal kurz oder lang?",
+     "options": [
+      "kurz",
+      "lang"
+     ],
+     "answer": "lang",
+     "prompt": "Mond",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-l-7",
+     "task": "Ist der Vokal kurz oder lang?",
+     "options": [
+      "kurz",
+      "lang"
+     ],
+     "answer": "kurz",
+     "prompt": "Bett",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Wörter und Sätze",
+   "icon": "📝",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-wk-gf-0",
+     "task": "Wie heißt die Grundform?",
+     "options": [
+      "wandern",
+      "wanderen",
+      "wandert"
+     ],
+     "answer": "wandern",
+     "prompt": "er wandert",
+     "explain": "Manche Verben enden auf -ern."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-gf-1",
+     "task": "Wie heißt die Grundform?",
+     "options": [
+      "lächeln",
+      "lächelen",
+      "lächelt"
+     ],
+     "answer": "lächeln",
+     "prompt": "sie lächelt",
+     "explain": "Manche Verben enden auf -eln."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-gf-2",
+     "task": "Wie heißt die Grundform?",
+     "options": [
+      "schreiben",
+      "schreibst",
+      "schreibe"
+     ],
+     "answer": "schreiben",
+     "prompt": "du schreibst"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-ad-0",
+     "task": "Welches Adjektiv passt?",
+     "options": [
+      "kleiner",
+      "kleine",
+      "kleines"
+     ],
+     "answer": "kleiner",
+     "prompt": "ein … Hund",
+     "explain": "Adjektive verändern sich vor dem Nomen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-ad-1",
+     "task": "Welches Adjektiv passt?",
+     "options": [
+      "rote",
+      "roter",
+      "rotes"
+     ],
+     "answer": "rote",
+     "prompt": "das … Haus"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-fw-0",
+     "task": "Welches Fragewort passt?",
+     "options": [
+      "Wann",
+      "Wer",
+      "Was"
+     ],
+     "answer": "Wann",
+     "prompt": "… kommst du nach Hause?"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-fw-1",
+     "task": "Welches Fragewort passt?",
+     "options": [
+      "Wer",
+      "Wie",
+      "Wann"
+     ],
+     "answer": "Wer",
+     "prompt": "… hat meinen Stift?"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wk-si-0",
+     "task": "Was steht in jeder Silbe?",
+     "options": [
+      "ein Vokal oder Umlaut",
+      "ein Doppelbuchstabe",
+      "ein großer Buchstabe"
+     ],
+     "answer": "ein Vokal oder Umlaut"
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

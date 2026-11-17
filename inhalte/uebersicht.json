@@ -56,7 +56,8 @@
             "deutsch/k3-verben.json",
             "deutsch/k3-nomen-endungen.json",
             "deutsch/k3-adjektive.json",
-            "deutsch/k3-regel-detektiv.json"
+            "deutsch/k3-regel-detektiv.json",
+            "deutsch/k3-wdh-k2.json"
           ]
         },
         {
@@ -127,7 +128,8 @@
             "mathe/k3-geld.json",
             "mathe/k3-geometrie.json",
             "mathe/k3-daten.json",
-            "mathe/k3-regel-detektiv.json"
+            "mathe/k3-regel-detektiv.json",
+            "mathe/k3-wdh-k2.json"
           ]
         },
         {
