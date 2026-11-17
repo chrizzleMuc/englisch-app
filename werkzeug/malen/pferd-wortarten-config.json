@@ -1,0 +1,49 @@
+{
+ "silben": {
+  "la": "Verb",
+  "li": "Nomen",
+  "le": "Adjektiv",
+  "lo": "Adjektiv"
+ },
+ "woerter": {
+  "Verb": [
+   "rennt",
+   "springt",
+   "frisst",
+   "wiehert",
+   "läuft",
+   "spielt",
+   "trinkt",
+   "hüpft",
+   "tobt",
+   "schaut"
+  ],
+  "Nomen": [
+   "Wolke",
+   "Sonne",
+   "Vogel",
+   "Himmel",
+   "Wind",
+   "Drachen"
+  ],
+  "Adjektiv": [
+   "grün",
+   "weich",
+   "saftig",
+   "frisch",
+   "hoch",
+   "dicht",
+   "nass",
+   "schön",
+   "bunt",
+   "still",
+   "weit",
+   "dunkel",
+   "sonnig",
+   "ruhig"
+  ]
+ },
+ "fest": {
+  "13": "#8d5a32"
+ }
+}
