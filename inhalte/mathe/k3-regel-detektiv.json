@@ -1,0 +1,159 @@
+{
+ "id": "m3-regel-detektiv",
+ "type": "schule",
+ "title_de": "Regel-Detektiv",
+ "image": "🕵️",
+ "color": "#c99a00",
+ "lessons": [
+  {
+   "title": "Welche Regel hilft? 1",
+   "icon": "🕵️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-regel-detektiv-0",
+     "task": "Welche Regel hilft?",
+     "prompt": "Wie schreibt man 47 als Wort?",
+     "options": [
+      "Zahlwörter",
+      "Stellenwerte",
+      "Runden"
+     ],
+     "answer": "Zahlwörter",
+     "explain": "Erst der Einer, dann und, dann der Zehner: siebenundvierzig."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-regel-detektiv-1",
+     "task": "Welche Regel hilft?",
+     "prompt": "3 + 4 · 2 = ?",
+     "options": [
+      "Punkt vor Strich",
+      "Schriftlich plus",
+      "Teilen mit Rest"
+     ],
+     "answer": "Punkt vor Strich",
+     "explain": "Mal zuerst: 3 + 8 = 11."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-regel-detektiv-2",
+     "task": "Welche Regel hilft?",
+     "prompt": "347 auf Zehner runden",
+     "options": [
+      "Runden",
+      "Stellenwerte",
+      "Zahlwörter"
+     ],
+     "answer": "Runden",
+     "explain": "Rechts steht 7, also aufrunden: 350."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-regel-detektiv-3",
+     "task": "Welche Regel hilft?",
+     "prompt": "4 H, 0 Z, 7 E = ?",
+     "options": [
+      "Stellenwerte",
+      "Runden",
+      "Einheiten"
+     ],
+     "answer": "Stellenwerte",
+     "explain": "Leere Stelle: 0. Also 407."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-regel-detektiv-4",
+     "task": "Welche Regel hilft?",
+     "prompt": "2 m 30 cm = ? cm",
+     "options": [
+      "Einheiten",
+      "Euro und Cent",
+      "Uhrzeit"
+     ],
+     "answer": "Einheiten",
+     "explain": "1 m = 100 cm, also 230 cm."
+    }
+   ]
+  },
+  {
+   "title": "Welche Regel hilft? 2",
+   "icon": "🕵️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "m3-regel-detektiv-5",
+     "task": "Welche Regel hilft?",
+     "prompt": "3,05 € = ? Cent",
+     "options": [
+      "Euro und Cent",
+      "Einheiten",
+      "Stellenwerte"
+     ],
+     "answer": "Euro und Cent",
+     "explain": "1 € = 100 ct, also 305 ct."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-regel-detektiv-6",
+     "task": "Welche Regel hilft?",
+     "prompt": "17 : 5 = ?",
+     "options": [
+      "Teilen mit Rest",
+      "Punkt vor Strich",
+      "Schriftlich minus"
+     ],
+     "answer": "Teilen mit Rest",
+     "explain": "3 · 5 = 15, Rest 2."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-regel-detektiv-7",
+     "task": "Welche Regel hilft?",
+     "prompt": "Wie viele Minuten sind eine halbe Stunde?",
+     "options": [
+      "Uhrzeit",
+      "Einheiten",
+      "Euro und Cent"
+     ],
+     "answer": "Uhrzeit",
+     "explain": "1 Stunde = 60 min, die Hälfte sind 30 min."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-regel-detektiv-8",
+     "task": "Welche Regel hilft?",
+     "prompt": "Bei 532 − 218 sind oben bei den Einern zu wenig.",
+     "options": [
+      "Schriftlich minus",
+      "Schriftlich plus",
+      "Runden"
+     ],
+     "answer": "Schriftlich minus",
+     "explain": "Entbündeln: einen Zehner holen."
+    },
+    {
+     "kind": "choice",
+     "id": "m3-regel-detektiv-9",
+     "task": "Welche Regel hilft?",
+     "prompt": "Bei 458 + 37 sind es bei den Einern 15.",
+     "options": [
+      "Schriftlich plus",
+      "Schriftlich minus",
+      "Teilen mit Rest"
+     ],
+     "answer": "Schriftlich plus",
+     "explain": "5 hinschreiben, 1 als Übertrag."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 10
+  }
+ ]
+}

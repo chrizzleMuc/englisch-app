@@ -1,0 +1,796 @@
+{
+ "regeln": [
+  {
+   "id": "wortarten",
+   "icon": "🔤",
+   "title": "Nomen, Verb oder Adjektiv?",
+   "merke": [
+    "**Nomen** sind Namen für Menschen, Tiere, Dinge und Gefühle. Man schreibt sie **groß**.",
+    "**Verben** sagen, was jemand **tut** oder was **passiert**. Man schreibt sie klein.",
+    "**Adjektive** sagen, **wie** etwas ist. Man schreibt sie klein."
+   ],
+   "beispiele": [
+    "der **Hund** – er **rennt** – er ist **schnell**"
+   ],
+   "lektionen": [
+    "d3-wortarten/Nomen, Verb oder Adjektiv?",
+    "d3-wortarten/Alle drei Wortarten"
+   ],
+   "trick": "Passt **der, die** oder **das** davor? → Nomen. Passt **ich** davor? → Verb. Passt **„Wie ist …?“**? → Adjektiv."
+  },
+  {
+   "id": "nomen-gross",
+   "icon": "🅰️",
+   "title": "Nomen schreibt man groß",
+   "merke": [
+    "Nomen sind Namen für **Menschen, Tiere, Pflanzen und Dinge**: Mama, Katze, Baum, Ball.",
+    "Auch Dinge, die man **nicht anfassen** kann, sind Nomen: die **Freude**, der **Mut**, die **Angst**.",
+    "Nomen schreibt man immer **groß**."
+   ],
+   "beispiele": [
+    "**der** Hund, **die** Wut, **das** Glück"
+   ],
+   "lektionen": [
+    "d3-nomen/Konkret oder abstrakt",
+    "d3-nomen/Groß oder klein",
+    "d3-wortarten/Nomen blau anmalen"
+   ],
+   "trick": "Artikelprobe: Passt **der, die** oder **das** davor, ist es ein Nomen."
+  },
+  {
+   "id": "nomen-endungen",
+   "icon": "🧩",
+   "title": "-ung, -heit, -keit, -nis machen Nomen",
+   "merke": [
+    "Wörter mit den Endungen **-ung, -heit, -keit** und **-nis** sind immer **Nomen**.",
+    "Deshalb schreibt man sie **groß**.",
+    "**-nis** wird in der Mehrzahl zu **-nisse**."
+   ],
+   "beispiele": [
+    "wohnen → die Woh**nung**",
+    "frei → die Frei**heit**",
+    "ehrlich → die Ehrlich**keit**",
+    "das Erleb**nis** → die Erleb**nisse**"
+   ],
+   "lektionen": [
+    "d3-nomen/-heit und -keit",
+    "d3-nomen/-ung",
+    "d3-nomen-endungen"
+   ]
+  },
+  {
+   "id": "nomen-zusammen",
+   "icon": "🔗",
+   "title": "Zusammengesetzte Nomen",
+   "merke": [
+    "Aus zwei Wörtern kann ein **neues Nomen** werden.",
+    "Das **letzte Wort** bestimmt den **Artikel**.",
+    "Das neue Wort schreibt man **groß** und **zusammen**."
+   ],
+   "beispiele": [
+    "das Haus + **die Tür** → **die** Haustür",
+    "die Schule + **der Hof** → **der** Schulhof"
+   ],
+   "lektionen": [
+    "d3-nomen/Zusammensetzen"
+   ]
+  },
+  {
+   "id": "mehrzahl",
+   "icon": "👥",
+   "title": "Einzahl und Mehrzahl",
+   "merke": [
+    "Nomen gibt es in der **Einzahl** (eins) und in der **Mehrzahl** (viele).",
+    "In der Mehrzahl heißt der Artikel immer **die**.",
+    "Oft wird aus a, o, u ein **ä, ö, ü**."
+   ],
+   "beispiele": [
+    "der Baum → die B**ä**ume",
+    "das Buch → die B**ü**cher"
+   ],
+   "lektionen": [
+    "d3-nomen/Mehrzahl 1",
+    "d3-nomen/Mehrzahl 2"
+   ]
+  },
+  {
+   "id": "verben",
+   "icon": "🏃",
+   "title": "Verben sagen, was jemand tut",
+   "merke": [
+    "**Verben** sagen, was jemand **tut** oder was **passiert**: rennen, lachen, regnen.",
+    "Man schreibt sie **klein**.",
+    "Die **Grundform** endet auf **-en** oder **-n**: spielen, wandern.",
+    "Das Verb **verändert sich**, je nachdem wer etwas tut: ich spiel**e**, du spiel**st**, er spiel**t**."
+   ],
+   "beispiele": [
+    "ich **lache**, du **lachst**, sie **lacht**"
+   ],
+   "lektionen": [
+    "d3-verben/Gegenwart: schwache Verben",
+    "d3-verben/Gegenwart: starke Verben",
+    "d3-wortarten/Verben grün anmalen"
+   ],
+   "trick": "ich-Probe: Passt **ich** davor, ist es ein Verb."
+  },
+  {
+   "id": "vergangenheit",
+   "icon": "⏪",
+   "title": "Verben in der Vergangenheit",
+   "merke": [
+    "Viele Verben bekommen in der Vergangenheit ein **-te**: ich spiel**te**.",
+    "Starke Verben **ändern ihren Selbstlaut**: ich s**i**nge → ich s**a**ng.",
+    "Starke Verben muss man sich **merken**."
+   ],
+   "beispiele": [
+    "ich lache → ich lach**te**",
+    "ich gehe → ich **ging**",
+    "ich laufe → ich **lief**"
+   ],
+   "lektionen": [
+    "d3-verben/Vergangenheit mit -te",
+    "d3-verben/Schwach oder stark?",
+    "d3-unregelmaessige-verben/Paare 1",
+    "d3-unregelmaessige-verben/Paare 2"
+   ]
+  },
+  {
+   "id": "hat-ist",
+   "icon": "🚶",
+   "title": "hat oder ist?",
+   "merke": [
+    "Wenn man **sich bewegt** oder etwas **sich verändert**, nimmt man meistens **ist**.",
+    "Sonst nimmt man **hat**."
+   ],
+   "beispiele": [
+    "ich **bin** gelaufen, sie **ist** eingeschlafen",
+    "ich **habe** gemalt, er **hat** gelesen"
+   ],
+   "lektionen": [
+    "d3-unregelmaessige-verben/hat oder ist? 1",
+    "d3-unregelmaessige-verben/hat oder ist? 2"
+   ]
+  },
+  {
+   "id": "adjektive",
+   "icon": "🎨",
+   "title": "Adjektive schreibt man klein",
+   "merke": [
+    "**Adjektive** sagen, **wie** etwas ist: groß, rot, lustig, schnell.",
+    "Man schreibt sie **klein**.",
+    "**Aber:** Am **Satzanfang** schreibt man jedes Wort groß."
+   ],
+   "beispiele": [
+    "der **kleine** Hund",
+    "Die Suppe ist **heiß**.",
+    "**Heiß** ist die Suppe."
+   ],
+   "lektionen": [
+    "d3-adjektive/Adjektive erkennen",
+    "d3-adjektive/Gegensatzpaare",
+    "d3-adjektive/Adjektive anpassen",
+    "d3-wortarten/Adjektive rot anmalen"
+   ],
+   "trick": "Frag **„Wie ist …?“** – Wie ist der Hund? **klein**"
+  },
+  {
+   "id": "adjektiv-endungen",
+   "icon": "🔚",
+   "title": "Adjektive mit -ig und -lich",
+   "merke": [
+    "Viele Adjektive enden auf **-ig** oder **-lich**.",
+    "Am Wortende hört man -ig nicht genau. **Verlängere**: lustig → lusti**g**er. Dann hörst du das **g**."
+   ],
+   "beispiele": [
+    "lust**ig**, wind**ig**",
+    "freund**lich**, gefähr**lich**"
+   ],
+   "lektionen": [
+    "d3-adjektive/-ig und -lich"
+   ]
+  },
+  {
+   "id": "adjektive-zusammen",
+   "icon": "🌳",
+   "title": "Zusammengesetzte Adjektive",
+   "merke": [
+    "Aus einem Nomen und einem Adjektiv wird ein **neues Adjektiv**.",
+    "Das neue Wort ist ein Adjektiv, darum schreibt man es **klein**."
+   ],
+   "beispiele": [
+    "der Baum + hoch → **baumhoch**",
+    "der Schnee + weiß → **schneeweiß**"
+   ],
+   "lektionen": [
+    "d3-adjektive/Zusammengesetzte Adjektive",
+    "d3-adjektive/Noch mehr zusammensetzen"
+   ]
+  },
+  {
+   "id": "steigern",
+   "icon": "📈",
+   "title": "Adjektive steigern",
+   "merke": [
+    "Adjektive kann man **steigern**: groß – **größer** – **am größten**.",
+    "Gleich viel: **so** groß **wie**. Unterschiedlich: größ**er als**.",
+    "Merke: gut – **besser** – am **besten**, viel – **mehr** – am **meisten**."
+   ],
+   "beispiele": [
+    "Tom ist **so** alt **wie** Lea.",
+    "Ein Hund ist größ**er als** eine Maus."
+   ],
+   "lektionen": [
+    "d3-adjektive/Steigern",
+    "d3-adjektive/Vergleichen"
+   ]
+  },
+  {
+   "id": "artikel",
+   "icon": "📌",
+   "title": "Artikel: der, die, das, ein, eine",
+   "merke": [
+    "**der, die, das** sind **bestimmte** Artikel.",
+    "**ein, eine** sind **unbestimmte** Artikel.",
+    "Zu **der** und **das** gehört **ein**, zu **die** gehört **eine**."
+   ],
+   "beispiele": [
+    "der Hund → **ein** Hund",
+    "die Katze → **eine** Katze"
+   ],
+   "lektionen": [
+    "d3-artikel-pronomen/der, die, das",
+    "d3-artikel-pronomen/ein oder eine"
+   ]
+  },
+  {
+   "id": "pronomen",
+   "icon": "👉",
+   "title": "Pronomen ersetzen Nomen",
+   "merke": [
+    "**Pronomen** stehen für ein Nomen: ich, du, er, sie, es, wir, ihr, sie.",
+    "So muss man das Nomen nicht immer wiederholen."
+   ],
+   "beispiele": [
+    "**Die Katze** schläft. **Sie** ist müde."
+   ],
+   "lektionen": [
+    "d3-artikel-pronomen/Pronomen erkennen",
+    "d3-artikel-pronomen/Pronomen verwenden"
+   ]
+  },
+  {
+   "id": "verlaengern",
+   "icon": "↔️",
+   "title": "Verlängern: d oder t, g oder k, b oder p?",
+   "merke": [
+    "Am Wortende klingen d und t, g und k, b und p **gleich**.",
+    "**Verlängere** das Wort: Mehrzahl, mit -er oder mit wir.",
+    "Dann hörst du den richtigen Buchstaben."
+   ],
+   "beispiele": [
+    "der Hun**d** → die Hun**d**e",
+    "der Zwer**g** → die Zwer**g**e",
+    "gel**b** → gel**b**er"
+   ],
+   "lektionen": [
+    "d3-verlaengern"
+   ]
+  },
+  {
+   "id": "doppelt",
+   "icon": "✌️",
+   "title": "Doppelte Mitlaute, ck und tz",
+   "merke": [
+    "Nach einem **kurzen** Selbstlaut folgen oft **zwei** Mitlaute: Ka**mm**, So**nn**e.",
+    "Statt kk schreibt man **ck**, statt zz schreibt man **tz**.",
+    "Hörst du schon zwei Mitlaute (Hu**nd**, ka**lt**), wird nichts verdoppelt.",
+    "Nach l, n, r steht **nie** tz oder ck: Ker**z**e, Ban**k**."
+   ],
+   "beispiele": [
+    "der Ball, die Mütze, die Decke"
+   ],
+   "lektionen": [
+    "d3-doppel"
+   ],
+   "trick": "Sprich das Wort langsam: Ist der Selbstlaut **kurz**?"
+  },
+  {
+   "id": "ie",
+   "icon": "📏",
+   "title": "Langes i: meistens ie",
+   "merke": [
+    "Hörst du ein **langes i**, schreibst du meistens **ie**.",
+    "Ein paar Wörter musst du dir merken: Tiger, Kino, Igel, ihr, ihm."
+   ],
+   "beispiele": [
+    "die Wiese, das Tier, spielen"
+   ],
+   "lektionen": [
+    "d3-lang/i oder ie",
+    "d3-merkwoerter"
+   ]
+  },
+  {
+   "id": "dehnungs-h",
+   "icon": "🤫",
+   "title": "Das stumme h",
+   "merke": [
+    "Nach einem **langen** Selbstlaut steht manchmal ein **h**, das man nicht hört.",
+    "Es steht oft vor **l, m, n** oder **r**.",
+    "Diese Wörter muss man sich **merken**."
+   ],
+   "beispiele": [
+    "fa**hr**en, die Za**hl**, ne**hm**en, der So**hn**"
+   ],
+   "lektionen": [
+    "d3-lang/Mit h oder ohne"
+   ]
+  },
+  {
+   "id": "ss-sz",
+   "icon": "🐍",
+   "title": "ß oder ss?",
+   "merke": [
+    "Nach einem **langen** Selbstlaut oder au, ei, eu schreibt man **ß**: Fu**ß**, hei**ß**.",
+    "Nach einem **kurzen** Selbstlaut schreibt man **ss**: Wa**ss**er, Ku**ss**."
+   ],
+   "beispiele": [
+    "die Straße – die Tasse",
+    "groß – nass"
+   ],
+   "lektionen": [
+    "d3-lang/ß oder ss"
+   ]
+  },
+  {
+   "id": "ableiten",
+   "icon": "🌱",
+   "title": "ä oder e, äu oder eu?",
+   "merke": [
+    "Gibt es ein **verwandtes Wort mit a**, schreibt man **ä**.",
+    "Gibt es ein **verwandtes Wort mit au**, schreibt man **äu**.",
+    "Sonst schreibt man e oder eu."
+   ],
+   "beispiele": [
+    "die B**ä**lle ← der B**a**ll",
+    "die B**äu**me ← der B**au**m"
+   ],
+   "lektionen": [
+    "d3-ableiten"
+   ]
+  },
+  {
+   "id": "trennen",
+   "icon": "✂️",
+   "title": "Wörter trennen",
+   "merke": [
+    "Man trennt nach **Silben**: Ta-fel, Blu-me.",
+    "**ch, ck, sch** bleiben zusammen: Sa-che, Zu-cker, Fla-sche.",
+    "Ein **einzelner Buchstabe** wird nicht abgetrennt: Ofen, nicht O-fen."
+   ],
+   "beispiele": [
+    "Kat-ze, Fens-ter, Zu-cker"
+   ],
+   "lektionen": [
+    "d3-worttrennung"
+   ],
+   "trick": "Klatsch die Silben mit!"
+  },
+  {
+   "id": "sp-st",
+   "icon": "🗣️",
+   "title": "Sp und St am Anfang",
+   "merke": [
+    "Am Wortanfang spricht man **schp** und **scht**.",
+    "Man schreibt aber **Sp** und **St**."
+   ],
+   "beispiele": [
+    "der **Sp**ort, der **St**ein, **sp**ringen"
+   ],
+   "lektionen": [
+    "d3-besondere-laute/Sp und St"
+   ]
+  },
+  {
+   "id": "vorsilben",
+   "icon": "🔑",
+   "title": "Vorsilben ver- und vor-",
+   "merke": [
+    "Die Vorsilben **ver-** und **vor-** schreibt man immer mit **v**.",
+    "Die Vorsilbe verändert die Bedeutung des Wortes."
+   ],
+   "beispiele": [
+    "**ver**laufen, **ver**gessen, **vor**lesen"
+   ],
+   "lektionen": [
+    "d3-vorsilben"
+   ]
+  },
+  {
+   "id": "satzanfang",
+   "icon": "🔠",
+   "title": "Satzanfang und Zeitangaben",
+   "merke": [
+    "Das **erste Wort** im Satz schreibt man **groß**.",
+    "Nach einem **Punkt, Fragezeichen** oder **Ausrufezeichen** fängt ein neuer Satz an.",
+    "Zeitangaben mit **am, der, heute** davor sind Nomen: **am Morgen, heute Abend**.",
+    "Zeitangaben mit **-s** am Ende schreibt man klein: **morgens, abends**."
+   ],
+   "beispiele": [
+    "**Am** Montag spielen wir. Heute **A**bend lese ich.",
+    "**m**ontags, **a**bends"
+   ],
+   "lektionen": [
+    "d3-grossschreibung"
+   ]
+  },
+  {
+   "id": "satzzeichen",
+   "icon": "❗",
+   "title": "Satzarten und Satzzeichen",
+   "merke": [
+    "Am Ende eines **Aussagesatzes** steht ein **Punkt**.",
+    "Am Ende einer **Frage** steht ein **Fragezeichen**.",
+    "Nach einem **Ausruf** oder einer **Aufforderung** steht ein **Ausrufezeichen**.",
+    "Bei einer **Aufzählung** steht ein **Komma**, aber nicht vor **und**."
+   ],
+   "beispiele": [
+    "Ich male. Malst du? Mal mit!",
+    "Äpfel, Birnen**,** Kirschen und Pflaumen"
+   ],
+   "lektionen": [
+    "d3-satzarten"
+   ]
+  },
+  {
+   "id": "satzglieder",
+   "icon": "🧱",
+   "title": "Subjekt und Prädikat",
+   "merke": [
+    "Das **Prädikat** ist das **Verb**. Es sagt, was jemand tut. Frage: **Was tut …?**",
+    "Das **Subjekt** sagt, **wer** oder **was** etwas tut. Frage: **Wer oder was …?**",
+    "Im Aussagesatz steht das Prädikat an **zweiter** Stelle."
+   ],
+   "beispiele": [
+    "**Der Hund** (Subjekt) **bellt** (Prädikat)."
+   ],
+   "lektionen": [
+    "d3-satzglieder"
+   ],
+   "trick": "Umstellprobe: Teile, die zusammenbleiben, sind ein Satzglied."
+  },
+  {
+   "id": "woertliche-rede",
+   "icon": "💬",
+   "title": "Wörtliche Rede",
+   "merke": [
+    "Was jemand sagt, steht zwischen **Redezeichen**: „ … “",
+    "Steht der Begleitsatz **vorne**, folgt ein **Doppelpunkt**: Tom sagt**:** „Hallo!“",
+    "Steht der Begleitsatz **hinten**, folgt nach der Rede ein **Komma**: „Hallo“**,** sagt Tom."
+   ],
+   "beispiele": [
+    "Lea ruft: „Komm her!“",
+    "„Ich komme“, sagt Max."
+   ],
+   "lektionen": [
+    "d3-woertliche-rede"
+   ]
+  },
+  {
+   "id": "zahlwoerter",
+   "icon": "✍️",
+   "title": "Zahlen als Wort schreiben",
+   "merke": [
+    "Zahlen bis 1000 schreibt man als **ein Wort**, ohne Lücke.",
+    "Zuerst kommen die **Hunderter**: **dreihundert**…",
+    "Bei Zehnern und Einern kommt der **Einer zuerst**, dann **und**, dann der Zehner: sieben**und**vierzig.",
+    "Zahlwörter schreibt man **klein**."
+   ],
+   "beispiele": [
+    "347 = **drei**hundert**sieben**und**vierzig**",
+    "512 = fünfhundert**zwölf**",
+    "609 = sechshundert**neun**"
+   ],
+   "lektionen": [
+    "m3-zahlen-entdecken/Zahlwörter"
+   ],
+   "trick": "Aufpassen: ein**und**zwanzig (nicht eins), **sech**zig und **sieb**zig, drei**ß**ig mit ß."
+  },
+  {
+   "id": "stellenwerte",
+   "icon": "🏛️",
+   "title": "Hunderter, Zehner, Einer",
+   "merke": [
+    "Jede Ziffer hat einen **Platz**: **H**underter, **Z**ehner, **E**iner.",
+    "10 Einer sind 1 Zehner. 10 Zehner sind 1 Hunderter. 10 Hunderter sind 1 Tausender.",
+    "Ist eine Stelle leer, schreibt man eine **0**."
+   ],
+   "beispiele": [
+    "4 H, 0 Z, 7 E = **407**"
+   ],
+   "lektionen": [
+    "m3-zahlen-entdecken/Hunderter, Zehner, Einer",
+    "m3-zahlen-entdecken/Stellentafel",
+    "m3-zahlen1000/Stellenwerte"
+   ]
+  },
+  {
+   "id": "runden",
+   "icon": "🎯",
+   "title": "Runden",
+   "merke": [
+    "Schau auf die Ziffer **rechts** von der Stelle, auf die du rundest.",
+    "Bei **0, 1, 2, 3, 4** rundest du **ab**.",
+    "Bei **5, 6, 7, 8, 9** rundest du **auf**."
+   ],
+   "beispiele": [
+    "347 ≈ 350 (auf Zehner)",
+    "347 ≈ 300 (auf Hunderter)"
+   ],
+   "lektionen": [
+    "m3-zahlen1000/Runden"
+   ]
+  },
+  {
+   "id": "schriftlich-plus",
+   "icon": "➕",
+   "title": "Schriftlich plus rechnen",
+   "merke": [
+    "Schreibe die Zahlen **genau untereinander**: Einer unter Einer, Zehner unter Zehner.",
+    "Fang **rechts bei den Einern** an.",
+    "Sind es **10 oder mehr**, schreibst du den **Übertrag** klein in die nächste Spalte."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "m3-schriftlich/Plus ohne Übertrag",
+    "m3-schriftlich/Plus mit Übertrag",
+    "m3-schriftlich/Zwei Überträge"
+   ],
+   "trick": "Mach vorher einen **Überschlag**, dann merkst du Fehler."
+  },
+  {
+   "id": "schriftlich-minus",
+   "icon": "➖",
+   "title": "Schriftlich minus rechnen",
+   "merke": [
+    "Schreibe die Zahlen **genau untereinander** und fang **rechts bei den Einern** an.",
+    "Ist oben **zu wenig**, **entbündelst** du: Hol dir einen Zehner von links und mach daraus 10 Einer.",
+    "Streich die Ziffer links durch und schreib die neue, kleinere Zahl darüber."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "m3-schriftlich/Minus ohne Entbündeln",
+    "m3-schriftlich/Minus mit Entbündeln",
+    "m3-schriftlich/Zweimal entbündeln"
+   ]
+  },
+  {
+   "id": "punkt-vor-strich",
+   "icon": "⚡",
+   "title": "Punkt vor Strich",
+   "merke": [
+    "**Mal** (·) und **geteilt** (:) rechnet man **zuerst**.",
+    "Danach rechnet man **plus** und **minus**.",
+    "Was in **Klammern** steht, rechnet man ganz zuerst."
+   ],
+   "beispiele": [
+    "3 + **4 · 2** = 3 + 8 = 11",
+    "(3 + 4) · 2 = 7 · 2 = 14"
+   ],
+   "lektionen": [
+    "m3-mal-geteilt/Punkt vor Strich"
+   ]
+  },
+  {
+   "id": "rest",
+   "icon": "🍬",
+   "title": "Teilen mit Rest",
+   "merke": [
+    "Manchmal geht eine Aufgabe **nicht genau auf**. Dann bleibt ein **Rest**.",
+    "Der Rest ist immer **kleiner** als die Zahl, durch die du teilst."
+   ],
+   "beispiele": [
+    "17 : 5 = 3 Rest 2, denn 3 · 5 = 15 und 15 + 2 = 17"
+   ],
+   "lektionen": [
+    "m3-einmaleins/Teilen mit Rest",
+    "m3-mal-geteilt/Teilen mit Rest"
+   ]
+  },
+  {
+   "id": "einheiten",
+   "icon": "📏",
+   "title": "Längen und Gewichte umrechnen",
+   "merke": [
+    "1 km = **1000** m",
+    "1 m = **100** cm, 1 cm = **10** mm",
+    "1 kg = **1000** g"
+   ],
+   "beispiele": [
+    "2 m 30 cm = 230 cm"
+   ],
+   "lektionen": [
+    "m3-laengen-gewichte/Kilometer und Meter",
+    "m3-laengen-gewichte/Gewichte",
+    "m3-groessen/Meter, cm und mm"
+   ]
+  },
+  {
+   "id": "zeit",
+   "icon": "⏰",
+   "title": "Stunden und Minuten",
+   "merke": [
+    "1 Stunde hat **60** Minuten.",
+    "Eine halbe Stunde sind **30** Minuten, eine Viertelstunde **15** Minuten.",
+    "1 Minute hat **60** Sekunden, 1 Tag hat **24** Stunden."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "m3-uhrzeit/Stunden und Minuten",
+    "m3-uhrzeit/Zeitdauer"
+   ]
+  },
+  {
+   "id": "geld",
+   "icon": "💶",
+   "title": "Euro und Cent",
+   "merke": [
+    "1 Euro = **100** Cent.",
+    "Beim Komma stehen links die **Euro**, rechts die **Cent**.",
+    "Rechts vom Komma stehen **immer zwei** Ziffern."
+   ],
+   "beispiele": [
+    "3,50 € = 3 € 50 ct",
+    "3,05 € = 3 € 5 ct"
+   ],
+   "lektionen": [
+    "m3-geld/Euro mit Komma",
+    "m3-groessen/Euro und Cent"
+   ]
+  },
+  {
+   "id": "k1-silben",
+   "icon": "👏",
+   "title": "Klatsch die Silben",
+   "merke": [
+    "Sprich das Wort langsam und **klatsch** dabei.",
+    "Jedes Klatschen ist **eine Silbe**.",
+    "In jeder Silbe klingt ein **a, e, i, o** oder **u**."
+   ],
+   "beispiele": [
+    "Ma-ma 👏👏",
+    "Ba-na-ne 👏👏👏"
+   ],
+   "lektionen": [
+    "d1-silben/Klatschen 1"
+   ]
+  },
+  {
+   "id": "k1-leserichtung",
+   "icon": "👉",
+   "title": "Wir lesen von links nach rechts",
+   "merke": [
+    "Wir lesen immer von **links** nach **rechts**.",
+    "**am** und **ma** sind **nicht** gleich!"
+   ],
+   "beispiele": [
+    "**a** → **m** = am",
+    "**m** → **a** = ma"
+   ],
+   "lektionen": [
+    "d1-leserichtung/Gleiche Silbe finden",
+    "d1-leserichtung/am oder ma? im oder mi?"
+   ]
+  },
+  {
+   "id": "k1-ist-sind",
+   "icon": "🍎",
+   "title": "ist oder sind?",
+   "merke": [
+    "Bei **einem** sagt man **ist**.",
+    "Bei **vielen** sagt man **sind**."
+   ],
+   "beispiele": [
+    "Da **ist** ein Apfel. 🍎",
+    "Da **sind** Äpfel. 🍎🍎🍎"
+   ],
+   "lektionen": [
+    "d1-lesen/ist oder sind"
+   ]
+  },
+  {
+   "id": "k1-ein-eine",
+   "icon": "🐶",
+   "title": "ein oder eine?",
+   "merke": [
+    "**der** Hund → **ein** Hund",
+    "**das** Haus → **ein** Haus",
+    "**die** Katze → **eine** Katze"
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "d1-lesen2/ein oder eine?"
+   ]
+  },
+  {
+   "id": "k1-tausch",
+   "icon": "🔄",
+   "title": "Tauschaufgaben",
+   "merke": [
+    "Bei **plus** darf man die Zahlen **tauschen**.",
+    "Das Ergebnis bleibt **gleich**."
+   ],
+   "beispiele": [
+    "3 + 5 = 8",
+    "5 + 3 = 8"
+   ],
+   "lektionen": [
+    "m1-rechnen10/Tausch- und Nachbaraufgaben"
+   ]
+  },
+  {
+   "id": "k1-umkehr",
+   "icon": "↩️",
+   "title": "Umkehraufgaben",
+   "merke": [
+    "**Minus** macht **plus** wieder rückgängig."
+   ],
+   "beispiele": [
+    "4 + 3 = 7",
+    "7 − 3 = 4"
+   ],
+   "lektionen": [
+    "m1-rechnen10/Umkehraufgaben"
+   ]
+  },
+  {
+   "id": "k1-nachbarn",
+   "icon": "🏠",
+   "title": "Nachbarzahlen",
+   "merke": [
+    "Der **linke** Nachbar ist **eins weniger**.",
+    "Der **rechte** Nachbar ist **eins mehr**."
+   ],
+   "beispiele": [
+    "**4** – 5 – **6**"
+   ],
+   "lektionen": [
+    "m1-zahlen10/Nachbarzahlen",
+    "m1-zahlen20/Nachbarzahlen"
+   ]
+  },
+  {
+   "id": "k1-vergleichen",
+   "icon": "🐊",
+   "title": "Größer oder kleiner?",
+   "merke": [
+    "Das **Krokodil** hat Hunger. Es frisst immer die **größere** Zahl.",
+    "Der offene Mund zeigt zur größeren Zahl."
+   ],
+   "beispiele": [
+    "7 **>** 3",
+    "2 **<** 9"
+   ],
+   "lektionen": [
+    "m1-zahlen10/Vergleichen",
+    "m1-zahlen20/Vergleichen"
+   ]
+  },
+  {
+   "id": "k1-zehner",
+   "icon": "🔟",
+   "title": "Über die 10 rechnen",
+   "merke": [
+    "Rechne **zuerst bis zur 10**.",
+    "Dann rechnest du den **Rest** dazu."
+   ],
+   "beispiele": [
+    "8 + 5 = 8 + **2** + **3** = 13"
+   ],
+   "lektionen": [
+    "m1-rechnen20/Plus über die 10",
+    "m1-rechnen20/Minus über die 10"
+   ]
+  }
+ ]
+}

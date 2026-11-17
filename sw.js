@@ -1,5 +1,5 @@
 // Offline-Speicher: Bei jeder Änderung an der App VERSION erhöhen.
-const VERSION = "learnino-32";
+const VERSION = "learnino-33";
 const FILES = [
   "./",
   "index.html",
@@ -31,6 +31,8 @@ const FILES = [
   "img/malen/weltall-map.png",
   "img/malen/wald.png",
   "img/malen/wald-map.png",
+  "img/malen/pferd-wortarten.png",
+  "img/malen/pferd-wortarten-map.png",
   "img/emoji/1f91d.webp",
   "img/emoji/26aa.webp",
   "img/emoji/1f319.webp",
@@ -266,6 +268,10 @@ const FILES = [
   "img/emoji/37-20e3.webp",
   "img/emoji/38-20e3.webp",
   "img/emoji/39-20e3.webp",
+  "inhalte/regeln.json",
+  "inhalte/deutsch/k3-wortarten.json",
+  "inhalte/deutsch/k3-regel-detektiv.json",
+  "inhalte/mathe/k3-regel-detektiv.json",
   "inhalte/deutsch/k1-anlaute.json",
   "inhalte/deutsch/k1-ausmalen.json",
   "inhalte/deutsch/k1-buchstaben2.json",

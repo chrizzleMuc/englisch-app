@@ -1,13 +1,13 @@
 // Lädt die Inhalte aus dem Ordner "inhalte" und prüft sie.
 // Fehler werden gesammelt und im Elternbereich angezeigt, statt dass die App leer bleibt.
 
-export const content = { subjects: [], items: new Map(), units: new Map(), photoTasks: new Map(), errors: [] };
+export const content = { subjects: [], items: new Map(), units: new Map(), photoTasks: new Map(), rules: new Map(), errors: [] };
 
 // ---------- Schulfächer ----------
 // Eine Schul-Einheit hat "type": "schule" und eine Liste "lessons" mit Aufgaben ("tasks").
 // Jede bewertbare Aufgabe kommt als Einzelfrage in die Lernkartei (content.items, kind "task").
 
-const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint", "column", "chain", "build", "flash"];
+const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint", "column", "chain", "build", "flash", "mark"];
 
 function sharedStart(a, b) {
   const wa = a.split(" ");
@@ -72,6 +72,23 @@ function checkSchool(unit, path) {
         if (!t.word || !(t.options || []).includes(t.answer)) err(`${t.id}: Blitzlesen braucht word und die Antwort bei options.`);
         t.prompt = t.prompt || t.word;
       }
+      // Textmarker: Wörter im Text nach Wortart anmalen. text = Wörter, Wortart in eckigen Klammern: "Der [kleine|a] Hund"
+      if (t.kind === "mark") {
+        const keys = (t.colors || []).map((c) => c.key);
+        t.tokens = [];
+        for (const m of String(t.text || "").matchAll(/\[([^\]|]+)\|([^\]]+)\]([.,!?:;]*)|([^\s\[]+)/g)) {
+          if (m[1]) {
+            if (!keys.includes(m[2])) err(`${t.id}: "${m[2]}" hat keine Farbe.`);
+            t.tokens.push({ w: m[1] + m[3], word: m[1], k: m[2] });
+          } else t.tokens.push({ w: m[4], word: m[4].replace(/[.,!?:;]+$/, "") });
+        }
+        if (!t.tokens.some((x) => x.k)) err(`${t.id}: Im Text ist kein Wort markiert.`);
+        t.prompt = t.prompt || t.tokens.map((x) => x.w).join(" ");
+        t.answer = t.answer || t.tokens.filter((x) => x.k).map((x) => x.word).join(", ");
+        if (content.items.has(t.id)) err(`Die ID ${t.id} gibt es doppelt.`);
+        content.items.set(t.id, { id: t.id, kind: "task", unit: unit.id, q: t });
+        continue;
+      }
       if (t.kind === "chain" && !(t.lines || []).length) err(`${t.id}: Rechenweg ohne Schritte.`);
       if (t.kind === "choice" && !(t.options || []).includes(t.answer)) err(`${t.id}: Die Antwort steht nicht bei den Auswahlmöglichkeiten.`);
       // Ausmalbild: kommt in die Lernkartei (Wiederholung), aber nicht in Tests.
@@ -79,7 +96,7 @@ function checkSchool(unit, path) {
       if (t.kind === "paint") {
         const keys = (t.colors || []).map((c) => c.key);
         if (!t.id || !t.image || !t.map || !t.regions || !keys.length) err("Ein Ausmalbild braucht id, image, map, regions und colors.");
-        for (const [r, k] of Object.entries(t.regions || {})) if (!keys.includes(k)) err(`${t.id}: Fläche ${r} hat "${k}", dafür gibt es keine Farbe.`);
+        for (const [r, k] of Object.entries(t.regions || {})) if (k && !keys.includes(k)) err(`${t.id}: Fläche ${r} hat "${k}", dafür gibt es keine Farbe.`);
         if (content.items.has(t.id)) err(`Die ID ${t.id} gibt es doppelt.`);
         content.items.set(t.id, { id: t.id, kind: "task", unit: unit.id, q: t });
         continue;
@@ -127,6 +144,34 @@ function check(unit, path) {
   }
 }
 
+// Regeln (inhalte/regeln.json): Regelkarte vor der Lektion, Regel-Knopf bei Fehlern, Regelheft.
+// "lektionen": ["<Einheit-id>/<Lektionstitel>", …] oder "<Einheit-id>" für alle Lektionen der Einheit.
+function attachRules(list) {
+  for (const r of list || []) {
+    if (!r.id || !r.title || !(r.merke || []).length) {
+      content.errors.push(`regeln.json: Eine Regel braucht id, title und merke.`);
+      continue;
+    }
+    content.rules.set(r.id, r);
+    for (const ref of r.lektionen || []) {
+      const [uid, title] = ref.split("/");
+      const u = content.units.get(uid);
+      const ls = u ? (title ? u.lessons.filter((l) => l.title === title) : u.lessons) : [];
+      if (!ls.length) content.errors.push(`regeln.json: ${r.id}: Lektion "${ref}" gibt es nicht.`);
+      for (const l of ls) {
+        if (!l.regel) l.regel = r.id;
+        for (const t of l.tasks || []) {
+          if (!t.regel) t.regel = r.id;
+          (t.items || []).forEach((it) => content.items.get(it.id) && !content.items.get(it.id).q.regel && (content.items.get(it.id).q.regel = r.id));
+          (t.pairs || []).forEach((it) => content.items.get(it.id) && !content.items.get(it.id).q.regel && (content.items.get(it.id).q.regel = r.id));
+        }
+        if (u && !r.stage) r.stage = u.stageId;
+        if (u && !r.unit) r.unit = u.id;
+      }
+    }
+  }
+}
+
 export async function loadContent() {
   content.errors = [];
   let overview;
@@ -155,6 +200,11 @@ export async function loadContent() {
       s.stages.push(stage);
     }
     content.subjects.push(s);
+  }
+  try {
+    attachRules((await getJson("regeln.json")).regeln);
+  } catch (e) {
+    content.errors.push(e.message);
   }
   return content;
 }

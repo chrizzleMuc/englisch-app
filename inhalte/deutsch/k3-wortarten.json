@@ -1,0 +1,590 @@
+{
+ "id": "d3-wortarten",
+ "type": "schule",
+ "title_de": "Wortarten-Werkstatt",
+ "image": "🔤",
+ "color": "#e5484d",
+ "lessons": [
+  {
+   "title": "Nomen, Verb oder Adjektiv?",
+   "icon": "🗂️",
+   "tasks": [
+    {
+     "kind": "sort",
+     "id": "d3-wa-sort",
+     "task": "Ist das ein Nomen, ein Verb oder ein Adjektiv?",
+     "review": "Welche Wortart ist das?",
+     "groups": [
+      "Nomen",
+      "Verb",
+      "Adjektiv"
+     ],
+     "items": [
+      {
+       "id": "d3-wa-s-hund",
+       "text": "Hund",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-wa-s-schule",
+       "text": "Schule",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-wa-s-freude",
+       "text": "Freude",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-wa-s-apfel",
+       "text": "Apfel",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-wa-s-zahn",
+       "text": "Zahn",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-wa-s-mut",
+       "text": "Mut",
+       "group": "Nomen"
+      },
+      {
+       "id": "d3-wa-s-rennen",
+       "text": "rennen",
+       "group": "Verb"
+      },
+      {
+       "id": "d3-wa-s-lacht",
+       "text": "lacht",
+       "group": "Verb"
+      },
+      {
+       "id": "d3-wa-s-schreiben",
+       "text": "schreiben",
+       "group": "Verb"
+      },
+      {
+       "id": "d3-wa-s-schwimmt",
+       "text": "schwimmt",
+       "group": "Verb"
+      },
+      {
+       "id": "d3-wa-s-malen",
+       "text": "malen",
+       "group": "Verb"
+      },
+      {
+       "id": "d3-wa-s-singt",
+       "text": "singt",
+       "group": "Verb"
+      },
+      {
+       "id": "d3-wa-s-laut",
+       "text": "laut",
+       "group": "Adjektiv"
+      },
+      {
+       "id": "d3-wa-s-gruen",
+       "text": "grün",
+       "group": "Adjektiv"
+      },
+      {
+       "id": "d3-wa-s-muede",
+       "text": "müde",
+       "group": "Adjektiv"
+      },
+      {
+       "id": "d3-wa-s-schnell",
+       "text": "schnell",
+       "group": "Adjektiv"
+      },
+      {
+       "id": "d3-wa-s-weich",
+       "text": "weich",
+       "group": "Adjektiv"
+      },
+      {
+       "id": "d3-wa-s-lustig",
+       "text": "lustig",
+       "group": "Adjektiv"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Adjektive rot anmalen",
+   "icon": "🖍️",
+   "tasks": [
+    {
+     "kind": "mark",
+     "id": "d3-wa-adj-0",
+     "task": "Male alle Adjektive rot an!",
+     "text": "Der [kleine|Adjektiv] Hund bellt [laut|Adjektiv]. Er hat ein [weiches|Adjektiv] Fell.",
+     "colors": [
+      {
+       "key": "Adjektiv",
+       "label": "Adjektiv",
+       "color": "#e5484d"
+      }
+     ],
+     "explain": "Adjektive sagen, wie etwas ist."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-adj-1",
+     "task": "Male alle Adjektive rot an!",
+     "text": "Im [dunklen|Adjektiv] Wald steht ein [alter|Adjektiv] Baum. Seine Blätter sind [gelb|Adjektiv] und [rot|Adjektiv].",
+     "colors": [
+      {
+       "key": "Adjektiv",
+       "label": "Adjektiv",
+       "color": "#e5484d"
+      }
+     ],
+     "explain": "Adjektive sagen, wie etwas ist."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-adj-2",
+     "task": "Male alle Adjektive rot an!",
+     "text": "Lena trinkt [heißen|Adjektiv] Kakao. Danach ist sie [satt|Adjektiv] und [müde|Adjektiv].",
+     "colors": [
+      {
+       "key": "Adjektiv",
+       "label": "Adjektiv",
+       "color": "#e5484d"
+      }
+     ],
+     "explain": "Adjektive sagen, wie etwas ist."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-adj-3",
+     "task": "Male alle Adjektive rot an!",
+     "text": "Die [bunten|Adjektiv] Fische schwimmen [schnell|Adjektiv] durch das [klare|Adjektiv] Wasser.",
+     "colors": [
+      {
+       "key": "Adjektiv",
+       "label": "Adjektiv",
+       "color": "#e5484d"
+      }
+     ],
+     "explain": "Adjektive sagen, wie etwas ist."
+    }
+   ]
+  },
+  {
+   "title": "Nomen blau anmalen",
+   "icon": "🖍️",
+   "tasks": [
+    {
+     "kind": "mark",
+     "id": "d3-wa-nom-0",
+     "task": "Male alle Nomen blau an!",
+     "text": "Am Morgen packt [Tim|Nomen] seine [Tasche|Nomen]. Er nimmt ein [Heft|Nomen] und zwei [Stifte|Nomen] mit.",
+     "colors": [
+      {
+       "key": "Nomen",
+       "label": "Nomen",
+       "color": "#3b6fd8"
+      }
+     ],
+     "explain": "Nomen schreibt man groß. Der, die oder das passt davor."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-nom-1",
+     "task": "Male alle Nomen blau an!",
+     "text": "Die [Katze|Nomen] jagt eine [Maus|Nomen] durch den [Garten|Nomen].",
+     "colors": [
+      {
+       "key": "Nomen",
+       "label": "Nomen",
+       "color": "#3b6fd8"
+      }
+     ],
+     "explain": "Nomen schreibt man groß. Der, die oder das passt davor."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-nom-2",
+     "task": "Male alle Nomen blau an!",
+     "text": "Oma backt einen [Kuchen|Nomen] mit [Äpfeln|Nomen]. Die [Freude|Nomen] ist groß.",
+     "colors": [
+      {
+       "key": "Nomen",
+       "label": "Nomen",
+       "color": "#3b6fd8"
+      }
+     ],
+     "explain": "Nomen schreibt man groß. Der, die oder das passt davor."
+    }
+   ]
+  },
+  {
+   "title": "Verben grün anmalen",
+   "icon": "🖍️",
+   "tasks": [
+    {
+     "kind": "mark",
+     "id": "d3-wa-verb-0",
+     "task": "Male alle Verben grün an!",
+     "text": "Die Kinder [spielen|Verb] im Hof. Paul [wirft|Verb] den Ball und Mia [fängt|Verb] ihn.",
+     "colors": [
+      {
+       "key": "Verb",
+       "label": "Verb",
+       "color": "#1f9d5c"
+      }
+     ],
+     "explain": "Verben sagen, was jemand tut."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-verb-1",
+     "task": "Male alle Verben grün an!",
+     "text": "Am Abend [liest|Verb] Papa ein Buch vor. Ich [kuschle|Verb] mich ins Bett und [schlafe|Verb] ein.",
+     "colors": [
+      {
+       "key": "Verb",
+       "label": "Verb",
+       "color": "#1f9d5c"
+      }
+     ],
+     "explain": "Verben sagen, was jemand tut."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-verb-2",
+     "task": "Male alle Verben grün an!",
+     "text": "Der Vogel [baut|Verb] ein Nest. Bald [schlüpfen|Verb] die Küken.",
+     "colors": [
+      {
+       "key": "Verb",
+       "label": "Verb",
+       "color": "#1f9d5c"
+      }
+     ],
+     "explain": "Verben sagen, was jemand tut."
+    }
+   ]
+  },
+  {
+   "title": "Alle drei Wortarten",
+   "icon": "🌈",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "mark",
+     "id": "d3-wa-alle-0",
+     "task": "Male Nomen blau, Verben grün und Adjektive rot an!",
+     "text": "Der [Hund|Nomen] [rennt|Verb] [schnell|Adjektiv] über die [Wiese|Nomen].",
+     "colors": [
+      {
+       "key": "Nomen",
+       "label": "Nomen",
+       "color": "#3b6fd8"
+      },
+      {
+       "key": "Verb",
+       "label": "Verb",
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Adjektiv",
+       "label": "Adjektiv",
+       "color": "#e5484d"
+      }
+     ]
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-alle-1",
+     "task": "Male Nomen blau, Verben grün und Adjektive rot an!",
+     "text": "Die [kleine|Adjektiv] [Katze|Nomen] [trinkt|Verb] [frische|Adjektiv] [Milch|Nomen].",
+     "colors": [
+      {
+       "key": "Nomen",
+       "label": "Nomen",
+       "color": "#3b6fd8"
+      },
+      {
+       "key": "Verb",
+       "label": "Verb",
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Adjektiv",
+       "label": "Adjektiv",
+       "color": "#e5484d"
+      }
+     ]
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-alle-2",
+     "task": "Male Nomen blau, Verben grün und Adjektive rot an!",
+     "text": "Im [Sommer|Nomen] [schwimmen|Verb] wir im [kalten|Adjektiv] [See|Nomen].",
+     "colors": [
+      {
+       "key": "Nomen",
+       "label": "Nomen",
+       "color": "#3b6fd8"
+      },
+      {
+       "key": "Verb",
+       "label": "Verb",
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Adjektiv",
+       "label": "Adjektiv",
+       "color": "#e5484d"
+      }
+     ]
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-alle-3",
+     "task": "Male Nomen blau, Verben grün und Adjektive rot an!",
+     "text": "Mein [Bruder|Nomen] [malt|Verb] ein [buntes|Adjektiv] [Bild|Nomen].",
+     "colors": [
+      {
+       "key": "Nomen",
+       "label": "Nomen",
+       "color": "#3b6fd8"
+      },
+      {
+       "key": "Verb",
+       "label": "Verb",
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Adjektiv",
+       "label": "Adjektiv",
+       "color": "#e5484d"
+      }
+     ]
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-alle-4",
+     "task": "Male Nomen blau, Verben grün und Adjektive rot an!",
+     "text": "Der [Mond|Nomen] [leuchtet|Verb] [hell|Adjektiv] am [Himmel|Nomen].",
+     "colors": [
+      {
+       "key": "Nomen",
+       "label": "Nomen",
+       "color": "#3b6fd8"
+      },
+      {
+       "key": "Verb",
+       "label": "Verb",
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Adjektiv",
+       "label": "Adjektiv",
+       "color": "#e5484d"
+      }
+     ]
+    },
+    {
+     "kind": "mark",
+     "id": "d3-wa-alle-5",
+     "task": "Male Nomen blau, Verben grün und Adjektive rot an!",
+     "text": "Die [Kinder|Nomen] [lachen|Verb] [laut|Adjektiv] über den [lustigen|Adjektiv] [Witz|Nomen].",
+     "colors": [
+      {
+       "key": "Nomen",
+       "label": "Nomen",
+       "color": "#3b6fd8"
+      },
+      {
+       "key": "Verb",
+       "label": "Verb",
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Adjektiv",
+       "label": "Adjektiv",
+       "color": "#e5484d"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ausmalbild Pferdeweide",
+   "icon": "🐴",
+   "tasks": [
+    {
+     "kind": "paint",
+     "id": "d3-wa-mal-pferd",
+     "task": "Lies jedes Wort. Nomen blau, Verben grün, Adjektive rot!",
+     "prompt": "Ausmalbild Pferdeweide: Wortarten",
+     "image": "img/malen/pferd-wortarten.png",
+     "map": "img/malen/pferd-wortarten-map.png",
+     "regions": {
+      "6": "Nomen",
+      "11": "Adjektiv",
+      "17": "Verb",
+      "1": "Nomen",
+      "19": "Verb",
+      "3": "Adjektiv",
+      "22": "Verb",
+      "23": "Verb",
+      "21": "Verb",
+      "2": "Nomen",
+      "4": "Verb",
+      "9": "Verb",
+      "12": "Verb",
+      "8": "Verb",
+      "10": "Adjektiv",
+      "15": "Verb",
+      "13": "",
+      "18": "",
+      "7": "Adjektiv",
+      "20": "",
+      "16": "",
+      "14": "",
+      "5": ""
+     },
+     "prefill": {
+      "13": "#8d5a32",
+      "18": "Adjektiv",
+      "20": "Verb",
+      "16": "Adjektiv",
+      "14": "Nomen",
+      "5": "Adjektiv"
+     },
+     "wordHint": true,
+     "regel": "wortarten",
+     "colors": [
+      {
+       "key": "Nomen",
+       "label": "Nomen",
+       "color": "#3b6fd8"
+      },
+      {
+       "key": "Verb",
+       "label": "Verb",
+       "color": "#1f9d5c"
+      },
+      {
+       "key": "Adjektiv",
+       "label": "Adjektiv",
+       "color": "#e5484d"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Welche Probe hilft?",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-wa-probe-0",
+     "task": "Welche Probe hilft?",
+     "prompt": "Ist „Wolke“ ein Nomen?",
+     "options": [
+      "der/die/das davor",
+      "ich davor",
+      "Wie ist …?"
+     ],
+     "keepOrder": true,
+     "answer": "der/die/das davor",
+     "explain": "Probe: die Wolke",
+     "regel": "wortarten"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wa-probe-1",
+     "task": "Welche Probe hilft?",
+     "prompt": "Ist „leise“ ein Adjektiv?",
+     "options": [
+      "der/die/das davor",
+      "ich davor",
+      "Wie ist …?"
+     ],
+     "keepOrder": true,
+     "answer": "Wie ist …?",
+     "explain": "Probe: Wie ist die Maus? leise",
+     "regel": "wortarten"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wa-probe-2",
+     "task": "Welche Probe hilft?",
+     "prompt": "Ist „springen“ ein Verb?",
+     "options": [
+      "der/die/das davor",
+      "ich davor",
+      "Wie ist …?"
+     ],
+     "keepOrder": true,
+     "answer": "ich davor",
+     "explain": "Probe: ich springe",
+     "regel": "wortarten"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wa-probe-3",
+     "task": "Welche Probe hilft?",
+     "prompt": "Ist „Glück“ ein Nomen?",
+     "options": [
+      "der/die/das davor",
+      "ich davor",
+      "Wie ist …?"
+     ],
+     "keepOrder": true,
+     "answer": "der/die/das davor",
+     "explain": "Probe: das Glück",
+     "regel": "wortarten"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wa-probe-4",
+     "task": "Welche Probe hilft?",
+     "prompt": "Ist „kalt“ ein Adjektiv?",
+     "options": [
+      "der/die/das davor",
+      "ich davor",
+      "Wie ist …?"
+     ],
+     "keepOrder": true,
+     "answer": "Wie ist …?",
+     "explain": "Probe: Wie ist das Eis? kalt",
+     "regel": "wortarten"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-wa-probe-5",
+     "task": "Welche Probe hilft?",
+     "prompt": "Ist „kochen“ ein Verb?",
+     "options": [
+      "der/die/das davor",
+      "ich davor",
+      "Wie ist …?"
+     ],
+     "keepOrder": true,
+     "answer": "ich davor",
+     "explain": "Probe: ich koche",
+     "regel": "wortarten"
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

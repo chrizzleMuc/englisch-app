@@ -9,7 +9,7 @@ import { pic } from "./pics.js";
 import { vis, visText } from "./mathpics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 32;
+const APP_VERSION = 33;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -145,11 +145,13 @@ function showHome(subjectId = current.subject) {
         ${st.units.some(isSchool) ? (probeReady(p.id, st)
           ? `<button class="wide-btn probe-btn" data-st="${st.id}">📝 Probe schreiben</button>`
           : `<p class="probe-hint">📝 Probe: Schaffe erst ${Math.min(PROBE_MIN_UNITS, st.units.filter(isSchool).length)} Themen ganz (alle Lektionen), dann kannst du eine Probe schreiben.</p>`) : ""}`).join("")}
+      ${rulesFor(stagesFor(p.id, sub).map((st) => st.id)).length ? `<button class="wide-btn rulebook-btn" id="rulebook">📘 Mein Regelheft</button>` : ""}
       ${stagesFor(p.id, sub).some((st) => st.units.some((u) => u.words.length)) ? `<button class="wide-btn album-btn" id="album">📒 Mein Sticker-Album</button>` : ""}
     </div>`);
   current.view = "home";
   $("back").onclick = () => (many ? showSubjects(subs) : showProfiles());
   if ($("album")) $("album").onclick = showAlbum;
+  if ($("rulebook")) $("rulebook").onclick = () => showRuleBook(sub.id, stagesFor(p.id, sub).map((st) => st.id));
   on(".probe-btn", "click", (e) => startProbe(e.currentTarget.dataset.st));
   on(".topic[data-id]", "click", (e) => {
     chime("pop");
@@ -280,6 +282,10 @@ function startLesson(unitId, n, focus = []) {
   let own = buildLesson(u, n);
   // Nach "Nochmal üben": was vorher falsch war, kommt zuerst
   if (focus.length) own = [...own.filter((st) => focus.includes(st.q?.id)), ...own.filter((st) => !focus.includes(st.q?.id))];
+  // Regelkarte vor der Lektion, solange die Lektion noch nicht geschafft ist (sonst über den Regel-Knopf)
+  // Regelkarte nur bei der ersten Lektion mit dieser Regel (nicht vor jeder Lektion einer Einheit)
+  const regel = school && !isTest && u.lessons[n].regel !== u.lessons[n - 1]?.regel && u.lessons[n].regel;
+  if (regel && content.rules.has(regel) && (!store.lessonDone(current.profile, u.id, n) || isTestUser())) own.unshift({ kind: "rule", id: regel, unit: u.id });
   const steps = [...review, ...own];
   const lesson = { u, n, steps, pos: 0, reviewCount: review.length, school, isTest, right: 0, total: 0, missed: [], wrongClicks: 0, started: Date.now() };
   nextStep(lesson);
@@ -822,6 +828,122 @@ function promptCard(text) {
   return `<div class="prompt-card"><span class="prompt-text">${esc(text)}</span></div>`;
 }
 
+// ================= Regeln =================
+// Regeltext: **so** wird gelb markiert
+const ruleFmt = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<mark>$1</mark>");
+const rulePlain = (s) => String(s).replace(/\*\*/g, "");
+function ruleCardHtml(r) {
+  return `<div class="rule-card">
+    <div class="rule-head"><span class="rule-icon">${pic(r.icon || "💡")}</span><div><small>Merke!</small><b>${esc(r.title)}</b></div></div>
+    <ul class="rule-list">${r.merke.map((m) => `<li>${ruleFmt(m)}</li>`).join("")}</ul>
+    ${(r.beispiele || []).length ? `<div class="rule-ex"><small>Beispiele</small>${r.beispiele.map((b) => `<p>${ruleFmt(b)}</p>`).join("")}</div>` : ""}
+    ${r.trick ? `<p class="rule-trick">🔍 <b>Trick:</b> ${ruleFmt(r.trick)}</p>` : ""}
+  </div>`;
+}
+const ruleSay = (r) => r.say || [r.title, ...r.merke].map(rulePlain).join(". ");
+// Knopf "Regel ansehen" nach einem Fehler
+const ruleLink = (q) => (q && q.regel && content.rules.has(q.regel) ? `<button class="rule-link" data-r="${esc(q.regel)}">💡 Regel ansehen</button>` : "");
+function showRuleOverlay(id) {
+  const r = content.rules.get(id);
+  if (!r) return;
+  const box = document.createElement("div");
+  box.className = "rule-overlay";
+  box.innerHTML = `<div class="rule-pop">${ruleCardHtml(r)}<button class="go-btn rule-close">Alles klar ➜</button></div>`;
+  document.body.appendChild(box);
+  box.querySelector(".rule-close").onclick = () => box.remove();
+  box.onclick = (e) => e.target === box && box.remove();
+  if (voiceMode() === "auto") sayDe(ruleSay(r));
+}
+document.addEventListener("click", (e) => {
+  const b = e.target.closest && e.target.closest(".rule-link");
+  if (b) showRuleOverlay(b.dataset.r);
+});
+
+STEPS.rule = (lesson, step) => {
+  const r = content.rules.get(step.id);
+  const token = lessonRender(lesson, `
+    ${taskHead("Lies dir die Regel durch!")}
+    ${ruleCardHtml(r)}
+    <button class="go-btn" id="next">Verstanden ➜</button>`);
+  wireVoice(token, () => sayDe(ruleSay(r)), "regel-" + r.id);
+  $("next").onclick = () => advance(lesson);
+};
+
+// Regelheft: alle Regeln der Stufen dieses Fachs
+function rulesFor(stageIds) {
+  return [...content.rules.values()].filter((r) => stageIds.includes(r.stage));
+}
+function showRuleBook(subjectId, stageIds) {
+  const rules = rulesFor(stageIds);
+  render(`
+    <div class="screen rulebook">
+      <header class="bar">
+        <button class="icon-btn back-btn" id="back" aria-label="Zurück"><span class="back-arrow">←</span> Zurück</button>
+      </header>
+      <h2 class="subject-title">📘 Mein Regelheft</h2>
+      ${stageIds.map((sid) => {
+        const list = rules.filter((r) => r.stage === sid);
+        const st = content.subjects.flatMap((x) => x.stages).find((x) => x.id === sid);
+        return list.length ? `<h3 class="stage-title">${esc(st ? st.title : "")}</h3>
+          <div class="rule-index">${list.map((r) => `<button class="rule-item" data-r="${esc(r.id)}"><span class="rule-icon">${pic(r.icon || "💡")}</span><span>${esc(r.title)}</span></button>`).join("")}</div>` : "";
+      }).join("")}
+    </div>`);
+  $("back").onclick = () => showHome(subjectId);
+  on(".rule-item", "click", (e) => showRuleOverlay(e.currentTarget.dataset.r));
+}
+
+// ---------- Übung: Textmarker (Wörter nach Wortart anmalen) ----------
+STEPS.mark = (lesson, step) => {
+  const q = step.q;
+  const byKey = Object.fromEntries(q.colors.map((c) => [c.key, c]));
+  const need = q.tokens.filter((x) => x.k).length;
+  let cur = q.colors.length === 1 ? q.colors[0].key : null;
+  let found = 0;
+  let first = true;
+  const token = lessonRender(lesson, `
+    ${taskHead(q.task || "Tipp eine Farbe an, dann die passenden Wörter.")}
+    <div class="paint-pal">${q.colors.map((c) => `<button class="pcolor ${cur === c.key ? "sel" : ""}" data-k="${c.key}" style="--pc:${c.color}"><span>${esc(c.label)}</span></button>`).join("")}</div>
+    <div class="mark-text">${q.tokens.map((x, i) => `<button class="mword" data-i="${i}">${esc(x.w)}</button>`).join(" ")}</div>
+    <p class="hint" id="left">Noch ${need} ${need === 1 ? "Wort" : "Wörter"} zu finden</p>
+    <div class="feedback" id="fb"></div>
+    <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
+  wireVoice(token, () => sayDe(q.say || q.task || "Male die Wörter an!"), q.task || "mark");
+  $("next").onclick = () => advance(lesson);
+  on(".pcolor", "click", (e) => {
+    app.querySelectorAll(".pcolor").forEach((b) => b.classList.remove("sel"));
+    e.currentTarget.classList.add("sel");
+    cur = e.currentTarget.dataset.k;
+    chime("pop");
+  });
+  on(".mword", "click", (e) => {
+    const el = e.currentTarget;
+    const tk = q.tokens[+el.dataset.i];
+    if (el.classList.contains("done") || found >= need) return;
+    if (!cur) return ($("fb").innerHTML = `<span class="try">Tipp zuerst oben eine Farbe an!</span>`);
+    if (tk.k === cur) {
+      el.classList.add("done");
+      el.style.setProperty("--mc", byKey[cur].color);
+      chime("pop");
+      $("fb").innerHTML = "";
+      found++;
+      $("left").textContent = found < need ? `Noch ${need - found} ${need - found === 1 ? "Wort" : "Wörter"} zu finden` : "";
+      if (found === need) {
+        score(lesson, step, q.id, first);
+        chime("win");
+        $("fb").innerHTML = `<span class="ok">${pick(PRAISE)} Alle gefunden!</span>${q.explain ? `<p class="explain">${esc(q.explain)}</p>` : ""}`;
+        $("next").hidden = false;
+      }
+    } else {
+      first = false;
+      miss(lesson, step, q.id, `${tk.word} (${tk.k ? byKey[tk.k].label : "keins davon"} statt ${byKey[cur].label})`);
+      el.classList.add("wrong");
+      setTimeout(() => el.classList.remove("wrong"), 500);
+      const what = tk.k ? `„${tk.word}“ ist ein ${byKey[tk.k].label}.` : `„${tk.word}“ ist kein ${byKey[cur].label}.`;
+      $("fb").innerHTML = `<span class="try">${esc(what)}</span>${ruleLink(q)}`;
+    }
+  });
+};
+
 // ---------- Übung: Eintippen ----------
 STEPS.type = (lesson, step) => {
   const q = step.q;
@@ -890,7 +1012,7 @@ STEPS.type = (lesson, step) => {
     } else {
       $("ans").classList.add("wrong");
       miss(lesson, step, q.id, $("ans").value);
-      $("fb").innerHTML = `<span class="try">Richtig ist:</span> <span class="solution">${esc(full)}</span>`;
+      $("fb").innerHTML = `<span class="try">Richtig ist:</span> <span class="solution">${esc(full)}</span>${ruleLink(q)}`;
       score(lesson, step, q.id, false);
       $("next").hidden = false;
     }
@@ -909,7 +1031,7 @@ STEPS.choice = (lesson, step) => {
   const token = lessonRender(lesson, `
     ${taskHead(q.task || "Was ist richtig?")}
     ${q.vis ? `<div class="prompt-card vis-card">${vis(q.vis)}${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.prompt && (!q.visOptions || q.showText) ? promptCard(q.prompt) : ""}
-    <div class="choices ${q.visOptions ? "vis-choices" : q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(q.visOptions ? visText(o) : o)}">${q.visOptions ? vis(o) : q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
+    <div class="choices ${q.visOptions ? "vis-choices" : q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""} ${!q.visOptions && !q.picOptions && opts.some((o) => String(o).length > 16) ? "flash-long" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(q.visOptions ? visText(o) : o)}">${q.visOptions ? vis(o) : q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
   wireVoice(token, () => sayDe(q.say || q.task || q.prompt), q.task || q.say || q.prompt, sayWord(q.say));
@@ -939,7 +1061,7 @@ STEPS.choice = (lesson, step) => {
       el.classList.add("wrong");
       el.disabled = true;
       miss(lesson, step, q.id, el.dataset.v);
-      $("fb").innerHTML = `<span class="try">Nicht ganz. Versuch es nochmal!</span>`;
+      $("fb").innerHTML = `<span class="try">Nicht ganz. Versuch es nochmal!</span>${ruleLink(q)}`;
     }
   });
   $("next").onclick = () => advance(lesson);
@@ -1016,7 +1138,7 @@ STEPS.build = (lesson, step) => {
     } else {
       $("check").hidden = true;
       miss(lesson, step, q.id, built);
-      $("fb").innerHTML = `<span class="try">Richtig ist zum Beispiel:</span> <span class="solution">${esc(buildText(q.answers[0], q.end))}</span>`;
+      $("fb").innerHTML = `<span class="try">Richtig ist zum Beispiel:</span> <span class="solution">${esc(buildText(q.answers[0], q.end))}</span>${ruleLink(q)}`;
       score(lesson, step, q.id, false);
       $("next").hidden = false;
     }
@@ -1120,7 +1242,7 @@ STEPS.syllables = (lesson, step) => {
       if (alive(token)) advance(lesson);
     } else {
       miss(lesson, step, q.id, built);
-      $("fb").innerHTML = `<span class="try">Richtig ist:</span> <span class="solution">${esc(q.answer.includes("-") ? q.answer : q.answer + " (nicht trennbar)")}</span>`;
+      $("fb").innerHTML = `<span class="try">Richtig ist:</span> <span class="solution">${esc(q.answer.includes("-") ? q.answer : q.answer + " (nicht trennbar)")}</span>${ruleLink(q)}`;
       score(lesson, step, q.id, false);
       $("next").hidden = false;
     }
@@ -1430,7 +1552,7 @@ STEPS.paint = async (lesson, step) => {
   let cur = null;
   let misses = 0;
   const done = new Set();
-  const total = Object.keys(t.regions).length;
+  const total = Object.values(t.regions).filter(Boolean).length;
   const token = lessonRender(lesson, `
     ${taskHead(t.task || "Lies die Silben. Tipp eine Farbe an, dann die passenden Flächen.")}
     <div class="paint-pal">${t.colors.map((c) => `<button class="pcolor" data-k="${c.key}" style="--pc:${c.color}"><span>${esc(c.label)}</span></button>`).join("")}</div>
@@ -1489,12 +1611,17 @@ STEPS.paint = async (lesson, step) => {
     }
     ctx.putImageData(img, 0, 0);
   };
+  // Flächen ohne Wort (zu klein) sind schon ausgemalt
+  for (const [id, k] of Object.entries(t.prefill || {})) {
+    const c = byKey[k] ? byKey[k].color : /^#[0-9a-f]{6}$/i.test(k) ? k : null;
+    if (c) fill(+id, c);
+  }
   cv.addEventListener("click", async (e) => {
     const box = cv.getBoundingClientRect();
     const x = Math.round(((e.clientX - box.left) / box.width) * W);
     const y = Math.round(((e.clientY - box.top) / box.height) * H);
     const id = regionAt(x, y);
-    if (!id || done.has(id)) return;
+    if (!id || done.has(id) || !t.regions[id]) return;
     const want = t.regions[id];
     if (!cur) {
       $("fb").innerHTML = `<span class="try">Tipp zuerst oben eine Farbe an!</span>`;
@@ -1523,7 +1650,9 @@ STEPS.paint = async (lesson, step) => {
     } else {
       misses++;
       miss(lesson, step, t.id, byKey[cur].label + " statt " + byKey[want].label);
-      $("fb").innerHTML = `<span class="try">Lies genau: Hier steht <b>${esc(byKey[want].label)}</b>.</span>`;
+      $("fb").innerHTML = t.wordHint
+        ? `<span class="try">Nicht ganz. Das Wort ist ein <b>${esc(byKey[want].label)}</b>.</span>${ruleLink(t)}`
+        : `<span class="try">Lies genau: Hier steht <b>${esc(byKey[want].label)}</b>.</span>`;
       cv.classList.add("shake");
       setTimeout(() => cv.classList.remove("shake"), 400);
     }
@@ -1564,7 +1693,7 @@ STEPS.sort = (lesson, step) => {
       miss(lesson, step, it.id, el.dataset.g);
       el.classList.add("wrong");
       setTimeout(() => el.classList.remove("wrong"), 500);
-      $("fb").innerHTML = `<span class="try">Nicht ganz. Wo passt es besser?</span>`;
+      $("fb").innerHTML = `<span class="try">Nicht ganz. Wo passt es besser?</span>${ruleLink(it.regel ? it : t)}`;
     }
   });
 };

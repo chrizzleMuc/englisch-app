@@ -1,0 +1,237 @@
+{
+ "id": "d3-regel-detektiv",
+ "type": "schule",
+ "title_de": "Regel-Detektiv",
+ "image": "🕵️",
+ "color": "#c99a00",
+ "lessons": [
+  {
+   "title": "Welche Regel hilft? 1",
+   "icon": "🕵️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-0",
+     "task": "Welche Regel hilft?",
+     "prompt": "Hund oder Hunt?",
+     "options": [
+      "Verlängern",
+      "Doppelte Mitlaute",
+      "Ableiten"
+     ],
+     "answer": "Verlängern",
+     "explain": "Verlängern: die Hunde. Man hört d, also Hund."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-1",
+     "task": "Welche Regel hilft?",
+     "prompt": "Bäume oder Beume?",
+     "options": [
+      "Ableiten",
+      "Verlängern",
+      "Langes i = ie"
+     ],
+     "answer": "Ableiten",
+     "explain": "Ableiten: Baum hat au, also Bäume."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-2",
+     "task": "Welche Regel hilft?",
+     "prompt": "Mütze oder Müze?",
+     "options": [
+      "Doppelte Mitlaute",
+      "ß oder ss",
+      "ver- und vor-"
+     ],
+     "answer": "Doppelte Mitlaute",
+     "explain": "Kurzes ü: tz. Mütze."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-3",
+     "task": "Welche Regel hilft?",
+     "prompt": "Wiese oder Wise?",
+     "options": [
+      "Langes i = ie",
+      "Dehnungs-h",
+      "Doppelte Mitlaute"
+     ],
+     "answer": "Langes i = ie",
+     "explain": "Langes i: meistens ie."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-4",
+     "task": "Welche Regel hilft?",
+     "prompt": "Straße oder Strasse?",
+     "options": [
+      "ß oder ss",
+      "Doppelte Mitlaute",
+      "Sp und St"
+     ],
+     "answer": "ß oder ss",
+     "explain": "Langes a: ß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-5",
+     "task": "Welche Regel hilft?",
+     "prompt": "Die Freude oder die freude?",
+     "options": [
+      "Nomen groß",
+      "Adjektive klein",
+      "Satzanfang"
+     ],
+     "answer": "Nomen groß",
+     "explain": "Artikelprobe: die Freude. Ein Nomen, also groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-6",
+     "task": "Welche Regel hilft?",
+     "prompt": "Der rote Ball oder der Rote Ball?",
+     "options": [
+      "Adjektive klein",
+      "Nomen groß",
+      "Artikel"
+     ],
+     "answer": "Adjektive klein",
+     "explain": "Wie ist der Ball? rot. Ein Adjektiv, also klein."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-7",
+     "task": "Welche Regel hilft?",
+     "prompt": "Die Heizung oder die heizung?",
+     "options": [
+      "Nomen-Endungen",
+      "Adjektive klein",
+      "ver- und vor-"
+     ],
+     "answer": "Nomen-Endungen",
+     "explain": "-ung macht ein Nomen, also groß."
+    }
+   ]
+  },
+  {
+   "title": "Welche Regel hilft? 2",
+   "icon": "🕵️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-8",
+     "task": "Welche Regel hilft?",
+     "prompt": "schneeweiß oder Schneeweiß?",
+     "options": [
+      "Adjektive zusammensetzen",
+      "Nomen groß",
+      "Nomen zusammensetzen"
+     ],
+     "answer": "Adjektive zusammensetzen",
+     "explain": "Wie ist der Schnee? schneeweiß. Ein Adjektiv, also klein."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-9",
+     "task": "Welche Regel hilft?",
+     "prompt": "Am Abend oder am abend?",
+     "options": [
+      "Satzanfang",
+      "Adjektive klein",
+      "Artikel"
+     ],
+     "answer": "Satzanfang",
+     "explain": "am Abend: Zeitangabe mit am, also groß."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-10",
+     "task": "Welche Regel hilft?",
+     "prompt": "Schtein oder Stein?",
+     "options": [
+      "Sp und St",
+      "Verlängern",
+      "Trennen"
+     ],
+     "answer": "Sp und St",
+     "explain": "Man hört scht, schreibt aber St."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-11",
+     "task": "Welche Regel hilft?",
+     "prompt": "Sa-che oder Sac-he?",
+     "options": [
+      "Trennen",
+      "Doppelte Mitlaute",
+      "Sp und St"
+     ],
+     "answer": "Trennen",
+     "explain": "ch bleibt beim Trennen zusammen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-12",
+     "task": "Welche Regel hilft?",
+     "prompt": "lustig oder lustich?",
+     "options": [
+      "-ig und -lich",
+      "Langes i = ie",
+      "Verlängern"
+     ],
+     "answer": "-ig und -lich",
+     "explain": "Verlängern: lustiger. Man hört g."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-13",
+     "task": "Welche Regel hilft?",
+     "prompt": "Ich bin gelaufen oder ich habe gelaufen?",
+     "options": [
+      "hat oder ist",
+      "Vergangenheit",
+      "Verben"
+     ],
+     "answer": "hat oder ist",
+     "explain": "Bewegung: ist (bin)."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-14",
+     "task": "Welche Regel hilft?",
+     "prompt": "„Hallo“, sagt Tom. Wo steht das Komma?",
+     "options": [
+      "Wörtliche Rede",
+      "Satzzeichen",
+      "Subjekt und Prädikat"
+     ],
+     "answer": "Wörtliche Rede",
+     "explain": "Begleitsatz hinten: Komma nach der Rede."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-regel-detektiv-15",
+     "task": "Welche Regel hilft?",
+     "prompt": "Wer bellt? Der Hund.",
+     "options": [
+      "Subjekt und Prädikat",
+      "Wörtliche Rede",
+      "Pronomen"
+     ],
+     "answer": "Subjekt und Prädikat",
+     "explain": "Wer oder was? fragt nach dem Subjekt."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 10
+  }
+ ]
+}
