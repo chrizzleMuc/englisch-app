@@ -7,7 +7,7 @@ export const content = { subjects: [], items: new Map(), units: new Map(), photo
 // Eine Schul-Einheit hat "type": "schule" und eine Liste "lessons" mit Aufgaben ("tasks").
 // Jede bewertbare Aufgabe kommt als Einzelfrage in die Lernkartei (content.items, kind "task").
 
-const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint", "column", "chain", "build", "flash", "mark"];
+const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint", "column", "chain", "build", "flash", "mark", "gitter", "schlange"];
 
 function sharedStart(a, b) {
   const wa = a.split(" ");
@@ -109,6 +109,42 @@ function checkSchool(unit, path) {
       for (const q of singles(t)) add(q);
     }
   }
+  // Rätsel-Vorrat: Lektionen mit "pick" ziehen daraus zufällig (z. B. Rechengitter, Zahlenschlange)
+  for (const t of unit.pool || []) {
+    if (!KINDS.includes(t.kind)) {
+      err(`Unbekannte Aufgabenart "${t.kind}".`);
+      continue;
+    }
+    if (t.kind === "gitter") {
+      if (!(t.grid || []).length) err(`${t.id}: Rechengitter ohne Raster.`);
+      t.prompt = t.prompt || `Rechengitter (${t.grid.flat().filter((x) => String(x).startsWith("?")).length} Kästchen)`;
+      t.answer = "";
+    }
+    if (t.kind === "schlange") {
+      if (!(t.nodes || []).length || !(t.edges || []).length) err(`${t.id}: Zahlenschlange braucht nodes und edges.`);
+      t.prompt = t.prompt || `Zahlenschlange ab ${t.nodes[0][2]}`;
+      t.answer = "";
+    }
+    add(t);
+  }
+}
+
+// Einzelrechnung aus einem Rätsel, die falsch war (kommt in die Lernkartei).
+// Die ID enthält die Rechnung selbst, z. B. "rr:7·?=56", damit sie auch nach einem Neustart da ist.
+export function puzzleItem(id) {
+  if (!String(id).startsWith("rr:")) return null;
+  if (content.items.has(id)) return content.items.get(id);
+  const m = String(id).slice(3).match(/^(\?|\d+)([+\-·:])(\?|\d+)=(\?|\d+)$/);
+  if (!m) return null;
+  const [a, op, b, c] = [m[1], m[2], m[3], m[4]];
+  const n = (x) => Number(x);
+  const val = { "+": [n(c) - n(b), n(c) - n(a), n(a) + n(b)], "-": [n(b) + n(c), n(a) - n(c), n(a) - n(b)], "·": [n(c) / n(b), n(c) / n(a), n(a) * n(b)], ":": [n(b) * n(c), n(a) / n(c), n(a) / n(b)] }[op];
+  const i = [a, b, c].indexOf("?");
+  const shown = op === "-" ? "−" : op;
+  const q = { kind: "type", id, num: true, task: "Rechne aus! (aus dem Rechenrätsel)", prompt: `${a === "?" ? "__" : a} ${shown} ${b === "?" ? "__" : b} = ${c === "?" ? "__" : c}`, answer: String(val[i]) };
+  const it = { id, kind: "task", unit: "m3-raetsel", q };
+  content.items.set(id, it);
+  return it;
 }
 
 async function getJson(path) {
