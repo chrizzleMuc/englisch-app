@@ -2,14 +2,14 @@ import { PROFILES, TEST_PROFILE, PRAISE, PRAISE_EN, LESSONS, SPEAKERS } from "./
 import { sayParts, sayEn, sayDe, chime, voiceInfo, setGerman } from "./speech.js";
 import { play, promptAnd, stopAudio } from "./audio.js";
 import { canRecord, record, playUrl } from "./recorder.js";
-import { content, loadContent } from "./content.js";
+import { content, loadContent, puzzleItem } from "./content.js";
 import * as store from "./store.js";
 import * as photos from "./photos.js";
 import { pic } from "./pics.js";
 import { vis, visText } from "./mathpics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 33;
+const APP_VERSION = 34;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -27,7 +27,7 @@ const pick = (a) => a[Math.floor(Math.random() * a.length)];
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 const prof = () => [...PROFILES, TEST_PROFILE].find((p) => p.id === current.profile);
 const isTestUser = () => current.profile === TEST_PROFILE.id;
-const item = (id) => content.items.get(id);
+const item = (id) => content.items.get(id) || puzzleItem(id);
 const unitById = (id) => content.units.get(id);
 
 // Vorlesen der Aufgaben (Deutsch): "auto" = wird vorgelesen, "selbst" = erst selbst lesen,
@@ -750,7 +750,7 @@ function describe(q) {
 
 function buildSchoolLesson(u, n) {
   const l = u.lessons[n];
-  if (l.test) return shuffle(u.singles).slice(0, l.count || 12).map((q) => ({ ...singleStep(q), unit: u.id }));
+  if (l.test) return shuffle(u.singles.filter((q) => !PUZZLE_KINDS.includes(q.kind))).slice(0, l.count || 12).map((q) => ({ ...singleStep(q), unit: u.id }));
   if (l.pick) return shuffle(u.singles.filter((q) => q.id.startsWith(l.pick))).slice(0, l.count || 10).map((q) => ({ ...singleStep(q), unit: u.id }));
   let steps = l.tasks.map((t) => (["pairs", "sort", "photo", "paint"].includes(t.kind) ? { kind: t.kind, t } : singleStep(t)));
   if (l.mix) steps = shuffle(steps);
@@ -1501,6 +1501,230 @@ STEPS.column = (lesson, step) => {
   redraw();
 };
 
+// ---------- Rechenrätsel: Rechengitter und Zahlenschlange ----------
+// Das Kind tippt ein leeres Kästchen an und trägt die Zahl mit der Zifferntastatur ein.
+// Erst „Prüfen“ zeigt, was stimmt (grün) und was nicht (rot). Rote Kästchen darf es einmal verbessern,
+// danach stehen die richtigen Zahlen gelb da. Gewertet wird jedes Kästchen beim ersten Prüfen.
+// Falsche Rechnungen kommen einzeln in die Lernkartei (ID "rr:7·?=56") und am Ende der Lektion nochmal.
+const PUZZLE_KINDS = ["gitter", "schlange"];
+const opShow = (o) => (o === "-" ? "−" : o);
+const calc = (o, a, b) => ({ "+": a + b, "-": a - b, "·": a * b, ":": a / b })[o];
+
+function puzzleBoard(lesson, step, { board, cells, task, cardFor, follow }) {
+  const q = step.q;
+  let active = cells.find((c) => !c.done)?.k ?? null;
+  let round = 0;
+  let warnedEmpty = false;
+  const token = lessonRender(lesson, `
+    ${taskHead(task)}
+    <div class="puzzle-area">
+      <div class="puzzle-wrap"><div class="puzzle-card" id="pz" data-id="${esc(q.id)}">${board}</div></div>
+      <div class="puzzle-dock">
+        <div class="feedback" id="fb"></div>
+        <div class="keypad pz-keys" id="kp">
+          ${[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((d) => `<button class="key" data-d="${d}">${d}</button>`).join("")}
+          <button class="key back" id="del" aria-label="Löschen">⌫</button>
+        </div>
+        <button class="go-btn" id="check">Prüfen ✓</button>
+        <button class="go-btn" id="next" hidden>Weiter ➜</button>
+      </div>
+    </div>`);
+  wireVoice(token, () => sayDe(task), q.id.replace(/\d+$/, ""));
+  const el = (k) => app.querySelector(`.pz-in[data-k="${k}"]`);
+  const paint = () => {
+    app.querySelectorAll(".pz-in").forEach((b) => b.classList.toggle("active", Number(b.dataset.k) === active));
+    $("kp").classList.toggle("off", active === null);
+  };
+  const setVal = (c, v) => {
+    c.val = v;
+    el(c.k).querySelector("span").textContent = v;
+  };
+  on(".pz-in", "click", (e) => {
+    const c = cells[Number(e.currentTarget.dataset.k)];
+    if (c.locked) return;
+    active = c.k;
+    chime("pop");
+    paint();
+  });
+  on("#kp .key[data-d]", "click", (e) => {
+    const c = cells[active];
+    if (!c || c.locked) return;
+    if (c.val.length >= 4) return;
+    setVal(c, (c.val === "0" ? "" : c.val) + e.currentTarget.dataset.d);
+    el(c.k).classList.remove("wrong", "follow");
+    warnedEmpty = false;
+  });
+  $("del").onclick = () => {
+    const c = cells[active];
+    if (c && !c.locked) setVal(c, c.val.slice(0, -1));
+  };
+  $("check").onclick = async () => {
+    const open = cells.filter((c) => !c.locked);
+    const empty = open.filter((c) => !c.val).length;
+    if (empty && !warnedEmpty) {
+      warnedEmpty = true;
+      $("fb").innerHTML = `<span class="try">${empty === 1 ? "Ein Kästchen ist" : `${empty} Kästchen sind`} noch leer. Drück nochmal auf Prüfen, wenn du trotzdem prüfen willst.</span>`;
+      return;
+    }
+    const oks = new Map(open.map((c) => [c.k, Number(c.val) === c.sol && c.val !== ""]));
+    open.forEach((c) => {
+      const b = el(c.k);
+      b.classList.remove("active", "wrong", "follow");
+      if (oks.get(c.k)) {
+        c.locked = true;
+        b.classList.add("right");
+      } else b.classList.add(round === 0 && follow && follow(c) ? "follow" : "wrong");
+    });
+    const bad = open.filter((c) => !oks.get(c.k));
+    if (round === 0) {
+      // Wertung: jedes Kästchen zählt
+      lesson.total += open.length;
+      lesson.right += open.length - bad.length;
+      if (bad.length) {
+        miss(lesson, step, q.id, `${bad.length} von ${open.length} falsch`);
+        // die falschen Rechnungen einzeln merken (höchstens 4 pro Rätsel), Folgefehler nicht doppelt
+        const ids = [...new Set(bad.filter((c) => !(follow && follow(c))).map(cardFor).filter(Boolean))].slice(0, 4);
+        for (const id of ids) {
+          const it = item(id);
+          if (!it) continue;
+          store.grade(current.profile, id, false);
+          if (!lesson.missed.includes(id)) lesson.missed.push(id);
+          if (!lesson.isTest) lesson.steps.push({ ...singleStep(it.q), unit: lesson.u.id, retry: true });
+        }
+        store.save();
+      }
+    }
+    if (!bad.length) {
+      chime("win");
+      active = null;
+      paint();
+      $("fb").innerHTML = `<span class="ok">${round === 0 ? pick(PRAISE) + " Alles richtig!" : "Jetzt stimmt alles. Super verbessert!"}</span>`;
+      $("check").hidden = true;
+      $("kp").hidden = true;
+      await wait(1400);
+      if (alive(token)) advance(lesson);
+      return;
+    }
+    if (round === 0) {
+      round = 1;
+      chime("bad");
+      active = bad[0].k;
+      paint();
+      const hasFollow = follow && bad.some((c) => follow(c));
+      $("fb").innerHTML = `<span class="try">${bad.length === 1 ? "Ein Kästchen stimmt" : `${bad.length} Kästchen stimmen`} noch nicht. Verbessere die roten und drück nochmal auf Prüfen.${hasFollow ? "<br>Orange: richtig gerechnet, aber die Zahl davor war falsch." : ""}</span>`;
+      $("check").textContent = "Nochmal prüfen ✓";
+      return;
+    }
+    // zweites Prüfen: richtige Zahlen gelb zeigen
+    bad.forEach((c) => {
+      c.locked = true;
+      setVal(c, String(c.sol));
+      el(c.k).classList.remove("wrong", "follow");
+      el(c.k).classList.add("shown");
+    });
+    active = null;
+    paint();
+    $("kp").hidden = true;
+    $("check").hidden = true;
+    $("fb").innerHTML = `<span class="try">Schau dir die gelben Zahlen an, so ist es richtig.</span>`;
+    $("next").hidden = false;
+  };
+  $("next").onclick = () => advance(lesson);
+  paint();
+}
+
+// Rechengitter: grid = Zeilen aus "" (leer), Rechenzeichen, "=", Zahl (vorgegeben) oder "?Zahl" (zu finden).
+// Rechnungen sind zusammenhängende Felder einer Zeile oder Spalte: Zahl Zeichen Zahl = Zahl.
+STEPS.gitter = (lesson, step) => {
+  const q = step.q;
+  const g = q.grid;
+  const R = g.length;
+  const C = g[0].length;
+  const cells = [];
+  const at = {};
+  g.forEach((row, r) => row.forEach((v, c) => {
+    if (String(v).startsWith("?")) {
+      at[r + "," + c] = cells.length;
+      cells.push({ k: cells.length, r, c, sol: Number(v.slice(1)), val: "" });
+    }
+  }));
+  // Rechnungen finden
+  const eqs = [];
+  const num = (r, c) => /^\??\d+$/.test(String(g[r]?.[c] ?? ""));
+  for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+    if (!num(r, c)) continue;
+    for (const [dr, dc] of [[0, 1], [1, 0]]) {
+      if (num(r + dr * 2, c + dc * 2) && g[r + dr * 3]?.[c + dc * 3] === "=" && num(r + dr * 4, c + dc * 4) && !num(r - dr * 2, c - dc * 2)) {
+        eqs.push({ op: g[r + dr][c + dc], cells: [0, 2, 4].map((s) => [r + dr * s, c + dc * s]) });
+      }
+    }
+  }
+  const valOf = ([r, c]) => Number(String(g[r][c]).replace("?", ""));
+  const cardFor = (cell) => {
+    const mine = eqs.filter((e) => e.cells.some(([r, c]) => r === cell.r && c === cell.c));
+    const e = mine.find((x) => x.cells[2][0] === cell.r && x.cells[2][1] === cell.c) || mine[0];
+    if (!e) return null;
+    const p = e.cells.map((rc) => (rc[0] === cell.r && rc[1] === cell.c ? "?" : valOf(rc)));
+    return `rr:${p[0]}${e.op}${p[1]}=${p[2]}`;
+  };
+  const wide = (i) => i % 2 === 0;
+  const X = (n) => Array.from({ length: n }, (_, i) => (wide(i) ? 1 : 0.62)).reduce((a, b) => a + b, 0);
+  const tracks = (n) => Array.from({ length: n }, (_, i) => (wide(i) ? "var(--u)" : "calc(var(--u) * .62)")).join(" ");
+  let h = `<div class="pz-grid" style="--x:${X(C).toFixed(2)};--y:${X(R).toFixed(2)};grid-template-columns:${tracks(C)};grid-template-rows:${tracks(R)}">`;
+  g.forEach((row, r) => row.forEach((v, c) => {
+    if (v === "") return (h += `<span class="pz-empty"></span>`);
+    if (String(v).startsWith("?")) return (h += `<button class="pz-cell pz-in" data-k="${at[r + "," + c]}"><span></span></button>`);
+    if (/^\d+$/.test(v)) return (h += `<span class="pz-cell pz-given">${v}</span>`);
+    return (h += `<span class="pz-cell pz-op">${esc(opShow(v))}</span>`);
+  }));
+  h += "</div>";
+  puzzleBoard(lesson, step, { board: h, cells, task: q.task || "Fülle die leeren Kästchen aus.", cardFor });
+};
+
+// Zahlenschlange: nodes = [[Zeile, Spalte, Wert]] (Knoten 0 = Startzahl), edges = [[von, nach, Zeichen, Zahl]]
+STEPS.schlange = (lesson, step) => {
+  const q = step.q;
+  const { w, h: H, nodes, edges } = q;
+  const parent = {};
+  edges.forEach((e) => (parent[e[1]] = e));
+  const cells = [];
+  const kOf = {};
+  nodes.forEach((n, i) => {
+    if (i === 0) return;
+    kOf[i] = cells.length;
+    cells.push({ k: cells.length, node: i, sol: n[2], val: "" });
+  });
+  const entered = (i) => (i === 0 ? nodes[0][2] : cells[kOf[i]].val === "" ? null : Number(cells[kOf[i]].val));
+  // Folgefehler: richtig gerechnet, aber mit einer falschen Zahl davor
+  const follow = (cell) => {
+    const [from, , o, n] = parent[cell.node];
+    const pv = entered(from);
+    return from !== 0 && pv !== null && pv !== nodes[from][2] && cell.val !== "" && calc(o, pv, n) === Number(cell.val);
+  };
+  const cardFor = (cell) => {
+    const [from, , o, n] = parent[cell.node];
+    return `rr:${nodes[from][2]}${o}${n}=?`;
+  };
+  const cols = Array.from({ length: 2 * w - 1 }, (_, i) => (i % 2 ? "calc(var(--u) * .9)" : "var(--u)")).join(" ");
+  const rows = Array.from({ length: 2 * H - 1 }, (_, i) => (i % 2 ? "calc(var(--u) * .78)" : "var(--u)")).join(" ");
+  let b = `<div class="pz-grid pz-snake" style="--x:${(w + (w - 1) * 0.9).toFixed(2)};--y:${(H + (H - 1) * 0.78).toFixed(2)};grid-template-columns:${cols};grid-template-rows:${rows}">`;
+  nodes.forEach(([r, c], i) => {
+    const pos = `grid-row:${2 * r + 1};grid-column:${2 * c + 1}`;
+    b += i === 0
+      ? `<span class="pz-cell pz-given pz-start" style="${pos}">${nodes[0][2]}</span>`
+      : `<button class="pz-cell pz-in" data-k="${kOf[i]}" style="${pos}"><span></span></button>`;
+  });
+  edges.forEach(([a, z, o, n]) => {
+    const [r1, c1] = nodes[a];
+    const [r2, c2] = nodes[z];
+    const dir = r2 > r1 ? "down" : r2 < r1 ? "up" : c2 > c1 ? "right" : "left";
+    const arrow = { down: "↓", up: "↑", right: "→", left: "←" }[dir];
+    b += `<span class="pz-edge ${dir}" style="grid-row:${r1 + r2 + 1};grid-column:${c1 + c2 + 1}"><b>${esc(opShow(o))}${n}</b><i>${arrow}</i></span>`;
+  });
+  b += "</div>";
+  puzzleBoard(lesson, step, { board: b, cells, task: q.task || "Folge den Pfeilen und rechne.", cardFor, follow });
+};
+
 // ---------- Übung: Rechenweg in Schritten (halbschriftlich) ----------
 // Aufgabe: { kind: "chain", prompt: "478 + 245", lines: [["478 + 200 =", "678"], ["678 + 40 =", "718"], ["718 + 5 =", "723"]], answer: "723" }
 STEPS.chain = (lesson, step) => {
@@ -1844,7 +2068,7 @@ function startProbe(stageId) {
   const units = probeUnits(pid, st);
   // Aus jeder geschafften Einheit gleich viele Aufgaben, gemischt
   const per = Math.max(2, Math.ceil(PROBE_SIZE / units.length));
-  const pool = units.flatMap((u) => shuffle(u.singles).slice(0, per).map((q) => ({ ...singleStep(q), unit: u.id })));
+  const pool = units.flatMap((u) => shuffle(u.singles.filter((q) => !PUZZLE_KINDS.includes(q.kind))).slice(0, per).map((q) => ({ ...singleStep(q), unit: u.id })));
   const steps = shuffle(pool).slice(0, PROBE_SIZE);
   const lesson = { u: units[0], n: 0, steps, pos: 0, reviewCount: 0, school: true, isTest: true, exam: true, stage: st, subject: sub,
     right: 0, total: 0, missed: [], wrongClicks: 0, started: Date.now() };

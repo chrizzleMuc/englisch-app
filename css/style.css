@@ -837,3 +837,44 @@ table.eval tr.fail td { color: #b3261e; }
 .mword:active { border-color: #cdbaf7; }
 .mword.done { background: var(--mc); color: #fff; text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
 .mword.wrong { animation: shake .35s; background: var(--bad-bg); }
+
+/* Rechenrätsel: Rechengitter und Zahlenschlange (Version 34) */
+.puzzle-area { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.puzzle-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 2px 0 4px; }
+.puzzle-card { width: max-content; margin: 0 auto; background: #fff; border-radius: 20px; padding: 10px; box-shadow: var(--shadow); }
+.pz-grid { --u: clamp(40px, min(calc((100vw - 80px) / var(--x, 10)), calc(660px / var(--x, 10)), calc((100dvh - 450px) / var(--y, 10))), 72px); display: grid; gap: 0; color: #2a1a4f; font-weight: 900; }
+.pz-cell { display: flex; align-items: center; justify-content: center; margin: 0; padding: 0; border: 0; font: inherit; font-weight: 900; font-size: calc(var(--u) * .46); line-height: 1; color: #2a1a4f; }
+.pz-given { background: var(--card); border: 2px solid #b9a3ef; border-radius: 10px; margin: 2px; }
+.pz-op { background: #f4eeff; color: #5b34c4; font-size: calc(var(--u) * .5); }
+.pz-in { background: #fff; border: 3px dashed #b9a3ef; border-radius: 10px; margin: 2px; cursor: pointer; }
+.pz-in.active { border: 4px solid var(--gold); background: #fff8d6; box-shadow: 0 0 0 3px rgba(255, 210, 63, .45); }
+.pz-in.right { border: 3px solid var(--good); background: var(--ok-bg); color: #10633a; }
+.pz-in.wrong { border: 3px solid var(--bad); background: var(--bad-bg); color: #9b1747; animation: shake .35s; }
+.pz-in.wrong.active, .pz-in.follow.active { box-shadow: 0 0 0 4px var(--gold); }
+.pz-in.follow { border: 3px solid #f08c00; background: #ffe8cc; color: #a65a00; }
+.pz-in.shown { border: 3px solid var(--gold-dark); background: #fff3bf; color: #8a6200; }
+.pz-snake .pz-start { background: #5b34c4; border-color: #3b1f8a; color: #fff; }
+.puzzle-card:has(.pz-snake) { padding: 12px 16px; }
+.pz-snake .pz-cell { font-size: calc(var(--u) * .4); letter-spacing: -.02em; }
+.pz-edge { display: flex; align-items: center; justify-content: center; gap: 1px; white-space: nowrap; color: #5b34c4; }
+.pz-edge b { font-size: calc(var(--u) * .29); white-space: nowrap; background: #f4eeff; border-radius: 8px; padding: 1px 4px; }
+.pz-edge i { font-style: normal; font-size: calc(var(--u) * .42); line-height: .8; }
+.pz-edge.right, .pz-edge.left { flex-direction: column; }
+.pz-edge.left i, .pz-edge.up i { order: -1; }
+.puzzle-dock { position: sticky; bottom: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px; width: calc(100% + 24px); margin: 0 -12px; padding: 8px 12px 10px; background: #4a20b0; border-radius: 22px 22px 0 0; }
+.screen.lesson:has(.puzzle-area) { max-width: 1200px; }
+.puzzle-dock .feedback { min-height: 0; font-size: 17px; line-height: 1.3; }
+.puzzle-dock .feedback:empty { display: none; }
+.pz-keys { grid-template-columns: repeat(6, 1fr); gap: 7px; }
+.pz-keys .key { min-height: 52px; font-size: 26px; }
+.pz-keys .key.back { background: #fff; }
+.pz-keys.off { opacity: .45; pointer-events: none; }
+/* Tablet quer: Tastatur rechts neben dem Rätsel */
+@media (min-width: 820px) and (orientation: landscape) {
+  .puzzle-area { flex-direction: row; align-items: flex-start; justify-content: center; gap: 22px; }
+  .puzzle-wrap { width: auto; max-width: calc(100vw - 380px); }
+  .pz-grid { --u: clamp(40px, min(calc((min(100vw, 1200px) - 420px) / var(--x, 10)), calc((100dvh - 200px) / var(--y, 10))), 72px); }
+  .puzzle-dock { position: static; width: 300px; margin: 0; padding: 14px; border-radius: 22px; }
+  .pz-keys { grid-template-columns: repeat(3, 1fr); width: 100%; }
+  .pz-keys .key { min-height: 64px; }
+}

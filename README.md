@@ -48,6 +48,12 @@ Schul-Einheiten liegen in `inhalte/<fach>/` und haben `"type": "schule"`. Jede E
 
 Lektionen mit `"test": true` ziehen zufällige Aufgaben der ganzen Einheit, `"pick": "<id-anfang>"` übt eine Auswahl. Falsche Antworten kommen am Ende der Lektion nochmal und landen in der Lernkartei. Eine Stufe mit `"kinder": ["pirat"]` ist nur für diese Kinder voreingestellt, im Elternbereich änderbar.
 
+## Version 34
+- **Rechenrätsel** (Mathe 3. Klasse, Einheit „Rechenrätsel“): Rechengitter (Rechnungen waagerecht und senkrecht über gemeinsame Kästchen verbunden, Zahlen bis 100, Mal und Geteilt im Einmaleins) und Zahlenschlange (Startzahl, Pfeile mit Rechenschritten, verzweigt; bis 100 und bis 1000). Kästchen antippen, Zahl mit der Zifferntastatur eintragen, erst „Prüfen“ zeigt grün/rot. Rote Kästchen darf man einmal verbessern, danach stehen die richtigen Zahlen gelb da. Zahlenschlange: orange = richtig gerechnet, aber mit einer falschen Zahl davor.
+- Gewertet wird jedes Kästchen beim ersten Prüfen. Falsche Rechnungen kommen einzeln am Ende der Lektion nochmal und in die Lernkartei (ID `rr:7·?=56`).
+- Neue Aufgabenarten `gitter` (`grid`: Zeilen aus "", Rechenzeichen, "=", Zahl oder "?Zahl") und `schlange` (`nodes`, `edges`). Einheiten können einen Vorrat `pool` haben, Lektionen mit `pick` ziehen daraus zufällig. Rätsel kommen nicht in Tests und Proben.
+- Erzeuger: `werkzeug/gen_raetsel.py` (alle Rätsel selbst erzeugt und geprüft: Jedes Gitter lässt sich Schritt für Schritt eindeutig lösen).
+
 ## Version 33
 - **Regeln**: Regelkarten („Merke!“) in `inhalte/regeln.json`. Die Karte kommt vor der ersten Lektion eines Themas, solange sie noch nicht geschafft ist. Nach einem Fehler gibt es den Knopf „Regel ansehen“. Alle Regeln stehen im „Regelheft“ auf der Fachseite. Für Eleanor werden die Karten vorgelesen.
 - **Regel-Detektiv** (Deutsch und Mathe 3. Klasse): „Welche Regel hilft?“
