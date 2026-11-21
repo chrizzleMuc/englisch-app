@@ -1,0 +1,430 @@
+{
+ "id": "h1-jahr",
+ "type": "schule",
+ "title_de": "Jahreszeiten, Wetter und Feste",
+ "image": "🍂",
+ "color": "#d9822b",
+ "lessons": [
+  {
+   "title": "Die vier Jahreszeiten",
+   "icon": "🌷",
+   "tasks": [
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "Wann ist das? Tipp auf die richtige Jahreszeit!",
+     "groups": [
+      "🌷 Frühling",
+      "☀️ Sommer",
+      "🍂 Herbst",
+      "⛄ Winter"
+     ],
+     "items": [
+      {
+       "id": "h1-jahr-schneemann",
+       "pic": "⛄",
+       "text": "Schneemann",
+       "group": "⛄ Winter"
+      },
+      {
+       "id": "h1-jahr-tulpe",
+       "pic": "🌷",
+       "text": "Tulpe",
+       "group": "🌷 Frühling"
+      },
+      {
+       "id": "h1-jahr-eis",
+       "pic": "🍦",
+       "text": "Eis",
+       "group": "☀️ Sommer"
+      },
+      {
+       "id": "h1-jahr-kastanie",
+       "pic": "🌰",
+       "text": "Kastanie",
+       "group": "🍂 Herbst"
+      },
+      {
+       "id": "h1-jahr-schlitten",
+       "pic": "🛷",
+       "text": "Schlitten",
+       "group": "⛄ Winter"
+      },
+      {
+       "id": "h1-jahr-erdbeere",
+       "pic": "🍓",
+       "text": "Erdbeere",
+       "group": "☀️ Sommer"
+      }
+     ]
+    },
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "Wann ist das? Tipp auf die richtige Jahreszeit!",
+     "groups": [
+      "🌷 Frühling",
+      "☀️ Sommer",
+      "🍂 Herbst",
+      "⛄ Winter"
+     ],
+     "items": [
+      {
+       "id": "h1-jahr-kueken",
+       "pic": "🐣",
+       "text": "Küken",
+       "group": "🌷 Frühling"
+      },
+      {
+       "id": "h1-jahr-pilz",
+       "pic": "🍄",
+       "text": "Pilz",
+       "group": "🍂 Herbst"
+      },
+      {
+       "id": "h1-jahr-strand",
+       "pic": "🏖️",
+       "text": "Strand",
+       "group": "☀️ Sommer"
+      },
+      {
+       "id": "h1-jahr-handschuhe",
+       "pic": "🧤",
+       "text": "Handschuhe",
+       "group": "⛄ Winter"
+      },
+      {
+       "id": "h1-jahr-bluete",
+       "pic": "🌸",
+       "text": "Blüte",
+       "group": "🌷 Frühling"
+      },
+      {
+       "id": "h1-jahr-kuerbis",
+       "pic": "🎃",
+       "text": "Kürbis",
+       "group": "🍂 Herbst"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Was kommt danach?",
+   "icon": "🔁",
+   "tasks": [
+    {
+     "kind": "order",
+     "pics": true,
+     "id": "h1-jahr-leg-die-jahreszeiten-der-rei",
+     "task": "Leg die Jahreszeiten der Reihe nach. Fang mit dem Frühling an!",
+     "tiles": [
+      "🌷",
+      "☀️",
+      "🍂",
+      "⛄"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-was-kommt-nach-dem-winter",
+     "task": "Was kommt nach dem Winter?",
+     "prompt": "Was kommt nach dem Winter?",
+     "options": [
+      "🌷",
+      "☀️",
+      "🍂"
+     ],
+     "answer": "🌷",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-was-kommt-nach-dem-sommer",
+     "task": "Was kommt nach dem Sommer?",
+     "prompt": "Was kommt nach dem Sommer?",
+     "options": [
+      "🌷",
+      "🍂",
+      "⛄"
+     ],
+     "answer": "🍂",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-was-kommt-nach-dem-herbst",
+     "task": "Was kommt nach dem Herbst?",
+     "prompt": "Was kommt nach dem Herbst?",
+     "options": [
+      "⛄",
+      "☀️",
+      "🌷"
+     ],
+     "answer": "⛄",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-was-kommt-nach-dem-fruehling",
+     "task": "Was kommt nach dem Frühling?",
+     "prompt": "Was kommt nach dem Frühling?",
+     "options": [
+      "🍂",
+      "☀️",
+      "⛄"
+     ],
+     "answer": "☀️",
+     "picOptions": true
+    },
+    {
+     "kind": "order",
+     "pics": true,
+     "id": "h1-jahr-leg-die-jahreszeiten-der-rei-2",
+     "task": "Leg die Jahreszeiten der Reihe nach. Fang mit dem Herbst an!",
+     "tiles": [
+      "🍂",
+      "⛄",
+      "🌷",
+      "☀️"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Das Wetter",
+   "icon": "🌦️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-jahr-tipp-auf-den-regen",
+     "task": "Tipp auf den Regen!",
+     "prompt": "Tipp auf den Regen!",
+     "options": [
+      "🌧️",
+      "☀️",
+      "❄️"
+     ],
+     "answer": "🌧️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-tipp-auf-den-schnee",
+     "task": "Tipp auf den Schnee!",
+     "prompt": "Tipp auf den Schnee!",
+     "options": [
+      "☀️",
+      "❄️",
+      "🌧️"
+     ],
+     "answer": "❄️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-tipp-auf-das-gewitter",
+     "task": "Tipp auf das Gewitter!",
+     "prompt": "Tipp auf das Gewitter!",
+     "options": [
+      "🌩️",
+      "☁️",
+      "☀️"
+     ],
+     "answer": "🌩️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-tipp-auf-den-wind",
+     "task": "Tipp auf den Wind!",
+     "prompt": "Tipp auf den Wind!",
+     "options": [
+      "🌬️",
+      "❄️",
+      "🌧️"
+     ],
+     "answer": "🌬️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-es-regnet-was-nimmst-du-mit",
+     "task": "Es regnet. Was nimmst du mit?",
+     "prompt": "Es regnet. Was nimmst du mit?",
+     "options": [
+      "☂️",
+      "🕶️",
+      "🛷"
+     ],
+     "answer": "☂️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-es-ist-sehr-heiss-was-ziehst",
+     "task": "Es ist sehr heiß. Was ziehst du an?",
+     "prompt": "Es ist sehr heiß. Was ziehst du an?",
+     "options": [
+      "🧢",
+      "🧣",
+      "🧤"
+     ],
+     "answer": "🧢",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-es-schneit-was-ziehst-du-an",
+     "task": "Es schneit. Was ziehst du an?",
+     "prompt": "Es schneit. Was ziehst du an?",
+     "options": [
+      "🧤",
+      "🩳",
+      "🩴"
+     ],
+     "answer": "🧤",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-wenn-die-sonne-scheint-ist-e",
+     "task": "Stimmt das? Wenn die Sonne scheint, ist es warm.",
+     "prompt": "Wenn die Sonne scheint, ist es warm.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "☀️"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-im-winter-baden-wir-im-see",
+     "task": "Stimmt das? Im Winter baden wir im See.",
+     "prompt": "Im Winter baden wir im See.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "⛄"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Feste im Jahr",
+   "icon": "🎄",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-jahr-was-gehoert-zu-weihnachten",
+     "task": "Was gehört zu Weihnachten?",
+     "prompt": "Was gehört zu Weihnachten?",
+     "options": [
+      "🎄",
+      "🐣",
+      "🎃"
+     ],
+     "answer": "🎄",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-was-gehoert-zu-ostern",
+     "task": "Was gehört zu Ostern?",
+     "prompt": "Was gehört zu Ostern?",
+     "options": [
+      "🐰",
+      "🎄",
+      "🏮"
+     ],
+     "answer": "🐰",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-was-gehoert-zu-sankt-martin",
+     "task": "Was gehört zu Sankt Martin?",
+     "prompt": "Was gehört zu Sankt Martin?",
+     "options": [
+      "🏮",
+      "🥚",
+      "🎄"
+     ],
+     "answer": "🏮",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-was-gehoert-zum-geburtstag",
+     "task": "Was gehört zum Geburtstag?",
+     "prompt": "Was gehört zum Geburtstag?",
+     "options": [
+      "🎂",
+      "🏮",
+      "🐣"
+     ],
+     "answer": "🎂",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-jahr-was-gehoert-zu-fasching",
+     "task": "Was gehört zu Fasching?",
+     "prompt": "Was gehört zu Fasching?",
+     "options": [
+      "🎭",
+      "🎄",
+      "🐰"
+     ],
+     "answer": "🎭",
+     "picOptions": true
+    },
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "Wann feiern wir das? Tipp auf die Jahreszeit!",
+     "groups": [
+      "🌷 Frühling",
+      "☀️ Sommer",
+      "🍂 Herbst",
+      "⛄ Winter"
+     ],
+     "items": [
+      {
+       "id": "h1-jahr-weihnachten",
+       "pic": "🎄",
+       "text": "Weihnachten",
+       "group": "⛄ Winter"
+      },
+      {
+       "id": "h1-jahr-ostern",
+       "pic": "🐰",
+       "text": "Ostern",
+       "group": "🌷 Frühling"
+      },
+      {
+       "id": "h1-jahr-sankt-martin",
+       "pic": "🏮",
+       "text": "Sankt Martin",
+       "group": "🍂 Herbst"
+      }
+     ]
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 10
+  }
+ ]
+}

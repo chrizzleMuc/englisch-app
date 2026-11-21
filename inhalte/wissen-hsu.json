@@ -1,0 +1,37 @@
+{
+ "regeln": [
+  {
+   "id": "hsu-zustaende",
+   "icon": "🧊",
+   "title": "Wasser hat drei Zustände",
+   "merke": [
+    "**fest**: Eis, Schnee, Hagel",
+    "**flüssig**: Wasser, Regen, Tee",
+    "**gasförmig**: **Wasserdampf**. Man kann ihn nicht sehen.",
+    "Bei **0 °C** gefriert Wasser zu Eis. Bei **100 °C** kocht es."
+   ],
+   "beispiele": [
+    "Eis **schmilzt** → Wasser **gefriert** → Wasser **verdunstet**"
+   ],
+   "lektionen": [
+    "h3-wasser/Fest, flüssig, gasförmig"
+   ]
+  },
+  {
+   "id": "hsu-kreislauf",
+   "icon": "🔁",
+   "title": "Der Wasserkreislauf",
+   "merke": [
+    "Die **Sonne** erwärmt das Wasser im Meer, in Seen und Flüssen.",
+    "Das Wasser **verdunstet** und steigt als Wasserdampf nach oben.",
+    "Oben ist es kalt: Es bilden sich winzige Tröpfchen, daraus werden **Wolken**.",
+    "Werden die Tropfen schwer, fällt **Regen** oder Schnee.",
+    "Das Wasser fließt über Bäche und **Flüsse** zurück ins Meer."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-wasser/Der Wasserkreislauf"
+   ]
+  }
+ ]
+}

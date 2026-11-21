@@ -146,6 +146,34 @@
       ]
     },
     {
+      "id": "hsu",
+      "title": "Sachunterricht",
+      "image": "🌍",
+      "color": "#2e9c5a",
+      "stages": [
+        {
+          "id": "hsu-k1",
+          "title": "1. Klasse · Sachunterricht",
+          "kinder": [
+            "entdecker"
+          ],
+          "units": [
+            "hsu/k1-jahreszeiten.json"
+          ]
+        },
+        {
+          "id": "hsu-k3",
+          "title": "3. Klasse · Sachunterricht",
+          "kinder": [
+            "pirat"
+          ],
+          "units": [
+            "hsu/k3-wasser.json"
+          ]
+        }
+      ]
+    },
+    {
       "id": "englisch",
       "title": "Englisch",
       "image": "🇬🇧",

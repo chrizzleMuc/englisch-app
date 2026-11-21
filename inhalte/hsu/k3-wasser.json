@@ -1,0 +1,444 @@
+{
+ "id": "h3-wasser",
+ "type": "schule",
+ "title_de": "Wasser",
+ "image": "💧",
+ "color": "#2f7fd1",
+ "lessons": [
+  {
+   "title": "Fest, flüssig, gasförmig",
+   "icon": "🧊",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Fest, flüssig oder gasförmig?",
+     "review": "Ist das fest, flüssig oder gasförmig?",
+     "groups": [
+      "fest",
+      "flüssig",
+      "gasförmig"
+     ],
+     "items": [
+      {
+       "id": "h3-wasser-eiswuerfel",
+       "text": "Eiswürfel",
+       "group": "fest"
+      },
+      {
+       "id": "h3-wasser-regen",
+       "text": "Regen",
+       "group": "flüssig"
+      },
+      {
+       "id": "h3-wasser-hagelkorn",
+       "text": "Hagelkorn",
+       "group": "fest"
+      },
+      {
+       "id": "h3-wasser-wasserdampf",
+       "text": "Wasserdampf",
+       "group": "gasförmig"
+      },
+      {
+       "id": "h3-wasser-apfelsaft",
+       "text": "Apfelsaft",
+       "group": "flüssig"
+      },
+      {
+       "id": "h3-wasser-schneeflocke",
+       "text": "Schneeflocke",
+       "group": "fest"
+      },
+      {
+       "id": "h3-wasser-wasser-im-see",
+       "text": "Wasser im See",
+       "group": "flüssig"
+      },
+      {
+       "id": "h3-wasser-eiszapfen",
+       "text": "Eiszapfen",
+       "group": "fest"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-eis-wird-zu-wasser-das-eis",
+     "task": "Wie heißt das?",
+     "prompt": "Eis wird zu Wasser. Das Eis …",
+     "options": [
+      "schmilzt",
+      "gefriert",
+      "verdunstet"
+     ],
+     "answer": "schmilzt",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-wasser-wird-zu-eis-das-wasse",
+     "task": "Wie heißt das?",
+     "prompt": "Wasser wird zu Eis. Das Wasser …",
+     "options": [
+      "schmilzt",
+      "gefriert",
+      "verdunstet"
+     ],
+     "answer": "gefriert",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-wasser-wird-zu-wasserdampf-d",
+     "task": "Wie heißt das?",
+     "prompt": "Wasser wird zu Wasserdampf. Das Wasser …",
+     "options": [
+      "schmilzt",
+      "gefriert",
+      "verdunstet"
+     ],
+     "answer": "verdunstet",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-bei-wie-viel-grad-gefriert-w",
+     "task": "Was stimmt?",
+     "prompt": "Bei wie viel Grad gefriert Wasser?",
+     "options": [
+      "0 °C",
+      "10 °C",
+      "100 °C"
+     ],
+     "answer": "0 °C",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-bei-wie-viel-grad-kocht-wass",
+     "task": "Was stimmt?",
+     "prompt": "Bei wie viel Grad kocht Wasser?",
+     "options": [
+      "0 °C",
+      "50 °C",
+      "100 °C"
+     ],
+     "answer": "100 °C",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-eine-nasse-pfuetze-trocknet",
+     "task": "Richtig oder falsch?",
+     "prompt": "Eine nasse Pfütze trocknet in der Sonne, weil das Wasser verdunstet.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-wasserdampf-kann-man-gut-seh",
+     "task": "Richtig oder falsch?",
+     "prompt": "Wasserdampf kann man gut sehen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Wasserdampf ist unsichtbar. Was man über dem Kochtopf sieht, sind schon wieder winzige Wassertröpfchen."
+    }
+   ]
+  },
+  {
+   "title": "Der Wasserkreislauf",
+   "icon": "🔁",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-wasser-bring-den-wasserkreislauf-in",
+     "task": "Bring den Wasserkreislauf in die richtige Reihenfolge!",
+     "tiles": [
+      "Die Sonne erwärmt das Meer",
+      "Wasser verdunstet",
+      "Wolken entstehen",
+      "Es regnet",
+      "Flüsse fließen ins Meer"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-woraus-bestehen-wolken",
+     "task": "Was stimmt?",
+     "prompt": "Woraus bestehen Wolken?",
+     "options": [
+      "aus winzigen Wassertröpfchen",
+      "aus Rauch",
+      "aus Watte"
+     ],
+     "answer": "aus winzigen Wassertröpfchen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-was-bringt-das-wasser-zum-ve",
+     "task": "Was stimmt?",
+     "prompt": "Was bringt das Wasser zum Verdunsten?",
+     "options": [
+      "die Wärme der Sonne",
+      "der Mond",
+      "der Wind allein"
+     ],
+     "answer": "die Wärme der Sonne"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-wohin-fliesst-das-wasser-der",
+     "task": "Was stimmt?",
+     "prompt": "Wohin fließt das Wasser der Flüsse am Ende?",
+     "options": [
+      "ins Meer",
+      "in die Wolken",
+      "in den Berg"
+     ],
+     "answer": "ins Meer"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-im-wasserkreislauf-geht-kein",
+     "task": "Richtig oder falsch?",
+     "prompt": "Im Wasserkreislauf geht kein Wasser verloren.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-regen-entsteht-wenn-die-trop",
+     "task": "Richtig oder falsch?",
+     "prompt": "Regen entsteht, wenn die Tropfen in der Wolke zu schwer werden.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "order",
+     "id": "h3-wasser-was-passiert-mit-dem-schnee",
+     "task": "Was passiert mit dem Schnee? Bring es in die richtige Reihenfolge!",
+     "tiles": [
+      "Schnee liegt auf dem Berg",
+      "Die Sonne scheint",
+      "Der Schnee schmilzt",
+      "Ein Bach fließt ins Tal"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Wasser im Alltag",
+   "icon": "🚿",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Spart das Wasser?",
+     "review": "Spart das Wasser oder verschwendet es Wasser?",
+     "groups": [
+      "spart Wasser",
+      "verschwendet Wasser"
+     ],
+     "items": [
+      {
+       "id": "h3-wasser-duschen-statt-baden",
+       "text": "duschen statt baden",
+       "group": "spart Wasser"
+      },
+      {
+       "id": "h3-wasser-wasser-laufen-lassen-beim-za",
+       "text": "Wasser laufen lassen beim Zähneputzen",
+       "group": "verschwendet Wasser"
+      },
+      {
+       "id": "h3-wasser-regenwasser-zum-giessen-samm",
+       "text": "Regenwasser zum Gießen sammeln",
+       "group": "spart Wasser"
+      },
+      {
+       "id": "h3-wasser-tropfenden-wasserhahn-nicht",
+       "text": "tropfenden Wasserhahn nicht reparieren",
+       "group": "verschwendet Wasser"
+      },
+      {
+       "id": "h3-wasser-spuelmaschine-nur-voll-einsc",
+       "text": "Spülmaschine nur voll einschalten",
+       "group": "spart Wasser"
+      },
+      {
+       "id": "h3-wasser-spartaste-an-der-toilette-dr",
+       "text": "Spartaste an der Toilette drücken",
+       "group": "spart Wasser"
+      }
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "h3-wasser-wie-kommt-das-wasser-zurueck",
+     "task": "Wie kommt das Wasser zurück in den Fluss? Bring es in die richtige Reihenfolge!",
+     "tiles": [
+      "Abwasser aus dem Haus",
+      "Kanal",
+      "Kläranlage",
+      "sauberes Wasser in den Fluss"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-wo-wird-schmutziges-abwasser",
+     "task": "Was stimmt?",
+     "prompt": "Wo wird schmutziges Abwasser gereinigt?",
+     "options": [
+      "in der Kläranlage",
+      "im Wasserturm",
+      "im Schwimmbad"
+     ],
+     "answer": "in der Kläranlage"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-woher-kommt-bei-uns-das-meis",
+     "task": "Was stimmt?",
+     "prompt": "Woher kommt bei uns das meiste Trinkwasser?",
+     "options": [
+      "aus dem Grundwasser",
+      "aus dem Meer",
+      "aus Pfützen"
+     ],
+     "answer": "aus dem Grundwasser"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-das-wasser-aus-dem-hahn-wird",
+     "task": "Richtig oder falsch?",
+     "prompt": "Das Wasser aus dem Hahn wird regelmäßig geprüft.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Wasser-Experimente",
+   "icon": "🧪",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Löst es sich im Wasser auf?",
+     "review": "Löst sich das im Wasser auf?",
+     "groups": [
+      "löst sich auf",
+      "löst sich nicht auf"
+     ],
+     "items": [
+      {
+       "id": "h3-wasser-salz",
+       "text": "Salz",
+       "group": "löst sich auf"
+      },
+      {
+       "id": "h3-wasser-zucker",
+       "text": "Zucker",
+       "group": "löst sich auf"
+      },
+      {
+       "id": "h3-wasser-sand",
+       "text": "Sand",
+       "group": "löst sich nicht auf"
+      },
+      {
+       "id": "h3-wasser-kieselstein",
+       "text": "Kieselstein",
+       "group": "löst sich nicht auf"
+      },
+      {
+       "id": "h3-wasser-brausepulver",
+       "text": "Brausepulver",
+       "group": "löst sich auf"
+      },
+      {
+       "id": "h3-wasser-oel",
+       "text": "Öl",
+       "group": "löst sich nicht auf"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-wie-bekommst-du-sand-aus-dem",
+     "task": "Was stimmt?",
+     "prompt": "Wie bekommst du Sand aus dem Wasser?",
+     "options": [
+      "mit einem Filter",
+      "durch Umrühren",
+      "mit mehr Wasser"
+     ],
+     "answer": "mit einem Filter"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-du-stellst-ein-glas-wasser-i",
+     "task": "Was stimmt?",
+     "prompt": "Du stellst ein Glas Wasser ins Gefrierfach. Was passiert?",
+     "options": [
+      "Es wird zu Eis.",
+      "Es verdunstet.",
+      "Es kocht."
+     ],
+     "answer": "Es wird zu Eis."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-eis-nimmt-mehr-platz-ein-als",
+     "task": "Richtig oder falsch?",
+     "prompt": "Eis nimmt mehr Platz ein als Wasser. Darum kann eine volle Flasche im Gefrierfach platzen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wasser-salzwasser-kann-man-ohne-wei",
+     "task": "Richtig oder falsch?",
+     "prompt": "Salzwasser kann man ohne Weiteres trinken.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Salzwasser macht noch durstiger. Trinkwasser muss Süßwasser sein."
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

@@ -7,7 +7,7 @@ export const content = { subjects: [], items: new Map(), units: new Map(), photo
 // Eine Schul-Einheit hat "type": "schule" und eine Liste "lessons" mit Aufgaben ("tasks").
 // Jede bewertbare Aufgabe kommt als Einzelfrage in die Lernkartei (content.items, kind "task").
 
-const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint", "column", "chain", "build", "flash", "mark", "gitter", "schlange"];
+const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint", "column", "chain", "build", "flash", "mark", "gitter", "schlange", "order"];
 
 function sharedStart(a, b) {
   const wa = a.split(" ");
@@ -24,6 +24,7 @@ function singles(t) {
     });
   }
   if (t.kind === "sort") {
+    if (t.pics) return t.items.map((it) => ({ kind: "choice", id: it.id, task: t.review || t.task || "Wohin gehört das?", prompt: it.text, pic: it.pic, options: t.groups, answer: it.group, picText: true }));
     return t.items.map((it) => ({ kind: "choice", id: it.id, task: t.review || "Wohin gehört das Wort?", prompt: it.text, options: t.groups, answer: it.group }));
   }
   if (t.kind === "photo") return [];
@@ -67,6 +68,13 @@ function checkSchool(unit, path) {
         for (const a of t.answers || []) if (key(a) !== key(t.tiles || [])) err(`${t.id}: Eine Lösung passt nicht zu den Bausteinen.`);
         t.prompt = t.prompt || t.tiles.join(" / ");
         t.answer = (t.answers[0] || []).map((w, i) => (i ? w : w[0].toUpperCase() + w.slice(1))).join(" ").replace(/ ([,.!?:])/g, "$1") + (t.end || "");
+      }
+      // Reihenfolge: tiles stehen in der richtigen Reihenfolge, die App mischt sie
+      if (t.kind === "order") {
+        if ((t.tiles || []).length < 2) err(`${t.id}: Reihenfolge braucht mindestens 2 tiles.`);
+        const plain = (x) => String(x).replace(/^\P{L}+/u, "").trim() || x;
+        t.prompt = t.prompt || t.task;
+        t.answer = (t.tiles || []).map(plain).join(" → ");
       }
       if (t.kind === "flash") {
         if (!t.word || !(t.options || []).includes(t.answer)) err(`${t.id}: Blitzlesen braucht word und die Antwort bei options.`);
@@ -237,10 +245,13 @@ export async function loadContent() {
     }
     content.subjects.push(s);
   }
-  try {
-    attachRules((await getJson("regeln.json")).regeln);
-  } catch (e) {
-    content.errors.push(e.message);
+  // regeln.json (Deutsch, Mathe) und wissen-hsu.json (Merkkarten Sachunterricht)
+  for (const f of ["regeln.json", "wissen-hsu.json"]) {
+    try {
+      attachRules((await getJson(f)).regeln);
+    } catch (e) {
+      content.errors.push(e.message);
+    }
   }
   return content;
 }
