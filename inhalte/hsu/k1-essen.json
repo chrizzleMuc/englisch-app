@@ -1,0 +1,373 @@
+{
+ "id": "h1-essen",
+ "type": "schule",
+ "title_de": "Gesund essen und Zähne putzen",
+ "image": "🍎",
+ "color": "#3fa34d",
+ "lessons": [
+  {
+   "title": "Obst oder Gemüse?",
+   "icon": "🥕",
+   "tasks": [
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "Ist das Obst oder Gemüse?",
+     "groups": [
+      "🍎 Obst",
+      "🥕 Gemüse"
+     ],
+     "items": [
+      {
+       "id": "h1-essen-banane",
+       "pic": "🍌",
+       "text": "Banane",
+       "group": "🍎 Obst"
+      },
+      {
+       "id": "h1-essen-brokkoli",
+       "pic": "🥦",
+       "text": "Brokkoli",
+       "group": "🥕 Gemüse"
+      },
+      {
+       "id": "h1-essen-birne",
+       "pic": "🍐",
+       "text": "Birne",
+       "group": "🍎 Obst"
+      },
+      {
+       "id": "h1-essen-gurke",
+       "pic": "🥒",
+       "text": "Gurke",
+       "group": "🥕 Gemüse"
+      },
+      {
+       "id": "h1-essen-trauben",
+       "pic": "🍇",
+       "text": "Trauben",
+       "group": "🍎 Obst"
+      },
+      {
+       "id": "h1-essen-mais",
+       "pic": "🌽",
+       "text": "Mais",
+       "group": "🥕 Gemüse"
+      },
+      {
+       "id": "h1-essen-kirschen",
+       "pic": "🍒",
+       "text": "Kirschen",
+       "group": "🍎 Obst"
+      },
+      {
+       "id": "h1-essen-paprika",
+       "pic": "🫑",
+       "text": "Paprika",
+       "group": "🥕 Gemüse"
+      },
+      {
+       "id": "h1-essen-erdbeere",
+       "pic": "🍓",
+       "text": "Erdbeere",
+       "group": "🍎 Obst"
+      },
+      {
+       "id": "h1-essen-zwiebel",
+       "pic": "🧅",
+       "text": "Zwiebel",
+       "group": "🥕 Gemüse"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Jeden Tag oder nur ab und zu?",
+   "icon": "🍬",
+   "tasks": [
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "Isst du das jeden Tag oder nur ab und zu?",
+     "groups": [
+      "💪 jeden Tag",
+      "🍬 nur ab und zu"
+     ],
+     "items": [
+      {
+       "id": "h1-essen-apfel",
+       "pic": "🍎",
+       "text": "Apfel",
+       "group": "💪 jeden Tag"
+      },
+      {
+       "id": "h1-essen-wasser",
+       "pic": "💧",
+       "text": "Wasser",
+       "group": "💪 jeden Tag"
+      },
+      {
+       "id": "h1-essen-lutscher",
+       "pic": "🍭",
+       "text": "Lutscher",
+       "group": "🍬 nur ab und zu"
+      },
+      {
+       "id": "h1-essen-pommes",
+       "pic": "🍟",
+       "text": "Pommes",
+       "group": "🍬 nur ab und zu"
+      },
+      {
+       "id": "h1-essen-brokkoli-2",
+       "pic": "🥦",
+       "text": "Brokkoli",
+       "group": "💪 jeden Tag"
+      },
+      {
+       "id": "h1-essen-schokolade",
+       "pic": "🍫",
+       "text": "Schokolade",
+       "group": "🍬 nur ab und zu"
+      },
+      {
+       "id": "h1-essen-brot",
+       "pic": "🍞",
+       "text": "Brot",
+       "group": "💪 jeden Tag"
+      },
+      {
+       "id": "h1-essen-limo",
+       "pic": "🥤",
+       "text": "Limo",
+       "group": "🍬 nur ab und zu"
+      },
+      {
+       "id": "h1-essen-karotte",
+       "pic": "🥕",
+       "text": "Karotte",
+       "group": "💪 jeden Tag"
+      },
+      {
+       "id": "h1-essen-donut",
+       "pic": "🍩",
+       "text": "Donut",
+       "group": "🍬 nur ab und zu"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Gesunde Pause",
+   "icon": "🥪",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-essen-du-hast-durst-was-trinkst-du",
+     "task": "Du hast Durst. Was trinkst du am besten?",
+     "prompt": "Du hast Durst. Was trinkst du am besten?",
+     "options": [
+      "💧",
+      "🥤",
+      "☕"
+     ],
+     "answer": "💧",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-essen-was-ist-ein-gesundes-pausenb",
+     "task": "Was ist ein gesundes Pausenbrot?",
+     "prompt": "Was ist ein gesundes Pausenbrot?",
+     "options": [
+      "🥪",
+      "🍰",
+      "🍭"
+     ],
+     "answer": "🥪",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-essen-was-ist-ein-gesunder-snack-f",
+     "task": "Was ist ein gesunder Snack für die Pause?",
+     "prompt": "Was ist ein gesunder Snack für die Pause?",
+     "options": [
+      "🥕",
+      "🍬",
+      "🍩"
+     ],
+     "answer": "🥕",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-essen-was-ist-gesund-fuer-die-paus",
+     "task": "Was ist gesund für die Pause?",
+     "prompt": "Was ist gesund für die Pause?",
+     "options": [
+      "🍏",
+      "🍫",
+      "🍟"
+     ],
+     "answer": "🍏",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-essen-obst-und-gemuese-machen-dich",
+     "task": "Stimmt das? Obst und Gemüse machen dich stark und gesund.",
+     "prompt": "Obst und Gemüse machen dich stark und gesund.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🍎"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-essen-limo-ist-das-beste-getraenk",
+     "task": "Stimmt das? Limo ist das beste Getränk gegen Durst.",
+     "prompt": "Limo ist das beste Getränk gegen Durst.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🥤"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-essen-ein-fruehstueck-am-morgen-gi",
+     "task": "Stimmt das? Ein Frühstück am Morgen gibt dir Kraft für die Schule.",
+     "prompt": "Ein Frühstück am Morgen gibt dir Kraft für die Schule.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🥣"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Zähne putzen",
+   "icon": "🪥",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-essen-womit-putzt-du-deine-zaehne",
+     "task": "Womit putzt du deine Zähne?",
+     "prompt": "Womit putzt du deine Zähne?",
+     "options": [
+      "🪥",
+      "🧹",
+      "🍴"
+     ],
+     "answer": "🪥",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-essen-zaehne-putzt-man-morgens-und",
+     "task": "Stimmt das? Zähne putzt man morgens und abends.",
+     "prompt": "Zähne putzt man morgens und abends.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🪥"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-essen-nach-dem-zaehneputzen-am-abe",
+     "task": "Stimmt das? Nach dem Zähneputzen am Abend isst man noch Süßes.",
+     "prompt": "Nach dem Zähneputzen am Abend isst man noch Süßes.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🍬"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-essen-viele-suessigkeiten-sind-gut",
+     "task": "Stimmt das? Viele Süßigkeiten sind gut für die Zähne.",
+     "prompt": "Viele Süßigkeiten sind gut für die Zähne.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🍭"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-essen-zaehne-putzen-dauert-ungefae",
+     "task": "Stimmt das? Zähne putzen dauert ungefähr so lange wie zwei Lieder.",
+     "prompt": "Zähne putzen dauert ungefähr so lange wie zwei Lieder.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🎵"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-essen-die-zahnaerztin-schaut-nach",
+     "task": "Stimmt das? Die Zahnärztin schaut nach, ob deine Zähne gesund sind.",
+     "prompt": "Die Zahnärztin schaut nach, ob deine Zähne gesund sind.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🦷"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-essen-was-ist-gut-fuer-deine-zaehn",
+     "task": "Was ist gut für deine Zähne?",
+     "prompt": "Was ist gut für deine Zähne?",
+     "options": [
+      "🥕",
+      "🍭",
+      "🍬"
+     ],
+     "answer": "🥕",
+     "picOptions": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 10
+  }
+ ]
+}

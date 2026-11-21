@@ -1,0 +1,320 @@
+{
+ "id": "h3-fahrrad",
+ "type": "schule",
+ "title_de": "Fahrrad und Verkehr",
+ "image": "🚲",
+ "color": "#d6453d",
+ "lessons": [
+  {
+   "title": "Das verkehrssichere Fahrrad",
+   "icon": "🚲",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Muss das am Fahrrad sein?",
+     "review": "Muss das an einem verkehrssicheren Fahrrad sein?",
+     "groups": [
+      "muss dran sein",
+      "braucht man nicht"
+     ],
+     "items": [
+      {
+       "id": "h3-fahrrad-klingel",
+       "text": "Klingel",
+       "group": "muss dran sein"
+      },
+      {
+       "id": "h3-fahrrad-zwei-bremsen",
+       "text": "zwei Bremsen",
+       "group": "muss dran sein"
+      },
+      {
+       "id": "h3-fahrrad-weisses-licht-vorne",
+       "text": "weißes Licht vorne",
+       "group": "muss dran sein"
+      },
+      {
+       "id": "h3-fahrrad-rotes-ruecklicht",
+       "text": "rotes Rücklicht",
+       "group": "muss dran sein"
+      },
+      {
+       "id": "h3-fahrrad-fahrradkorb",
+       "text": "Fahrradkorb",
+       "group": "braucht man nicht"
+      },
+      {
+       "id": "h3-fahrrad-gepaecktraeger",
+       "text": "Gepäckträger",
+       "group": "braucht man nicht"
+      },
+      {
+       "id": "h3-fahrrad-gelbe-pedal-rueckstrahler",
+       "text": "gelbe Pedal-Rückstrahler",
+       "group": "muss dran sein"
+      },
+      {
+       "id": "h3-fahrrad-fahrradstaender",
+       "text": "Fahrradständer",
+       "group": "braucht man nicht"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Welche Farbe hat das?",
+     "review": "Welche Farbe hat dieser Teil am Fahrrad?",
+     "pairs": [
+      {
+       "id": "h3-fahrrad-scheinwerfer-vorne",
+       "a": "Scheinwerfer vorne",
+       "b": "weiß"
+      },
+      {
+       "id": "h3-fahrrad-ruecklicht-hinten",
+       "a": "Rücklicht hinten",
+       "b": "rot"
+      },
+      {
+       "id": "h3-fahrrad-rueckstrahler-an-den-pedalen",
+       "a": "Rückstrahler an den Pedalen",
+       "b": "gelb"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-wie-viele-bremsen-braucht-ei",
+     "task": "Was stimmt?",
+     "prompt": "Wie viele Bremsen braucht ein Fahrrad?",
+     "options": [
+      "2",
+      "1",
+      "keine"
+     ],
+     "answer": "2",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Verkehrszeichen",
+   "icon": "🛑",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Wie sieht das Schild aus?",
+     "review": "Wie sieht dieses Verkehrszeichen aus?",
+     "groups": [
+      "Dreieck mit rotem Rand",
+      "rund mit rotem Rand",
+      "rund und blau"
+     ],
+     "items": [
+      {
+       "id": "h3-fahrrad-achtung-kinder",
+       "text": "Achtung, Kinder!",
+       "group": "Dreieck mit rotem Rand"
+      },
+      {
+       "id": "h3-fahrrad-achtung-baustelle",
+       "text": "Achtung, Baustelle!",
+       "group": "Dreieck mit rotem Rand"
+      },
+      {
+       "id": "h3-fahrrad-radweg",
+       "text": "Radweg",
+       "group": "rund und blau"
+      },
+      {
+       "id": "h3-fahrrad-gehweg",
+       "text": "Gehweg",
+       "group": "rund und blau"
+      },
+      {
+       "id": "h3-fahrrad-fahrraeder-verboten",
+       "text": "Fahrräder verboten",
+       "group": "rund mit rotem Rand"
+      },
+      {
+       "id": "h3-fahrrad-hoechstens-30-km-h",
+       "text": "Höchstens 30 km/h",
+       "group": "rund mit rotem Rand"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-achteckiges-rotes-schild-mit",
+     "task": "Was bedeutet das Schild?",
+     "prompt": "Achteckiges rotes Schild mit dem Wort STOP",
+     "options": [
+      "Anhalten und Vorfahrt lassen",
+      "Hier ist ein Parkplatz",
+      "Radweg"
+     ],
+     "answer": "Anhalten und Vorfahrt lassen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-rundes-blaues-schild-mit-ein",
+     "task": "Was bedeutet das Schild?",
+     "prompt": "Rundes blaues Schild mit einem weißen Fahrrad",
+     "options": [
+      "Radweg",
+      "Fahrräder verboten",
+      "Fahrradladen"
+     ],
+     "answer": "Radweg"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-dreieck-mit-der-spitze-nach",
+     "task": "Was bedeutet das Schild?",
+     "prompt": "Dreieck mit der Spitze nach unten, rot-weiß",
+     "options": [
+      "Vorfahrt gewähren",
+      "Vorfahrtstraße",
+      "Einbahnstraße"
+     ],
+     "answer": "Vorfahrt gewähren"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-gelbe-raute-mit-weissem-rand",
+     "task": "Was bedeutet das Schild?",
+     "prompt": "Gelbe Raute mit weißem Rand",
+     "options": [
+      "Vorfahrtstraße",
+      "Vorfahrt gewähren",
+      "Baustelle"
+     ],
+     "answer": "Vorfahrtstraße"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-rundes-rotes-schild-mit-eine",
+     "task": "Was bedeutet das Schild?",
+     "prompt": "Rundes rotes Schild mit einem weißen Querbalken",
+     "options": [
+      "Verbot der Einfahrt",
+      "Radweg",
+      "Parkplatz"
+     ],
+     "answer": "Verbot der Einfahrt"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-was-sagen-dreieckige-schilde",
+     "task": "Was stimmt?",
+     "prompt": "Was sagen dreieckige Schilder mit rotem Rand?",
+     "options": [
+      "Achtung, Gefahr!",
+      "Hier ist etwas verboten.",
+      "Das musst du tun."
+     ],
+     "answer": "Achtung, Gefahr!"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Regeln für Radfahrer",
+   "icon": "🚦",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-bis-zu-welchem-alter-muessen",
+     "task": "Was stimmt?",
+     "prompt": "Bis zu welchem Alter müssen Kinder mit dem Fahrrad auf dem Gehweg fahren?",
+     "options": [
+      "bis 8 Jahre",
+      "bis 5 Jahre",
+      "bis 12 Jahre"
+     ],
+     "answer": "bis 8 Jahre"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-kinder-bis-10-jahre-duerfen",
+     "task": "Richtig oder falsch?",
+     "prompt": "Kinder bis 10 Jahre dürfen noch auf dem Gehweg fahren.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-an-einer-kreuzung-ohne-schil",
+     "task": "Was stimmt?",
+     "prompt": "An einer Kreuzung ohne Schilder und Ampel gilt …",
+     "options": [
+      "rechts vor links",
+      "links vor rechts",
+      "wer schneller ist, darf zuerst"
+     ],
+     "answer": "rechts vor links"
+    },
+    {
+     "kind": "order",
+     "id": "h3-fahrrad-links-abbiegen-bring-die-sch",
+     "task": "Links abbiegen: Bring die Schritte in die richtige Reihenfolge!",
+     "tiles": [
+      "nach hinten schauen",
+      "linken Arm ausstrecken",
+      "zur Mitte einordnen",
+      "Gegenverkehr vorbeilassen",
+      "abbiegen"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-freihaendig-fahren-ist-erlau",
+     "task": "Richtig oder falsch?",
+     "prompt": "Freihändig fahren ist erlaubt, wenn gerade niemand kommt.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Mindestens eine Hand muss immer am Lenker sein."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-am-zebrastreifen-steigst-du",
+     "task": "Richtig oder falsch?",
+     "prompt": "Am Zebrastreifen steigst du ab und schiebst. Dann hast du Vorrang wie ein Fußgänger.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-fahrrad-ein-helm-ist-keine-pflicht-s",
+     "task": "Richtig oder falsch?",
+     "prompt": "Ein Helm ist keine Pflicht, schützt aber bei einem Sturz den Kopf.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

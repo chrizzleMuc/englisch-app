@@ -1,0 +1,233 @@
+{
+ "id": "h3-zusammen",
+ "type": "schule",
+ "title_de": "Klassenrat und Kinderrechte",
+ "image": "⚖️",
+ "color": "#7a4fd6",
+ "lessons": [
+  {
+   "title": "Kinderrechte",
+   "icon": "⚖️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-zusammen-jedes-kind-hat-das-recht-zur",
+     "task": "Richtig oder falsch?",
+     "prompt": "Jedes Kind hat das Recht, zur Schule zu gehen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zusammen-kinder-haben-ein-recht-auf-s",
+     "task": "Richtig oder falsch?",
+     "prompt": "Kinder haben ein Recht auf Spiel und Freizeit.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zusammen-die-kinderrechte-gelten-nur",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Kinderrechte gelten nur für Jungen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Die Kinderrechte gelten für alle Kinder, egal ob Mädchen oder Junge, egal woher sie kommen."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zusammen-kinder-duerfen-ihre-meinung",
+     "task": "Richtig oder falsch?",
+     "prompt": "Kinder dürfen ihre Meinung sagen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zusammen-niemand-darf-kinder-schlagen",
+     "task": "Richtig oder falsch?",
+     "prompt": "Niemand darf Kinder schlagen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zusammen-wo-sind-die-kinderrechte-auf",
+     "task": "Was stimmt?",
+     "prompt": "Wo sind die Kinderrechte aufgeschrieben?",
+     "options": [
+      "in der UN-Kinderrechtskonvention",
+      "in der Schulordnung",
+      "in der Straßenverkehrsordnung"
+     ],
+     "answer": "in der UN-Kinderrechtskonvention"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Klassenrat",
+   "icon": "🗳️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-zusammen-was-macht-das-kind-das-proto",
+     "task": "Was stimmt?",
+     "prompt": "Was macht das Kind, das Protokoll führt?",
+     "options": [
+      "Es schreibt die Beschlüsse auf.",
+      "Es passt auf die Zeit auf.",
+      "Es bestimmt alles allein."
+     ],
+     "answer": "Es schreibt die Beschlüsse auf."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zusammen-was-macht-der-zeitwaechter",
+     "task": "Was stimmt?",
+     "prompt": "Was macht der Zeitwächter?",
+     "options": [
+      "Er achtet darauf, dass die Zeit reicht.",
+      "Er schreibt alles auf.",
+      "Er entscheidet allein."
+     ],
+     "answer": "Er achtet darauf, dass die Zeit reicht."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zusammen-wie-wird-im-klassenrat-entsc",
+     "task": "Was stimmt?",
+     "prompt": "Wie wird im Klassenrat entschieden?",
+     "options": [
+      "durch Abstimmung, die Mehrheit gewinnt",
+      "der Lauteste entscheidet",
+      "die Lehrkraft entscheidet immer allein"
+     ],
+     "answer": "durch Abstimmung, die Mehrheit gewinnt"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zusammen-22-kinder-stimmen-ab-13-sind",
+     "task": "Was stimmt?",
+     "prompt": "22 Kinder stimmen ab: 13 sind dafür, 9 dagegen. Was gilt?",
+     "options": [
+      "Der Vorschlag ist angenommen.",
+      "Der Vorschlag ist abgelehnt.",
+      "Man muss nicht darauf hören."
+     ],
+     "answer": "Der Vorschlag ist angenommen."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zusammen-im-klassenrat-darf-jedes-kin",
+     "task": "Richtig oder falsch?",
+     "prompt": "Im Klassenrat darf jedes Kind seine Meinung sagen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Streit fair lösen",
+   "icon": "🤝",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-zusammen-streit-schlichten-bring-die",
+     "task": "Streit schlichten: Bring die Schritte in die richtige Reihenfolge!",
+     "tiles": [
+      "Beide beruhigen sich",
+      "Jeder erzählt, was passiert ist",
+      "Gemeinsam Lösungen suchen",
+      "Eine Lösung vereinbaren"
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Fair oder unfair?",
+     "review": "Ist das beim Streiten fair oder unfair?",
+     "groups": [
+      "fair",
+      "unfair"
+     ],
+     "items": [
+      {
+       "id": "h3-zusammen-ausreden-lassen",
+       "text": "ausreden lassen",
+       "group": "fair"
+      },
+      {
+       "id": "h3-zusammen-auslachen",
+       "text": "auslachen",
+       "group": "unfair"
+      },
+      {
+       "id": "h3-zusammen-zuhoeren",
+       "text": "zuhören",
+       "group": "fair"
+      },
+      {
+       "id": "h3-zusammen-beleidigen",
+       "text": "beleidigen",
+       "group": "unfair"
+      },
+      {
+       "id": "h3-zusammen-ich-botschaften-sagen",
+       "text": "Ich-Botschaften sagen",
+       "group": "fair"
+      },
+      {
+       "id": "h3-zusammen-jemanden-ausschliessen",
+       "text": "jemanden ausschließen",
+       "group": "unfair"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zusammen-was-ist-eine-ich-botschaft",
+     "task": "Was stimmt?",
+     "prompt": "Was ist eine Ich-Botschaft?",
+     "options": [
+      "Ich bin traurig, weil du mich ausgelacht hast.",
+      "Du bist immer so gemein!",
+      "Halt den Mund!"
+     ],
+     "answer": "Ich bin traurig, weil du mich ausgelacht hast."
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

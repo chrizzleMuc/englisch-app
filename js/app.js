@@ -9,7 +9,7 @@ import { pic } from "./pics.js";
 import { vis, visText } from "./mathpics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 34;
+const APP_VERSION = 35;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -145,7 +145,7 @@ function showHome(subjectId = current.subject) {
         ${st.units.some(isSchool) ? (probeReady(p.id, st)
           ? `<button class="wide-btn probe-btn" data-st="${st.id}">📝 Probe schreiben</button>`
           : `<p class="probe-hint">📝 Probe: Schaffe erst ${Math.min(PROBE_MIN_UNITS, st.units.filter(isSchool).length)} Themen ganz (alle Lektionen), dann kannst du eine Probe schreiben.</p>`) : ""}`).join("")}
-      ${rulesFor(stagesFor(p.id, sub).map((st) => st.id)).length ? `<button class="wide-btn rulebook-btn" id="rulebook">📘 Mein Regelheft</button>` : ""}
+      ${rulesFor(stagesFor(p.id, sub).map((st) => st.id)).length ? `<button class="wide-btn rulebook-btn" id="rulebook">📘 ${sub.id === "hsu" ? "Mein Wissensheft" : "Mein Regelheft"}</button>` : ""}
       ${stagesFor(p.id, sub).some((st) => st.units.some((u) => u.words.length)) ? `<button class="wide-btn album-btn" id="album">📒 Mein Sticker-Album</button>` : ""}
     </div>`);
   current.view = "home";
@@ -736,7 +736,7 @@ function finishLesson(lesson) {
 // Aufgabenarten: pairs (Paare finden), type (eintippen, optional vorher hat/ist wählen),
 // choice (auswählen, z. B. "Stimmt das?"), sort (in Gruppen sortieren),
 // syllables (Silben trennen), photo (im Heft schreiben + Foto als Nachweis),
-// build (Satz aus Bausteinen bauen), flash (Blitzlesen).
+// build (Satz aus Bausteinen bauen), flash (Blitzlesen), order (Reihenfolge, auch mit Bildern).
 
 const norm = (s) => String(s || "").normalize("NFC").replace(/\s+/g, " ").trim();
 const singleStep = (q) => ({ kind: q.kind, q });
@@ -890,7 +890,7 @@ function showRuleBook(subjectId, stageIds) {
       <header class="bar">
         <button class="icon-btn back-btn" id="back" aria-label="Zurück"><span class="back-arrow">←</span> Zurück</button>
       </header>
-      <h2 class="subject-title">📘 Mein Regelheft</h2>
+      <h2 class="subject-title">📘 ${subjectId === "hsu" ? "Mein Wissensheft" : "Mein Regelheft"}</h2>
       ${stageIds.map((sid) => {
         const list = rules.filter((r) => r.stage === sid);
         const st = content.subjects.flatMap((x) => x.stages).find((x) => x.id === sid);
@@ -1040,8 +1040,8 @@ STEPS.choice = (lesson, step) => {
   const opts = q.keepOrder ? q.options : shuffle(q.options);
   const token = lessonRender(lesson, `
     ${taskHead(q.task || "Was ist richtig?")}
-    ${q.vis ? `<div class="prompt-card vis-card">${vis(q.vis)}${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.prompt && (!q.visOptions || q.showText) ? promptCard(q.prompt) : ""}
-    <div class="choices ${q.visOptions ? "vis-choices" : q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""} ${!q.visOptions && !q.picOptions && opts.some((o) => String(o).length > 16) ? "flash-long" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(q.visOptions ? visText(o) : o)}">${q.visOptions ? vis(o) : q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${esc(o)}</span>`}</button>`).join("")}</div>
+    ${q.vis ? `<div class="prompt-card vis-card">${vis(q.vis)}${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.prompt && q.prompt !== q.task && (!q.visOptions || q.showText) ? promptCard(q.prompt) : ""}
+    <div class="choices ${q.visOptions ? "vis-choices" : q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""} ${!q.visOptions && !q.picOptions && opts.some((o) => String(o).length > 16) ? "flash-long" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(q.visOptions ? visText(o) : o)}">${q.visOptions ? vis(o) : q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${q.picText ? pic(o) : esc(o)}</span>`}</button>`).join("")}</div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
   wireVoice(token, () => sayDe(q.say || q.task || q.prompt), q.task || q.say || q.prompt, sayWord(q.say));
@@ -1149,6 +1149,80 @@ STEPS.build = (lesson, step) => {
       $("check").hidden = true;
       miss(lesson, step, q.id, built);
       $("fb").innerHTML = `<span class="try">Richtig ist zum Beispiel:</span> <span class="solution">${esc(buildText(q.answers[0], q.end))}</span>${ruleLink(q)}`;
+      score(lesson, step, q.id, false);
+      $("next").hidden = false;
+    }
+  };
+  $("next").onclick = () => advance(lesson);
+};
+
+// ---------- Übung: Reihenfolge (Bilder oder Wörter der Reihe nach antippen) ----------
+// Aufgabe: { kind: "order", tiles: ["🌱 Samen", "🌿 Keimling", "🌻 Blume"] } – tiles in der richtigen Reihenfolge, angezeigt gemischt.
+STEPS.order = (lesson, step) => {
+  const q = step.q;
+  let first = true;
+  let pool = shuffle(q.tiles.map((text, i) => ({ text, i })));
+  if (pool.every((t, k) => t.i === k)) pool = pool.reverse();
+  let placed = [];
+  const tile = (t, attrs, cls = "") => `<button class="tile ${cls} ${q.pics ? "pic-tile" : ""}" ${attrs}>${q.pics ? pic(t.text) : esc(t.text)}</button>`;
+  const token = lessonRender(lesson, `
+    ${taskHead(q.task || "Was kommt zuerst? Tipp der Reihe nach!")}
+    <div class="build-line order-line" id="line"></div>
+    <div class="build-pool" id="pool"></div>
+    <div class="feedback" id="fb"></div>
+    <button class="go-btn" id="check" disabled>Prüfen ✓</button>
+    <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
+  wireVoice(token, () => sayDe(q.say || q.task || "Was kommt zuerst? Tipp der Reihe nach!"), q.task || q.say || "order");
+  const draw = () => {
+    $("line").innerHTML = placed.length
+      ? placed.map((t, k) => `${k ? `<span class="order-arrow">→</span>` : ""}${tile(t, `data-k="${k}"`, "placed")}`).join("")
+      : `<span class="build-empty">Tipp unten an, was zuerst kommt.</span>`;
+    $("pool").innerHTML = pool.map((t) => tile(t, `data-i="${t.i}" ${placed.includes(t) ? "disabled" : ""}`)).join("");
+    $("check").disabled = placed.length !== q.tiles.length;
+    on("#pool .tile", "click", (e) => {
+      const t = pool.find((x) => x.i === +e.currentTarget.dataset.i);
+      if (placed.includes(t)) return;
+      placed.push(t);
+      chime("pop");
+      draw();
+    });
+    on("#line .tile", "click", (e) => {
+      if ($("check").hidden) return;
+      placed.splice(+e.currentTarget.dataset.k, 1);
+      draw();
+    });
+  };
+  draw();
+  const plain = (s) => String(s).replace(/^\P{L}+/u, "").trim() || s;
+  const shown = (list) => list.map(plain).join(" → ");
+  $("check").onclick = async () => {
+    const ok = placed.every((t, k) => t.i === k);
+    const built = shown(placed.map((t) => t.text));
+    if (lesson.exam) {
+      $("check").hidden = true;
+      return examAnswer(lesson, step, q.id, ok, built, token);
+    }
+    if (ok) {
+      $("check").hidden = true;
+      $("line").classList.add("right");
+      chime("good");
+      score(lesson, step, q.id, first);
+      $("fb").innerHTML = `<span class="ok">${first ? pick(PRAISE) : "Genau."}</span>${q.explain ? `<p class="explain">${esc(q.explain)}</p>` : ""}`;
+      if (q.explain) $("next").hidden = false;
+      else {
+        await wait(900);
+        if (alive(token)) advance(lesson);
+      }
+    } else if (first) {
+      first = false;
+      miss(lesson, step, q.id, built);
+      $("line").classList.add("shake");
+      setTimeout(() => $("line")?.classList.remove("shake"), 400);
+      $("fb").innerHTML = `<span class="try">Nicht ganz. Tipp oben ein Bild an, um es zurückzulegen, und versuch es nochmal!</span>`;
+    } else {
+      $("check").hidden = true;
+      miss(lesson, step, q.id, built);
+      $("fb").innerHTML = `<span class="try">Richtig ist:</span> <div class="order-solution">${q.tiles.map((x) => (q.pics ? pic(x) : esc(x))).join(` <span class="order-arrow">→</span> `)}</div>${ruleLink(q)}`;
       score(lesson, step, q.id, false);
       $("next").hidden = false;
     }
@@ -1901,11 +1975,14 @@ STEPS.sort = (lesson, step) => {
   let first = true;
   const token = lessonRender(lesson, `
     ${taskHead(t.task || "Wohin gehört das Wort?")}
-    <div class="prompt-card"><span class="prompt-text" id="cur"></span></div>
-    <div class="bins">${t.groups.map((g) => `<button class="bin" data-g="${esc(g)}"><span class="bin-title">${esc(g)}</span><span class="bin-items"></span></button>`).join("")}</div>
+    <div class="prompt-card ${t.pics ? "pic-card" : ""}">${t.pics ? `<span class="huge-pic" id="curpic"></span>` : ""}<span class="prompt-text" id="cur"></span></div>
+    <div class="bins ${t.pics ? "pic-bins" : ""}">${t.groups.map((g) => `<button class="bin" data-g="${esc(g)}"><span class="bin-title">${t.pics ? pic(g) : esc(g)}</span><span class="bin-items"></span></button>`).join("")}</div>
     <div class="feedback" id="fb"></div>`);
   wireVoice(token, () => sayDe(t.say || t.task || "Wohin gehört das Wort?"), t.task || t.say || "sort");
-  const show = () => ($("cur").textContent = order[i].text);
+  const show = () => {
+    $("cur").textContent = order[i].text;
+    if (t.pics) $("curpic").innerHTML = pic(order[i].pic || "");
+  };
   show();
   on(".bin", "click", async (e) => {
     if (i >= order.length) return;
@@ -1914,7 +1991,7 @@ STEPS.sort = (lesson, step) => {
     if (el.dataset.g === it.group) {
       chime("good");
       score(lesson, step, it.id, first);
-      el.querySelector(".bin-items").insertAdjacentHTML("beforeend", `<span>${esc(it.text)}</span>`);
+      el.querySelector(".bin-items").insertAdjacentHTML("beforeend", t.pics && it.pic ? `<span class="bin-pic">${pic(it.pic)}</span>` : `<span>${esc(it.text)}</span>`);
       first = true;
       $("fb").innerHTML = "";
       if (++i < order.length) return show();

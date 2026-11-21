@@ -1,0 +1,317 @@
+{
+ "id": "h3-bayern",
+ "type": "schule",
+ "title_de": "Bayern und unsere Gemeinde",
+ "image": "🦁",
+ "color": "#3b6fd8",
+ "lessons": [
+  {
+   "title": "Bayern auf der Karte",
+   "icon": "🗺️",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Welche Stadt ist die Hauptstadt des Regierungsbezirks?",
+     "review": "Wie heißt die Hauptstadt dieses Regierungsbezirks?",
+     "pairs": [
+      {
+       "id": "h3-bayern-oberbayern",
+       "a": "Oberbayern",
+       "b": "München"
+      },
+      {
+       "id": "h3-bayern-niederbayern",
+       "a": "Niederbayern",
+       "b": "Landshut"
+      },
+      {
+       "id": "h3-bayern-oberpfalz",
+       "a": "Oberpfalz",
+       "b": "Regensburg"
+      },
+      {
+       "id": "h3-bayern-schwaben",
+       "a": "Schwaben",
+       "b": "Augsburg"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Welche Stadt ist die Hauptstadt des Regierungsbezirks?",
+     "review": "Wie heißt die Hauptstadt dieses Regierungsbezirks?",
+     "pairs": [
+      {
+       "id": "h3-bayern-oberfranken",
+       "a": "Oberfranken",
+       "b": "Bayreuth"
+      },
+      {
+       "id": "h3-bayern-mittelfranken",
+       "a": "Mittelfranken",
+       "b": "Ansbach"
+      },
+      {
+       "id": "h3-bayern-unterfranken",
+       "a": "Unterfranken",
+       "b": "Würzburg"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-wie-heisst-die-landeshauptst",
+     "task": "Was stimmt?",
+     "prompt": "Wie heißt die Landeshauptstadt von Bayern?",
+     "options": [
+      "München",
+      "Nürnberg",
+      "Augsburg"
+     ],
+     "answer": "München"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-wie-viele-regierungsbezirke",
+     "task": "Was stimmt?",
+     "prompt": "Wie viele Regierungsbezirke hat Bayern?",
+     "options": [
+      "7",
+      "3",
+      "16"
+     ],
+     "answer": "7"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-welche-farben-hat-die-bayeri",
+     "task": "Was stimmt?",
+     "prompt": "Welche Farben hat die bayerische Flagge?",
+     "options": [
+      "weiß und blau",
+      "schwarz, rot, gold",
+      "rot und weiß"
+     ],
+     "answer": "weiß und blau"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-welches-land-grenzt-im-suede",
+     "task": "Was stimmt?",
+     "prompt": "Welches Land grenzt im Süden an Bayern?",
+     "options": [
+      "Österreich",
+      "Frankreich",
+      "Polen"
+     ],
+     "answer": "Österreich"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-welches-land-grenzt-im-osten",
+     "task": "Was stimmt?",
+     "prompt": "Welches Land grenzt im Osten an Bayern?",
+     "options": [
+      "Tschechien",
+      "Italien",
+      "Dänemark"
+     ],
+     "answer": "Tschechien"
+    }
+   ]
+  },
+  {
+   "title": "Berge, Flüsse und Seen",
+   "icon": "🏔️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-bayern-wie-heisst-der-hoechste-berg",
+     "task": "Was stimmt?",
+     "prompt": "Wie heißt der höchste Berg Deutschlands?",
+     "options": [
+      "Zugspitze",
+      "Watzmann",
+      "Brocken"
+     ],
+     "answer": "Zugspitze"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-wie-hoch-ist-die-zugspitze-u",
+     "task": "Was stimmt?",
+     "prompt": "Wie hoch ist die Zugspitze ungefähr?",
+     "options": [
+      "fast 3000 m",
+      "etwa 300 m",
+      "etwa 8000 m"
+     ],
+     "answer": "fast 3000 m"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-welcher-ist-der-groesste-see",
+     "task": "Was stimmt?",
+     "prompt": "Welcher ist der größte See in Bayern?",
+     "options": [
+      "Chiemsee",
+      "Starnberger See",
+      "Ammersee"
+     ],
+     "answer": "Chiemsee"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-welcher-fluss-fliesst-durch",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Fluss fließt durch München?",
+     "options": [
+      "Isar",
+      "Main",
+      "Rhein"
+     ],
+     "answer": "Isar"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-welcher-fluss-fliesst-durch-2",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Fluss fließt durch Regensburg?",
+     "options": [
+      "Donau",
+      "Isar",
+      "Elbe"
+     ],
+     "answer": "Donau"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-welcher-fluss-fliesst-durch-3",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Fluss fließt durch Würzburg?",
+     "options": [
+      "Main",
+      "Inn",
+      "Donau"
+     ],
+     "answer": "Main"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-die-donau-fliesst-bis-ins-sc",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Donau fließt bis ins Schwarze Meer.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Unsere Gemeinde",
+   "icon": "🏛️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-bayern-wer-leitet-die-gemeinde",
+     "task": "Was stimmt?",
+     "prompt": "Wer leitet die Gemeinde?",
+     "options": [
+      "der Bürgermeister oder die Bürgermeisterin",
+      "der Pfarrer",
+      "die Schulleiterin"
+     ],
+     "answer": "der Bürgermeister oder die Bürgermeisterin"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-wo-arbeitet-der-buergermeist",
+     "task": "Was stimmt?",
+     "prompt": "Wo arbeitet der Bürgermeister?",
+     "options": [
+      "im Rathaus",
+      "im Landtag",
+      "im Bundestag"
+     ],
+     "answer": "im Rathaus"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-wer-waehlt-den-gemeinderat",
+     "task": "Was stimmt?",
+     "prompt": "Wer wählt den Gemeinderat?",
+     "options": [
+      "die erwachsenen Bürgerinnen und Bürger",
+      "nur die Kinder",
+      "der Bürgermeister allein"
+     ],
+     "answer": "die erwachsenen Bürgerinnen und Bürger"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-bayern-wie-oft-wird-der-gemeinderat",
+     "task": "Was stimmt?",
+     "prompt": "Wie oft wird der Gemeinderat in Bayern gewählt?",
+     "options": [
+      "alle 6 Jahre",
+      "jedes Jahr",
+      "alle 20 Jahre"
+     ],
+     "answer": "alle 6 Jahre"
+    },
+    {
+     "kind": "sort",
+     "task": "Ist das eine Aufgabe der Gemeinde?",
+     "review": "Ist das eine Aufgabe der Gemeinde?",
+     "groups": [
+      "Aufgabe der Gemeinde",
+      "keine Aufgabe der Gemeinde"
+     ],
+     "items": [
+      {
+       "id": "h3-bayern-spielplaetze-bauen",
+       "text": "Spielplätze bauen",
+       "group": "Aufgabe der Gemeinde"
+      },
+      {
+       "id": "h3-bayern-schulgebaeude-pflegen",
+       "text": "Schulgebäude pflegen",
+       "group": "Aufgabe der Gemeinde"
+      },
+      {
+       "id": "h3-bayern-gemeindestrassen-reparieren",
+       "text": "Gemeindestraßen reparieren",
+       "group": "Aufgabe der Gemeinde"
+      },
+      {
+       "id": "h3-bayern-freiwillige-feuerwehr-ausrue",
+       "text": "Freiwillige Feuerwehr ausrüsten",
+       "group": "Aufgabe der Gemeinde"
+      },
+      {
+       "id": "h3-bayern-hausaufgaben-kontrollieren",
+       "text": "Hausaufgaben kontrollieren",
+       "group": "keine Aufgabe der Gemeinde"
+      },
+      {
+       "id": "h3-bayern-dein-zimmer-aufraeumen",
+       "text": "dein Zimmer aufräumen",
+       "group": "keine Aufgabe der Gemeinde"
+      }
+     ]
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

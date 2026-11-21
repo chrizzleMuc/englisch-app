@@ -1,0 +1,318 @@
+{
+ "id": "h3-sinne",
+ "type": "schule",
+ "title_de": "Auge und Ohr",
+ "image": "👂",
+ "color": "#c2417a",
+ "lessons": [
+  {
+   "title": "Das Auge",
+   "icon": "👁️",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Was macht dieser Teil des Auges?",
+     "review": "Was macht dieser Teil des Auges?",
+     "pairs": [
+      {
+       "id": "h3-sinne-pupille",
+       "a": "Pupille",
+       "b": "lässt Licht ins Auge"
+      },
+      {
+       "id": "h3-sinne-iris",
+       "a": "Iris",
+       "b": "gibt dem Auge die Farbe"
+      },
+      {
+       "id": "h3-sinne-linse",
+       "a": "Linse",
+       "b": "macht das Bild scharf"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Was macht dieser Teil des Auges?",
+     "review": "Was macht dieser Teil des Auges?",
+     "pairs": [
+      {
+       "id": "h3-sinne-netzhaut",
+       "a": "Netzhaut",
+       "b": "hier entsteht das Bild"
+      },
+      {
+       "id": "h3-sinne-sehnerv",
+       "a": "Sehnerv",
+       "b": "leitet das Bild zum Gehirn"
+      },
+      {
+       "id": "h3-sinne-wimpern",
+       "a": "Wimpern",
+       "b": "halten Staub ab"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-was-passiert-mit-der-pupille",
+     "task": "Was stimmt?",
+     "prompt": "Was passiert mit der Pupille im Dunkeln?",
+     "options": [
+      "Sie wird größer.",
+      "Sie wird kleiner.",
+      "Sie bleibt gleich."
+     ],
+     "answer": "Sie wird größer.",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-was-passiert-mit-der-pupille-2",
+     "task": "Was stimmt?",
+     "prompt": "Was passiert mit der Pupille im hellen Licht?",
+     "options": [
+      "Sie wird größer.",
+      "Sie wird kleiner.",
+      "Sie bleibt gleich."
+     ],
+     "answer": "Sie wird kleiner.",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-die-traenenfluessigkeit-hael",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Tränenflüssigkeit hält das Auge feucht und sauber.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Das Ohr",
+   "icon": "👂",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-sinne-welchen-weg-nimmt-der-schall",
+     "task": "Welchen Weg nimmt der Schall im Ohr? Bring ihn in die richtige Reihenfolge!",
+     "tiles": [
+      "Ohrmuschel",
+      "Gehörgang",
+      "Trommelfell",
+      "Gehörknöchelchen",
+      "Schnecke",
+      "Hörnerv"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-wie-heissen-die-drei-gehoerk",
+     "task": "Was stimmt?",
+     "prompt": "Wie heißen die drei Gehörknöchelchen?",
+     "options": [
+      "Hammer, Amboss, Steigbügel",
+      "Hammer, Zange, Säge",
+      "Löffel, Gabel, Messer"
+     ],
+     "answer": "Hammer, Amboss, Steigbügel"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-was-beginnt-zu-schwingen-wen",
+     "task": "Was stimmt?",
+     "prompt": "Was beginnt zu schwingen, wenn Schall ankommt?",
+     "options": [
+      "das Trommelfell",
+      "die Ohrmuschel",
+      "der Hörnerv"
+     ],
+     "answer": "das Trommelfell"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-im-innenohr-sitzt-auch-der-g",
+     "task": "Richtig oder falsch?",
+     "prompt": "Im Innenohr sitzt auch der Gleichgewichtssinn.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-mit-dem-wattestaebchen-tief",
+     "task": "Richtig oder falsch?",
+     "prompt": "Mit dem Wattestäbchen tief im Ohr putzen ist gut.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Damit schiebt man das Ohrenschmalz tiefer hinein und kann das Trommelfell verletzen."
+    }
+   ]
+  },
+  {
+   "title": "Augen und Ohren schützen",
+   "icon": "🕶️",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Was schützt die Augen, was die Ohren?",
+     "review": "Schützt das die Augen oder die Ohren?",
+     "groups": [
+      "schützt die Augen",
+      "schützt die Ohren"
+     ],
+     "items": [
+      {
+       "id": "h3-sinne-sonnenbrille",
+       "text": "Sonnenbrille",
+       "group": "schützt die Augen"
+      },
+      {
+       "id": "h3-sinne-musik-nicht-zu-laut-hoeren",
+       "text": "Musik nicht zu laut hören",
+       "group": "schützt die Ohren"
+      },
+      {
+       "id": "h3-sinne-schutzbrille-beim-werken",
+       "text": "Schutzbrille beim Werken",
+       "group": "schützt die Augen"
+      },
+      {
+       "id": "h3-sinne-gehoerschutz-bei-laerm",
+       "text": "Gehörschutz bei Lärm",
+       "group": "schützt die Ohren"
+      },
+      {
+       "id": "h3-sinne-bei-gutem-licht-lesen",
+       "text": "bei gutem Licht lesen",
+       "group": "schützt die Augen"
+      },
+      {
+       "id": "h3-sinne-muetze-bei-kaltem-wind",
+       "text": "Mütze bei kaltem Wind",
+       "group": "schützt die Ohren"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-sehr-lauter-laerm-kann-das-g",
+     "task": "Richtig oder falsch?",
+     "prompt": "Sehr lauter Lärm kann das Gehör für immer schädigen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-man-darf-kurz-direkt-in-die",
+     "task": "Richtig oder falsch?",
+     "prompt": "Man darf kurz direkt in die Sonne schauen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Das Sonnenlicht kann die Netzhaut schon in kurzer Zeit verletzen."
+    }
+   ]
+  },
+  {
+   "title": "Die fünf Sinne",
+   "icon": "✋",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Welches Sinnesorgan gehört zu welchem Sinn?",
+     "review": "Welcher Sinn gehört zu diesem Sinnesorgan?",
+     "pairs": [
+      {
+       "id": "h3-sinne-auge",
+       "a": "Auge",
+       "b": "sehen"
+      },
+      {
+       "id": "h3-sinne-ohr",
+       "a": "Ohr",
+       "b": "hören"
+      },
+      {
+       "id": "h3-sinne-nase",
+       "a": "Nase",
+       "b": "riechen"
+      },
+      {
+       "id": "h3-sinne-zunge",
+       "a": "Zunge",
+       "b": "schmecken"
+      },
+      {
+       "id": "h3-sinne-haut",
+       "a": "Haut",
+       "b": "fühlen"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-welchen-geschmack-kann-die-z",
+     "task": "Was stimmt?",
+     "prompt": "Welchen Geschmack kann die Zunge erkennen?",
+     "options": [
+      "sauer",
+      "laut",
+      "hell"
+     ],
+     "answer": "sauer"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-mit-welcher-schrift-lesen-bl",
+     "task": "Was stimmt?",
+     "prompt": "Mit welcher Schrift lesen blinde Menschen mit den Fingern?",
+     "options": [
+      "Brailleschrift",
+      "Schreibschrift",
+      "Druckschrift"
+     ],
+     "answer": "Brailleschrift"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-welcher-sinn-warnt-dich-vor",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Sinn warnt dich vor verdorbenem Essen?",
+     "options": [
+      "Riechen",
+      "Hören",
+      "Sehen"
+     ],
+     "answer": "Riechen"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

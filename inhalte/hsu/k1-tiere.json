@@ -1,0 +1,392 @@
+{
+ "id": "h1-tiere",
+ "type": "schule",
+ "title_de": "Tiere",
+ "image": "🦔",
+ "color": "#a0663a",
+ "lessons": [
+  {
+   "title": "Wo lebt das Tier?",
+   "icon": "🏠",
+   "tasks": [
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "Wo lebt das Tier? Tipp auf das richtige Bild!",
+     "groups": [
+      "🏠 Zuhause",
+      "🚜 Bauernhof",
+      "🌲 Wald"
+     ],
+     "items": [
+      {
+       "id": "h1-tiere-katze",
+       "pic": "🐱",
+       "text": "Katze",
+       "group": "🏠 Zuhause"
+      },
+      {
+       "id": "h1-tiere-kuh",
+       "pic": "🐄",
+       "text": "Kuh",
+       "group": "🚜 Bauernhof"
+      },
+      {
+       "id": "h1-tiere-fuchs",
+       "pic": "🦊",
+       "text": "Fuchs",
+       "group": "🌲 Wald"
+      },
+      {
+       "id": "h1-tiere-hamster",
+       "pic": "🐹",
+       "text": "Hamster",
+       "group": "🏠 Zuhause"
+      },
+      {
+       "id": "h1-tiere-schwein",
+       "pic": "🐷",
+       "text": "Schwein",
+       "group": "🚜 Bauernhof"
+      },
+      {
+       "id": "h1-tiere-reh",
+       "pic": "🦌",
+       "text": "Reh",
+       "group": "🌲 Wald"
+      }
+     ]
+    },
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "Wo lebt das Tier? Tipp auf das richtige Bild!",
+     "groups": [
+      "🏠 Zuhause",
+      "🚜 Bauernhof",
+      "🌲 Wald"
+     ],
+     "items": [
+      {
+       "id": "h1-tiere-huhn",
+       "pic": "🐔",
+       "text": "Huhn",
+       "group": "🚜 Bauernhof"
+      },
+      {
+       "id": "h1-tiere-eule",
+       "pic": "🦉",
+       "text": "Eule",
+       "group": "🌲 Wald"
+      },
+      {
+       "id": "h1-tiere-hund",
+       "pic": "🐶",
+       "text": "Hund",
+       "group": "🏠 Zuhause"
+      },
+      {
+       "id": "h1-tiere-schaf",
+       "pic": "🐑",
+       "text": "Schaf",
+       "group": "🚜 Bauernhof"
+      },
+      {
+       "id": "h1-tiere-eichhoernchen",
+       "pic": "🐿️",
+       "text": "Eichhörnchen",
+       "group": "🌲 Wald"
+      },
+      {
+       "id": "h1-tiere-goldfisch",
+       "pic": "🐟",
+       "text": "Goldfisch",
+       "group": "🏠 Zuhause"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Was gibt uns das Tier?",
+   "icon": "🥛",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-tiere-was-gibt-uns-die-kuh",
+     "task": "Was gibt uns die Kuh?",
+     "prompt": "Was gibt uns die Kuh?",
+     "options": [
+      "🥛",
+      "🥚",
+      "🍯"
+     ],
+     "answer": "🥛",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-was-gibt-uns-das-huhn",
+     "task": "Was gibt uns das Huhn?",
+     "prompt": "Was gibt uns das Huhn?",
+     "options": [
+      "🧶",
+      "🥚",
+      "🥛"
+     ],
+     "answer": "🥚",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-was-gibt-uns-das-schaf",
+     "task": "Was gibt uns das Schaf?",
+     "prompt": "Was gibt uns das Schaf?",
+     "options": [
+      "🍯",
+      "🥛",
+      "🧶"
+     ],
+     "answer": "🧶",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-was-macht-die-biene",
+     "task": "Was macht die Biene?",
+     "prompt": "Was macht die Biene?",
+     "options": [
+      "🍯",
+      "🥚",
+      "🧶"
+     ],
+     "answer": "🍯",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-welches-tierkind-schluepft-a",
+     "task": "Welches Tierkind schlüpft aus dem Ei?",
+     "prompt": "Welches Tierkind schlüpft aus dem Ei?",
+     "options": [
+      "🐥",
+      "🐶",
+      "🐱"
+     ],
+     "answer": "🐥",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-das-kalb-ist-das-kind-von-de",
+     "task": "Stimmt das? Das Kalb ist das Kind von der Kuh.",
+     "prompt": "Das Kalb ist das Kind von der Kuh.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🐄"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-das-kueken-ist-das-kind-vom",
+     "task": "Stimmt das? Das Küken ist das Kind vom Schwein.",
+     "prompt": "Das Küken ist das Kind vom Schwein.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🐷"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Was frisst das Tier?",
+   "icon": "🥕",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-tiere-was-frisst-der-hase-gern",
+     "task": "Was frisst der Hase gern?",
+     "prompt": "Was frisst der Hase gern?",
+     "options": [
+      "🥕",
+      "🍖",
+      "🐟"
+     ],
+     "answer": "🥕",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-was-frisst-das-eichhoernchen",
+     "task": "Was frisst das Eichhörnchen gern?",
+     "prompt": "Was frisst das Eichhörnchen gern?",
+     "options": [
+      "🌰",
+      "🧀",
+      "🍬"
+     ],
+     "answer": "🌰",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-was-frisst-die-kuh",
+     "task": "Was frisst die Kuh?",
+     "prompt": "Was frisst die Kuh?",
+     "options": [
+      "🌿",
+      "🍖",
+      "🍰"
+     ],
+     "answer": "🌿",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-was-frisst-die-amsel-gern",
+     "task": "Was frisst die Amsel gern?",
+     "prompt": "Was frisst die Amsel gern?",
+     "options": [
+      "🐛",
+      "🍕",
+      "🧀"
+     ],
+     "answer": "🐛",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-was-kaut-der-hund-gern",
+     "task": "Was kaut der Hund gern?",
+     "prompt": "Was kaut der Hund gern?",
+     "options": [
+      "🦴",
+      "🌻",
+      "🍬"
+     ],
+     "answer": "🦴",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-haustiere-brauchen-jeden-tag",
+     "task": "Stimmt das? Haustiere brauchen jeden Tag frisches Wasser.",
+     "prompt": "Haustiere brauchen jeden Tag frisches Wasser.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "💧"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Tiere im Winter",
+   "icon": "🦔",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-tiere-welches-tier-haelt-wintersch",
+     "task": "Welches Tier hält Winterschlaf?",
+     "prompt": "Welches Tier hält Winterschlaf?",
+     "options": [
+      "🦔",
+      "🐄",
+      "🐶"
+     ],
+     "answer": "🦔",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-wo-schlaeft-der-igel-im-wint",
+     "task": "Wo schläft der Igel im Winter?",
+     "prompt": "Wo schläft der Igel im Winter?",
+     "options": [
+      "🍂",
+      "🏊",
+      "☀️"
+     ],
+     "answer": "🍂",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-der-igel-schlaeft-im-winter",
+     "task": "Stimmt das? Der Igel schläft im Winter in einem Laubhaufen.",
+     "prompt": "Der Igel schläft im Winter in einem Laubhaufen.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🦔"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-das-eichhoernchen-sammelt-im",
+     "task": "Stimmt das? Das Eichhörnchen sammelt im Herbst Nüsse.",
+     "prompt": "Das Eichhörnchen sammelt im Herbst Nüsse.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🐿️"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-viele-voegel-fliegen-im-herb",
+     "task": "Stimmt das? Viele Vögel fliegen im Herbst in warme Länder.",
+     "prompt": "Viele Vögel fliegen im Herbst in warme Länder.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🐦"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tiere-der-igel-frisst-im-winter-je",
+     "task": "Stimmt das? Der Igel frisst im Winter jeden Tag Äpfel.",
+     "prompt": "Der Igel frisst im Winter jeden Tag Äpfel.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🍎"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 10
+  }
+ ]
+}

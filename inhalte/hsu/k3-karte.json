@@ -1,0 +1,331 @@
+{
+ "id": "h3-karte",
+ "type": "schule",
+ "title_de": "Karte und Himmelsrichtungen",
+ "image": "🧭",
+ "color": "#2f7fd1",
+ "lessons": [
+  {
+   "title": "Himmelsrichtungen",
+   "icon": "🧭",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-karte-welche-himmelsrichtung-ist-a",
+     "task": "Was stimmt?",
+     "prompt": "Welche Himmelsrichtung ist auf der Karte oben?",
+     "options": [
+      "Norden",
+      "Osten",
+      "Süden",
+      "Westen"
+     ],
+     "answer": "Norden",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-welche-himmelsrichtung-ist-a-2",
+     "task": "Was stimmt?",
+     "prompt": "Welche Himmelsrichtung ist auf der Karte rechts?",
+     "options": [
+      "Norden",
+      "Osten",
+      "Süden",
+      "Westen"
+     ],
+     "answer": "Osten",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-welche-himmelsrichtung-ist-a-3",
+     "task": "Was stimmt?",
+     "prompt": "Welche Himmelsrichtung ist auf der Karte links?",
+     "options": [
+      "Norden",
+      "Osten",
+      "Süden",
+      "Westen"
+     ],
+     "answer": "Westen",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-welche-himmelsrichtung-ist-a-4",
+     "task": "Was stimmt?",
+     "prompt": "Welche Himmelsrichtung ist auf der Karte unten?",
+     "options": [
+      "Norden",
+      "Osten",
+      "Süden",
+      "Westen"
+     ],
+     "answer": "Süden",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-wo-geht-die-sonne-auf",
+     "task": "Was stimmt?",
+     "prompt": "Wo geht die Sonne auf?",
+     "options": [
+      "Norden",
+      "Osten",
+      "Süden",
+      "Westen"
+     ],
+     "answer": "Osten",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-wo-geht-die-sonne-unter",
+     "task": "Was stimmt?",
+     "prompt": "Wo geht die Sonne unter?",
+     "options": [
+      "Norden",
+      "Osten",
+      "Süden",
+      "Westen"
+     ],
+     "answer": "Westen",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-wo-steht-die-sonne-bei-uns-m",
+     "task": "Was stimmt?",
+     "prompt": "Wo steht die Sonne bei uns mittags?",
+     "options": [
+      "Norden",
+      "Osten",
+      "Süden",
+      "Westen"
+     ],
+     "answer": "Süden",
+     "keepOrder": true
+    },
+    {
+     "kind": "order",
+     "id": "h3-karte-ordne-im-uhrzeigersinn-und-f",
+     "task": "Ordne im Uhrzeigersinn und fang mit Norden an!",
+     "tiles": [
+      "Norden",
+      "Osten",
+      "Süden",
+      "Westen"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Zwischen den Richtungen",
+   "icon": "↗️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-karte-zwischen-norden-und-osten-li",
+     "task": "Was stimmt?",
+     "prompt": "Zwischen Norden und Osten liegt …",
+     "options": [
+      "Nordosten",
+      "Südwesten",
+      "Nordwesten"
+     ],
+     "answer": "Nordosten"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-zwischen-sueden-und-westen-l",
+     "task": "Was stimmt?",
+     "prompt": "Zwischen Süden und Westen liegt …",
+     "options": [
+      "Südosten",
+      "Südwesten",
+      "Nordwesten"
+     ],
+     "answer": "Südwesten"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-zwischen-norden-und-westen-l",
+     "task": "Was stimmt?",
+     "prompt": "Zwischen Norden und Westen liegt …",
+     "options": [
+      "Nordwesten",
+      "Nordosten",
+      "Südosten"
+     ],
+     "answer": "Nordwesten"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-was-liegt-genau-gegenueber-v",
+     "task": "Was stimmt?",
+     "prompt": "Was liegt genau gegenüber von Nordosten?",
+     "options": [
+      "Südwesten",
+      "Südosten",
+      "Nordwesten"
+     ],
+     "answer": "Südwesten"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-du-schaust-nach-norden-und-d",
+     "task": "Was stimmt?",
+     "prompt": "Du schaust nach Norden und drehst dich ganz um. Wohin schaust du jetzt?",
+     "options": [
+      "Norden",
+      "Osten",
+      "Süden",
+      "Westen"
+     ],
+     "answer": "Süden",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-du-schaust-nach-norden-welch",
+     "task": "Was stimmt?",
+     "prompt": "Du schaust nach Norden. Welche Richtung ist rechts von dir?",
+     "options": [
+      "Norden",
+      "Osten",
+      "Süden",
+      "Westen"
+     ],
+     "answer": "Osten",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-du-schaust-nach-sueden-welch",
+     "task": "Was stimmt?",
+     "prompt": "Du schaust nach Süden. Welche Richtung ist rechts von dir?",
+     "options": [
+      "Norden",
+      "Osten",
+      "Süden",
+      "Westen"
+     ],
+     "answer": "Westen",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Karten lesen",
+   "icon": "🗺️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-karte-wo-steht-was-die-zeichen-auf",
+     "task": "Was stimmt?",
+     "prompt": "Wo steht, was die Zeichen auf der Karte bedeuten?",
+     "options": [
+      "in der Legende",
+      "im Maßstab",
+      "auf dem Kompass"
+     ],
+     "answer": "in der Legende"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-was-zeigt-der-massstab",
+     "task": "Was stimmt?",
+     "prompt": "Was zeigt der Maßstab?",
+     "options": [
+      "wie stark die Wirklichkeit verkleinert ist",
+      "wo Norden ist",
+      "wie das Wetter wird"
+     ],
+     "answer": "wie stark die Wirklichkeit verkleinert ist"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-massstab-1-100-wie-lang-ist",
+     "task": "Was stimmt?",
+     "prompt": "Maßstab 1 : 100. Wie lang ist 1 cm auf der Karte in Wirklichkeit?",
+     "options": [
+      "100 cm, also 1 m",
+      "1 cm",
+      "100 km"
+     ],
+     "answer": "100 cm, also 1 m"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-welche-farbe-hat-wasser-meis",
+     "task": "Was stimmt?",
+     "prompt": "Welche Farbe hat Wasser meistens auf Karten?",
+     "options": [
+      "blau",
+      "rot",
+      "gelb"
+     ],
+     "answer": "blau"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-welche-farbe-hat-wald-meiste",
+     "task": "Was stimmt?",
+     "prompt": "Welche Farbe hat Wald meistens auf Karten?",
+     "options": [
+      "grün",
+      "blau",
+      "lila"
+     ],
+     "answer": "grün"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-was-ist-ein-grundriss",
+     "task": "Was stimmt?",
+     "prompt": "Was ist ein Grundriss?",
+     "options": [
+      "eine Zeichnung von oben",
+      "ein Foto von der Seite",
+      "eine Zeichnung von unten"
+     ],
+     "answer": "eine Zeichnung von oben"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-ein-stadtplan-zeigt-mehr-ein",
+     "task": "Richtig oder falsch?",
+     "prompt": "Ein Stadtplan zeigt mehr Einzelheiten als eine Deutschlandkarte.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-karte-die-kompassnadel-zeigt-immer",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Kompassnadel zeigt immer nach Süden.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Die Kompassnadel zeigt nach Norden."
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

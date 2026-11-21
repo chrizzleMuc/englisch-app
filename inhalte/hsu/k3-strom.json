@@ -1,0 +1,275 @@
+{
+ "id": "h3-strom",
+ "type": "schule",
+ "title_de": "Strom",
+ "image": "⚡",
+ "color": "#e8a317",
+ "lessons": [
+  {
+   "title": "Der Stromkreis",
+   "icon": "💡",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-strom-wann-leuchtet-die-lampe",
+     "task": "Was stimmt?",
+     "prompt": "Wann leuchtet die Lampe?",
+     "options": [
+      "wenn der Stromkreis geschlossen ist",
+      "wenn der Stromkreis offen ist",
+      "wenn die Batterie leer ist"
+     ],
+     "answer": "wenn der Stromkreis geschlossen ist"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-strom-was-braucht-ein-einfacher-st",
+     "task": "Was stimmt?",
+     "prompt": "Was braucht ein einfacher Stromkreis?",
+     "options": [
+      "Batterie, Kabel und Lampe",
+      "nur eine Lampe",
+      "Wasser und Holz"
+     ],
+     "answer": "Batterie, Kabel und Lampe"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-strom-was-macht-ein-schalter",
+     "task": "Was stimmt?",
+     "prompt": "Was macht ein Schalter?",
+     "options": [
+      "Er öffnet und schließt den Stromkreis.",
+      "Er macht Strom.",
+      "Er macht die Lampe heller."
+     ],
+     "answer": "Er öffnet und schließt den Stromkreis."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-strom-wenn-ein-kabel-nicht-richtig",
+     "task": "Richtig oder falsch?",
+     "prompt": "Wenn ein Kabel nicht richtig angeschlossen ist, leuchtet die Lampe nicht.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-strom-eine-lampe-leuchtet-auch-mit",
+     "task": "Richtig oder falsch?",
+     "prompt": "Eine Lampe leuchtet auch mit nur einem Kabel zur Batterie.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Der Strom braucht einen geschlossenen Kreis: hin zur Lampe und wieder zurück zur Batterie."
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Leiter und Nichtleiter",
+   "icon": "🔌",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Leitet das Strom?",
+     "review": "Leitet das Strom?",
+     "groups": [
+      "leitet Strom",
+      "leitet nicht"
+     ],
+     "items": [
+      {
+       "id": "h3-strom-eisennagel",
+       "text": "Eisennagel",
+       "group": "leitet Strom"
+      },
+      {
+       "id": "h3-strom-holzstab",
+       "text": "Holzstab",
+       "group": "leitet nicht"
+      },
+      {
+       "id": "h3-strom-kupferdraht",
+       "text": "Kupferdraht",
+       "group": "leitet Strom"
+      },
+      {
+       "id": "h3-strom-plastikloeffel",
+       "text": "Plastiklöffel",
+       "group": "leitet nicht"
+      },
+      {
+       "id": "h3-strom-alufolie",
+       "text": "Alufolie",
+       "group": "leitet Strom"
+      },
+      {
+       "id": "h3-strom-radiergummi",
+       "text": "Radiergummi",
+       "group": "leitet nicht"
+      },
+      {
+       "id": "h3-strom-bueroklammer",
+       "text": "Büroklammer",
+       "group": "leitet Strom"
+      },
+      {
+       "id": "h3-strom-glas",
+       "text": "Glas",
+       "group": "leitet nicht"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-strom-kabel-sind-mit-kunststoff-um",
+     "task": "Richtig oder falsch?",
+     "prompt": "Kabel sind mit Kunststoff umhüllt, damit man keinen Schlag bekommt.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-strom-wie-nennt-man-stoffe-die-str",
+     "task": "Was stimmt?",
+     "prompt": "Wie nennt man Stoffe, die Strom nicht durchlassen?",
+     "options": [
+      "Nichtleiter",
+      "Leiter",
+      "Batterien"
+     ],
+     "answer": "Nichtleiter"
+    }
+   ]
+  },
+  {
+   "title": "Sicher mit Strom",
+   "icon": "⚠️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-strom-mit-einer-4-5-volt-batterie",
+     "task": "Richtig oder falsch?",
+     "prompt": "Mit einer 4,5-Volt-Batterie kannst du gefahrlos experimentieren.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-strom-an-der-steckdose-darf-man-ex",
+     "task": "Richtig oder falsch?",
+     "prompt": "An der Steckdose darf man experimentieren.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Strom aus der Steckdose ist lebensgefährlich."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-strom-elektrische-geraete-gehoeren",
+     "task": "Richtig oder falsch?",
+     "prompt": "Elektrische Geräte gehören nicht in die Nähe der Badewanne.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-strom-kaputte-kabel-fasst-man-nich",
+     "task": "Richtig oder falsch?",
+     "prompt": "Kaputte Kabel fasst man nicht an.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-strom-wie-viel-volt-hat-eine-steck",
+     "task": "Was stimmt?",
+     "prompt": "Wie viel Volt hat eine Steckdose?",
+     "options": [
+      "230 Volt",
+      "4,5 Volt",
+      "1,5 Volt"
+     ],
+     "answer": "230 Volt"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-strom-womit-kann-man-umweltfreundl",
+     "task": "Was stimmt?",
+     "prompt": "Womit kann man umweltfreundlich Strom erzeugen?",
+     "options": [
+      "mit Sonne, Wind und Wasser",
+      "mit Plastikmüll",
+      "mit Sand"
+     ],
+     "answer": "mit Sonne, Wind und Wasser"
+    },
+    {
+     "kind": "sort",
+     "task": "Spart das Strom?",
+     "review": "Spart das Strom oder verschwendet es Strom?",
+     "groups": [
+      "spart Strom",
+      "verschwendet Strom"
+     ],
+     "items": [
+      {
+       "id": "h3-strom-licht-ausmachen-wenn-man-rau",
+       "text": "Licht ausmachen, wenn man rausgeht",
+       "group": "spart Strom"
+      },
+      {
+       "id": "h3-strom-fernseher-im-stand-by-lassen",
+       "text": "Fernseher im Stand-by lassen",
+       "group": "verschwendet Strom"
+      },
+      {
+       "id": "h3-strom-kuehlschranktuer-lange-offen",
+       "text": "Kühlschranktür lange offen lassen",
+       "group": "verschwendet Strom"
+      },
+      {
+       "id": "h3-strom-ladegeraet-nach-dem-laden-au",
+       "text": "Ladegerät nach dem Laden ausstecken",
+       "group": "spart Strom"
+      }
+     ]
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

@@ -1,0 +1,261 @@
+{
+ "id": "h3-zeit",
+ "type": "schule",
+ "title_de": "Früher und heute",
+ "image": "⏳",
+ "color": "#a0663a",
+ "lessons": [
+  {
+   "title": "Zeitbegriffe",
+   "icon": "⏳",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-zeit-wie-viele-jahre-hat-ein-jahr",
+     "task": "Was stimmt?",
+     "prompt": "Wie viele Jahre hat ein Jahrzehnt?",
+     "options": [
+      "10",
+      "100",
+      "1000"
+     ],
+     "answer": "10",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zeit-wie-viele-jahre-hat-ein-jahr-2",
+     "task": "Was stimmt?",
+     "prompt": "Wie viele Jahre hat ein Jahrhundert?",
+     "options": [
+      "10",
+      "100",
+      "1000"
+     ],
+     "answer": "100",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zeit-wie-viele-jahre-hat-ein-jahr-3",
+     "task": "Was stimmt?",
+     "prompt": "Wie viele Jahre hat ein Jahrtausend?",
+     "options": [
+      "10",
+      "100",
+      "1000"
+     ],
+     "answer": "1000",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zeit-in-welchem-jahrhundert-leben",
+     "task": "Was stimmt?",
+     "prompt": "In welchem Jahrhundert leben wir?",
+     "options": [
+      "im 21. Jahrhundert",
+      "im 20. Jahrhundert",
+      "im 19. Jahrhundert"
+     ],
+     "answer": "im 21. Jahrhundert"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zeit-zu-welchem-jahrhundert-gehoe",
+     "task": "Was stimmt?",
+     "prompt": "Zu welchem Jahrhundert gehört das Jahr 1990?",
+     "options": [
+      "zum 20. Jahrhundert",
+      "zum 19. Jahrhundert",
+      "zum 21. Jahrhundert"
+     ],
+     "answer": "zum 20. Jahrhundert"
+    },
+    {
+     "kind": "type",
+     "id": "h3-zeit-wie-viele-jahre-sind-3-jahrz",
+     "task": "Rechne!",
+     "prompt": "Wie viele Jahre sind 3 Jahrzehnte?",
+     "answer": "30"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zeit-deine-grosseltern-gehoeren-z",
+     "task": "Richtig oder falsch?",
+     "prompt": "Deine Großeltern gehören zu einer anderen Generation als du.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Die Zeitleiste",
+   "icon": "📏",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-zeit-bring-in-die-richtige-reihen",
+     "task": "Bring in die richtige Reihenfolge: von früher nach heute!",
+     "tiles": [
+      "Steinzeit",
+      "Römer",
+      "Ritter und Burgen",
+      "erste Autos",
+      "Smartphone"
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "h3-zeit-licht-im-haus-ordne-von-frue",
+     "task": "Licht im Haus: Ordne von früher nach heute!",
+     "tiles": [
+      "Kerze",
+      "Petroleumlampe",
+      "Glühbirne",
+      "LED-Lampe"
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "h3-zeit-nachrichten-schicken-ordne-v",
+     "task": "Nachrichten schicken: Ordne von früher nach heute!",
+     "tiles": [
+      "Brief mit der Postkutsche",
+      "Telefon mit Schnur",
+      "Handy",
+      "Videoanruf"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zeit-was-gab-es-in-der-steinzeit",
+     "task": "Was stimmt?",
+     "prompt": "Was gab es in der Steinzeit noch nicht?",
+     "options": [
+      "Werkzeuge aus Metall",
+      "Feuer",
+      "Faustkeile aus Stein"
+     ],
+     "answer": "Werkzeuge aus Metall"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zeit-was-gab-es-zuerst",
+     "task": "Was stimmt?",
+     "prompt": "Was gab es zuerst?",
+     "options": [
+      "die Dampflok",
+      "den ICE",
+      "das Elektroauto von heute"
+     ],
+     "answer": "die Dampflok"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Früher und heute",
+   "icon": "👵",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Früher oder heute?",
+     "review": "War das früher so oder ist das heute so?",
+     "groups": [
+      "früher",
+      "heute"
+     ],
+     "items": [
+      {
+       "id": "h3-zeit-auf-einer-schiefertafel-schr",
+       "text": "auf einer Schiefertafel schreiben",
+       "group": "früher"
+      },
+      {
+       "id": "h3-zeit-mit-dem-tablet-lernen",
+       "text": "mit dem Tablet lernen",
+       "group": "heute"
+      },
+      {
+       "id": "h3-zeit-mit-kohle-den-ofen-heizen",
+       "text": "mit Kohle den Ofen heizen",
+       "group": "früher"
+      },
+      {
+       "id": "h3-zeit-heizung-mit-thermostat",
+       "text": "Heizung mit Thermostat",
+       "group": "heute"
+      },
+      {
+       "id": "h3-zeit-in-der-telefonzelle-anrufen",
+       "text": "in der Telefonzelle anrufen",
+       "group": "früher"
+      },
+      {
+       "id": "h3-zeit-mit-dem-handy-anrufen",
+       "text": "mit dem Handy anrufen",
+       "group": "heute"
+      },
+      {
+       "id": "h3-zeit-waesche-auf-dem-waschbrett-s",
+       "text": "Wäsche auf dem Waschbrett schrubben",
+       "group": "früher"
+      },
+      {
+       "id": "h3-zeit-waschmaschine",
+       "text": "Waschmaschine",
+       "group": "heute"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zeit-woher-wissen-wir-wie-die-men",
+     "task": "Was stimmt?",
+     "prompt": "Woher wissen wir, wie die Menschen früher gelebt haben?",
+     "options": [
+      "aus alten Fotos, Briefen und Funden",
+      "aus Zeichentrickfilmen",
+      "aus der Wettervorhersage"
+     ],
+     "answer": "aus alten Fotos, Briefen und Funden"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zeit-wie-nennt-man-alte-fotos-bri",
+     "task": "Was stimmt?",
+     "prompt": "Wie nennt man alte Fotos, Briefe und Gegenstände, aus denen wir etwas über früher lernen?",
+     "options": [
+      "Quellen",
+      "Rezepte",
+      "Gutscheine"
+     ],
+     "answer": "Quellen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-zeit-deine-grosseltern-koennen-di",
+     "task": "Richtig oder falsch?",
+     "prompt": "Deine Großeltern können dir als Zeitzeugen von früher erzählen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

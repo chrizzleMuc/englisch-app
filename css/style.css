@@ -878,3 +878,22 @@ table.eval tr.fail td { color: #b3261e; }
   .pz-keys { grid-template-columns: repeat(3, 1fr); width: 100%; }
   .pz-keys .key { min-height: 64px; }
 }
+
+/* Sachunterricht: Sortieren mit Bildern, Reihenfolge */
+.pic-bins .bin-title { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; font-size: clamp(18px, 3.6vw, 24px); }
+.pic-bins .bin-title .emo { width: 1.9em; height: 1.9em; }
+.pic-bins .bin-items { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 4px; }
+.bin-pic { font-size: 30px; line-height: 1; }
+.pic-tile { padding: 8px 12px; font-size: clamp(16px, 3.4vw, 22px); display: inline-flex; align-items: center; gap: 6px; }
+.pic-tile .emo { width: clamp(52px, 11vw, 78px); height: clamp(52px, 11vw, 78px); }
+.order-line { gap: 6px; }
+.order-arrow { font-size: 26px; font-weight: 800; color: #fff; }
+.build-line.right .order-arrow, .order-solution .order-arrow { color: var(--card-ink); }
+.order-solution { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; margin-top: 8px; font-size: 18px; font-weight: 700; }
+.order-solution .emo { width: 44px; height: 44px; }
+.text-choices .word .emo { width: 1.4em; height: 1.4em; vertical-align: middle; }
+.pic-bins { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.pic-bins .bin { min-height: 170px; }
+.pic-bins .bin-title { flex-direction: column; gap: 4px; }
+.pic-bins .bin-title .emo { width: clamp(56px, 12vw, 84px); height: clamp(56px, 12vw, 84px); }
+.pic-tile .emo-txt, .text-choices .word .emo-txt { margin-left: .2em; }

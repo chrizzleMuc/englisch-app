@@ -1,0 +1,279 @@
+{
+ "id": "h1-verkehr",
+ "type": "schule",
+ "title_de": "Sicher unterwegs",
+ "image": "🚦",
+ "color": "#d6453d",
+ "lessons": [
+  {
+   "title": "Die Ampel",
+   "icon": "🚦",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-bei-welcher-farbe-darfst-du",
+     "task": "Bei welcher Farbe darfst du an der Fußgänger-Ampel gehen?",
+     "prompt": "Bei welcher Farbe darfst du an der Fußgänger-Ampel gehen?",
+     "options": [
+      "🟢",
+      "🔴",
+      "🟡"
+     ],
+     "answer": "🟢",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-bei-welcher-farbe-musst-du-s",
+     "task": "Bei welcher Farbe musst du stehen bleiben?",
+     "prompt": "Bei welcher Farbe musst du stehen bleiben?",
+     "options": [
+      "🟢",
+      "🔴",
+      "🔵"
+     ],
+     "answer": "🔴",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-die-fussgaenger-ampel-ist-ro",
+     "task": "Die Fußgänger-Ampel ist rot. Was machst du?",
+     "prompt": "Die Fußgänger-Ampel ist rot. Was machst du?",
+     "options": [
+      "🧍",
+      "🚶",
+      "🏃"
+     ],
+     "answer": "🧍",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-auch-bei-gruen-schaue-ich-na",
+     "task": "Stimmt das? Auch bei Grün schaue ich nach links und rechts.",
+     "prompt": "Auch bei Grün schaue ich nach links und rechts.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "👀"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-bei-rot-renne-ich-schnell-ue",
+     "task": "Stimmt das? Bei Rot renne ich schnell über die Straße.",
+     "prompt": "Bei Rot renne ich schnell über die Straße.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🔴"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-welches-schild-sagt-stopp-an",
+     "task": "Welches Schild sagt: Stopp, anhalten!",
+     "prompt": "Welches Schild sagt: Stopp, anhalten!",
+     "options": [
+      "🛑",
+      "🚸",
+      "🚲"
+     ],
+     "answer": "🛑",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-welches-schild-sagt-achtung",
+     "task": "Welches Schild sagt: Achtung, Kinder!",
+     "prompt": "Welches Schild sagt: Achtung, Kinder!",
+     "options": [
+      "🚸",
+      "🛑",
+      "⛔"
+     ],
+     "answer": "🚸",
+     "picOptions": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Über die Straße",
+   "icon": "🦓",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-wo-gehst-du-sicher-ueber-die",
+     "task": "Wo gehst du sicher über die Straße?",
+     "prompt": "Wo gehst du sicher über die Straße?",
+     "options": [
+      "🦓",
+      "🌳",
+      "🚗"
+     ],
+     "answer": "🦓",
+     "picOptions": true
+    },
+    {
+     "kind": "order",
+     "pics": true,
+     "id": "h1-verkehr-wie-gehst-du-ueber-die-stras",
+     "task": "Wie gehst du über die Straße? Leg die Bilder der Reihe nach!",
+     "tiles": [
+      "🧍",
+      "👀",
+      "🚶"
+     ],
+     "explain": "Erst stehen bleiben, dann nach links und rechts schauen, dann gehen."
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-am-zebrastreifen-schaue-ich",
+     "task": "Stimmt das? Am Zebrastreifen schaue ich erst nach links und rechts.",
+     "prompt": "Am Zebrastreifen schaue ich erst nach links und rechts.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🦓"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-zwischen-parkenden-autos-kan",
+     "task": "Stimmt das? Zwischen parkenden Autos kann ich gut über die Straße gehen.",
+     "prompt": "Zwischen parkenden Autos kann ich gut über die Straße gehen.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🚗"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-ich-spiele-nicht-auf-der-str",
+     "task": "Stimmt das? Ich spiele nicht auf der Straße.",
+     "prompt": "Ich spiele nicht auf der Straße.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "⚽"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-ich-gehe-auf-dem-gehweg",
+     "task": "Stimmt das? Ich gehe auf dem Gehweg.",
+     "prompt": "Ich gehe auf dem Gehweg.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🚶"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Gut sichtbar",
+   "icon": "🦺",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-es-ist-dunkel-was-hilft-dami",
+     "task": "Es ist dunkel. Was hilft, damit Autofahrer dich sehen?",
+     "prompt": "Es ist dunkel. Was hilft, damit Autofahrer dich sehen?",
+     "options": [
+      "🦺",
+      "🕶️",
+      "🧢"
+     ],
+     "answer": "🦺",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-helle-kleidung-sieht-man-im",
+     "task": "Stimmt das? Helle Kleidung sieht man im Dunkeln besser.",
+     "prompt": "Helle Kleidung sieht man im Dunkeln besser.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🌙"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-beim-fahrradfahren-trage-ich",
+     "task": "Stimmt das? Beim Fahrradfahren trage ich einen Helm.",
+     "prompt": "Beim Fahrradfahren trage ich einen Helm.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🚲"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-im-auto-schnalle-ich-mich-im",
+     "task": "Stimmt das? Im Auto schnalle ich mich immer an.",
+     "prompt": "Im Auto schnalle ich mich immer an.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🚗"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-verkehr-dunkle-kleidung-sieht-man-im",
+     "task": "Stimmt das? Dunkle Kleidung sieht man im Dunkeln gut.",
+     "prompt": "Dunkle Kleidung sieht man im Dunkeln gut.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🌙"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 10
+  }
+ ]
+}

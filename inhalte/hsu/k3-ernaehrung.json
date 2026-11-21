@@ -1,0 +1,336 @@
+{
+ "id": "h3-ernaehrung",
+ "type": "schule",
+ "title_de": "Ernährung und Gesundheit",
+ "image": "🥗",
+ "color": "#3fa34d",
+ "lessons": [
+  {
+   "title": "Die Ernährungspyramide",
+   "icon": "🥦",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-ernaehrung-ordne-die-ernaehrungspyramid",
+     "task": "Ordne die Ernährungspyramide: Wovon brauchst du am meisten? Fang unten an!",
+     "tiles": [
+      "Wasser und Tee",
+      "Gemüse und Obst",
+      "Brot, Nudeln, Kartoffeln",
+      "Milch, Fleisch, Fisch, Eier",
+      "Öl und Butter",
+      "Süßes und Knabberzeug"
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Wie viel davon?",
+     "review": "Wie viel solltest du davon essen oder trinken?",
+     "groups": [
+      "viel",
+      "mäßig",
+      "wenig"
+     ],
+     "items": [
+      {
+       "id": "h3-ernaehrung-wasser",
+       "text": "Wasser",
+       "group": "viel"
+      },
+      {
+       "id": "h3-ernaehrung-gurke",
+       "text": "Gurke",
+       "group": "viel"
+      },
+      {
+       "id": "h3-ernaehrung-apfel",
+       "text": "Apfel",
+       "group": "viel"
+      },
+      {
+       "id": "h3-ernaehrung-vollkornbrot",
+       "text": "Vollkornbrot",
+       "group": "viel"
+      },
+      {
+       "id": "h3-ernaehrung-kaese",
+       "text": "Käse",
+       "group": "mäßig"
+      },
+      {
+       "id": "h3-ernaehrung-wurst",
+       "text": "Wurst",
+       "group": "mäßig"
+      },
+      {
+       "id": "h3-ernaehrung-fisch",
+       "text": "Fisch",
+       "group": "mäßig"
+      },
+      {
+       "id": "h3-ernaehrung-butter",
+       "text": "Butter",
+       "group": "wenig"
+      },
+      {
+       "id": "h3-ernaehrung-gummibaerchen",
+       "text": "Gummibärchen",
+       "group": "wenig"
+      },
+      {
+       "id": "h3-ernaehrung-chips",
+       "text": "Chips",
+       "group": "wenig"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Gesund essen und trinken",
+   "icon": "🥪",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-was-trinkst-du-am-besten-bei",
+     "task": "Was stimmt?",
+     "prompt": "Was trinkst du am besten bei Durst?",
+     "options": [
+      "Wasser",
+      "Cola",
+      "Limonade"
+     ],
+     "answer": "Wasser"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-wie-viele-portionen-obst-und",
+     "task": "Was stimmt?",
+     "prompt": "Wie viele Portionen Obst und Gemüse sollst du am Tag essen?",
+     "options": [
+      "5",
+      "1",
+      "10"
+     ],
+     "answer": "5",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-wie-viel-sollen-kinder-in-de",
+     "task": "Was stimmt?",
+     "prompt": "Wie viel sollen Kinder in deinem Alter etwa am Tag trinken?",
+     "options": [
+      "etwa 1 Liter",
+      "etwa 1 Glas",
+      "etwa 5 Liter"
+     ],
+     "answer": "etwa 1 Liter"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-welches-pausenbrot-ist-am-ge",
+     "task": "Was stimmt?",
+     "prompt": "Welches Pausenbrot ist am gesündesten?",
+     "options": [
+      "Vollkornbrot mit Käse und Gurke",
+      "Weißbrot mit Schokocreme",
+      "ein Schokoriegel"
+     ],
+     "answer": "Vollkornbrot mit Käse und Gurke"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-zucker-steckt-auch-in-ketchu",
+     "task": "Richtig oder falsch?",
+     "prompt": "Zucker steckt auch in Ketchup und Fruchtjoghurt.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-vollkornbrot-haelt-laenger-s",
+     "task": "Richtig oder falsch?",
+     "prompt": "Vollkornbrot hält länger satt als Weißbrot.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-ein-glas-saft-zaehlt-genauso",
+     "task": "Richtig oder falsch?",
+     "prompt": "Ein Glas Saft zählt genauso viel wie ein Glas Wasser.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Saft enthält viel Zucker. Gegen Durst ist Wasser am besten."
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Zähne und Körperpflege",
+   "icon": "🪥",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-wie-oft-am-tag-putzt-du-mind",
+     "task": "Was stimmt?",
+     "prompt": "Wie oft am Tag putzt du mindestens die Zähne?",
+     "options": [
+      "2-mal",
+      "1-mal pro Woche",
+      "nur wenn sie wehtun"
+     ],
+     "answer": "2-mal"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-wie-lange-solltest-du-die-za",
+     "task": "Was stimmt?",
+     "prompt": "Wie lange solltest du die Zähne putzen?",
+     "options": [
+      "2 bis 3 Minuten",
+      "10 Sekunden",
+      "eine halbe Stunde"
+     ],
+     "answer": "2 bis 3 Minuten"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-wofuer-steht-kai-beim-zaehne",
+     "task": "Was stimmt?",
+     "prompt": "Wofür steht KAI beim Zähneputzen?",
+     "options": [
+      "Kauflächen, Außenflächen, Innenflächen",
+      "Kopf, Arme, Innen",
+      "Kamm, Apfel, Igel"
+     ],
+     "answer": "Kauflächen, Außenflächen, Innenflächen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-was-ist-karies",
+     "task": "Was stimmt?",
+     "prompt": "Was ist Karies?",
+     "options": [
+      "Löcher in den Zähnen",
+      "eine Zahnpasta",
+      "ein Zahnarzt-Werkzeug"
+     ],
+     "answer": "Löcher in den Zähnen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-haendewaschen-mit-seife-schu",
+     "task": "Richtig oder falsch?",
+     "prompt": "Händewaschen mit Seife schützt vor Krankheiten.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-zum-haendewaschen-reichen-2",
+     "task": "Richtig oder falsch?",
+     "prompt": "Zum Händewaschen reichen 2 Sekunden.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Wasche die Hände etwa 20 bis 30 Sekunden mit Seife."
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Bewegung und Schlaf",
+   "icon": "🏃",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-kinder-sollten-sich-jeden-ta",
+     "task": "Richtig oder falsch?",
+     "prompt": "Kinder sollten sich jeden Tag mindestens eine Stunde bewegen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-wer-genug-schlaeft-kann-sich",
+     "task": "Richtig oder falsch?",
+     "prompt": "Wer genug schläft, kann sich in der Schule besser konzentrieren.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-kinder-in-deinem-alter-brauc",
+     "task": "Richtig oder falsch?",
+     "prompt": "Kinder in deinem Alter brauchen etwa 10 Stunden Schlaf.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-was-passiert-mit-deinem-herz",
+     "task": "Was stimmt?",
+     "prompt": "Was passiert mit deinem Herz, wenn du rennst?",
+     "options": [
+      "Es schlägt schneller.",
+      "Es bleibt stehen.",
+      "Es schlägt langsamer."
+     ],
+     "answer": "Es schlägt schneller."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-ernaehrung-was-hilft-in-einer-pause-bei",
+     "task": "Was stimmt?",
+     "prompt": "Was hilft in einer Pause bei den Hausaufgaben?",
+     "options": [
+      "sich kurz bewegen",
+      "noch mehr am Handy spielen",
+      "Süßigkeiten essen"
+     ],
+     "answer": "sich kurz bewegen"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

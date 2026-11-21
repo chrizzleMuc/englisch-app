@@ -1,0 +1,381 @@
+{
+ "id": "h1-gefuehle",
+ "type": "schule",
+ "title_de": "Gefühle und Regeln",
+ "image": "😊",
+ "color": "#e8a317",
+ "lessons": [
+  {
+   "title": "Wie fühlt sich das Kind?",
+   "icon": "😀",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-tipp-auf-das-froehliche-gesi",
+     "task": "Tipp auf das fröhliche Gesicht!",
+     "prompt": "Tipp auf das fröhliche Gesicht!",
+     "options": [
+      "😀",
+      "😢",
+      "😠"
+     ],
+     "answer": "😀",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-tipp-auf-das-traurige-gesich",
+     "task": "Tipp auf das traurige Gesicht!",
+     "prompt": "Tipp auf das traurige Gesicht!",
+     "options": [
+      "😠",
+      "😢",
+      "😀"
+     ],
+     "answer": "😢",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-tipp-auf-das-wuetende-gesich",
+     "task": "Tipp auf das wütende Gesicht!",
+     "prompt": "Tipp auf das wütende Gesicht!",
+     "options": [
+      "😴",
+      "😀",
+      "😠"
+     ],
+     "answer": "😠",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-tipp-auf-das-gesicht-das-ang",
+     "task": "Tipp auf das Gesicht, das Angst hat!",
+     "prompt": "Tipp auf das Gesicht, das Angst hat!",
+     "options": [
+      "😱",
+      "😀",
+      "😴"
+     ],
+     "answer": "😱",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-tipp-auf-das-muede-gesicht",
+     "task": "Tipp auf das müde Gesicht!",
+     "prompt": "Tipp auf das müde Gesicht!",
+     "options": [
+      "😢",
+      "😴",
+      "😀"
+     ],
+     "answer": "😴",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-tipp-auf-das-ueberraschte-ge",
+     "task": "Tipp auf das überraschte Gesicht!",
+     "prompt": "Tipp auf das überraschte Gesicht!",
+     "options": [
+      "😮",
+      "😠",
+      "😴"
+     ],
+     "answer": "😮",
+     "picOptions": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Wie fühlst du dich?",
+   "icon": "💬",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-du-bekommst-ein-geschenk-wie",
+     "task": "Du bekommst ein Geschenk. Wie fühlst du dich?",
+     "prompt": "Du bekommst ein Geschenk. Wie fühlst du dich?",
+     "options": [
+      "😀",
+      "😢",
+      "😠"
+     ],
+     "answer": "😀",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-dein-eis-faellt-auf-den-bode",
+     "task": "Dein Eis fällt auf den Boden. Wie fühlst du dich?",
+     "prompt": "Dein Eis fällt auf den Boden. Wie fühlst du dich?",
+     "options": [
+      "😀",
+      "😢",
+      "😴"
+     ],
+     "answer": "😢",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-jemand-nimmt-dir-einfach-dei",
+     "task": "Jemand nimmt dir einfach dein Spielzeug weg. Wie fühlst du dich?",
+     "prompt": "Jemand nimmt dir einfach dein Spielzeug weg. Wie fühlst du dich?",
+     "options": [
+      "😠",
+      "😀",
+      "😴"
+     ],
+     "answer": "😠",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-es-donnert-ganz-laut-in-der",
+     "task": "Es donnert ganz laut in der Nacht. Wie fühlst du dich vielleicht?",
+     "prompt": "Es donnert ganz laut in der Nacht. Wie fühlst du dich vielleicht?",
+     "options": [
+      "😱",
+      "😀",
+      "😴"
+     ],
+     "answer": "😱",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-es-ist-spaet-am-abend-wie-fu",
+     "task": "Es ist spät am Abend. Wie fühlst du dich?",
+     "prompt": "Es ist spät am Abend. Wie fühlst du dich?",
+     "options": [
+      "😴",
+      "😠",
+      "😮"
+     ],
+     "answer": "😴",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-alle-gefuehle-sind-in-ordnun",
+     "task": "Stimmt das? Alle Gefühle sind in Ordnung. Man darf auch mal traurig sein.",
+     "prompt": "Alle Gefühle sind in Ordnung. Man darf auch mal traurig sein.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "💝"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Regeln in der Klasse",
+   "icon": "🏫",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-wir-hoeren-zu-wenn-jemand-sp",
+     "task": "Stimmt das? Wir hören zu, wenn jemand spricht.",
+     "prompt": "Wir hören zu, wenn jemand spricht.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "👂"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-wer-etwas-sagen-will-zeigt-a",
+     "task": "Stimmt das? Wer etwas sagen will, zeigt auf.",
+     "prompt": "Wer etwas sagen will, zeigt auf.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🙋"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-wir-schubsen-andere-kinder",
+     "task": "Stimmt das? Wir schubsen andere Kinder.",
+     "prompt": "Wir schubsen andere Kinder.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "😠"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-wir-raeumen-unseren-platz-au",
+     "task": "Stimmt das? Wir räumen unseren Platz auf.",
+     "prompt": "Wir räumen unseren Platz auf.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🧹"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-wir-lachen-andere-kinder-aus",
+     "task": "Stimmt das? Wir lachen andere Kinder aus.",
+     "prompt": "Wir lachen andere Kinder aus.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "😂"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-im-klassenzimmer-rennen-wir",
+     "task": "Stimmt das? Im Klassenzimmer rennen wir herum.",
+     "prompt": "Im Klassenzimmer rennen wir herum.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🏃"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-wenn-jemand-traurig-ist-troe",
+     "task": "Stimmt das? Wenn jemand traurig ist, tröste ich.",
+     "prompt": "Wenn jemand traurig ist, tröste ich.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🤗"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Streit lösen",
+   "icon": "🤝",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-zwei-kinder-haben-gestritten",
+     "task": "Zwei Kinder haben gestritten. Was hilft?",
+     "prompt": "Zwei Kinder haben gestritten. Was hilft?",
+     "options": [
+      "🤝",
+      "👊",
+      "😠"
+     ],
+     "answer": "🤝",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-nach-einem-streit-kann-man-s",
+     "task": "Stimmt das? Nach einem Streit kann man sich die Hand geben und sich vertragen.",
+     "prompt": "Nach einem Streit kann man sich die Hand geben und sich vertragen.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🤝"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-wenn-ich-wuetend-bin-haue-ic",
+     "task": "Stimmt das? Wenn ich wütend bin, haue ich.",
+     "prompt": "Wenn ich wütend bin, haue ich.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "👊"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-wenn-ich-wuetend-bin-atme-ic",
+     "task": "Stimmt das? Wenn ich wütend bin, atme ich tief durch.",
+     "prompt": "Wenn ich wütend bin, atme ich tief durch.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "😮‍💨"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-wenn-ich-hilfe-brauche-frage",
+     "task": "Stimmt das? Wenn ich Hilfe brauche, frage ich die Lehrerin.",
+     "prompt": "Wenn ich Hilfe brauche, frage ich die Lehrerin.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🧑‍🏫"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-gefuehle-wenn-ich-etwas-falsch-gemach",
+     "task": "Stimmt das? Wenn ich etwas falsch gemacht habe, sage ich: Entschuldigung.",
+     "prompt": "Wenn ich etwas falsch gemacht habe, sage ich: Entschuldigung.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🙏"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 10
+  }
+ ]
+}

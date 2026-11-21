@@ -1,0 +1,334 @@
+{
+ "id": "h1-koerper",
+ "type": "schule",
+ "title_de": "Mein Körper und meine Sinne",
+ "image": "👀",
+ "color": "#e0567a",
+ "lessons": [
+  {
+   "title": "Körperteile",
+   "icon": "🖐️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-koerper-tipp-auf-die-hand",
+     "task": "Tipp auf die Hand!",
+     "prompt": "Tipp auf die Hand!",
+     "options": [
+      "🖐️",
+      "🦶",
+      "👂"
+     ],
+     "answer": "🖐️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-tipp-auf-den-fuss",
+     "task": "Tipp auf den Fuß!",
+     "prompt": "Tipp auf den Fuß!",
+     "options": [
+      "👃",
+      "🦶",
+      "🦵"
+     ],
+     "answer": "🦶",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-tipp-auf-das-ohr",
+     "task": "Tipp auf das Ohr!",
+     "prompt": "Tipp auf das Ohr!",
+     "options": [
+      "👄",
+      "👀",
+      "👂"
+     ],
+     "answer": "👂",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-tipp-auf-die-nase",
+     "task": "Tipp auf die Nase!",
+     "prompt": "Tipp auf die Nase!",
+     "options": [
+      "👃",
+      "🖐️",
+      "👄"
+     ],
+     "answer": "👃",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-tipp-auf-den-mund",
+     "task": "Tipp auf den Mund!",
+     "prompt": "Tipp auf den Mund!",
+     "options": [
+      "👂",
+      "👄",
+      "🦶"
+     ],
+     "answer": "👄",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-tipp-auf-das-bein",
+     "task": "Tipp auf das Bein!",
+     "prompt": "Tipp auf das Bein!",
+     "options": [
+      "🦵",
+      "🖐️",
+      "👃"
+     ],
+     "answer": "🦵",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-tipp-auf-die-augen",
+     "task": "Tipp auf die Augen!",
+     "prompt": "Tipp auf die Augen!",
+     "options": [
+      "👂",
+      "👄",
+      "👀"
+     ],
+     "answer": "👀",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-tipp-auf-den-zahn",
+     "task": "Tipp auf den Zahn!",
+     "prompt": "Tipp auf den Zahn!",
+     "options": [
+      "🦷",
+      "🦶",
+      "👂"
+     ],
+     "answer": "🦷",
+     "picOptions": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Die fünf Sinne",
+   "icon": "👂",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-koerper-womit-siehst-du",
+     "task": "Womit siehst du?",
+     "prompt": "Womit siehst du?",
+     "options": [
+      "👀",
+      "👂",
+      "👃"
+     ],
+     "answer": "👀",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-womit-hoerst-du",
+     "task": "Womit hörst du?",
+     "prompt": "Womit hörst du?",
+     "options": [
+      "👃",
+      "👂",
+      "👅"
+     ],
+     "answer": "👂",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-womit-riechst-du",
+     "task": "Womit riechst du?",
+     "prompt": "Womit riechst du?",
+     "options": [
+      "👃",
+      "👀",
+      "🖐️"
+     ],
+     "answer": "👃",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-womit-schmeckst-du",
+     "task": "Womit schmeckst du?",
+     "prompt": "Womit schmeckst du?",
+     "options": [
+      "👂",
+      "👅",
+      "👀"
+     ],
+     "answer": "👅",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-womit-fuehlst-du-ob-etwas-we",
+     "task": "Womit fühlst du, ob etwas weich ist?",
+     "prompt": "Womit fühlst du, ob etwas weich ist?",
+     "options": [
+      "🖐️",
+      "👂",
+      "👃"
+     ],
+     "answer": "🖐️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-mit-den-ohren-kannst-du-hoer",
+     "task": "Stimmt das? Mit den Ohren kannst du hören.",
+     "prompt": "Mit den Ohren kannst du hören.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "👂"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-mit-der-nase-kannst-du-sehen",
+     "task": "Stimmt das? Mit der Nase kannst du sehen.",
+     "prompt": "Mit der Nase kannst du sehen.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "👃"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-mit-der-zunge-schmeckst-du-o",
+     "task": "Stimmt das? Mit der Zunge schmeckst du, ob etwas süß ist.",
+     "prompt": "Mit der Zunge schmeckst du, ob etwas süß ist.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "👅"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Was merkst du womit?",
+   "icon": "🌈",
+   "tasks": [
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "Womit merkst du das? Tipp auf den richtigen Sinn!",
+     "groups": [
+      "👀 sehen",
+      "👂 hören",
+      "👃 riechen",
+      "👅 schmecken"
+     ],
+     "items": [
+      {
+       "id": "h1-koerper-regenbogen",
+       "pic": "🌈",
+       "text": "Regenbogen",
+       "group": "👀 sehen"
+      },
+      {
+       "id": "h1-koerper-glocke",
+       "pic": "🔔",
+       "text": "Glocke",
+       "group": "👂 hören"
+      },
+      {
+       "id": "h1-koerper-rose",
+       "pic": "🌹",
+       "text": "Rose",
+       "group": "👃 riechen"
+      },
+      {
+       "id": "h1-koerper-zitrone",
+       "pic": "🍋",
+       "text": "Zitrone",
+       "group": "👅 schmecken"
+      },
+      {
+       "id": "h1-koerper-trommel",
+       "pic": "🥁",
+       "text": "Trommel",
+       "group": "👂 hören"
+      },
+      {
+       "id": "h1-koerper-stern",
+       "pic": "⭐",
+       "text": "Stern",
+       "group": "👀 sehen"
+      },
+      {
+       "id": "h1-koerper-eis",
+       "pic": "🍦",
+       "text": "Eis",
+       "group": "👅 schmecken"
+      },
+      {
+       "id": "h1-koerper-knoblauch",
+       "pic": "🧄",
+       "text": "Knoblauch",
+       "group": "👃 riechen"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-die-sonne-ist-sehr-hell-was",
+     "task": "Die Sonne ist sehr hell. Was schützt deine Augen?",
+     "prompt": "Die Sonne ist sehr hell. Was schützt deine Augen?",
+     "options": [
+      "🕶️",
+      "🧤",
+      "🧣"
+     ],
+     "answer": "🕶️",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-koerper-man-schaut-nie-direkt-in-die",
+     "task": "Stimmt das? Man schaut nie direkt in die Sonne.",
+     "prompt": "Man schaut nie direkt in die Sonne.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "☀️"
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 10
+  }
+ ]
+}
