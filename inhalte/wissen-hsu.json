@@ -32,6 +32,256 @@
    "lektionen": [
     "h3-wasser/Der Wasserkreislauf"
    ]
+  },
+  {
+   "id": "hsu-stockwerke",
+   "icon": "🌲",
+   "title": "Die Stockwerke des Waldes",
+   "merke": [
+    "Der Wald ist aufgebaut wie ein Haus mit **Stockwerken**.",
+    "Von unten nach oben: **Wurzelschicht**, **Moosschicht**, **Krautschicht**, **Strauchschicht**, **Baumschicht**.",
+    "In jedem Stockwerk leben andere Pflanzen und Tiere."
+   ],
+   "beispiele": [
+    "Regenwurm → Wurzelschicht, Farn → Krautschicht, Specht → Baumschicht"
+   ],
+   "lektionen": [
+    "h3-wald/Stockwerke des Waldes"
+   ]
+  },
+  {
+   "id": "hsu-nahrungskette",
+   "icon": "🔗",
+   "title": "Die Nahrungskette",
+   "merke": [
+    "Am Anfang einer Nahrungskette stehen immer **Pflanzen**.",
+    "**Pflanzenfresser** fressen Pflanzen, **Fleischfresser** fressen andere Tiere.",
+    "**Allesfresser** fressen Pflanzen und Tiere, zum Beispiel das Wildschwein."
+   ],
+   "beispiele": [
+    "Blatt → Raupe → Meise → Sperber"
+   ],
+   "lektionen": [
+    "h3-wald/Tiere im Wald"
+   ]
+  },
+  {
+   "id": "hsu-pyramide",
+   "icon": "🥦",
+   "title": "Die Ernährungspyramide",
+   "merke": [
+    "Unten steht, wovon du **viel** brauchst: **Getränke** wie Wasser, dann **Gemüse und Obst**.",
+    "In der Mitte: **Brot, Nudeln, Kartoffeln**, darüber **Milch, Fleisch, Fisch und Eier**.",
+    "Ganz oben steht, wovon du nur **wenig** brauchst: **Fett** und **Süßes**.",
+    "Merke: **5 Portionen** Obst und Gemüse am Tag, und etwa **1 Liter** trinken."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-ernaehrung/Die Ernährungspyramide"
+   ]
+  },
+  {
+   "id": "hsu-zaehne",
+   "icon": "🦷",
+   "title": "Zähne putzen mit KAI",
+   "merke": [
+    "Putze **morgens und abends** etwa **2 bis 3 Minuten**.",
+    "**K**auflächen, dann **A**ußenflächen, dann **I**nnenflächen.",
+    "Zu viel Zucker und schlechtes Putzen machen **Karies**, also Löcher in den Zähnen."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-ernaehrung/Zähne und Körperpflege"
+   ]
+  },
+  {
+   "id": "hsu-auge",
+   "icon": "👁️",
+   "title": "So funktioniert das Auge",
+   "merke": [
+    "Licht fällt durch die **Pupille** ins Auge. Die **Iris** gibt dem Auge seine Farbe.",
+    "Im Dunkeln wird die Pupille **größer**, im hellen Licht **kleiner**.",
+    "Die **Linse** macht das Bild scharf. Auf der **Netzhaut** entsteht das Bild.",
+    "Der **Sehnerv** leitet das Bild zum **Gehirn**."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-sinne/Das Auge"
+   ]
+  },
+  {
+   "id": "hsu-ohr",
+   "icon": "👂",
+   "title": "So funktioniert das Ohr",
+   "merke": [
+    "Die **Ohrmuschel** fängt den Schall auf. Er läuft durch den **Gehörgang**.",
+    "Das **Trommelfell** schwingt und gibt die Schwingung an die **Gehörknöchelchen** weiter: Hammer, Amboss, Steigbügel.",
+    "In der **Schnecke** wird daraus ein Signal. Der **Hörnerv** bringt es zum Gehirn."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-sinne/Das Ohr"
+   ]
+  },
+  {
+   "id": "hsu-fahrrad",
+   "icon": "🚲",
+   "title": "Das verkehrssichere Fahrrad",
+   "merke": [
+    "**Zwei Bremsen**, die unabhängig voneinander funktionieren, und eine **Klingel**.",
+    "Vorne ein **weißer Scheinwerfer** und ein weißer Rückstrahler.",
+    "Hinten ein **rotes Rücklicht** und ein roter Rückstrahler.",
+    "**Gelbe Rückstrahler** an den Pedalen und in den Speichen (oder weiße Streifen an den Reifen)."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-fahrrad/Das verkehrssichere Fahrrad"
+   ]
+  },
+  {
+   "id": "hsu-radregeln",
+   "icon": "🚦",
+   "title": "Regeln für Kinder auf dem Rad",
+   "merke": [
+    "Bis **8 Jahre** müssen Kinder auf dem **Gehweg** fahren, bis **10 Jahre** dürfen sie es.",
+    "Wo keine Schilder und Ampeln sind, gilt **rechts vor links**.",
+    "Vor dem Abbiegen: **umschauen**, **Handzeichen** geben, **einordnen**.",
+    "Ein **Helm** ist keine Pflicht, schützt aber deinen Kopf."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-fahrrad/Regeln für Radfahrer"
+   ]
+  },
+  {
+   "id": "hsu-himmelsrichtungen",
+   "icon": "🧭",
+   "title": "Die Himmelsrichtungen",
+   "merke": [
+    "Auf der Karte ist **Norden oben**, **Süden unten**, **Osten rechts** und **Westen links**.",
+    "Merksatz im Uhrzeigersinn: **N**ie **O**hne **S**eife **W**aschen.",
+    "Die Sonne geht im **Osten** auf, steht mittags im **Süden** und geht im **Westen** unter.",
+    "Die **Kompassnadel** zeigt nach Norden."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-karte/Himmelsrichtungen"
+   ]
+  },
+  {
+   "id": "hsu-karte",
+   "icon": "🗺️",
+   "title": "Karten lesen",
+   "merke": [
+    "Die **Legende** erklärt, was die Zeichen und Farben auf der Karte bedeuten.",
+    "Der **Maßstab** zeigt, wie stark verkleinert wurde: Bei **1 : 100** ist 1 cm auf der Karte 100 cm, also 1 m, in Wirklichkeit.",
+    "Ein **Grundriss** ist eine Zeichnung **von oben**."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-karte/Karten lesen"
+   ]
+  },
+  {
+   "id": "hsu-bayern",
+   "icon": "🦁",
+   "title": "Bayern",
+   "merke": [
+    "Die **Landeshauptstadt** von Bayern ist **München**.",
+    "Bayern hat **7 Regierungsbezirke**: Oberbayern, Niederbayern, Oberpfalz, Oberfranken, Mittelfranken, Unterfranken und Schwaben.",
+    "Der höchste Berg ist die **Zugspitze** (fast 3000 m), der größte See der **Chiemsee**.",
+    "Große Flüsse: **Donau**, **Main**, **Isar**, **Inn** und **Lech**."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-bayern/Bayern auf der Karte"
+   ]
+  },
+  {
+   "id": "hsu-gemeinde",
+   "icon": "🏛️",
+   "title": "Unsere Gemeinde",
+   "merke": [
+    "Der **Bürgermeister** oder die **Bürgermeisterin** leitet die Gemeinde und arbeitet im **Rathaus**.",
+    "Der **Gemeinderat** entscheidet zusammen über wichtige Dinge.",
+    "In Bayern werden Bürgermeister und Gemeinderat alle **6 Jahre** gewählt.",
+    "Die Gemeinde kümmert sich zum Beispiel um **Spielplätze**, **Schulgebäude**, **Straßen** und die **Feuerwehr**."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-bayern/Unsere Gemeinde"
+   ]
+  },
+  {
+   "id": "hsu-zeit",
+   "icon": "⏳",
+   "title": "Zeit messen und ordnen",
+   "merke": [
+    "1 **Jahrzehnt** = 10 Jahre, 1 **Jahrhundert** = 100 Jahre, 1 **Jahrtausend** = 1000 Jahre.",
+    "Wir leben im **21. Jahrhundert** (ab dem Jahr 2001). Die Jahre 1901 bis 2000 waren das 20. Jahrhundert.",
+    "Auf einer **Zeitleiste** steht das Ältere links, das Neuere rechts.",
+    "Was wir über früher wissen, erfahren wir aus **Quellen**: alte Fotos, Briefe, Gegenstände, Erzählungen."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-zeit/Zeitbegriffe"
+   ]
+  },
+  {
+   "id": "hsu-stromkreis",
+   "icon": "💡",
+   "title": "Der Stromkreis",
+   "merke": [
+    "Ein einfacher Stromkreis braucht eine **Batterie**, **Kabel** und ein Gerät, zum Beispiel eine **Lampe**.",
+    "Die Lampe leuchtet nur, wenn der Stromkreis **geschlossen** ist.",
+    "Ein **Schalter** öffnet und schließt den Stromkreis.",
+    "**Leiter** lassen Strom durch: Metalle wie Eisen, Kupfer, Alufolie. **Nichtleiter** nicht: Holz, Kunststoff, Glas, Gummi."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-strom/Der Stromkreis"
+   ]
+  },
+  {
+   "id": "hsu-stromgefahr",
+   "icon": "⚠️",
+   "title": "Strom kann gefährlich sein",
+   "merke": [
+    "Mit einer **4,5-Volt-Batterie** darfst du gefahrlos experimentieren.",
+    "Strom aus der **Steckdose** (230 Volt) ist **lebensgefährlich**.",
+    "Elektrische Geräte gehören **nie** in die Nähe von **Wasser**."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-strom/Sicher mit Strom"
+   ]
+  },
+  {
+   "id": "hsu-kinderrechte",
+   "icon": "⚖️",
+   "title": "Kinderrechte",
+   "merke": [
+    "Die Kinderrechte stehen in der **UN-Kinderrechtskonvention**. Sie gelten für **alle Kinder** auf der Welt.",
+    "Zum Beispiel: Recht auf **Bildung**, auf **Spiel und Freizeit**, auf **Gesundheit**, auf eine **eigene Meinung** und auf **Schutz vor Gewalt**."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-zusammen/Kinderrechte"
+   ]
+  },
+  {
+   "id": "hsu-klassenrat",
+   "icon": "🗳️",
+   "title": "Der Klassenrat",
+   "merke": [
+    "Im Klassenrat besprecht ihr Probleme und Wünsche der Klasse.",
+    "Ein Kind **leitet**, eines schreibt das **Protokoll**, eines achtet auf die **Zeit**.",
+    "Entschieden wird durch **Abstimmung**: Die **Mehrheit** gewinnt."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-zusammen/Klassenrat"
+   ]
   }
  ]
 }

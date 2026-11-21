@@ -1,0 +1,426 @@
+{
+ "id": "h3-wald",
+ "type": "schule",
+ "title_de": "Der Wald",
+ "image": "🌲",
+ "color": "#2e8b57",
+ "lessons": [
+  {
+   "title": "Stockwerke des Waldes",
+   "icon": "🏠",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-wald-ordne-die-stockwerke-des-wal",
+     "task": "Ordne die Stockwerke des Waldes von unten nach oben!",
+     "tiles": [
+      "Wurzelschicht",
+      "Moosschicht",
+      "Krautschicht",
+      "Strauchschicht",
+      "Baumschicht"
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "In welchem Stockwerk findest du das?",
+     "review": "In welchem Stockwerk des Waldes findest du das?",
+     "groups": [
+      "Wurzelschicht",
+      "Moosschicht",
+      "Krautschicht",
+      "Strauchschicht",
+      "Baumschicht"
+     ],
+     "items": [
+      {
+       "id": "h3-wald-regenwurm",
+       "text": "Regenwurm",
+       "group": "Wurzelschicht"
+      },
+      {
+       "id": "h3-wald-moos",
+       "text": "Moos",
+       "group": "Moosschicht"
+      },
+      {
+       "id": "h3-wald-farn",
+       "text": "Farn",
+       "group": "Krautschicht"
+      },
+      {
+       "id": "h3-wald-haselnussstrauch",
+       "text": "Haselnussstrauch",
+       "group": "Strauchschicht"
+      },
+      {
+       "id": "h3-wald-fichte",
+       "text": "Fichte",
+       "group": "Baumschicht"
+      },
+      {
+       "id": "h3-wald-pilz",
+       "text": "Pilz",
+       "group": "Moosschicht"
+      },
+      {
+       "id": "h3-wald-walderdbeere",
+       "text": "Walderdbeere",
+       "group": "Krautschicht"
+      },
+      {
+       "id": "h3-wald-specht",
+       "text": "Specht",
+       "group": "Baumschicht"
+      },
+      {
+       "id": "h3-wald-holunder",
+       "text": "Holunder",
+       "group": "Strauchschicht"
+      },
+      {
+       "id": "h3-wald-fuchsbau",
+       "text": "Fuchsbau",
+       "group": "Wurzelschicht"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bäume erkennen",
+   "icon": "🌳",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Laubbaum oder Nadelbaum?",
+     "review": "Ist das ein Laubbaum oder ein Nadelbaum?",
+     "groups": [
+      "Laubbaum",
+      "Nadelbaum"
+     ],
+     "items": [
+      {
+       "id": "h3-wald-eiche",
+       "text": "Eiche",
+       "group": "Laubbaum"
+      },
+      {
+       "id": "h3-wald-fichte-2",
+       "text": "Fichte",
+       "group": "Nadelbaum"
+      },
+      {
+       "id": "h3-wald-buche",
+       "text": "Buche",
+       "group": "Laubbaum"
+      },
+      {
+       "id": "h3-wald-kiefer",
+       "text": "Kiefer",
+       "group": "Nadelbaum"
+      },
+      {
+       "id": "h3-wald-ahorn",
+       "text": "Ahorn",
+       "group": "Laubbaum"
+      },
+      {
+       "id": "h3-wald-tanne",
+       "text": "Tanne",
+       "group": "Nadelbaum"
+      },
+      {
+       "id": "h3-wald-birke",
+       "text": "Birke",
+       "group": "Laubbaum"
+      },
+      {
+       "id": "h3-wald-laerche",
+       "text": "Lärche",
+       "group": "Nadelbaum"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Welche Frucht gehört zu welchem Baum?",
+     "review": "Zu welchem Baum gehört diese Frucht?",
+     "pairs": [
+      {
+       "id": "h3-wald-eichel",
+       "a": "Eichel",
+       "b": "Eiche"
+      },
+      {
+       "id": "h3-wald-buchecker",
+       "a": "Buchecker",
+       "b": "Buche"
+      },
+      {
+       "id": "h3-wald-kastanie",
+       "a": "Kastanie",
+       "b": "Rosskastanie"
+      },
+      {
+       "id": "h3-wald-propeller-samen",
+       "a": "Propeller-Samen",
+       "b": "Ahorn"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wald-die-laerche-ist-ein-nadelbau",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Lärche ist ein Nadelbaum, der im Herbst seine Nadeln verliert.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wald-woran-erkennst-du-wie-alt-ei",
+     "task": "Was stimmt?",
+     "prompt": "Woran erkennst du, wie alt ein gefällter Baum war?",
+     "options": [
+      "an den Jahresringen",
+      "an der Zahl der Äste",
+      "an der Farbe der Rinde"
+     ],
+     "answer": "an den Jahresringen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wald-bei-welchem-baum-haengen-die",
+     "task": "Was stimmt?",
+     "prompt": "Bei welchem Baum hängen die Zapfen nach unten?",
+     "options": [
+      "Fichte",
+      "Tanne",
+      "Eiche"
+     ],
+     "answer": "Fichte",
+     "explain": "Fichtenzapfen hängen nach unten, Tannenzapfen stehen aufrecht auf den Zweigen."
+    }
+   ]
+  },
+  {
+   "title": "Tiere im Wald",
+   "icon": "🦌",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Was frisst das Tier?",
+     "review": "Ist das Tier ein Pflanzenfresser, Fleischfresser oder Allesfresser?",
+     "groups": [
+      "Pflanzenfresser",
+      "Fleischfresser",
+      "Allesfresser"
+     ],
+     "items": [
+      {
+       "id": "h3-wald-reh",
+       "text": "Reh",
+       "group": "Pflanzenfresser"
+      },
+      {
+       "id": "h3-wald-hirsch",
+       "text": "Hirsch",
+       "group": "Pflanzenfresser"
+      },
+      {
+       "id": "h3-wald-hase",
+       "text": "Hase",
+       "group": "Pflanzenfresser"
+      },
+      {
+       "id": "h3-wald-wildschwein",
+       "text": "Wildschwein",
+       "group": "Allesfresser"
+      },
+      {
+       "id": "h3-wald-dachs",
+       "text": "Dachs",
+       "group": "Allesfresser"
+      },
+      {
+       "id": "h3-wald-luchs",
+       "text": "Luchs",
+       "group": "Fleischfresser"
+      },
+      {
+       "id": "h3-wald-habicht",
+       "text": "Habicht",
+       "group": "Fleischfresser"
+      },
+      {
+       "id": "h3-wald-waldkauz",
+       "text": "Waldkauz",
+       "group": "Fleischfresser"
+      }
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "h3-wald-bring-die-nahrungskette-in-d",
+     "task": "Bring die Nahrungskette in die richtige Reihenfolge!",
+     "tiles": [
+      "Blatt",
+      "Raupe",
+      "Meise",
+      "Sperber"
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "h3-wald-bring-die-nahrungskette-in-d-2",
+     "task": "Bring die Nahrungskette in die richtige Reihenfolge!",
+     "tiles": [
+      "Gras",
+      "Maus",
+      "Fuchs"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wald-welches-tier-haelt-wintersch",
+     "task": "Was stimmt?",
+     "prompt": "Welches Tier hält Winterschlaf?",
+     "options": [
+      "Igel",
+      "Reh",
+      "Fuchs"
+     ],
+     "answer": "Igel"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wald-welches-tier-haelt-winterruh",
+     "task": "Was stimmt?",
+     "prompt": "Welches Tier hält Winterruhe? Es wacht im Winter ab und zu auf und frisst.",
+     "options": [
+      "Eichhörnchen",
+      "Igel",
+      "Fledermaus"
+     ],
+     "answer": "Eichhörnchen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wald-wie-nennt-man-die-kinder-vom",
+     "task": "Was stimmt?",
+     "prompt": "Wie nennt man die Kinder vom Reh?",
+     "options": [
+      "Kitz",
+      "Frischling",
+      "Welpe"
+     ],
+     "answer": "Kitz"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wald-wie-nennt-man-die-kinder-vom-2",
+     "task": "Was stimmt?",
+     "prompt": "Wie nennt man die Kinder vom Wildschwein?",
+     "options": [
+      "Frischlinge",
+      "Kitze",
+      "Fohlen"
+     ],
+     "answer": "Frischlinge"
+    }
+   ]
+  },
+  {
+   "title": "Den Wald schützen",
+   "icon": "🛡️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-wald-im-wald-darf-man-muell-liege",
+     "task": "Richtig oder falsch?",
+     "prompt": "Im Wald darf man Müll liegen lassen, er verrottet ja.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Plastik und Dosen verrotten erst nach sehr vielen Jahren. Tiere können sich daran verletzen."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wald-baeume-stellen-sauerstoff-he",
+     "task": "Richtig oder falsch?",
+     "prompt": "Bäume stellen Sauerstoff her, den wir zum Atmen brauchen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wald-im-wald-soll-man-leise-sein",
+     "task": "Richtig oder falsch?",
+     "prompt": "Im Wald soll man leise sein, um die Tiere nicht zu stören.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wald-im-sommer-darf-man-im-wald-e",
+     "task": "Richtig oder falsch?",
+     "prompt": "Im Sommer darf man im Wald ein Lagerfeuer machen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Feuer im Wald ist verboten. Es kann schnell ein Waldbrand entstehen."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wald-der-foerster-oder-die-foerst",
+     "task": "Richtig oder falsch?",
+     "prompt": "Der Förster oder die Försterin kümmert sich um den Wald.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-wald-wozu-ist-der-wald-wichtig",
+     "task": "Was stimmt?",
+     "prompt": "Wozu ist der Wald wichtig?",
+     "options": [
+      "Er liefert Holz und Sauerstoff.",
+      "Er macht die Luft schmutzig.",
+      "Er verbraucht das ganze Grundwasser."
+     ],
+     "answer": "Er liefert Holz und Sauerstoff."
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

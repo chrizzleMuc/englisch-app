@@ -1,0 +1,265 @@
+{
+ "id": "h1-tag",
+ "type": "schule",
+ "title_de": "Mein Tag",
+ "image": "⏰",
+ "color": "#5468d4",
+ "lessons": [
+  {
+   "title": "Morgens, mittags, abends",
+   "icon": "🌅",
+   "tasks": [
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "Wann machst du das? Morgens, mittags oder abends?",
+     "groups": [
+      "🌅 morgens",
+      "☀️ mittags",
+      "🌙 abends"
+     ],
+     "items": [
+      {
+       "id": "h1-tag-wecker-klingelt",
+       "pic": "⏰",
+       "text": "Wecker klingelt",
+       "group": "🌅 morgens"
+      },
+      {
+       "id": "h1-tag-fruehstueck",
+       "pic": "🥣",
+       "text": "Frühstück",
+       "group": "🌅 morgens"
+      },
+      {
+       "id": "h1-tag-zur-schule-gehen",
+       "pic": "🎒",
+       "text": "zur Schule gehen",
+       "group": "🌅 morgens"
+      },
+      {
+       "id": "h1-tag-mittagessen",
+       "pic": "🍝",
+       "text": "Mittagessen",
+       "group": "☀️ mittags"
+      },
+      {
+       "id": "h1-tag-ins-bett-gehen",
+       "pic": "🛏️",
+       "text": "ins Bett gehen",
+       "group": "🌙 abends"
+      },
+      {
+       "id": "h1-tag-gute-nacht-geschichte",
+       "pic": "📖",
+       "text": "Gute-Nacht-Geschichte",
+       "group": "🌙 abends"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Was kommt zuerst?",
+   "icon": "🔁",
+   "tasks": [
+    {
+     "kind": "order",
+     "pics": true,
+     "id": "h1-tag-am-morgen-leg-die-bilder-der",
+     "task": "Am Morgen: Leg die Bilder der Reihe nach!",
+     "tiles": [
+      "⏰",
+      "🥣",
+      "🎒",
+      "🏫"
+     ]
+    },
+    {
+     "kind": "order",
+     "pics": true,
+     "id": "h1-tag-der-ganze-tag-leg-die-bilder",
+     "task": "Der ganze Tag: Leg die Bilder der Reihe nach!",
+     "tiles": [
+      "🌅",
+      "☀️",
+      "🌇",
+      "🌙"
+     ]
+    },
+    {
+     "kind": "order",
+     "pics": true,
+     "id": "h1-tag-kuchen-backen-leg-die-bilder",
+     "task": "Kuchen backen: Leg die Bilder der Reihe nach!",
+     "tiles": [
+      "🥚",
+      "🥣",
+      "🎂"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tag-was-machst-du-bevor-du-ins-b",
+     "task": "Was machst du, bevor du ins Bett gehst?",
+     "prompt": "Was machst du, bevor du ins Bett gehst?",
+     "options": [
+      "🪥",
+      "🥣",
+      "🎒"
+     ],
+     "answer": "🪥",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tag-was-kommt-nach-dem-abend",
+     "task": "Was kommt nach dem Abend?",
+     "prompt": "Was kommt nach dem Abend?",
+     "options": [
+      "🌙",
+      "🌅",
+      "☀️"
+     ],
+     "answer": "🌙",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Die Woche",
+   "icon": "📅",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-tag-wie-viele-tage-hat-eine-woch",
+     "task": "Wie viele Tage hat eine Woche?",
+     "prompt": "Wie viele Tage hat eine Woche?",
+     "options": [
+      "7️⃣",
+      "3️⃣",
+      "5️⃣"
+     ],
+     "answer": "7️⃣",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tag-eine-woche-hat-sieben-tage",
+     "task": "Stimmt das? Eine Woche hat sieben Tage.",
+     "prompt": "Eine Woche hat sieben Tage.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "7️⃣"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tag-am-wochenende-ist-meistens-k",
+     "task": "Stimmt das? Am Wochenende ist meistens keine Schule.",
+     "prompt": "Am Wochenende ist meistens keine Schule.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🏫"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tag-nach-dem-abend-kommt-die-nac",
+     "task": "Stimmt das? Nach dem Abend kommt die Nacht.",
+     "prompt": "Nach dem Abend kommt die Nacht.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🌙"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-tag-nach-dem-abend-kommt-gleich",
+     "task": "Stimmt das? Nach dem Abend kommt gleich der Mittag.",
+     "prompt": "Nach dem Abend kommt gleich der Mittag.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "☀️"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Früher und heute",
+   "icon": "👵",
+   "tasks": [
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "War das früher oder ist das heute?",
+     "groups": [
+      "👵 früher",
+      "🧒 heute"
+     ],
+     "items": [
+      {
+       "id": "h1-tag-kerze-als-licht",
+       "pic": "🕯️",
+       "text": "Kerze als Licht",
+       "group": "👵 früher"
+      },
+      {
+       "id": "h1-tag-lampe",
+       "pic": "💡",
+       "text": "Lampe",
+       "group": "🧒 heute"
+      },
+      {
+       "id": "h1-tag-mit-dem-pferd-fahren",
+       "pic": "🐴",
+       "text": "mit dem Pferd fahren",
+       "group": "👵 früher"
+      },
+      {
+       "id": "h1-tag-auto",
+       "pic": "🚗",
+       "text": "Auto",
+       "group": "🧒 heute"
+      },
+      {
+       "id": "h1-tag-altes-telefon",
+       "pic": "☎️",
+       "text": "altes Telefon",
+       "group": "👵 früher"
+      },
+      {
+       "id": "h1-tag-handy",
+       "pic": "📱",
+       "text": "Handy",
+       "group": "🧒 heute"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 10
+  }
+ ]
+}

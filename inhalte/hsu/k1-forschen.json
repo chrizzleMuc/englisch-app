@@ -1,0 +1,251 @@
+{
+ "id": "h1-forschen",
+ "type": "schule",
+ "title_de": "Forschen: Magnet und Wasser",
+ "image": "🧲",
+ "color": "#7a4fd6",
+ "lessons": [
+  {
+   "title": "Was zieht der Magnet an?",
+   "icon": "🧲",
+   "tasks": [
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "Zieht der Magnet das an?",
+     "groups": [
+      "🧲 zieht er an",
+      "❌ zieht er nicht an"
+     ],
+     "items": [
+      {
+       "id": "h1-forschen-bueroklammer",
+       "pic": "📎",
+       "text": "Büroklammer",
+       "group": "🧲 zieht er an"
+      },
+      {
+       "id": "h1-forschen-holz",
+       "pic": "🪵",
+       "text": "Holz",
+       "group": "❌ zieht er nicht an"
+      },
+      {
+       "id": "h1-forschen-schraube",
+       "pic": "🔩",
+       "text": "Schraube",
+       "group": "🧲 zieht er an"
+      },
+      {
+       "id": "h1-forschen-teddy",
+       "pic": "🧸",
+       "text": "Teddy",
+       "group": "❌ zieht er nicht an"
+      },
+      {
+       "id": "h1-forschen-sicherheitsnadel",
+       "pic": "🧷",
+       "text": "Sicherheitsnadel",
+       "group": "🧲 zieht er an"
+      },
+      {
+       "id": "h1-forschen-bleistift",
+       "pic": "✏️",
+       "text": "Bleistift",
+       "group": "❌ zieht er nicht an"
+      },
+      {
+       "id": "h1-forschen-nadel",
+       "pic": "🪡",
+       "text": "Nadel",
+       "group": "🧲 zieht er an"
+      },
+      {
+       "id": "h1-forschen-apfel",
+       "pic": "🍎",
+       "text": "Apfel",
+       "group": "❌ zieht er nicht an"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h1-forschen-der-magnet-zieht-dinge-aus-e",
+     "task": "Stimmt das? Der Magnet zieht Dinge aus Eisen an.",
+     "prompt": "Der Magnet zieht Dinge aus Eisen an.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🧲"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-forschen-der-magnet-zieht-holz-an",
+     "task": "Stimmt das? Der Magnet zieht Holz an.",
+     "prompt": "Der Magnet zieht Holz an.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🪵"
+    }
+   ]
+  },
+  {
+   "title": "Schwimmt oder sinkt?",
+   "icon": "🦆",
+   "tasks": [
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "Schwimmt das oder sinkt es?",
+     "groups": [
+      "🦆 schwimmt",
+      "⚓ sinkt"
+     ],
+     "items": [
+      {
+       "id": "h1-forschen-holz-2",
+       "pic": "🪵",
+       "text": "Holz",
+       "group": "🦆 schwimmt"
+      },
+      {
+       "id": "h1-forschen-stein",
+       "pic": "🪨",
+       "text": "Stein",
+       "group": "⚓ sinkt"
+      },
+      {
+       "id": "h1-forschen-apfel-2",
+       "pic": "🍎",
+       "text": "Apfel",
+       "group": "🦆 schwimmt"
+      },
+      {
+       "id": "h1-forschen-schluessel",
+       "pic": "🔑",
+       "text": "Schlüssel",
+       "group": "⚓ sinkt"
+      },
+      {
+       "id": "h1-forschen-ball",
+       "pic": "🏐",
+       "text": "Ball",
+       "group": "🦆 schwimmt"
+      },
+      {
+       "id": "h1-forschen-schraube-2",
+       "pic": "🔩",
+       "text": "Schraube",
+       "group": "⚓ sinkt"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h1-forschen-ein-stein-schwimmt-auf-dem-w",
+     "task": "Stimmt das? Ein Stein schwimmt auf dem Wasser.",
+     "prompt": "Ein Stein schwimmt auf dem Wasser.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🪨"
+    }
+   ]
+  },
+  {
+   "title": "Wasser",
+   "icon": "💧",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-forschen-was-wird-aus-wasser-wenn-es",
+     "task": "Was wird aus Wasser, wenn es sehr kalt ist?",
+     "prompt": "Was wird aus Wasser, wenn es sehr kalt ist?",
+     "options": [
+      "🧊",
+      "🔥",
+      "🌈"
+     ],
+     "answer": "🧊",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-forschen-wenn-es-sehr-kalt-ist-wird-w",
+     "task": "Stimmt das? Wenn es sehr kalt ist, wird Wasser zu Eis.",
+     "prompt": "Wenn es sehr kalt ist, wird Wasser zu Eis.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🧊"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-forschen-eis-schmilzt-in-der-warmen-s",
+     "task": "Stimmt das? Eis schmilzt in der warmen Sonne.",
+     "prompt": "Eis schmilzt in der warmen Sonne.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "☀️"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-forschen-salz-verschwindet-im-wasser",
+     "task": "Stimmt das? Salz verschwindet im Wasser, wenn man rührt.",
+     "prompt": "Salz verschwindet im Wasser, wenn man rührt.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🧂"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-forschen-der-schneemann-wird-in-der-s",
+     "task": "Stimmt das? Der Schneemann wird in der Sonne immer größer.",
+     "prompt": "Der Schneemann wird in der Sonne immer größer.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "⛄"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 10
+  }
+ ]
+}

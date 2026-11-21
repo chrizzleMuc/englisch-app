@@ -1,0 +1,277 @@
+{
+ "id": "h1-pflanzen",
+ "type": "schule",
+ "title_de": "Pflanzen",
+ "image": "🌷",
+ "color": "#d04a8c",
+ "lessons": [
+  {
+   "title": "Was braucht die Pflanze?",
+   "icon": "💧",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h1-pflanzen-pflanzen-brauchen-wasser",
+     "task": "Stimmt das? Pflanzen brauchen Wasser.",
+     "prompt": "Pflanzen brauchen Wasser.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "💧"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-pflanzen-pflanzen-brauchen-licht",
+     "task": "Stimmt das? Pflanzen brauchen Licht.",
+     "prompt": "Pflanzen brauchen Licht.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "☀️"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-pflanzen-pflanzen-brauchen-schokolade",
+     "task": "Stimmt das? Pflanzen brauchen Schokolade.",
+     "prompt": "Pflanzen brauchen Schokolade.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🍫"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-pflanzen-pflanzen-brauchen-erde",
+     "task": "Stimmt das? Pflanzen brauchen Erde.",
+     "prompt": "Pflanzen brauchen Erde.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🪴"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-pflanzen-die-blume-ist-ganz-trocken-w",
+     "task": "Die Blume ist ganz trocken. Was braucht sie?",
+     "prompt": "Die Blume ist ganz trocken. Was braucht sie?",
+     "options": [
+      "💧",
+      "🍫",
+      "🧸"
+     ],
+     "answer": "💧",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-pflanzen-was-braucht-eine-pflanze-zum",
+     "task": "Was braucht eine Pflanze zum Wachsen?",
+     "prompt": "Was braucht eine Pflanze zum Wachsen?",
+     "options": [
+      "☀️",
+      "🎈",
+      "🧦"
+     ],
+     "answer": "☀️",
+     "picOptions": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Wie wächst das?",
+   "icon": "🌱",
+   "tasks": [
+    {
+     "kind": "order",
+     "pics": true,
+     "id": "h1-pflanzen-wie-waechst-die-sonnenblume",
+     "task": "Wie wächst die Sonnenblume? Leg die Bilder der Reihe nach!",
+     "tiles": [
+      "🌱",
+      "🌿",
+      "🌻"
+     ]
+    },
+    {
+     "kind": "order",
+     "pics": true,
+     "id": "h1-pflanzen-wie-wird-aus-der-bluete-ein",
+     "task": "Wie wird aus der Blüte ein Apfel? Leg die Bilder der Reihe nach!",
+     "tiles": [
+      "🌸",
+      "🍏",
+      "🍎"
+     ]
+    },
+    {
+     "kind": "order",
+     "pics": true,
+     "id": "h1-pflanzen-der-baum-im-jahr-leg-die-bil",
+     "task": "Der Baum im Jahr: Leg die Bilder der Reihe nach!",
+     "tiles": [
+      "🌸",
+      "🌳",
+      "🍂"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h1-pflanzen-was-waechst-an-einem-apfelba",
+     "task": "Was wächst an einem Apfelbaum?",
+     "prompt": "Was wächst an einem Apfelbaum?",
+     "options": [
+      "🍎",
+      "🍌",
+      "🥥"
+     ],
+     "answer": "🍎",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-pflanzen-was-waechst-unter-der-erde",
+     "task": "Was wächst unter der Erde?",
+     "prompt": "Was wächst unter der Erde?",
+     "options": [
+      "🥕",
+      "🍎",
+      "🍒"
+     ],
+     "answer": "🥕",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h1-pflanzen-welche-blume-blueht-schon-im",
+     "task": "Welche Blume blüht schon im Frühling?",
+     "prompt": "Welche Blume blüht schon im Frühling?",
+     "options": [
+      "🌷",
+      "🌻",
+      "🍂"
+     ],
+     "answer": "🌷",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Baum oder Blume?",
+   "icon": "🌳",
+   "tasks": [
+    {
+     "kind": "sort",
+     "pics": true,
+     "task": "Ist das ein Baum oder eine Blume?",
+     "groups": [
+      "🌳 Baum",
+      "💐 Blume"
+     ],
+     "items": [
+      {
+       "id": "h1-pflanzen-tanne",
+       "pic": "🌲",
+       "text": "Tanne",
+       "group": "🌳 Baum"
+      },
+      {
+       "id": "h1-pflanzen-sonnenblume",
+       "pic": "🌻",
+       "text": "Sonnenblume",
+       "group": "💐 Blume"
+      },
+      {
+       "id": "h1-pflanzen-tulpe",
+       "pic": "🌷",
+       "text": "Tulpe",
+       "group": "💐 Blume"
+      },
+      {
+       "id": "h1-pflanzen-palme",
+       "pic": "🌴",
+       "text": "Palme",
+       "group": "🌳 Baum"
+      },
+      {
+       "id": "h1-pflanzen-rose",
+       "pic": "🌹",
+       "text": "Rose",
+       "group": "💐 Blume"
+      },
+      {
+       "id": "h1-pflanzen-gaensebluemchen",
+       "pic": "🌼",
+       "text": "Gänseblümchen",
+       "group": "💐 Blume"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h1-pflanzen-die-wurzel-ist-unter-der-erd",
+     "task": "Stimmt das? Die Wurzel ist unter der Erde.",
+     "prompt": "Die Wurzel ist unter der Erde.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🌱"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-pflanzen-die-blaetter-sind-meistens-g",
+     "task": "Stimmt das? Die Blätter sind meistens grün.",
+     "prompt": "Die Blätter sind meistens grün.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "✅",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🍃"
+    },
+    {
+     "kind": "choice",
+     "id": "h1-pflanzen-die-wurzel-ist-oben-an-der-b",
+     "task": "Stimmt das? Die Wurzel ist oben an der Blüte.",
+     "prompt": "Die Wurzel ist oben an der Blüte.",
+     "options": [
+      "✅",
+      "❌"
+     ],
+     "answer": "❌",
+     "picOptions": true,
+     "keepOrder": true,
+     "pic": "🌸"
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 10
+  }
+ ]
+}

@@ -158,7 +158,15 @@
             "entdecker"
           ],
           "units": [
-            "hsu/k1-jahreszeiten.json"
+            "hsu/k1-koerper.json",
+            "hsu/k1-essen.json",
+            "hsu/k1-gefuehle.json",
+            "hsu/k1-tiere.json",
+            "hsu/k1-pflanzen.json",
+            "hsu/k1-jahreszeiten.json",
+            "hsu/k1-tag.json",
+            "hsu/k1-verkehr.json",
+            "hsu/k1-forschen.json"
           ]
         },
         {
@@ -168,7 +176,25 @@
             "pirat"
           ],
           "units": [
-            "hsu/k3-wasser.json"
+            "hsu/k3-wasser.json",
+            "hsu/k3-wald.json",
+            "hsu/k3-ernaehrung.json",
+            "hsu/k3-sinne.json",
+            "hsu/k3-fahrrad.json",
+            "hsu/k3-karte.json",
+            "hsu/k3-bayern.json",
+            "hsu/k3-zeit.json",
+            "hsu/k3-zusammen.json"
+          ]
+        },
+        {
+          "id": "hsu-k3-extra",
+          "title": "3. Klasse · Extra (eher 4. Klasse)",
+          "kinder": [
+            "pirat"
+          ],
+          "units": [
+            "hsu/k3-strom.json"
           ]
         }
       ]
