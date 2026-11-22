@@ -1,0 +1,844 @@
+{
+ "id": "h3-pflanze",
+ "type": "schule",
+ "title_de": "Wie eine Pflanze entsteht",
+ "image": "🌱",
+ "color": "#5a9e3a",
+ "lessons": [
+  {
+   "title": "Die Teile einer Pflanze",
+   "icon": "🌷",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-pflanze-ordne-die-teile-der-pflanze",
+     "task": "Ordne die Teile der Pflanze von unten nach oben!",
+     "tiles": [
+      "Wurzel",
+      "Stängel",
+      "Blätter",
+      "Blüte"
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Was macht dieser Teil der Pflanze?",
+     "review": "Was macht dieser Teil der Pflanze?",
+     "pairs": [
+      {
+       "id": "h3-pflanze-wurzel",
+       "a": "Wurzel",
+       "b": "hält fest und nimmt Wasser auf"
+      },
+      {
+       "id": "h3-pflanze-staengel",
+       "a": "Stängel",
+       "b": "trägt Blätter und Blüte"
+      },
+      {
+       "id": "h3-pflanze-blaetter",
+       "a": "Blätter",
+       "b": "machen mit Sonnenlicht Nahrung"
+      },
+      {
+       "id": "h3-pflanze-bluete",
+       "a": "Blüte",
+       "b": "daraus wird die Frucht"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Welcher Teil der Blüte ist das?",
+     "review": "Was macht dieser Teil der Blüte?",
+     "pairs": [
+      {
+       "id": "h3-pflanze-kronblaetter",
+       "a": "Kronblätter",
+       "b": "bunt, locken Insekten an"
+      },
+      {
+       "id": "h3-pflanze-kelchblaetter",
+       "a": "Kelchblätter",
+       "b": "grün, schützen die Knospe"
+      },
+      {
+       "id": "h3-pflanze-staubblaetter",
+       "a": "Staubblätter",
+       "b": "tragen den Blütenstaub"
+      },
+      {
+       "id": "h3-pflanze-stempel",
+       "a": "Stempel",
+       "b": "in der Mitte, wird zur Frucht"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-die-wurzel-holt-wasser-aus-d",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Wurzel holt Wasser aus der Erde.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-die-blaetter-brauchen-licht",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Blätter brauchen Licht, damit die Pflanze wachsen kann.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-wie-heisst-der-bluetenstaub",
+     "task": "Was stimmt?",
+     "prompt": "Wie heißt der Blütenstaub noch?",
+     "options": [
+      "Pollen",
+      "Nektar",
+      "Honig"
+     ],
+     "answer": "Pollen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-warum-sind-viele-blueten-so",
+     "task": "Was stimmt?",
+     "prompt": "Warum sind viele Blüten so bunt?",
+     "options": [
+      "Sie locken Insekten an.",
+      "Sie wärmen die Pflanze.",
+      "Sie schützen vor Regen."
+     ],
+     "answer": "Sie locken Insekten an."
+    }
+   ]
+  },
+  {
+   "title": "Blüte und Bestäubung",
+   "icon": "🐝",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-pflanze-von-der-bluete-zur-frucht-br",
+     "task": "Von der Blüte zur Frucht: Bring es in die richtige Reihenfolge!",
+     "tiles": [
+      "Die Blüte geht auf",
+      "Eine Biene bringt Blütenstaub",
+      "Die Kronblätter fallen ab",
+      "Die Frucht wächst",
+      "Die Samen sind reif"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-was-heisst-bestaeubung",
+     "task": "Was stimmt?",
+     "prompt": "Was heißt Bestäubung?",
+     "options": [
+      "Blütenstaub kommt auf den Stempel einer Blüte.",
+      "Die Blüte wird gegossen.",
+      "Die Blätter werden staubig."
+     ],
+     "answer": "Blütenstaub kommt auf den Stempel einer Blüte."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-was-sucht-die-biene-in-der-b",
+     "task": "Was stimmt?",
+     "prompt": "Was sucht die Biene in der Blüte?",
+     "options": [
+      "süßen Nektar",
+      "Wasser",
+      "Samen"
+     ],
+     "answer": "süßen Nektar"
+    },
+    {
+     "kind": "sort",
+     "task": "Wer bestäubt die Blüte?",
+     "review": "Wird diese Pflanze vom Wind oder von Insekten bestäubt?",
+     "groups": [
+      "Wind",
+      "Insekten"
+     ],
+     "items": [
+      {
+       "id": "h3-pflanze-gras",
+       "text": "Gras",
+       "group": "Wind"
+      },
+      {
+       "id": "h3-pflanze-haselnuss",
+       "text": "Haselnuss",
+       "group": "Wind"
+      },
+      {
+       "id": "h3-pflanze-birke",
+       "text": "Birke",
+       "group": "Wind"
+      },
+      {
+       "id": "h3-pflanze-apfelbaum",
+       "text": "Apfelbaum",
+       "group": "Insekten"
+      },
+      {
+       "id": "h3-pflanze-kirschbaum",
+       "text": "Kirschbaum",
+       "group": "Insekten"
+      },
+      {
+       "id": "h3-pflanze-sonnenblume",
+       "text": "Sonnenblume",
+       "group": "Insekten"
+      },
+      {
+       "id": "h3-pflanze-roggen",
+       "text": "Roggen",
+       "group": "Wind"
+      },
+      {
+       "id": "h3-pflanze-klee",
+       "text": "Klee",
+       "group": "Insekten"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-blueten-die-der-wind-bestaeu",
+     "task": "Richtig oder falsch?",
+     "prompt": "Blüten, die der Wind bestäubt, sind meistens klein und unauffällig.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true,
+     "explain": "Sie müssen keine Insekten anlocken. Dafür machen sie sehr viel Blütenstaub."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-ohne-bienen-gaebe-es-viel-we",
+     "task": "Richtig oder falsch?",
+     "prompt": "Ohne Bienen gäbe es viel weniger Äpfel und Kirschen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-heuschnupfen-kommt-oft-vom-b",
+     "task": "Richtig oder falsch?",
+     "prompt": "Heuschnupfen kommt oft vom Blütenstaub der Gräser und Bäume.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Vom Samen zur Pflanze",
+   "icon": "🌱",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-pflanze-wie-waechst-eine-bohne-bring",
+     "task": "Wie wächst eine Bohne? Bring es in die richtige Reihenfolge!",
+     "tiles": [
+      "Bohnensamen in die Erde legen",
+      "Der Samen quillt auf",
+      "Die Wurzel wächst",
+      "Der Spross kommt aus der Erde",
+      "Die ersten Blätter wachsen"
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Was braucht ein Samen zum Keimen?",
+     "review": "Braucht ein Samen das zum Keimen?",
+     "groups": [
+      "braucht er",
+      "braucht er nicht"
+     ],
+     "items": [
+      {
+       "id": "h3-pflanze-wasser",
+       "text": "Wasser",
+       "group": "braucht er"
+      },
+      {
+       "id": "h3-pflanze-waerme",
+       "text": "Wärme",
+       "group": "braucht er"
+      },
+      {
+       "id": "h3-pflanze-luft",
+       "text": "Luft",
+       "group": "braucht er"
+      },
+      {
+       "id": "h3-pflanze-duenger",
+       "text": "Dünger",
+       "group": "braucht er nicht"
+      },
+      {
+       "id": "h3-pflanze-musik",
+       "text": "Musik",
+       "group": "braucht er nicht"
+      },
+      {
+       "id": "h3-pflanze-viel-platz-im-topf",
+       "text": "viel Platz im Topf",
+       "group": "braucht er nicht"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-was-waechst-beim-keimen-zuer",
+     "task": "Was stimmt?",
+     "prompt": "Was wächst beim Keimen zuerst?",
+     "options": [
+      "die Wurzel",
+      "die Blüte",
+      "die Frucht"
+     ],
+     "answer": "die Wurzel"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-woher-bekommt-der-keimling-a",
+     "task": "Was stimmt?",
+     "prompt": "Woher bekommt der Keimling am Anfang seine Nahrung?",
+     "options": [
+      "aus dem Vorrat im Samen",
+      "von der Sonne allein",
+      "aus dem Regen"
+     ],
+     "answer": "aus dem Vorrat im Samen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-du-legst-kresse-auf-trockene",
+     "task": "Was stimmt?",
+     "prompt": "Du legst Kresse auf trockene Watte. Was passiert?",
+     "options": [
+      "Sie keimt nicht.",
+      "Sie keimt sehr schnell.",
+      "Sie blüht sofort."
+     ],
+     "answer": "Sie keimt nicht.",
+     "explain": "Ohne Wasser kann kein Samen keimen."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-eine-bohne-kann-auch-im-dunk",
+     "task": "Richtig oder falsch?",
+     "prompt": "Eine Bohne kann auch im Dunkeln keimen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true,
+     "explain": "Zum Keimen reichen Wasser, Wärme und Luft. Zum Weiterwachsen braucht die junge Pflanze dann aber Licht."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-ein-samen-im-eisfach-keimt-b",
+     "task": "Richtig oder falsch?",
+     "prompt": "Ein Samen im Eisfach keimt besonders gut.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Es ist zu kalt. Samen brauchen Wärme zum Keimen."
+    }
+   ]
+  },
+  {
+   "title": "Wie Samen reisen",
+   "icon": "🌬️",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Wie reist der Samen?",
+     "review": "Wie wird dieser Samen verbreitet?",
+     "groups": [
+      "Wind",
+      "Tiere",
+      "Wasser",
+      "schleudert selbst"
+     ],
+     "items": [
+      {
+       "id": "h3-pflanze-loewenzahn-mit-schirmchen",
+       "text": "Löwenzahn mit Schirmchen",
+       "group": "Wind"
+      },
+      {
+       "id": "h3-pflanze-ahorn-mit-propeller",
+       "text": "Ahorn mit Propeller",
+       "group": "Wind"
+      },
+      {
+       "id": "h3-pflanze-klette-im-fell",
+       "text": "Klette im Fell",
+       "group": "Tiere"
+      },
+      {
+       "id": "h3-pflanze-eichel-vom-eichhoernchen-ver",
+       "text": "Eichel, vom Eichhörnchen versteckt",
+       "group": "Tiere"
+      },
+      {
+       "id": "h3-pflanze-kirsche-von-der-amsel-gefres",
+       "text": "Kirsche, von der Amsel gefressen",
+       "group": "Tiere"
+      },
+      {
+       "id": "h3-pflanze-kokosnuss",
+       "text": "Kokosnuss",
+       "group": "Wasser"
+      },
+      {
+       "id": "h3-pflanze-springkraut",
+       "text": "Springkraut",
+       "group": "schleudert selbst"
+      },
+      {
+       "id": "h3-pflanze-birkensamen-mit-fluegeln",
+       "text": "Birkensamen mit Flügeln",
+       "group": "Wind"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-warum-ist-es-gut-wenn-samen",
+     "task": "Was stimmt?",
+     "prompt": "Warum ist es gut, wenn Samen weit weg reisen?",
+     "options": [
+      "Die jungen Pflanzen haben mehr Platz und Licht.",
+      "Die Samen werden größer.",
+      "Die Mutterpflanze wird schneller alt."
+     ],
+     "answer": "Die jungen Pflanzen haben mehr Platz und Licht."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-wie-hilft-ein-eichhoernchen",
+     "task": "Was stimmt?",
+     "prompt": "Wie hilft ein Eichhörnchen der Eiche?",
+     "options": [
+      "Es vergisst manche versteckte Eicheln. Daraus wachsen neue Eichen.",
+      "Es gießt die Eiche.",
+      "Es frisst die Blätter."
+     ],
+     "answer": "Es vergisst manche versteckte Eicheln. Daraus wachsen neue Eichen."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-kletten-haben-kleine-haken-m",
+     "task": "Richtig oder falsch?",
+     "prompt": "Kletten haben kleine Haken, mit denen sie im Fell hängen bleiben.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-voegel-fressen-beeren-die-ke",
+     "task": "Richtig oder falsch?",
+     "prompt": "Vögel fressen Beeren. Die Kerne kommen mit dem Kot an einer anderen Stelle wieder heraus.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Pflanzen ohne Samen",
+   "icon": "🍄",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Samen oder Sporen?",
+     "review": "Vermehrt sich diese Pflanze mit Samen oder mit Sporen?",
+     "groups": [
+      "Samen",
+      "Sporen"
+     ],
+     "items": [
+      {
+       "id": "h3-pflanze-moos",
+       "text": "Moos",
+       "group": "Sporen"
+      },
+      {
+       "id": "h3-pflanze-farn",
+       "text": "Farn",
+       "group": "Sporen"
+      },
+      {
+       "id": "h3-pflanze-pilz",
+       "text": "Pilz",
+       "group": "Sporen"
+      },
+      {
+       "id": "h3-pflanze-sonnenblume-2",
+       "text": "Sonnenblume",
+       "group": "Samen"
+      },
+      {
+       "id": "h3-pflanze-apfelbaum-2",
+       "text": "Apfelbaum",
+       "group": "Samen"
+      },
+      {
+       "id": "h3-pflanze-bohne",
+       "text": "Bohne",
+       "group": "Samen"
+      },
+      {
+       "id": "h3-pflanze-tulpe",
+       "text": "Tulpe",
+       "group": "Samen"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-was-sind-sporen",
+     "task": "Was stimmt?",
+     "prompt": "Was sind Sporen?",
+     "options": [
+      "winzig kleine Körnchen, aus denen neue Pflanzen oder Pilze wachsen",
+      "große Nüsse",
+      "bunte Blütenblätter"
+     ],
+     "answer": "winzig kleine Körnchen, aus denen neue Pflanzen oder Pilze wachsen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-wo-findest-du-beim-farn-die",
+     "task": "Was stimmt?",
+     "prompt": "Wo findest du beim Farn die Sporen?",
+     "options": [
+      "auf der Unterseite der Blätter",
+      "in einer bunten Blüte",
+      "in einer Frucht"
+     ],
+     "answer": "auf der Unterseite der Blätter"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-wie-vermehrt-sich-die-erdbee",
+     "task": "Was stimmt?",
+     "prompt": "Wie vermehrt sich die Erdbeere noch, außer mit Samen?",
+     "options": [
+      "mit Ausläufern",
+      "mit Sporen",
+      "gar nicht"
+     ],
+     "answer": "mit Ausläufern",
+     "explain": "Erdbeeren bilden lange Triebe am Boden. Wo sie die Erde berühren, wächst eine neue Pflanze."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-woraus-waechst-eine-neue-kar",
+     "task": "Was stimmt?",
+     "prompt": "Woraus wächst eine neue Kartoffelpflanze?",
+     "options": [
+      "aus einer Kartoffelknolle",
+      "aus Sporen",
+      "aus einem Zapfen"
+     ],
+     "answer": "aus einer Kartoffelknolle"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-moose-und-farne-haben-keine",
+     "task": "Richtig oder falsch?",
+     "prompt": "Moose und Farne haben keine Blüten.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Pflanzen genau ansehen",
+   "icon": "🔎",
+   "tasks": [
+    {
+     "kind": "label",
+     "id": "h3-pflanze-beschrifte-die-pflanze-bluet",
+     "task": "Beschrifte die Pflanze!",
+     "image": "bluetenpflanze",
+     "w": 200,
+     "h": 200,
+     "spots": [
+      {
+       "x": 122,
+       "y": 38,
+       "answer": "Blüte"
+      },
+      {
+       "x": 78,
+       "y": 110,
+       "answer": "Blatt"
+      },
+      {
+       "x": 100,
+       "y": 145,
+       "answer": "Stängel"
+      },
+      {
+       "x": 100,
+       "y": 180,
+       "answer": "Wurzel"
+      }
+     ]
+    },
+    {
+     "kind": "order",
+     "pics": true,
+     "id": "h3-pflanze-wie-waechst-eine-bohne-bring-2",
+     "task": "Wie wächst eine Bohne? Bring die Bilder in die richtige Reihenfolge!",
+     "tiles": [
+      "[[bohne-1]] Samen",
+      "[[bohne-2]] quillt",
+      "[[bohne-3]] Wurzel",
+      "[[bohne-4]] Spross",
+      "[[bohne-5]] Blätter"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-was-waechst-hier-gerade-aus",
+     "task": "Was siehst du?",
+     "prompt": "Was wächst hier gerade aus dem Samen?",
+     "options": [
+      "die Wurzel",
+      "die Blüte",
+      "die Frucht"
+     ],
+     "answer": "die Wurzel",
+     "pic": "[[bohne-3]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-wie-wird-dieser-samen-verbre",
+     "task": "Wie reist dieser Samen?",
+     "prompt": "Wie wird dieser Samen verbreitet?",
+     "options": [
+      "mit dem Wind",
+      "mit dem Wasser",
+      "im Fell von Tieren"
+     ],
+     "answer": "mit dem Wind",
+     "pic": "[[frucht-ahorn]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-wer-verbreitet-diese-beeren",
+     "task": "Wie reist dieser Samen?",
+     "prompt": "Wer verbreitet diese Beeren?",
+     "options": [
+      "Vögel",
+      "der Wind",
+      "das Wasser"
+     ],
+     "answer": "Vögel",
+     "pic": "[[frucht-vogelbeeren]]",
+     "showText": true
+    }
+   ]
+  },
+  {
+   "title": "Nacktsamer und Bedecktsamer",
+   "icon": "🌰",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-die-meisten-pflanzen-vermehr",
+     "task": "Fülle die Lücke!",
+     "prompt": "Die meisten Pflanzen vermehren sich über …",
+     "options": [
+      "Samen",
+      "Wurzeln",
+      "Steine"
+     ],
+     "answer": "Samen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-damit-samen-entstehen-koenne",
+     "task": "Fülle die Lücke!",
+     "prompt": "Damit Samen entstehen können, muss die Blüte erst … werden.",
+     "options": [
+      "befruchtet",
+      "gegossen",
+      "gepflückt"
+     ],
+     "answer": "befruchtet"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-unter-den-samenpflanzen-gibt",
+     "task": "Fülle die Lücke!",
+     "prompt": "Unter den Samenpflanzen gibt es Bedecktsamer und …",
+     "options": [
+      "Nacktsamer",
+      "Sporensamer",
+      "Wurzelsamer"
+     ],
+     "answer": "Nacktsamer"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-moose-und-farne-bilden-keine",
+     "task": "Fülle die Lücke!",
+     "prompt": "Moose und Farne bilden keine Samen, sondern …",
+     "options": [
+      "Sporen",
+      "Zapfen",
+      "Früchte"
+     ],
+     "answer": "Sporen"
+    },
+    {
+     "kind": "sort",
+     "task": "Nacktsamer oder Bedecktsamer?",
+     "review": "Ist diese Pflanze ein Nacktsamer oder ein Bedecktsamer?",
+     "groups": [
+      "Nacktsamer",
+      "Bedecktsamer"
+     ],
+     "items": [
+      {
+       "id": "h3-pflanze-fichte",
+       "text": "Fichte",
+       "group": "Nacktsamer"
+      },
+      {
+       "id": "h3-pflanze-kiefer",
+       "text": "Kiefer",
+       "group": "Nacktsamer"
+      },
+      {
+       "id": "h3-pflanze-tanne",
+       "text": "Tanne",
+       "group": "Nacktsamer"
+      },
+      {
+       "id": "h3-pflanze-laerche",
+       "text": "Lärche",
+       "group": "Nacktsamer"
+      },
+      {
+       "id": "h3-pflanze-apfelbaum-3",
+       "text": "Apfelbaum",
+       "group": "Bedecktsamer"
+      },
+      {
+       "id": "h3-pflanze-kirschbaum-2",
+       "text": "Kirschbaum",
+       "group": "Bedecktsamer"
+      },
+      {
+       "id": "h3-pflanze-bohne-2",
+       "text": "Bohne",
+       "group": "Bedecktsamer"
+      },
+      {
+       "id": "h3-pflanze-sonnenblume-3",
+       "text": "Sonnenblume",
+       "group": "Bedecktsamer"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-die-samen-liegen-frei-zwisch",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Die Samen liegen frei zwischen den Schuppen. Ist die Fichte ein …",
+     "options": [
+      "Nacktsamer",
+      "Bedecktsamer"
+     ],
+     "answer": "Nacktsamer",
+     "keepOrder": true,
+     "pic": "[[zapfen-fichte]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-die-kerne-stecken-im-fruchtf",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Die Kerne stecken im Fruchtfleisch. Ist der Apfelbaum ein …",
+     "options": [
+      "Nacktsamer",
+      "Bedecktsamer"
+     ],
+     "answer": "Bedecktsamer",
+     "keepOrder": true,
+     "pic": "[[apfel-laengs]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-pflanze-sporen-entstehen-ohne-befruc",
+     "task": "Richtig oder falsch?",
+     "prompt": "Sporen entstehen ohne Befruchtung.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

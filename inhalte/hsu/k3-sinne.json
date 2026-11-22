@@ -309,6 +309,338 @@
    "mix": true
   },
   {
+   "title": "Das Auge von außen",
+   "icon": "👁️",
+   "tasks": [
+    {
+     "kind": "label",
+     "id": "h3-sinne-beschrifte-das-auge-tipp-ein",
+     "task": "Beschrifte das Auge! Tipp eine Nummer an und dann den passenden Begriff.",
+     "image": "auge-vorn",
+     "w": 300,
+     "h": 200,
+     "spots": [
+      {
+       "x": 150,
+       "y": 22,
+       "answer": "Augenbraue"
+      },
+      {
+       "x": 150,
+       "y": 64,
+       "answer": "Lid"
+      },
+      {
+       "x": 98,
+       "y": 92,
+       "answer": "Wimpern"
+      },
+      {
+       "x": 178,
+       "y": 126,
+       "answer": "Iris"
+      },
+      {
+       "x": 150,
+       "y": 112,
+       "answer": "Pupille"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Wie schützt dieser Teil das Auge?",
+     "review": "Wie schützt dieser Teil das Auge?",
+     "pairs": [
+      {
+       "id": "h3-sinne-augenbraue",
+       "a": "Augenbraue",
+       "b": "lenkt Schweiß vom Auge weg"
+      },
+      {
+       "id": "h3-sinne-wimpern-2",
+       "a": "Wimpern",
+       "b": "halten Staub ab"
+      },
+      {
+       "id": "h3-sinne-lid",
+       "a": "Lid",
+       "b": "schließt sich beim Blinzeln"
+      },
+      {
+       "id": "h3-sinne-traenen",
+       "a": "Tränen",
+       "b": "spülen das Auge sauber"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-wie-heisst-der-farbige-ring",
+     "task": "Was ist das?",
+     "prompt": "Wie heißt der farbige Ring im Auge?",
+     "options": [
+      "Iris",
+      "Pupille",
+      "Lid"
+     ],
+     "answer": "Iris",
+     "pic": "[[auge-vorn]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-wie-heisst-das-schwarze-loch",
+     "task": "Was ist das?",
+     "prompt": "Wie heißt das schwarze Loch in der Mitte?",
+     "options": [
+      "Pupille",
+      "Iris",
+      "Linse"
+     ],
+     "answer": "Pupille",
+     "pic": "[[auge-vorn]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-wie-oft-blinzelst-du-ungefae",
+     "task": "Was stimmt?",
+     "prompt": "Wie oft blinzelst du ungefähr in einer Minute?",
+     "options": [
+      "etwa 10- bis 20-mal",
+      "einmal",
+      "1000-mal"
+     ],
+     "answer": "etwa 10- bis 20-mal"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-die-pupille-ist-in-wirklichk",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Pupille ist in Wirklichkeit ein Loch.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true,
+     "explain": "Sie sieht schwarz aus, weil es im Inneren des Auges dunkel ist."
+    }
+   ]
+  },
+  {
+   "title": "Das Auge von innen",
+   "icon": "🔎",
+   "tasks": [
+    {
+     "kind": "label",
+     "id": "h3-sinne-beschrifte-das-auge-von-inne",
+     "task": "Beschrifte das Auge von innen!",
+     "image": "auge-schnitt",
+     "w": 300,
+     "h": 200,
+     "spots": [
+      {
+       "x": 92,
+       "y": 100,
+       "answer": "Hornhaut"
+      },
+      {
+       "x": 110,
+       "y": 78,
+       "answer": "Iris"
+      },
+      {
+       "x": 124,
+       "y": 100,
+       "answer": "Linse"
+      },
+      {
+       "x": 165,
+       "y": 100,
+       "answer": "Glaskörper"
+      },
+      {
+       "x": 205,
+       "y": 58,
+       "answer": "Netzhaut"
+      },
+      {
+       "x": 255,
+       "y": 104,
+       "answer": "Sehnerv"
+      },
+      {
+       "x": 190,
+       "y": 14,
+       "answer": "Augenhöhle"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Was macht dieser Teil des Auges?",
+     "review": "Was macht dieser Teil des Auges?",
+     "pairs": [
+      {
+       "id": "h3-sinne-hornhaut",
+       "a": "Hornhaut",
+       "b": "durchsichtige Schutzschicht vorn"
+      },
+      {
+       "id": "h3-sinne-glaskoerper",
+       "a": "Glaskörper",
+       "b": "füllt das Auge wie klares Gelee"
+      },
+      {
+       "id": "h3-sinne-augenhoehle",
+       "a": "Augenhöhle",
+       "b": "Knochen, die das Auge schützen"
+      },
+      {
+       "id": "h3-sinne-netzhaut-2",
+       "a": "Netzhaut",
+       "b": "hier entsteht das Bild"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-welcher-teil-macht-das-bild",
+     "task": "Was ist das?",
+     "prompt": "Welcher Teil macht das Bild scharf?",
+     "options": [
+      "die Linse",
+      "die Hornhaut",
+      "der Sehnerv"
+     ],
+     "answer": "die Linse",
+     "pic": "[[auge-schnitt]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-welcher-teil-bringt-das-bild",
+     "task": "Was ist das?",
+     "prompt": "Welcher Teil bringt das Bild zum Gehirn?",
+     "options": [
+      "der Sehnerv",
+      "die Netzhaut",
+      "die Iris"
+     ],
+     "answer": "der Sehnerv",
+     "pic": "[[auge-schnitt]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-auf-der-netzhaut-steht-das-b",
+     "task": "Richtig oder falsch?",
+     "prompt": "Auf der Netzhaut steht das Bild auf dem Kopf.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true,
+     "explain": "Das Gehirn dreht es wieder richtig herum."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-der-groesste-teil-des-augapf",
+     "task": "Richtig oder falsch?",
+     "prompt": "Der größte Teil des Augapfels liegt versteckt in der Augenhöhle.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "So sehen wir",
+   "icon": "💡",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-sinne-welchen-weg-nimmt-das-licht",
+     "task": "Welchen Weg nimmt das Licht? Bring es in die richtige Reihenfolge!",
+     "tiles": [
+      "Hornhaut",
+      "Pupille",
+      "Linse",
+      "Glaskörper",
+      "Netzhaut",
+      "Sehnerv",
+      "Gehirn"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-warum-sehen-wir-in-voelliger",
+     "task": "Was stimmt?",
+     "prompt": "Warum sehen wir in völliger Dunkelheit nichts?",
+     "options": [
+      "Ohne Licht kommt kein Bild ins Auge.",
+      "Die Augen schlafen.",
+      "Die Linse ist zu."
+     ],
+     "answer": "Ohne Licht kommt kein Bild ins Auge."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-ein-kind-sieht-in-der-ferne",
+     "task": "Was stimmt?",
+     "prompt": "Ein Kind sieht in der Ferne alles verschwommen, in der Nähe aber gut. Es ist …",
+     "options": [
+      "kurzsichtig",
+      "weitsichtig",
+      "farbenblind"
+     ],
+     "answer": "kurzsichtig"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-was-hilft-wenn-man-nicht-meh",
+     "task": "Was stimmt?",
+     "prompt": "Was hilft, wenn man nicht mehr scharf sieht?",
+     "options": [
+      "eine Brille",
+      "eine Sonnenbrille",
+      "Augentropfen mit Zucker"
+     ],
+     "answer": "eine Brille"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-warum-haben-wir-zwei-augen",
+     "task": "Was stimmt?",
+     "prompt": "Warum haben wir zwei Augen?",
+     "options": [
+      "Damit wir Entfernungen besser schätzen können.",
+      "Damit eins schlafen kann.",
+      "Weil eins zu klein ist."
+     ],
+     "answer": "Damit wir Entfernungen besser schätzen können."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-beim-lesen-soll-das-licht-gu",
+     "task": "Richtig oder falsch?",
+     "prompt": "Beim Lesen soll das Licht gut sein, damit die Augen nicht so schnell müde werden.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
    "title": "Test",
    "icon": "⭐",
    "test": true,

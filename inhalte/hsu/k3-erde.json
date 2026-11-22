@@ -1,0 +1,570 @@
+{
+ "id": "h3-erde",
+ "type": "schule",
+ "title_de": "Die Erde: Kontinente und Ozeane",
+ "image": "🌍",
+ "color": "#1f78b4",
+ "lessons": [
+  {
+   "title": "Globus und Weltkarte",
+   "icon": "🌐",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-erde-was-ist-ein-globus",
+     "task": "Was stimmt?",
+     "prompt": "Was ist ein Globus?",
+     "options": [
+      "ein kleines Modell der Erde als Kugel",
+      "eine flache Karte",
+      "ein Fernrohr"
+     ],
+     "answer": "ein kleines Modell der Erde als Kugel"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-was-ist-der-vorteil-einer-we",
+     "task": "Was stimmt?",
+     "prompt": "Was ist der Vorteil einer Weltkarte?",
+     "options": [
+      "Man sieht alle Kontinente auf einmal.",
+      "Sie ist rund.",
+      "Sie dreht sich von selbst."
+     ],
+     "answer": "Man sieht alle Kontinente auf einmal."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-was-gibt-es-auf-der-erde-meh",
+     "task": "Was stimmt?",
+     "prompt": "Was gibt es auf der Erde mehr?",
+     "options": [
+      "Wasser",
+      "Land",
+      "beides gleich viel"
+     ],
+     "answer": "Wasser",
+     "keepOrder": true
+    },
+    {
+     "kind": "sort",
+     "task": "Was zeigt die Farbe?",
+     "review": "Was zeigt diese Farbe auf dem Globus meistens?",
+     "groups": [
+      "Wasser",
+      "Land",
+      "Eis"
+     ],
+     "items": [
+      {
+       "id": "h3-erde-blau",
+       "text": "blau",
+       "group": "Wasser"
+      },
+      {
+       "id": "h3-erde-gruen",
+       "text": "grün",
+       "group": "Land"
+      },
+      {
+       "id": "h3-erde-braun",
+       "text": "braun",
+       "group": "Land"
+      },
+      {
+       "id": "h3-erde-weiss",
+       "text": "weiß",
+       "group": "Eis"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-auf-einer-flachen-weltkarte",
+     "task": "Richtig oder falsch?",
+     "prompt": "Auf einer flachen Weltkarte sehen manche Länder größer aus, als sie sind.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true,
+     "explain": "Grönland zum Beispiel sieht riesig aus. Auf dem Globus stimmen die Größen."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-den-globus-muss-man-drehen-u",
+     "task": "Richtig oder falsch?",
+     "prompt": "Den Globus muss man drehen, um alle Kontinente zu sehen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Die sieben Kontinente",
+   "icon": "🗺️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-erde-wie-viele-kontinente-gibt-es",
+     "task": "Weißt du es?",
+     "prompt": "Wie viele Kontinente gibt es?",
+     "options": [
+      "5",
+      "6",
+      "7"
+     ],
+     "answer": "7",
+     "keepOrder": true,
+     "pic": "[[weltkarte]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-wie-nennt-man-die-grossen-zu",
+     "task": "Was stimmt?",
+     "prompt": "Wie nennt man die großen, zusammenhängenden Landflächen der Erde?",
+     "options": [
+      "Kontinente",
+      "Ozeane",
+      "Inseln"
+     ],
+     "answer": "Kontinente"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-kontinent-ist-farbig",
+     "task": "Welcher Kontinent ist das?",
+     "prompt": "Welcher Kontinent ist farbig?",
+     "options": [
+      "Nordamerika",
+      "Europa",
+      "Afrika"
+     ],
+     "answer": "Nordamerika",
+     "pic": "[[weltkarte-nordamerika]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-kontinent-ist-farbig-2",
+     "task": "Welcher Kontinent ist das?",
+     "prompt": "Welcher Kontinent ist farbig?",
+     "options": [
+      "Südamerika",
+      "Europa",
+      "Asien"
+     ],
+     "answer": "Südamerika",
+     "pic": "[[weltkarte-suedamerika]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-kontinent-ist-farbig-3",
+     "task": "Welcher Kontinent ist das?",
+     "prompt": "Welcher Kontinent ist farbig?",
+     "options": [
+      "Europa",
+      "Südamerika",
+      "Asien"
+     ],
+     "answer": "Europa",
+     "pic": "[[weltkarte-europa]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-kontinent-ist-farbig-4",
+     "task": "Welcher Kontinent ist das?",
+     "prompt": "Welcher Kontinent ist farbig?",
+     "options": [
+      "Afrika",
+      "Europa",
+      "Südamerika"
+     ],
+     "answer": "Afrika",
+     "pic": "[[weltkarte-afrika]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-kontinent-ist-farbig-5",
+     "task": "Welcher Kontinent ist das?",
+     "prompt": "Welcher Kontinent ist farbig?",
+     "options": [
+      "Asien",
+      "Europa",
+      "Südamerika"
+     ],
+     "answer": "Asien",
+     "pic": "[[weltkarte-asien]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-kontinent-ist-farbig-6",
+     "task": "Welcher Kontinent ist das?",
+     "prompt": "Welcher Kontinent ist farbig?",
+     "options": [
+      "Australien",
+      "Südamerika",
+      "Antarktis"
+     ],
+     "answer": "Australien",
+     "pic": "[[weltkarte-australien]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-kontinent-ist-farbig-7",
+     "task": "Welcher Kontinent ist das?",
+     "prompt": "Welcher Kontinent ist farbig?",
+     "options": [
+      "Antarktis",
+      "Europa",
+      "Südamerika"
+     ],
+     "answer": "Antarktis",
+     "pic": "[[weltkarte-antarktis]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-ist-der-groesste-kon",
+     "task": "Was stimmt?",
+     "prompt": "Welcher ist der größte Kontinent?",
+     "options": [
+      "Asien",
+      "Europa",
+      "Australien"
+     ],
+     "answer": "Asien"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-ist-der-kleinste-kon",
+     "task": "Was stimmt?",
+     "prompt": "Welcher ist der kleinste Kontinent?",
+     "options": [
+      "Australien",
+      "Afrika",
+      "Asien"
+     ],
+     "answer": "Australien"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-auf-welchem-kontinent-leben",
+     "task": "Was stimmt?",
+     "prompt": "Auf welchem Kontinent leben wir?",
+     "options": [
+      "Europa",
+      "Afrika",
+      "Nordamerika"
+     ],
+     "answer": "Europa"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-kontinent-ist-fast-g",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Kontinent ist fast ganz mit Eis bedeckt?",
+     "options": [
+      "die Antarktis",
+      "Afrika",
+      "Südamerika"
+     ],
+     "answer": "die Antarktis"
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Kontinente beschriften",
+   "icon": "✏️",
+   "tasks": [
+    {
+     "kind": "label",
+     "id": "h3-erde-beschrifte-die-kontinente-we",
+     "task": "Beschrifte die Kontinente!",
+     "image": "weltkarte",
+     "w": 1000,
+     "h": 439,
+     "spots": [
+      {
+       "x": 200,
+       "y": 125,
+       "answer": "Nordamerika"
+      },
+      {
+       "x": 335,
+       "y": 290,
+       "answer": "Südamerika"
+      },
+      {
+       "x": 560,
+       "y": 85,
+       "answer": "Europa"
+      },
+      {
+       "x": 575,
+       "y": 255,
+       "answer": "Afrika"
+      },
+      {
+       "x": 790,
+       "y": 110,
+       "answer": "Asien"
+      },
+      {
+       "x": 865,
+       "y": 315,
+       "answer": "Australien"
+      },
+      {
+       "x": 760,
+       "y": 418,
+       "answer": "Antarktis"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-tipp-auf-die-karte-auf-der-a",
+     "task": "Tipp auf die Karte, auf der Afrika farbig ist!",
+     "prompt": "Tipp auf die Karte, auf der Afrika farbig ist!",
+     "options": [
+      "[[weltkarte-afrika]]",
+      "[[weltkarte-suedamerika]]",
+      "[[weltkarte-australien]]"
+     ],
+     "answer": "[[weltkarte-afrika]]",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-tipp-auf-die-karte-auf-der-e",
+     "task": "Tipp auf die Karte, auf der Europa farbig ist!",
+     "prompt": "Tipp auf die Karte, auf der Europa farbig ist!",
+     "options": [
+      "[[weltkarte-europa]]",
+      "[[weltkarte-asien]]",
+      "[[weltkarte-nordamerika]]"
+     ],
+     "answer": "[[weltkarte-europa]]",
+     "picOptions": true
+    }
+   ]
+  },
+  {
+   "title": "Die Ozeane",
+   "icon": "🌊",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-erde-ein-ozean-ist-ein-riesiges-t",
+     "task": "Was ist ein Ozean?",
+     "prompt": "Ein Ozean ist ein riesiges, tiefes Meer und bedeckt einen großen Teil der Erde mit …",
+     "options": [
+      "Wasser",
+      "Land",
+      "Sand"
+     ],
+     "answer": "Wasser",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-wie-viele-ozeane-gibt-es-wel",
+     "task": "Weißt du es?",
+     "prompt": "Wie viele Ozeane gibt es?",
+     "options": [
+      "3",
+      "5",
+      "7"
+     ],
+     "answer": "5",
+     "keepOrder": true,
+     "pic": "[[weltkarte]]",
+     "showText": true
+    },
+    {
+     "kind": "label",
+     "id": "h3-erde-beschrifte-die-ozeane-weltka",
+     "task": "Beschrifte die Ozeane!",
+     "image": "weltkarte",
+     "w": 1000,
+     "h": 439,
+     "spots": [
+      {
+       "x": 90,
+       "y": 270,
+       "answer": "Pazifischer Ozean"
+      },
+      {
+       "x": 410,
+       "y": 210,
+       "answer": "Atlantischer Ozean"
+      },
+      {
+       "x": 710,
+       "y": 320,
+       "answer": "Indischer Ozean"
+      },
+      {
+       "x": 515,
+       "y": 20,
+       "answer": "Arktischer Ozean"
+      },
+      {
+       "x": 300,
+       "y": 405,
+       "answer": "Antarktischer Ozean"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-ist-der-groesste-oze",
+     "task": "Was stimmt?",
+     "prompt": "Welcher ist der größte Ozean?",
+     "options": [
+      "der Pazifische Ozean",
+      "der Atlantische Ozean",
+      "der Indische Ozean"
+     ],
+     "answer": "der Pazifische Ozean"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-ozean-liegt-rund-um",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Ozean liegt rund um den Nordpol?",
+     "options": [
+      "der Arktische Ozean",
+      "der Antarktische Ozean",
+      "der Indische Ozean"
+     ],
+     "answer": "der Arktische Ozean"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welcher-ozean-liegt-zwischen",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Ozean liegt zwischen Europa und Amerika?",
+     "options": [
+      "der Atlantische Ozean",
+      "der Pazifische Ozean",
+      "der Indische Ozean"
+     ],
+     "answer": "der Atlantische Ozean"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-welche-zwei-meere-liegen-im",
+     "task": "Was stimmt?",
+     "prompt": "Welche zwei Meere liegen im Norden von Deutschland?",
+     "options": [
+      "Nordsee und Ostsee",
+      "Mittelmeer und Rotes Meer",
+      "Pazifik und Atlantik"
+     ],
+     "answer": "Nordsee und Ostsee"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-das-wasser-im-meer-ist-salzi",
+     "task": "Richtig oder falsch?",
+     "prompt": "Das Wasser im Meer ist salzig.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Tiere der Kontinente",
+   "icon": "🦘",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Wo lebt das Tier in freier Natur?",
+     "review": "Auf welchem Kontinent lebt dieses Tier in freier Natur?",
+     "pairs": [
+      {
+       "id": "h3-erde-kaenguru",
+       "a": "Känguru",
+       "b": "Australien"
+      },
+      {
+       "id": "h3-erde-kaiserpinguin",
+       "a": "Kaiserpinguin",
+       "b": "Antarktis"
+      },
+      {
+       "id": "h3-erde-loewe",
+       "a": "Löwe",
+       "b": "Afrika"
+      },
+      {
+       "id": "h3-erde-grosser-panda",
+       "a": "Großer Panda",
+       "b": "Asien"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Wo lebt das Tier in freier Natur?",
+     "review": "Auf welchem Kontinent lebt dieses Tier in freier Natur?",
+     "pairs": [
+      {
+       "id": "h3-erde-lama",
+       "a": "Lama",
+       "b": "Südamerika"
+      },
+      {
+       "id": "h3-erde-bison",
+       "a": "Bison",
+       "b": "Nordamerika"
+      },
+      {
+       "id": "h3-erde-rothirsch",
+       "a": "Rothirsch",
+       "b": "Europa"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-erde-eisbaeren-und-pinguine-treff",
+     "task": "Richtig oder falsch?",
+     "prompt": "Eisbären und Pinguine treffen sich nie in freier Natur.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true,
+     "explain": "Eisbären leben im hohen Norden, Pinguine im Süden, vor allem in der Antarktis."
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

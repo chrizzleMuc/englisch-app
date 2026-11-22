@@ -282,6 +282,465 @@
    "lektionen": [
     "h3-zusammen/Klassenrat"
    ]
+  },
+  {
+   "id": "hsu-bluete",
+   "icon": "🌸",
+   "title": "Die Teile einer Blütenpflanze",
+   "merke": [
+    "Eine Blütenpflanze hat **Wurzel**, **Stängel**, **Blätter** und **Blüte**.",
+    "Die **Wurzel** hält die Pflanze fest und nimmt Wasser auf.",
+    "Die bunten **Kronblätter** locken Insekten an. Die grünen **Kelchblätter** schützen die Knospe.",
+    "In den **Staubblättern** steckt der Blütenstaub (Pollen). In der Mitte steht der **Stempel**."
+   ],
+   "beispiele": [
+    "Blüte → Frucht → Samen → neue Pflanze"
+   ],
+   "lektionen": [
+    "h3-pflanze/Die Teile einer Pflanze",
+    "h3-pflanze/Blüte und Bestäubung"
+   ]
+  },
+  {
+   "id": "hsu-bestaeubung",
+   "icon": "🐝",
+   "title": "Von der Blüte zur Frucht",
+   "merke": [
+    "Eine Biene sammelt Nektar. Dabei bleibt **Blütenstaub** an ihr hängen.",
+    "In der nächsten Blüte streift sie den Blütenstaub am **Stempel** ab. Das heißt **Bestäubung**.",
+    "Danach wächst aus dem unteren Teil des Stempels die **Frucht** mit den **Samen**.",
+    "Gräser, Haselnuss und Birke werden vom **Wind** bestäubt."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-pflanze/Blüte und Bestäubung"
+   ]
+  },
+  {
+   "id": "hsu-keimung",
+   "icon": "🌱",
+   "title": "Vom Samen zur Pflanze",
+   "merke": [
+    "Zum Keimen braucht ein Samen **Wasser**, **Wärme** und **Luft**.",
+    "Zuerst quillt der Samen auf. Dann wächst die **Wurzel** nach unten.",
+    "Danach wächst der **Spross** mit den ersten Blättern nach oben zum Licht.",
+    "Im Samen steckt ein **Nahrungsvorrat** für den Anfang."
+   ],
+   "beispiele": [
+    "Samen → quellen → Wurzel → Spross → Blätter → Blüte"
+   ],
+   "lektionen": [
+    "h3-pflanze/Vom Samen zur Pflanze"
+   ]
+  },
+  {
+   "id": "hsu-verbreitung",
+   "icon": "🌬️",
+   "title": "Wie Samen reisen",
+   "merke": [
+    "**Wind**: Löwenzahn hat Schirmchen, der Ahorn hat Propeller.",
+    "**Tiere**: Kletten bleiben im Fell hängen. Vögel fressen Beeren. Eichhörnchen verstecken Nüsse und vergessen manche.",
+    "**Wasser**: Manche Samen schwimmen, zum Beispiel die Kokosnuss.",
+    "**Selbst**: Das Springkraut schleudert seine Samen weg."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-pflanze/Wie Samen reisen"
+   ]
+  },
+  {
+   "id": "hsu-apfel",
+   "icon": "🍎",
+   "title": "Der Apfel von innen",
+   "merke": [
+    "Außen ist die **Schale**, darunter das saftige **Fruchtfleisch**.",
+    "In der Mitte liegt das **Kerngehäuse** mit den **Kernen**. Die Kerne sind die **Samen**.",
+    "Oben ist der **Stiel**, unten der vertrocknete **Blütenrest**.",
+    "Schneidest du einen Apfel quer durch, siehst du einen **Stern** mit fünf Kammern."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-apfel/Der Apfel von innen"
+   ]
+  },
+  {
+   "id": "hsu-apfeljahr",
+   "icon": "🌸",
+   "title": "Das Jahr des Apfelbaums",
+   "merke": [
+    "**Frühling**: Der Apfelbaum blüht weiß und rosa. Bienen bestäuben die Blüten.",
+    "**Sommer**: Aus der Blüte wächst ein kleiner grüner Apfel. Er wird immer größer.",
+    "**Herbst**: Die Äpfel sind reif und werden geerntet.",
+    "**Winter**: Der Baum ist kahl und ruht. Die Knospen sind schon da."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-apfel/Vom Apfelbaum"
+   ]
+  },
+  {
+   "id": "hsu-veredeln",
+   "icon": "✂️",
+   "title": "Warum man Apfelbäume veredelt",
+   "merke": [
+    "Pflanzt du einen Apfelkern, wächst ein Baum mit **anderen** Äpfeln. Sie schmecken oft sauer.",
+    "Darum **veredelt** der Gärtner: Er setzt einen Zweig der gewünschten Sorte auf einen jungen Baum.",
+    "Der Zweig wächst an. Dann trägt der Baum genau die Äpfel dieser **Sorte**."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-apfel/Apfelsorten"
+   ]
+  },
+  {
+   "id": "hsu-baumteile",
+   "icon": "🌳",
+   "title": "Die Teile des Baumes",
+   "merke": [
+    "Die **Wurzeln** halten den Baum fest und holen Wasser aus dem Boden.",
+    "Der **Stamm** trägt die Krone. In ihm steigt das Wasser nach oben.",
+    "Die **Rinde** schützt den Stamm wie eine Haut.",
+    "Die **Krone** besteht aus **Ästen**, **Zweigen** und **Blättern**."
+   ],
+   "beispiele": [
+    "Wurzeln → Stamm → Äste → Zweige → Blätter"
+   ],
+   "lektionen": [
+    "h3-baum/Die Teile des Baumes"
+   ]
+  },
+  {
+   "id": "hsu-jahresringe",
+   "icon": "🪵",
+   "title": "Jahresringe",
+   "merke": [
+    "Ein Baum wird jedes Jahr ein Stück dicker.",
+    "Dabei entsteht jedes Jahr ein **Jahresring**: ein heller und ein dunkler Streifen.",
+    "Zählst du die Ringe eines gefällten Baumes, weißt du, wie **alt** er war.",
+    "Breite Ringe bedeuten ein gutes Jahr mit viel Regen, schmale Ringe ein trockenes Jahr."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-baum/Wie alt ist der Baum?"
+   ]
+  },
+  {
+   "id": "hsu-laubbaeume1",
+   "icon": "🍂",
+   "title": "Buche, Eiche, Birke",
+   "merke": [
+    "**Buche**: ovale Blätter mit glattem, welligem Rand. Glatte graue Rinde. Früchte: **Bucheckern** in stacheliger Hülle.",
+    "**Eiche**: Blätter mit runden Buchten. Rinde mit tiefen Rillen. Früchte: **Eicheln** mit Hütchen.",
+    "**Birke**: kleine dreieckige Blätter mit gezacktem Rand. **Weiße Rinde** mit schwarzen Flecken."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-laub/Buche, Eiche, Birke"
+   ]
+  },
+  {
+   "id": "hsu-laubbaeume2",
+   "icon": "🍁",
+   "title": "Ahorn, Eberesche, Kastanie, Linde",
+   "merke": [
+    "**Ahorn**: Blatt wie eine Hand mit spitzen Zipfeln. Früchte mit **Propellern**.",
+    "**Eberesche** (Vogelbeere): Blatt aus vielen kleinen Fiederblättchen. **Orangerote Beeren**, die Vögel gern fressen.",
+    "**Kastanie** (Rosskastanie): Blatt wie eine Hand mit 5 bis 7 Fingern. Glänzende braune **Kastanien** in stacheliger Schale.",
+    "**Linde**: **herzförmige** Blätter. Die Blüten duften und man macht Tee daraus."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-laub/Ahorn, Eberesche, Kastanie, Linde"
+   ]
+  },
+  {
+   "id": "hsu-laubjahr",
+   "icon": "🍂",
+   "title": "Laubbäume im Jahreslauf",
+   "merke": [
+    "**Frühling**: Die Knospen öffnen sich, junge Blätter und Blüten wachsen.",
+    "**Sommer**: Die Krone ist dicht und grün. Die Früchte wachsen.",
+    "**Herbst**: Die Blätter werden gelb, rot und braun und fallen ab.",
+    "**Winter**: Der Baum ist kahl. Die Knospen für das nächste Jahr sind schon da.",
+    "Im Winter ist der Boden oft gefroren. Ohne Blätter verliert der Baum kaum Wasser."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-laub/Laubbäume im Jahreslauf"
+   ]
+  },
+  {
+   "id": "hsu-nadelbaeume",
+   "icon": "🌲",
+   "title": "Nadelbäume erkennen",
+   "merke": [
+    "**Fichte**: spitze Nadeln rund um den Zweig, sie **stechen**. Die Zapfen **hängen** nach unten.",
+    "**Tanne**: weiche, flache Nadeln mit zwei **weißen Streifen** unten. Die Zapfen **stehen** aufrecht und zerfallen am Baum.",
+    "**Kiefer**: lange Nadeln, immer **zu zweit**. Kleine runde Zapfen.",
+    "**Lärche**: weiche Nadeln in **Büscheln**. Sie wird im Herbst gelb und **wirft die Nadeln ab**.",
+    "**Eibe**: weiche Nadeln, **keine Zapfen**, rote Beeren. Fast alles an ihr ist **giftig**."
+   ],
+   "beispiele": [
+    "Die Fichte sticht, die Tanne nicht."
+   ],
+   "lektionen": [
+    "h3-nadel/Nadelbäume kennenlernen",
+    "h3-nadel/Nadeln und Zapfen"
+   ],
+   "trick": "Die Fichte sticht, die Tanne nicht."
+  },
+  {
+   "id": "hsu-nadelwinter",
+   "icon": "❄️",
+   "title": "Nadelbäume im Winter",
+   "merke": [
+    "Die meisten Nadelbäume sind **immergrün**. Sie behalten ihre Nadeln mehrere Jahre.",
+    "Nadeln sind schmal und haben eine **Wachsschicht**. So verlieren sie im Winter kaum Wasser.",
+    "Die Äste sind biegsam, darum rutscht der **Schnee** ab.",
+    "Die Samen liegen **frei** zwischen den Schuppen der Zapfen. Darum heißen Nadelbäume auch **Nacktsamer**."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-nadel/Nadelbäume im Winter"
+   ]
+  },
+  {
+   "id": "hsu-giftregeln",
+   "icon": "⚠️",
+   "title": "Regeln bei Giftpflanzen",
+   "merke": [
+    "Iss **nichts**, was du nicht sicher kennst. Frag immer einen Erwachsenen.",
+    "Steck keine Blätter, Beeren oder Blüten in den Mund.",
+    "Wasch dir nach dem Spielen in der Natur die **Hände**.",
+    "Im Notfall: sofort einen **Erwachsenen** holen. Er ruft den **Giftnotruf** an (in Bayern 089 19240) oder im schlimmen Fall die **112**.",
+    "Nimm einen Rest der Pflanze mit. Dann weiß der Arzt, was es war.",
+    "**Nicht** erbrechen und **keine Milch** trinken. Am besten einen Schluck Wasser oder Tee."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-gift/Was sind Giftpflanzen?"
+   ]
+  },
+  {
+   "id": "hsu-giftpflanzen",
+   "icon": "☠️",
+   "title": "Giftpflanzen erkennen",
+   "merke": [
+    "**Maiglöckchen**: kleine weiße Glöckchen, später rote Beeren. Blätter sehen aus wie Bärlauch.",
+    "**Fingerhut**: hohe Blütenstände mit lila Glocken.",
+    "**Eisenhut**: blaue Blüten wie ein Helm. Eine der giftigsten Pflanzen Europas.",
+    "**Herbstzeitlose**: lila Blüte im Herbst auf Wiesen.",
+    "**Tollkirsche**: schwarze, glänzende Beeren wie Kirschen.",
+    "**Eibe**, **Goldregen** (gelbe Blütentrauben) und **Pfaffenhütchen** (rosa Früchte) sind giftige Bäume und Sträucher."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-gift/Kleine Giftpflanzen",
+    "h3-gift/Giftige Sträucher und Bäume"
+   ]
+  },
+  {
+   "id": "hsu-giftgemuese",
+   "icon": "🥔",
+   "title": "Vorsicht bei Gemüse",
+   "merke": [
+    "**Bohnen** nie roh essen. Erst durch Kochen werden sie bekömmlich.",
+    "Bei **Kartoffeln** grüne Stellen und Keime wegschneiden.",
+    "**Grüne Tomaten** nicht essen. Nur rote, reife Tomaten.",
+    "Beim **Rhabarber** nur die Stiele essen, nie die Blätter.",
+    "**Holunderbeeren** nur gekocht essen, zum Beispiel als Saft."
+   ],
+   "beispiele": [
+    "Bärlauch riecht nach **Knoblauch**. Maiglöckchen riechen nicht danach."
+   ],
+   "lektionen": [
+    "h3-gift/Giftiges Gemüse"
+   ]
+  },
+  {
+   "id": "hsu-himmelskoerper",
+   "icon": "⭐",
+   "title": "Himmelskörper",
+   "merke": [
+    "Ein **Stern** leuchtet selbst. Die **Sonne** ist ein Stern, der uns am nächsten ist.",
+    "Ein **Planet** kreist um die Sonne und leuchtet nicht selbst. Die **Erde** ist ein Planet.",
+    "Ein **Mond** kreist um einen Planeten. Unser Mond wird von der Sonne angestrahlt.",
+    "Ein **Komet** ist ein Brocken aus Eis und Staub mit einem leuchtenden **Schweif**.",
+    "Eine **Sternschnuppe** ist ein kleiner Stein, der in der Luft verglüht."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-himmel/Himmelskörper"
+   ]
+  },
+  {
+   "id": "hsu-planeten",
+   "icon": "🪐",
+   "title": "Die acht Planeten",
+   "merke": [
+    "Von der Sonne aus: **Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus, Neptun**.",
+    "Der **Jupiter** ist der größte Planet, der **Merkur** der kleinste.",
+    "Der **Mars** sieht rot aus. Der **Saturn** hat große Ringe.",
+    "Die **Erde** ist der einzige Planet, auf dem wir Leben kennen."
+   ],
+   "beispiele": [
+    "Merksatz: **M**ein **V**ater **e**rklärt **m**ir **j**eden **S**onntag **u**nseren **N**achthimmel."
+   ],
+   "lektionen": [
+    "h3-himmel/Die Planeten ordnen"
+   ],
+   "trick": "Mein Vater erklärt mir jeden Sonntag unseren Nachthimmel."
+  },
+  {
+   "id": "hsu-tagjahr",
+   "icon": "🌍",
+   "title": "Tag, Monat, Jahr",
+   "merke": [
+    "**Tag**: Die Erde dreht sich in **24 Stunden** einmal um sich selbst. Auf der Seite zur Sonne ist **Tag**, auf der anderen **Nacht**.",
+    "**Monat**: Der Mond braucht ungefähr **einen Monat**, um die Erde einmal zu umkreisen.",
+    "**Jahr**: Die Erde braucht **365 Tage**, um einmal um die Sonne zu kreisen. Im **Schaltjahr** sind es 366 Tage.",
+    "Die Sonne geht im **Osten** auf und im **Westen** unter."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-himmel/Tag und Nacht",
+    "h3-himmel/Jahr, Monat, Tag"
+   ]
+  },
+  {
+   "id": "hsu-jahreszeiten3",
+   "icon": "🌷",
+   "title": "Warum es Jahreszeiten gibt",
+   "merke": [
+    "Die Erdachse ist **schief**. Darum ist unsere Hälfte der Erde mal mehr, mal weniger zur Sonne geneigt.",
+    "**Sommer**: Die Sonne steht hoch, scheint lange und wärmt stark.",
+    "**Winter**: Die Sonne steht tief, die Tage sind kurz und es ist kalt.",
+    "Um den **21. Juni** ist der längste Tag, um den **21. Dezember** der kürzeste.",
+    "In Australien ist es genau umgekehrt: Dort ist an Weihnachten **Sommer**."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-himmel/Warum es Jahreszeiten gibt"
+   ]
+  },
+  {
+   "id": "hsu-mondphasen",
+   "icon": "🌙",
+   "title": "Die Mondphasen",
+   "merke": [
+    "Der Mond leuchtet nicht selbst. Wir sehen nur den Teil, den die **Sonne** anstrahlt.",
+    "**Neumond**: Wir sehen den Mond gar nicht.",
+    "**Zunehmender Mond**: Er wird jeden Abend ein bisschen größer.",
+    "**Vollmond**: Wir sehen eine ganze runde Scheibe.",
+    "**Abnehmender Mond**: Er wird wieder kleiner. Nach etwa **4 Wochen** ist wieder Neumond."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-himmel/Die Mondphasen"
+   ]
+  },
+  {
+   "id": "hsu-auge-aussen",
+   "icon": "👁️",
+   "title": "Das Auge von außen",
+   "merke": [
+    "Die **Augenbraue** lenkt Schweiß und Regen vom Auge weg.",
+    "Das **Lid** schließt sich beim Blinzeln. Es verteilt die Tränenflüssigkeit und schützt das Auge.",
+    "Die **Wimpern** halten Staub und kleine Insekten ab.",
+    "Die **Iris** ist der farbige Ring. In ihrer Mitte ist die schwarze **Pupille**, ein Loch, durch das Licht ins Auge fällt."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-sinne/Das Auge von außen"
+   ]
+  },
+  {
+   "id": "hsu-auge-innen",
+   "icon": "🔎",
+   "title": "Das Auge von innen",
+   "merke": [
+    "Vorn ist die durchsichtige **Hornhaut**. Dahinter liegen **Iris** und **Pupille**.",
+    "Die **Linse** bündelt das Licht. Sie macht das Bild scharf.",
+    "Innen ist das Auge mit dem **Glaskörper** gefüllt, einer klaren, festen Masse wie Gelee.",
+    "Hinten auf der **Netzhaut** entsteht das Bild. Es steht dort auf dem Kopf.",
+    "Der **Sehnerv** bringt das Bild zum **Gehirn**. Das Gehirn dreht es richtig herum.",
+    "Das Auge liegt geschützt in der knöchernen **Augenhöhle**."
+   ],
+   "beispiele": [
+    "Licht → Hornhaut → Pupille → Linse → Glaskörper → Netzhaut → Sehnerv → Gehirn"
+   ],
+   "lektionen": [
+    "h3-sinne/Das Auge von innen",
+    "h3-sinne/So sehen wir"
+   ]
+  },
+  {
+   "id": "hsu-samenpflanzen",
+   "icon": "🌰",
+   "title": "Samen und Sporen",
+   "merke": [
+    "Die meisten Pflanzen vermehren sich mit **Samen**. Damit ein Samen entsteht, muss die Blüte erst **bestäubt** und **befruchtet** werden.",
+    "Bei den Samenpflanzen gibt es zwei Gruppen: **Nacktsamer** und **Bedecktsamer**.",
+    "**Nacktsamer**: Die Samen liegen frei, zum Beispiel zwischen den Schuppen eines Zapfens (Fichte, Kiefer, Tanne).",
+    "**Bedecktsamer**: Die Samen sind von einer **Frucht** umhüllt (Apfel, Kirsche, Tomate, Bohne).",
+    "Moose, Farne und Pilze bilden keine Samen, sondern winzige **Sporen**. Dafür braucht es keine Befruchtung."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-pflanze/Nacktsamer und Bedecktsamer"
+   ]
+  },
+  {
+   "id": "hsu-giftwas",
+   "icon": "🛡️",
+   "title": "Warum sind Pflanzen giftig?",
+   "merke": [
+    "Pflanzen können nicht weglaufen. Mit **Giftstoffen** schützen sie sich vor Tieren, die sie fressen wollen.",
+    "Manchmal ist die **ganze Pflanze** giftig, manchmal nur ein Teil, zum Beispiel die Beeren, die Samen oder die Blätter.",
+    "Giftige Tiere warnen oft mit **Warnfarben**, wie die Wespe. Einer Giftpflanze sieht man ihr Gift **nicht** an.",
+    "Auch Pflanzen, die man jeden Tag sieht, können giftig sein. Zum Beispiel **Efeu** an der Hauswand oder die **Eibe** in der Hecke.",
+    "Es kommt auf die **Menge** und die Stärke des Giftes an. Manche Pflanzen machen nur Bauchweh, andere können **tödlich** sein."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-gift/Warum sind Pflanzen giftig?"
+   ],
+   "trick": "Was du nicht kennst, isst du nicht und fasst du möglichst nicht an."
+  },
+  {
+   "id": "hsu-giftgross",
+   "icon": "🌳",
+   "title": "Große Giftpflanzen",
+   "merke": [
+    "Nicht nur kleine Pflanzen sind giftig. Auch **Sträucher** und **Bäume** können sehr giftig sein.",
+    "**Eibe**: Nadelbaum mit roten Früchten. Der Kern, die Nadeln und die Rinde sind sehr giftig.",
+    "**Goldregen**: im Frühsommer lange, hängende, **gelbe** Blütentrauben. Alle Teile sind sehr giftig.",
+    "**Oleander**: Strauch aus dem Mittelmeerraum mit schmalen Blättern und rosa, roten oder weißen Blüten. Er steht oft im **Kübel** auf Terrasse oder Balkon. Alle Teile sind giftig.",
+    "**Herkulesstaude** (Riesen-Bärenklau): wird **über 3 Meter** hoch und hat riesige weiße Blütendolden. Ihr Saft macht zusammen mit **Sonnenlicht** schlimme Blasen auf der Haut, wie bei einer Verbrennung."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-gift/Große Giftpflanzen"
+   ],
+   "trick": "Herkulesstaude nie anfassen, auch nicht mit Stöcken daran herumschlagen!"
+  },
+  {
+   "id": "hsu-kontinente",
+   "icon": "🌍",
+   "title": "Kontinente und Ozeane",
+   "merke": [
+    "Von oben sieht die Erde blau aus: Mehr als zwei Drittel sind **Wasser**.",
+    "Die großen Landflächen heißen **Kontinente**. Es gibt **sieben**: Nordamerika, Südamerika, Europa, Afrika, Asien, Australien und die Antarktis.",
+    "**Asien** ist der größte Kontinent, **Australien** der kleinste. Wir leben in **Europa**.",
+    "Ein **Ozean** ist ein riesiges, tiefes Meer. Es gibt **fünf**: den **Pazifischen** (Pazifik, der größte), den **Atlantischen** (Atlantik), den **Indischen**, den **Arktischen** (im Norden) und den **Antarktischen Ozean** (im Süden).",
+    "Ein **Globus** ist ein kleines Modell der Erde als Kugel. Eine **Weltkarte** ist flach und zeigt alles auf einmal."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-erde/Globus und Weltkarte",
+    "h3-erde/Die sieben Kontinente",
+    "h3-erde/Die Ozeane"
+   ]
   }
  ]
 }

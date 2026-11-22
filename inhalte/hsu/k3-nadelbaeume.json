@@ -1,0 +1,545 @@
+{
+ "id": "h3-nadel",
+ "type": "schule",
+ "title_de": "Nadelbäume",
+ "image": "🌲",
+ "color": "#1f6b45",
+ "lessons": [
+  {
+   "title": "Nadelbäume kennenlernen",
+   "icon": "🌲",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-nadel-welcher-baum-waechst-in-deut",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Baum wächst in Deutschland am häufigsten?",
+     "options": [
+      "die Fichte",
+      "die Eibe",
+      "die Lärche"
+     ],
+     "answer": "die Fichte"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-welcher-nadelbaum-verliert-i",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Nadelbaum verliert im Herbst seine Nadeln?",
+     "options": [
+      "die Lärche",
+      "die Fichte",
+      "die Tanne"
+     ],
+     "answer": "die Lärche"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-welcher-nadelbaum-hat-keine",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Nadelbaum hat keine Zapfen, sondern rote Beeren?",
+     "options": [
+      "die Eibe",
+      "die Kiefer",
+      "die Fichte"
+     ],
+     "answer": "die Eibe"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-woraus-macht-man-oft-weihnac",
+     "task": "Was stimmt?",
+     "prompt": "Woraus macht man oft Weihnachtsbäume?",
+     "options": [
+      "aus Tannen und Fichten",
+      "aus Birken",
+      "aus Eichen"
+     ],
+     "answer": "aus Tannen und Fichten"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-alle-nadelbaeume-bleiben-im",
+     "task": "Richtig oder falsch?",
+     "prompt": "Alle Nadelbäume bleiben im Winter grün.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Die Lärche wird im Herbst gelb und wirft ihre Nadeln ab."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-nadeln-sind-auch-blaetter-nu",
+     "task": "Richtig oder falsch?",
+     "prompt": "Nadeln sind auch Blätter, nur ganz schmal.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Nadeln und Zapfen",
+   "icon": "🔎",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Welche Nadeln gehören zu welchem Baum?",
+     "review": "Zu welchem Baum gehören diese Nadeln?",
+     "pairs": [
+      {
+       "id": "h3-nadel-spitz-stechen-rund-um-den-zw",
+       "a": "spitz, stechen, rund um den Zweig",
+       "b": "Fichte"
+      },
+      {
+       "id": "h3-nadel-weich-flach-zwei-weisse-stre",
+       "a": "weich, flach, zwei weiße Streifen",
+       "b": "Tanne"
+      },
+      {
+       "id": "h3-nadel-lang-immer-zu-zweit",
+       "a": "lang, immer zu zweit",
+       "b": "Kiefer"
+      },
+      {
+       "id": "h3-nadel-weich-in-buescheln",
+       "a": "weich, in Büscheln",
+       "b": "Lärche"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Welcher Zapfen gehört zu welchem Baum?",
+     "review": "Zu welchem Baum gehört dieser Zapfen?",
+     "pairs": [
+      {
+       "id": "h3-nadel-lang-haengt-nach-unten",
+       "a": "lang, hängt nach unten",
+       "b": "Fichte"
+      },
+      {
+       "id": "h3-nadel-steht-aufrecht-und-zerfaellt",
+       "a": "steht aufrecht und zerfällt am Baum",
+       "b": "Tanne"
+      },
+      {
+       "id": "h3-nadel-klein-und-rund",
+       "a": "klein und rund",
+       "b": "Kiefer"
+      },
+      {
+       "id": "h3-nadel-gar-kein-zapfen-rote-beeren",
+       "a": "gar kein Zapfen, rote Beeren",
+       "b": "Eibe"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-du-gehst-barfuss-ueber-nadel",
+     "task": "Was stimmt?",
+     "prompt": "Du gehst barfuß über Nadeln und es piekst sehr. Welcher Baum steht über dir?",
+     "options": [
+      "Fichte",
+      "Tanne",
+      "Lärche"
+     ],
+     "answer": "Fichte",
+     "explain": "Merksatz: Die Fichte sticht, die Tanne nicht."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-warum-findet-man-am-boden-fa",
+     "task": "Was stimmt?",
+     "prompt": "Warum findet man am Boden fast nie ganze Tannenzapfen?",
+     "options": [
+      "Sie zerfallen schon oben am Baum.",
+      "Die Eichhörnchen nehmen alle mit.",
+      "Tannen haben keine Zapfen."
+     ],
+     "answer": "Sie zerfallen schon oben am Baum.",
+     "explain": "Die meisten Zapfen, die man im Wald findet, sind Fichtenzapfen."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-was-steckt-zwischen-den-schu",
+     "task": "Was stimmt?",
+     "prompt": "Was steckt zwischen den Schuppen eines Zapfens?",
+     "options": [
+      "die Samen",
+      "Wasser",
+      "Honig"
+     ],
+     "answer": "die Samen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-warum-heissen-nadelbaeume-au",
+     "task": "Was stimmt?",
+     "prompt": "Warum heißen Nadelbäume auch Nacktsamer?",
+     "options": [
+      "Ihre Samen liegen frei am Zapfen und stecken in keiner Frucht.",
+      "Sie haben keine Rinde.",
+      "Sie wachsen nur im Sommer."
+     ],
+     "answer": "Ihre Samen liegen frei am Zapfen und stecken in keiner Frucht.",
+     "explain": "Beim Apfel ist es anders: Seine Samen stecken in der Frucht. Solche Pflanzen heißen Bedecktsamer."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-bei-trockenem-wetter-oeffnen",
+     "task": "Richtig oder falsch?",
+     "prompt": "Bei trockenem Wetter öffnen sich die Zapfen, bei Regen schließen sie sich.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Nadelbäume im Winter",
+   "icon": "❄️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-nadel-warum-koennen-nadelbaeume-im",
+     "task": "Was stimmt?",
+     "prompt": "Warum können Nadelbäume im Winter ihre Nadeln behalten?",
+     "options": [
+      "Die Nadeln sind schmal und haben eine Wachsschicht.",
+      "Die Nadeln sind aus Holz.",
+      "Nadelbäume brauchen kein Wasser."
+     ],
+     "answer": "Die Nadeln sind schmal und haben eine Wachsschicht."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-was-heisst-immergruen",
+     "task": "Was stimmt?",
+     "prompt": "Was heißt immergrün?",
+     "options": [
+      "Der Baum ist das ganze Jahr grün.",
+      "Der Baum blüht immer.",
+      "Der Baum wächst nur im Winter."
+     ],
+     "answer": "Der Baum ist das ganze Jahr grün."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-wie-lange-bleibt-eine-fichte",
+     "task": "Was stimmt?",
+     "prompt": "Wie lange bleibt eine Fichtennadel ungefähr am Baum?",
+     "options": [
+      "mehrere Jahre",
+      "einen Tag",
+      "nur einen Sommer"
+     ],
+     "answer": "mehrere Jahre"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-ein-nadelbaum-verliert-nie-e",
+     "task": "Richtig oder falsch?",
+     "prompt": "Ein Nadelbaum verliert nie eine einzige Nadel.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Er verliert immer wieder ein paar alte Nadeln, aber nie alle auf einmal."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-die-biegsamen-aeste-lassen-d",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die biegsamen Äste lassen den schweren Schnee abrutschen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-im-winter-fressen-eichhoernc",
+     "task": "Richtig oder falsch?",
+     "prompt": "Im Winter fressen Eichhörnchen und Vögel die Samen aus den Zapfen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Laub oder Nadel?",
+   "icon": "🍂",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Laubbaum oder Nadelbaum?",
+     "review": "Ist das ein Laubbaum oder ein Nadelbaum?",
+     "groups": [
+      "Laubbaum",
+      "Nadelbaum"
+     ],
+     "items": [
+      {
+       "id": "h3-nadel-fichte",
+       "text": "Fichte",
+       "group": "Nadelbaum"
+      },
+      {
+       "id": "h3-nadel-tanne",
+       "text": "Tanne",
+       "group": "Nadelbaum"
+      },
+      {
+       "id": "h3-nadel-kiefer",
+       "text": "Kiefer",
+       "group": "Nadelbaum"
+      },
+      {
+       "id": "h3-nadel-laerche",
+       "text": "Lärche",
+       "group": "Nadelbaum"
+      },
+      {
+       "id": "h3-nadel-eibe",
+       "text": "Eibe",
+       "group": "Nadelbaum"
+      },
+      {
+       "id": "h3-nadel-buche",
+       "text": "Buche",
+       "group": "Laubbaum"
+      },
+      {
+       "id": "h3-nadel-birke",
+       "text": "Birke",
+       "group": "Laubbaum"
+      },
+      {
+       "id": "h3-nadel-eberesche",
+       "text": "Eberesche",
+       "group": "Laubbaum"
+      },
+      {
+       "id": "h3-nadel-linde",
+       "text": "Linde",
+       "group": "Laubbaum"
+      }
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Nacktsamer oder Bedecktsamer?",
+     "review": "Liegen die Samen frei oder stecken sie in einer Frucht?",
+     "groups": [
+      "frei am Zapfen",
+      "in einer Frucht"
+     ],
+     "items": [
+      {
+       "id": "h3-nadel-fichte-2",
+       "text": "Fichte",
+       "group": "frei am Zapfen"
+      },
+      {
+       "id": "h3-nadel-kiefer-2",
+       "text": "Kiefer",
+       "group": "frei am Zapfen"
+      },
+      {
+       "id": "h3-nadel-tanne-2",
+       "text": "Tanne",
+       "group": "frei am Zapfen"
+      },
+      {
+       "id": "h3-nadel-apfelbaum",
+       "text": "Apfelbaum",
+       "group": "in einer Frucht"
+      },
+      {
+       "id": "h3-nadel-kirschbaum",
+       "text": "Kirschbaum",
+       "group": "in einer Frucht"
+      },
+      {
+       "id": "h3-nadel-tomate",
+       "text": "Tomate",
+       "group": "in einer Frucht"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-die-laerche-ist-ein-nadelbau",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Lärche ist ein Nadelbaum, sieht im Winter aber kahl aus wie ein Laubbaum.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Zweige und Zapfen erkennen",
+   "icon": "🌲",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-nadel-von-welchem-nadelbaum-ist-di",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Nadelbaum ist dieser Zweig?",
+     "options": [
+      "Fichte",
+      "Lärche",
+      "Tanne"
+     ],
+     "answer": "Fichte",
+     "pic": "[[zweig-fichte]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-von-welchem-nadelbaum-ist-di-2",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Nadelbaum ist dieser Zweig?",
+     "options": [
+      "Tanne",
+      "Eibe",
+      "Lärche"
+     ],
+     "answer": "Tanne",
+     "pic": "[[zweig-tanne]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-von-welchem-nadelbaum-ist-di-3",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Nadelbaum ist dieser Zweig?",
+     "options": [
+      "Kiefer",
+      "Fichte",
+      "Lärche"
+     ],
+     "answer": "Kiefer",
+     "pic": "[[zweig-kiefer]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-von-welchem-nadelbaum-ist-di-4",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Nadelbaum ist dieser Zweig?",
+     "options": [
+      "Lärche",
+      "Eibe",
+      "Tanne"
+     ],
+     "answer": "Lärche",
+     "pic": "[[zweig-laerche]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-von-welchem-nadelbaum-ist-di-5",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Nadelbaum ist dieser Zweig?",
+     "options": [
+      "Eibe",
+      "Lärche",
+      "Fichte"
+     ],
+     "answer": "Eibe",
+     "pic": "[[zweig-eibe]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-dieser-lange-zapfen-haengt-n",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Dieser lange Zapfen hängt nach unten. Von welchem Baum ist er?",
+     "options": [
+      "Fichte",
+      "Tanne",
+      "Kiefer"
+     ],
+     "answer": "Fichte",
+     "pic": "[[zapfen-fichte]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-dieser-zapfen-steht-aufrecht",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Dieser Zapfen steht aufrecht auf dem Zweig. Von welchem Baum ist er?",
+     "options": [
+      "Tanne",
+      "Fichte",
+      "Kiefer"
+     ],
+     "answer": "Tanne",
+     "pic": "[[zapfen-tanne]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-dieser-kleine-runde-zapfen-i",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Dieser kleine, runde Zapfen ist von der …",
+     "options": [
+      "Kiefer",
+      "Tanne",
+      "Fichte"
+     ],
+     "answer": "Kiefer",
+     "keepOrder": true,
+     "pic": "[[zapfen-kiefer]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-nadel-welcher-nadelbaum-ist-giftig",
+     "task": "Welcher Nadelbaum ist giftig? Tipp ihn an!",
+     "prompt": "Welcher Nadelbaum ist giftig? Tipp ihn an!",
+     "options": [
+      "[[zweig-eibe]]",
+      "[[zweig-fichte]]",
+      "[[zweig-laerche]]"
+     ],
+     "answer": "[[zweig-eibe]]",
+     "picOptions": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

@@ -8,7 +8,14 @@ function parts(s) {
   return seg ? [...seg.segment(s)].map((x) => x.segment) : [...s];
 }
 
+// Eigene Zeichnungen: [[name]] → img/zeichnungen/name.svg
 export function pic(s) {
+  if (!s) return "";
+  if (String(s).includes("[[")) return String(s).split(/(\[\[[a-z0-9-]+\]\])/).map((x) => (/^\[\[[a-z0-9-]+\]\]$/.test(x) ? `<img class="emo zeich" src="img/zeichnungen/${x.slice(2, -2)}.svg" alt="" draggable="false">` : picPart(x))).join("");
+  return picPart(s);
+}
+
+function picPart(s) {
   if (!s) return "";
   const out = [];
   let txt = "";

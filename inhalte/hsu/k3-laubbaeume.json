@@ -1,0 +1,714 @@
+{
+ "id": "h3-laub",
+ "type": "schule",
+ "title_de": "Laubbäume",
+ "image": "🍂",
+ "color": "#c8741e",
+ "lessons": [
+  {
+   "title": "Buche, Eiche, Birke",
+   "icon": "🌳",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Welche Frucht gehört zu welchem Baum?",
+     "review": "Zu welchem Baum gehört diese Frucht?",
+     "pairs": [
+      {
+       "id": "h3-laub-eichel-mit-huetchen",
+       "a": "Eichel mit Hütchen",
+       "b": "Eiche"
+      },
+      {
+       "id": "h3-laub-buchecker",
+       "a": "Buchecker",
+       "b": "Buche"
+      },
+      {
+       "id": "h3-laub-kleine-samen-mit-fluegelchen",
+       "a": "kleine Samen mit Flügelchen",
+       "b": "Birke"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Welches Blatt gehört zu welchem Baum?",
+     "review": "Zu welchem Baum gehört dieses Blatt?",
+     "pairs": [
+      {
+       "id": "h3-laub-blatt-mit-runden-buchten",
+       "a": "Blatt mit runden Buchten",
+       "b": "Eiche"
+      },
+      {
+       "id": "h3-laub-ovales-blatt-mit-glattem-ran",
+       "a": "ovales Blatt mit glattem Rand",
+       "b": "Buche"
+      },
+      {
+       "id": "h3-laub-kleines-dreieckiges-blatt-mi",
+       "a": "kleines dreieckiges Blatt mit Zacken",
+       "b": "Birke"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-seine-rinde-ist-weiss-mit-sc",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Seine Rinde ist weiß mit schwarzen Flecken.",
+     "options": [
+      "Birke",
+      "Buche",
+      "Eiche"
+     ],
+     "answer": "Birke"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-seine-rinde-ist-glatt-und-gr",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Seine Rinde ist glatt und grau wie die Haut eines Elefanten.",
+     "options": [
+      "Buche",
+      "Eiche",
+      "Birke"
+     ],
+     "answer": "Buche"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-seine-rinde-hat-tiefe-rillen",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Seine Rinde hat tiefe Rillen. Er kann viele Hundert Jahre alt werden.",
+     "options": [
+      "Eiche",
+      "Birke",
+      "Buche"
+     ],
+     "answer": "Eiche"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-welcher-laubbaum-waechst-in",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Laubbaum wächst in Deutschland am häufigsten?",
+     "options": [
+      "die Buche",
+      "die Linde",
+      "die Kastanie"
+     ],
+     "answer": "die Buche"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-wildschweine-und-eichhoernch",
+     "task": "Richtig oder falsch?",
+     "prompt": "Wildschweine und Eichhörnchen fressen gern Eicheln und Bucheckern.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Ahorn, Eberesche, Kastanie, Linde",
+   "icon": "🍁",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Welche Frucht gehört zu welchem Baum?",
+     "review": "Zu welchem Baum gehört diese Frucht?",
+     "pairs": [
+      {
+       "id": "h3-laub-propeller-fruechte",
+       "a": "Propeller-Früchte",
+       "b": "Ahorn"
+      },
+      {
+       "id": "h3-laub-orangerote-beeren",
+       "a": "orangerote Beeren",
+       "b": "Eberesche"
+      },
+      {
+       "id": "h3-laub-glaenzende-braune-kugel-in-s",
+       "a": "glänzende braune Kugel in stacheliger Schale",
+       "b": "Kastanie"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Welches Blatt gehört zu welchem Baum?",
+     "review": "Zu welchem Baum gehört dieses Blatt?",
+     "pairs": [
+      {
+       "id": "h3-laub-blatt-wie-eine-hand-mit-spit",
+       "a": "Blatt wie eine Hand mit spitzen Zipfeln",
+       "b": "Ahorn"
+      },
+      {
+       "id": "h3-laub-blatt-aus-vielen-kleinen-fie",
+       "a": "Blatt aus vielen kleinen Fiederblättchen",
+       "b": "Eberesche"
+      },
+      {
+       "id": "h3-laub-blatt-mit-5-bis-7-langen-fin",
+       "a": "Blatt mit 5 bis 7 langen Fingern",
+       "b": "Kastanie"
+      },
+      {
+       "id": "h3-laub-herzfoermiges-blatt",
+       "a": "herzförmiges Blatt",
+       "b": "Linde"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-warum-heisst-die-eberesche-a",
+     "task": "Was stimmt?",
+     "prompt": "Warum heißt die Eberesche auch Vogelbeere?",
+     "options": [
+      "Vögel fressen ihre Beeren gern.",
+      "Sie sieht aus wie ein Vogel.",
+      "Vögel bauen nur dort Nester."
+     ],
+     "answer": "Vögel fressen ihre Beeren gern."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-welches-blatt-ist-auf-der-fl",
+     "task": "Was stimmt?",
+     "prompt": "Welches Blatt ist auf der Flagge von Kanada?",
+     "options": [
+      "ein Ahornblatt",
+      "ein Eichenblatt",
+      "ein Lindenblatt"
+     ],
+     "answer": "ein Ahornblatt"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-die-kastanien-von-der-rosska",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Kastanien von der Rosskastanie kann man wie Maronen essen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Rosskastanien sind bitter und machen Bauchweh. Maronen kommen von einem anderen Baum, der Esskastanie."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-aus-lindenblueten-kann-man-t",
+     "task": "Richtig oder falsch?",
+     "prompt": "Aus Lindenblüten kann man Tee kochen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Bäume zuordnen",
+   "icon": "🔎",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Zu welchem Baum gehört das?",
+     "review": "Zu welchem Baum gehört das?",
+     "groups": [
+      "Eiche",
+      "Buche",
+      "Ahorn",
+      "Kastanie"
+     ],
+     "items": [
+      {
+       "id": "h3-laub-eichel",
+       "text": "Eichel",
+       "group": "Eiche"
+      },
+      {
+       "id": "h3-laub-blatt-mit-runden-buchten-2",
+       "text": "Blatt mit runden Buchten",
+       "group": "Eiche"
+      },
+      {
+       "id": "h3-laub-buchecker-2",
+       "text": "Buchecker",
+       "group": "Buche"
+      },
+      {
+       "id": "h3-laub-glatte-graue-rinde",
+       "text": "glatte graue Rinde",
+       "group": "Buche"
+      },
+      {
+       "id": "h3-laub-propeller",
+       "text": "Propeller",
+       "group": "Ahorn"
+      },
+      {
+       "id": "h3-laub-blatt-mit-spitzen-zipfeln",
+       "text": "Blatt mit spitzen Zipfeln",
+       "group": "Ahorn"
+      },
+      {
+       "id": "h3-laub-stachelige-gruene-fruchtscha",
+       "text": "stachelige grüne Fruchtschale",
+       "group": "Kastanie"
+      },
+      {
+       "id": "h3-laub-blatt-mit-5-bis-7-fingern",
+       "text": "Blatt mit 5 bis 7 Fingern",
+       "group": "Kastanie"
+      }
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Zu welchem Baum gehört das?",
+     "review": "Zu welchem Baum gehört das?",
+     "groups": [
+      "Birke",
+      "Eberesche",
+      "Linde"
+     ],
+     "items": [
+      {
+       "id": "h3-laub-weisse-rinde",
+       "text": "weiße Rinde",
+       "group": "Birke"
+      },
+      {
+       "id": "h3-laub-kleines-dreieckiges-blatt",
+       "text": "kleines dreieckiges Blatt",
+       "group": "Birke"
+      },
+      {
+       "id": "h3-laub-orangerote-beeren-2",
+       "text": "orangerote Beeren",
+       "group": "Eberesche"
+      },
+      {
+       "id": "h3-laub-gefiedertes-blatt",
+       "text": "gefiedertes Blatt",
+       "group": "Eberesche"
+      },
+      {
+       "id": "h3-laub-herzfoermiges-blatt-2",
+       "text": "herzförmiges Blatt",
+       "group": "Linde"
+      },
+      {
+       "id": "h3-laub-duftende-blueten-fuer-tee",
+       "text": "duftende Blüten für Tee",
+       "group": "Linde"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-du-findest-im-herbst-eine-kl",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Du findest im Herbst eine kleine dreikantige Nuss in einer stacheligen Hülle.",
+     "options": [
+      "Buche",
+      "Eiche",
+      "Birke",
+      "Ahorn"
+     ],
+     "answer": "Buche"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-du-findest-ein-blatt-das-aus",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Du findest ein Blatt, das aussieht wie ein Herz.",
+     "options": [
+      "Linde",
+      "Ahorn",
+      "Eiche",
+      "Birke"
+     ],
+     "answer": "Linde"
+    }
+   ]
+  },
+  {
+   "title": "Laubbäume im Jahreslauf",
+   "icon": "🍂",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-laub-ein-jahr-beim-laubbaum-bring",
+     "task": "Ein Jahr beim Laubbaum: Bring es in die richtige Reihenfolge!",
+     "tiles": [
+      "Die Knospen öffnen sich",
+      "Der Baum blüht",
+      "Die Krone ist dicht und grün",
+      "Die Blätter werden bunt",
+      "Der Baum ist kahl"
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Wann ist das?",
+     "review": "In welcher Jahreszeit ist das beim Laubbaum?",
+     "groups": [
+      "Frühling",
+      "Sommer",
+      "Herbst",
+      "Winter"
+     ],
+     "items": [
+      {
+       "id": "h3-laub-junge-hellgruene-blaetter-wa",
+       "text": "Junge hellgrüne Blätter wachsen.",
+       "group": "Frühling"
+      },
+      {
+       "id": "h3-laub-die-krone-gibt-viel-schatten",
+       "text": "Die Krone gibt viel Schatten.",
+       "group": "Sommer"
+      },
+      {
+       "id": "h3-laub-die-blaetter-werden-gelb-und",
+       "text": "Die Blätter werden gelb und rot.",
+       "group": "Herbst"
+      },
+      {
+       "id": "h3-laub-der-baum-hat-keine-blaetter",
+       "text": "Der Baum hat keine Blätter.",
+       "group": "Winter"
+      },
+      {
+       "id": "h3-laub-kastanien-fallen-herunter",
+       "text": "Kastanien fallen herunter.",
+       "group": "Herbst"
+      },
+      {
+       "id": "h3-laub-die-knospen-oeffnen-sich",
+       "text": "Die Knospen öffnen sich.",
+       "group": "Frühling"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-warum-werfen-laubbaeume-im-h",
+     "task": "Was stimmt?",
+     "prompt": "Warum werfen Laubbäume im Herbst ihre Blätter ab?",
+     "options": [
+      "Im Winter würden sie über die Blätter zu viel Wasser verlieren.",
+      "Die Blätter sind zu schwer.",
+      "Der Wind reißt alle ab."
+     ],
+     "answer": "Im Winter würden sie über die Blätter zu viel Wasser verlieren.",
+     "explain": "Im Winter ist der Boden oft gefroren. Dann kommen die Wurzeln nicht an Wasser."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-wann-sind-die-knospen-fuer-d",
+     "task": "Was stimmt?",
+     "prompt": "Wann sind die Knospen für das nächste Frühjahr schon da?",
+     "options": [
+      "schon im Herbst und Winter",
+      "erst im Sommer",
+      "gar nicht"
+     ],
+     "answer": "schon im Herbst und Winter"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-laub-das-am-boden-liegt-wird",
+     "task": "Richtig oder falsch?",
+     "prompt": "Laub, das am Boden liegt, wird mit der Zeit zu guter Erde.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-im-laubhaufen-ueberwintern-g",
+     "task": "Richtig oder falsch?",
+     "prompt": "Im Laubhaufen überwintern gern Igel.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Blätter erkennen",
+   "icon": "🍃",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-laub-von-welchem-baum-ist-dieses",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Baum ist dieses Blatt?",
+     "options": [
+      "Buche",
+      "Linde",
+      "Eberesche"
+     ],
+     "answer": "Buche",
+     "pic": "[[blatt-buche]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-von-welchem-baum-ist-dieses-2",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Baum ist dieses Blatt?",
+     "options": [
+      "Eiche",
+      "Ahorn",
+      "Eberesche"
+     ],
+     "answer": "Eiche",
+     "pic": "[[blatt-eiche]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-von-welchem-baum-ist-dieses-3",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Baum ist dieses Blatt?",
+     "options": [
+      "Birke",
+      "Buche",
+      "Eiche"
+     ],
+     "answer": "Birke",
+     "pic": "[[blatt-birke]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-von-welchem-baum-ist-dieses-4",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Baum ist dieses Blatt?",
+     "options": [
+      "Ahorn",
+      "Linde",
+      "Birke"
+     ],
+     "answer": "Ahorn",
+     "pic": "[[blatt-ahorn]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-von-welchem-baum-ist-dieses-5",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Baum ist dieses Blatt?",
+     "options": [
+      "Eberesche",
+      "Linde",
+      "Buche"
+     ],
+     "answer": "Eberesche",
+     "pic": "[[blatt-eberesche]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-von-welchem-baum-ist-dieses-6",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Baum ist dieses Blatt?",
+     "options": [
+      "Kastanie",
+      "Eiche",
+      "Linde"
+     ],
+     "answer": "Kastanie",
+     "pic": "[[blatt-kastanie]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-von-welchem-baum-ist-dieses-7",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Baum ist dieses Blatt?",
+     "options": [
+      "Linde",
+      "Buche",
+      "Kastanie"
+     ],
+     "answer": "Linde",
+     "pic": "[[blatt-linde]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-tipp-auf-das-blatt-der-eiche",
+     "task": "Tipp auf das Blatt der Eiche!",
+     "prompt": "Tipp auf das Blatt der Eiche!",
+     "options": [
+      "[[blatt-eiche]]",
+      "[[blatt-buche]]",
+      "[[blatt-linde]]"
+     ],
+     "answer": "[[blatt-eiche]]",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-tipp-auf-das-blatt-vom-ahorn",
+     "task": "Tipp auf das Blatt vom Ahorn!",
+     "prompt": "Tipp auf das Blatt vom Ahorn!",
+     "options": [
+      "[[blatt-ahorn]]",
+      "[[blatt-kastanie]]",
+      "[[blatt-birke]]"
+     ],
+     "answer": "[[blatt-ahorn]]",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-tipp-auf-das-gefiederte-blat",
+     "task": "Tipp auf das gefiederte Blatt der Eberesche!",
+     "prompt": "Tipp auf das gefiederte Blatt der Eberesche!",
+     "options": [
+      "[[blatt-eberesche]]",
+      "[[blatt-buche]]",
+      "[[blatt-kastanie]]"
+     ],
+     "answer": "[[blatt-eberesche]]",
+     "picOptions": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Früchte erkennen",
+   "icon": "🌰",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-laub-von-welchem-baum-ist-diese-f",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Baum ist diese Frucht?",
+     "options": [
+      "Eiche",
+      "Ahorn",
+      "Eberesche"
+     ],
+     "answer": "Eiche",
+     "pic": "[[frucht-eichel]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-von-welchem-baum-ist-diese-f-2",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Baum ist diese Frucht?",
+     "options": [
+      "Buche",
+      "Ahorn",
+      "Kastanie"
+     ],
+     "answer": "Buche",
+     "pic": "[[frucht-buchecker]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-von-welchem-baum-ist-diese-f-3",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Baum ist diese Frucht?",
+     "options": [
+      "Ahorn",
+      "Buche",
+      "Kastanie"
+     ],
+     "answer": "Ahorn",
+     "pic": "[[frucht-ahorn]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-von-welchem-baum-ist-diese-f-4",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Baum ist diese Frucht?",
+     "options": [
+      "Eberesche",
+      "Birke",
+      "Eiche"
+     ],
+     "answer": "Eberesche",
+     "pic": "[[frucht-vogelbeeren]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-von-welchem-baum-ist-diese-f-5",
+     "task": "Welcher Baum ist das?",
+     "prompt": "Von welchem Baum ist diese Frucht?",
+     "options": [
+      "Kastanie",
+      "Ahorn",
+      "Buche"
+     ],
+     "answer": "Kastanie",
+     "pic": "[[frucht-kastanie]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-tipp-auf-die-frucht-der-buch",
+     "task": "Tipp auf die Frucht der Buche!",
+     "prompt": "Tipp auf die Frucht der Buche!",
+     "options": [
+      "[[frucht-buchecker]]",
+      "[[frucht-eichel]]",
+      "[[frucht-kastanie]]"
+     ],
+     "answer": "[[frucht-buchecker]]",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-laub-was-fliegt-wie-ein-propeller",
+     "task": "Was fliegt wie ein Propeller? Tipp es an!",
+     "prompt": "Was fliegt wie ein Propeller? Tipp es an!",
+     "options": [
+      "[[frucht-ahorn]]",
+      "[[frucht-eichel]]",
+      "[[frucht-vogelbeeren]]"
+     ],
+     "answer": "[[frucht-ahorn]]",
+     "picOptions": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

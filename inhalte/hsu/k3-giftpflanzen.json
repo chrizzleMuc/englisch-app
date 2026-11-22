@@ -1,0 +1,859 @@
+{
+ "id": "h3-gift",
+ "type": "schule",
+ "title_de": "Heimische Giftpflanzen",
+ "image": "⚠️",
+ "color": "#7a3fb0",
+ "lessons": [
+  {
+   "title": "Warum sind Pflanzen giftig?",
+   "icon": "🛡️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-gift-warum-bilden-manche-pflanzen",
+     "task": "Was stimmt?",
+     "prompt": "Warum bilden manche Pflanzen Gift?",
+     "options": [
+      "um sich vor Tieren zu schützen, die sie fressen wollen",
+      "damit sie schöner blühen",
+      "damit sie schneller wachsen"
+     ],
+     "answer": "um sich vor Tieren zu schützen, die sie fressen wollen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-jede-giftpflanze-erkennt-man",
+     "task": "Richtig oder falsch?",
+     "prompt": "Jede Giftpflanze erkennt man an einer leuchtenden Warnfarbe.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Viele Giftpflanzen sehen ganz harmlos aus. Manche sehen sogar essbaren Pflanzen zum Verwechseln ähnlich."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-teile-einer-giftpflan",
+     "task": "Was stimmt?",
+     "prompt": "Welche Teile einer Giftpflanze können giftig sein?",
+     "options": [
+      "alle Teile oder nur einzelne, zum Beispiel Beeren oder Samen",
+      "immer nur die Wurzel",
+      "nur die Blüte"
+     ],
+     "answer": "alle Teile oder nur einzelne, zum Beispiel Beeren oder Samen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-efeu-waechst-an-vielen-haeus",
+     "task": "Richtig oder falsch?",
+     "prompt": "Efeu wächst an vielen Häusern und ist trotzdem giftig.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-diese-kletterpflanze-heisst",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Diese Kletterpflanze heißt Efeu. Ist sie giftig?",
+     "options": [
+      "giftig",
+      "nicht giftig"
+     ],
+     "answer": "giftig",
+     "keepOrder": true,
+     "pic": "[[gift-efeu]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-wovon-haengt-ab-wie-gefaehrl",
+     "task": "Was stimmt?",
+     "prompt": "Wovon hängt ab, wie gefährlich eine Giftpflanze ist?",
+     "options": [
+      "von der Stärke des Giftes und von der Menge",
+      "von der Farbe der Blüte",
+      "vom Wetter"
+     ],
+     "answer": "von der Stärke des Giftes und von der Menge"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-manche-giftpflanzen-haben-se",
+     "task": "Was stimmt?",
+     "prompt": "Manche Giftpflanzen haben sehr starke Gifte. Sie können … sein.",
+     "options": [
+      "tödlich",
+      "gesund",
+      "lecker"
+     ],
+     "answer": "tödlich"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-du-findest-beim-spielen-eine",
+     "task": "Was tust du?",
+     "prompt": "Du findest beim Spielen eine Pflanze, die du nicht kennst. Was tust du?",
+     "options": [
+      "Ich esse sie nicht und fasse sie möglichst nicht an.",
+      "Ich probiere ein kleines Stück.",
+      "Ich pflücke sie und nehme sie mit nach Hause."
+     ],
+     "answer": "Ich esse sie nicht und fasse sie möglichst nicht an."
+    }
+   ]
+  },
+  {
+   "title": "Was sind Giftpflanzen?",
+   "icon": "⚠️",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-gift-was-ist-eine-giftpflanze",
+     "task": "Was stimmt?",
+     "prompt": "Was ist eine Giftpflanze?",
+     "options": [
+      "eine Pflanze, die krank macht, wenn man sie isst oder berührt",
+      "jede Pflanze mit Stacheln",
+      "eine Pflanze, die nur im Dunkeln wächst"
+     ],
+     "answer": "eine Pflanze, die krank macht, wenn man sie isst oder berührt"
+    },
+    {
+     "kind": "sort",
+     "task": "Richtig oder falsch?",
+     "review": "Ist das richtig oder falsch?",
+     "groups": [
+      "richtig",
+      "falsch"
+     ],
+     "items": [
+      {
+       "id": "h3-gift-unbekannte-beeren-nie-essen",
+       "text": "Unbekannte Beeren nie essen",
+       "group": "richtig"
+      },
+      {
+       "id": "h3-gift-nach-dem-spielen-im-garten-d",
+       "text": "Nach dem Spielen im Garten die Hände waschen",
+       "group": "richtig"
+      },
+      {
+       "id": "h3-gift-einen-erwachsenen-fragen-ob",
+       "text": "Einen Erwachsenen fragen, ob man etwas essen darf",
+       "group": "richtig"
+      },
+      {
+       "id": "h3-gift-schoene-blueten-probieren",
+       "text": "Schöne Blüten probieren",
+       "group": "falsch"
+      },
+      {
+       "id": "h3-gift-beeren-essen-weil-voegel-sie",
+       "text": "Beeren essen, weil Vögel sie auch fressen",
+       "group": "falsch"
+      },
+      {
+       "id": "h3-gift-blaetter-kauen-um-zu-sehen-w",
+       "text": "Blätter kauen, um zu sehen, wie sie schmecken",
+       "group": "falsch"
+      }
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "h3-gift-dein-freund-hat-giftige-beer",
+     "task": "Dein Freund hat giftige Beeren gegessen. Was tust du? Bring es in die richtige Reihenfolge!",
+     "tiles": [
+      "Einen Erwachsenen holen",
+      "Der Erwachsene ruft den Giftnotruf an",
+      "Einen Rest der Pflanze mitnehmen",
+      "Zum Arzt fahren"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-was-soll-man-bei-einer-vergi",
+     "task": "Was stimmt?",
+     "prompt": "Was soll man bei einer Vergiftung NICHT tun?",
+     "options": [
+      "Milch trinken und erbrechen",
+      "einen Erwachsenen holen",
+      "den Giftnotruf anrufen"
+     ],
+     "answer": "Milch trinken und erbrechen"
+    },
+    {
+     "kind": "type",
+     "id": "h3-gift-wie-lautet-die-notrufnummer",
+     "task": "Weißt du die Nummer?",
+     "prompt": "Wie lautet die Notrufnummer für Rettungsdienst und Feuerwehr?",
+     "answer": "112"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-was-voegel-fressen-ist-fuer",
+     "task": "Richtig oder falsch?",
+     "prompt": "Was Vögel fressen, ist für Menschen auch ungefährlich.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Vögel vertragen viele Beeren, die für Menschen giftig sind."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-manche-pflanzen-schaden-scho",
+     "task": "Richtig oder falsch?",
+     "prompt": "Manche Pflanzen schaden schon, wenn man sie nur berührt.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true,
+     "explain": "Zum Beispiel der Riesen-Bärenklau. Sein Saft macht in der Sonne schlimme Blasen auf der Haut."
+    }
+   ]
+  },
+  {
+   "title": "Kleine Giftpflanzen",
+   "icon": "🌸",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Welche Giftpflanze ist das?",
+     "review": "Welche Giftpflanze ist das?",
+     "pairs": [
+      {
+       "id": "h3-gift-kleine-weisse-gloeckchen-im",
+       "a": "kleine weiße Glöckchen im Mai",
+       "b": "Maiglöckchen"
+      },
+      {
+       "id": "h3-gift-hohe-bluete-mit-vielen-lila",
+       "a": "hohe Blüte mit vielen lila Glocken",
+       "b": "Fingerhut"
+      },
+      {
+       "id": "h3-gift-blaue-blueten-wie-ein-helm",
+       "a": "blaue Blüten wie ein Helm",
+       "b": "Eisenhut"
+      },
+      {
+       "id": "h3-gift-lila-bluete-im-herbst-auf-de",
+       "a": "lila Blüte im Herbst auf der Wiese",
+       "b": "Herbstzeitlose"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-woran-erkennst-du-baerlauch",
+     "task": "Was stimmt?",
+     "prompt": "Woran erkennst du Bärlauch und kannst ihn vom Maiglöckchen unterscheiden?",
+     "options": [
+      "Bärlauch riecht nach Knoblauch.",
+      "Bärlauch ist größer.",
+      "Bärlauch ist blau."
+     ],
+     "answer": "Bärlauch riecht nach Knoblauch.",
+     "explain": "Trotzdem: Bärlauch nur mit einem Erwachsenen sammeln. Die Blätter sehen fast gleich aus."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-pflanze-gilt-als-eine",
+     "task": "Was stimmt?",
+     "prompt": "Welche Pflanze gilt als eine der giftigsten in Europa?",
+     "options": [
+      "Eisenhut",
+      "Gänseblümchen",
+      "Löwenzahn"
+     ],
+     "answer": "Eisenhut"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-farbe-haben-die-beere",
+     "task": "Was stimmt?",
+     "prompt": "Welche Farbe haben die Beeren vom Maiglöckchen?",
+     "options": [
+      "rot",
+      "blau",
+      "weiß"
+     ],
+     "answer": "rot"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-der-aronstab-hat-im-sommer-l",
+     "task": "Was stimmt?",
+     "prompt": "Der Aronstab hat im Sommer leuchtend … Beeren.",
+     "options": [
+      "rote",
+      "blaue",
+      "weiße"
+     ],
+     "answer": "rote",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-beim-maigloeckchen-sind-alle",
+     "task": "Richtig oder falsch?",
+     "prompt": "Beim Maiglöckchen sind alle Teile giftig.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-der-fingerhut-ist-ungiftig-w",
+     "task": "Richtig oder falsch?",
+     "prompt": "Der Fingerhut ist ungiftig, weil man ihn in Gärten pflanzt.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Auch in Gärten wachsen viele Giftpflanzen. Der Fingerhut ist sehr giftig."
+    }
+   ]
+  },
+  {
+   "title": "Giftige Sträucher und Bäume",
+   "icon": "🌳",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Welche Giftpflanze ist das?",
+     "review": "Welche Giftpflanze ist das?",
+     "pairs": [
+      {
+       "id": "h3-gift-schwarze-glaenzende-beeren-w",
+       "a": "schwarze, glänzende Beeren wie Kirschen",
+       "b": "Tollkirsche"
+      },
+      {
+       "id": "h3-gift-nadelbaum-mit-roten-beeren",
+       "a": "Nadelbaum mit roten Beeren",
+       "b": "Eibe"
+      },
+      {
+       "id": "h3-gift-gelbe-haengende-bluetentraub",
+       "a": "gelbe, hängende Blütentrauben",
+       "b": "Goldregen"
+      },
+      {
+       "id": "h3-gift-rosa-fruechte-wie-kleine-mue",
+       "a": "rosa Früchte wie kleine Mützen",
+       "b": "Pfaffenhütchen"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-warum-ist-die-tollkirsche-so",
+     "task": "Was stimmt?",
+     "prompt": "Warum ist die Tollkirsche so gefährlich?",
+     "options": [
+      "Ihre Beeren sehen aus wie leckere Kirschen.",
+      "Sie hat Stacheln.",
+      "Sie wächst nur in der Wüste."
+     ],
+     "answer": "Ihre Beeren sehen aus wie leckere Kirschen."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-was-ist-beim-goldregen-beson",
+     "task": "Was stimmt?",
+     "prompt": "Was ist beim Goldregen besonders gefährlich?",
+     "options": [
+      "die Samen in den Schoten, sie sehen aus wie Bohnen",
+      "der Schatten",
+      "die Rinde, wenn man sie anschaut"
+     ],
+     "answer": "die Samen in den Schoten, sie sehen aus wie Bohnen"
+    },
+    {
+     "kind": "sort",
+     "task": "Giftig oder essbar?",
+     "review": "Ist diese Beere giftig oder essbar?",
+     "groups": [
+      "giftig",
+      "essbar"
+     ],
+     "items": [
+      {
+       "id": "h3-gift-tollkirsche",
+       "text": "Tollkirsche",
+       "group": "giftig"
+      },
+      {
+       "id": "h3-gift-eibe",
+       "text": "Eibe",
+       "group": "giftig"
+      },
+      {
+       "id": "h3-gift-maigloeckchen",
+       "text": "Maiglöckchen",
+       "group": "giftig"
+      },
+      {
+       "id": "h3-gift-pfaffenhuetchen",
+       "text": "Pfaffenhütchen",
+       "group": "giftig"
+      },
+      {
+       "id": "h3-gift-walderdbeere",
+       "text": "Walderdbeere",
+       "group": "essbar"
+      },
+      {
+       "id": "h3-gift-himbeere",
+       "text": "Himbeere",
+       "group": "essbar"
+      },
+      {
+       "id": "h3-gift-heidelbeere",
+       "text": "Heidelbeere",
+       "group": "essbar"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-die-eibe-ist-ein-nadelbaum-d",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Eibe ist ein Nadelbaum, der giftig ist.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-giftige-straeucher-wachsen-a",
+     "task": "Richtig oder falsch?",
+     "prompt": "Giftige Sträucher wachsen auch in Parks und Gärten.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Giftiges Gemüse",
+   "icon": "🥔",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Wie isst man das sicher?",
+     "review": "Darf man das so essen?",
+     "groups": [
+      "darf man essen",
+      "nicht essen"
+     ],
+     "items": [
+      {
+       "id": "h3-gift-gekochte-gruene-bohnen",
+       "text": "gekochte grüne Bohnen",
+       "group": "darf man essen"
+      },
+      {
+       "id": "h3-gift-rohe-gruene-bohnen",
+       "text": "rohe grüne Bohnen",
+       "group": "nicht essen"
+      },
+      {
+       "id": "h3-gift-rote-reife-tomaten",
+       "text": "rote, reife Tomaten",
+       "group": "darf man essen"
+      },
+      {
+       "id": "h3-gift-gruene-unreife-tomaten",
+       "text": "grüne, unreife Tomaten",
+       "group": "nicht essen"
+      },
+      {
+       "id": "h3-gift-kartoffeln-ohne-gruene-stell",
+       "text": "Kartoffeln ohne grüne Stellen",
+       "group": "darf man essen"
+      },
+      {
+       "id": "h3-gift-gruene-stellen-an-kartoffeln",
+       "text": "grüne Stellen an Kartoffeln",
+       "group": "nicht essen"
+      },
+      {
+       "id": "h3-gift-rhabarberstiele-gekocht",
+       "text": "Rhabarberstiele, gekocht",
+       "group": "darf man essen"
+      },
+      {
+       "id": "h3-gift-rhabarberblaetter",
+       "text": "Rhabarberblätter",
+       "group": "nicht essen"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-was-machst-du-mit-keimen-an",
+     "task": "Was stimmt?",
+     "prompt": "Was machst du mit Keimen an einer Kartoffel?",
+     "options": [
+      "großzügig wegschneiden",
+      "mitessen",
+      "anmalen"
+     ],
+     "answer": "großzügig wegschneiden"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-wie-kann-man-holunderbeeren",
+     "task": "Was stimmt?",
+     "prompt": "Wie kann man Holunderbeeren essen?",
+     "options": [
+      "nur gekocht, zum Beispiel als Saft",
+      "roh vom Strauch",
+      "gar nicht, nie"
+     ],
+     "answer": "nur gekocht, zum Beispiel als Saft"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-warum-muss-man-bohnen-kochen",
+     "task": "Was stimmt?",
+     "prompt": "Warum muss man Bohnen kochen?",
+     "options": [
+      "Roh enthalten sie einen Giftstoff.",
+      "Roh sind sie zu süß.",
+      "Roh sind sie zu weich."
+     ],
+     "answer": "Roh enthalten sie einen Giftstoff."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-kartoffeln-soll-man-dunkel-l",
+     "task": "Richtig oder falsch?",
+     "prompt": "Kartoffeln soll man dunkel lagern, damit sie nicht grün werden.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-gruene-tomaten-schmecken-bes",
+     "task": "Richtig oder falsch?",
+     "prompt": "Grüne Tomaten schmecken besonders gesund.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Unreife Tomaten enthalten einen Giftstoff. Nur rote, reife Tomaten essen."
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Große Giftpflanzen",
+   "icon": "🌳",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-gift-dieser-strauch-steht-oft-im",
+     "task": "Welche Giftpflanze ist das?",
+     "prompt": "Dieser Strauch steht oft im Kübel auf der Terrasse. Wie heißt er?",
+     "options": [
+      "Oleander",
+      "Goldregen",
+      "Fingerhut"
+     ],
+     "answer": "Oleander",
+     "pic": "[[gift-oleander]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-diese-pflanze-wird-ueber-3-m",
+     "task": "Welche Giftpflanze ist das?",
+     "prompt": "Diese Pflanze wird über 3 Meter hoch. Wie heißt sie?",
+     "options": [
+      "Herkulesstaude",
+      "Löwenzahn",
+      "Bärlauch"
+     ],
+     "answer": "Herkulesstaude",
+     "pic": "[[gift-herkulesstaude]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-dieser-baum-hat-haengende-ge",
+     "task": "Welche Giftpflanze ist das?",
+     "prompt": "Dieser Baum hat hängende gelbe Blüten. Wie heißt er?",
+     "options": [
+      "Goldregen",
+      "Oleander",
+      "Eibe"
+     ],
+     "answer": "Goldregen",
+     "pic": "[[gift-goldregen]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-dieser-nadelbaum-hat-rote-fr",
+     "task": "Welche Giftpflanze ist das?",
+     "prompt": "Dieser Nadelbaum hat rote Früchte. Wie heißt er?",
+     "options": [
+      "Eibe",
+      "Fichte",
+      "Tanne"
+     ],
+     "answer": "Eibe",
+     "pic": "[[zweig-eibe]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-tipp-auf-die-herkulesstaude",
+     "task": "Tipp auf die Herkulesstaude!",
+     "prompt": "Tipp auf die Herkulesstaude!",
+     "options": [
+      "[[gift-herkulesstaude]]",
+      "[[gift-oleander]]",
+      "[[gift-goldregen]]"
+     ],
+     "answer": "[[gift-herkulesstaude]]",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-tipp-auf-den-oleander-gift-o",
+     "task": "Tipp auf den Oleander!",
+     "prompt": "Tipp auf den Oleander!",
+     "options": [
+      "[[gift-oleander]]",
+      "[[gift-fingerhut]]",
+      "[[gift-eisenhut]]"
+     ],
+     "answer": "[[gift-oleander]]",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-saft-der-herkulesstaude-komm",
+     "task": "Was stimmt?",
+     "prompt": "Saft der Herkulesstaude kommt auf die Haut und die Sonne scheint. Was passiert?",
+     "options": [
+      "Es gibt Blasen wie bei einer Verbrennung.",
+      "Die Haut wird schön braun.",
+      "Gar nichts."
+     ],
+     "answer": "Es gibt Blasen wie bei einer Verbrennung."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-teile-vom-oleander-si",
+     "task": "Was stimmt?",
+     "prompt": "Welche Teile vom Oleander sind giftig?",
+     "options": [
+      "alle Teile",
+      "nur die Wurzel",
+      "keine"
+     ],
+     "answer": "alle Teile"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-auch-baeume-und-straeucher-k",
+     "task": "Richtig oder falsch?",
+     "prompt": "Auch Bäume und Sträucher können sehr giftig sein.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Giftpflanzen erkennen",
+   "icon": "🔎",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-giftpflanze-ist-das-g",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Welche Giftpflanze ist das?",
+     "options": [
+      "Maiglöckchen",
+      "Pfaffenhütchen",
+      "Eisenhut"
+     ],
+     "answer": "Maiglöckchen",
+     "pic": "[[gift-maigloeckchen]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-giftpflanze-ist-das-g-2",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Welche Giftpflanze ist das?",
+     "options": [
+      "Fingerhut",
+      "Tollkirsche",
+      "Goldregen"
+     ],
+     "answer": "Fingerhut",
+     "pic": "[[gift-fingerhut]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-giftpflanze-ist-das-g-3",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Welche Giftpflanze ist das?",
+     "options": [
+      "Eisenhut",
+      "Aronstab",
+      "Herbstzeitlose"
+     ],
+     "answer": "Eisenhut",
+     "pic": "[[gift-eisenhut]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-giftpflanze-ist-das-g-4",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Welche Giftpflanze ist das?",
+     "options": [
+      "Herbstzeitlose",
+      "Fingerhut",
+      "Pfaffenhütchen"
+     ],
+     "answer": "Herbstzeitlose",
+     "pic": "[[gift-herbstzeitlose]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-giftpflanze-ist-das-g-5",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Welche Giftpflanze ist das?",
+     "options": [
+      "Tollkirsche",
+      "Aronstab",
+      "Goldregen"
+     ],
+     "answer": "Tollkirsche",
+     "pic": "[[gift-tollkirsche]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-giftpflanze-ist-das-g-6",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Welche Giftpflanze ist das?",
+     "options": [
+      "Goldregen",
+      "Maiglöckchen",
+      "Aronstab"
+     ],
+     "answer": "Goldregen",
+     "pic": "[[gift-goldregen]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-giftpflanze-ist-das-g-7",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Welche Giftpflanze ist das?",
+     "options": [
+      "Pfaffenhütchen",
+      "Maiglöckchen",
+      "Herbstzeitlose"
+     ],
+     "answer": "Pfaffenhütchen",
+     "pic": "[[gift-pfaffenhuetchen]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-giftpflanze-ist-das-g-8",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Welche Giftpflanze ist das?",
+     "options": [
+      "Aronstab",
+      "Eisenhut",
+      "Tollkirsche"
+     ],
+     "answer": "Aronstab",
+     "pic": "[[gift-aronstab]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-pflanze-kann-man-esse",
+     "task": "Welche Pflanze kann man essen? Sie riecht nach Knoblauch.",
+     "prompt": "Welche Pflanze kann man essen? Sie riecht nach Knoblauch.",
+     "options": [
+      "[[baerlauch]]",
+      "[[gift-maigloeckchen]]",
+      "[[gift-herbstzeitlose]]"
+     ],
+     "answer": "[[baerlauch]]",
+     "picOptions": true,
+     "explain": "Das ist Bärlauch. Aber Vorsicht: Seine Blätter sehen fast aus wie die vom Maiglöckchen. Nur mit einem Erwachsenen sammeln!"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-tipp-auf-die-tollkirsche-gif",
+     "task": "Tipp auf die Tollkirsche!",
+     "prompt": "Tipp auf die Tollkirsche!",
+     "options": [
+      "[[gift-tollkirsche]]",
+      "[[frucht-vogelbeeren]]",
+      "[[gift-aronstab]]"
+     ],
+     "answer": "[[gift-tollkirsche]]",
+     "picOptions": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

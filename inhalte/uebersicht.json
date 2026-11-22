@@ -178,10 +178,18 @@
           "units": [
             "hsu/k3-wasser.json",
             "hsu/k3-wald.json",
+            "hsu/k3-baum.json",
+            "hsu/k3-laubbaeume.json",
+            "hsu/k3-nadelbaeume.json",
+            "hsu/k3-pflanze.json",
+            "hsu/k3-apfel.json",
+            "hsu/k3-giftpflanzen.json",
+            "hsu/k3-himmel.json",
             "hsu/k3-ernaehrung.json",
             "hsu/k3-sinne.json",
             "hsu/k3-fahrrad.json",
             "hsu/k3-karte.json",
+            "hsu/k3-erde.json",
             "hsu/k3-bayern.json",
             "hsu/k3-zeit.json",
             "hsu/k3-zusammen.json"
