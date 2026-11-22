@@ -897,3 +897,33 @@ table.eval tr.fail td { color: #b3261e; }
 .pic-bins .bin-title { flex-direction: column; gap: 4px; }
 .pic-bins .bin-title .emo { width: clamp(56px, 12vw, 84px); height: clamp(56px, 12vw, 84px); }
 .pic-tile .emo-txt, .text-choices .word .emo-txt { margin-left: .2em; }
+
+/* ---- Version 36: eigene Zeichnungen und Schaubild beschriften ---- */
+.emo.zeich { width: 1.7em; height: 1.7em; filter: drop-shadow(0 3px 3px rgba(40, 8, 110, .18)); }
+
+.label-pic { position: relative; width: min(100%, 560px); margin: 6px auto 10px; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
+.label-pic img { display: block; width: 100%; height: auto; }
+.label-dot { position: absolute; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%; border: 3px solid #fff; background: #7a4fd6; color: #fff; font: 800 16px/24px system-ui, sans-serif; padding: 0; box-shadow: 0 2px 6px rgba(0, 0, 0, .3); }
+.label-dot.active { background: var(--gold, #f5b700); color: #2a1a00; transform: translate(-50%, -50%) scale(1.25); }
+.label-rows { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; width: min(100%, 560px); margin: 0 auto 10px; }
+.label-row { display: flex; align-items: center; gap: 8px; background: var(--card); color: var(--card-ink); border: 3px solid transparent; border-radius: 14px; padding: 8px 10px; font-weight: 800; font-size: 18px; text-align: left; }
+.label-row.active { border-color: var(--gold, #f5b700); }
+.label-row.right { border-color: #3fa34d; background: #e6f6e8; color: #1c5b25; }
+.label-row.fixed { border-color: #e08a1a; background: #fff3e0; color: #7a4300; }
+.label-num { flex: none; width: 26px; height: 26px; border-radius: 50%; background: #7a4fd6; color: #fff; text-align: center; line-height: 26px; font-size: 15px; }
+.label-word { overflow-wrap: anywhere; }
+.huge-pic .emo.zeich { width: min(76vw, 360px); height: auto; max-height: 210px; }
+.pic-choices .emo.zeich { width: 100%; max-width: 150px; height: auto; max-height: 140px; }
+.pic-choices .mid-pic:has(.zeich) { display: block; width: 100%; }
+.pic-choices .mid-pic .emo.zeich { display: block; margin: 0 auto; width: 100%; max-width: 160px; height: auto; max-height: 150px; }
+.say-btn { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; margin-right: 8px; vertical-align: middle; border: none; border-radius: 50%; background: var(--gold, #ffd23f); box-shadow: 0 2px 0 rgba(0, 0, 0, .18); font-size: 17px; line-height: 1; padding: 0; cursor: pointer; flex: none; }
+.say-btn:active { transform: translateY(2px); }
+.rule-list li .say-btn { margin-left: -2px; }
+
+/* Lückentext zum Schaubild */
+.label-pic.small { width: min(100%, 340px); }
+.label-tag { position: absolute; transform: translate(-50%, -50%); background: rgba(255, 255, 255, .92); color: #4a2fa0; border: 2px solid #7a4fd6; border-radius: 10px; padding: 1px 6px; font: 800 13px/1.2 system-ui, sans-serif; white-space: nowrap; box-shadow: 0 1px 4px rgba(0, 0, 0, .25); pointer-events: none; }
+.label-cloze { width: min(100%, 560px); margin: 0 auto 10px; background: var(--card); color: var(--card-ink); border-radius: 16px; padding: 10px 14px; font-size: 19px; line-height: 2.1; }
+.label-cloze p { margin: 4px 0; }
+.label-gap { display: inline-block; min-width: 72px; padding: 0 8px; margin: 0 2px; font-size: 18px; line-height: 1.5; vertical-align: baseline; border-bottom: 3px solid #b9a6ea; background: #f3effc; }
+.say-cloze { display: flex; margin: 0 auto 6px; }

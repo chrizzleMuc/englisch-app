@@ -1,0 +1,626 @@
+{
+ "id": "h3-apfel",
+ "type": "schule",
+ "title_de": "Der Apfel",
+ "image": "🍎",
+ "color": "#d6453d",
+ "lessons": [
+  {
+   "title": "Vom Apfelbaum",
+   "icon": "🌳",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-apfel-wie-waechst-ein-apfel-bring",
+     "task": "Wie wächst ein Apfel? Bring es in die richtige Reihenfolge!",
+     "tiles": [
+      "Knospen im Frühling",
+      "Weiße und rosa Blüten",
+      "Bienen bestäuben die Blüten",
+      "Ein kleiner grüner Apfel wächst",
+      "Der Apfel ist reif"
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Wann ist das beim Apfelbaum?",
+     "review": "Wann passiert das beim Apfelbaum?",
+     "groups": [
+      "Frühling",
+      "Sommer",
+      "Herbst",
+      "Winter"
+     ],
+     "items": [
+      {
+       "id": "h3-apfel-der-baum-blueht",
+       "text": "Der Baum blüht.",
+       "group": "Frühling"
+      },
+      {
+       "id": "h3-apfel-die-aepfel-wachsen-und-werde",
+       "text": "Die Äpfel wachsen und werden größer.",
+       "group": "Sommer"
+      },
+      {
+       "id": "h3-apfel-die-aepfel-werden-geerntet",
+       "text": "Die Äpfel werden geerntet.",
+       "group": "Herbst"
+      },
+      {
+       "id": "h3-apfel-der-baum-ist-kahl-und-ruht",
+       "text": "Der Baum ist kahl und ruht.",
+       "group": "Winter"
+      },
+      {
+       "id": "h3-apfel-die-blaetter-werden-gelb-und",
+       "text": "Die Blätter werden gelb und fallen ab.",
+       "group": "Herbst"
+      },
+      {
+       "id": "h3-apfel-bienen-fliegen-von-bluete-zu",
+       "text": "Bienen fliegen von Blüte zu Blüte.",
+       "group": "Frühling"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-der-apfelbaum-ist-ein",
+     "task": "Was stimmt?",
+     "prompt": "Der Apfelbaum ist ein …",
+     "options": [
+      "Laubbaum",
+      "Nadelbaum",
+      "Strauch"
+     ],
+     "answer": "Laubbaum",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-woraus-waechst-der-apfel",
+     "task": "Was stimmt?",
+     "prompt": "Woraus wächst der Apfel?",
+     "options": [
+      "aus der bestäubten Blüte",
+      "aus einem Blatt",
+      "aus der Wurzel"
+     ],
+     "answer": "aus der bestäubten Blüte"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-ohne-bienen-und-andere-insek",
+     "task": "Richtig oder falsch?",
+     "prompt": "Ohne Bienen und andere Insekten gäbe es kaum Äpfel.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-was-ist-eine-streuobstwiese",
+     "task": "Was stimmt?",
+     "prompt": "Was ist eine Streuobstwiese?",
+     "options": [
+      "eine Wiese mit hohen Obstbäumen, die verstreut stehen",
+      "ein Supermarkt für Obst",
+      "ein Feld mit Erdbeeren"
+     ],
+     "answer": "eine Wiese mit hohen Obstbäumen, die verstreut stehen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-auf-einer-streuobstwiese-leb",
+     "task": "Richtig oder falsch?",
+     "prompt": "Auf einer Streuobstwiese leben viele Tiere, zum Beispiel Igel, Vögel und Bienen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Der Apfel von innen",
+   "icon": "🔪",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Welcher Teil des Apfels ist das?",
+     "review": "Welcher Teil des Apfels ist das?",
+     "pairs": [
+      {
+       "id": "h3-apfel-schale",
+       "a": "Schale",
+       "b": "schützt den Apfel außen"
+      },
+      {
+       "id": "h3-apfel-fruchtfleisch",
+       "a": "Fruchtfleisch",
+       "b": "saftig, das essen wir"
+      },
+      {
+       "id": "h3-apfel-kerngehaeuse",
+       "a": "Kerngehäuse",
+       "b": "in der Mitte, hält die Kerne"
+      },
+      {
+       "id": "h3-apfel-kerne",
+       "a": "Kerne",
+       "b": "die Samen des Apfels"
+      }
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "h3-apfel-ordne-die-teile-des-apfels-v",
+     "task": "Ordne die Teile des Apfels von außen nach innen!",
+     "tiles": [
+      "Schale",
+      "Fruchtfleisch",
+      "Kerngehäuse",
+      "Kerne"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-was-sind-die-apfelkerne",
+     "task": "Was stimmt?",
+     "prompt": "Was sind die Apfelkerne?",
+     "options": [
+      "die Samen",
+      "die Blüten",
+      "die Blätter"
+     ],
+     "answer": "die Samen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-was-ist-das-kleine-braune-di",
+     "task": "Was stimmt?",
+     "prompt": "Was ist das kleine braune Ding unten am Apfel?",
+     "options": [
+      "der Rest der Blüte",
+      "ein Wurm",
+      "der Stiel"
+     ],
+     "answer": "der Rest der Blüte"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-du-schneidest-einen-apfel-qu",
+     "task": "Was stimmt?",
+     "prompt": "Du schneidest einen Apfel quer durch. Was siehst du in der Mitte?",
+     "options": [
+      "einen Stern",
+      "einen Kreis ohne Kerne",
+      "ein Herz"
+     ],
+     "answer": "einen Stern"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-warum-wird-ein-aufgeschnitte",
+     "task": "Was stimmt?",
+     "prompt": "Warum wird ein aufgeschnittener Apfel braun?",
+     "options": [
+      "Die Luft verändert das Fruchtfleisch.",
+      "Er ist faul.",
+      "Das Messer färbt ab."
+     ],
+     "answer": "Die Luft verändert das Fruchtfleisch.",
+     "explain": "Mit ein paar Tropfen Zitronensaft bleibt er länger hell."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-ein-apfel-ist-eine-frucht",
+     "task": "Richtig oder falsch?",
+     "prompt": "Ein Apfel ist eine Frucht.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Apfelsorten",
+   "icon": "🍏",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-apfel-wie-viele-apfelsorten-gibt-e",
+     "task": "Was stimmt?",
+     "prompt": "Wie viele Apfelsorten gibt es auf der Welt ungefähr?",
+     "options": [
+      "viele Tausend",
+      "zehn",
+      "genau hundert"
+     ],
+     "answer": "viele Tausend"
+    },
+    {
+     "kind": "sort",
+     "task": "Apfelsorte oder nicht?",
+     "review": "Ist das eine Apfelsorte?",
+     "groups": [
+      "Apfelsorte",
+      "keine Apfelsorte"
+     ],
+     "items": [
+      {
+       "id": "h3-apfel-elstar",
+       "text": "Elstar",
+       "group": "Apfelsorte"
+      },
+      {
+       "id": "h3-apfel-boskop",
+       "text": "Boskop",
+       "group": "Apfelsorte"
+      },
+      {
+       "id": "h3-apfel-gala",
+       "text": "Gala",
+       "group": "Apfelsorte"
+      },
+      {
+       "id": "h3-apfel-braeburn",
+       "text": "Braeburn",
+       "group": "Apfelsorte"
+      },
+      {
+       "id": "h3-apfel-granny-smith",
+       "text": "Granny Smith",
+       "group": "Apfelsorte"
+      },
+      {
+       "id": "h3-apfel-williams-christ-birne",
+       "text": "Williams Christ (Birne)",
+       "group": "keine Apfelsorte"
+      },
+      {
+       "id": "h3-apfel-conference-birne",
+       "text": "Conference (Birne)",
+       "group": "keine Apfelsorte"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-welcher-apfel-ist-gruen-und",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Apfel ist grün und sauer?",
+     "options": [
+      "Granny Smith",
+      "Gala",
+      "Pink Lady"
+     ],
+     "answer": "Granny Smith"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-der-boskop-ist-sauer-und-eig",
+     "task": "Was stimmt?",
+     "prompt": "Der Boskop ist sauer und eignet sich gut zum …",
+     "options": [
+      "Backen",
+      "Einfrieren",
+      "Pflanzen"
+     ],
+     "answer": "Backen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-du-pflanzt-einen-kern-von-ei",
+     "task": "Was stimmt?",
+     "prompt": "Du pflanzt einen Kern von einem Gala-Apfel. Was wächst daraus?",
+     "options": [
+      "ein Apfelbaum mit anderen Äpfeln",
+      "ein Baum mit Gala-Äpfeln",
+      "ein Birnbaum"
+     ],
+     "answer": "ein Apfelbaum mit anderen Äpfeln",
+     "explain": "Aus dem Kern wächst eine neue Mischung. Darum veredelt man Apfelbäume."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-was-macht-der-gaertner-beim",
+     "task": "Was stimmt?",
+     "prompt": "Was macht der Gärtner beim Veredeln?",
+     "options": [
+      "Er setzt einen Zweig der Sorte auf einen jungen Baum.",
+      "Er malt die Äpfel an.",
+      "Er gießt mit Zuckerwasser."
+     ],
+     "answer": "Er setzt einen Zweig der Sorte auf einen jungen Baum."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-aepfel-bleiben-an-einem-kueh",
+     "task": "Richtig oder falsch?",
+     "prompt": "Äpfel bleiben an einem kühlen, dunklen Ort lange frisch.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Was man aus Äpfeln macht",
+   "icon": "🧃",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Aus Äpfeln oder nicht?",
+     "review": "Wird das aus Äpfeln gemacht?",
+     "groups": [
+      "aus Äpfeln",
+      "nicht aus Äpfeln"
+     ],
+     "items": [
+      {
+       "id": "h3-apfel-apfelmus",
+       "text": "Apfelmus",
+       "group": "aus Äpfeln"
+      },
+      {
+       "id": "h3-apfel-apfelsaft",
+       "text": "Apfelsaft",
+       "group": "aus Äpfeln"
+      },
+      {
+       "id": "h3-apfel-apfelstrudel",
+       "text": "Apfelstrudel",
+       "group": "aus Äpfeln"
+      },
+      {
+       "id": "h3-apfel-apfelessig",
+       "text": "Apfelessig",
+       "group": "aus Äpfeln"
+      },
+      {
+       "id": "h3-apfel-apfelringe-getrocknet",
+       "text": "Apfelringe, getrocknet",
+       "group": "aus Äpfeln"
+      },
+      {
+       "id": "h3-apfel-pommes",
+       "text": "Pommes",
+       "group": "nicht aus Äpfeln"
+      },
+      {
+       "id": "h3-apfel-ketchup",
+       "text": "Ketchup",
+       "group": "nicht aus Äpfeln"
+      },
+      {
+       "id": "h3-apfel-kakao",
+       "text": "Kakao",
+       "group": "nicht aus Äpfeln"
+      }
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "h3-apfel-wie-entsteht-apfelsaft-bring",
+     "task": "Wie entsteht Apfelsaft? Bring es in die richtige Reihenfolge!",
+     "tiles": [
+      "Äpfel ernten",
+      "Äpfel waschen",
+      "Äpfel zerkleinern",
+      "Saft auspressen",
+      "Saft erhitzen und abfüllen"
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "h3-apfel-wie-kochst-du-apfelmus-bring",
+     "task": "Wie kochst du Apfelmus? Bring es in die richtige Reihenfolge!",
+     "tiles": [
+      "Äpfel schälen",
+      "Kerngehäuse entfernen",
+      "Stücke mit etwas Wasser kochen",
+      "Weich gekochte Äpfel zerdrücken"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-was-ist-eine-apfelschorle",
+     "task": "Was stimmt?",
+     "prompt": "Was ist eine Apfelschorle?",
+     "options": [
+      "Apfelsaft mit Wasser gemischt",
+      "ein Apfelkuchen",
+      "eine Apfelsorte"
+     ],
+     "answer": "Apfelsaft mit Wasser gemischt"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-aepfel-aus-der-region-haben",
+     "task": "Richtig oder falsch?",
+     "prompt": "Äpfel aus der Region haben einen kurzen Weg bis in den Laden.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Den Apfel beschriften",
+   "icon": "🍎",
+   "tasks": [
+    {
+     "kind": "label",
+     "id": "h3-apfel-beschrifte-den-aufgeschnitte",
+     "task": "Beschrifte den aufgeschnittenen Apfel!",
+     "image": "apfel-laengs",
+     "w": 200,
+     "h": 200,
+     "spots": [
+      {
+       "x": 103,
+       "y": 26,
+       "answer": "Stiel"
+      },
+      {
+       "x": 27,
+       "y": 100,
+       "answer": "Schale"
+      },
+      {
+       "x": 58,
+       "y": 128,
+       "answer": "Fruchtfleisch"
+      },
+      {
+       "x": 90,
+       "y": 104,
+       "answer": "Kerne"
+      },
+      {
+       "x": 100,
+       "y": 130,
+       "answer": "Kerngehäuse"
+      },
+      {
+       "x": 100,
+       "y": 180,
+       "answer": "Blütenrest"
+      }
+     ]
+    },
+    {
+     "kind": "label",
+     "id": "h3-apfel-setze-die-richtigen-woerter",
+     "task": "Setze die richtigen Wörter ein! Das Bild hilft dir.",
+     "image": "apfel-laengs",
+     "w": 200,
+     "h": 200,
+     "spots": [
+      {
+       "x": 27,
+       "y": 100,
+       "answer": "Schale"
+      },
+      {
+       "x": 103,
+       "y": 26,
+       "answer": "Stiel"
+      },
+      {
+       "x": 100,
+       "y": 180,
+       "answer": "Blütenrest"
+      },
+      {
+       "x": 52,
+       "y": 140,
+       "answer": "Fruchtfleisch"
+      },
+      {
+       "x": 122,
+       "y": 132,
+       "answer": "Kerngehäuse"
+      },
+      {
+       "x": 90,
+       "y": 104,
+       "answer": "Kerne"
+      }
+     ],
+     "extra": [
+      "Wurzel"
+     ],
+     "text": [
+      "Außen ist der Apfel von der __ umhüllt. Sie schützt ihn vor Schmutz und davor, dass er austrocknet.",
+      "Oben sitzt der __. Früher hat er die Blüte mit dem Zweig verbunden. Unten sieht man den __, die vertrockneten Reste der Blüte.",
+      "Das meiste vom Apfel ist saftiges __. In der Mitte liegt das __. Darin stecken die __, die Samen des Apfelbaums."
+     ],
+     "labels": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-so-sieht-ein-apfel-aus-wenn",
+     "task": "Was siehst du?",
+     "prompt": "So sieht ein Apfel aus, wenn man ihn quer durchschneidet. Wie viele Kammern hat der Stern?",
+     "options": [
+      "5",
+      "3",
+      "8"
+     ],
+     "answer": "5",
+     "pic": "[[apfel-quer]]",
+     "showText": true
+    },
+    {
+     "kind": "label",
+     "id": "h3-apfel-setze-die-richtigen-woerter-2",
+     "task": "Setze die richtigen Wörter ein!",
+     "image": "apfel-quer",
+     "w": 200,
+     "h": 200,
+     "spots": [
+      {
+       "answer": "quer"
+      },
+      {
+       "answer": "Stern"
+      },
+      {
+       "answer": "fünf"
+      },
+      {
+       "answer": "Kerne"
+      }
+     ],
+     "extra": [
+      "Kreis",
+      "drei"
+     ],
+     "text": [
+      "Schneidet man einen Apfel __ durch, sieht das Kerngehäuse aus wie ein __. Er hat __ Zacken.",
+      "In jeder Kammer liegen die __. Aus ihnen kann ein neuer Apfelbaum wachsen."
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-apfel-was-sind-die-braunen-dinge-i",
+     "task": "Was siehst du?",
+     "prompt": "Was sind die braunen Dinge in der Mitte?",
+     "options": [
+      "die Kerne, also die Samen",
+      "Würmer",
+      "Schokolade"
+     ],
+     "answer": "die Kerne, also die Samen",
+     "pic": "[[apfel-laengs]]",
+     "showText": true
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

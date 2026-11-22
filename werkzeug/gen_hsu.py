@@ -115,6 +115,40 @@ def wissen(id_, icon, title, merke, beispiele=(), lektionen=(), trick=""):
     RULES.append(r)
 
 
+# ---------- Bausteine mit eigenen Zeichnungen (img/zeichnungen, siehe gen_zeichnungen.py) ----------
+def Z(name):
+    return f"[[{name}]]"
+
+
+def bildfrage(p, task, prompt, zeich, options, answer, explain=None, keep=False):
+    """Zeichnung oben, Frage darunter, Text-Antworten."""
+    t = ch(p, task, prompt + " " + zeich, options, answer, explain, keep)
+    t["prompt"], t["pic"], t["showText"] = prompt, Z(zeich), True
+    if task == prompt: t["task"] = "Schau dir das Bild genau an!"
+    return t
+
+
+def bildwahl(p, task, options, answer, explain=None):
+    """Tipp auf die richtige Zeichnung. options/answer = Namen der Zeichnungen."""
+    assert answer in options
+    t = {"kind": "choice", "id": uid(f"{p}-{slug(task + ' ' + answer)}"), "task": task, "prompt": task,
+         "options": [Z(o) for o in options], "answer": Z(answer), "picOptions": True}
+    if explain: t["explain"] = explain
+    return t
+
+
+def schaubild(p, task, image, spots, w=300, h=200, extra=(), text=None, labels=False):
+    """Schaubild beschriften: spots = (x, y, Begriff) in Bildkoordinaten.
+    Mit text (Absätze, "__" = Lücke in spots-Reihenfolge) wird daraus ein Lückentext zum Bild;
+    labels=True schreibt die Begriffe als Hilfe ins Bild (x=None: kein Etikett)."""
+    t = {"kind": "label", "id": uid(f"{p}-{slug(task + ' ' + image)}"), "task": task, "image": image, "w": w, "h": h,
+         "spots": [({"x": x, "y": y} if x is not None else {}) | {"answer": a} for x, y, a in spots]}
+    if extra: t["extra"] = list(extra)
+    if text: t["text"] = list(text)
+    if labels: t["labels"] = True
+    return t
+
+
 UNITS = {}
 JZ = ["🌷 Frühling", "☀️ Sommer", "🍂 Herbst", "⛄ Winter"]
 
@@ -942,6 +976,849 @@ UNITS["hsu/k3-zusammen.json"] = unit(p, "Klassenrat und Kinderrechte", "⚖️",
             ("Ich-Botschaften sagen", "fair"), ("jemanden ausschließen", "unfair"),
         ]),
         ch(p, "Was stimmt?", "Was ist eine Ich-Botschaft?", ["Ich bin traurig, weil du mich ausgelacht hast.", "Du bist immer so gemein!", "Halt den Mund!"], "Ich bin traurig, weil du mich ausgelacht hast."),
+    ]),
+    test(12),
+])
+
+# =====================================================================
+# 3. KLASSE, RUNDE 2: Pflanzen, Bäume, Giftpflanzen, Sonne/Erde/Mond
+# (Themenwahl nach LehrplanPLUS HSU 3/4, Texte und Aufgaben selbst geschrieben)
+# =====================================================================
+
+# ---------- Wie eine Pflanze entsteht ----------
+p = "h3-pflanze"
+wissen("hsu-bluete", "🌸", "Die Teile einer Blütenpflanze", [
+    "Eine Blütenpflanze hat **Wurzel**, **Stängel**, **Blätter** und **Blüte**.",
+    "Die **Wurzel** hält die Pflanze fest und nimmt Wasser auf.",
+    "Die bunten **Kronblätter** locken Insekten an. Die grünen **Kelchblätter** schützen die Knospe.",
+    "In den **Staubblättern** steckt der Blütenstaub (Pollen). In der Mitte steht der **Stempel**.",
+], ["Blüte → Frucht → Samen → neue Pflanze"], [f"{p}/Die Teile einer Pflanze", f"{p}/Blüte und Bestäubung"])
+wissen("hsu-bestaeubung", "🐝", "Von der Blüte zur Frucht", [
+    "Eine Biene sammelt Nektar. Dabei bleibt **Blütenstaub** an ihr hängen.",
+    "In der nächsten Blüte streift sie den Blütenstaub am **Stempel** ab. Das heißt **Bestäubung**.",
+    "Danach wächst aus dem unteren Teil des Stempels die **Frucht** mit den **Samen**.",
+    "Gräser, Haselnuss und Birke werden vom **Wind** bestäubt.",
+], [], [f"{p}/Blüte und Bestäubung"])
+wissen("hsu-keimung", "🌱", "Vom Samen zur Pflanze", [
+    "Zum Keimen braucht ein Samen **Wasser**, **Wärme** und **Luft**.",
+    "Zuerst quillt der Samen auf. Dann wächst die **Wurzel** nach unten.",
+    "Danach wächst der **Spross** mit den ersten Blättern nach oben zum Licht.",
+    "Im Samen steckt ein **Nahrungsvorrat** für den Anfang.",
+], ["Samen → quellen → Wurzel → Spross → Blätter → Blüte"], [f"{p}/Vom Samen zur Pflanze"])
+wissen("hsu-verbreitung", "🌬️", "Wie Samen reisen", [
+    "**Wind**: Löwenzahn hat Schirmchen, der Ahorn hat Propeller.",
+    "**Tiere**: Kletten bleiben im Fell hängen. Vögel fressen Beeren. Eichhörnchen verstecken Nüsse und vergessen manche.",
+    "**Wasser**: Manche Samen schwimmen, zum Beispiel die Kokosnuss.",
+    "**Selbst**: Das Springkraut schleudert seine Samen weg.",
+], [], [f"{p}/Wie Samen reisen"])
+
+UNITS["hsu/k3-pflanze.json"] = unit(p, "Wie eine Pflanze entsteht", "🌱", "#5a9e3a", [
+    lesson("Die Teile einer Pflanze", "🌷", [
+        reihe(p, "Ordne die Teile der Pflanze von unten nach oben!", ["Wurzel", "Stängel", "Blätter", "Blüte"]),
+        pairs(p, "Was macht dieser Teil der Pflanze?", "Was macht dieser Teil der Pflanze?", [
+            ("Wurzel", "hält fest und nimmt Wasser auf"), ("Stängel", "trägt Blätter und Blüte"),
+            ("Blätter", "machen mit Sonnenlicht Nahrung"), ("Blüte", "daraus wird die Frucht"),
+        ]),
+        pairs(p, "Welcher Teil der Blüte ist das?", "Was macht dieser Teil der Blüte?", [
+            ("Kronblätter", "bunt, locken Insekten an"), ("Kelchblätter", "grün, schützen die Knospe"),
+            ("Staubblätter", "tragen den Blütenstaub"), ("Stempel", "in der Mitte, wird zur Frucht"),
+        ]),
+        wahr(p, "Die Wurzel holt Wasser aus der Erde.", True),
+        wahr(p, "Die Blätter brauchen Licht, damit die Pflanze wachsen kann.", True),
+        ch(p, "Was stimmt?", "Wie heißt der Blütenstaub noch?", ["Pollen", "Nektar", "Honig"], "Pollen"),
+        ch(p, "Was stimmt?", "Warum sind viele Blüten so bunt?", ["Sie locken Insekten an.", "Sie wärmen die Pflanze.", "Sie schützen vor Regen."], "Sie locken Insekten an."),
+    ], mix=False),
+    lesson("Blüte und Bestäubung", "🐝", [
+        reihe(p, "Von der Blüte zur Frucht: Bring es in die richtige Reihenfolge!", [
+            "Die Blüte geht auf", "Eine Biene bringt Blütenstaub", "Die Kronblätter fallen ab", "Die Frucht wächst", "Die Samen sind reif"]),
+        ch(p, "Was stimmt?", "Was heißt Bestäubung?", ["Blütenstaub kommt auf den Stempel einer Blüte.", "Die Blüte wird gegossen.", "Die Blätter werden staubig."], "Blütenstaub kommt auf den Stempel einer Blüte."),
+        ch(p, "Was stimmt?", "Was sucht die Biene in der Blüte?", ["süßen Nektar", "Wasser", "Samen"], "süßen Nektar"),
+        sort(p, "Wer bestäubt die Blüte?", "Wird diese Pflanze vom Wind oder von Insekten bestäubt?", ["Wind", "Insekten"], [
+            ("Gras", "Wind"), ("Haselnuss", "Wind"), ("Birke", "Wind"), ("Apfelbaum", "Insekten"),
+            ("Kirschbaum", "Insekten"), ("Sonnenblume", "Insekten"), ("Roggen", "Wind"), ("Klee", "Insekten"),
+        ]),
+        wahr(p, "Blüten, die der Wind bestäubt, sind meistens klein und unauffällig.", True, "Sie müssen keine Insekten anlocken. Dafür machen sie sehr viel Blütenstaub."),
+        wahr(p, "Ohne Bienen gäbe es viel weniger Äpfel und Kirschen.", True),
+        wahr(p, "Heuschnupfen kommt oft vom Blütenstaub der Gräser und Bäume.", True),
+    ], mix=False),
+    lesson("Vom Samen zur Pflanze", "🌱", [
+        reihe(p, "Wie wächst eine Bohne? Bring es in die richtige Reihenfolge!", [
+            "Bohnensamen in die Erde legen", "Der Samen quillt auf", "Die Wurzel wächst", "Der Spross kommt aus der Erde", "Die ersten Blätter wachsen"]),
+        sort(p, "Was braucht ein Samen zum Keimen?", "Braucht ein Samen das zum Keimen?", ["braucht er", "braucht er nicht"], [
+            ("Wasser", "braucht er"), ("Wärme", "braucht er"), ("Luft", "braucht er"),
+            ("Dünger", "braucht er nicht"), ("Musik", "braucht er nicht"), ("viel Platz im Topf", "braucht er nicht"),
+        ]),
+        ch(p, "Was stimmt?", "Was wächst beim Keimen zuerst?", ["die Wurzel", "die Blüte", "die Frucht"], "die Wurzel"),
+        ch(p, "Was stimmt?", "Woher bekommt der Keimling am Anfang seine Nahrung?", ["aus dem Vorrat im Samen", "von der Sonne allein", "aus dem Regen"], "aus dem Vorrat im Samen"),
+        ch(p, "Was stimmt?", "Du legst Kresse auf trockene Watte. Was passiert?", ["Sie keimt nicht.", "Sie keimt sehr schnell.", "Sie blüht sofort."], "Sie keimt nicht.", "Ohne Wasser kann kein Samen keimen."),
+        wahr(p, "Eine Bohne kann auch im Dunkeln keimen.", True, "Zum Keimen reichen Wasser, Wärme und Luft. Zum Weiterwachsen braucht die junge Pflanze dann aber Licht."),
+        wahr(p, "Ein Samen im Eisfach keimt besonders gut.", False, "Es ist zu kalt. Samen brauchen Wärme zum Keimen."),
+    ], mix=False),
+    lesson("Wie Samen reisen", "🌬️", [
+        sort(p, "Wie reist der Samen?", "Wie wird dieser Samen verbreitet?", ["Wind", "Tiere", "Wasser", "schleudert selbst"], [
+            ("Löwenzahn mit Schirmchen", "Wind"), ("Ahorn mit Propeller", "Wind"), ("Klette im Fell", "Tiere"),
+            ("Eichel, vom Eichhörnchen versteckt", "Tiere"), ("Kirsche, von der Amsel gefressen", "Tiere"),
+            ("Kokosnuss", "Wasser"), ("Springkraut", "schleudert selbst"), ("Birkensamen mit Flügeln", "Wind"),
+        ]),
+        ch(p, "Was stimmt?", "Warum ist es gut, wenn Samen weit weg reisen?", ["Die jungen Pflanzen haben mehr Platz und Licht.", "Die Samen werden größer.", "Die Mutterpflanze wird schneller alt."], "Die jungen Pflanzen haben mehr Platz und Licht."),
+        ch(p, "Was stimmt?", "Wie hilft ein Eichhörnchen der Eiche?", ["Es vergisst manche versteckte Eicheln. Daraus wachsen neue Eichen.", "Es gießt die Eiche.", "Es frisst die Blätter."], "Es vergisst manche versteckte Eicheln. Daraus wachsen neue Eichen."),
+        wahr(p, "Kletten haben kleine Haken, mit denen sie im Fell hängen bleiben.", True),
+        wahr(p, "Vögel fressen Beeren. Die Kerne kommen mit dem Kot an einer anderen Stelle wieder heraus.", True),
+    ]),
+    lesson("Pflanzen ohne Samen", "🍄", [
+        sort(p, "Samen oder Sporen?", "Vermehrt sich diese Pflanze mit Samen oder mit Sporen?", ["Samen", "Sporen"], [
+            ("Moos", "Sporen"), ("Farn", "Sporen"), ("Pilz", "Sporen"), ("Sonnenblume", "Samen"),
+            ("Apfelbaum", "Samen"), ("Bohne", "Samen"), ("Tulpe", "Samen"),
+        ]),
+        ch(p, "Was stimmt?", "Was sind Sporen?", ["winzig kleine Körnchen, aus denen neue Pflanzen oder Pilze wachsen", "große Nüsse", "bunte Blütenblätter"], "winzig kleine Körnchen, aus denen neue Pflanzen oder Pilze wachsen"),
+        ch(p, "Was stimmt?", "Wo findest du beim Farn die Sporen?", ["auf der Unterseite der Blätter", "in einer bunten Blüte", "in einer Frucht"], "auf der Unterseite der Blätter"),
+        ch(p, "Was stimmt?", "Wie vermehrt sich die Erdbeere noch, außer mit Samen?", ["mit Ausläufern", "mit Sporen", "gar nicht"], "mit Ausläufern",
+           "Erdbeeren bilden lange Triebe am Boden. Wo sie die Erde berühren, wächst eine neue Pflanze."),
+        ch(p, "Was stimmt?", "Woraus wächst eine neue Kartoffelpflanze?", ["aus einer Kartoffelknolle", "aus Sporen", "aus einem Zapfen"], "aus einer Kartoffelknolle"),
+        wahr(p, "Moose und Farne haben keine Blüten.", True),
+    ]),
+    test(12),
+])
+
+# ---------- Der Apfel ----------
+p = "h3-apfel"
+wissen("hsu-apfel", "🍎", "Der Apfel von innen", [
+    "Außen ist die **Schale**, darunter das saftige **Fruchtfleisch**.",
+    "In der Mitte liegt das **Kerngehäuse** mit den **Kernen**. Die Kerne sind die **Samen**.",
+    "Oben ist der **Stiel**, unten der vertrocknete **Blütenrest**.",
+    "Schneidest du einen Apfel quer durch, siehst du einen **Stern** mit fünf Kammern.",
+], [], [f"{p}/Der Apfel von innen"])
+wissen("hsu-apfeljahr", "🌸", "Das Jahr des Apfelbaums", [
+    "**Frühling**: Der Apfelbaum blüht weiß und rosa. Bienen bestäuben die Blüten.",
+    "**Sommer**: Aus der Blüte wächst ein kleiner grüner Apfel. Er wird immer größer.",
+    "**Herbst**: Die Äpfel sind reif und werden geerntet.",
+    "**Winter**: Der Baum ist kahl und ruht. Die Knospen sind schon da.",
+], [], [f"{p}/Vom Apfelbaum"])
+wissen("hsu-veredeln", "✂️", "Warum man Apfelbäume veredelt", [
+    "Pflanzt du einen Apfelkern, wächst ein Baum mit **anderen** Äpfeln. Sie schmecken oft sauer.",
+    "Darum **veredelt** der Gärtner: Er setzt einen Zweig der gewünschten Sorte auf einen jungen Baum.",
+    "Der Zweig wächst an. Dann trägt der Baum genau die Äpfel dieser **Sorte**.",
+], [], [f"{p}/Apfelsorten"])
+
+UNITS["hsu/k3-apfel.json"] = unit(p, "Der Apfel", "🍎", "#d6453d", [
+    lesson("Vom Apfelbaum", "🌳", [
+        reihe(p, "Wie wächst ein Apfel? Bring es in die richtige Reihenfolge!", [
+            "Knospen im Frühling", "Weiße und rosa Blüten", "Bienen bestäuben die Blüten", "Ein kleiner grüner Apfel wächst", "Der Apfel ist reif"]),
+        sort(p, "Wann ist das beim Apfelbaum?", "Wann passiert das beim Apfelbaum?", ["Frühling", "Sommer", "Herbst", "Winter"], [
+            ("Der Baum blüht.", "Frühling"), ("Die Äpfel wachsen und werden größer.", "Sommer"),
+            ("Die Äpfel werden geerntet.", "Herbst"), ("Der Baum ist kahl und ruht.", "Winter"),
+            ("Die Blätter werden gelb und fallen ab.", "Herbst"), ("Bienen fliegen von Blüte zu Blüte.", "Frühling"),
+        ]),
+        ch(p, "Was stimmt?", "Der Apfelbaum ist ein …", ["Laubbaum", "Nadelbaum", "Strauch"], "Laubbaum", keep=True),
+        ch(p, "Was stimmt?", "Woraus wächst der Apfel?", ["aus der bestäubten Blüte", "aus einem Blatt", "aus der Wurzel"], "aus der bestäubten Blüte"),
+        wahr(p, "Ohne Bienen und andere Insekten gäbe es kaum Äpfel.", True),
+        ch(p, "Was stimmt?", "Was ist eine Streuobstwiese?", ["eine Wiese mit hohen Obstbäumen, die verstreut stehen", "ein Supermarkt für Obst", "ein Feld mit Erdbeeren"], "eine Wiese mit hohen Obstbäumen, die verstreut stehen"),
+        wahr(p, "Auf einer Streuobstwiese leben viele Tiere, zum Beispiel Igel, Vögel und Bienen.", True),
+    ], mix=False),
+    lesson("Der Apfel von innen", "🔪", [
+        pairs(p, "Welcher Teil des Apfels ist das?", "Welcher Teil des Apfels ist das?", [
+            ("Schale", "schützt den Apfel außen"), ("Fruchtfleisch", "saftig, das essen wir"),
+            ("Kerngehäuse", "in der Mitte, hält die Kerne"), ("Kerne", "die Samen des Apfels"),
+        ]),
+        reihe(p, "Ordne die Teile des Apfels von außen nach innen!", ["Schale", "Fruchtfleisch", "Kerngehäuse", "Kerne"]),
+        ch(p, "Was stimmt?", "Was sind die Apfelkerne?", ["die Samen", "die Blüten", "die Blätter"], "die Samen"),
+        ch(p, "Was stimmt?", "Was ist das kleine braune Ding unten am Apfel?", ["der Rest der Blüte", "ein Wurm", "der Stiel"], "der Rest der Blüte"),
+        ch(p, "Was stimmt?", "Du schneidest einen Apfel quer durch. Was siehst du in der Mitte?", ["einen Stern", "einen Kreis ohne Kerne", "ein Herz"], "einen Stern"),
+        ch(p, "Was stimmt?", "Warum wird ein aufgeschnittener Apfel braun?", ["Die Luft verändert das Fruchtfleisch.", "Er ist faul.", "Das Messer färbt ab."], "Die Luft verändert das Fruchtfleisch.",
+           "Mit ein paar Tropfen Zitronensaft bleibt er länger hell."),
+        wahr(p, "Ein Apfel ist eine Frucht.", True),
+    ], mix=False),
+    lesson("Apfelsorten", "🍏", [
+        ch(p, "Was stimmt?", "Wie viele Apfelsorten gibt es auf der Welt ungefähr?", ["viele Tausend", "zehn", "genau hundert"], "viele Tausend"),
+        sort(p, "Apfelsorte oder nicht?", "Ist das eine Apfelsorte?", ["Apfelsorte", "keine Apfelsorte"], [
+            ("Elstar", "Apfelsorte"), ("Boskop", "Apfelsorte"), ("Gala", "Apfelsorte"), ("Braeburn", "Apfelsorte"),
+            ("Granny Smith", "Apfelsorte"), ("Williams Christ (Birne)", "keine Apfelsorte"), ("Conference (Birne)", "keine Apfelsorte"),
+        ]),
+        ch(p, "Was stimmt?", "Welcher Apfel ist grün und sauer?", ["Granny Smith", "Gala", "Pink Lady"], "Granny Smith"),
+        ch(p, "Was stimmt?", "Der Boskop ist sauer und eignet sich gut zum …", ["Backen", "Einfrieren", "Pflanzen"], "Backen"),
+        ch(p, "Was stimmt?", "Du pflanzt einen Kern von einem Gala-Apfel. Was wächst daraus?", ["ein Apfelbaum mit anderen Äpfeln", "ein Baum mit Gala-Äpfeln", "ein Birnbaum"], "ein Apfelbaum mit anderen Äpfeln",
+           "Aus dem Kern wächst eine neue Mischung. Darum veredelt man Apfelbäume."),
+        ch(p, "Was stimmt?", "Was macht der Gärtner beim Veredeln?", ["Er setzt einen Zweig der Sorte auf einen jungen Baum.", "Er malt die Äpfel an.", "Er gießt mit Zuckerwasser."], "Er setzt einen Zweig der Sorte auf einen jungen Baum."),
+        wahr(p, "Äpfel bleiben an einem kühlen, dunklen Ort lange frisch.", True),
+    ]),
+    lesson("Was man aus Äpfeln macht", "🧃", [
+        sort(p, "Aus Äpfeln oder nicht?", "Wird das aus Äpfeln gemacht?", ["aus Äpfeln", "nicht aus Äpfeln"], [
+            ("Apfelmus", "aus Äpfeln"), ("Apfelsaft", "aus Äpfeln"), ("Apfelstrudel", "aus Äpfeln"), ("Apfelessig", "aus Äpfeln"),
+            ("Apfelringe, getrocknet", "aus Äpfeln"), ("Pommes", "nicht aus Äpfeln"), ("Ketchup", "nicht aus Äpfeln"), ("Kakao", "nicht aus Äpfeln"),
+        ]),
+        reihe(p, "Wie entsteht Apfelsaft? Bring es in die richtige Reihenfolge!", [
+            "Äpfel ernten", "Äpfel waschen", "Äpfel zerkleinern", "Saft auspressen", "Saft erhitzen und abfüllen"]),
+        reihe(p, "Wie kochst du Apfelmus? Bring es in die richtige Reihenfolge!", [
+            "Äpfel schälen", "Kerngehäuse entfernen", "Stücke mit etwas Wasser kochen", "Weich gekochte Äpfel zerdrücken"]),
+        ch(p, "Was stimmt?", "Was ist eine Apfelschorle?", ["Apfelsaft mit Wasser gemischt", "ein Apfelkuchen", "eine Apfelsorte"], "Apfelsaft mit Wasser gemischt"),
+        wahr(p, "Äpfel aus der Region haben einen kurzen Weg bis in den Laden.", True),
+    ]),
+    test(12),
+])
+
+# ---------- Der Baum ----------
+p = "h3-baum"
+wissen("hsu-baumteile", "🌳", "Die Teile des Baumes", [
+    "Die **Wurzeln** halten den Baum fest und holen Wasser aus dem Boden.",
+    "Der **Stamm** trägt die Krone. In ihm steigt das Wasser nach oben.",
+    "Die **Rinde** schützt den Stamm wie eine Haut.",
+    "Die **Krone** besteht aus **Ästen**, **Zweigen** und **Blättern**.",
+], ["Wurzeln → Stamm → Äste → Zweige → Blätter"], [f"{p}/Die Teile des Baumes"])
+wissen("hsu-jahresringe", "🪵", "Jahresringe", [
+    "Ein Baum wird jedes Jahr ein Stück dicker.",
+    "Dabei entsteht jedes Jahr ein **Jahresring**: ein heller und ein dunkler Streifen.",
+    "Zählst du die Ringe eines gefällten Baumes, weißt du, wie **alt** er war.",
+    "Breite Ringe bedeuten ein gutes Jahr mit viel Regen, schmale Ringe ein trockenes Jahr.",
+], [], [f"{p}/Wie alt ist der Baum?"])
+
+UNITS["hsu/k3-baum.json"] = unit(p, "Der Baum", "🌳", "#3f8a3a", [
+    lesson("Was ist ein Baum?", "🌳", [
+        ch(p, "Was stimmt?", "Was hat ein Baum, das ein Strauch nicht hat?", ["einen einzigen dicken Stamm", "Blätter", "Wurzeln"], "einen einzigen dicken Stamm",
+           "Ein Strauch hat viele dünne Stämme, die schon unten am Boden auseinandergehen."),
+        sort(p, "Baum oder Strauch?", "Ist das ein Baum oder ein Strauch?", ["Baum", "Strauch"], [
+            ("Eiche", "Baum"), ("Haselnuss", "Strauch"), ("Buche", "Baum"), ("Holunder", "Strauch"),
+            ("Fichte", "Baum"), ("Himbeere", "Strauch"), ("Linde", "Baum"), ("Johannisbeere", "Strauch"),
+        ]),
+        sort(p, "Laubbaum oder Nadelbaum?", "Ist das ein Laubbaum oder ein Nadelbaum?", ["Laubbaum", "Nadelbaum"], [
+            ("hat breite, flache Blätter", "Laubbaum"), ("hat Nadeln", "Nadelbaum"), ("ist im Winter meistens kahl", "Laubbaum"),
+            ("ist im Winter meistens grün", "Nadelbaum"), ("trägt oft Zapfen", "Nadelbaum"), ("Linde", "Laubbaum"), ("Kiefer", "Nadelbaum"),
+        ]),
+        wahr(p, "Ein Baum ist eine Pflanze.", True),
+        wahr(p, "Bäume haben einen Stamm aus Holz.", True),
+    ], mix=False),
+    lesson("Die Teile des Baumes", "🪵", [
+        reihe(p, "Ordne die Teile des Baumes von unten nach oben!", ["Wurzeln", "Stamm", "Äste", "Zweige", "Blätter"]),
+        pairs(p, "Was macht dieser Teil des Baumes?", "Was macht dieser Teil des Baumes?", [
+            ("Wurzeln", "halten fest und holen Wasser"), ("Stamm", "trägt die Krone"),
+            ("Rinde", "schützt den Stamm"), ("Blätter", "machen Nahrung aus Sonnenlicht"),
+        ]),
+        ch(p, "Was stimmt?", "Wie nennt man alle Äste, Zweige und Blätter zusammen?", ["die Krone", "den Stamm", "die Rinde"], "die Krone"),
+        ch(p, "Was stimmt?", "Wie kommt das Wasser in die Blätter?", ["Es steigt von den Wurzeln durch den Stamm nach oben.", "Der Regen tropft hinein.", "Die Blätter trinken aus Pfützen."], "Es steigt von den Wurzeln durch den Stamm nach oben."),
+        wahr(p, "Die Wurzeln eines Baumes können so weit reichen wie seine Krone.", True),
+        wahr(p, "Wenn man die Rinde rundherum abschält, wird der Baum krank und kann sterben.", True),
+    ], mix=False),
+    lesson("Wie alt ist der Baum?", "⏳", [
+        ch(p, "Was stimmt?", "Ein gefällter Baum hat 25 Jahresringe. Wie alt war er?", ["25 Jahre", "50 Jahre", "5 Jahre"], "25 Jahre"),
+        ch(p, "Was stimmt?", "Wie viele Jahresringe bekommt ein Baum in einem Jahr?", ["einen", "zwei", "zwölf"], "einen", keep=True),
+        ch(p, "Was stimmt?", "Ein Jahresring ist sehr schmal. Was bedeutet das?", ["Das Jahr war trocken.", "Das Jahr war besonders nass.", "Der Baum wurde gefällt."], "Das Jahr war trocken."),
+        ch(p, "Was stimmt?", "Welcher heimische Baum kann über 800 Jahre alt werden?", ["die Eiche", "die Birke", "der Apfelbaum"], "die Eiche"),
+        ty(p, "Rechne!", "Eine Linde wurde 1990 gepflanzt. Wie viele Jahresringe hat sie im Jahr 2026?", "36"),
+        wahr(p, "Bäume hören nie ganz auf zu wachsen. Der Stamm wird jedes Jahr ein bisschen dicker.", True),
+    ]),
+    lesson("Warum wir Bäume brauchen", "💚", [
+        sort(p, "Was geben uns Bäume?", "Tun Bäume das?", ["Bäume tun das", "Bäume tun das nicht"], [
+            ("Sauerstoff zum Atmen herstellen", "Bäume tun das"), ("Schatten spenden", "Bäume tun das"),
+            ("Tieren ein Zuhause geben", "Bäume tun das"), ("den Boden mit ihren Wurzeln festhalten", "Bäume tun das"),
+            ("Holz liefern", "Bäume tun das"), ("die Luft schmutziger machen", "Bäume tun das nicht"), ("Strom erzeugen", "Bäume tun das nicht"),
+        ]),
+        sort(p, "Aus Holz oder nicht?", "Ist das meistens aus Holz gemacht?", ["aus Holz", "nicht aus Holz"], [
+            ("Papier", "aus Holz"), ("Bleistift", "aus Holz"), ("Tisch", "aus Holz"), ("Brennholz", "aus Holz"),
+            ("Glasflasche", "nicht aus Holz"), ("Löffel aus Metall", "nicht aus Holz"),
+        ]),
+        ch(p, "Was stimmt?", "Was nehmen die Blätter aus der Luft auf?", ["Kohlendioxid", "Sauerstoff", "Rauch"], "Kohlendioxid",
+           "Die Blätter nehmen Kohlendioxid auf und geben Sauerstoff ab. Den brauchen wir zum Atmen."),
+        ch(p, "Was stimmt?", "Warum pflanzt man in den Bergen Bäume an steilen Hängen?", ["Die Wurzeln halten den Boden fest.", "Damit es dunkler wird.", "Damit die Wanderer sich verlaufen."], "Die Wurzeln halten den Boden fest."),
+        wahr(p, "Unter einem großen Baum ist es im Sommer kühler.", True),
+        wahr(p, "Für jeden gefällten Baum sollte ein neuer gepflanzt werden.", True),
+    ]),
+    test(12),
+])
+
+# ---------- Laubbäume ----------
+p = "h3-laub"
+LB = ["Buche", "Eiche", "Birke", "Ahorn", "Eberesche", "Kastanie", "Linde"]
+wissen("hsu-laubbaeume1", "🍂", "Buche, Eiche, Birke", [
+    "**Buche**: ovale Blätter mit glattem, welligem Rand. Glatte graue Rinde. Früchte: **Bucheckern** in stacheliger Hülle.",
+    "**Eiche**: Blätter mit runden Buchten. Rinde mit tiefen Rillen. Früchte: **Eicheln** mit Hütchen.",
+    "**Birke**: kleine dreieckige Blätter mit gezacktem Rand. **Weiße Rinde** mit schwarzen Flecken.",
+], [], [f"{p}/Buche, Eiche, Birke"])
+wissen("hsu-laubbaeume2", "🍁", "Ahorn, Eberesche, Kastanie, Linde", [
+    "**Ahorn**: Blatt wie eine Hand mit spitzen Zipfeln. Früchte mit **Propellern**.",
+    "**Eberesche** (Vogelbeere): Blatt aus vielen kleinen Fiederblättchen. **Orangerote Beeren**, die Vögel gern fressen.",
+    "**Kastanie** (Rosskastanie): Blatt wie eine Hand mit 5 bis 7 Fingern. Glänzende braune **Kastanien** in stacheliger Schale.",
+    "**Linde**: **herzförmige** Blätter. Die Blüten duften und man macht Tee daraus.",
+], [], [f"{p}/Ahorn, Eberesche, Kastanie, Linde"])
+wissen("hsu-laubjahr", "🍂", "Laubbäume im Jahreslauf", [
+    "**Frühling**: Die Knospen öffnen sich, junge Blätter und Blüten wachsen.",
+    "**Sommer**: Die Krone ist dicht und grün. Die Früchte wachsen.",
+    "**Herbst**: Die Blätter werden gelb, rot und braun und fallen ab.",
+    "**Winter**: Der Baum ist kahl. Die Knospen für das nächste Jahr sind schon da.",
+    "Im Winter ist der Boden oft gefroren. Ohne Blätter verliert der Baum kaum Wasser.",
+], [], [f"{p}/Laubbäume im Jahreslauf"])
+
+UNITS["hsu/k3-laubbaeume.json"] = unit(p, "Laubbäume", "🍂", "#c8741e", [
+    lesson("Buche, Eiche, Birke", "🌳", [
+        pairs(p, "Welche Frucht gehört zu welchem Baum?", "Zu welchem Baum gehört diese Frucht?", [
+            ("Eichel mit Hütchen", "Eiche"), ("Buchecker", "Buche"), ("kleine Samen mit Flügelchen", "Birke"),
+        ]),
+        pairs(p, "Welches Blatt gehört zu welchem Baum?", "Zu welchem Baum gehört dieses Blatt?", [
+            ("Blatt mit runden Buchten", "Eiche"), ("ovales Blatt mit glattem Rand", "Buche"), ("kleines dreieckiges Blatt mit Zacken", "Birke"),
+        ]),
+        ch(p, "Welcher Baum ist das?", "Seine Rinde ist weiß mit schwarzen Flecken.", ["Birke", "Buche", "Eiche"], "Birke"),
+        ch(p, "Welcher Baum ist das?", "Seine Rinde ist glatt und grau wie die Haut eines Elefanten.", ["Buche", "Eiche", "Birke"], "Buche"),
+        ch(p, "Welcher Baum ist das?", "Seine Rinde hat tiefe Rillen. Er kann viele Hundert Jahre alt werden.", ["Eiche", "Birke", "Buche"], "Eiche"),
+        ch(p, "Was stimmt?", "Welcher Laubbaum wächst in Deutschland am häufigsten?", ["die Buche", "die Linde", "die Kastanie"], "die Buche"),
+        wahr(p, "Wildschweine und Eichhörnchen fressen gern Eicheln und Bucheckern.", True),
+    ], mix=False),
+    lesson("Ahorn, Eberesche, Kastanie, Linde", "🍁", [
+        pairs(p, "Welche Frucht gehört zu welchem Baum?", "Zu welchem Baum gehört diese Frucht?", [
+            ("Propeller-Früchte", "Ahorn"), ("orangerote Beeren", "Eberesche"), ("glänzende braune Kugel in stacheliger Schale", "Kastanie"),
+        ]),
+        pairs(p, "Welches Blatt gehört zu welchem Baum?", "Zu welchem Baum gehört dieses Blatt?", [
+            ("Blatt wie eine Hand mit spitzen Zipfeln", "Ahorn"), ("Blatt aus vielen kleinen Fiederblättchen", "Eberesche"),
+            ("Blatt mit 5 bis 7 langen Fingern", "Kastanie"), ("herzförmiges Blatt", "Linde"),
+        ]),
+        ch(p, "Was stimmt?", "Warum heißt die Eberesche auch Vogelbeere?", ["Vögel fressen ihre Beeren gern.", "Sie sieht aus wie ein Vogel.", "Vögel bauen nur dort Nester."], "Vögel fressen ihre Beeren gern."),
+        ch(p, "Was stimmt?", "Welches Blatt ist auf der Flagge von Kanada?", ["ein Ahornblatt", "ein Eichenblatt", "ein Lindenblatt"], "ein Ahornblatt"),
+        wahr(p, "Die Kastanien von der Rosskastanie kann man wie Maronen essen.", False, "Rosskastanien sind bitter und machen Bauchweh. Maronen kommen von einem anderen Baum, der Esskastanie."),
+        wahr(p, "Aus Lindenblüten kann man Tee kochen.", True),
+    ], mix=False),
+    lesson("Bäume zuordnen", "🔎", [
+        sort(p, "Zu welchem Baum gehört das?", "Zu welchem Baum gehört das?", ["Eiche", "Buche", "Ahorn", "Kastanie"], [
+            ("Eichel", "Eiche"), ("Blatt mit runden Buchten", "Eiche"), ("Buchecker", "Buche"), ("glatte graue Rinde", "Buche"),
+            ("Propeller", "Ahorn"), ("Blatt mit spitzen Zipfeln", "Ahorn"), ("stachelige grüne Fruchtschale", "Kastanie"), ("Blatt mit 5 bis 7 Fingern", "Kastanie"),
+        ]),
+        sort(p, "Zu welchem Baum gehört das?", "Zu welchem Baum gehört das?", ["Birke", "Eberesche", "Linde"], [
+            ("weiße Rinde", "Birke"), ("kleines dreieckiges Blatt", "Birke"), ("orangerote Beeren", "Eberesche"),
+            ("gefiedertes Blatt", "Eberesche"), ("herzförmiges Blatt", "Linde"), ("duftende Blüten für Tee", "Linde"),
+        ]),
+        ch(p, "Welcher Baum ist das?", "Du findest im Herbst eine kleine dreikantige Nuss in einer stacheligen Hülle.", LB[:4], "Buche"),
+        ch(p, "Welcher Baum ist das?", "Du findest ein Blatt, das aussieht wie ein Herz.", ["Linde", "Ahorn", "Eiche", "Birke"], "Linde"),
+    ], mix=False),
+    lesson("Laubbäume im Jahreslauf", "🍂", [
+        reihe(p, "Ein Jahr beim Laubbaum: Bring es in die richtige Reihenfolge!", [
+            "Die Knospen öffnen sich", "Der Baum blüht", "Die Krone ist dicht und grün", "Die Blätter werden bunt", "Der Baum ist kahl"]),
+        sort(p, "Wann ist das?", "In welcher Jahreszeit ist das beim Laubbaum?", ["Frühling", "Sommer", "Herbst", "Winter"], [
+            ("Junge hellgrüne Blätter wachsen.", "Frühling"), ("Die Krone gibt viel Schatten.", "Sommer"),
+            ("Die Blätter werden gelb und rot.", "Herbst"), ("Der Baum hat keine Blätter.", "Winter"),
+            ("Kastanien fallen herunter.", "Herbst"), ("Die Knospen öffnen sich.", "Frühling"),
+        ]),
+        ch(p, "Was stimmt?", "Warum werfen Laubbäume im Herbst ihre Blätter ab?", ["Im Winter würden sie über die Blätter zu viel Wasser verlieren.", "Die Blätter sind zu schwer.", "Der Wind reißt alle ab."], "Im Winter würden sie über die Blätter zu viel Wasser verlieren.",
+           "Im Winter ist der Boden oft gefroren. Dann kommen die Wurzeln nicht an Wasser."),
+        ch(p, "Was stimmt?", "Wann sind die Knospen für das nächste Frühjahr schon da?", ["schon im Herbst und Winter", "erst im Sommer", "gar nicht"], "schon im Herbst und Winter"),
+        wahr(p, "Laub, das am Boden liegt, wird mit der Zeit zu guter Erde.", True),
+        wahr(p, "Im Laubhaufen überwintern gern Igel.", True),
+    ]),
+    test(12),
+])
+
+# ---------- Nadelbäume ----------
+p = "h3-nadel"
+wissen("hsu-nadelbaeume", "🌲", "Nadelbäume erkennen", [
+    "**Fichte**: spitze Nadeln rund um den Zweig, sie **stechen**. Die Zapfen **hängen** nach unten.",
+    "**Tanne**: weiche, flache Nadeln mit zwei **weißen Streifen** unten. Die Zapfen **stehen** aufrecht und zerfallen am Baum.",
+    "**Kiefer**: lange Nadeln, immer **zu zweit**. Kleine runde Zapfen.",
+    "**Lärche**: weiche Nadeln in **Büscheln**. Sie wird im Herbst gelb und **wirft die Nadeln ab**.",
+    "**Eibe**: weiche Nadeln, **keine Zapfen**, rote Beeren. Fast alles an ihr ist **giftig**.",
+], ["Die Fichte sticht, die Tanne nicht."], [f"{p}/Nadelbäume kennenlernen", f"{p}/Nadeln und Zapfen"],
+    trick="Die Fichte sticht, die Tanne nicht.")
+wissen("hsu-nadelwinter", "❄️", "Nadelbäume im Winter", [
+    "Die meisten Nadelbäume sind **immergrün**. Sie behalten ihre Nadeln mehrere Jahre.",
+    "Nadeln sind schmal und haben eine **Wachsschicht**. So verlieren sie im Winter kaum Wasser.",
+    "Die Äste sind biegsam, darum rutscht der **Schnee** ab.",
+    "Die Samen liegen **frei** zwischen den Schuppen der Zapfen. Darum heißen Nadelbäume auch **Nacktsamer**.",
+], [], [f"{p}/Nadelbäume im Winter"])
+
+UNITS["hsu/k3-nadelbaeume.json"] = unit(p, "Nadelbäume", "🌲", "#1f6b45", [
+    lesson("Nadelbäume kennenlernen", "🌲", [
+        ch(p, "Was stimmt?", "Welcher Baum wächst in Deutschland am häufigsten?", ["die Fichte", "die Eibe", "die Lärche"], "die Fichte"),
+        ch(p, "Was stimmt?", "Welcher Nadelbaum verliert im Herbst seine Nadeln?", ["die Lärche", "die Fichte", "die Tanne"], "die Lärche"),
+        ch(p, "Was stimmt?", "Welcher Nadelbaum hat keine Zapfen, sondern rote Beeren?", ["die Eibe", "die Kiefer", "die Fichte"], "die Eibe"),
+        ch(p, "Was stimmt?", "Woraus macht man oft Weihnachtsbäume?", ["aus Tannen und Fichten", "aus Birken", "aus Eichen"], "aus Tannen und Fichten"),
+        wahr(p, "Alle Nadelbäume bleiben im Winter grün.", False, "Die Lärche wird im Herbst gelb und wirft ihre Nadeln ab."),
+        wahr(p, "Nadeln sind auch Blätter, nur ganz schmal.", True),
+    ], mix=False),
+    lesson("Nadeln und Zapfen", "🔎", [
+        pairs(p, "Welche Nadeln gehören zu welchem Baum?", "Zu welchem Baum gehören diese Nadeln?", [
+            ("spitz, stechen, rund um den Zweig", "Fichte"), ("weich, flach, zwei weiße Streifen", "Tanne"),
+            ("lang, immer zu zweit", "Kiefer"), ("weich, in Büscheln", "Lärche"),
+        ]),
+        pairs(p, "Welcher Zapfen gehört zu welchem Baum?", "Zu welchem Baum gehört dieser Zapfen?", [
+            ("lang, hängt nach unten", "Fichte"), ("steht aufrecht und zerfällt am Baum", "Tanne"),
+            ("klein und rund", "Kiefer"), ("gar kein Zapfen, rote Beeren", "Eibe"),
+        ]),
+        ch(p, "Was stimmt?", "Du gehst barfuß über Nadeln und es piekst sehr. Welcher Baum steht über dir?", ["Fichte", "Tanne", "Lärche"], "Fichte",
+           "Merksatz: Die Fichte sticht, die Tanne nicht."),
+        ch(p, "Was stimmt?", "Warum findet man am Boden fast nie ganze Tannenzapfen?", ["Sie zerfallen schon oben am Baum.", "Die Eichhörnchen nehmen alle mit.", "Tannen haben keine Zapfen."], "Sie zerfallen schon oben am Baum.",
+           "Die meisten Zapfen, die man im Wald findet, sind Fichtenzapfen."),
+        ch(p, "Was stimmt?", "Was steckt zwischen den Schuppen eines Zapfens?", ["die Samen", "Wasser", "Honig"], "die Samen"),
+        ch(p, "Was stimmt?", "Warum heißen Nadelbäume auch Nacktsamer?", ["Ihre Samen liegen frei am Zapfen und stecken in keiner Frucht.", "Sie haben keine Rinde.", "Sie wachsen nur im Sommer."], "Ihre Samen liegen frei am Zapfen und stecken in keiner Frucht.",
+           "Beim Apfel ist es anders: Seine Samen stecken in der Frucht. Solche Pflanzen heißen Bedecktsamer."),
+        wahr(p, "Bei trockenem Wetter öffnen sich die Zapfen, bei Regen schließen sie sich.", True),
+    ], mix=False),
+    lesson("Nadelbäume im Winter", "❄️", [
+        ch(p, "Was stimmt?", "Warum können Nadelbäume im Winter ihre Nadeln behalten?", ["Die Nadeln sind schmal und haben eine Wachsschicht.", "Die Nadeln sind aus Holz.", "Nadelbäume brauchen kein Wasser."], "Die Nadeln sind schmal und haben eine Wachsschicht."),
+        ch(p, "Was stimmt?", "Was heißt immergrün?", ["Der Baum ist das ganze Jahr grün.", "Der Baum blüht immer.", "Der Baum wächst nur im Winter."], "Der Baum ist das ganze Jahr grün."),
+        ch(p, "Was stimmt?", "Wie lange bleibt eine Fichtennadel ungefähr am Baum?", ["mehrere Jahre", "einen Tag", "nur einen Sommer"], "mehrere Jahre"),
+        wahr(p, "Ein Nadelbaum verliert nie eine einzige Nadel.", False, "Er verliert immer wieder ein paar alte Nadeln, aber nie alle auf einmal."),
+        wahr(p, "Die biegsamen Äste lassen den schweren Schnee abrutschen.", True),
+        wahr(p, "Im Winter fressen Eichhörnchen und Vögel die Samen aus den Zapfen.", True),
+    ]),
+    lesson("Laub oder Nadel?", "🍂", [
+        sort(p, "Laubbaum oder Nadelbaum?", "Ist das ein Laubbaum oder ein Nadelbaum?", ["Laubbaum", "Nadelbaum"], [
+            ("Fichte", "Nadelbaum"), ("Tanne", "Nadelbaum"), ("Kiefer", "Nadelbaum"), ("Lärche", "Nadelbaum"), ("Eibe", "Nadelbaum"),
+            ("Buche", "Laubbaum"), ("Birke", "Laubbaum"), ("Eberesche", "Laubbaum"), ("Linde", "Laubbaum"),
+        ]),
+        sort(p, "Nacktsamer oder Bedecktsamer?", "Liegen die Samen frei oder stecken sie in einer Frucht?", ["frei am Zapfen", "in einer Frucht"], [
+            ("Fichte", "frei am Zapfen"), ("Kiefer", "frei am Zapfen"), ("Tanne", "frei am Zapfen"),
+            ("Apfelbaum", "in einer Frucht"), ("Kirschbaum", "in einer Frucht"), ("Tomate", "in einer Frucht"),
+        ]),
+        wahr(p, "Die Lärche ist ein Nadelbaum, sieht im Winter aber kahl aus wie ein Laubbaum.", True),
+    ], mix=False),
+    test(12),
+])
+
+# ---------- Heimische Giftpflanzen ----------
+p = "h3-gift"
+wissen("hsu-giftregeln", "⚠️", "Regeln bei Giftpflanzen", [
+    "Iss **nichts**, was du nicht sicher kennst. Frag immer einen Erwachsenen.",
+    "Steck keine Blätter, Beeren oder Blüten in den Mund.",
+    "Wasch dir nach dem Spielen in der Natur die **Hände**.",
+    "Im Notfall: sofort einen **Erwachsenen** holen. Er ruft den **Giftnotruf** an (in Bayern 089 19240) oder im schlimmen Fall die **112**.",
+    "Nimm einen Rest der Pflanze mit. Dann weiß der Arzt, was es war.",
+    "**Nicht** erbrechen und **keine Milch** trinken. Am besten einen Schluck Wasser oder Tee.",
+], [], [f"{p}/Was sind Giftpflanzen?"])
+wissen("hsu-giftpflanzen", "☠️", "Giftpflanzen erkennen", [
+    "**Maiglöckchen**: kleine weiße Glöckchen, später rote Beeren. Blätter sehen aus wie Bärlauch.",
+    "**Fingerhut**: hohe Blütenstände mit lila Glocken.",
+    "**Eisenhut**: blaue Blüten wie ein Helm. Eine der giftigsten Pflanzen Europas.",
+    "**Herbstzeitlose**: lila Blüte im Herbst auf Wiesen.",
+    "**Tollkirsche**: schwarze, glänzende Beeren wie Kirschen.",
+    "**Eibe**, **Goldregen** (gelbe Blütentrauben) und **Pfaffenhütchen** (rosa Früchte) sind giftige Bäume und Sträucher.",
+], [], [f"{p}/Kleine Giftpflanzen", f"{p}/Giftige Sträucher und Bäume"])
+wissen("hsu-giftgemuese", "🥔", "Vorsicht bei Gemüse", [
+    "**Bohnen** nie roh essen. Erst durch Kochen werden sie bekömmlich.",
+    "Bei **Kartoffeln** grüne Stellen und Keime wegschneiden.",
+    "**Grüne Tomaten** nicht essen. Nur rote, reife Tomaten.",
+    "Beim **Rhabarber** nur die Stiele essen, nie die Blätter.",
+    "**Holunderbeeren** nur gekocht essen, zum Beispiel als Saft.",
+], ["Bärlauch riecht nach **Knoblauch**. Maiglöckchen riechen nicht danach."], [f"{p}/Giftiges Gemüse"])
+
+UNITS["hsu/k3-giftpflanzen.json"] = unit(p, "Heimische Giftpflanzen", "⚠️", "#7a3fb0", [
+    lesson("Was sind Giftpflanzen?", "⚠️", [
+        ch(p, "Was stimmt?", "Was ist eine Giftpflanze?", ["eine Pflanze, die krank macht, wenn man sie isst oder berührt", "jede Pflanze mit Stacheln", "eine Pflanze, die nur im Dunkeln wächst"], "eine Pflanze, die krank macht, wenn man sie isst oder berührt"),
+        sort(p, "Richtig oder falsch?", "Ist das richtig oder falsch?", ["richtig", "falsch"], [
+            ("Unbekannte Beeren nie essen", "richtig"), ("Nach dem Spielen im Garten die Hände waschen", "richtig"),
+            ("Einen Erwachsenen fragen, ob man etwas essen darf", "richtig"), ("Schöne Blüten probieren", "falsch"),
+            ("Beeren essen, weil Vögel sie auch fressen", "falsch"), ("Blätter kauen, um zu sehen, wie sie schmecken", "falsch"),
+        ]),
+        reihe(p, "Dein Freund hat giftige Beeren gegessen. Was tust du? Bring es in die richtige Reihenfolge!", [
+            "Einen Erwachsenen holen", "Der Erwachsene ruft den Giftnotruf an", "Einen Rest der Pflanze mitnehmen", "Zum Arzt fahren"]),
+        ch(p, "Was stimmt?", "Was soll man bei einer Vergiftung NICHT tun?", ["Milch trinken und erbrechen", "einen Erwachsenen holen", "den Giftnotruf anrufen"], "Milch trinken und erbrechen"),
+        ty(p, "Weißt du die Nummer?", "Wie lautet die Notrufnummer für Rettungsdienst und Feuerwehr?", "112"),
+        wahr(p, "Was Vögel fressen, ist für Menschen auch ungefährlich.", False, "Vögel vertragen viele Beeren, die für Menschen giftig sind."),
+        wahr(p, "Manche Pflanzen schaden schon, wenn man sie nur berührt.", True, "Zum Beispiel der Riesen-Bärenklau. Sein Saft macht in der Sonne schlimme Blasen auf der Haut."),
+    ], mix=False),
+    lesson("Kleine Giftpflanzen", "🌸", [
+        pairs(p, "Welche Giftpflanze ist das?", "Welche Giftpflanze ist das?", [
+            ("kleine weiße Glöckchen im Mai", "Maiglöckchen"), ("hohe Blüte mit vielen lila Glocken", "Fingerhut"),
+            ("blaue Blüten wie ein Helm", "Eisenhut"), ("lila Blüte im Herbst auf der Wiese", "Herbstzeitlose"),
+        ]),
+        ch(p, "Was stimmt?", "Woran erkennst du Bärlauch und kannst ihn vom Maiglöckchen unterscheiden?", ["Bärlauch riecht nach Knoblauch.", "Bärlauch ist größer.", "Bärlauch ist blau."], "Bärlauch riecht nach Knoblauch.",
+           "Trotzdem: Bärlauch nur mit einem Erwachsenen sammeln. Die Blätter sehen fast gleich aus."),
+        ch(p, "Was stimmt?", "Welche Pflanze gilt als eine der giftigsten in Europa?", ["Eisenhut", "Gänseblümchen", "Löwenzahn"], "Eisenhut"),
+        ch(p, "Was stimmt?", "Welche Farbe haben die Beeren vom Maiglöckchen?", ["rot", "blau", "weiß"], "rot"),
+        ch(p, "Was stimmt?", "Der Aronstab hat im Sommer leuchtend … Beeren.", ["rote", "blaue", "weiße"], "rote", keep=True),
+        wahr(p, "Beim Maiglöckchen sind alle Teile giftig.", True),
+        wahr(p, "Der Fingerhut ist ungiftig, weil man ihn in Gärten pflanzt.", False, "Auch in Gärten wachsen viele Giftpflanzen. Der Fingerhut ist sehr giftig."),
+    ], mix=False),
+    lesson("Giftige Sträucher und Bäume", "🌳", [
+        pairs(p, "Welche Giftpflanze ist das?", "Welche Giftpflanze ist das?", [
+            ("schwarze, glänzende Beeren wie Kirschen", "Tollkirsche"), ("Nadelbaum mit roten Beeren", "Eibe"),
+            ("gelbe, hängende Blütentrauben", "Goldregen"), ("rosa Früchte wie kleine Mützen", "Pfaffenhütchen"),
+        ]),
+        ch(p, "Was stimmt?", "Warum ist die Tollkirsche so gefährlich?", ["Ihre Beeren sehen aus wie leckere Kirschen.", "Sie hat Stacheln.", "Sie wächst nur in der Wüste."], "Ihre Beeren sehen aus wie leckere Kirschen."),
+        ch(p, "Was stimmt?", "Was ist beim Goldregen besonders gefährlich?", ["die Samen in den Schoten, sie sehen aus wie Bohnen", "der Schatten", "die Rinde, wenn man sie anschaut"], "die Samen in den Schoten, sie sehen aus wie Bohnen"),
+        sort(p, "Giftig oder essbar?", "Ist diese Beere giftig oder essbar?", ["giftig", "essbar"], [
+            ("Tollkirsche", "giftig"), ("Eibe", "giftig"), ("Maiglöckchen", "giftig"), ("Pfaffenhütchen", "giftig"),
+            ("Walderdbeere", "essbar"), ("Himbeere", "essbar"), ("Heidelbeere", "essbar"),
+        ]),
+        wahr(p, "Die Eibe ist ein Nadelbaum, der giftig ist.", True),
+        wahr(p, "Giftige Sträucher wachsen auch in Parks und Gärten.", True),
+    ], mix=False),
+    lesson("Giftiges Gemüse", "🥔", [
+        sort(p, "Wie isst man das sicher?", "Darf man das so essen?", ["darf man essen", "nicht essen"], [
+            ("gekochte grüne Bohnen", "darf man essen"), ("rohe grüne Bohnen", "nicht essen"),
+            ("rote, reife Tomaten", "darf man essen"), ("grüne, unreife Tomaten", "nicht essen"),
+            ("Kartoffeln ohne grüne Stellen", "darf man essen"), ("grüne Stellen an Kartoffeln", "nicht essen"),
+            ("Rhabarberstiele, gekocht", "darf man essen"), ("Rhabarberblätter", "nicht essen"),
+        ]),
+        ch(p, "Was stimmt?", "Was machst du mit Keimen an einer Kartoffel?", ["großzügig wegschneiden", "mitessen", "anmalen"], "großzügig wegschneiden"),
+        ch(p, "Was stimmt?", "Wie kann man Holunderbeeren essen?", ["nur gekocht, zum Beispiel als Saft", "roh vom Strauch", "gar nicht, nie"], "nur gekocht, zum Beispiel als Saft"),
+        ch(p, "Was stimmt?", "Warum muss man Bohnen kochen?", ["Roh enthalten sie einen Giftstoff.", "Roh sind sie zu süß.", "Roh sind sie zu weich."], "Roh enthalten sie einen Giftstoff."),
+        wahr(p, "Kartoffeln soll man dunkel lagern, damit sie nicht grün werden.", True),
+        wahr(p, "Grüne Tomaten schmecken besonders gesund.", False, "Unreife Tomaten enthalten einen Giftstoff. Nur rote, reife Tomaten essen."),
+    ]),
+    test(12),
+])
+
+# ---------- Sonne, Erde und Mond ----------
+p = "h3-himmel"
+PL = ["Merkur", "Venus", "Erde", "Mars", "Jupiter", "Saturn", "Uranus", "Neptun"]
+wissen("hsu-himmelskoerper", "⭐", "Himmelskörper", [
+    "Ein **Stern** leuchtet selbst. Die **Sonne** ist ein Stern, der uns am nächsten ist.",
+    "Ein **Planet** kreist um die Sonne und leuchtet nicht selbst. Die **Erde** ist ein Planet.",
+    "Ein **Mond** kreist um einen Planeten. Unser Mond wird von der Sonne angestrahlt.",
+    "Ein **Komet** ist ein Brocken aus Eis und Staub mit einem leuchtenden **Schweif**.",
+    "Eine **Sternschnuppe** ist ein kleiner Stein, der in der Luft verglüht.",
+], [], [f"{p}/Himmelskörper"])
+wissen("hsu-planeten", "🪐", "Die acht Planeten", [
+    "Von der Sonne aus: **Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus, Neptun**.",
+    "Der **Jupiter** ist der größte Planet, der **Merkur** der kleinste.",
+    "Der **Mars** sieht rot aus. Der **Saturn** hat große Ringe.",
+    "Die **Erde** ist der einzige Planet, auf dem wir Leben kennen.",
+], ["Merksatz: **M**ein **V**ater **e**rklärt **m**ir **j**eden **S**onntag **u**nseren **N**achthimmel."], [f"{p}/Die Planeten ordnen"],
+    trick="Mein Vater erklärt mir jeden Sonntag unseren Nachthimmel.")
+wissen("hsu-tagjahr", "🌍", "Tag, Monat, Jahr", [
+    "**Tag**: Die Erde dreht sich in **24 Stunden** einmal um sich selbst. Auf der Seite zur Sonne ist **Tag**, auf der anderen **Nacht**.",
+    "**Monat**: Der Mond braucht ungefähr **einen Monat**, um die Erde einmal zu umkreisen.",
+    "**Jahr**: Die Erde braucht **365 Tage**, um einmal um die Sonne zu kreisen. Im **Schaltjahr** sind es 366 Tage.",
+    "Die Sonne geht im **Osten** auf und im **Westen** unter.",
+], [], [f"{p}/Tag und Nacht", f"{p}/Jahr, Monat, Tag"])
+wissen("hsu-jahreszeiten3", "🌷", "Warum es Jahreszeiten gibt", [
+    "Die Erdachse ist **schief**. Darum ist unsere Hälfte der Erde mal mehr, mal weniger zur Sonne geneigt.",
+    "**Sommer**: Die Sonne steht hoch, scheint lange und wärmt stark.",
+    "**Winter**: Die Sonne steht tief, die Tage sind kurz und es ist kalt.",
+    "Um den **21. Juni** ist der längste Tag, um den **21. Dezember** der kürzeste.",
+    "In Australien ist es genau umgekehrt: Dort ist an Weihnachten **Sommer**.",
+], [], [f"{p}/Warum es Jahreszeiten gibt"])
+wissen("hsu-mondphasen", "🌙", "Die Mondphasen", [
+    "Der Mond leuchtet nicht selbst. Wir sehen nur den Teil, den die **Sonne** anstrahlt.",
+    "**Neumond**: Wir sehen den Mond gar nicht.",
+    "**Zunehmender Mond**: Er wird jeden Abend ein bisschen größer.",
+    "**Vollmond**: Wir sehen eine ganze runde Scheibe.",
+    "**Abnehmender Mond**: Er wird wieder kleiner. Nach etwa **4 Wochen** ist wieder Neumond.",
+], [], [f"{p}/Die Mondphasen"])
+
+UNITS["hsu/k3-himmel.json"] = unit(p, "Sonne, Erde und Mond", "🌍", "#2b3f8f", [
+    lesson("Himmelskörper", "⭐", [
+        pairs(p, "Was ist das?", "Was ist das für ein Himmelskörper?", [
+            ("Sonne", "ein Stern, der selbst leuchtet"), ("Erde", "ein Planet"), ("Mond", "kreist um die Erde"), ("Komet", "Eis und Staub mit Schweif"),
+        ]),
+        ch(p, "Was stimmt?", "Die Sonne ist ein …", ["Stern", "Planet", "Mond"], "Stern", keep=True),
+        ch(p, "Was stimmt?", "Was ist eine Sternschnuppe wirklich?", ["ein kleiner Stein, der in der Luft verglüht", "ein Stern, der herunterfällt", "ein Flugzeug"], "ein kleiner Stein, der in der Luft verglüht"),
+        ch(p, "Was stimmt?", "Warum sieht man tagsüber keine Sterne?", ["Die Sonne ist viel heller und überstrahlt sie.", "Die Sterne schlafen am Tag.", "Die Sterne sind nur nachts da."], "Die Sonne ist viel heller und überstrahlt sie."),
+        ch(p, "Was stimmt?", "Mit welchem Gerät kann man weit entfernte Sterne besser sehen?", ["mit einem Fernrohr", "mit einer Lupe", "mit einem Mikroskop"], "mit einem Fernrohr"),
+        ch(p, "Was stimmt?", "Welcher Stern zeigt nachts ungefähr nach Norden?", ["der Polarstern", "die Sonne", "der Abendstern"], "der Polarstern"),
+        wahr(p, "Der Mond leuchtet selbst wie eine Lampe.", False, "Der Mond wird von der Sonne angestrahlt und wirft das Licht zurück."),
+        wahr(p, "Im Jahr 1969 waren zum ersten Mal Menschen auf dem Mond.", True),
+    ], mix=False),
+    lesson("Die Planeten ordnen", "🪐", [
+        reihe(p, "Ordne die Planeten von der Sonne aus!", PL[:4]),
+        reihe(p, "Ordne die äußeren Planeten von der Sonne aus!", PL[4:]),
+        reihe(p, "Ordne alle acht Planeten von der Sonne aus!", PL),
+        ch(p, "Was stimmt?", "Welcher Planet ist der größte?", ["Jupiter", "Erde", "Merkur"], "Jupiter"),
+        ch(p, "Was stimmt?", "Welcher Planet ist der Sonne am nächsten?", ["Merkur", "Neptun", "Mars"], "Merkur"),
+        ch(p, "Was stimmt?", "Welcher Planet wird der rote Planet genannt?", ["Mars", "Venus", "Uranus"], "Mars"),
+        ch(p, "Was stimmt?", "Welcher Planet hat besonders große, schöne Ringe?", ["Saturn", "Erde", "Merkur"], "Saturn"),
+        ch(p, "Was stimmt?", "Der wievielte Planet von der Sonne aus ist die Erde?", ["der dritte", "der erste", "der achte"], "der dritte", keep=True),
+        wahr(p, "Pluto zählt heute nicht mehr zu den Planeten. Er ist ein Zwergplanet.", True),
+    ], mix=False),
+    lesson("Tag und Nacht", "🌗", [
+        ch(p, "Was stimmt?", "Warum gibt es Tag und Nacht?", ["Die Erde dreht sich um sich selbst.", "Die Sonne geht abends schlafen.", "Der Mond schiebt sich vor die Sonne."], "Die Erde dreht sich um sich selbst."),
+        ch(p, "Was stimmt?", "Wie lange braucht die Erde für eine Drehung um sich selbst?", ["24 Stunden", "eine Woche", "ein Jahr"], "24 Stunden"),
+        ch(p, "Was stimmt?", "Wo geht die Sonne auf?", ["im Osten", "im Westen", "im Norden"], "im Osten"),
+        ch(p, "Was stimmt?", "Wo geht die Sonne unter?", ["im Westen", "im Osten", "im Süden"], "im Westen"),
+        ch(p, "Was stimmt?", "Wo steht die Sonne bei uns mittags?", ["im Süden", "im Norden", "im Osten"], "im Süden"),
+        wahr(p, "Wenn bei uns Nacht ist, ist auf der anderen Seite der Erde Tag.", True),
+        wahr(p, "Eigentlich bewegt sich nicht die Sonne über den Himmel, sondern die Erde dreht sich.", True),
+    ], mix=False),
+    lesson("Jahr, Monat, Tag", "📅", [
+        pairs(p, "Was passiert in dieser Zeit?", "Was passiert in dieser Zeit?", [
+            ("ein Tag", "Die Erde dreht sich einmal um sich selbst."),
+            ("ungefähr ein Monat", "Der Mond kreist einmal um die Erde."),
+            ("ein Jahr", "Die Erde kreist einmal um die Sonne."),
+        ]),
+        ch(p, "Was stimmt?", "Wie viele Tage hat ein normales Jahr?", ["365", "100", "52"], "365"),
+        ch(p, "Was stimmt?", "Wie viele Tage hat ein Schaltjahr?", ["366", "365", "360"], "366"),
+        ch(p, "Was stimmt?", "Welchen Tag gibt es nur im Schaltjahr?", ["den 29. Februar", "den 31. April", "den 32. Dezember"], "den 29. Februar"),
+        ty(p, "Weißt du es?", "Wie viele Monate hat ein Jahr?", "12"),
+        ty(p, "Weißt du es?", "Wie viele Stunden hat ein Tag?", "24"),
+        wahr(p, "Die Erde kreist um die Sonne, nicht die Sonne um die Erde.", True),
+    ]),
+    lesson("Warum es Jahreszeiten gibt", "🌷", [
+        ch(p, "Was stimmt?", "Warum gibt es Jahreszeiten?", ["Die Erdachse ist schief.", "Die Sonne ist im Winter ausgeschaltet.", "Im Sommer ist die Erde viel näher an der Sonne."], "Die Erdachse ist schief.",
+           "Im Sommer ist unsere Hälfte der Erde zur Sonne geneigt. Die Sonne steht höher und scheint länger."),
+        sort(p, "Sommer oder Winter?", "Ist das bei uns im Sommer oder im Winter?", ["Sommer", "Winter"], [
+            ("Die Sonne steht mittags hoch.", "Sommer"), ("Die Tage sind lang.", "Sommer"), ("Die Sonne steht tief.", "Winter"),
+            ("Es wird früh dunkel.", "Winter"), ("Der längste Tag des Jahres", "Sommer"), ("Der kürzeste Tag des Jahres", "Winter"),
+        ]),
+        ch(p, "Was stimmt?", "Wann ist ungefähr der längste Tag des Jahres?", ["am 21. Juni", "am 21. Dezember", "am 1. Januar"], "am 21. Juni"),
+        ch(p, "Was stimmt?", "Welche Jahreszeit ist in Australien, wenn bei uns Weihnachten ist?", ["Sommer", "Winter", "Herbst"], "Sommer"),
+        reihe(p, "Bring die Jahreszeiten in die richtige Reihenfolge! Fang mit dem Frühling an.", ["Frühling", "Sommer", "Herbst", "Winter"]),
+        wahr(p, "Am Frühlingsanfang sind Tag und Nacht ungefähr gleich lang.", True),
+    ], mix=False),
+    lesson("Die Mondphasen", "🌙", [
+        reihe(p, "Bring die Mondphasen in die richtige Reihenfolge! Fang mit dem Neumond an.", [
+            "Neumond", "zunehmender Mond", "Vollmond", "abnehmender Mond"]),
+        ch(p, "Was stimmt?", "Warum sieht der Mond nicht immer gleich aus?", ["Die Sonne strahlt immer einen anderen Teil an, den wir sehen.", "Der Mond wird angeknabbert.", "Wolken schneiden ein Stück ab."], "Die Sonne strahlt immer einen anderen Teil an, den wir sehen."),
+        ch(p, "Was stimmt?", "Wie lange dauert es von einem Vollmond bis zum nächsten?", ["ungefähr 4 Wochen", "einen Tag", "ein Jahr"], "ungefähr 4 Wochen"),
+        ch(p, "Was stimmt?", "Was siehst du bei Neumond?", ["fast nichts vom Mond", "eine runde helle Scheibe", "einen halben Mond"], "fast nichts vom Mond"),
+        wahr(p, "Der zunehmende Mond wird jeden Abend ein Stückchen größer.", True),
+        wahr(p, "Der Mond ist manchmal auch am Tag zu sehen.", True),
+    ]),
+    test(12),
+])
+
+# =====================================================================
+# 3. KLASSE, RUNDE 2b: Zeichnungen, Schaubilder, Auge vertieft, Erde
+# =====================================================================
+def add_lessons(path, *ls):
+    u = UNITS[path]["lessons"]
+    pos = len(u) - 1 if u and u[-1].get("test") else len(u)
+    for l in ls:
+        u.insert(pos, l); pos += 1
+
+
+# ---------- Auge vertieft ----------
+p = "h3-sinne"
+AUGE_VORN = [(150, 22, "Augenbraue"), (150, 64, "Lid"), (98, 92, "Wimpern"), (178, 126, "Iris"), (150, 112, "Pupille")]
+AUGE_INNEN = [(92, 100, "Hornhaut"), (110, 78, "Iris"), (124, 100, "Linse"), (165, 100, "Glaskörper"), (205, 58, "Netzhaut"), (255, 104, "Sehnerv"), (190, 14, "Augenhöhle")]
+wissen("hsu-auge-aussen", "👁️", "Das Auge von außen", [
+    "Die **Augenbraue** lenkt Schweiß und Regen vom Auge weg.",
+    "Das **Lid** schließt sich beim Blinzeln. Es verteilt die Tränenflüssigkeit und schützt das Auge.",
+    "Die **Wimpern** halten Staub und kleine Insekten ab.",
+    "Die **Iris** ist der farbige Ring. In ihrer Mitte ist die schwarze **Pupille**, ein Loch, durch das Licht ins Auge fällt.",
+], [], [f"{p}/Das Auge von außen"])
+wissen("hsu-auge-innen", "🔎", "Das Auge von innen", [
+    "Vorn ist die durchsichtige **Hornhaut**. Dahinter liegen **Iris** und **Pupille**.",
+    "Die **Linse** bündelt das Licht. Sie macht das Bild scharf.",
+    "Innen ist das Auge mit dem **Glaskörper** gefüllt, einer klaren, festen Masse wie Gelee.",
+    "Hinten auf der **Netzhaut** entsteht das Bild. Es steht dort auf dem Kopf.",
+    "Der **Sehnerv** bringt das Bild zum **Gehirn**. Das Gehirn dreht es richtig herum.",
+    "Das Auge liegt geschützt in der knöchernen **Augenhöhle**.",
+], ["Licht → Hornhaut → Pupille → Linse → Glaskörper → Netzhaut → Sehnerv → Gehirn"], [f"{p}/Das Auge von innen", f"{p}/So sehen wir"])
+add_lessons("hsu/k3-sinne.json",
+    lesson("Das Auge von außen", "👁️", [
+        schaubild(p, "Beschrifte das Auge! Tipp eine Nummer an und dann den passenden Begriff.", "auge-vorn", AUGE_VORN),
+        pairs(p, "Wie schützt dieser Teil das Auge?", "Wie schützt dieser Teil das Auge?", [
+            ("Augenbraue", "lenkt Schweiß vom Auge weg"), ("Wimpern", "halten Staub ab"),
+            ("Lid", "schließt sich beim Blinzeln"), ("Tränen", "spülen das Auge sauber"),
+        ]),
+        bildfrage(p, "Was ist das?", "Wie heißt der farbige Ring im Auge?", "auge-vorn", ["Iris", "Pupille", "Lid"], "Iris"),
+        bildfrage(p, "Was ist das?", "Wie heißt das schwarze Loch in der Mitte?", "auge-vorn", ["Pupille", "Iris", "Linse"], "Pupille"),
+        ch(p, "Was stimmt?", "Wie oft blinzelst du ungefähr in einer Minute?", ["etwa 10- bis 20-mal", "einmal", "1000-mal"], "etwa 10- bis 20-mal"),
+        wahr(p, "Die Pupille ist in Wirklichkeit ein Loch.", True, "Sie sieht schwarz aus, weil es im Inneren des Auges dunkel ist."),
+    ], mix=False),
+    lesson("Das Auge von innen", "🔎", [
+        schaubild(p, "Beschrifte das Auge von innen!", "auge-schnitt", AUGE_INNEN),
+        pairs(p, "Was macht dieser Teil des Auges?", "Was macht dieser Teil des Auges?", [
+            ("Hornhaut", "durchsichtige Schutzschicht vorn"), ("Glaskörper", "füllt das Auge wie klares Gelee"),
+            ("Augenhöhle", "Knochen, die das Auge schützen"), ("Netzhaut", "hier entsteht das Bild"),
+        ]),
+        bildfrage(p, "Was ist das?", "Welcher Teil macht das Bild scharf?", "auge-schnitt", ["die Linse", "die Hornhaut", "der Sehnerv"], "die Linse"),
+        bildfrage(p, "Was ist das?", "Welcher Teil bringt das Bild zum Gehirn?", "auge-schnitt", ["der Sehnerv", "die Netzhaut", "die Iris"], "der Sehnerv"),
+        wahr(p, "Auf der Netzhaut steht das Bild auf dem Kopf.", True, "Das Gehirn dreht es wieder richtig herum."),
+        wahr(p, "Der größte Teil des Augapfels liegt versteckt in der Augenhöhle.", True),
+    ], mix=False),
+    lesson("So sehen wir", "💡", [
+        reihe(p, "Welchen Weg nimmt das Licht? Bring es in die richtige Reihenfolge!", [
+            "Hornhaut", "Pupille", "Linse", "Glaskörper", "Netzhaut", "Sehnerv", "Gehirn"]),
+        ch(p, "Was stimmt?", "Warum sehen wir in völliger Dunkelheit nichts?", ["Ohne Licht kommt kein Bild ins Auge.", "Die Augen schlafen.", "Die Linse ist zu."], "Ohne Licht kommt kein Bild ins Auge."),
+        ch(p, "Was stimmt?", "Ein Kind sieht in der Ferne alles verschwommen, in der Nähe aber gut. Es ist …", ["kurzsichtig", "weitsichtig", "farbenblind"], "kurzsichtig"),
+        ch(p, "Was stimmt?", "Was hilft, wenn man nicht mehr scharf sieht?", ["eine Brille", "eine Sonnenbrille", "Augentropfen mit Zucker"], "eine Brille"),
+        ch(p, "Was stimmt?", "Warum haben wir zwei Augen?", ["Damit wir Entfernungen besser schätzen können.", "Damit eins schlafen kann.", "Weil eins zu klein ist."], "Damit wir Entfernungen besser schätzen können."),
+        wahr(p, "Beim Lesen soll das Licht gut sein, damit die Augen nicht so schnell müde werden.", True),
+    ], mix=False),
+)
+
+# ---------- Zeichnungen in den Pflanzen-Themen ----------
+p = "h3-pflanze"
+add_lessons("hsu/k3-pflanze.json",
+    lesson("Pflanzen genau ansehen", "🔎", [
+        schaubild(p, "Beschrifte die Pflanze!", "bluetenpflanze", [(122, 38, "Blüte"), (78, 110, "Blatt"), (100, 145, "Stängel"), (100, 180, "Wurzel")], 200, 200),
+        bildreihe(p, "Wie wächst eine Bohne? Bring die Bilder in die richtige Reihenfolge!", [
+            "[[bohne-1]] Samen", "[[bohne-2]] quillt", "[[bohne-3]] Wurzel", "[[bohne-4]] Spross", "[[bohne-5]] Blätter"]),
+        bildfrage(p, "Was siehst du?", "Was wächst hier gerade aus dem Samen?", "bohne-3", ["die Wurzel", "die Blüte", "die Frucht"], "die Wurzel"),
+        bildfrage(p, "Wie reist dieser Samen?", "Wie wird dieser Samen verbreitet?", "frucht-ahorn", ["mit dem Wind", "mit dem Wasser", "im Fell von Tieren"], "mit dem Wind"),
+        bildfrage(p, "Wie reist dieser Samen?", "Wer verbreitet diese Beeren?", "frucht-vogelbeeren", ["Vögel", "der Wind", "das Wasser"], "Vögel"),
+    ], mix=False),
+)
+
+wissen("hsu-samenpflanzen", "🌰", "Samen und Sporen", [
+    "Die meisten Pflanzen vermehren sich mit **Samen**. Damit ein Samen entsteht, muss die Blüte erst **bestäubt** und **befruchtet** werden.",
+    "Bei den Samenpflanzen gibt es zwei Gruppen: **Nacktsamer** und **Bedecktsamer**.",
+    "**Nacktsamer**: Die Samen liegen frei, zum Beispiel zwischen den Schuppen eines Zapfens (Fichte, Kiefer, Tanne).",
+    "**Bedecktsamer**: Die Samen sind von einer **Frucht** umhüllt (Apfel, Kirsche, Tomate, Bohne).",
+    "Moose, Farne und Pilze bilden keine Samen, sondern winzige **Sporen**. Dafür braucht es keine Befruchtung.",
+], [], [f"h3-pflanze/Nacktsamer und Bedecktsamer"])
+add_lessons("hsu/k3-pflanze.json",
+    lesson("Nacktsamer und Bedecktsamer", "🌰", [
+        ch("h3-pflanze", "Fülle die Lücke!", "Die meisten Pflanzen vermehren sich über …", ["Samen", "Wurzeln", "Steine"], "Samen"),
+        ch("h3-pflanze", "Fülle die Lücke!", "Damit Samen entstehen können, muss die Blüte erst … werden.", ["befruchtet", "gegossen", "gepflückt"], "befruchtet"),
+        ch("h3-pflanze", "Fülle die Lücke!", "Unter den Samenpflanzen gibt es Bedecktsamer und …", ["Nacktsamer", "Sporensamer", "Wurzelsamer"], "Nacktsamer"),
+        ch("h3-pflanze", "Fülle die Lücke!", "Moose und Farne bilden keine Samen, sondern …", ["Sporen", "Zapfen", "Früchte"], "Sporen"),
+        sort("h3-pflanze", "Nacktsamer oder Bedecktsamer?", "Ist diese Pflanze ein Nacktsamer oder ein Bedecktsamer?", ["Nacktsamer", "Bedecktsamer"], [
+            ("Fichte", "Nacktsamer"), ("Kiefer", "Nacktsamer"), ("Tanne", "Nacktsamer"), ("Lärche", "Nacktsamer"),
+            ("Apfelbaum", "Bedecktsamer"), ("Kirschbaum", "Bedecktsamer"), ("Bohne", "Bedecktsamer"), ("Sonnenblume", "Bedecktsamer"),
+        ]),
+        bildfrage("h3-pflanze", "Schau dir das Bild genau an!", "Die Samen liegen frei zwischen den Schuppen. Ist die Fichte ein …", "zapfen-fichte", ["Nacktsamer", "Bedecktsamer"], "Nacktsamer", keep=True),
+        bildfrage("h3-pflanze", "Schau dir das Bild genau an!", "Die Kerne stecken im Fruchtfleisch. Ist der Apfelbaum ein …", "apfel-laengs", ["Nacktsamer", "Bedecktsamer"], "Bedecktsamer", keep=True),
+        wahr("h3-pflanze", "Sporen entstehen ohne Befruchtung.", True),
+    ], mix=False),
+)
+
+p = "h3-apfel"
+add_lessons("hsu/k3-apfel.json",
+    lesson("Den Apfel beschriften", "🍎", [
+        schaubild(p, "Beschrifte den aufgeschnittenen Apfel!", "apfel-laengs",
+                  [(103, 26, "Stiel"), (27, 100, "Schale"), (58, 128, "Fruchtfleisch"), (90, 104, "Kerne"), (100, 130, "Kerngehäuse"), (100, 180, "Blütenrest")], 200, 200),
+        schaubild(p, "Setze die richtigen Wörter ein! Das Bild hilft dir.", "apfel-laengs",
+                  [(27, 100, "Schale"), (103, 26, "Stiel"), (100, 180, "Blütenrest"), (52, 140, "Fruchtfleisch"), (122, 132, "Kerngehäuse"), (90, 104, "Kerne")], 200, 200,
+                  extra=["Wurzel"], labels=True, text=[
+                      "Außen ist der Apfel von der __ umhüllt. Sie schützt ihn vor Schmutz und davor, dass er austrocknet.",
+                      "Oben sitzt der __. Früher hat er die Blüte mit dem Zweig verbunden. Unten sieht man den __, die vertrockneten Reste der Blüte.",
+                      "Das meiste vom Apfel ist saftiges __. In der Mitte liegt das __. Darin stecken die __, die Samen des Apfelbaums.",
+                  ]),
+        bildfrage(p, "Was siehst du?", "So sieht ein Apfel aus, wenn man ihn quer durchschneidet. Wie viele Kammern hat der Stern?", "apfel-quer", ["5", "3", "8"], "5"),
+        schaubild(p, "Setze die richtigen Wörter ein!", "apfel-quer",
+                  [(None, None, "quer"), (None, None, "Stern"), (None, None, "fünf"), (None, None, "Kerne")], 200, 200,
+                  extra=["Kreis", "drei"], text=[
+                      "Schneidet man einen Apfel __ durch, sieht das Kerngehäuse aus wie ein __. Er hat __ Zacken.",
+                      "In jeder Kammer liegen die __. Aus ihnen kann ein neuer Apfelbaum wachsen.",
+                  ]),
+        bildfrage(p, "Was siehst du?", "Was sind die braunen Dinge in der Mitte?", "apfel-laengs", ["die Kerne, also die Samen", "Würmer", "Schokolade"], "die Kerne, also die Samen"),
+    ], mix=False),
+)
+
+p = "h3-gift"
+wissen("hsu-giftwas", "🛡️", "Warum sind Pflanzen giftig?", [
+    "Pflanzen können nicht weglaufen. Mit **Giftstoffen** schützen sie sich vor Tieren, die sie fressen wollen.",
+    "Manchmal ist die **ganze Pflanze** giftig, manchmal nur ein Teil, zum Beispiel die Beeren, die Samen oder die Blätter.",
+    "Giftige Tiere warnen oft mit **Warnfarben**, wie die Wespe. Einer Giftpflanze sieht man ihr Gift **nicht** an.",
+    "Auch Pflanzen, die man jeden Tag sieht, können giftig sein. Zum Beispiel **Efeu** an der Hauswand oder die **Eibe** in der Hecke.",
+    "Es kommt auf die **Menge** und die Stärke des Giftes an. Manche Pflanzen machen nur Bauchweh, andere können **tödlich** sein.",
+], [], [f"{p}/Warum sind Pflanzen giftig?"], trick="Was du nicht kennst, isst du nicht und fasst du möglichst nicht an.")
+UNITS["hsu/k3-giftpflanzen.json"]["lessons"].insert(0, lesson("Warum sind Pflanzen giftig?", "🛡️", [
+    ch(p, "Was stimmt?", "Warum bilden manche Pflanzen Gift?", ["um sich vor Tieren zu schützen, die sie fressen wollen", "damit sie schöner blühen", "damit sie schneller wachsen"], "um sich vor Tieren zu schützen, die sie fressen wollen"),
+    wahr(p, "Jede Giftpflanze erkennt man an einer leuchtenden Warnfarbe.", False, "Viele Giftpflanzen sehen ganz harmlos aus. Manche sehen sogar essbaren Pflanzen zum Verwechseln ähnlich."),
+    ch(p, "Was stimmt?", "Welche Teile einer Giftpflanze können giftig sein?", ["alle Teile oder nur einzelne, zum Beispiel Beeren oder Samen", "immer nur die Wurzel", "nur die Blüte"], "alle Teile oder nur einzelne, zum Beispiel Beeren oder Samen"),
+    wahr(p, "Efeu wächst an vielen Häusern und ist trotzdem giftig.", True),
+    ch(p, "Was stimmt?", "Wovon hängt ab, wie gefährlich eine Giftpflanze ist?", ["von der Stärke des Giftes und von der Menge", "von der Farbe der Blüte", "vom Wetter"], "von der Stärke des Giftes und von der Menge"),
+    ch(p, "Was stimmt?", "Manche Giftpflanzen haben sehr starke Gifte. Sie können … sein.", ["tödlich", "gesund", "lecker"], "tödlich"),
+    ch(p, "Was tust du?", "Du findest beim Spielen eine Pflanze, die du nicht kennst. Was tust du?", ["Ich esse sie nicht und fasse sie möglichst nicht an.", "Ich probiere ein kleines Stück.", "Ich pflücke sie und nehme sie mit nach Hause."], "Ich esse sie nicht und fasse sie möglichst nicht an."),
+], mix=False))
+
+p = "h3-laub"
+LBZ = [("blatt-buche", "Buche"), ("blatt-eiche", "Eiche"), ("blatt-birke", "Birke"), ("blatt-ahorn", "Ahorn"),
+       ("blatt-eberesche", "Eberesche"), ("blatt-kastanie", "Kastanie"), ("blatt-linde", "Linde")]
+FRZ = [("frucht-eichel", "Eiche"), ("frucht-buchecker", "Buche"), ("frucht-ahorn", "Ahorn"), ("frucht-vogelbeeren", "Eberesche"), ("frucht-kastanie", "Kastanie")]
+rnd = __import__("random").Random(36)
+def drei(richtig, alle):
+    andere = [x for x in alle if x != richtig]
+    rnd.shuffle(andere)
+    return [richtig] + andere[:2]
+NAMEN = [n for _, n in LBZ]
+add_lessons("hsu/k3-laubbaeume.json",
+    lesson("Blätter erkennen", "🍃", [bildfrage(p, "Welcher Baum ist das?", "Von welchem Baum ist dieses Blatt?", z, drei(n, NAMEN), n) for z, n in LBZ] + [
+        bildwahl(p, "Tipp auf das Blatt der Eiche!", ["blatt-eiche", "blatt-buche", "blatt-linde"], "blatt-eiche"),
+        bildwahl(p, "Tipp auf das Blatt vom Ahorn!", ["blatt-ahorn", "blatt-kastanie", "blatt-birke"], "blatt-ahorn"),
+        bildwahl(p, "Tipp auf das gefiederte Blatt der Eberesche!", ["blatt-eberesche", "blatt-buche", "blatt-kastanie"], "blatt-eberesche"),
+    ]),
+    lesson("Früchte erkennen", "🌰", [bildfrage(p, "Welcher Baum ist das?", "Von welchem Baum ist diese Frucht?", z, drei(n, NAMEN[:6]), n) for z, n in FRZ] + [
+        bildwahl(p, "Tipp auf die Frucht der Buche!", ["frucht-buchecker", "frucht-eichel", "frucht-kastanie"], "frucht-buchecker"),
+        bildwahl(p, "Was fliegt wie ein Propeller? Tipp es an!", ["frucht-ahorn", "frucht-eichel", "frucht-vogelbeeren"], "frucht-ahorn"),
+    ]),
+)
+
+p = "h3-nadel"
+NZ = [("zweig-fichte", "Fichte"), ("zweig-tanne", "Tanne"), ("zweig-kiefer", "Kiefer"), ("zweig-laerche", "Lärche"), ("zweig-eibe", "Eibe")]
+NN = [n for _, n in NZ]
+add_lessons("hsu/k3-nadelbaeume.json",
+    lesson("Zweige und Zapfen erkennen", "🌲", [bildfrage(p, "Welcher Baum ist das?", "Von welchem Nadelbaum ist dieser Zweig?", z, drei(n, NN), n) for z, n in NZ] + [
+        bildfrage(p, "Welcher Baum ist das?", "Dieser lange Zapfen hängt nach unten. Von welchem Baum ist er?", "zapfen-fichte", ["Fichte", "Tanne", "Kiefer"], "Fichte"),
+        bildfrage(p, "Welcher Baum ist das?", "Dieser Zapfen steht aufrecht auf dem Zweig. Von welchem Baum ist er?", "zapfen-tanne", ["Tanne", "Fichte", "Kiefer"], "Tanne"),
+        bildfrage(p, "Welcher Baum ist das?", "Dieser kleine, runde Zapfen ist von der …", "zapfen-kiefer", ["Kiefer", "Tanne", "Fichte"], "Kiefer", keep=True),
+        bildwahl(p, "Welcher Nadelbaum ist giftig? Tipp ihn an!", ["zweig-eibe", "zweig-fichte", "zweig-laerche"], "zweig-eibe"),
+    ]),
+)
+
+p = "h3-gift"
+GZ = [("gift-maigloeckchen", "Maiglöckchen"), ("gift-fingerhut", "Fingerhut"), ("gift-eisenhut", "Eisenhut"), ("gift-herbstzeitlose", "Herbstzeitlose"),
+      ("gift-tollkirsche", "Tollkirsche"), ("gift-goldregen", "Goldregen"), ("gift-pfaffenhuetchen", "Pfaffenhütchen"), ("gift-aronstab", "Aronstab")]
+GN = [n for _, n in GZ]
+add_lessons("hsu/k3-giftpflanzen.json",
+    lesson("Giftpflanzen erkennen", "🔎", [bildfrage(p, "Welche Giftpflanze ist das?", "Welche Giftpflanze ist das?", z, drei(n, GN), n) for z, n in GZ] + [
+        bildwahl(p, "Welche Pflanze kann man essen? Sie riecht nach Knoblauch.", ["baerlauch", "gift-maigloeckchen", "gift-herbstzeitlose"], "baerlauch",
+                 "Das ist Bärlauch. Aber Vorsicht: Seine Blätter sehen fast aus wie die vom Maiglöckchen. Nur mit einem Erwachsenen sammeln!"),
+        bildwahl(p, "Tipp auf die Tollkirsche!", ["gift-tollkirsche", "frucht-vogelbeeren", "gift-aronstab"], "gift-tollkirsche"),
+    ]),
+)
+
+# ---------- Himmel mit Bildern ----------
+p = "h3-himmel"
+PZ = [("planet-erde", "Erde"), ("planet-mars", "Mars"), ("planet-jupiter", "Jupiter"), ("planet-saturn", "Saturn")]
+add_lessons("hsu/k3-himmel.json",
+    lesson("Planeten und Mond erkennen", "🔭", [
+        *[bildfrage(p, "Welcher Planet ist das?", "Welcher Planet ist das?", z, drei(n, PL), n) for z, n in PZ],
+        bildreihe(p, "Ordne die Planeten von der Sonne aus!", ["[[planet-merkur]] Merkur", "[[planet-venus]] Venus", "[[planet-erde]] Erde", "[[planet-mars]] Mars"]),
+        bildreihe(p, "Bring die Mondphasen in die richtige Reihenfolge! Fang mit dem Neumond an.", [
+            "[[mond-neumond]] Neumond", "[[mond-zunehmend]] zunehmend", "[[mond-vollmond]] Vollmond", "[[mond-abnehmend]] abnehmend"]),
+        bildfrage(p, "Wie heißt das?", "Wie heißt diese Mondphase?", "mond-vollmond", ["Vollmond", "Neumond", "zunehmender Mond"], "Vollmond"),
+        bildfrage(p, "Wie heißt das?", "Der Mond wird jeden Abend größer. Wie heißt diese Mondphase?", "mond-zunehmend", ["zunehmender Mond", "abnehmender Mond", "Vollmond"], "zunehmender Mond"),
+        bildwahl(p, "Tipp auf den Stern!", ["himmel-sonne", "planet-erde", "mond-vollmond"], "himmel-sonne", "Die Sonne ist ein Stern. Sie leuchtet selbst."),
+    ], mix=False),
+)
+
+# ---------- Die Erde: Kontinente und Ozeane ----------
+p = "h3-erde"
+KW, KH = 1000, 439
+KONT = [(200, 125, "Nordamerika"), (335, 290, "Südamerika"), (560, 85, "Europa"), (575, 255, "Afrika"),
+        (790, 110, "Asien"), (865, 315, "Australien"), (760, 418, "Antarktis")]
+OZE = [(90, 270, "Pazifischer Ozean"), (410, 210, "Atlantischer Ozean"), (710, 320, "Indischer Ozean"), (515, 20, "Arktischer Ozean"), (300, 405, "Antarktischer Ozean")]
+KZ = [("weltkarte-nordamerika", "Nordamerika"), ("weltkarte-suedamerika", "Südamerika"), ("weltkarte-europa", "Europa"), ("weltkarte-afrika", "Afrika"),
+      ("weltkarte-asien", "Asien"), ("weltkarte-australien", "Australien"), ("weltkarte-antarktis", "Antarktis")]
+KN = [n for _, n in KZ]
+wissen("hsu-kontinente", "🌍", "Kontinente und Ozeane", [
+    "Von oben sieht die Erde blau aus: Mehr als zwei Drittel sind **Wasser**.",
+    "Die großen Landflächen heißen **Kontinente**. Es gibt **sieben**: Nordamerika, Südamerika, Europa, Afrika, Asien, Australien und die Antarktis.",
+    "**Asien** ist der größte Kontinent, **Australien** der kleinste. Wir leben in **Europa**.",
+    "Ein **Ozean** ist ein riesiges, tiefes Meer. Es gibt **fünf**: den **Pazifischen** (Pazifik, der größte), den **Atlantischen** (Atlantik), den **Indischen**, den **Arktischen** (im Norden) und den **Antarktischen Ozean** (im Süden).",
+    "Ein **Globus** ist ein kleines Modell der Erde als Kugel. Eine **Weltkarte** ist flach und zeigt alles auf einmal.",
+], [], [f"{p}/Globus und Weltkarte", f"{p}/Die sieben Kontinente", f"{p}/Die Ozeane"])
+UNITS["hsu/k3-erde.json"] = unit(p, "Die Erde: Kontinente und Ozeane", "🌍", "#1f78b4", [
+    lesson("Globus und Weltkarte", "🌐", [
+        ch(p, "Was stimmt?", "Was ist ein Globus?", ["ein kleines Modell der Erde als Kugel", "eine flache Karte", "ein Fernrohr"], "ein kleines Modell der Erde als Kugel"),
+        ch(p, "Was stimmt?", "Was ist der Vorteil einer Weltkarte?", ["Man sieht alle Kontinente auf einmal.", "Sie ist rund.", "Sie dreht sich von selbst."], "Man sieht alle Kontinente auf einmal."),
+        ch(p, "Was stimmt?", "Was gibt es auf der Erde mehr?", ["Wasser", "Land", "beides gleich viel"], "Wasser", keep=True),
+        sort(p, "Was zeigt die Farbe?", "Was zeigt diese Farbe auf dem Globus meistens?", ["Wasser", "Land", "Eis"], [
+            ("blau", "Wasser"), ("grün", "Land"), ("braun", "Land"), ("weiß", "Eis"),
+        ]),
+        wahr(p, "Auf einer flachen Weltkarte sehen manche Länder größer aus, als sie sind.", True, "Grönland zum Beispiel sieht riesig aus. Auf dem Globus stimmen die Größen."),
+        wahr(p, "Den Globus muss man drehen, um alle Kontinente zu sehen.", True),
+    ], mix=False),
+    lesson("Die sieben Kontinente", "🗺️", [
+        bildfrage(p, "Weißt du es?", "Wie viele Kontinente gibt es?", "weltkarte", ["5", "6", "7"], "7", keep=True),
+        ch(p, "Was stimmt?", "Wie nennt man die großen, zusammenhängenden Landflächen der Erde?", ["Kontinente", "Ozeane", "Inseln"], "Kontinente"),
+        *[bildfrage(p, "Welcher Kontinent ist das?", "Welcher Kontinent ist farbig?", z, drei(n, KN), n) for z, n in KZ],
+        ch(p, "Was stimmt?", "Welcher ist der größte Kontinent?", ["Asien", "Europa", "Australien"], "Asien"),
+        ch(p, "Was stimmt?", "Welcher ist der kleinste Kontinent?", ["Australien", "Afrika", "Asien"], "Australien"),
+        ch(p, "Was stimmt?", "Auf welchem Kontinent leben wir?", ["Europa", "Afrika", "Nordamerika"], "Europa"),
+        ch(p, "Was stimmt?", "Welcher Kontinent ist fast ganz mit Eis bedeckt?", ["die Antarktis", "Afrika", "Südamerika"], "die Antarktis"),
+    ]),
+    lesson("Kontinente beschriften", "✏️", [
+        schaubild(p, "Beschrifte die Kontinente!", "weltkarte", KONT, KW, KH),
+        bildwahl(p, "Tipp auf die Karte, auf der Afrika farbig ist!", ["weltkarte-afrika", "weltkarte-suedamerika", "weltkarte-australien"], "weltkarte-afrika"),
+        bildwahl(p, "Tipp auf die Karte, auf der Europa farbig ist!", ["weltkarte-europa", "weltkarte-asien", "weltkarte-nordamerika"], "weltkarte-europa"),
+    ], mix=False),
+    lesson("Die Ozeane", "🌊", [
+        ch(p, "Was ist ein Ozean?", "Ein Ozean ist ein riesiges, tiefes Meer und bedeckt einen großen Teil der Erde mit …", ["Wasser", "Land", "Sand"], "Wasser", keep=True),
+        bildfrage(p, "Weißt du es?", "Wie viele Ozeane gibt es?", "weltkarte", ["3", "5", "7"], "5", keep=True),
+        schaubild(p, "Beschrifte die Ozeane!", "weltkarte", OZE, KW, KH),
+        ch(p, "Was stimmt?", "Welcher ist der größte Ozean?", ["der Pazifische Ozean", "der Atlantische Ozean", "der Indische Ozean"], "der Pazifische Ozean"),
+        ch(p, "Was stimmt?", "Welcher Ozean liegt rund um den Nordpol?", ["der Arktische Ozean", "der Antarktische Ozean", "der Indische Ozean"], "der Arktische Ozean"),
+        ch(p, "Was stimmt?", "Welcher Ozean liegt zwischen Europa und Amerika?", ["der Atlantische Ozean", "der Pazifische Ozean", "der Indische Ozean"], "der Atlantische Ozean"),
+        ch(p, "Was stimmt?", "Welche zwei Meere liegen im Norden von Deutschland?", ["Nordsee und Ostsee", "Mittelmeer und Rotes Meer", "Pazifik und Atlantik"], "Nordsee und Ostsee"),
+        wahr(p, "Das Wasser im Meer ist salzig.", True),
+    ], mix=False),
+    lesson("Tiere der Kontinente", "🦘", [
+        pairs(p, "Wo lebt das Tier in freier Natur?", "Auf welchem Kontinent lebt dieses Tier in freier Natur?", [
+            ("Känguru", "Australien"), ("Kaiserpinguin", "Antarktis"), ("Löwe", "Afrika"), ("Großer Panda", "Asien"),
+        ]),
+        pairs(p, "Wo lebt das Tier in freier Natur?", "Auf welchem Kontinent lebt dieses Tier in freier Natur?", [
+            ("Lama", "Südamerika"), ("Bison", "Nordamerika"), ("Rothirsch", "Europa"),
+        ]),
+        wahr(p, "Eisbären und Pinguine treffen sich nie in freier Natur.", True, "Eisbären leben im hohen Norden, Pinguine im Süden, vor allem in der Antarktis."),
     ]),
     test(12),
 ])

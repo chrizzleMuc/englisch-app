@@ -1,0 +1,744 @@
+{
+ "id": "h3-himmel",
+ "type": "schule",
+ "title_de": "Sonne, Erde und Mond",
+ "image": "🌍",
+ "color": "#2b3f8f",
+ "lessons": [
+  {
+   "title": "Himmelskörper",
+   "icon": "⭐",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Was ist das?",
+     "review": "Was ist das für ein Himmelskörper?",
+     "pairs": [
+      {
+       "id": "h3-himmel-sonne",
+       "a": "Sonne",
+       "b": "ein Stern, der selbst leuchtet"
+      },
+      {
+       "id": "h3-himmel-erde",
+       "a": "Erde",
+       "b": "ein Planet"
+      },
+      {
+       "id": "h3-himmel-mond",
+       "a": "Mond",
+       "b": "kreist um die Erde"
+      },
+      {
+       "id": "h3-himmel-komet",
+       "a": "Komet",
+       "b": "Eis und Staub mit Schweif"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-die-sonne-ist-ein",
+     "task": "Was stimmt?",
+     "prompt": "Die Sonne ist ein …",
+     "options": [
+      "Stern",
+      "Planet",
+      "Mond"
+     ],
+     "answer": "Stern",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-was-ist-eine-sternschnuppe-w",
+     "task": "Was stimmt?",
+     "prompt": "Was ist eine Sternschnuppe wirklich?",
+     "options": [
+      "ein kleiner Stein, der in der Luft verglüht",
+      "ein Stern, der herunterfällt",
+      "ein Flugzeug"
+     ],
+     "answer": "ein kleiner Stein, der in der Luft verglüht"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-warum-sieht-man-tagsueber-ke",
+     "task": "Was stimmt?",
+     "prompt": "Warum sieht man tagsüber keine Sterne?",
+     "options": [
+      "Die Sonne ist viel heller und überstrahlt sie.",
+      "Die Sterne schlafen am Tag.",
+      "Die Sterne sind nur nachts da."
+     ],
+     "answer": "Die Sonne ist viel heller und überstrahlt sie."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-mit-welchem-geraet-kann-man",
+     "task": "Was stimmt?",
+     "prompt": "Mit welchem Gerät kann man weit entfernte Sterne besser sehen?",
+     "options": [
+      "mit einem Fernrohr",
+      "mit einer Lupe",
+      "mit einem Mikroskop"
+     ],
+     "answer": "mit einem Fernrohr"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-welcher-stern-zeigt-nachts-u",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Stern zeigt nachts ungefähr nach Norden?",
+     "options": [
+      "der Polarstern",
+      "die Sonne",
+      "der Abendstern"
+     ],
+     "answer": "der Polarstern"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-der-mond-leuchtet-selbst-wie",
+     "task": "Richtig oder falsch?",
+     "prompt": "Der Mond leuchtet selbst wie eine Lampe.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "falsch",
+     "keepOrder": true,
+     "explain": "Der Mond wird von der Sonne angestrahlt und wirft das Licht zurück."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-im-jahr-1969-waren-zum-erste",
+     "task": "Richtig oder falsch?",
+     "prompt": "Im Jahr 1969 waren zum ersten Mal Menschen auf dem Mond.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Die Planeten ordnen",
+   "icon": "🪐",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-himmel-ordne-die-planeten-von-der-s",
+     "task": "Ordne die Planeten von der Sonne aus!",
+     "tiles": [
+      "Merkur",
+      "Venus",
+      "Erde",
+      "Mars"
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "h3-himmel-ordne-die-aeusseren-planeten",
+     "task": "Ordne die äußeren Planeten von der Sonne aus!",
+     "tiles": [
+      "Jupiter",
+      "Saturn",
+      "Uranus",
+      "Neptun"
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "h3-himmel-ordne-alle-acht-planeten-von",
+     "task": "Ordne alle acht Planeten von der Sonne aus!",
+     "tiles": [
+      "Merkur",
+      "Venus",
+      "Erde",
+      "Mars",
+      "Jupiter",
+      "Saturn",
+      "Uranus",
+      "Neptun"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-welcher-planet-ist-der-groes",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Planet ist der größte?",
+     "options": [
+      "Jupiter",
+      "Erde",
+      "Merkur"
+     ],
+     "answer": "Jupiter"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-welcher-planet-ist-der-sonne",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Planet ist der Sonne am nächsten?",
+     "options": [
+      "Merkur",
+      "Neptun",
+      "Mars"
+     ],
+     "answer": "Merkur"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-welcher-planet-wird-der-rote",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Planet wird der rote Planet genannt?",
+     "options": [
+      "Mars",
+      "Venus",
+      "Uranus"
+     ],
+     "answer": "Mars"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-welcher-planet-hat-besonders",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Planet hat besonders große, schöne Ringe?",
+     "options": [
+      "Saturn",
+      "Erde",
+      "Merkur"
+     ],
+     "answer": "Saturn"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-der-wievielte-planet-von-der",
+     "task": "Was stimmt?",
+     "prompt": "Der wievielte Planet von der Sonne aus ist die Erde?",
+     "options": [
+      "der dritte",
+      "der erste",
+      "der achte"
+     ],
+     "answer": "der dritte",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-pluto-zaehlt-heute-nicht-meh",
+     "task": "Richtig oder falsch?",
+     "prompt": "Pluto zählt heute nicht mehr zu den Planeten. Er ist ein Zwergplanet.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Tag und Nacht",
+   "icon": "🌗",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-himmel-warum-gibt-es-tag-und-nacht",
+     "task": "Was stimmt?",
+     "prompt": "Warum gibt es Tag und Nacht?",
+     "options": [
+      "Die Erde dreht sich um sich selbst.",
+      "Die Sonne geht abends schlafen.",
+      "Der Mond schiebt sich vor die Sonne."
+     ],
+     "answer": "Die Erde dreht sich um sich selbst."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-wie-lange-braucht-die-erde-f",
+     "task": "Was stimmt?",
+     "prompt": "Wie lange braucht die Erde für eine Drehung um sich selbst?",
+     "options": [
+      "24 Stunden",
+      "eine Woche",
+      "ein Jahr"
+     ],
+     "answer": "24 Stunden"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-wo-geht-die-sonne-auf",
+     "task": "Was stimmt?",
+     "prompt": "Wo geht die Sonne auf?",
+     "options": [
+      "im Osten",
+      "im Westen",
+      "im Norden"
+     ],
+     "answer": "im Osten"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-wo-geht-die-sonne-unter",
+     "task": "Was stimmt?",
+     "prompt": "Wo geht die Sonne unter?",
+     "options": [
+      "im Westen",
+      "im Osten",
+      "im Süden"
+     ],
+     "answer": "im Westen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-wo-steht-die-sonne-bei-uns-m",
+     "task": "Was stimmt?",
+     "prompt": "Wo steht die Sonne bei uns mittags?",
+     "options": [
+      "im Süden",
+      "im Norden",
+      "im Osten"
+     ],
+     "answer": "im Süden"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-wenn-bei-uns-nacht-ist-ist-a",
+     "task": "Richtig oder falsch?",
+     "prompt": "Wenn bei uns Nacht ist, ist auf der anderen Seite der Erde Tag.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-eigentlich-bewegt-sich-nicht",
+     "task": "Richtig oder falsch?",
+     "prompt": "Eigentlich bewegt sich nicht die Sonne über den Himmel, sondern die Erde dreht sich.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Jahr, Monat, Tag",
+   "icon": "📅",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Was passiert in dieser Zeit?",
+     "review": "Was passiert in dieser Zeit?",
+     "pairs": [
+      {
+       "id": "h3-himmel-ein-tag",
+       "a": "ein Tag",
+       "b": "Die Erde dreht sich einmal um sich selbst."
+      },
+      {
+       "id": "h3-himmel-ungefaehr-ein-monat",
+       "a": "ungefähr ein Monat",
+       "b": "Der Mond kreist einmal um die Erde."
+      },
+      {
+       "id": "h3-himmel-ein-jahr",
+       "a": "ein Jahr",
+       "b": "Die Erde kreist einmal um die Sonne."
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-wie-viele-tage-hat-ein-norma",
+     "task": "Was stimmt?",
+     "prompt": "Wie viele Tage hat ein normales Jahr?",
+     "options": [
+      "365",
+      "100",
+      "52"
+     ],
+     "answer": "365"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-wie-viele-tage-hat-ein-schal",
+     "task": "Was stimmt?",
+     "prompt": "Wie viele Tage hat ein Schaltjahr?",
+     "options": [
+      "366",
+      "365",
+      "360"
+     ],
+     "answer": "366"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-welchen-tag-gibt-es-nur-im-s",
+     "task": "Was stimmt?",
+     "prompt": "Welchen Tag gibt es nur im Schaltjahr?",
+     "options": [
+      "den 29. Februar",
+      "den 31. April",
+      "den 32. Dezember"
+     ],
+     "answer": "den 29. Februar"
+    },
+    {
+     "kind": "type",
+     "id": "h3-himmel-wie-viele-monate-hat-ein-jah",
+     "task": "Weißt du es?",
+     "prompt": "Wie viele Monate hat ein Jahr?",
+     "answer": "12"
+    },
+    {
+     "kind": "type",
+     "id": "h3-himmel-wie-viele-stunden-hat-ein-ta",
+     "task": "Weißt du es?",
+     "prompt": "Wie viele Stunden hat ein Tag?",
+     "answer": "24"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-die-erde-kreist-um-die-sonne",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Erde kreist um die Sonne, nicht die Sonne um die Erde.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Warum es Jahreszeiten gibt",
+   "icon": "🌷",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-himmel-warum-gibt-es-jahreszeiten",
+     "task": "Was stimmt?",
+     "prompt": "Warum gibt es Jahreszeiten?",
+     "options": [
+      "Die Erdachse ist schief.",
+      "Die Sonne ist im Winter ausgeschaltet.",
+      "Im Sommer ist die Erde viel näher an der Sonne."
+     ],
+     "answer": "Die Erdachse ist schief.",
+     "explain": "Im Sommer ist unsere Hälfte der Erde zur Sonne geneigt. Die Sonne steht höher und scheint länger."
+    },
+    {
+     "kind": "sort",
+     "task": "Sommer oder Winter?",
+     "review": "Ist das bei uns im Sommer oder im Winter?",
+     "groups": [
+      "Sommer",
+      "Winter"
+     ],
+     "items": [
+      {
+       "id": "h3-himmel-die-sonne-steht-mittags-hoch",
+       "text": "Die Sonne steht mittags hoch.",
+       "group": "Sommer"
+      },
+      {
+       "id": "h3-himmel-die-tage-sind-lang",
+       "text": "Die Tage sind lang.",
+       "group": "Sommer"
+      },
+      {
+       "id": "h3-himmel-die-sonne-steht-tief",
+       "text": "Die Sonne steht tief.",
+       "group": "Winter"
+      },
+      {
+       "id": "h3-himmel-es-wird-frueh-dunkel",
+       "text": "Es wird früh dunkel.",
+       "group": "Winter"
+      },
+      {
+       "id": "h3-himmel-der-laengste-tag-des-jahres",
+       "text": "Der längste Tag des Jahres",
+       "group": "Sommer"
+      },
+      {
+       "id": "h3-himmel-der-kuerzeste-tag-des-jahres",
+       "text": "Der kürzeste Tag des Jahres",
+       "group": "Winter"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-wann-ist-ungefaehr-der-laeng",
+     "task": "Was stimmt?",
+     "prompt": "Wann ist ungefähr der längste Tag des Jahres?",
+     "options": [
+      "am 21. Juni",
+      "am 21. Dezember",
+      "am 1. Januar"
+     ],
+     "answer": "am 21. Juni"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-welche-jahreszeit-ist-in-aus",
+     "task": "Was stimmt?",
+     "prompt": "Welche Jahreszeit ist in Australien, wenn bei uns Weihnachten ist?",
+     "options": [
+      "Sommer",
+      "Winter",
+      "Herbst"
+     ],
+     "answer": "Sommer"
+    },
+    {
+     "kind": "order",
+     "id": "h3-himmel-bring-die-jahreszeiten-in-di",
+     "task": "Bring die Jahreszeiten in die richtige Reihenfolge! Fang mit dem Frühling an.",
+     "tiles": [
+      "Frühling",
+      "Sommer",
+      "Herbst",
+      "Winter"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-am-fruehlingsanfang-sind-tag",
+     "task": "Richtig oder falsch?",
+     "prompt": "Am Frühlingsanfang sind Tag und Nacht ungefähr gleich lang.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Die Mondphasen",
+   "icon": "🌙",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-himmel-bring-die-mondphasen-in-die",
+     "task": "Bring die Mondphasen in die richtige Reihenfolge! Fang mit dem Neumond an.",
+     "tiles": [
+      "Neumond",
+      "zunehmender Mond",
+      "Vollmond",
+      "abnehmender Mond"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-warum-sieht-der-mond-nicht-i",
+     "task": "Was stimmt?",
+     "prompt": "Warum sieht der Mond nicht immer gleich aus?",
+     "options": [
+      "Die Sonne strahlt immer einen anderen Teil an, den wir sehen.",
+      "Der Mond wird angeknabbert.",
+      "Wolken schneiden ein Stück ab."
+     ],
+     "answer": "Die Sonne strahlt immer einen anderen Teil an, den wir sehen."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-wie-lange-dauert-es-von-eine",
+     "task": "Was stimmt?",
+     "prompt": "Wie lange dauert es von einem Vollmond bis zum nächsten?",
+     "options": [
+      "ungefähr 4 Wochen",
+      "einen Tag",
+      "ein Jahr"
+     ],
+     "answer": "ungefähr 4 Wochen"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-was-siehst-du-bei-neumond",
+     "task": "Was stimmt?",
+     "prompt": "Was siehst du bei Neumond?",
+     "options": [
+      "fast nichts vom Mond",
+      "eine runde helle Scheibe",
+      "einen halben Mond"
+     ],
+     "answer": "fast nichts vom Mond"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-der-zunehmende-mond-wird-jed",
+     "task": "Richtig oder falsch?",
+     "prompt": "Der zunehmende Mond wird jeden Abend ein Stückchen größer.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-der-mond-ist-manchmal-auch-a",
+     "task": "Richtig oder falsch?",
+     "prompt": "Der Mond ist manchmal auch am Tag zu sehen.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Planeten und Mond erkennen",
+   "icon": "🔭",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-himmel-welcher-planet-ist-das-plane",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Welcher Planet ist das?",
+     "options": [
+      "Erde",
+      "Venus",
+      "Saturn"
+     ],
+     "answer": "Erde",
+     "pic": "[[planet-erde]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-welcher-planet-ist-das-plane-2",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Welcher Planet ist das?",
+     "options": [
+      "Mars",
+      "Neptun",
+      "Venus"
+     ],
+     "answer": "Mars",
+     "pic": "[[planet-mars]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-welcher-planet-ist-das-plane-3",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Welcher Planet ist das?",
+     "options": [
+      "Jupiter",
+      "Uranus",
+      "Saturn"
+     ],
+     "answer": "Jupiter",
+     "pic": "[[planet-jupiter]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-welcher-planet-ist-das-plane-4",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Welcher Planet ist das?",
+     "options": [
+      "Saturn",
+      "Mars",
+      "Jupiter"
+     ],
+     "answer": "Saturn",
+     "pic": "[[planet-saturn]]",
+     "showText": true
+    },
+    {
+     "kind": "order",
+     "pics": true,
+     "id": "h3-himmel-ordne-die-planeten-von-der-s-2",
+     "task": "Ordne die Planeten von der Sonne aus!",
+     "tiles": [
+      "[[planet-merkur]] Merkur",
+      "[[planet-venus]] Venus",
+      "[[planet-erde]] Erde",
+      "[[planet-mars]] Mars"
+     ]
+    },
+    {
+     "kind": "order",
+     "pics": true,
+     "id": "h3-himmel-bring-die-mondphasen-in-die-2",
+     "task": "Bring die Mondphasen in die richtige Reihenfolge! Fang mit dem Neumond an.",
+     "tiles": [
+      "[[mond-neumond]] Neumond",
+      "[[mond-zunehmend]] zunehmend",
+      "[[mond-vollmond]] Vollmond",
+      "[[mond-abnehmend]] abnehmend"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-wie-heisst-diese-mondphase-m",
+     "task": "Wie heißt das?",
+     "prompt": "Wie heißt diese Mondphase?",
+     "options": [
+      "Vollmond",
+      "Neumond",
+      "zunehmender Mond"
+     ],
+     "answer": "Vollmond",
+     "pic": "[[mond-vollmond]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-der-mond-wird-jeden-abend-gr",
+     "task": "Wie heißt das?",
+     "prompt": "Der Mond wird jeden Abend größer. Wie heißt diese Mondphase?",
+     "options": [
+      "zunehmender Mond",
+      "abnehmender Mond",
+      "Vollmond"
+     ],
+     "answer": "zunehmender Mond",
+     "pic": "[[mond-zunehmend]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-himmel-tipp-auf-den-stern-himmel-so",
+     "task": "Tipp auf den Stern!",
+     "prompt": "Tipp auf den Stern!",
+     "options": [
+      "[[himmel-sonne]]",
+      "[[planet-erde]]",
+      "[[mond-vollmond]]"
+     ],
+     "answer": "[[himmel-sonne]]",
+     "picOptions": true,
+     "explain": "Die Sonne ist ein Stern. Sie leuchtet selbst."
+    }
+   ]
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

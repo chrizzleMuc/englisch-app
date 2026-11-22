@@ -9,7 +9,7 @@ import { pic } from "./pics.js";
 import { vis, visText } from "./mathpics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 35;
+const APP_VERSION = 36;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -163,6 +163,7 @@ function showHome(subjectId = current.subject) {
 function showSubjects(subs) {
   const p = prof();
   current.subject = null;
+  readAloud = false;
   render(`
     <div class="screen">
       ${homeHeader(p)}
@@ -276,6 +277,7 @@ function buildLesson(u, n) {
 function startLesson(unitId, n, focus = []) {
   resetSpoken();
   const u = unitById(unitId);
+  readAloud = u.subject === "hsu";
   const school = isSchool(u);
   const isTest = school && !!u.lessons[n].test;
   const review = isTest ? [] : reviewSteps(current.profile, u.subject);
@@ -834,6 +836,37 @@ function wireVoice(token, say, key, word) {
     }, VOICE_WAIT_MS);
 }
 
+
+// ---------- Vorlesen im Sachunterricht (Wunsch Christin, Version 36) ----------
+// Jeder längere Text (Merkkarte, Frage, Erklärung) bekommt einen eigenen Lautsprecher-Knopf.
+let readAloud = false;
+const SAY_SEL = ".rule-list li, .rule-ex p, .rule-trick, .prompt-text, .explain, .task";
+function addSpeakers() {
+  if (!readAloud) return;
+  app.querySelectorAll(SAY_SEL).forEach((el) => {
+    if (el.dataset.say || el.closest(".say-wrap")) return;
+    const text = el.textContent.replace(/\s+/g, " ").trim();
+    if (text.length < 20) return;
+    if (el.classList.contains("task") && el.parentElement?.querySelector(".again")) return;
+    el.dataset.say = "1";
+    const b = document.createElement("button");
+    b.className = "say-btn";
+    b.type = "button";
+    b.setAttribute("aria-label", "Vorlesen");
+    b.textContent = "🔊";
+    b.dataset.text = text;
+    el.prepend(b);
+  });
+}
+new MutationObserver(() => addSpeakers()).observe(app, { childList: true, subtree: true });
+document.addEventListener("click", (e) => {
+  const b = e.target.closest && e.target.closest(".say-btn");
+  if (!b) return;
+  e.stopPropagation();
+  e.preventDefault();
+  sayDe(b.dataset.text);
+}, true);
+
 function promptCard(text) {
   return `<div class="prompt-card"><span class="prompt-text">${esc(text)}</span></div>`;
 }
@@ -884,6 +917,7 @@ function rulesFor(stageIds) {
   return [...content.rules.values()].filter((r) => stageIds.includes(r.stage));
 }
 function showRuleBook(subjectId, stageIds) {
+  readAloud = subjectId === "hsu";
   const rules = rulesFor(stageIds);
   render(`
     <div class="screen rulebook">
@@ -1156,6 +1190,99 @@ STEPS.build = (lesson, step) => {
   $("next").onclick = () => advance(lesson);
 };
 
+// ---------- Übung: Schaubild beschriften (Begriffe den Nummern im Bild zuordnen) ----------
+// Aufgabe: { kind: "label", image: "auge-vorn", spots: [{ x: 150, y: 22, answer: "Augenbraue" }, …], w: 300, h: 200, extra: ["Nase"] }
+// x/y in Bildkoordinaten (viewBox). Nummer antippen (oder es ist automatisch die nächste freie), dann Begriff antippen.
+STEPS.label = (lesson, step) => {
+  const q = step.q;
+  let first = true;
+  const n = q.spots.length;
+  const fill = Array(n).fill(null);
+  const locked = Array(n).fill(false);
+  let active = 0;
+  const words = shuffle([...q.spots.map((s) => s.answer), ...(q.extra || [])]);
+  const W = q.w || 300, H = q.h || 200;
+  const token = lessonRender(lesson, `
+    ${taskHead(q.task || "Beschrifte das Bild!")}
+    <div class="label-pic ${q.text ? "small" : ""}"><img src="img/zeichnungen/${q.image}.svg" alt="">${q.spots.map((s, k) => s.x == null ? "" : q.labels ? `<span class="label-tag" style="left:${(s.x / W) * 100}%;top:${(s.y / H) * 100}%">${esc(s.answer)}</span>` : `<button class="label-dot" data-k="${k}" style="left:${(s.x / W) * 100}%;top:${(s.y / H) * 100}%">${k + 1}</button>`).join("")}</div>
+    ${q.text && readAloud ? `<button class="say-btn say-cloze" data-text="${esc(q.text.join(" ").replace(/__/g, "Lücke"))}" aria-label="Vorlesen">🔊</button>` : ""}
+    <div class="${q.text ? "label-cloze" : "label-rows"}" id="rows"></div>
+    <div class="build-pool" id="pool"></div>
+    <div class="feedback" id="fb"></div>
+    <button class="go-btn" id="check" disabled>Prüfen ✓</button>
+    <button class="go-btn" id="next" hidden>Weiter ➜</button>`);
+  wireVoice(token, () => sayDe(q.task || "Beschrifte das Bild!"), q.task || "label");
+  const nextFree = () => { const k = fill.findIndex((x, i) => x === null && !locked[i]); return k < 0 ? active : k; };
+  const draw = () => {
+    const gap = (k) => `<button class="label-row label-gap ${k === active && !$("check").hidden ? "active" : ""} ${locked[k] ? "right" : ""}" data-k="${k}">${fill[k] === null ? "&nbsp;" : esc(fill[k])}</button>`;
+    let g = 0;
+    if (q.text) $("rows").innerHTML = q.text.map((para) => `<p>${esc(para).replace(/__/g, () => gap(g++))}</p>`).join("");
+    else $("rows").innerHTML = q.spots.map((s, k) => `<button class="label-row ${k === active && !$("check").hidden ? "active" : ""} ${locked[k] ? "right" : ""}" data-k="${k}"><span class="label-num">${k + 1}</span><span class="label-word">${fill[k] === null ? "…" : esc(fill[k])}</span></button>`).join("");
+    document.querySelectorAll(".label-dot").forEach((d) => d.classList.toggle("active", +d.dataset.k === active && !$("check").hidden));
+    $("pool").innerHTML = words.map((w, i) => `<button class="tile" data-i="${i}" ${fill.includes(w) ? "disabled" : ""}>${esc(w)}</button>`).join("");
+    $("check").disabled = fill.some((x) => x === null);
+    const pickRow = (e) => {
+      if ($("check").hidden) return;
+      const k = +e.currentTarget.dataset.k;
+      if (locked[k]) return;
+      if (k === active && fill[k] !== null) fill[k] = null;
+      active = k;
+      draw();
+    };
+    on("#rows .label-row", "click", pickRow);
+    on(".label-dot", "click", pickRow);
+    on("#pool .tile", "click", (e) => {
+      if ($("check").hidden) return;
+      fill[active] = words[+e.currentTarget.dataset.i];
+      chime("pop");
+      active = nextFree();
+      draw();
+    });
+  };
+  draw();
+  const built = () => q.text ? (() => { let k = 0; return q.text.join(" ").replace(/__/g, () => fill[k++] || "?"); })() : fill.map((w, k) => `${k + 1} ${w || "?"}`).join(", ");
+  $("check").onclick = async () => {
+    const right = q.spots.map((s, k) => fill[k] === s.answer);
+    const ok = right.every(Boolean);
+    if (lesson.exam) {
+      $("check").hidden = true;
+      return examAnswer(lesson, step, q.id, ok, built(), token);
+    }
+    if (ok) {
+      $("check").hidden = true;
+      locked.fill(true);
+      draw();
+      chime("good");
+      score(lesson, step, q.id, first);
+      $("fb").innerHTML = `<span class="ok">${first ? pick(PRAISE) : "Genau."}</span>${q.explain ? `<p class="explain">${esc(q.explain)}</p>` : ""}`;
+      if (q.explain) $("next").hidden = false;
+      else {
+        await wait(1100);
+        if (alive(token)) advance(lesson);
+      }
+    } else if (first) {
+      first = false;
+      miss(lesson, step, q.id, built());
+      right.forEach((r, k) => { if (r) locked[k] = true; else fill[k] = null; });
+      active = nextFree();
+      draw();
+      $("rows").classList.add("shake");
+      setTimeout(() => $("rows")?.classList.remove("shake"), 400);
+      $("fb").innerHTML = `<span class="try">${right.filter(Boolean).length} von ${n} stimmen schon (grün). ${q.text ? "Schau aufs Bild und versuch" : "Versuch"} die anderen nochmal!</span>`;
+    } else {
+      $("check").hidden = true;
+      miss(lesson, step, q.id, built());
+      q.spots.forEach((s, k) => { fill[k] = s.answer; });
+      draw();
+      document.querySelectorAll(".label-row").forEach((r, k) => r.classList.add(right[k] ? "right" : "fixed"));
+      $("fb").innerHTML = `<span class="try">So ist es richtig. ${q.text ? "Lies den Text nochmal durch." : "Schau dir die Nummern nochmal an."}</span>${ruleLink(q)}`;
+      score(lesson, step, q.id, false);
+      $("next").hidden = false;
+    }
+  };
+  $("next").onclick = () => advance(lesson);
+};
+
 // ---------- Übung: Reihenfolge (Bilder oder Wörter der Reihe nach antippen) ----------
 // Aufgabe: { kind: "order", tiles: ["🌱 Samen", "🌿 Keimling", "🌻 Blume"] } – tiles in der richtigen Reihenfolge, angezeigt gemischt.
 STEPS.order = (lesson, step) => {
@@ -1193,7 +1320,7 @@ STEPS.order = (lesson, step) => {
     });
   };
   draw();
-  const plain = (s) => String(s).replace(/^\P{L}+/u, "").trim() || s;
+  const plain = (s) => String(s).replace(/\[\[[^\]]+\]\]/g, "").replace(/^\P{L}+/u, "").trim() || s;
   const shown = (list) => list.map(plain).join(" → ");
   $("check").onclick = async () => {
     const ok = placed.every((t, k) => t.i === k);

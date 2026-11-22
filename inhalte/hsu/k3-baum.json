@@ -1,0 +1,466 @@
+{
+ "id": "h3-baum",
+ "type": "schule",
+ "title_de": "Der Baum",
+ "image": "🌳",
+ "color": "#3f8a3a",
+ "lessons": [
+  {
+   "title": "Was ist ein Baum?",
+   "icon": "🌳",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-baum-was-hat-ein-baum-das-ein-str",
+     "task": "Was stimmt?",
+     "prompt": "Was hat ein Baum, das ein Strauch nicht hat?",
+     "options": [
+      "einen einzigen dicken Stamm",
+      "Blätter",
+      "Wurzeln"
+     ],
+     "answer": "einen einzigen dicken Stamm",
+     "explain": "Ein Strauch hat viele dünne Stämme, die schon unten am Boden auseinandergehen."
+    },
+    {
+     "kind": "sort",
+     "task": "Baum oder Strauch?",
+     "review": "Ist das ein Baum oder ein Strauch?",
+     "groups": [
+      "Baum",
+      "Strauch"
+     ],
+     "items": [
+      {
+       "id": "h3-baum-eiche",
+       "text": "Eiche",
+       "group": "Baum"
+      },
+      {
+       "id": "h3-baum-haselnuss",
+       "text": "Haselnuss",
+       "group": "Strauch"
+      },
+      {
+       "id": "h3-baum-buche",
+       "text": "Buche",
+       "group": "Baum"
+      },
+      {
+       "id": "h3-baum-holunder",
+       "text": "Holunder",
+       "group": "Strauch"
+      },
+      {
+       "id": "h3-baum-fichte",
+       "text": "Fichte",
+       "group": "Baum"
+      },
+      {
+       "id": "h3-baum-himbeere",
+       "text": "Himbeere",
+       "group": "Strauch"
+      },
+      {
+       "id": "h3-baum-linde",
+       "text": "Linde",
+       "group": "Baum"
+      },
+      {
+       "id": "h3-baum-johannisbeere",
+       "text": "Johannisbeere",
+       "group": "Strauch"
+      }
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Laubbaum oder Nadelbaum?",
+     "review": "Ist das ein Laubbaum oder ein Nadelbaum?",
+     "groups": [
+      "Laubbaum",
+      "Nadelbaum"
+     ],
+     "items": [
+      {
+       "id": "h3-baum-hat-breite-flache-blaetter",
+       "text": "hat breite, flache Blätter",
+       "group": "Laubbaum"
+      },
+      {
+       "id": "h3-baum-hat-nadeln",
+       "text": "hat Nadeln",
+       "group": "Nadelbaum"
+      },
+      {
+       "id": "h3-baum-ist-im-winter-meistens-kahl",
+       "text": "ist im Winter meistens kahl",
+       "group": "Laubbaum"
+      },
+      {
+       "id": "h3-baum-ist-im-winter-meistens-gruen",
+       "text": "ist im Winter meistens grün",
+       "group": "Nadelbaum"
+      },
+      {
+       "id": "h3-baum-traegt-oft-zapfen",
+       "text": "trägt oft Zapfen",
+       "group": "Nadelbaum"
+      },
+      {
+       "id": "h3-baum-linde-2",
+       "text": "Linde",
+       "group": "Laubbaum"
+      },
+      {
+       "id": "h3-baum-kiefer",
+       "text": "Kiefer",
+       "group": "Nadelbaum"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-ein-baum-ist-eine-pflanze",
+     "task": "Richtig oder falsch?",
+     "prompt": "Ein Baum ist eine Pflanze.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-baeume-haben-einen-stamm-aus",
+     "task": "Richtig oder falsch?",
+     "prompt": "Bäume haben einen Stamm aus Holz.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Die Teile des Baumes",
+   "icon": "🪵",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "h3-baum-ordne-die-teile-des-baumes-v",
+     "task": "Ordne die Teile des Baumes von unten nach oben!",
+     "tiles": [
+      "Wurzeln",
+      "Stamm",
+      "Äste",
+      "Zweige",
+      "Blätter"
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Was macht dieser Teil des Baumes?",
+     "review": "Was macht dieser Teil des Baumes?",
+     "pairs": [
+      {
+       "id": "h3-baum-wurzeln",
+       "a": "Wurzeln",
+       "b": "halten fest und holen Wasser"
+      },
+      {
+       "id": "h3-baum-stamm",
+       "a": "Stamm",
+       "b": "trägt die Krone"
+      },
+      {
+       "id": "h3-baum-rinde",
+       "a": "Rinde",
+       "b": "schützt den Stamm"
+      },
+      {
+       "id": "h3-baum-blaetter",
+       "a": "Blätter",
+       "b": "machen Nahrung aus Sonnenlicht"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-wie-nennt-man-alle-aeste-zwe",
+     "task": "Was stimmt?",
+     "prompt": "Wie nennt man alle Äste, Zweige und Blätter zusammen?",
+     "options": [
+      "die Krone",
+      "den Stamm",
+      "die Rinde"
+     ],
+     "answer": "die Krone"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-wie-kommt-das-wasser-in-die",
+     "task": "Was stimmt?",
+     "prompt": "Wie kommt das Wasser in die Blätter?",
+     "options": [
+      "Es steigt von den Wurzeln durch den Stamm nach oben.",
+      "Der Regen tropft hinein.",
+      "Die Blätter trinken aus Pfützen."
+     ],
+     "answer": "Es steigt von den Wurzeln durch den Stamm nach oben."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-die-wurzeln-eines-baumes-koe",
+     "task": "Richtig oder falsch?",
+     "prompt": "Die Wurzeln eines Baumes können so weit reichen wie seine Krone.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-wenn-man-die-rinde-rundherum",
+     "task": "Richtig oder falsch?",
+     "prompt": "Wenn man die Rinde rundherum abschält, wird der Baum krank und kann sterben.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Wie alt ist der Baum?",
+   "icon": "⏳",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-baum-ein-gefaellter-baum-hat-25-j",
+     "task": "Was stimmt?",
+     "prompt": "Ein gefällter Baum hat 25 Jahresringe. Wie alt war er?",
+     "options": [
+      "25 Jahre",
+      "50 Jahre",
+      "5 Jahre"
+     ],
+     "answer": "25 Jahre"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-wie-viele-jahresringe-bekomm",
+     "task": "Was stimmt?",
+     "prompt": "Wie viele Jahresringe bekommt ein Baum in einem Jahr?",
+     "options": [
+      "einen",
+      "zwei",
+      "zwölf"
+     ],
+     "answer": "einen",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-ein-jahresring-ist-sehr-schm",
+     "task": "Was stimmt?",
+     "prompt": "Ein Jahresring ist sehr schmal. Was bedeutet das?",
+     "options": [
+      "Das Jahr war trocken.",
+      "Das Jahr war besonders nass.",
+      "Der Baum wurde gefällt."
+     ],
+     "answer": "Das Jahr war trocken."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-welcher-heimische-baum-kann",
+     "task": "Was stimmt?",
+     "prompt": "Welcher heimische Baum kann über 800 Jahre alt werden?",
+     "options": [
+      "die Eiche",
+      "die Birke",
+      "der Apfelbaum"
+     ],
+     "answer": "die Eiche"
+    },
+    {
+     "kind": "type",
+     "id": "h3-baum-eine-linde-wurde-1990-gepfla",
+     "task": "Rechne!",
+     "prompt": "Eine Linde wurde 1990 gepflanzt. Wie viele Jahresringe hat sie im Jahr 2026?",
+     "answer": "36"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-baeume-hoeren-nie-ganz-auf-z",
+     "task": "Richtig oder falsch?",
+     "prompt": "Bäume hören nie ganz auf zu wachsen. Der Stamm wird jedes Jahr ein bisschen dicker.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Warum wir Bäume brauchen",
+   "icon": "💚",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Was geben uns Bäume?",
+     "review": "Tun Bäume das?",
+     "groups": [
+      "Bäume tun das",
+      "Bäume tun das nicht"
+     ],
+     "items": [
+      {
+       "id": "h3-baum-sauerstoff-zum-atmen-herstel",
+       "text": "Sauerstoff zum Atmen herstellen",
+       "group": "Bäume tun das"
+      },
+      {
+       "id": "h3-baum-schatten-spenden",
+       "text": "Schatten spenden",
+       "group": "Bäume tun das"
+      },
+      {
+       "id": "h3-baum-tieren-ein-zuhause-geben",
+       "text": "Tieren ein Zuhause geben",
+       "group": "Bäume tun das"
+      },
+      {
+       "id": "h3-baum-den-boden-mit-ihren-wurzeln",
+       "text": "den Boden mit ihren Wurzeln festhalten",
+       "group": "Bäume tun das"
+      },
+      {
+       "id": "h3-baum-holz-liefern",
+       "text": "Holz liefern",
+       "group": "Bäume tun das"
+      },
+      {
+       "id": "h3-baum-die-luft-schmutziger-machen",
+       "text": "die Luft schmutziger machen",
+       "group": "Bäume tun das nicht"
+      },
+      {
+       "id": "h3-baum-strom-erzeugen",
+       "text": "Strom erzeugen",
+       "group": "Bäume tun das nicht"
+      }
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Aus Holz oder nicht?",
+     "review": "Ist das meistens aus Holz gemacht?",
+     "groups": [
+      "aus Holz",
+      "nicht aus Holz"
+     ],
+     "items": [
+      {
+       "id": "h3-baum-papier",
+       "text": "Papier",
+       "group": "aus Holz"
+      },
+      {
+       "id": "h3-baum-bleistift",
+       "text": "Bleistift",
+       "group": "aus Holz"
+      },
+      {
+       "id": "h3-baum-tisch",
+       "text": "Tisch",
+       "group": "aus Holz"
+      },
+      {
+       "id": "h3-baum-brennholz",
+       "text": "Brennholz",
+       "group": "aus Holz"
+      },
+      {
+       "id": "h3-baum-glasflasche",
+       "text": "Glasflasche",
+       "group": "nicht aus Holz"
+      },
+      {
+       "id": "h3-baum-loeffel-aus-metall",
+       "text": "Löffel aus Metall",
+       "group": "nicht aus Holz"
+      }
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-was-nehmen-die-blaetter-aus",
+     "task": "Was stimmt?",
+     "prompt": "Was nehmen die Blätter aus der Luft auf?",
+     "options": [
+      "Kohlendioxid",
+      "Sauerstoff",
+      "Rauch"
+     ],
+     "answer": "Kohlendioxid",
+     "explain": "Die Blätter nehmen Kohlendioxid auf und geben Sauerstoff ab. Den brauchen wir zum Atmen."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-warum-pflanzt-man-in-den-ber",
+     "task": "Was stimmt?",
+     "prompt": "Warum pflanzt man in den Bergen Bäume an steilen Hängen?",
+     "options": [
+      "Die Wurzeln halten den Boden fest.",
+      "Damit es dunkler wird.",
+      "Damit die Wanderer sich verlaufen."
+     ],
+     "answer": "Die Wurzeln halten den Boden fest."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-unter-einem-grossen-baum-ist",
+     "task": "Richtig oder falsch?",
+     "prompt": "Unter einem großen Baum ist es im Sommer kühler.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-baum-fuer-jeden-gefaellten-baum-s",
+     "task": "Richtig oder falsch?",
+     "prompt": "Für jeden gefällten Baum sollte ein neuer gepflanzt werden.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ],
+   "mix": true
+  },
+  {
+   "title": "Test",
+   "icon": "⭐",
+   "test": true,
+   "count": 12
+  }
+ ]
+}

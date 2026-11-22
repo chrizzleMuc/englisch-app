@@ -7,7 +7,7 @@ export const content = { subjects: [], items: new Map(), units: new Map(), photo
 // Eine Schul-Einheit hat "type": "schule" und eine Liste "lessons" mit Aufgaben ("tasks").
 // Jede bewertbare Aufgabe kommt als Einzelfrage in die Lernkartei (content.items, kind "task").
 
-const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint", "column", "chain", "build", "flash", "mark", "gitter", "schlange", "order"];
+const KINDS = ["pairs", "type", "choice", "sort", "syllables", "photo", "paint", "column", "chain", "build", "flash", "mark", "gitter", "schlange", "order", "label"];
 
 function sharedStart(a, b) {
   const wa = a.split(" ");
@@ -72,9 +72,22 @@ function checkSchool(unit, path) {
       // Reihenfolge: tiles stehen in der richtigen Reihenfolge, die App mischt sie
       if (t.kind === "order") {
         if ((t.tiles || []).length < 2) err(`${t.id}: Reihenfolge braucht mindestens 2 tiles.`);
-        const plain = (x) => String(x).replace(/^\P{L}+/u, "").trim() || x;
+        const plain = (x) => String(x).replace(/\[\[[^\]]+\]\]/g, "").replace(/^\P{L}+/u, "").trim() || x;
         t.prompt = t.prompt || t.task;
         t.answer = (t.tiles || []).map(plain).join(" → ");
+      }
+      // Schaubild beschriften: image (img/zeichnungen/<image>.svg), spots mit x, y, answer
+      if (t.kind === "label") {
+        if (!t.image || (t.spots || []).length < 2) err(`${t.id}: Schaubild braucht image und mindestens 2 spots.`);
+        t.prompt = t.prompt || t.task;
+        t.answer = (t.spots || []).map((s, k) => `${k + 1} ${s.answer}`).join(", ");
+        // Lückentext zum Bild: text = Absätze, jede "__" ist die nächste Lücke (Reihenfolge wie spots)
+        if (t.text) {
+          const gaps = t.text.join(" ").split("__").length - 1;
+          if (gaps !== t.spots.length) err(`${t.id}: Lückentext hat ${gaps} Lücken, aber ${t.spots.length} spots.`);
+          let k = 0;
+          t.answer = t.text.join(" ").replace(/__/g, () => t.spots[k++]?.answer || "?");
+        }
       }
       if (t.kind === "flash") {
         if (!t.word || !(t.options || []).includes(t.answer)) err(`${t.id}: Blitzlesen braucht word und die Antwort bei options.`);
