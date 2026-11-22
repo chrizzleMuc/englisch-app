@@ -60,6 +60,20 @@
     },
     {
      "kind": "choice",
+     "id": "h3-gift-diese-kletterpflanze-heisst",
+     "task": "Schau dir das Bild genau an!",
+     "prompt": "Diese Kletterpflanze heißt Efeu. Ist sie giftig?",
+     "options": [
+      "giftig",
+      "nicht giftig"
+     ],
+     "answer": "giftig",
+     "keepOrder": true,
+     "pic": "[[gift-efeu]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
      "id": "h3-gift-wovon-haengt-ab-wie-gefaehrl",
      "task": "Was stimmt?",
      "prompt": "Wovon hängt ab, wie gefährlich eine Giftpflanze ist?",
@@ -564,6 +578,130 @@
     }
    ],
    "mix": true
+  },
+  {
+   "title": "Große Giftpflanzen",
+   "icon": "🌳",
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "h3-gift-dieser-strauch-steht-oft-im",
+     "task": "Welche Giftpflanze ist das?",
+     "prompt": "Dieser Strauch steht oft im Kübel auf der Terrasse. Wie heißt er?",
+     "options": [
+      "Oleander",
+      "Goldregen",
+      "Fingerhut"
+     ],
+     "answer": "Oleander",
+     "pic": "[[gift-oleander]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-diese-pflanze-wird-ueber-3-m",
+     "task": "Welche Giftpflanze ist das?",
+     "prompt": "Diese Pflanze wird über 3 Meter hoch. Wie heißt sie?",
+     "options": [
+      "Herkulesstaude",
+      "Löwenzahn",
+      "Bärlauch"
+     ],
+     "answer": "Herkulesstaude",
+     "pic": "[[gift-herkulesstaude]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-dieser-baum-hat-haengende-ge",
+     "task": "Welche Giftpflanze ist das?",
+     "prompt": "Dieser Baum hat hängende gelbe Blüten. Wie heißt er?",
+     "options": [
+      "Goldregen",
+      "Oleander",
+      "Eibe"
+     ],
+     "answer": "Goldregen",
+     "pic": "[[gift-goldregen]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-dieser-nadelbaum-hat-rote-fr",
+     "task": "Welche Giftpflanze ist das?",
+     "prompt": "Dieser Nadelbaum hat rote Früchte. Wie heißt er?",
+     "options": [
+      "Eibe",
+      "Fichte",
+      "Tanne"
+     ],
+     "answer": "Eibe",
+     "pic": "[[zweig-eibe]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-tipp-auf-die-herkulesstaude",
+     "task": "Tipp auf die Herkulesstaude!",
+     "prompt": "Tipp auf die Herkulesstaude!",
+     "options": [
+      "[[gift-herkulesstaude]]",
+      "[[gift-oleander]]",
+      "[[gift-goldregen]]"
+     ],
+     "answer": "[[gift-herkulesstaude]]",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-tipp-auf-den-oleander-gift-o",
+     "task": "Tipp auf den Oleander!",
+     "prompt": "Tipp auf den Oleander!",
+     "options": [
+      "[[gift-oleander]]",
+      "[[gift-fingerhut]]",
+      "[[gift-eisenhut]]"
+     ],
+     "answer": "[[gift-oleander]]",
+     "picOptions": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-saft-der-herkulesstaude-komm",
+     "task": "Was stimmt?",
+     "prompt": "Saft der Herkulesstaude kommt auf die Haut und die Sonne scheint. Was passiert?",
+     "options": [
+      "Es gibt Blasen wie bei einer Verbrennung.",
+      "Die Haut wird schön braun.",
+      "Gar nichts."
+     ],
+     "answer": "Es gibt Blasen wie bei einer Verbrennung."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-welche-teile-vom-oleander-si",
+     "task": "Was stimmt?",
+     "prompt": "Welche Teile vom Oleander sind giftig?",
+     "options": [
+      "alle Teile",
+      "nur die Wurzel",
+      "keine"
+     ],
+     "answer": "alle Teile"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-gift-auch-baeume-und-straeucher-k",
+     "task": "Richtig oder falsch?",
+     "prompt": "Auch Bäume und Sträucher können sehr giftig sein.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true
+    }
+   ]
   },
   {
    "title": "Giftpflanzen erkennen",

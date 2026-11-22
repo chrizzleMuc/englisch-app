@@ -627,7 +627,67 @@ def aronstab():
     svg("gift-aronstab", body, defs)
 
 
-maigloeckchen(); baerlauch(); fingerhut(); eisenhut(); herbstzeitlose(); tollkirsche(); goldregen(); pfaffenhuetchen(); aronstab()
+def flower5(cx, cy, r, fill, stroke, rot0=0):
+    out = ""
+    for k in range(5):
+        a = rot0 + k * 72
+        out += f'<ellipse cx="{f(cx)}" cy="{f(cy - r * .55)}" rx="{f(r * .42)}" ry="{f(r * .6)}" fill="{fill}" stroke="{stroke}" stroke-width="1.2" transform="rotate({f(a)} {f(cx)} {f(cy)})"/>'
+    return out + f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{f(r * .22)}" fill="#ffd27a"/>'
+
+
+def oleander():
+    defs = grad("lgd", "#5fae4e", "#24623a") + grad("ol", "#ffb3d6", "#e2408a")
+    body = '<path d="M100,198 L100,84" stroke="#4d7a3a" stroke-width="6" stroke-linecap="round"/>'
+    for y, n in ((176, 3), (140, 3), (104, 3)):
+        for k in range(n):
+            a = -70 + k * 70 + (12 if y == 140 else 0)
+            body += leaflet(100, y, 70, 9, a, serr=False, fill="url(#lgd)")
+    random.seed(4)
+    for cx, cy, r in [(100, 62, 22), (68, 76, 18), (132, 74, 19), (84, 42, 17), (120, 40, 17), (100, 92, 15)]:
+        body += flower5(cx, cy, r, "url(#ol)", "#b02a68", random.randint(0, 70))
+    svg("gift-oleander", body, defs)
+
+
+def herkulesstaude():
+    defs = LEAF
+    body = '<rect x="0" y="182" width="200" height="18" rx="6" fill="#8cc45a"/>'
+    body += '<path d="M112,186 L112,62" stroke="#9cc46a" stroke-width="10" stroke-linecap="round"/>'
+    for y in (90, 120, 150):
+        body += f'<g opacity=".8">' + "".join(f'<circle cx="{110 + dx}" cy="{y + dy}" r="1.6" fill="#8a2a4a"/>' for dx, dy in ((-3, 0), (2, 6), (4, -5))) + '</g>'
+    body += leaflet(112, 182, 78, 30, -62) + leaflet(112, 182, 74, 28, 66) + leaflet(112, 150, 50, 18, 55)
+    # große Dolde
+    random.seed(7)
+    for k in range(15):
+        a = math.radians(185 + k * 170 / 14)
+        x, y = 112 + 66 * math.cos(a), 60 + 40 * math.sin(a)
+        body += f'<path d="M112,66 L{f(x)},{f(y)}" stroke="#7aa84a" stroke-width="2"/>'
+        for j in range(14):
+            b = random.random() * 6.28; rr = random.random() ** .5 * 10
+            body += f'<circle cx="{f(x + rr * math.cos(b))}" cy="{f(y - 3 + rr * .7 * math.sin(b))}" r="2.8" fill="#fff" stroke="#c9cfbf" stroke-width=".7"/>'
+    # Kind zum Größenvergleich
+    body += '<g fill="#5a6aa8"><circle cx="30" cy="140" r="7" fill="#f2c9a0"/><path d="M22,150 h16 l3,22 h-22 Z"/><path d="M24,172 h5 v12 h-5 Z M31,172 h5 v12 h-5 Z" fill="#33406e"/></g>'
+    svg("gift-herkulesstaude", body, defs)
+
+
+def efeu_blatt(cx, cy, s, ang):
+    pts = [(0, 10), (-14, 20), (-28, 16), (-18, 3), (-32, -14), (-10, -13), (0, -38), (10, -13), (32, -14), (18, 3), (28, 16), (14, 20)]
+    pts = [(cx + s * (x * math.cos(math.radians(ang)) - y * math.sin(math.radians(ang))), cy + s * (x * math.sin(math.radians(ang)) + y * math.cos(math.radians(ang)))) for x, y in pts]
+    base = pts[0]
+    out = f'<path d="{poly(pts)}" fill="url(#ef)" stroke="#173f22" stroke-width="3" stroke-linejoin="round"/>'
+    for i in (2, 4, 6, 8, 10):
+        out += f'<path d="M{f(base[0])},{f(base[1])} L{f(pts[i][0] * .75 + base[0] * .25)},{f(pts[i][1] * .75 + base[1] * .25)}" stroke="#cfe6c4" stroke-width="1.4"/>'
+    return out
+
+
+def efeu():
+    defs = grad("ef", "#3f8a4a", "#1d5230")
+    body = '<path d="M14,186 Q60,150 92,120 T186,24" stroke="#7a6a4a" stroke-width="5" fill="none" stroke-linecap="round"/>'
+    for cx, cy, s, a in [(44, 132, 1.05, -30), (78, 162, .95, 160), (112, 76, 1.1, -25), (128, 124, .9, 150), (160, 30, .8, -20), (182, 70, .7, 160)]:
+        body += efeu_blatt(cx, cy, s, a)
+    svg("gift-efeu", body, defs)
+
+
+maigloeckchen(); baerlauch(); fingerhut(); eisenhut(); herbstzeitlose(); tollkirsche(); goldregen(); pfaffenhuetchen(); aronstab(); oleander(); herkulesstaude(); efeu()
 
 
 # ---------------- Sonne, Planeten, Mond ----------------

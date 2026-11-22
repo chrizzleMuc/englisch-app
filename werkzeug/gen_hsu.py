@@ -1694,10 +1694,33 @@ UNITS["hsu/k3-giftpflanzen.json"]["lessons"].insert(0, lesson("Warum sind Pflanz
     wahr(p, "Jede Giftpflanze erkennt man an einer leuchtenden Warnfarbe.", False, "Viele Giftpflanzen sehen ganz harmlos aus. Manche sehen sogar essbaren Pflanzen zum Verwechseln ähnlich."),
     ch(p, "Was stimmt?", "Welche Teile einer Giftpflanze können giftig sein?", ["alle Teile oder nur einzelne, zum Beispiel Beeren oder Samen", "immer nur die Wurzel", "nur die Blüte"], "alle Teile oder nur einzelne, zum Beispiel Beeren oder Samen"),
     wahr(p, "Efeu wächst an vielen Häusern und ist trotzdem giftig.", True),
+    bildfrage(p, "Schau dir das Bild genau an!", "Diese Kletterpflanze heißt Efeu. Ist sie giftig?", "gift-efeu", ["giftig", "nicht giftig"], "giftig", keep=True),
     ch(p, "Was stimmt?", "Wovon hängt ab, wie gefährlich eine Giftpflanze ist?", ["von der Stärke des Giftes und von der Menge", "von der Farbe der Blüte", "vom Wetter"], "von der Stärke des Giftes und von der Menge"),
     ch(p, "Was stimmt?", "Manche Giftpflanzen haben sehr starke Gifte. Sie können … sein.", ["tödlich", "gesund", "lecker"], "tödlich"),
     ch(p, "Was tust du?", "Du findest beim Spielen eine Pflanze, die du nicht kennst. Was tust du?", ["Ich esse sie nicht und fasse sie möglichst nicht an.", "Ich probiere ein kleines Stück.", "Ich pflücke sie und nehme sie mit nach Hause."], "Ich esse sie nicht und fasse sie möglichst nicht an."),
 ], mix=False))
+
+p = "h3-gift"
+wissen("hsu-giftgross", "🌳", "Große Giftpflanzen", [
+    "Nicht nur kleine Pflanzen sind giftig. Auch **Sträucher** und **Bäume** können sehr giftig sein.",
+    "**Eibe**: Nadelbaum mit roten Früchten. Der Kern, die Nadeln und die Rinde sind sehr giftig.",
+    "**Goldregen**: im Frühsommer lange, hängende, **gelbe** Blütentrauben. Alle Teile sind sehr giftig.",
+    "**Oleander**: Strauch aus dem Mittelmeerraum mit schmalen Blättern und rosa, roten oder weißen Blüten. Er steht oft im **Kübel** auf Terrasse oder Balkon. Alle Teile sind giftig.",
+    "**Herkulesstaude** (Riesen-Bärenklau): wird **über 3 Meter** hoch und hat riesige weiße Blütendolden. Ihr Saft macht zusammen mit **Sonnenlicht** schlimme Blasen auf der Haut, wie bei einer Verbrennung.",
+], [], [f"{p}/Große Giftpflanzen"], trick="Herkulesstaude nie anfassen, auch nicht mit Stöcken daran herumschlagen!")
+add_lessons("hsu/k3-giftpflanzen.json",
+    lesson("Große Giftpflanzen", "🌳", [
+        bildfrage(p, "Welche Giftpflanze ist das?", "Dieser Strauch steht oft im Kübel auf der Terrasse. Wie heißt er?", "gift-oleander", ["Oleander", "Goldregen", "Fingerhut"], "Oleander"),
+        bildfrage(p, "Welche Giftpflanze ist das?", "Diese Pflanze wird über 3 Meter hoch. Wie heißt sie?", "gift-herkulesstaude", ["Herkulesstaude", "Löwenzahn", "Bärlauch"], "Herkulesstaude"),
+        bildfrage(p, "Welche Giftpflanze ist das?", "Dieser Baum hat hängende gelbe Blüten. Wie heißt er?", "gift-goldregen", ["Goldregen", "Oleander", "Eibe"], "Goldregen"),
+        bildfrage(p, "Welche Giftpflanze ist das?", "Dieser Nadelbaum hat rote Früchte. Wie heißt er?", "zweig-eibe", ["Eibe", "Fichte", "Tanne"], "Eibe"),
+        bildwahl(p, "Tipp auf die Herkulesstaude!", ["gift-herkulesstaude", "gift-oleander", "gift-goldregen"], "gift-herkulesstaude"),
+        bildwahl(p, "Tipp auf den Oleander!", ["gift-oleander", "gift-fingerhut", "gift-eisenhut"], "gift-oleander"),
+        ch(p, "Was stimmt?", "Saft der Herkulesstaude kommt auf die Haut und die Sonne scheint. Was passiert?", ["Es gibt Blasen wie bei einer Verbrennung.", "Die Haut wird schön braun.", "Gar nichts."], "Es gibt Blasen wie bei einer Verbrennung."),
+        ch(p, "Was stimmt?", "Welche Teile vom Oleander sind giftig?", ["alle Teile", "nur die Wurzel", "keine"], "alle Teile"),
+        wahr(p, "Auch Bäume und Sträucher können sehr giftig sein.", True),
+    ], mix=False),
+)
 
 p = "h3-laub"
 LBZ = [("blatt-buche", "Buche"), ("blatt-eiche", "Eiche"), ("blatt-birke", "Birke"), ("blatt-ahorn", "Ahorn"),

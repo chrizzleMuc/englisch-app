@@ -708,6 +708,23 @@
    "trick": "Was du nicht kennst, isst du nicht und fasst du möglichst nicht an."
   },
   {
+   "id": "hsu-giftgross",
+   "icon": "🌳",
+   "title": "Große Giftpflanzen",
+   "merke": [
+    "Nicht nur kleine Pflanzen sind giftig. Auch **Sträucher** und **Bäume** können sehr giftig sein.",
+    "**Eibe**: Nadelbaum mit roten Früchten. Der Kern, die Nadeln und die Rinde sind sehr giftig.",
+    "**Goldregen**: im Frühsommer lange, hängende, **gelbe** Blütentrauben. Alle Teile sind sehr giftig.",
+    "**Oleander**: Strauch aus dem Mittelmeerraum mit schmalen Blättern und rosa, roten oder weißen Blüten. Er steht oft im **Kübel** auf Terrasse oder Balkon. Alle Teile sind giftig.",
+    "**Herkulesstaude** (Riesen-Bärenklau): wird **über 3 Meter** hoch und hat riesige weiße Blütendolden. Ihr Saft macht zusammen mit **Sonnenlicht** schlimme Blasen auf der Haut, wie bei einer Verbrennung."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-gift/Große Giftpflanzen"
+   ],
+   "trick": "Herkulesstaude nie anfassen, auch nicht mit Stöcken daran herumschlagen!"
+  },
+  {
    "id": "hsu-kontinente",
    "icon": "🌍",
    "title": "Kontinente und Ozeane",
