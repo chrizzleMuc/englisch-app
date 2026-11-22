@@ -109,9 +109,11 @@ def unit(id_, title, image, color, lessons):
     return {"id": id_, "type": "schule", "title_de": title, "image": image, "color": color, "lessons": lessons}
 
 
-def wissen(id_, icon, title, merke, beispiele=(), lektionen=(), trick=""):
+def wissen(id_, icon, title, merke, beispiele=(), lektionen=(), trick="", bilder=()):
+    """bilder: [(Zeichnungs-/Fotoname, Unterschrift), …] werden als Bildleiste auf der Merkkarte gezeigt."""
     r = {"id": id_, "icon": icon, "title": title, "merke": list(merke), "beispiele": list(beispiele), "lektionen": list(lektionen)}
     if trick: r["trick"] = trick
+    if bilder: r["bilder"] = [list(b) for b in bilder]
     RULES.append(r)
 
 
@@ -1385,14 +1387,16 @@ wissen("hsu-giftpflanzen", "☠️", "Giftpflanzen erkennen", [
     "**Herbstzeitlose**: lila Blüte im Herbst auf Wiesen.",
     "**Tollkirsche**: schwarze, glänzende Beeren wie Kirschen.",
     "**Eibe**, **Goldregen** (gelbe Blütentrauben) und **Pfaffenhütchen** (rosa Früchte) sind giftige Bäume und Sträucher.",
-], [], [f"{p}/Kleine Giftpflanzen", f"{p}/Giftige Sträucher und Bäume"])
+], [], [f"{p}/Kleine Giftpflanzen", f"{p}/Giftige Sträucher und Bäume"], bilder=[
+    ("gift-maigloeckchen", "Maiglöckchen"), ("gift-fingerhut", "Fingerhut"), ("gift-eisenhut", "Eisenhut"), ("gift-herbstzeitlose", "Herbstzeitlose"),
+    ("gift-tollkirsche", "Tollkirsche"), ("gift-pfaffenhuetchen", "Pfaffenhütchen"), ("gift-aronstab", "Aronstab")])
 wissen("hsu-giftgemuese", "🥔", "Vorsicht bei Gemüse", [
     "**Bohnen** nie roh essen. Erst durch Kochen werden sie bekömmlich.",
     "Bei **Kartoffeln** grüne Stellen und Keime wegschneiden.",
     "**Grüne Tomaten** nicht essen. Nur rote, reife Tomaten.",
     "Beim **Rhabarber** nur die Stiele essen, nie die Blätter.",
     "**Holunderbeeren** nur gekocht essen, zum Beispiel als Saft.",
-], ["Bärlauch riecht nach **Knoblauch**. Maiglöckchen riechen nicht danach."], [f"{p}/Giftiges Gemüse"])
+], ["Bärlauch riecht nach **Knoblauch**. Maiglöckchen riechen nicht danach."], [f"{p}/Giftiges Gemüse"], bilder=[("baerlauch", "Bärlauch (essbar)"), ("gift-maigloeckchen", "Maiglöckchen (giftig)")])
 
 UNITS["hsu/k3-giftpflanzen.json"] = unit(p, "Heimische Giftpflanzen", "⚠️", "#7a3fb0", [
     lesson("Was sind Giftpflanzen?", "⚠️", [
@@ -1688,7 +1692,7 @@ wissen("hsu-giftwas", "🛡️", "Warum sind Pflanzen giftig?", [
     "Giftige Tiere warnen oft mit **Warnfarben**, wie die Wespe. Einer Giftpflanze sieht man ihr Gift **nicht** an.",
     "Auch Pflanzen, die man jeden Tag sieht, können giftig sein. Zum Beispiel **Efeu** an der Hauswand oder die **Eibe** in der Hecke.",
     "Es kommt auf die **Menge** und die Stärke des Giftes an. Manche Pflanzen machen nur Bauchweh, andere können **tödlich** sein.",
-], [], [f"{p}/Warum sind Pflanzen giftig?"], trick="Was du nicht kennst, isst du nicht und fasst du möglichst nicht an.")
+], [], [f"{p}/Warum sind Pflanzen giftig?"], trick="Was du nicht kennst, isst du nicht und fasst du möglichst nicht an.", bilder=[("gift-efeu", "Efeu")])
 UNITS["hsu/k3-giftpflanzen.json"]["lessons"].insert(0, lesson("Warum sind Pflanzen giftig?", "🛡️", [
     ch(p, "Was stimmt?", "Warum bilden manche Pflanzen Gift?", ["um sich vor Tieren zu schützen, die sie fressen wollen", "damit sie schöner blühen", "damit sie schneller wachsen"], "um sich vor Tieren zu schützen, die sie fressen wollen"),
     wahr(p, "Jede Giftpflanze erkennt man an einer leuchtenden Warnfarbe.", False, "Viele Giftpflanzen sehen ganz harmlos aus. Manche sehen sogar essbaren Pflanzen zum Verwechseln ähnlich."),
@@ -1707,7 +1711,8 @@ wissen("hsu-giftgross", "🌳", "Große Giftpflanzen", [
     "**Goldregen**: im Frühsommer lange, hängende, **gelbe** Blütentrauben. Alle Teile sind sehr giftig.",
     "**Oleander**: Strauch aus dem Mittelmeerraum mit schmalen Blättern und rosa, roten oder weißen Blüten. Er steht oft im **Kübel** auf Terrasse oder Balkon. Alle Teile sind giftig.",
     "**Herkulesstaude** (Riesen-Bärenklau): wird **über 3 Meter** hoch und hat riesige weiße Blütendolden. Ihr Saft macht zusammen mit **Sonnenlicht** schlimme Blasen auf der Haut, wie bei einer Verbrennung.",
-], [], [f"{p}/Große Giftpflanzen"], trick="Herkulesstaude nie anfassen, auch nicht mit Stöcken daran herumschlagen!")
+], [], [f"{p}/Große Giftpflanzen"], trick="Herkulesstaude nie anfassen, auch nicht mit Stöcken daran herumschlagen!", bilder=[
+    ("zweig-eibe", "Eibe"), ("gift-goldregen", "Goldregen"), ("gift-oleander", "Oleander"), ("gift-herkulesstaude", "Herkulesstaude")])
 add_lessons("hsu/k3-giftpflanzen.json",
     lesson("Große Giftpflanzen", "🌳", [
         bildfrage(p, "Welche Giftpflanze ist das?", "Dieser Strauch steht oft im Kübel auf der Terrasse. Wie heißt er?", "gift-oleander", ["Oleander", "Goldregen", "Fingerhut"], "Oleander"),

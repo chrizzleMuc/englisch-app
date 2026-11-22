@@ -1,5 +1,5 @@
 // Offline-Speicher: Bei jeder Änderung an der App VERSION erhöhen.
-const VERSION = "learnino-36";
+const VERSION = "learnino-37";
 const FILES = [
   "./",
   "index.html",
@@ -469,6 +469,20 @@ const FILES = [
   "img/zeichnungen/gift-oleander.svg",
   "img/zeichnungen/gift-herkulesstaude.svg",
   "img/zeichnungen/gift-efeu.svg",
+  "img/fotos/baerlauch.webp",
+  "img/fotos/gift-aronstab.webp",
+  "img/fotos/gift-efeu.webp",
+  "img/fotos/gift-eisenhut.webp",
+  "img/fotos/gift-fingerhut.webp",
+  "img/fotos/gift-goldregen.webp",
+  "img/fotos/gift-herbstzeitlose.webp",
+  "img/fotos/gift-herkulesstaude.webp",
+  "img/fotos/gift-maigloeckchen.webp",
+  "img/fotos/gift-oleander.webp",
+  "img/fotos/gift-pfaffenhuetchen.webp",
+  "img/fotos/gift-tollkirsche.webp",
+  "img/fotos/zweig-eibe.webp",
+  "inhalte/fotos.json",
   "img/zeichnungen/weltkarte.svg",
   "img/zeichnungen/weltkarte-suedamerika.svg",
   "img/zeichnungen/weltkarte-nordamerika.svg",

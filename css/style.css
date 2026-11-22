@@ -927,3 +927,17 @@ table.eval tr.fail td { color: #b3261e; }
 .label-cloze p { margin: 4px 0; }
 .label-gap { display: inline-block; min-width: 72px; padding: 0 8px; margin: 0 2px; font-size: 18px; line-height: 1.5; vertical-align: baseline; border-bottom: 3px solid #b9a6ea; background: #f3effc; }
 .say-cloze { display: flex; margin: 0 auto 6px; }
+
+/* Fotos (Wikimedia Commons) statt Zeichnungen */
+.emo.zeich.foto { object-fit: cover; border-radius: 14px; box-shadow: 0 2px 8px rgba(0, 0, 0, .25); background: #fff; }
+.huge-pic .emo.zeich.foto { width: min(80vw, 380px); height: min(60vw, 285px); max-height: none; }
+.pic-choices .choice:has(.foto) { padding: 6px; }
+.pic-choices .mid-pic:has(.foto) { display: block; width: 100%; }
+.pic-choices .mid-pic .emo.zeich.foto { display: block; width: 100%; height: clamp(96px, 30vw, 170px); max-width: none; max-height: none; margin: 0; }
+.rule-pics { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; margin: 8px 0; }
+.rule-pics figure { margin: 0; text-align: center; font-size: 14px; font-weight: 700; }
+.rule-pics .emo.zeich { width: 100%; height: 92px; object-fit: cover; border-radius: 10px; display: block; }
+.rule-pics .emo.zeich:not(.foto) { object-fit: contain; background: #fff; }
+.rule-pics figcaption { margin-top: 3px; }
+.credits { font-size: 13px; line-height: 1.5; padding-left: 18px; }
+.credits a { color: inherit; }

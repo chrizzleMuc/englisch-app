@@ -537,6 +537,36 @@
    "lektionen": [
     "h3-gift/Kleine Giftpflanzen",
     "h3-gift/Giftige Sträucher und Bäume"
+   ],
+   "bilder": [
+    [
+     "gift-maigloeckchen",
+     "Maiglöckchen"
+    ],
+    [
+     "gift-fingerhut",
+     "Fingerhut"
+    ],
+    [
+     "gift-eisenhut",
+     "Eisenhut"
+    ],
+    [
+     "gift-herbstzeitlose",
+     "Herbstzeitlose"
+    ],
+    [
+     "gift-tollkirsche",
+     "Tollkirsche"
+    ],
+    [
+     "gift-pfaffenhuetchen",
+     "Pfaffenhütchen"
+    ],
+    [
+     "gift-aronstab",
+     "Aronstab"
+    ]
    ]
   },
   {
@@ -555,6 +585,16 @@
    ],
    "lektionen": [
     "h3-gift/Giftiges Gemüse"
+   ],
+   "bilder": [
+    [
+     "baerlauch",
+     "Bärlauch (essbar)"
+    ],
+    [
+     "gift-maigloeckchen",
+     "Maiglöckchen (giftig)"
+    ]
    ]
   },
   {
@@ -705,7 +745,13 @@
    "lektionen": [
     "h3-gift/Warum sind Pflanzen giftig?"
    ],
-   "trick": "Was du nicht kennst, isst du nicht und fasst du möglichst nicht an."
+   "trick": "Was du nicht kennst, isst du nicht und fasst du möglichst nicht an.",
+   "bilder": [
+    [
+     "gift-efeu",
+     "Efeu"
+    ]
+   ]
   },
   {
    "id": "hsu-giftgross",
@@ -722,7 +768,25 @@
    "lektionen": [
     "h3-gift/Große Giftpflanzen"
    ],
-   "trick": "Herkulesstaude nie anfassen, auch nicht mit Stöcken daran herumschlagen!"
+   "trick": "Herkulesstaude nie anfassen, auch nicht mit Stöcken daran herumschlagen!",
+   "bilder": [
+    [
+     "zweig-eibe",
+     "Eibe"
+    ],
+    [
+     "gift-goldregen",
+     "Goldregen"
+    ],
+    [
+     "gift-oleander",
+     "Oleander"
+    ],
+    [
+     "gift-herkulesstaude",
+     "Herkulesstaude"
+    ]
+   ]
   },
   {
    "id": "hsu-kontinente",

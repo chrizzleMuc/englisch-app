@@ -9,9 +9,19 @@ function parts(s) {
 }
 
 // Eigene Zeichnungen: [[name]] → img/zeichnungen/name.svg
+// Gibt es zu dem Namen ein freies Foto (inhalte/fotos.json), wird stattdessen img/fotos/name.webp gezeigt.
+let FOTOS = {};
+export function setFotos(m) {
+  FOTOS = m || {};
+}
+export function zeichImg(name) {
+  return FOTOS[name]
+    ? `<img class="emo zeich foto" src="img/fotos/${name}.webp" alt="" draggable="false">`
+    : `<img class="emo zeich" src="img/zeichnungen/${name}.svg" alt="" draggable="false">`;
+}
 export function pic(s) {
   if (!s) return "";
-  if (String(s).includes("[[")) return String(s).split(/(\[\[[a-z0-9-]+\]\])/).map((x) => (/^\[\[[a-z0-9-]+\]\]$/.test(x) ? `<img class="emo zeich" src="img/zeichnungen/${x.slice(2, -2)}.svg" alt="" draggable="false">` : picPart(x))).join("");
+  if (String(s).includes("[[")) return String(s).split(/(\[\[[a-z0-9-]+\]\])/).map((x) => (/^\[\[[a-z0-9-]+\]\]$/.test(x) ? zeichImg(x.slice(2, -2)) : picPart(x))).join("");
   return picPart(s);
 }
 

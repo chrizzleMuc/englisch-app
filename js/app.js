@@ -5,11 +5,11 @@ import { canRecord, record, playUrl } from "./recorder.js";
 import { content, loadContent, puzzleItem } from "./content.js";
 import * as store from "./store.js";
 import * as photos from "./photos.js";
-import { pic } from "./pics.js";
+import { pic, zeichImg } from "./pics.js";
 import { vis, visText } from "./mathpics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 36;
+const APP_VERSION = 37;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -879,6 +879,7 @@ function ruleCardHtml(r) {
   return `<div class="rule-card">
     <div class="rule-head"><span class="rule-icon">${pic(r.icon || "💡")}</span><div><small>Merke!</small><b>${esc(r.title)}</b></div></div>
     <ul class="rule-list">${r.merke.map((m) => `<li>${ruleFmt(m)}</li>`).join("")}</ul>
+    ${(r.bilder || []).length ? `<div class="rule-pics">${r.bilder.map(([n, t]) => `<figure>${zeichImg(n)}<figcaption>${esc(t)}</figcaption></figure>`).join("")}</div>` : ""}
     ${(r.beispiele || []).length ? `<div class="rule-ex"><small>Beispiele</small>${r.beispiele.map((b) => `<p>${ruleFmt(b)}</p>`).join("")}</div>` : ""}
     ${r.trick ? `<p class="rule-trick">🔍 <b>Trick:</b> ${ruleFmt(r.trick)}</p>` : ""}
   </div>`;
@@ -2665,6 +2666,10 @@ function showParents(msg = "") {
         <p class="small">Der Code gilt nur auf diesem Gerät. Auf dem Handy legst du beim ersten Öffnen dort einen eigenen fest.</p>
         <button class="wide-btn" id="pinchange">Code ändern</button>
       </details>
+      ${Object.keys(content.fotos || {}).length ? `<details class="psec" data-key="sec-fotos"><summary><h3>📷 Bildnachweis</h3></summary>
+        <p class="small">Die Fotos im Sachunterricht stammen von Wikimedia Commons und stehen unter freien Lizenzen. Sie wurden verkleinert.</p>
+        <ul class="credits">${Object.values(content.fotos).sort((a, b) => a.label.localeCompare(b.label, "de")).map((f) => `<li><b>${esc(f.label)}</b>: ${esc(f.artist || "unbekannt")}, <a href="${esc(f.licurl || f.page)}" target="_blank" rel="noopener">${esc(f.lic)}</a>, <a href="${esc(f.page)}" target="_blank" rel="noopener">Quelle</a></li>`).join("")}</ul>
+      </details>` : ""}
       <details class="psec" data-key="sec-93725"><summary><h3>Zurücksetzen</h3></summary>
         <button class="wide-btn danger" id="reset">Gesamten Fortschritt löschen</button>
       </details>
