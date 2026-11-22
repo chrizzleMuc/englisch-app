@@ -16,7 +16,7 @@ export function setFotos(m) {
 }
 export function zeichImg(name) {
   return FOTOS[name]
-    ? `<img class="emo zeich foto" src="img/fotos/${name}.webp" alt="" draggable="false">`
+    ? `<img class="emo zeich foto ${/^(planet|himmel|mond)-/.test(name) ? "fit space" : /^blatt-(birke|linde|ahorn|eberesche)$/.test(name) ? "fit" : ""}" src="img/fotos/${name}.webp" alt="" draggable="false">`
     : `<img class="emo zeich" src="img/zeichnungen/${name}.svg" alt="" draggable="false">`;
 }
 export function pic(s) {

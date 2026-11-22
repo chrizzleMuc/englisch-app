@@ -7,6 +7,86 @@
   "artist": "Dominicus Johannes Bergsma",
   "label": "Bärlauch"
  },
+ "blatt-ahorn": {
+  "title": "File:2020 year. Herbarium. Acer platanoides. img-011.jpg",
+  "lic": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3A2020_year._Herbarium._Acer_platanoides._img-011.jpg",
+  "artist": "Dmitry Makeev",
+  "label": "Ahorn (Blatt)"
+ },
+ "blatt-birke": {
+  "title": "File:Betula pendula leaf illustration.jpg",
+  "lic": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3ABetula_pendula_leaf_illustration.jpg",
+  "artist": "G.Bernetti/EUFORGEN",
+  "label": "Birke (Blatt)"
+ },
+ "blatt-eberesche": {
+  "title": "File:2020 year. Herbarium. Sorbus aucuparia. img-005.jpg",
+  "lic": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3A2020_year._Herbarium._Sorbus_aucuparia._img-005.jpg",
+  "artist": "Dmitry Makeev",
+  "label": "Eberesche (Blatt)"
+ },
+ "blatt-kastanie": {
+  "title": "File:Aesculus hippocastanum-1.jpg",
+  "lic": "CC BY 2.5",
+  "licurl": "https://creativecommons.org/licenses/by/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File%3AAesculus_hippocastanum-1.jpg",
+  "artist": "Alvesgaspar",
+  "label": "Kastanie (Blätter)"
+ },
+ "blatt-linde": {
+  "title": "File:2020 year. Herbarium. Tilia cordata. img-007.jpg",
+  "lic": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3A2020_year._Herbarium._Tilia_cordata._img-007.jpg",
+  "artist": "Dmitry Makeev",
+  "label": "Linde (Blatt)"
+ },
+ "frucht-ahorn": {
+  "title": "File:Acer pseudoplatanus MHNT.BOT.2004.0.461.jpg",
+  "lic": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3AAcer_pseudoplatanus_MHNT.BOT.2004.0.461.jpg",
+  "artist": "Didier Descouens",
+  "label": "Ahornfrüchte"
+ },
+ "frucht-buchecker": {
+  "title": "File:Opengebarsten lege vrucht (nap) van beuk (Fagus sylvatica) 18-12-2020 (d.j.b.) 01.jpg",
+  "lic": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3AOpengebarsten_lege_vrucht_%28nap%29_van_beuk_%28Fagus_sylvatica%29_18-12-2020_%28d.j.b.%29_01.jpg",
+  "artist": "Dominicus Johannes Bergsma",
+  "label": "Buchecker"
+ },
+ "frucht-eichel": {
+  "title": "File:Acorns of Quercus robur, Eichel der Stieleiche 06.JPG",
+  "lic": "CC BY-SA 3.0 at",
+  "licurl": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File%3AAcorns_of_Quercus_robur%2C_Eichel_der_Stieleiche_06.JPG",
+  "artist": "böhringer friedrich",
+  "label": "Eichel"
+ },
+ "frucht-kastanie": {
+  "title": "File:Aesculus hippocastanum (50316391573).jpg",
+  "lic": "CC BY 2.0",
+  "licurl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3AAesculus_hippocastanum_%2850316391573%29.jpg",
+  "artist": "oatsy40",
+  "label": "Kastanienfrüchte"
+ },
+ "frucht-vogelbeeren": {
+  "title": "File:Sorbus aucuparia aka rowan.jpg",
+  "lic": "CC BY-SA 3.0",
+  "licurl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File%3ASorbus_aucuparia_aka_rowan.jpg",
+  "artist": "Martin Olsson",
+  "label": "Vogelbeeren"
+ },
  "gift-aronstab": {
   "title": "File:Berries of cuckoo-pint (Arum maculatum), Tyne riverside - geograph.org.uk - 5100908.jpg",
   "lic": "CC BY-SA 2.0",
@@ -95,6 +175,102 @@
   "artist": "Steffen Bauer (www.saatpilot.de)",
   "label": "Tollkirsche"
  },
+ "himmel-sonne": {
+  "title": "File:SDO 20180214 000000 4096 HMIIC (HMI).jpg",
+  "lic": "Public domain",
+  "licurl": "",
+  "page": "https://commons.wikimedia.org/wiki/File%3ASDO_20180214_000000_4096_HMIIC_%28HMI%29.jpg",
+  "artist": "Courtesy of NASA/SDO and the AIA, EVE, and HMI science teams.",
+  "label": "Sonne"
+ },
+ "mond-vollmond": {
+  "title": "File:Full Moon Luc Viatour.jpg",
+  "lic": "CC BY-SA 3.0",
+  "licurl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File%3AFull_Moon_Luc_Viatour.jpg",
+  "artist": "Luc Viatour",
+  "label": "Vollmond"
+ },
+ "planet-erde": {
+  "title": "File:The Earth seen from Apollo 17.jpg",
+  "lic": "Public domain",
+  "licurl": "",
+  "page": "https://commons.wikimedia.org/wiki/File%3AThe_Earth_seen_from_Apollo_17.jpg",
+  "artist": "NASA/Apollo 17 crew; taken by either Harrison Schmitt or Ron Evans",
+  "label": "Erde"
+ },
+ "planet-jupiter": {
+  "title": "File:Portrait of Jupiter from Cassini.jpg",
+  "lic": "Public domain",
+  "licurl": "",
+  "page": "https://commons.wikimedia.org/wiki/File%3APortrait_of_Jupiter_from_Cassini.jpg",
+  "artist": "NASA/JPL/Space Science Institute",
+  "label": "Jupiter"
+ },
+ "planet-mars": {
+  "title": "File:Mars from Hubble (Dec. 13, 1990).jpg",
+  "lic": "Public domain",
+  "licurl": "",
+  "page": "https://commons.wikimedia.org/wiki/File%3AMars_from_Hubble_%28Dec._13%2C_1990%29.jpg",
+  "artist": "NASA/ESA/STScl",
+  "label": "Mars"
+ },
+ "planet-merkur": {
+  "title": "File:Mercury in color - Prockter07 centered.jpg",
+  "lic": "Public domain",
+  "licurl": "",
+  "page": "https://commons.wikimedia.org/wiki/File%3AMercury_in_color_-_Prockter07_centered.jpg",
+  "artist": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington. Edited version of Image:Mercury in color - Prockter07.jpg by Papa Lima Whiskey.",
+  "label": "Merkur"
+ },
+ "planet-neptun": {
+  "title": "File:Neptune Full.jpg",
+  "lic": "Public domain",
+  "licurl": "",
+  "page": "https://commons.wikimedia.org/wiki/File%3ANeptune_Full.jpg",
+  "artist": "NASA",
+  "label": "Neptun"
+ },
+ "planet-saturn": {
+  "title": "File:Saturn during Equinox.jpg",
+  "lic": "Public domain",
+  "licurl": "",
+  "page": "https://commons.wikimedia.org/wiki/File%3ASaturn_during_Equinox.jpg",
+  "artist": "NASA / JPL / Space Science Institute",
+  "label": "Saturn"
+ },
+ "planet-uranus": {
+  "title": "File:Uranus2.jpg",
+  "lic": "Public domain",
+  "licurl": "",
+  "page": "https://commons.wikimedia.org/wiki/File%3AUranus2.jpg",
+  "artist": "NASA/JPL-Caltech",
+  "label": "Uranus"
+ },
+ "zapfen-fichte": {
+  "title": "File:Norway Spruce cones (Picea abies).jpg",
+  "lic": "CC BY-SA 3.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3ANorway_Spruce_cones_%28Picea_abies%29.jpg",
+  "artist": "MrPanyGoff",
+  "label": "Fichtenzapfen"
+ },
+ "zapfen-kiefer": {
+  "title": "File:Pinus-sylvestris-cone-2.jpg",
+  "lic": "CC BY-SA 2.1 es",
+  "licurl": "https://creativecommons.org/licenses/by-sa/2.1/es/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File%3APinus-sylvestris-cone-2.jpg",
+  "artist": "",
+  "label": "Kiefernzapfen"
+ },
+ "zapfen-tanne": {
+  "title": "File:Abies alba cones Goc.jpg",
+  "lic": "CC BY-SA 3.0 rs",
+  "licurl": "https://creativecommons.org/licenses/by-sa/3.0/rs/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File%3AAbies_alba_cones_Goc.jpg",
+  "artist": "Gmihail at Serbian Wikipedia",
+  "label": "Tannenzapfen"
+ },
  "zweig-eibe": {
   "title": "File:Taxus baccata Lviv.JPG",
   "lic": "CC BY-SA 3.0",
@@ -102,5 +278,37 @@
   "page": "https://commons.wikimedia.org/wiki/Special:Redirect/page/31993440",
   "artist": "Mykola Swarnyk",
   "label": "Eibe"
+ },
+ "zweig-fichte": {
+  "title": "File:Picea abies (409899321).jpg",
+  "lic": "CC BY-SA 2.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3APicea_abies_%28409899321%29.jpg",
+  "artist": "Randi Hausken from Bærum, Norway",
+  "label": "Fichte"
+ },
+ "zweig-kiefer": {
+  "title": "File:Pinus sylvestris 2020 G2.jpg",
+  "lic": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3APinus_sylvestris_2020_G2.jpg",
+  "artist": "George Chernilevsky",
+  "label": "Kiefer"
+ },
+ "zweig-laerche": {
+  "title": "File:Larix decidua needles and male cones.JPG",
+  "lic": "Public domain",
+  "licurl": "",
+  "page": "https://commons.wikimedia.org/wiki/File%3ALarix_decidua_needles_and_male_cones.JPG",
+  "artist": "Rosser1954 Roger Griffith",
+  "label": "Lärche"
+ },
+ "zweig-tanne": {
+  "title": "File:Gros plan aiguilles sapin pectiné.jpg",
+  "lic": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3AGros_plan_aiguilles_sapin_pectin%C3%A9.jpg",
+  "artist": "Moinats",
+  "label": "Tanne"
  }
 }
