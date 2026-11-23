@@ -1,5 +1,6 @@
 // Lädt die Inhalte aus dem Ordner "inhalte" und prüft sie.
 // Fehler werden gesammelt und im Elternbereich angezeigt, statt dass die App leer bleibt.
+import { setFotos } from "./pics.js";
 
 export const content = { subjects: [], items: new Map(), units: new Map(), photoTasks: new Map(), rules: new Map(), errors: [] };
 
@@ -258,6 +259,13 @@ export async function loadContent() {
     }
     content.subjects.push(s);
   }
+  // Freie Fotos (Wikimedia Commons) mit Bildnachweis
+  try {
+    content.fotos = await getJson("fotos.json");
+  } catch (e) {
+    content.fotos = {};
+  }
+  setFotos(content.fotos);
   // regeln.json (Deutsch, Mathe) und wissen-hsu.json (Merkkarten Sachunterricht)
   for (const f of ["regeln.json", "wissen-hsu.json"]) {
     try {
