@@ -2217,6 +2217,315 @@
    ]
   },
   {
+   "title": "Lückentext: Einladung für Tim",
+   "icon": "📝",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-tim-ein-was-deine",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen\n\nMünchen, 1.6.27\n_____ Tim,\nich … dich herzlich zu meiner Geburtstagsfeier ein.\nWir treffen uns am Samstag, den 12. Juni, um … im Schwimmbad.\nBring bitte deine Badesachen …!\nSag mir bitte …, ob du kommen kannst.\nLiebe …\nDein Nathan",
+     "answer": "Lieber",
+     "explain": "Richtig: Lieber Tim,",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-tim-ein-was-deine-2",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen\n\nMünchen, 1.6.27\nLieber Tim,\nich _____ dich herzlich zu meiner Geburtstagsfeier ein.\nWir treffen uns am Samstag, den 12. Juni, um … im Schwimmbad.\nBring bitte deine Badesachen …!\nSag mir bitte …, ob du kommen kannst.\nLiebe …\nDein Nathan",
+     "answer": "lade",
+     "explain": "Richtig: ich lade dich herzlich zu meiner Geburtstagsfeier ein.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-tim-ein-was-deine-3",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen\n\nMünchen, 1.6.27\nLieber Tim,\nich lade dich herzlich zu meiner Geburtstagsfeier ein.\nWir treffen uns am Samstag, den 12. Juni, um _____ im Schwimmbad.\nBring bitte deine Badesachen …!\nSag mir bitte …, ob du kommen kannst.\nLiebe …\nDein Nathan",
+     "answer": "15 Uhr",
+     "also": [
+      "15:00 Uhr"
+     ],
+     "explain": "Richtig: Wir treffen uns am Samstag, den 12. Juni, um 15 Uhr im Schwimmbad.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-tim-ein-was-deine-4",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen\n\nMünchen, 1.6.27\nLieber Tim,\nich lade dich herzlich zu meiner Geburtstagsfeier ein.\nWir treffen uns am Samstag, den 12. Juni, um 15 Uhr im Schwimmbad.\nBring bitte deine Badesachen _____!\nSag mir bitte …, ob du kommen kannst.\nLiebe …\nDein Nathan",
+     "answer": "mit",
+     "explain": "Richtig: Bring bitte deine Badesachen mit!",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-tim-ein-was-deine-5",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen\n\nMünchen, 1.6.27\nLieber Tim,\nich lade dich herzlich zu meiner Geburtstagsfeier ein.\nWir treffen uns am Samstag, den 12. Juni, um 15 Uhr im Schwimmbad.\nBring bitte deine Badesachen mit!\nSag mir bitte _____, ob du kommen kannst.\nLiebe …\nDein Nathan",
+     "answer": "Bescheid",
+     "explain": "Richtig: Sag mir bitte Bescheid, ob du kommen kannst.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-tim-ein-was-deine-6",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen\n\nMünchen, 1.6.27\nLieber Tim,\nich lade dich herzlich zu meiner Geburtstagsfeier ein.\nWir treffen uns am Samstag, den 12. Juni, um 15 Uhr im Schwimmbad.\nBring bitte deine Badesachen mit!\nSag mir bitte Bescheid, ob du kommen kannst.\nLiebe _____\nDein Nathan",
+     "answer": "Grüße",
+     "explain": "Richtig: Liebe Grüße",
+     "letter": true
+    }
+   ]
+  },
+  {
+   "title": "Lückentext: Einladung für Lea und Oma",
+   "icon": "📝",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\n_____ Lea,\nbald ist es so …: Ich feiere eine Pyjama-Party!\nDie Party … am …, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen … mit.\nIch … mich schon riesig auf dich!\nViele Grüße\nDeine …",
+     "answer": "Liebe",
+     "explain": "Richtig: Liebe Lea,",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama-2",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\nLiebe Lea,\nbald ist es so _____: Ich feiere eine Pyjama-Party!\nDie Party … am …, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen … mit.\nIch … mich schon riesig auf dich!\nViele Grüße\nDeine …",
+     "answer": "weit",
+     "explain": "Richtig: bald ist es so weit: Ich feiere eine Pyjama-Party!",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama-3",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\nLiebe Lea,\nbald ist es so weit: Ich feiere eine Pyjama-Party!\nDie Party _____ am …, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen … mit.\nIch … mich schon riesig auf dich!\nViele Grüße\nDeine …",
+     "answer": "findet",
+     "explain": "Richtig: Die Party findet am Freitag, den 3. März, um 18 Uhr bei mir zu Hause statt.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama-4",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\nLiebe Lea,\nbald ist es so weit: Ich feiere eine Pyjama-Party!\nDie Party findet am _____, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen … mit.\nIch … mich schon riesig auf dich!\nViele Grüße\nDeine …",
+     "answer": "Freitag, den 3. März",
+     "also": [
+      "Freitag, 3. März"
+     ],
+     "explain": "Richtig: Die Party findet am Freitag, den 3. März, um 18 Uhr bei mir zu Hause statt.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama-5",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\nLiebe Lea,\nbald ist es so weit: Ich feiere eine Pyjama-Party!\nDie Party findet am Freitag, den 3. März, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen _____ mit.\nIch … mich schon riesig auf dich!\nViele Grüße\nDeine …",
+     "answer": "Schlafsack",
+     "explain": "Richtig: Bring bitte deinen Schlafsack mit.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama-6",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\nLiebe Lea,\nbald ist es so weit: Ich feiere eine Pyjama-Party!\nDie Party findet am Freitag, den 3. März, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen Schlafsack mit.\nIch _____ mich schon riesig auf dich!\nViele Grüße\nDeine …",
+     "answer": "freue",
+     "explain": "Richtig: Ich freue mich schon riesig auf dich!",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama-7",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\nLiebe Lea,\nbald ist es so weit: Ich feiere eine Pyjama-Party!\nDie Party findet am Freitag, den 3. März, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen Schlafsack mit.\nIch freue mich schon riesig auf dich!\nViele Grüße\nDeine _____",
+     "answer": "Mia",
+     "explain": "Richtig: Deine Mia",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-deine-oma-ein-was",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen\n\nNürnberg, 25.6.27\n_____ Oma,\n… lade ich dich zu unserem Sommerfest ein.\nWir feiern am Sonntag, den 8. Juli. Um … geht es im … los.\nEs … leckeren Kuchen.\nIch kann es kaum …, dass du kommst!\nLiebe Grüße\nDein Nathan",
+     "answer": "Liebe",
+     "explain": "Richtig: Liebe Oma,",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-deine-oma-ein-was-2",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen\n\nNürnberg, 25.6.27\nLiebe Oma,\n_____ lade ich dich zu unserem Sommerfest ein.\nWir feiern am Sonntag, den 8. Juli. Um … geht es im … los.\nEs … leckeren Kuchen.\nIch kann es kaum …, dass du kommst!\nLiebe Grüße\nDein Nathan",
+     "answer": "hiermit",
+     "explain": "Richtig: hiermit lade ich dich zu unserem Sommerfest ein.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-deine-oma-ein-was-3",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen\n\nNürnberg, 25.6.27\nLiebe Oma,\nhiermit lade ich dich zu unserem Sommerfest ein.\nWir feiern am Sonntag, den 8. Juli. Um _____ geht es im … los.\nEs … leckeren Kuchen.\nIch kann es kaum …, dass du kommst!\nLiebe Grüße\nDein Nathan",
+     "answer": "14 Uhr",
+     "also": [
+      "14:00 Uhr"
+     ],
+     "explain": "Richtig: Wir feiern am Sonntag, den 8. Juli. Um 14 Uhr geht es im Garten los.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-deine-oma-ein-was-4",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen\n\nNürnberg, 25.6.27\nLiebe Oma,\nhiermit lade ich dich zu unserem Sommerfest ein.\nWir feiern am Sonntag, den 8. Juli. Um 14 Uhr geht es im _____ los.\nEs … leckeren Kuchen.\nIch kann es kaum …, dass du kommst!\nLiebe Grüße\nDein Nathan",
+     "answer": "Garten",
+     "explain": "Richtig: Wir feiern am Sonntag, den 8. Juli. Um 14 Uhr geht es im Garten los.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-deine-oma-ein-was-5",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen\n\nNürnberg, 25.6.27\nLiebe Oma,\nhiermit lade ich dich zu unserem Sommerfest ein.\nWir feiern am Sonntag, den 8. Juli. Um 14 Uhr geht es im Garten los.\nEs _____ leckeren Kuchen.\nIch kann es kaum …, dass du kommst!\nLiebe Grüße\nDein Nathan",
+     "answer": "gibt",
+     "explain": "Richtig: Es gibt leckeren Kuchen.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-deine-oma-ein-was-6",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen\n\nNürnberg, 25.6.27\nLiebe Oma,\nhiermit lade ich dich zu unserem Sommerfest ein.\nWir feiern am Sonntag, den 8. Juli. Um 14 Uhr geht es im Garten los.\nEs gibt leckeren Kuchen.\nIch kann es kaum _____, dass du kommst!\nLiebe Grüße\nDein Nathan",
+     "answer": "erwarten",
+     "explain": "Richtig: Ich kann es kaum erwarten, dass du kommst!",
+     "letter": true
+    }
+   ]
+  },
+  {
+   "title": "Lückentext: Einladung für die 3a und Ben",
+   "icon": "📝",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-deine-klasse-3b-laedt-die-kl",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe\n\nRegensburg, 3.5.27\nLiebe Kinder der Klasse 3a,\n_____ laden euch herzlich zu unserem Spielenachmittag ein.\nWir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der ….\nZusammen … wir viele lustige Spiele machen.\nBringt bitte … mit.\nWir … uns auf euch!\nViele Grüße\nEure Klasse …",
+     "answer": "wir",
+     "explain": "Richtig: wir laden euch herzlich zu unserem Spielenachmittag ein.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-deine-klasse-3b-laedt-die-kl-2",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe\n\nRegensburg, 3.5.27\nLiebe Kinder der Klasse 3a,\nwir laden euch herzlich zu unserem Spielenachmittag ein.\nWir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der _____.\nZusammen … wir viele lustige Spiele machen.\nBringt bitte … mit.\nWir … uns auf euch!\nViele Grüße\nEure Klasse …",
+     "answer": "Turnhalle",
+     "explain": "Richtig: Wir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der Turnhalle.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-deine-klasse-3b-laedt-die-kl-3",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe\n\nRegensburg, 3.5.27\nLiebe Kinder der Klasse 3a,\nwir laden euch herzlich zu unserem Spielenachmittag ein.\nWir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der Turnhalle.\nZusammen _____ wir viele lustige Spiele machen.\nBringt bitte … mit.\nWir … uns auf euch!\nViele Grüße\nEure Klasse …",
+     "answer": "werden",
+     "explain": "Richtig: Zusammen werden wir viele lustige Spiele machen.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-deine-klasse-3b-laedt-die-kl-4",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe\n\nRegensburg, 3.5.27\nLiebe Kinder der Klasse 3a,\nwir laden euch herzlich zu unserem Spielenachmittag ein.\nWir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der Turnhalle.\nZusammen werden wir viele lustige Spiele machen.\nBringt bitte _____ mit.\nWir … uns auf euch!\nViele Grüße\nEure Klasse …",
+     "answer": "Turnschuhe",
+     "explain": "Richtig: Bringt bitte Turnschuhe mit.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-deine-klasse-3b-laedt-die-kl-5",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe\n\nRegensburg, 3.5.27\nLiebe Kinder der Klasse 3a,\nwir laden euch herzlich zu unserem Spielenachmittag ein.\nWir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der Turnhalle.\nZusammen werden wir viele lustige Spiele machen.\nBringt bitte Turnschuhe mit.\nWir _____ uns auf euch!\nViele Grüße\nEure Klasse …",
+     "answer": "freuen",
+     "explain": "Richtig: Wir freuen uns auf euch!",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-deine-klasse-3b-laedt-die-kl-6",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe\n\nRegensburg, 3.5.27\nLiebe Kinder der Klasse 3a,\nwir laden euch herzlich zu unserem Spielenachmittag ein.\nWir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der Turnhalle.\nZusammen werden wir viele lustige Spiele machen.\nBringt bitte Turnschuhe mit.\nWir freuen uns auf euch!\nViele Grüße\nEure Klasse _____",
+     "answer": "3b",
+     "explain": "Richtig: Eure Klasse 3b",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-ben-ein-was-zusamm",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob\n\nBamberg, 10.2.27\n_____ Ben,\nich … dich ins Kino einladen.\nWir treffen uns am Sonntag, den 20. Februar, … vor dem Kino am Marktplatz.\nBitte komm …, denn der Film fängt gleich an.\nSchön, … du Zeit hast!\nViele Grüße\nDein …",
+     "answer": "Lieber",
+     "explain": "Richtig: Lieber Ben,",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-ben-ein-was-zusamm-2",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob\n\nBamberg, 10.2.27\nLieber Ben,\nich _____ dich ins Kino einladen.\nWir treffen uns am Sonntag, den 20. Februar, … vor dem Kino am Marktplatz.\nBitte komm …, denn der Film fängt gleich an.\nSchön, … du Zeit hast!\nViele Grüße\nDein …",
+     "answer": "möchte",
+     "explain": "Richtig: ich möchte dich ins Kino einladen.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-ben-ein-was-zusamm-3",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob\n\nBamberg, 10.2.27\nLieber Ben,\nich möchte dich ins Kino einladen.\nWir treffen uns am Sonntag, den 20. Februar, _____ vor dem Kino am Marktplatz.\nBitte komm …, denn der Film fängt gleich an.\nSchön, … du Zeit hast!\nViele Grüße\nDein …",
+     "answer": "um 11 Uhr",
+     "also": [
+      "um 11:00 Uhr"
+     ],
+     "explain": "Richtig: Wir treffen uns am Sonntag, den 20. Februar, um 11 Uhr vor dem Kino am Marktplatz.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-ben-ein-was-zusamm-4",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob\n\nBamberg, 10.2.27\nLieber Ben,\nich möchte dich ins Kino einladen.\nWir treffen uns am Sonntag, den 20. Februar, um 11 Uhr vor dem Kino am Marktplatz.\nBitte komm _____, denn der Film fängt gleich an.\nSchön, … du Zeit hast!\nViele Grüße\nDein …",
+     "answer": "pünktlich",
+     "explain": "Richtig: Bitte komm pünktlich, denn der Film fängt gleich an.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-ben-ein-was-zusamm-5",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob\n\nBamberg, 10.2.27\nLieber Ben,\nich möchte dich ins Kino einladen.\nWir treffen uns am Sonntag, den 20. Februar, um 11 Uhr vor dem Kino am Marktplatz.\nBitte komm pünktlich, denn der Film fängt gleich an.\nSchön, _____ du Zeit hast!\nViele Grüße\nDein …",
+     "answer": "wenn",
+     "explain": "Richtig: Schön, wenn du Zeit hast!",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-ben-ein-was-zusamm-6",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob\n\nBamberg, 10.2.27\nLieber Ben,\nich möchte dich ins Kino einladen.\nWir treffen uns am Sonntag, den 20. Februar, um 11 Uhr vor dem Kino am Marktplatz.\nBitte komm pünktlich, denn der Film fängt gleich an.\nSchön, wenn du Zeit hast!\nViele Grüße\nDein _____",
+     "answer": "Jakob",
+     "explain": "Richtig: Dein Jakob",
+     "letter": true
+    }
+   ]
+  },
+  {
    "title": "Einladung auf Papier",
    "icon": "📷",
    "tasks": [

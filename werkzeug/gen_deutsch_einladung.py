@@ -271,6 +271,53 @@ for teile, a in FF:
     fehler.append(ch(P, "Fehler finden: Was fehlt in dieser Einladung?", brief(teile), [a] + others, a,
                      "Eine Einladung braucht alle Bausteine. Bei Wann? Wo? immer Datum, Uhrzeit und Ort!", keep=False, letter=True))
 
+
+# ---------- 7b. Lückentext-Einladungen (selbst eintippen) ----------
+# Oben stehen die Infos, darunter die Einladung. Eine Lücke nach der anderen; schon gelöste Lücken werden gefüllt gezeigt.
+P = "d3-ei-lt"
+LT = [
+    ("Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen", [
+        "München, 1.6.27", "{Lieber|} Tim,", "ich {lade|} dich herzlich zu meiner Geburtstagsfeier ein.",
+        "Wir treffen uns am Samstag, den 12. Juni, um {15 Uhr|15:00 Uhr} im Schwimmbad.",
+        "Bring bitte deine Badesachen {mit|}!", "Sag mir bitte {Bescheid|}, ob du kommen kannst.", "Liebe {Grüße|}", "Dein Nathan"]),
+    ("Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia", [
+        "Augsburg, 20.2.27", "{Liebe|} Lea,", "bald ist es so {weit|}: Ich feiere eine Pyjama-Party!",
+        "Die Party {findet|} am {Freitag, den 3. März|Freitag, 3. März}, um 18 Uhr bei mir zu Hause statt.",
+        "Bring bitte deinen {Schlafsack|} mit.", "Ich {freue|} mich schon riesig auf dich!", "Viele Grüße", "Deine {Mia|}"]),
+    ("Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen", [
+        "Nürnberg, 25.6.27", "{Liebe|} Oma,", "{hiermit|} lade ich dich zu unserem Sommerfest ein.",
+        "Wir feiern am Sonntag, den 8. Juli. Um {14 Uhr|14:00 Uhr} geht es im {Garten|} los.",
+        "Es {gibt|} leckeren Kuchen.", "Ich kann es kaum {erwarten|}, dass du kommst!", "Liebe Grüße", "Dein Nathan"]),
+    ("Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe", [
+        "Regensburg, 3.5.27", "Liebe Kinder der Klasse 3a,", "{wir|} laden euch herzlich zu unserem Spielenachmittag ein.",
+        "Wir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der {Turnhalle|}.",
+        "Zusammen {werden|} wir viele lustige Spiele machen.", "Bringt bitte {Turnschuhe|} mit.",
+        "Wir {freuen|} uns auf euch!", "Viele Grüße", "Eure Klasse {3b|}"]),
+    ("Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob", [
+        "Bamberg, 10.2.27", "{Lieber|} Ben,", "ich {möchte|} dich ins Kino einladen.",
+        "Wir treffen uns am Sonntag, den 20. Februar, {um 11 Uhr|um 11:00 Uhr} vor dem Kino am Marktplatz.",
+        "Bitte komm {pünktlich|}, denn der Film fängt gleich an.", "Schön, {wenn|} du Zeit hast!", "Viele Grüße", "Dein {Jakob|}"]),
+]
+GAP = re.compile(r"\{([^|}]*)\|([^}]*)\}")
+lt_lessons = []
+for info, zeilen in LT:
+    text = "\n".join(zeilen)
+    gaps = list(GAP.finditer(text))
+    tasks = []
+    for k, g in enumerate(gaps):
+        def fill(m, k=k):
+            j = gaps.index(next(x for x in gaps if x.start() == m.start()))
+            return m.group(1) if j < k else ("_____" if j == k else "…")
+        shown = GAP.sub(fill, text)
+        also = [a for a in g.group(2).split(";") if a]
+        satz = next(z for z in zeilen if g.group(0) in z)
+        t = ty(P, "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+               "📋 " + info + "\n\n" + shown, g.group(1), also=also or None,
+               explain="Richtig: " + GAP.sub(lambda m: m.group(1), satz))
+        t["letter"] = True
+        tasks.append(t)
+    lt_lessons.append(tasks)
+
 # ---------- 8. Auf Papier ----------
 papier = [{"kind": "photo", "id": uid("d3-ei-papier-1"),
            "task": "Schreib eine Einladung zu deinem Geburtstag auf ein Blatt. Denk an alle Bausteine! Hak sie danach ab.",
@@ -292,6 +339,9 @@ unit = {"id": "d3-einladung", "type": "schule", "title_de": "Eine Einladung schr
             lesson("Wann? Wo? Datum + Uhrzeit + Ort", "⏰", drei + marks, mix=True),
             lesson("Was fehlt? Uhrzeit-Detektiv", "🕵️", wasfehlt + ergaenzen, mix=True),
             lesson("Fehler finden in der Einladung", "🔍", fehler, mix=True),
+            lesson("Lückentext: Einladung für Tim", "📝", lt_lessons[0]),
+            lesson("Lückentext: Einladung für Lea und Oma", "📝", lt_lessons[1] + lt_lessons[2]),
+            lesson("Lückentext: Einladung für die 3a und Ben", "📝", lt_lessons[3] + lt_lessons[4]),
             lesson("Einladung auf Papier", "📷", papier),
             lesson("Probe-Test", "🏆", test=True, count=20),
         ]}

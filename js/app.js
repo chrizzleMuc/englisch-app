@@ -997,7 +997,7 @@ STEPS.type = (lesson, step) => {
   const token = lessonRender(lesson, `
     ${taskHead(q.task || "Schreib die Antwort!")}
     ${q.vis ? `<div class="prompt-card vis-card">${vis(q.vis)}</div>` : ""}
-    ${q.prompt ? promptCard(q.prompt) : ""}
+    ${q.prompt ? promptCard(q.prompt, q.letter) : ""}
     ${q.choose ? `<div class="choices text-choices" id="ch">${q.choose.options.map((o) => `<button class="choice" data-v="${esc(o)}"><span class="word">${esc(o)}</span></button>`).join("")}</div>` : ""}
     <div class="type-row" id="tr" ${q.choose ? "hidden" : ""}>
       <span class="before" id="before">${esc(q.before || "")}</span>
