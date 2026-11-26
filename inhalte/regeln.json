@@ -262,6 +262,43 @@
    ]
   },
   {
+   "id": "einladung",
+   "icon": "💌",
+   "title": "So schreibst du eine Einladung",
+   "merke": [
+    "Eine Einladung hat **7 Bausteine**: Ort und Datum – Anrede – Anlass (Was?) – Wann? Wo? – wichtige Infos – Schlusssatz – Gruß und Unterschrift.",
+    "Nach der **Anrede** kommt ein **Komma**. Danach schreibst du **klein** weiter: Lieber Tim, **du** bist …",
+    "Bei **Wann? Wo?** brauchst du immer **alle drei**: **Datum + Uhrzeit + Ort**."
+   ],
+   "beispiele": [
+    "Wir treffen uns **am Samstag, den 12. Mai,** **um 15 Uhr** **im Park**."
+   ],
+   "lektionen": [
+    "d3-einladung/Die 7 Bausteine",
+    "d3-einladung/Anrede mit Komma",
+    "d3-einladung/Wann? Wo? Datum + Uhrzeit + Ort",
+    "d3-einladung/Fehler finden in der Einladung"
+   ],
+   "trick": "Frag dich: Weiß mein Gast, **an welchem Tag**, **um wie viel Uhr** und **wohin** er kommen soll?"
+  },
+  {
+   "id": "einladung-satzanfaenge",
+   "icon": "🗣️",
+   "title": "Satzanfänge für eine Einladung",
+   "merke": [
+    "**Anfang:** Ich lade dich … / Bald ist es so weit, … / Hiermit lade ich dich … / Ich möchte dich … / Ich plane … / Endlich ist es wieder so weit, …",
+    "**Ort und Zeit:** Die Feier findet … statt. / Wir treffen uns … / Komm bitte … / Um … geht es los. / Ab … Uhr erwarte ich dich. / Bitte komm pünktlich …",
+    "**Programm:** Wir werden … / Es gibt … / Ich habe … vorbereitet. / Wir spielen … / Bring bitte … mit. / Danach … / Zusammen werden wir … / Es wartet … auf dich.",
+    "**Schluss:** Ich freue mich! / Sag mir bitte Bescheid, … / Ich hoffe, … / Das wird ein großer Spaß! / Schön, wenn du … / Ich kann es kaum erwarten, dass …"
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "d3-einladung/Satzanfänge sortieren",
+    "d3-einladung/Satzanfänge im Lückentext"
+   ],
+   "trick": "Merk dir die **4 Gruppen**: Anfang – Ort und Zeit – Programm – Schluss."
+  },
+  {
    "id": "verlaengern",
    "icon": "↔️",
    "title": "Verlängern: d oder t, g oder k, b oder p?",
