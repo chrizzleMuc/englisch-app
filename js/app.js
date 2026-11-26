@@ -9,7 +9,7 @@ import { pic, zeichImg } from "./pics.js";
 import { vis, visText } from "./mathpics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 39;
+const APP_VERSION = 40;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -867,8 +867,8 @@ document.addEventListener("click", (e) => {
   sayDe(b.dataset.text);
 }, true);
 
-function promptCard(text) {
-  return `<div class="prompt-card"><span class="prompt-text">${esc(text)}</span></div>`;
+function promptCard(text, letter = false) {
+  return `<div class="prompt-card${letter ? " letter-card" : ""}"><span class="prompt-text">${esc(text)}</span></div>`;
 }
 
 // ================= Regeln =================
@@ -997,7 +997,7 @@ STEPS.type = (lesson, step) => {
   const token = lessonRender(lesson, `
     ${taskHead(q.task || "Schreib die Antwort!")}
     ${q.vis ? `<div class="prompt-card vis-card">${vis(q.vis)}</div>` : ""}
-    ${q.prompt ? promptCard(q.prompt) : ""}
+    ${q.prompt ? promptCard(q.prompt, q.letter) : ""}
     ${q.choose ? `<div class="choices text-choices" id="ch">${q.choose.options.map((o) => `<button class="choice" data-v="${esc(o)}"><span class="word">${esc(o)}</span></button>`).join("")}</div>` : ""}
     <div class="type-row" id="tr" ${q.choose ? "hidden" : ""}>
       <span class="before" id="before">${esc(q.before || "")}</span>
@@ -1075,7 +1075,7 @@ STEPS.choice = (lesson, step) => {
   const opts = q.keepOrder ? q.options : shuffle(q.options);
   const token = lessonRender(lesson, `
     ${taskHead(q.task || "Was ist richtig?")}
-    ${q.vis ? `<div class="prompt-card vis-card">${vis(q.vis)}${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.prompt && q.prompt !== q.task && (!q.visOptions || q.showText) ? promptCard(q.prompt) : ""}
+    ${q.vis ? `<div class="prompt-card vis-card">${vis(q.vis)}${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.pic ? `<div class="prompt-card pic-card"><span class="huge-pic">${pic(q.pic)}</span>${q.showText ? `<span class="prompt-text">${esc(q.prompt)}</span>` : ""}</div>` : q.prompt && q.prompt !== q.task && (!q.visOptions || q.showText) ? promptCard(q.prompt, q.letter) : ""}
     <div class="choices ${q.visOptions ? "vis-choices" : q.picOptions ? "pic-choices" : "text-choices"} ${q.bigOptions ? "big-options" : ""} ${!q.visOptions && !q.picOptions && opts.some((o) => String(o).length > 16) ? "flash-long" : ""}">${opts.map((o) => `<button class="choice" data-v="${esc(o)}" aria-label="${esc(q.visOptions ? visText(o) : o)}">${q.visOptions ? vis(o) : q.picOptions ? `<span class="mid-pic">${pic(o)}</span>` : `<span class="word">${q.picText ? pic(o) : esc(o)}</span>`}</button>`).join("")}</div>
     <div class="feedback" id="fb"></div>
     <button class="go-btn" id="next" hidden>Weiter ➜</button>`);

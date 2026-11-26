@@ -1,0 +1,2567 @@
+{
+ "id": "d3-einladung",
+ "type": "schule",
+ "title_de": "Eine Einladung schreiben",
+ "image": "💌",
+ "color": "#d6457a",
+ "lessons": [
+  {
+   "title": "Die 7 Bausteine",
+   "icon": "🧱",
+   "tasks": [
+    {
+     "kind": "order",
+     "id": "d3-ei-bs-bring-die-bausteine-einer-ei",
+     "task": "Bring die Bausteine einer Einladung in die richtige Reihenfolge!",
+     "tiles": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "d3-ei-bs-bring-die-teile-dieser-einla",
+     "task": "Bring die Teile dieser Einladung in die richtige Reihenfolge!",
+     "tiles": [
+      "Augsburg, 3.5.27",
+      "Liebe Emma,",
+      "ich lade dich herzlich zu meiner Pyjama-Party ein.",
+      "Wir treffen uns am Freitag, den 14. Mai, um 18 Uhr bei mir zu Hause.",
+      "Bring bitte deinen Schlafsack mit!",
+      "Ich freue mich schon riesig auf dich!",
+      "Viele Grüße\nDeine Hanna"
+     ]
+    },
+    {
+     "kind": "order",
+     "id": "d3-ei-bs-bring-die-teile-dieser-einla-2",
+     "task": "Bring die Teile dieser Einladung in die richtige Reihenfolge!",
+     "tiles": [
+      "Nürnberg, 20.6.27",
+      "Lieber Max,",
+      "bald ist es so weit, ich werde 10 Jahre alt!",
+      "Die Feier findet am Samstag, den 3. Juli, um 14 Uhr im Kletterwald statt.",
+      "Zieh bitte Turnschuhe an!",
+      "Sag mir bitte Bescheid, ob du kommen kannst.",
+      "Liebe Grüße\nDein Felix"
+     ]
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-muenchen-12-3-27",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "München, 12.3.27",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Ort und Datum",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-lieber-jonas",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Lieber Jonas,",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Anrede",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-liebe-oma",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Liebe Oma,",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Anrede",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-ich-lade-dich-zu-meiner-gebu",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "ich lade dich zu meiner Geburtstagsfeier ein.",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Anlass (Was?)",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-hiermit-lade-ich-dich-zu-uns",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "hiermit lade ich dich zu unserem Sommerfest ein.",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Anlass (Was?)",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-wir-treffen-uns-am-sonntag-d",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Wir treffen uns am Sonntag, den 4. April, um 10 Uhr am Spielplatz.",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Wann? Wo?",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-die-feier-beginnt-am-freitag",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Die Feier beginnt am Freitag, den 9. Mai, um 15 Uhr im Garten.",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Wann? Wo?",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Welcher Baustein ist das?",
+   "icon": "🔎",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-bring-bitte-eine-taschenlamp",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Bring bitte eine Taschenlampe mit!",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Wichtige Infos",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-wir-werden-zusammen-pizza-ba",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Wir werden zusammen Pizza backen.",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Wichtige Infos",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-ich-freue-mich-schon-auf-dic",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Ich freue mich schon auf dich!",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Schlusssatz",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-das-wird-ein-grosser-spass",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Das wird ein großer Spaß!",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Schlusssatz",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-liebe-gruesse-dein-paul",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Liebe Grüße\nDein Paul",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Gruß und Unterschrift",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-bamberg-7-9-27",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Bamberg, 7.9.27",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Ort und Datum",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-liebe-kinder",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Liebe Kinder,",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Anrede",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-bald-ist-es-so-weit-ich-werd",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "bald ist es so weit, ich werde 10 Jahre alt!",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Anlass (Was?)",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-die-party-findet-am-freitag",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Die Party findet am Freitag, den 2. Juli, um 16 Uhr im Kletterwald statt.",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Wann? Wo?",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-zieh-bitte-alte-kleidung-an",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Zieh bitte alte Kleidung an!",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Wichtige Infos",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-sag-mir-bitte-bescheid-ob-du",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Sag mir bitte Bescheid, ob du kommen kannst.",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Schlusssatz",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-bs-w-viele-gruesse-eure-klasse-3c",
+     "task": "Welcher Baustein ist das?",
+     "prompt": "Viele Grüße\nEure Klasse 3c",
+     "options": [
+      "Ort und Datum",
+      "Anrede",
+      "Anlass (Was?)",
+      "Wann? Wo?",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß und Unterschrift"
+     ],
+     "answer": "Gruß und Unterschrift",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Anrede mit Komma",
+   "icon": "✉️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ei-an-du-schreibst-an-tim",
+     "task": "Welche Anrede ist richtig?",
+     "prompt": "Du schreibst an Tim.",
+     "options": [
+      "Lieber Tim,",
+      "Lieber Tim",
+      "Liebe Tim,"
+     ],
+     "answer": "Lieber Tim,",
+     "keepOrder": true,
+     "explain": "Bei Jungen und Männern: Lieber. Nach der Anrede kommt ein Komma."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-an-du-schreibst-an-lea",
+     "task": "Welche Anrede ist richtig?",
+     "prompt": "Du schreibst an Lea.",
+     "options": [
+      "Liebe Lea",
+      "Liebe Lea,",
+      "Lieber Lea,"
+     ],
+     "answer": "Liebe Lea,",
+     "keepOrder": true,
+     "explain": "Bei Mädchen und Frauen: Liebe. Nach der Anrede kommt ein Komma."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-an-du-schreibst-an-deinen-opa",
+     "task": "Welche Anrede ist richtig?",
+     "prompt": "Du schreibst an deinen Opa.",
+     "options": [
+      "Lieber Opa,",
+      "Liebe Opa,",
+      "Lieber Opa."
+     ],
+     "answer": "Lieber Opa,",
+     "keepOrder": true,
+     "explain": "Nach der Anrede kommt ein Komma, kein Punkt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-an-du-schreibst-an-deine-ganze",
+     "task": "Welche Anrede ist richtig?",
+     "prompt": "Du schreibst an deine ganze Klasse.",
+     "options": [
+      "Liebe Kinder,",
+      "Lieber Kinder,",
+      "Liebe Kinder!"
+     ],
+     "answer": "Liebe Kinder,",
+     "keepOrder": true,
+     "explain": "Bei mehreren Personen: Liebe. Nach der Anrede kommt ein Komma."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-an-lieber-tim-bist-herzlich-zu",
+     "task": "Wie geht es nach der Anrede weiter?",
+     "prompt": "Lieber Tim,\n_____ bist herzlich zu meiner Feier eingeladen.",
+     "options": [
+      "du",
+      "Du"
+     ],
+     "answer": "du",
+     "keepOrder": true,
+     "explain": "Nach dem Komma geht es klein weiter."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-an-liebe-sara-lade-dich-herzlic",
+     "task": "Wie geht es nach der Anrede weiter?",
+     "prompt": "Liebe Sara,\n_____ lade dich herzlich zu meinem Fest ein.",
+     "options": [
+      "ich",
+      "Ich"
+     ],
+     "answer": "ich",
+     "keepOrder": true,
+     "explain": "Nach dem Komma geht es klein weiter."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-an-liebe-kinder-laden-euch-zum",
+     "task": "Wie geht es nach der Anrede weiter?",
+     "prompt": "Liebe Kinder,\n_____ laden euch zum Vorlesenachmittag ein.",
+     "options": [
+      "wir",
+      "Wir"
+     ],
+     "answer": "wir",
+     "keepOrder": true,
+     "explain": "Nach dem Komma geht es klein weiter."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-an-lieber-ben-ist-es-so-weit-ic",
+     "task": "Wie geht es nach der Anrede weiter?",
+     "prompt": "Lieber Ben,\n_____ ist es so weit, ich werde 9!",
+     "options": [
+      "bald",
+      "Bald"
+     ],
+     "answer": "bald",
+     "keepOrder": true,
+     "explain": "Nach dem Komma geht es klein weiter."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-an-lieber-paul-du-bist-herzlich",
+     "task": "Was ist hier falsch?",
+     "prompt": "Lieber Paul\ndu bist herzlich eingeladen.",
+     "options": [
+      "Das Komma fehlt.",
+      "du muss groß sein.",
+      "Alles richtig."
+     ],
+     "answer": "Das Komma fehlt.",
+     "keepOrder": true,
+     "explain": "Richtig: Lieber Paul, – nach der Anrede kommt ein Komma."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-an-liebe-mia-ich-lade-dich-zu-m",
+     "task": "Was ist hier falsch?",
+     "prompt": "Liebe Mia,\nIch lade dich zu meiner Party ein.",
+     "options": [
+      "Das Komma fehlt.",
+      "Ich muss klein sein.",
+      "Alles richtig."
+     ],
+     "answer": "Ich muss klein sein.",
+     "keepOrder": true,
+     "explain": "Nach dem Komma geht es klein weiter: ich lade dich …"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-an-lieber-noah-wir-treffen-uns",
+     "task": "Was ist hier falsch?",
+     "prompt": "Lieber Noah,\nwir treffen uns im Park.",
+     "options": [
+      "Das Komma fehlt.",
+      "wir muss groß sein.",
+      "Alles richtig."
+     ],
+     "answer": "Alles richtig.",
+     "keepOrder": true,
+     "explain": "Komma nach der Anrede und klein weiter. Super!"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-an-liebe-oma",
+     "task": "Schreib die Anrede richtig ab (mit Komma)!",
+     "prompt": "Liebe Oma",
+     "answer": "Liebe Oma,",
+     "explain": "Nach der Anrede kommt ein Komma."
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-an-lieber-luca",
+     "task": "Schreib die Anrede richtig ab (mit Komma)!",
+     "prompt": "Lieber Luca",
+     "answer": "Lieber Luca,",
+     "explain": "Nach der Anrede kommt ein Komma."
+    }
+   ]
+  },
+  {
+   "title": "Satzanfänge sortieren",
+   "icon": "🗂️",
+   "tasks": [
+    {
+     "kind": "sort",
+     "task": "Wohin gehört der Satzanfang?",
+     "review": "Satzanfänge für eine Einladung",
+     "groups": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "items": [
+      {
+       "id": "d3-ei-so-ich-lade-dich",
+       "text": "Ich lade dich …",
+       "group": "Anfang"
+      },
+      {
+       "id": "d3-ei-so-bald-ist-es-so-weit",
+       "text": "Bald ist es so weit, …",
+       "group": "Anfang"
+      },
+      {
+       "id": "d3-ei-so-die-feier-findet-statt",
+       "text": "Die Feier findet … statt.",
+       "group": "Ort und Zeit"
+      },
+      {
+       "id": "d3-ei-so-wir-treffen-uns",
+       "text": "Wir treffen uns …",
+       "group": "Ort und Zeit"
+      },
+      {
+       "id": "d3-ei-so-wir-werden",
+       "text": "Wir werden …",
+       "group": "Programm"
+      },
+      {
+       "id": "d3-ei-so-es-gibt",
+       "text": "Es gibt …",
+       "group": "Programm"
+      },
+      {
+       "id": "d3-ei-so-ich-freue-mich",
+       "text": "Ich freue mich!",
+       "group": "Schluss"
+      },
+      {
+       "id": "d3-ei-so-sag-mir-bitte-bescheid",
+       "text": "Sag mir bitte Bescheid, …",
+       "group": "Schluss"
+      }
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Wohin gehört der Satzanfang?",
+     "review": "Satzanfänge für eine Einladung",
+     "groups": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "items": [
+      {
+       "id": "d3-ei-so-hiermit-lade-ich-dich",
+       "text": "Hiermit lade ich dich …",
+       "group": "Anfang"
+      },
+      {
+       "id": "d3-ei-so-ich-moechte-dich",
+       "text": "Ich möchte dich …",
+       "group": "Anfang"
+      },
+      {
+       "id": "d3-ei-so-komm-bitte",
+       "text": "Komm bitte …",
+       "group": "Ort und Zeit"
+      },
+      {
+       "id": "d3-ei-so-um-geht-es-los",
+       "text": "Um … geht es los.",
+       "group": "Ort und Zeit"
+      },
+      {
+       "id": "d3-ei-so-ich-habe-vorbereitet",
+       "text": "Ich habe … vorbereitet.",
+       "group": "Programm"
+      },
+      {
+       "id": "d3-ei-so-wir-spielen",
+       "text": "Wir spielen …",
+       "group": "Programm"
+      },
+      {
+       "id": "d3-ei-so-ich-hoffe",
+       "text": "Ich hoffe, …",
+       "group": "Schluss"
+      },
+      {
+       "id": "d3-ei-so-das-wird-ein-grosser-spass",
+       "text": "Das wird ein großer Spaß!",
+       "group": "Schluss"
+      }
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Wohin gehört der Satzanfang?",
+     "review": "Satzanfänge für eine Einladung",
+     "groups": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "items": [
+      {
+       "id": "d3-ei-so-ich-plane",
+       "text": "Ich plane …",
+       "group": "Anfang"
+      },
+      {
+       "id": "d3-ei-so-endlich-ist-es-wieder-so-wei",
+       "text": "Endlich ist es wieder so weit, …",
+       "group": "Anfang"
+      },
+      {
+       "id": "d3-ei-so-ab-uhr-erwarte-ich-dich",
+       "text": "Ab … Uhr erwarte ich dich.",
+       "group": "Ort und Zeit"
+      },
+      {
+       "id": "d3-ei-so-bitte-komm-puenktlich",
+       "text": "Bitte komm pünktlich …",
+       "group": "Ort und Zeit"
+      },
+      {
+       "id": "d3-ei-so-bring-bitte-mit",
+       "text": "Bring bitte … mit.",
+       "group": "Programm"
+      },
+      {
+       "id": "d3-ei-so-danach",
+       "text": "Danach …",
+       "group": "Programm"
+      },
+      {
+       "id": "d3-ei-so-schoen-wenn-du",
+       "text": "Schön, wenn du …",
+       "group": "Schluss"
+      },
+      {
+       "id": "d3-ei-so-ich-kann-es-kaum-erwarten-da",
+       "text": "Ich kann es kaum erwarten, dass …",
+       "group": "Schluss"
+      }
+     ]
+    },
+    {
+     "kind": "sort",
+     "task": "Wohin gehört der Satzanfang?",
+     "review": "Satzanfänge für eine Einladung",
+     "groups": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "items": [
+      {
+       "id": "d3-ei-so-zusammen-werden-wir",
+       "text": "Zusammen werden wir …",
+       "group": "Programm"
+      },
+      {
+       "id": "d3-ei-so-es-wartet-auf-dich",
+       "text": "Es wartet … auf dich.",
+       "group": "Programm"
+      },
+      {
+       "id": "d3-ei-so-ich-lade-dich-2",
+       "text": "Ich lade dich …",
+       "group": "Anfang"
+      },
+      {
+       "id": "d3-ei-so-ich-freue-mich-2",
+       "text": "Ich freue mich!",
+       "group": "Schluss"
+      },
+      {
+       "id": "d3-ei-so-wir-treffen-uns-2",
+       "text": "Wir treffen uns …",
+       "group": "Ort und Zeit"
+      },
+      {
+       "id": "d3-ei-so-sag-mir-bitte-bescheid-2",
+       "text": "Sag mir bitte Bescheid, …",
+       "group": "Schluss"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Wohin gehört der Satzanfang?",
+   "icon": "🎯",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-ich-lade-dich",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Ich lade dich …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Anfang",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-bald-ist-es-so-weit",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Bald ist es so weit, …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Anfang",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-hiermit-lade-ich-dich",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Hiermit lade ich dich …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Anfang",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-ich-moechte-dich",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Ich möchte dich …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Anfang",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-ich-plane",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Ich plane …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Anfang",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-endlich-ist-es-wieder-so-wei",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Endlich ist es wieder so weit, …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Anfang",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-die-feier-findet-statt",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Die Feier findet … statt.",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Ort und Zeit",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-wir-treffen-uns",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Wir treffen uns …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Ort und Zeit",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-komm-bitte",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Komm bitte …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Ort und Zeit",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-um-geht-es-los",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Um … geht es los.",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Ort und Zeit",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-ab-uhr-erwarte-ich-dich",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Ab … Uhr erwarte ich dich.",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Ort und Zeit",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-bitte-komm-puenktlich",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Bitte komm pünktlich …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Ort und Zeit",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-wir-werden",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Wir werden …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Programm",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-es-gibt",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Es gibt …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Programm",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-ich-habe-vorbereitet",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Ich habe … vorbereitet.",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Programm",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-wir-spielen",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Wir spielen …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Programm",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-bring-bitte-mit",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Bring bitte … mit.",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Programm",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-danach",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Danach …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Programm",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-zusammen-werden-wir",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Zusammen werden wir …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Programm",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-es-wartet-auf-dich",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Es wartet … auf dich.",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Programm",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-ich-freue-mich",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Ich freue mich!",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Schluss",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-sag-mir-bitte-bescheid",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Sag mir bitte Bescheid, …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Schluss",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-ich-hoffe",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Ich hoffe, …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Schluss",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-das-wird-ein-grosser-spass",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Das wird ein großer Spaß!",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Schluss",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-schoen-wenn-du",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Schön, wenn du …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Schluss",
+     "keepOrder": true
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-wo-ich-kann-es-kaum-erwarten-da",
+     "task": "Wohin gehört dieser Satzanfang?",
+     "prompt": "Ich kann es kaum erwarten, dass …",
+     "options": [
+      "Anfang",
+      "Ort und Zeit",
+      "Programm",
+      "Schluss"
+     ],
+     "answer": "Schluss",
+     "keepOrder": true
+    }
+   ]
+  },
+  {
+   "title": "Satzanfänge im Lückentext",
+   "icon": "🧩",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-dich-herzlich-zu-meiner-gebu",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ dich herzlich zu meiner Geburtstagsfeier ein.",
+     "options": [
+      "Ich lade",
+      "Wir treffen",
+      "Ich freue"
+     ],
+     "answer": "Ich lade",
+     "explain": "Ich lade dich herzlich zu meiner Geburtstagsfeier ein."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-so-weit-ich-werde-10-jahre-a",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ so weit, ich werde 10 Jahre alt!",
+     "options": [
+      "Bald ist es",
+      "Danach ist es",
+      "Es gibt"
+     ],
+     "answer": "Bald ist es",
+     "explain": "Bald ist es so weit, ich werde 10 Jahre alt!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-ich-dich-zu-unserem-klassenf",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ ich dich zu unserem Klassenfest ein.",
+     "options": [
+      "Hiermit lade",
+      "Ich hoffe",
+      "Komm bitte"
+     ],
+     "answer": "Hiermit lade",
+     "explain": "Hiermit lade ich dich zu unserem Klassenfest ein."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-wieder-so-weit-unser-sommerf",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ wieder so weit: Unser Sommerfest steht vor der Tür!",
+     "options": [
+      "Endlich ist es",
+      "Zusammen ist es",
+      "Es wartet"
+     ],
+     "answer": "Endlich ist es",
+     "explain": "Endlich ist es wieder so weit: Unser Sommerfest steht vor der Tür!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-am-samstag-den-5-juni-um-15",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ am Samstag, den 5. Juni, um 15 Uhr im Garten statt.",
+     "options": [
+      "Die Feier findet",
+      "Ich plane",
+      "Ich hoffe"
+     ],
+     "answer": "Die Feier findet",
+     "explain": "Die Feier findet am Samstag, den 5. Juni, um 15 Uhr im Garten statt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-am-freitag-um-16-uhr-vor-dem",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ am Freitag um 16 Uhr vor dem Kino.",
+     "options": [
+      "Wir treffen uns",
+      "Wir spielen",
+      "Ich freue mich"
+     ],
+     "answer": "Wir treffen uns",
+     "explain": "Wir treffen uns am Freitag um 16 Uhr vor dem Kino."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-um-14-uhr",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "Um 14 Uhr _____",
+     "options": [
+      "geht es los.",
+      "gibt es Kuchen.",
+      "freue ich mich."
+     ],
+     "answer": "geht es los.",
+     "explain": "Um 14 Uhr geht es los."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-15-uhr-erwarte-ich-dich",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ 15 Uhr erwarte ich dich.",
+     "options": [
+      "Ab",
+      "Bis",
+      "Danach"
+     ],
+     "answer": "Ab",
+     "explain": "Ab 15 Uhr erwarte ich dich."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-sonst-verpasst-du-den-anfang",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____, sonst verpasst du den Anfang!",
+     "options": [
+      "Bitte komm pünktlich",
+      "Ich hoffe",
+      "Es gibt"
+     ],
+     "answer": "Bitte komm pünktlich",
+     "explain": "Bitte komm pünktlich, sonst verpasst du den Anfang!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-eine-schatzsuche-im-wald-mac",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ eine Schatzsuche im Wald machen.",
+     "options": [
+      "Wir werden",
+      "Ich lade",
+      "Sag mir"
+     ],
+     "answer": "Wir werden",
+     "explain": "Wir werden eine Schatzsuche im Wald machen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-pizza-und-schokokuchen",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ Pizza und Schokokuchen.",
+     "options": [
+      "Es gibt",
+      "Wir treffen",
+      "Ich möchte"
+     ],
+     "answer": "Es gibt",
+     "explain": "Es gibt Pizza und Schokokuchen."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-ich-habe-ein-tolles-spiel",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "Ich habe ein tolles Spiel _____",
+     "options": [
+      "vorbereitet.",
+      "erwartet.",
+      "gefreut."
+     ],
+     "answer": "vorbereitet.",
+     "explain": "Ich habe ein tolles Spiel vorbereitet."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-deine-badesachen-mit",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ deine Badesachen mit.",
+     "options": [
+      "Bring bitte",
+      "Komm bitte",
+      "Ich hoffe"
+     ],
+     "answer": "Bring bitte",
+     "explain": "Bring bitte deine Badesachen mit."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-gibt-es-noch-eine-ueberrasch",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ gibt es noch eine Überraschung.",
+     "options": [
+      "Danach",
+      "Hiermit",
+      "Bald"
+     ],
+     "answer": "Danach",
+     "explain": "Danach gibt es noch eine Überraschung."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-eine-grosse-torte",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "Eine große Torte _____",
+     "options": [
+      "wartet auf dich.",
+      "findet statt.",
+      "geht es los."
+     ],
+     "answer": "wartet auf dich.",
+     "explain": "Eine große Torte wartet auf dich."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-schon-riesig-auf-dich",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ schon riesig auf dich!",
+     "options": [
+      "Ich freue mich",
+      "Wir treffen uns",
+      "Es gibt"
+     ],
+     "answer": "Ich freue mich",
+     "explain": "Ich freue mich schon riesig auf dich!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-ob-du-kommen-kannst",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____, ob du kommen kannst.",
+     "options": [
+      "Sag mir bitte Bescheid",
+      "Bring bitte",
+      "Bitte komm pünktlich"
+     ],
+     "answer": "Sag mir bitte Bescheid",
+     "explain": "Sag mir bitte Bescheid, ob du kommen kannst."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-du-hast-zeit",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____, du hast Zeit.",
+     "options": [
+      "Ich hoffe",
+      "Ich plane",
+      "Es gibt"
+     ],
+     "answer": "Ich hoffe",
+     "explain": "Ich hoffe, du hast Zeit."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-kommen-kannst",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____ kommen kannst!",
+     "options": [
+      "Schön, wenn du",
+      "Wir werden",
+      "Ich lade"
+     ],
+     "answer": "Schön, wenn du",
+     "explain": "Schön, wenn du kommen kannst!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-lk-dass-wir-zusammen-feiern",
+     "task": "Welcher Satzanfang passt?",
+     "prompt": "_____, dass wir zusammen feiern!",
+     "options": [
+      "Ich kann es kaum erwarten",
+      "Ich habe vorbereitet",
+      "Komm bitte"
+     ],
+     "answer": "Ich kann es kaum erwarten",
+     "explain": "Ich kann es kaum erwarten, dass wir zusammen feiern!"
+    }
+   ]
+  },
+  {
+   "title": "Satzanfänge zusammensetzen",
+   "icon": "🔗",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Was gehört zusammen?",
+     "review": "Satzanfang und Ende",
+     "pairs": [
+      {
+       "id": "d3-ei-pa-ich-lade-dich",
+       "a": "Ich lade dich",
+       "b": "herzlich zu meinem Fest ein."
+      },
+      {
+       "id": "d3-ei-pa-wir-treffen-uns",
+       "a": "Wir treffen uns",
+       "b": "um 15 Uhr im Park."
+      },
+      {
+       "id": "d3-ei-pa-bring-bitte",
+       "a": "Bring bitte",
+       "b": "deine Badehose mit."
+      },
+      {
+       "id": "d3-ei-pa-sag-mir-bitte-bescheid",
+       "a": "Sag mir bitte Bescheid,",
+       "b": "ob du kommen kannst."
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Was gehört zusammen?",
+     "review": "Satzanfang und Ende",
+     "pairs": [
+      {
+       "id": "d3-ei-pa-bald-ist-es-so-weit",
+       "a": "Bald ist es so weit,",
+       "b": "ich werde 9 Jahre alt!"
+      },
+      {
+       "id": "d3-ei-pa-die-feier-findet",
+       "a": "Die Feier findet",
+       "b": "im Garten statt."
+      },
+      {
+       "id": "d3-ei-pa-ich-habe-eine-schatzsuche",
+       "a": "Ich habe eine Schatzsuche",
+       "b": "vorbereitet."
+      },
+      {
+       "id": "d3-ei-pa-ich-kann-es-kaum-erwarten",
+       "a": "Ich kann es kaum erwarten,",
+       "b": "dass du kommst!"
+      }
+     ]
+    },
+    {
+     "kind": "pairs",
+     "task": "Was gehört zusammen?",
+     "review": "Satzanfang und Ende",
+     "pairs": [
+      {
+       "id": "d3-ei-pa-ab-16-uhr",
+       "a": "Ab 16 Uhr",
+       "b": "erwarte ich dich."
+      },
+      {
+       "id": "d3-ei-pa-es-wartet",
+       "a": "Es wartet",
+       "b": "eine Überraschung auf dich."
+      },
+      {
+       "id": "d3-ei-pa-schoen-wenn-du",
+       "a": "Schön, wenn du",
+       "b": "Zeit hast!"
+      },
+      {
+       "id": "d3-ei-pa-um-14-uhr",
+       "a": "Um 14 Uhr",
+       "b": "geht es los."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Satzanfänge selbst schreiben",
+   "icon": "✏️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-ich-dich-herzlich-zu-meiner",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Ich _____ dich herzlich zu meiner Party ein.",
+     "answer": "lade",
+     "explain": "Ich lade dich herzlich zu meiner Party ein."
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-bald-ist-es-so-ich-werde-10",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Bald ist es so _____, ich werde 10!",
+     "answer": "weit",
+     "also": [
+      "soweit"
+     ],
+     "explain": "Bald ist es so weit, ich werde 10!"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-lade-ich-dich-zu-meinem-fest",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "_____ lade ich dich zu meinem Fest ein.",
+     "answer": "Hiermit",
+     "explain": "Hiermit lade ich dich zu meinem Fest ein."
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-wir-uns-am-samstag-um-15-uhr",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Wir _____ uns am Samstag um 15 Uhr.",
+     "answer": "treffen",
+     "explain": "Wir treffen uns am Samstag um 15 Uhr."
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-die-feier-im-schwimmbad-stat",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Die Feier _____ im Schwimmbad statt.",
+     "answer": "findet",
+     "explain": "Die Feier findet im Schwimmbad statt."
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-um-14-uhr-geht-es",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Um 14 Uhr geht es _____.",
+     "answer": "los",
+     "explain": "Um 14 Uhr geht es los."
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-bitte-komm",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Bitte komm _____!",
+     "answer": "pünktlich",
+     "explain": "Bitte komm pünktlich!"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-ich-habe-eine-schatzsuche",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Ich habe eine Schatzsuche _____.",
+     "answer": "vorbereitet",
+     "explain": "Ich habe eine Schatzsuche vorbereitet."
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-bring-bitte-deinen-schlafsac",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Bring bitte deinen Schlafsack _____.",
+     "answer": "mit",
+     "explain": "Bring bitte deinen Schlafsack mit."
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-sag-mir-bitte-ob-du-kommen-k",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Sag mir bitte _____, ob du kommen kannst.",
+     "answer": "Bescheid",
+     "explain": "Sag mir bitte Bescheid, ob du kommen kannst."
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-ich-kann-es-kaum-dass-du-kom",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Ich kann es kaum _____, dass du kommst!",
+     "answer": "erwarten",
+     "explain": "Ich kann es kaum erwarten, dass du kommst!"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-das-wird-ein-grosser",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Das wird ein großer _____!",
+     "answer": "Spaß",
+     "explain": "Das wird ein großer Spaß!"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-ich-mich-schon-auf-dich",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Ich _____ mich schon auf dich!",
+     "answer": "freue",
+     "explain": "Ich freue mich schon auf dich!"
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-sw-es-eine-ueberraschung-auf-di",
+     "task": "Welches Wort fehlt? Schreib es auf!",
+     "prompt": "Es _____ eine Überraschung auf dich.",
+     "answer": "wartet",
+     "explain": "Es wartet eine Überraschung auf dich."
+    }
+   ]
+  },
+  {
+   "title": "Wann? Wo? Datum + Uhrzeit + Ort",
+   "icon": "⏰",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-3-wann-wo",
+     "task": "Was gehört zu Wann? Wo? in jede Einladung?",
+     "prompt": "Wann? Wo?",
+     "options": [
+      "Datum, Uhrzeit und Ort",
+      "nur das Datum",
+      "Datum und Ort"
+     ],
+     "answer": "Datum, Uhrzeit und Ort",
+     "keepOrder": true,
+     "explain": "Immer alle drei: Datum + Uhrzeit + Ort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-3-wann-wo-2",
+     "task": "Welcher Satz ist vollständig?",
+     "prompt": "Wann? Wo?",
+     "options": [
+      "Wir treffen uns am Samstag, den 5. Mai, um 15 Uhr im Park.",
+      "Wir treffen uns am Samstag, den 5. Mai, im Park.",
+      "Wir treffen uns um 15 Uhr im Park."
+     ],
+     "answer": "Wir treffen uns am Samstag, den 5. Mai, um 15 Uhr im Park.",
+     "explain": "Nur dieser Satz hat Datum, Uhrzeit und Ort."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-3-wo-wann",
+     "task": "Welcher Satz ist vollständig?",
+     "prompt": "Wo? Wann?",
+     "options": [
+      "Die Feier findet um 16 Uhr im Garten statt.",
+      "Die Feier findet am Freitag, den 2. Juli, um 16 Uhr im Garten statt.",
+      "Die Feier findet am Freitag, den 2. Juli, statt."
+     ],
+     "answer": "Die Feier findet am Freitag, den 2. Juli, um 16 Uhr im Garten statt.",
+     "explain": "Nur dieser Satz hat Datum, Uhrzeit und Ort."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-3-wann-genau",
+     "task": "Welches ist eine Uhrzeit?",
+     "prompt": "Wann genau?",
+     "options": [
+      "um 15 Uhr",
+      "am Samstag",
+      "im Garten"
+     ],
+     "answer": "um 15 Uhr"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-3-wo-genau",
+     "task": "Welches ist ein Ort?",
+     "prompt": "Wo genau?",
+     "options": [
+      "um 15 Uhr",
+      "am Samstag",
+      "im Schwimmbad"
+     ],
+     "answer": "im Schwimmbad"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-3-welcher-tag",
+     "task": "Welches ist ein Datum?",
+     "prompt": "Welcher Tag?",
+     "options": [
+      "um 10 Uhr",
+      "am Sonntag, den 4. Mai",
+      "im Kino"
+     ],
+     "answer": "am Sonntag, den 4. Mai"
+    },
+    {
+     "kind": "mark",
+     "id": "d3-ei-ww-mk-wir-treffen-uns-am-samstag-d",
+     "task": "Male an: Datum lila, Uhrzeit orange, Ort grün!",
+     "text": "Wir treffen uns [am Samstag, den 12. Dezember,|Datum] [um 15 Uhr|Uhrzeit] [im Schwimmbad|Ort].",
+     "colors": [
+      {
+       "key": "Datum",
+       "label": "Datum",
+       "color": "#7a4fd6"
+      },
+      {
+       "key": "Uhrzeit",
+       "label": "Uhrzeit",
+       "color": "#e07a2e"
+      },
+      {
+       "key": "Ort",
+       "label": "Ort",
+       "color": "#0f9d76"
+      }
+     ],
+     "explain": "Bei Wann? und Wo? brauchst du immer alle drei: Datum, Uhrzeit und Ort."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-ei-ww-mk-die-feier-findet-am-freitag",
+     "task": "Male an: Datum lila, Uhrzeit orange, Ort grün!",
+     "text": "Die Feier findet [am Freitag, den 7. Mai,|Datum] [um 16 Uhr|Uhrzeit] [im Garten|Ort] statt.",
+     "colors": [
+      {
+       "key": "Datum",
+       "label": "Datum",
+       "color": "#7a4fd6"
+      },
+      {
+       "key": "Uhrzeit",
+       "label": "Uhrzeit",
+       "color": "#e07a2e"
+      },
+      {
+       "key": "Ort",
+       "label": "Ort",
+       "color": "#0f9d76"
+      }
+     ],
+     "explain": "Bei Wann? und Wo? brauchst du immer alle drei: Datum, Uhrzeit und Ort."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-ei-ww-mk-komm-bitte-am-sonntag-den-2",
+     "task": "Male an: Datum lila, Uhrzeit orange, Ort grün!",
+     "text": "Komm bitte [am Sonntag, den 2. März,|Datum] [um 10 Uhr|Uhrzeit] [zum Spielplatz|Ort].",
+     "colors": [
+      {
+       "key": "Datum",
+       "label": "Datum",
+       "color": "#7a4fd6"
+      },
+      {
+       "key": "Uhrzeit",
+       "label": "Uhrzeit",
+       "color": "#e07a2e"
+      },
+      {
+       "key": "Ort",
+       "label": "Ort",
+       "color": "#0f9d76"
+      }
+     ],
+     "explain": "Bei Wann? und Wo? brauchst du immer alle drei: Datum, Uhrzeit und Ort."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-ei-ww-mk-am-mittwoch-den-9-juni-datum",
+     "task": "Male an: Datum lila, Uhrzeit orange, Ort grün!",
+     "text": "[Am Mittwoch, den 9. Juni,|Datum] geht es [um 14 Uhr|Uhrzeit] [vor der Schule|Ort] los.",
+     "colors": [
+      {
+       "key": "Datum",
+       "label": "Datum",
+       "color": "#7a4fd6"
+      },
+      {
+       "key": "Uhrzeit",
+       "label": "Uhrzeit",
+       "color": "#e07a2e"
+      },
+      {
+       "key": "Ort",
+       "label": "Ort",
+       "color": "#0f9d76"
+      }
+     ],
+     "explain": "Bei Wann? und Wo? brauchst du immer alle drei: Datum, Uhrzeit und Ort."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-ei-ww-mk-ich-erwarte-dich-am-samstag",
+     "task": "Male an: Datum lila, Uhrzeit orange, Ort grün!",
+     "text": "Ich erwarte dich [am Samstag, den 20. April,|Datum] [ab 15 Uhr|Uhrzeit] [bei mir zu Hause|Ort].",
+     "colors": [
+      {
+       "key": "Datum",
+       "label": "Datum",
+       "color": "#7a4fd6"
+      },
+      {
+       "key": "Uhrzeit",
+       "label": "Uhrzeit",
+       "color": "#e07a2e"
+      },
+      {
+       "key": "Ort",
+       "label": "Ort",
+       "color": "#0f9d76"
+      }
+     ],
+     "explain": "Bei Wann? und Wo? brauchst du immer alle drei: Datum, Uhrzeit und Ort."
+    },
+    {
+     "kind": "mark",
+     "id": "d3-ei-ww-mk-wir-feiern-am-freitag-den-5",
+     "task": "Male an: Datum lila, Uhrzeit orange, Ort grün!",
+     "text": "Wir feiern [am Freitag, den 5. März,|Datum] [um 14 Uhr|Uhrzeit] [im Klassenzimmer der 3c|Ort].",
+     "colors": [
+      {
+       "key": "Datum",
+       "label": "Datum",
+       "color": "#7a4fd6"
+      },
+      {
+       "key": "Uhrzeit",
+       "label": "Uhrzeit",
+       "color": "#e07a2e"
+      },
+      {
+       "key": "Ort",
+       "label": "Ort",
+       "color": "#0f9d76"
+      }
+     ],
+     "explain": "Bei Wann? und Wo? brauchst du immer alle drei: Datum, Uhrzeit und Ort."
+    }
+   ]
+  },
+  {
+   "title": "Was fehlt? Uhrzeit-Detektiv",
+   "icon": "🕵️",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-wf-wir-treffen-uns-am-samstag-d",
+     "task": "Was fehlt bei Wann? Wo?",
+     "prompt": "Wir treffen uns am Samstag, den 12. Mai, im Park.",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort",
+      "Nichts fehlt"
+     ],
+     "answer": "Uhrzeit",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Hier fehlt die Uhrzeit! Sonst weiß dein Gast nicht, wann er kommen soll. Zum Beispiel: um 15 Uhr."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-wf-die-feier-beginnt-um-15-uhr",
+     "task": "Was fehlt bei Wann? Wo?",
+     "prompt": "Die Feier beginnt um 15 Uhr im Garten.",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort",
+      "Nichts fehlt"
+     ],
+     "answer": "Datum",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Hier fehlt das Datum! Sonst weiß dein Gast nicht, an welchem Tag. Zum Beispiel: am Samstag, den 12. Mai."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-wf-wir-treffen-uns-am-freitag-d",
+     "task": "Was fehlt bei Wann? Wo?",
+     "prompt": "Wir treffen uns am Freitag, den 3. Juli, um 14 Uhr.",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort",
+      "Nichts fehlt"
+     ],
+     "answer": "Ort",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Hier fehlt der Ort! Sonst weiß dein Gast nicht, wohin er kommen soll. Zum Beispiel: im Park."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-wf-komm-bitte-am-sonntag-den-8",
+     "task": "Was fehlt bei Wann? Wo?",
+     "prompt": "Komm bitte am Sonntag, den 8. März, zum Kino.",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort",
+      "Nichts fehlt"
+     ],
+     "answer": "Uhrzeit",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Hier fehlt die Uhrzeit! Sonst weiß dein Gast nicht, wann er kommen soll. Zum Beispiel: um 15 Uhr."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-wf-die-party-findet-am-samstag",
+     "task": "Was fehlt bei Wann? Wo?",
+     "prompt": "Die Party findet am Samstag, den 6. Juni, um 16 Uhr im Schwimmbad statt.",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort",
+      "Nichts fehlt"
+     ],
+     "answer": "Nichts fehlt",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Super! Datum, Uhrzeit und Ort sind alle da."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-wf-am-mittwoch-den-4-mai-geht-e",
+     "task": "Was fehlt bei Wann? Wo?",
+     "prompt": "Am Mittwoch, den 4. Mai, geht es vor der Schule los.",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort",
+      "Nichts fehlt"
+     ],
+     "answer": "Uhrzeit",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Hier fehlt die Uhrzeit! Sonst weiß dein Gast nicht, wann er kommen soll. Zum Beispiel: um 15 Uhr."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-wf-wir-feiern-um-18-uhr-bei-mir",
+     "task": "Was fehlt bei Wann? Wo?",
+     "prompt": "Wir feiern um 18 Uhr bei mir zu Hause.",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort",
+      "Nichts fehlt"
+     ],
+     "answer": "Datum",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Hier fehlt das Datum! Sonst weiß dein Gast nicht, an welchem Tag. Zum Beispiel: am Samstag, den 12. Mai."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-wf-ab-15-uhr-erwarte-ich-dich-a",
+     "task": "Was fehlt bei Wann? Wo?",
+     "prompt": "Ab 15 Uhr erwarte ich dich am Samstag, den 9. April, im Kletterwald.",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort",
+      "Nichts fehlt"
+     ],
+     "answer": "Nichts fehlt",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Super! Datum, Uhrzeit und Ort sind alle da."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-wf-die-feier-findet-am-freitag",
+     "task": "Was fehlt bei Wann? Wo?",
+     "prompt": "Die Feier findet am Freitag, den 20. Mai, in der Turnhalle statt.",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort",
+      "Nichts fehlt"
+     ],
+     "answer": "Uhrzeit",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Hier fehlt die Uhrzeit! Sonst weiß dein Gast nicht, wann er kommen soll. Zum Beispiel: um 15 Uhr."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-wf-wir-treffen-uns-am-sonntag-d",
+     "task": "Was fehlt bei Wann? Wo?",
+     "prompt": "Wir treffen uns am Sonntag, den 1. Juni, um 11 Uhr.",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort",
+      "Nichts fehlt"
+     ],
+     "answer": "Ort",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Hier fehlt der Ort! Sonst weiß dein Gast nicht, wohin er kommen soll. Zum Beispiel: im Park."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-wf-komm-bitte-am-samstag-den-14",
+     "task": "Was fehlt bei Wann? Wo?",
+     "prompt": "Komm bitte am Samstag, den 14. März, in den Zoo.",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort",
+      "Nichts fehlt"
+     ],
+     "answer": "Uhrzeit",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Hier fehlt die Uhrzeit! Sonst weiß dein Gast nicht, wann er kommen soll. Zum Beispiel: um 15 Uhr."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ww-wf-um-10-uhr-geht-es-am-spielpl",
+     "task": "Was fehlt bei Wann? Wo?",
+     "prompt": "Um 10 Uhr geht es am Spielplatz los.",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort",
+      "Nichts fehlt"
+     ],
+     "answer": "Datum",
+     "keepOrder": true,
+     "bigOptions": true,
+     "explain": "Hier fehlt das Datum! Sonst weiß dein Gast nicht, an welchem Tag. Zum Beispiel: am Samstag, den 12. Mai."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-er-wir-treffen-uns-am-samstag-d",
+     "task": "Ergänze, was fehlt!",
+     "prompt": "Wir treffen uns am Samstag, den 12. Mai, _____ im Park.",
+     "options": [
+      "um 15 Uhr",
+      "am Abend",
+      "in der Halle"
+     ],
+     "answer": "um 15 Uhr",
+     "explain": "Wir treffen uns am Samstag, den 12. Mai, um 15 Uhr im Park."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-er-die-feier-findet-um-14-uhr-i",
+     "task": "Ergänze, was fehlt!",
+     "prompt": "Die Feier findet _____ um 14 Uhr im Garten statt.",
+     "options": [
+      "am Freitag, den 9. Juli,",
+      "um 17 Uhr",
+      "im Haus"
+     ],
+     "answer": "am Freitag, den 9. Juli,",
+     "explain": "Die Feier findet am Freitag, den 9. Juli, um 14 Uhr im Garten statt."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-er-komm-bitte-am-sonntag-den-3",
+     "task": "Ergänze, was fehlt!",
+     "prompt": "Komm bitte am Sonntag, den 3. März, um 11 Uhr _____",
+     "options": [
+      "zum Spielplatz.",
+      "um 12 Uhr.",
+      "am Montag."
+     ],
+     "answer": "zum Spielplatz.",
+     "explain": "Komm bitte am Sonntag, den 3. März, um 11 Uhr zum Spielplatz."
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-er-wir-feiern-am-samstag-den-5",
+     "task": "Ergänze, was fehlt!",
+     "prompt": "Wir feiern am Samstag, den 5. Juni, _____ im Kletterwald.",
+     "options": [
+      "um 13 Uhr",
+      "am Sonntag",
+      "im Wald"
+     ],
+     "answer": "um 13 Uhr",
+     "explain": "Wir feiern am Samstag, den 5. Juni, um 13 Uhr im Kletterwald."
+    }
+   ]
+  },
+  {
+   "title": "Fehler finden in der Einladung",
+   "icon": "🔍",
+   "mix": true,
+   "tasks": [
+    {
+     "kind": "choice",
+     "id": "d3-ei-ff-liebe-lina-ich-lade-dich-her",
+     "task": "Fehler finden: Was fehlt in dieser Einladung?",
+     "prompt": "Liebe Lina,\nich lade dich herzlich zu meinem Geburtstag ein.\nWir treffen uns am Samstag, den 15. Mai, um 15 Uhr im Garten.\nBring bitte Gummistiefel mit!\nIch freue mich schon auf dich!\nLiebe Grüße\nDeine Sophie",
+     "options": [
+      "Ort und Datum",
+      "Uhrzeit",
+      "Schlusssatz",
+      "Anlass (Was?)"
+     ],
+     "answer": "Ort und Datum",
+     "letter": true,
+     "explain": "Eine Einladung braucht alle Bausteine. Bei Wann? Wo? immer Datum, Uhrzeit und Ort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ff-regensburg-2-5-27-liebe-lina",
+     "task": "Fehler finden: Was fehlt in dieser Einladung?",
+     "prompt": "Regensburg, 2.5.27\nLiebe Lina,\nWir treffen uns am Samstag, den 15. Mai, um 15 Uhr im Garten.\nBring bitte Gummistiefel mit!\nIch freue mich schon auf dich!\nLiebe Grüße\nDeine Sophie",
+     "options": [
+      "Anlass (Was?)",
+      "Uhrzeit",
+      "Ort und Datum",
+      "Schlusssatz"
+     ],
+     "answer": "Anlass (Was?)",
+     "letter": true,
+     "explain": "Eine Einladung braucht alle Bausteine. Bei Wann? Wo? immer Datum, Uhrzeit und Ort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ff-regensburg-2-5-27-liebe-lina-2",
+     "task": "Fehler finden: Was fehlt in dieser Einladung?",
+     "prompt": "Regensburg, 2.5.27\nLiebe Lina,\nich lade dich herzlich zu meinem Geburtstag ein.\nWir treffen uns am Samstag, den 15. Mai, um 15 Uhr im Garten.\nBring bitte Gummistiefel mit!\nIch freue mich schon auf dich!",
+     "options": [
+      "Gruß und Unterschrift",
+      "Uhrzeit",
+      "Ort und Datum",
+      "Schlusssatz"
+     ],
+     "answer": "Gruß und Unterschrift",
+     "letter": true,
+     "explain": "Eine Einladung braucht alle Bausteine. Bei Wann? Wo? immer Datum, Uhrzeit und Ort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ff-regensburg-2-5-27-liebe-lina-3",
+     "task": "Fehler finden: Was fehlt in dieser Einladung?",
+     "prompt": "Regensburg, 2.5.27\nLiebe Lina,\nich lade dich herzlich zu meinem Geburtstag ein.\nWir treffen uns am Samstag, den 15. Mai, im Garten.\nBring bitte Gummistiefel mit!\nIch freue mich schon auf dich!\nLiebe Grüße\nDeine Sophie",
+     "options": [
+      "Uhrzeit",
+      "Ort und Datum",
+      "Schlusssatz",
+      "Anlass (Was?)"
+     ],
+     "answer": "Uhrzeit",
+     "letter": true,
+     "explain": "Eine Einladung braucht alle Bausteine. Bei Wann? Wo? immer Datum, Uhrzeit und Ort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ff-regensburg-2-5-27-liebe-lina-4",
+     "task": "Fehler finden: Was fehlt in dieser Einladung?",
+     "prompt": "Regensburg, 2.5.27\nLiebe Lina,\nich lade dich herzlich zu meinem Geburtstag ein.\nWir treffen uns um 15 Uhr im Garten.\nBring bitte Gummistiefel mit!\nIch freue mich schon auf dich!\nLiebe Grüße\nDeine Sophie",
+     "options": [
+      "Datum",
+      "Uhrzeit",
+      "Ort und Datum",
+      "Schlusssatz"
+     ],
+     "answer": "Datum",
+     "letter": true,
+     "explain": "Eine Einladung braucht alle Bausteine. Bei Wann? Wo? immer Datum, Uhrzeit und Ort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ff-regensburg-2-5-27-liebe-lina-5",
+     "task": "Fehler finden: Was fehlt in dieser Einladung?",
+     "prompt": "Regensburg, 2.5.27\nLiebe Lina,\nich lade dich herzlich zu meinem Geburtstag ein.\nWir treffen uns am Samstag, den 15. Mai, um 15 Uhr.\nBring bitte Gummistiefel mit!\nIch freue mich schon auf dich!\nLiebe Grüße\nDeine Sophie",
+     "options": [
+      "Ort",
+      "Uhrzeit",
+      "Ort und Datum",
+      "Schlusssatz"
+     ],
+     "answer": "Ort",
+     "letter": true,
+     "explain": "Eine Einladung braucht alle Bausteine. Bei Wann? Wo? immer Datum, Uhrzeit und Ort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ff-regensburg-2-5-27-liebe-lina-6",
+     "task": "Fehler finden: Was fehlt in dieser Einladung?",
+     "prompt": "Regensburg, 2.5.27\nLiebe Lina\nich lade dich herzlich zu meinem Geburtstag ein.\nWir treffen uns am Samstag, den 15. Mai, um 15 Uhr im Garten.\nBring bitte Gummistiefel mit!\nIch freue mich schon auf dich!\nLiebe Grüße\nDeine Sophie",
+     "options": [
+      "Komma nach der Anrede",
+      "Uhrzeit",
+      "Ort und Datum",
+      "Schlusssatz"
+     ],
+     "answer": "Komma nach der Anrede",
+     "letter": true,
+     "explain": "Eine Einladung braucht alle Bausteine. Bei Wann? Wo? immer Datum, Uhrzeit und Ort!"
+    },
+    {
+     "kind": "choice",
+     "id": "d3-ei-ff-regensburg-2-5-27-liebe-lina-7",
+     "task": "Fehler finden: Was fehlt in dieser Einladung?",
+     "prompt": "Regensburg, 2.5.27\nLiebe Lina,\nich lade dich herzlich zu meinem Geburtstag ein.\nWir treffen uns am Samstag, den 15. Mai, um 15 Uhr im Garten.\nBring bitte Gummistiefel mit!\nLiebe Grüße\nDeine Sophie",
+     "options": [
+      "Schlusssatz",
+      "Uhrzeit",
+      "Ort und Datum",
+      "Anlass (Was?)"
+     ],
+     "answer": "Schlusssatz",
+     "letter": true,
+     "explain": "Eine Einladung braucht alle Bausteine. Bei Wann? Wo? immer Datum, Uhrzeit und Ort!"
+    }
+   ]
+  },
+  {
+   "title": "Lückentext: Einladung für Tim",
+   "icon": "📝",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-tim-ein-was-deine",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen\n\nMünchen, 1.6.27\n_____ Tim,\nich … dich herzlich zu meiner Geburtstagsfeier ein.\nWir treffen uns am Samstag, den 12. Juni, um … im Schwimmbad.\nBring bitte deine Badesachen …!\nSag mir bitte …, ob du kommen kannst.\nLiebe …\nDein Nathan",
+     "answer": "Lieber",
+     "explain": "Richtig: Lieber Tim,",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-tim-ein-was-deine-2",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen\n\nMünchen, 1.6.27\nLieber Tim,\nich _____ dich herzlich zu meiner Geburtstagsfeier ein.\nWir treffen uns am Samstag, den 12. Juni, um … im Schwimmbad.\nBring bitte deine Badesachen …!\nSag mir bitte …, ob du kommen kannst.\nLiebe …\nDein Nathan",
+     "answer": "lade",
+     "explain": "Richtig: ich lade dich herzlich zu meiner Geburtstagsfeier ein.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-tim-ein-was-deine-3",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen\n\nMünchen, 1.6.27\nLieber Tim,\nich lade dich herzlich zu meiner Geburtstagsfeier ein.\nWir treffen uns am Samstag, den 12. Juni, um _____ im Schwimmbad.\nBring bitte deine Badesachen …!\nSag mir bitte …, ob du kommen kannst.\nLiebe …\nDein Nathan",
+     "answer": "15 Uhr",
+     "also": [
+      "15:00 Uhr"
+     ],
+     "explain": "Richtig: Wir treffen uns am Samstag, den 12. Juni, um 15 Uhr im Schwimmbad.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-tim-ein-was-deine-4",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen\n\nMünchen, 1.6.27\nLieber Tim,\nich lade dich herzlich zu meiner Geburtstagsfeier ein.\nWir treffen uns am Samstag, den 12. Juni, um 15 Uhr im Schwimmbad.\nBring bitte deine Badesachen _____!\nSag mir bitte …, ob du kommen kannst.\nLiebe …\nDein Nathan",
+     "answer": "mit",
+     "explain": "Richtig: Bring bitte deine Badesachen mit!",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-tim-ein-was-deine-5",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen\n\nMünchen, 1.6.27\nLieber Tim,\nich lade dich herzlich zu meiner Geburtstagsfeier ein.\nWir treffen uns am Samstag, den 12. Juni, um 15 Uhr im Schwimmbad.\nBring bitte deine Badesachen mit!\nSag mir bitte _____, ob du kommen kannst.\nLiebe …\nDein Nathan",
+     "answer": "Bescheid",
+     "explain": "Richtig: Sag mir bitte Bescheid, ob du kommen kannst.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-tim-ein-was-deine-6",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Tim ein.\nWas: deine Geburtstagsfeier\nWann: Samstag, 12. Juni, 15 Uhr\nWo: Schwimmbad\nMitbringen: Badesachen\n\nMünchen, 1.6.27\nLieber Tim,\nich lade dich herzlich zu meiner Geburtstagsfeier ein.\nWir treffen uns am Samstag, den 12. Juni, um 15 Uhr im Schwimmbad.\nBring bitte deine Badesachen mit!\nSag mir bitte Bescheid, ob du kommen kannst.\nLiebe _____\nDein Nathan",
+     "answer": "Grüße",
+     "explain": "Richtig: Liebe Grüße",
+     "letter": true
+    }
+   ]
+  },
+  {
+   "title": "Lückentext: Einladung für Lea und Oma",
+   "icon": "📝",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\n_____ Lea,\nbald ist es so …: Ich feiere eine Pyjama-Party!\nDie Party … am …, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen … mit.\nIch … mich schon riesig auf dich!\nViele Grüße\nDeine …",
+     "answer": "Liebe",
+     "explain": "Richtig: Liebe Lea,",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama-2",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\nLiebe Lea,\nbald ist es so _____: Ich feiere eine Pyjama-Party!\nDie Party … am …, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen … mit.\nIch … mich schon riesig auf dich!\nViele Grüße\nDeine …",
+     "answer": "weit",
+     "explain": "Richtig: bald ist es so weit: Ich feiere eine Pyjama-Party!",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama-3",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\nLiebe Lea,\nbald ist es so weit: Ich feiere eine Pyjama-Party!\nDie Party _____ am …, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen … mit.\nIch … mich schon riesig auf dich!\nViele Grüße\nDeine …",
+     "answer": "findet",
+     "explain": "Richtig: Die Party findet am Freitag, den 3. März, um 18 Uhr bei mir zu Hause statt.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama-4",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\nLiebe Lea,\nbald ist es so weit: Ich feiere eine Pyjama-Party!\nDie Party findet am _____, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen … mit.\nIch … mich schon riesig auf dich!\nViele Grüße\nDeine …",
+     "answer": "Freitag, den 3. März",
+     "also": [
+      "Freitag, 3. März"
+     ],
+     "explain": "Richtig: Die Party findet am Freitag, den 3. März, um 18 Uhr bei mir zu Hause statt.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama-5",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\nLiebe Lea,\nbald ist es so weit: Ich feiere eine Pyjama-Party!\nDie Party findet am Freitag, den 3. März, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen _____ mit.\nIch … mich schon riesig auf dich!\nViele Grüße\nDeine …",
+     "answer": "Schlafsack",
+     "explain": "Richtig: Bring bitte deinen Schlafsack mit.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama-6",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\nLiebe Lea,\nbald ist es so weit: Ich feiere eine Pyjama-Party!\nDie Party findet am Freitag, den 3. März, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen Schlafsack mit.\nIch _____ mich schon riesig auf dich!\nViele Grüße\nDeine …",
+     "answer": "freue",
+     "explain": "Richtig: Ich freue mich schon riesig auf dich!",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-lea-ein-was-pyjama-7",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Lea ein.\nWas: Pyjama-Party\nWann: Freitag, 3. März, 18 Uhr\nWo: bei dir zu Hause\nMitbringen: Schlafsack\nVon: Mia\n\nAugsburg, 20.2.27\nLiebe Lea,\nbald ist es so weit: Ich feiere eine Pyjama-Party!\nDie Party findet am Freitag, den 3. März, um 18 Uhr bei mir zu Hause statt.\nBring bitte deinen Schlafsack mit.\nIch freue mich schon riesig auf dich!\nViele Grüße\nDeine _____",
+     "answer": "Mia",
+     "explain": "Richtig: Deine Mia",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-deine-oma-ein-was",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen\n\nNürnberg, 25.6.27\n_____ Oma,\n… lade ich dich zu unserem Sommerfest ein.\nWir feiern am Sonntag, den 8. Juli. Um … geht es im … los.\nEs … leckeren Kuchen.\nIch kann es kaum …, dass du kommst!\nLiebe Grüße\nDein Nathan",
+     "answer": "Liebe",
+     "explain": "Richtig: Liebe Oma,",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-deine-oma-ein-was-2",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen\n\nNürnberg, 25.6.27\nLiebe Oma,\n_____ lade ich dich zu unserem Sommerfest ein.\nWir feiern am Sonntag, den 8. Juli. Um … geht es im … los.\nEs … leckeren Kuchen.\nIch kann es kaum …, dass du kommst!\nLiebe Grüße\nDein Nathan",
+     "answer": "hiermit",
+     "explain": "Richtig: hiermit lade ich dich zu unserem Sommerfest ein.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-deine-oma-ein-was-3",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen\n\nNürnberg, 25.6.27\nLiebe Oma,\nhiermit lade ich dich zu unserem Sommerfest ein.\nWir feiern am Sonntag, den 8. Juli. Um _____ geht es im … los.\nEs … leckeren Kuchen.\nIch kann es kaum …, dass du kommst!\nLiebe Grüße\nDein Nathan",
+     "answer": "14 Uhr",
+     "also": [
+      "14:00 Uhr"
+     ],
+     "explain": "Richtig: Wir feiern am Sonntag, den 8. Juli. Um 14 Uhr geht es im Garten los.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-deine-oma-ein-was-4",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen\n\nNürnberg, 25.6.27\nLiebe Oma,\nhiermit lade ich dich zu unserem Sommerfest ein.\nWir feiern am Sonntag, den 8. Juli. Um 14 Uhr geht es im _____ los.\nEs … leckeren Kuchen.\nIch kann es kaum …, dass du kommst!\nLiebe Grüße\nDein Nathan",
+     "answer": "Garten",
+     "explain": "Richtig: Wir feiern am Sonntag, den 8. Juli. Um 14 Uhr geht es im Garten los.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-deine-oma-ein-was-5",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen\n\nNürnberg, 25.6.27\nLiebe Oma,\nhiermit lade ich dich zu unserem Sommerfest ein.\nWir feiern am Sonntag, den 8. Juli. Um 14 Uhr geht es im Garten los.\nEs _____ leckeren Kuchen.\nIch kann es kaum …, dass du kommst!\nLiebe Grüße\nDein Nathan",
+     "answer": "gibt",
+     "explain": "Richtig: Es gibt leckeren Kuchen.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-deine-oma-ein-was-6",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst deine Oma ein.\nWas: Sommerfest\nWann: Sonntag, 8. Juli, 14 Uhr\nWo: im Garten\nEs gibt: Kuchen\n\nNürnberg, 25.6.27\nLiebe Oma,\nhiermit lade ich dich zu unserem Sommerfest ein.\nWir feiern am Sonntag, den 8. Juli. Um 14 Uhr geht es im Garten los.\nEs gibt leckeren Kuchen.\nIch kann es kaum _____, dass du kommst!\nLiebe Grüße\nDein Nathan",
+     "answer": "erwarten",
+     "explain": "Richtig: Ich kann es kaum erwarten, dass du kommst!",
+     "letter": true
+    }
+   ]
+  },
+  {
+   "title": "Lückentext: Einladung für die 3a und Ben",
+   "icon": "📝",
+   "tasks": [
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-deine-klasse-3b-laedt-die-kl",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe\n\nRegensburg, 3.5.27\nLiebe Kinder der Klasse 3a,\n_____ laden euch herzlich zu unserem Spielenachmittag ein.\nWir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der ….\nZusammen … wir viele lustige Spiele machen.\nBringt bitte … mit.\nWir … uns auf euch!\nViele Grüße\nEure Klasse …",
+     "answer": "wir",
+     "explain": "Richtig: wir laden euch herzlich zu unserem Spielenachmittag ein.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-deine-klasse-3b-laedt-die-kl-2",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe\n\nRegensburg, 3.5.27\nLiebe Kinder der Klasse 3a,\nwir laden euch herzlich zu unserem Spielenachmittag ein.\nWir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der _____.\nZusammen … wir viele lustige Spiele machen.\nBringt bitte … mit.\nWir … uns auf euch!\nViele Grüße\nEure Klasse …",
+     "answer": "Turnhalle",
+     "explain": "Richtig: Wir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der Turnhalle.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-deine-klasse-3b-laedt-die-kl-3",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe\n\nRegensburg, 3.5.27\nLiebe Kinder der Klasse 3a,\nwir laden euch herzlich zu unserem Spielenachmittag ein.\nWir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der Turnhalle.\nZusammen _____ wir viele lustige Spiele machen.\nBringt bitte … mit.\nWir … uns auf euch!\nViele Grüße\nEure Klasse …",
+     "answer": "werden",
+     "explain": "Richtig: Zusammen werden wir viele lustige Spiele machen.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-deine-klasse-3b-laedt-die-kl-4",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe\n\nRegensburg, 3.5.27\nLiebe Kinder der Klasse 3a,\nwir laden euch herzlich zu unserem Spielenachmittag ein.\nWir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der Turnhalle.\nZusammen werden wir viele lustige Spiele machen.\nBringt bitte _____ mit.\nWir … uns auf euch!\nViele Grüße\nEure Klasse …",
+     "answer": "Turnschuhe",
+     "explain": "Richtig: Bringt bitte Turnschuhe mit.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-deine-klasse-3b-laedt-die-kl-5",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe\n\nRegensburg, 3.5.27\nLiebe Kinder der Klasse 3a,\nwir laden euch herzlich zu unserem Spielenachmittag ein.\nWir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der Turnhalle.\nZusammen werden wir viele lustige Spiele machen.\nBringt bitte Turnschuhe mit.\nWir _____ uns auf euch!\nViele Grüße\nEure Klasse …",
+     "answer": "freuen",
+     "explain": "Richtig: Wir freuen uns auf euch!",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-deine-klasse-3b-laedt-die-kl-6",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Deine Klasse 3b lädt die Klasse 3a ein.\nWas: Spielenachmittag\nWann: Freitag, 14. Mai, 15 Uhr\nWo: Turnhalle\nMitbringen: Turnschuhe\n\nRegensburg, 3.5.27\nLiebe Kinder der Klasse 3a,\nwir laden euch herzlich zu unserem Spielenachmittag ein.\nWir treffen uns am Freitag, den 14. Mai, um 15 Uhr in der Turnhalle.\nZusammen werden wir viele lustige Spiele machen.\nBringt bitte Turnschuhe mit.\nWir freuen uns auf euch!\nViele Grüße\nEure Klasse _____",
+     "answer": "3b",
+     "explain": "Richtig: Eure Klasse 3b",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-ben-ein-was-zusamm",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob\n\nBamberg, 10.2.27\n_____ Ben,\nich … dich ins Kino einladen.\nWir treffen uns am Sonntag, den 20. Februar, … vor dem Kino am Marktplatz.\nBitte komm …, denn der Film fängt gleich an.\nSchön, … du Zeit hast!\nViele Grüße\nDein …",
+     "answer": "Lieber",
+     "explain": "Richtig: Lieber Ben,",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-ben-ein-was-zusamm-2",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob\n\nBamberg, 10.2.27\nLieber Ben,\nich _____ dich ins Kino einladen.\nWir treffen uns am Sonntag, den 20. Februar, … vor dem Kino am Marktplatz.\nBitte komm …, denn der Film fängt gleich an.\nSchön, … du Zeit hast!\nViele Grüße\nDein …",
+     "answer": "möchte",
+     "explain": "Richtig: ich möchte dich ins Kino einladen.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-ben-ein-was-zusamm-3",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob\n\nBamberg, 10.2.27\nLieber Ben,\nich möchte dich ins Kino einladen.\nWir treffen uns am Sonntag, den 20. Februar, _____ vor dem Kino am Marktplatz.\nBitte komm …, denn der Film fängt gleich an.\nSchön, … du Zeit hast!\nViele Grüße\nDein …",
+     "answer": "um 11 Uhr",
+     "also": [
+      "um 11:00 Uhr"
+     ],
+     "explain": "Richtig: Wir treffen uns am Sonntag, den 20. Februar, um 11 Uhr vor dem Kino am Marktplatz.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-ben-ein-was-zusamm-4",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob\n\nBamberg, 10.2.27\nLieber Ben,\nich möchte dich ins Kino einladen.\nWir treffen uns am Sonntag, den 20. Februar, um 11 Uhr vor dem Kino am Marktplatz.\nBitte komm _____, denn der Film fängt gleich an.\nSchön, … du Zeit hast!\nViele Grüße\nDein …",
+     "answer": "pünktlich",
+     "explain": "Richtig: Bitte komm pünktlich, denn der Film fängt gleich an.",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-ben-ein-was-zusamm-5",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob\n\nBamberg, 10.2.27\nLieber Ben,\nich möchte dich ins Kino einladen.\nWir treffen uns am Sonntag, den 20. Februar, um 11 Uhr vor dem Kino am Marktplatz.\nBitte komm pünktlich, denn der Film fängt gleich an.\nSchön, _____ du Zeit hast!\nViele Grüße\nDein …",
+     "answer": "wenn",
+     "explain": "Richtig: Schön, wenn du Zeit hast!",
+     "letter": true
+    },
+    {
+     "kind": "type",
+     "id": "d3-ei-lt-du-laedst-ben-ein-was-zusamm-6",
+     "task": "Was gehört in die Lücke _____? Schau oben bei den Infos! Schreib es hinein.",
+     "prompt": "📋 Du lädst Ben ein.\nWas: zusammen ins Kino gehen\nWann: Sonntag, 20. Februar, 11 Uhr\nWo: vor dem Kino am Marktplatz\nVon: Jakob\n\nBamberg, 10.2.27\nLieber Ben,\nich möchte dich ins Kino einladen.\nWir treffen uns am Sonntag, den 20. Februar, um 11 Uhr vor dem Kino am Marktplatz.\nBitte komm pünktlich, denn der Film fängt gleich an.\nSchön, wenn du Zeit hast!\nViele Grüße\nDein _____",
+     "answer": "Jakob",
+     "explain": "Richtig: Dein Jakob",
+     "letter": true
+    }
+   ]
+  },
+  {
+   "title": "Einladung auf Papier",
+   "icon": "📷",
+   "tasks": [
+    {
+     "kind": "photo",
+     "id": "d3-ei-papier-1",
+     "task": "Schreib eine Einladung zu deinem Geburtstag auf ein Blatt. Denk an alle Bausteine! Hak sie danach ab.",
+     "show": [
+      "Ort, Datum",
+      "Anrede mit Komma",
+      "Anlass",
+      "Datum + Uhrzeit + Ort",
+      "Wichtige Infos",
+      "Schlusssatz",
+      "Gruß + Name"
+     ]
+    },
+    {
+     "kind": "photo",
+     "id": "d3-ei-papier-2",
+     "task": "Lade deine Klasse zu einem Spielenachmittag ein. Nimm Satzanfänge aus der Liste! Vergiss die Uhrzeit nicht.",
+     "show": [
+      "Ich lade euch …",
+      "Wir treffen uns …",
+      "Wir spielen …",
+      "Bringt bitte … mit.",
+      "Ich freue mich …"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Probe-Test",
+   "icon": "🏆",
+   "test": true,
+   "count": 20
+  }
+ ]
+}

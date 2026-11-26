@@ -100,6 +100,22 @@ regel("pronomen", "👉", "Pronomen ersetzen Nomen", "Pronomen", [
 ], ["**Die Katze** schläft. **Sie** ist müde."],
     "", ["d3-artikel-pronomen/Pronomen erkennen", "d3-artikel-pronomen/Pronomen verwenden"])
 
+# ---------------- Deutsch 3. Klasse: Texte schreiben ----------------
+regel("einladung", "💌", "So schreibst du eine Einladung", "Einladung", [
+    "Eine Einladung hat **7 Bausteine**: Ort und Datum – Anrede – Anlass (Was?) – Wann? Wo? – wichtige Infos – Schlusssatz – Gruß und Unterschrift.",
+    "Nach der **Anrede** kommt ein **Komma**. Danach schreibst du **klein** weiter: Lieber Tim, **du** bist …",
+    "Bei **Wann? Wo?** brauchst du immer **alle drei**: **Datum + Uhrzeit + Ort**.",
+], ["Wir treffen uns **am Samstag, den 12. Mai,** **um 15 Uhr** **im Park**."],
+    "Frag dich: Weiß mein Gast, **an welchem Tag**, **um wie viel Uhr** und **wohin** er kommen soll?",
+    ["d3-einladung/Die 7 Bausteine", "d3-einladung/Anrede mit Komma", "d3-einladung/Wann? Wo? Datum + Uhrzeit + Ort", "d3-einladung/Fehler finden in der Einladung"])
+regel("einladung-satzanfaenge", "🗣️", "Satzanfänge für eine Einladung", "Satzanfänge", [
+    "**Anfang:** Ich lade dich … / Bald ist es so weit, … / Hiermit lade ich dich … / Ich möchte dich … / Ich plane … / Endlich ist es wieder so weit, …",
+    "**Ort und Zeit:** Die Feier findet … statt. / Wir treffen uns … / Komm bitte … / Um … geht es los. / Ab … Uhr erwarte ich dich. / Bitte komm pünktlich …",
+    "**Programm:** Wir werden … / Es gibt … / Ich habe … vorbereitet. / Wir spielen … / Bring bitte … mit. / Danach … / Zusammen werden wir … / Es wartet … auf dich.",
+    "**Schluss:** Ich freue mich! / Sag mir bitte Bescheid, … / Ich hoffe, … / Das wird ein großer Spaß! / Schön, wenn du … / Ich kann es kaum erwarten, dass …",
+], [], "Merk dir die **4 Gruppen**: Anfang – Ort und Zeit – Programm – Schluss.",
+    ["d3-einladung/Satzanfänge sortieren", "d3-einladung/Satzanfänge im Lückentext"])
+
 # ---------------- Deutsch 3. Klasse: Rechtschreibung ----------------
 regel("verlaengern", "↔️", "Verlängern: d oder t, g oder k, b oder p?", "Verlängern", [
     "Am Wortende klingen d und t, g und k, b und p **gleich**.",

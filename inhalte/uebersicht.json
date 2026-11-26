@@ -72,6 +72,16 @@
             "deutsch/k3-woertliche-rede.json",
             "deutsch/k3-blitzlesen.json"
           ]
+        },
+        {
+          "id": "deutsch-k3-texte",
+          "title": "3. Klasse · Texte schreiben",
+          "kinder": [
+            "pirat"
+          ],
+          "units": [
+            "deutsch/k3-einladung.json"
+          ]
         }
       ]
     },

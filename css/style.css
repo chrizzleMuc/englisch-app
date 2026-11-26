@@ -947,3 +947,8 @@ table.eval tr.fail td { color: #b3261e; }
 .credits a { color: inherit; }
 .emo.zeich.foto.fit, .rule-pics .emo.zeich.foto.fit { object-fit: contain; background: #fff; }
 .emo.zeich.foto.space, .rule-pics .emo.zeich.foto.space { background: #000; }
+.order-line .tile, .build-pool .tile { white-space: pre-line; }
+.letter-card { text-align: left; }
+.letter-card .prompt-text { font-size: 0.95rem; line-height: 1.45; font-weight: 600; }
+.letter-card { justify-content: flex-start; align-items: flex-start; }
+.letter-card .prompt-text { text-align: left; font-size: 1.05rem; display: block; width: 100%; }

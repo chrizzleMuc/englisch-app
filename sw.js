@@ -1,5 +1,5 @@
 // Offline-Speicher: Bei jeder Änderung an der App VERSION erhöhen.
-const VERSION = "learnino-39";
+const VERSION = "learnino-40";
 const FILES = [
   "./",
   "index.html",
@@ -273,6 +273,7 @@ const FILES = [
   "inhalte/deutsch/k3-regel-detektiv.json",
   "inhalte/mathe/k3-regel-detektiv.json",
   "inhalte/deutsch/k3-wdh-k2.json",
+  "inhalte/deutsch/k3-einladung.json",
   "inhalte/mathe/k3-wdh-k2.json",
   "inhalte/deutsch/k1-anlaute.json",
   "inhalte/deutsch/k1-ausmalen.json",
