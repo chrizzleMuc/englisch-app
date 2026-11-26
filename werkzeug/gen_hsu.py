@@ -139,12 +139,20 @@ def bildwahl(p, task, options, answer, explain=None):
     return t
 
 
+def _spot(sp):
+    """(x, y, Begriff) oder (x, y, Begriff, tx, ty): Nummer bei x/y, Strich zum Teil bei tx/ty."""
+    x, y, a = sp[:3]
+    d = {"x": x, "y": y} if x is not None else {}
+    if len(sp) == 5: d |= {"tx": sp[3], "ty": sp[4]}
+    return d | {"answer": a}
+
+
 def schaubild(p, task, image, spots, w=300, h=200, extra=(), text=None, labels=False):
     """Schaubild beschriften: spots = (x, y, Begriff) in Bildkoordinaten.
     Mit text (Absätze, "__" = Lücke in spots-Reihenfolge) wird daraus ein Lückentext zum Bild;
     labels=True schreibt die Begriffe als Hilfe ins Bild (x=None: kein Etikett)."""
     t = {"kind": "label", "id": uid(f"{p}-{slug(task + ' ' + image)}"), "task": task, "image": image, "w": w, "h": h,
-         "spots": [({"x": x, "y": y} if x is not None else {}) | {"answer": a} for x, y, a in spots]}
+         "spots": [_spot(sp) for sp in spots]}
     if extra: t["extra"] = list(extra)
     if text: t["text"] = list(text)
     if labels: t["labels"] = True
@@ -1576,8 +1584,12 @@ def add_lessons(path, *ls):
 
 # ---------- Auge vertieft ----------
 p = "h3-sinne"
-AUGE_VORN = [(150, 22, "Augenbraue"), (150, 64, "Augenlid"), (98, 92, "Wimpern"), (240, 84, "Tränendrüse"), (97, 128, "Augapfel"), (178, 128, "Regenbogenhaut"), (150, 112, "Pupille")]
-AUGE_INNEN = [(92, 100, "Hornhaut"), (110, 78, "Iris"), (124, 100, "Linse"), (165, 100, "Glaskörper"), (205, 58, "Netzhaut"), (255, 104, "Sehnerv"), (190, 14, "Augenhöhle")]
+# Bilder 400x200: (Nummer x, y, Begriff, Teil x, y) – von der Nummer führt ein Strich zum Teil.
+AUGE_VORN = [(25, 30, "Augenbraue", 160, 29), (375, 40, "Augenlid", 200, 72), (25, 88, "Wimpern", 163, 88), (375, 100, "Tränendrüse", 272, 94),
+             (25, 150, "Augapfel", 148, 124), (375, 160, "Regenbogenhaut", 222, 120), (200, 180, "Pupille", 200, 112)]
+AV = {s[2]: s for s in AUGE_VORN}
+AUGE_INNEN = [(22, 150, "Hornhaut", 142, 100), (22, 50, "Iris", 160, 78), (95, 180, "Linse", 174, 112), (215, 180, "Glaskörper", 215, 128),
+              (375, 70, "Netzhaut", 259, 70), (375, 130, "Sehnerv", 330, 112), (375, 22, "Augenhöhle", 317, 23)]
 wissen("hsu-auge-aussen", "👁️", "Wie heißen die Teile des Auges?", [
     "Über dem Auge wächst die **Augenbraue**.",
     "Das **Augenlid** kann das Auge zudecken. Am Rand des Lids wachsen die **Wimpern**.",
@@ -1603,7 +1615,7 @@ wissen("hsu-auge-innen", "🔎", "Das Auge von innen", [
 ], ["Licht → Hornhaut → Pupille → Linse → Glaskörper → Netzhaut → Sehnerv → Gehirn"], [f"{p}/Das Auge von innen", f"{p}/So sehen wir"])
 add_lessons("hsu/k3-sinne.json",
     lesson("Das Auge von außen", "👁️", [
-        schaubild(p, "Beschrifte das Auge! Tipp eine Nummer an und dann den passenden Begriff.", "auge-vorn", AUGE_VORN),
+        schaubild(p, "Beschrifte das Auge! Tipp eine Nummer an und dann den passenden Begriff.", "auge-vorn", AUGE_VORN, w=400),
         bildfrage(p, "Was ist das?", "Wie heißt der farbige Ring im Auge?", "auge-vorn", ["Regenbogenhaut", "Pupille", "Augenlid"], "Regenbogenhaut", "Man sagt auch Iris."),
         bildfrage(p, "Was ist das?", "Wie heißt das schwarze Loch in der Mitte?", "auge-vorn", ["Pupille", "Regenbogenhaut", "Linse"], "Pupille"),
         bildfrage(p, "Was ist das?", "Wie heißt die weiße Kugel?", "auge-vorn", ["Augapfel", "Augenhöhle", "Tränendrüse"], "Augapfel"),
@@ -1619,14 +1631,14 @@ add_lessons("hsu/k3-sinne.json",
             ("Pupille", "wird bei hellem Licht kleiner"), ("Tränendrüse", "hält das Auge feucht"),
         ]),
         schaubild(p, "Setze die richtigen Wörter ein! Das Bild hilft dir.", "auge-vorn",
-                  [(150, 22, "Augenbraue"), (None, None, "Sprungschanze"), (98, 92, "Wimpern"), (150, 64, "Augenlid"), (None, None, "Fremdkörper")],
+                  [AV["Augenbraue"], (None, None, "Sprungschanze"), AV["Wimpern"], AV["Augenlid"], (None, None, "Fremdkörper")], w=400,
                   extra=["Rutsche", "Pupille"], labels=True, text=[
                       "Die __ wirkt wie eine __. Sie hält Wasser- und Schweißtropfen ab.",
                       "Die __ halten Staub und andere kleine Teilchen ab.",
                       "Das __ schließt sich bei Gefahr. So können keine __ ins Auge gelangen.",
                   ]),
         schaubild(p, "Setze die richtigen Wörter ein! Das Bild hilft dir.", "auge-vorn",
-                  [(150, 112, "Pupille"), (None, None, "kleiner"), (240, 84, "Tränendrüse"), (None, None, "feucht"), (None, None, "Augenhöhle"), (None, None, "Stößen")],
+                  [AV["Pupille"], (None, None, "kleiner"), AV["Tränendrüse"], (None, None, "feucht"), (None, None, "Augenhöhle"), (None, None, "Stößen")], w=400,
                   extra=["größer", "trocken"], labels=True, text=[
                       "Die __ wird bei hellem Licht __. So schützt sie das Auge vor zu viel Licht.",
                       "Die __ sorgt dafür, dass das Auge __ bleibt. Mit der Tränenflüssigkeit spült sie Staubteilchen weg.",
@@ -1643,7 +1655,7 @@ add_lessons("hsu/k3-sinne.json",
         ]),
     ], mix=False),
     lesson("Das Auge von innen", "🔎", [
-        schaubild(p, "Beschrifte das Auge von innen!", "auge-schnitt", AUGE_INNEN),
+        schaubild(p, "Beschrifte das Auge von innen!", "auge-schnitt", AUGE_INNEN, w=400),
         pairs(p, "Was macht dieser Teil des Auges?", "Was macht dieser Teil des Auges?", [
             ("Hornhaut", "durchsichtige Schutzschicht vorn"), ("Glaskörper", "füllt das Auge wie klares Gelee"),
             ("Augenhöhle", "Knochen, die das Auge schützen"), ("Netzhaut", "hier entsteht das Bild"),

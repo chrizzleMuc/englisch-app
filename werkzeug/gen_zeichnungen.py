@@ -788,7 +788,10 @@ def auge_vorn():
         x = (1 - t) ** 2 * 70 + 2 * (1 - t) * t * 150 + t * t * 230
         y = (1 - t) ** 2 * 120 + 2 * (1 - t) * t * 172 + t * t * 120
         b += f'<path d="M{f(x)},{f(y)} l{f((t - .5) * 10)},7" stroke="#333" stroke-width="1.8" stroke-linecap="round"/>'
-    svg("auge-vorn", b, defs, "0 0 300 200")
+    # Rand links/rechts für Nummern mit Beschriftungslinien (Bild 400 breit, Auge in der Mitte)
+    b = b.replace('<rect width="300" height="200" rx="18" fill="url(#sk)"/>', '')
+    b = '<rect width="400" height="200" rx="18" fill="url(#sk)"/><g transform="translate(50,0)">' + b + '</g>'
+    svg("auge-vorn", b, defs, "0 0 400 200")
 
 
 def auge_schnitt():
@@ -812,7 +815,8 @@ def auge_schnitt():
     b += '<ellipse cx="124" cy="100" rx="9" ry="22" fill="#fff6c0" stroke="#d6b84a" stroke-width="2.5"/>'
     # Lichtstrahlen
     b += '<path d="M20,88 L124,92 L216,108 M20,112 L124,108 L216,92" stroke="#ffb400" stroke-width="1.6" stroke-dasharray="5 4" fill="none" opacity=".8"/>'
-    svg("auge-schnitt", b, defs, "0 0 300 200")
+    b = '<rect width="400" height="200" rx="18" fill="#fbe9dc"/><g transform="translate(50,0)">' + b + '</g>'
+    svg("auge-schnitt", b, defs, "0 0 400 200")
 
 
 auge_vorn(); auge_schnitt()
