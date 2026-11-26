@@ -328,7 +328,7 @@
       {
        "x": 150,
        "y": 64,
-       "answer": "Lid"
+       "answer": "Augenlid"
       },
       {
        "x": 98,
@@ -336,9 +336,19 @@
        "answer": "Wimpern"
       },
       {
+       "x": 240,
+       "y": 84,
+       "answer": "Tränendrüse"
+      },
+      {
+       "x": 97,
+       "y": 128,
+       "answer": "Augapfel"
+      },
+      {
        "x": 178,
-       "y": 126,
-       "answer": "Iris"
+       "y": 128,
+       "answer": "Regenbogenhaut"
       },
       {
        "x": 150,
@@ -348,43 +358,17 @@
      ]
     },
     {
-     "kind": "pairs",
-     "task": "Wie schützt dieser Teil das Auge?",
-     "review": "Wie schützt dieser Teil das Auge?",
-     "pairs": [
-      {
-       "id": "h3-sinne-augenbraue",
-       "a": "Augenbraue",
-       "b": "lenkt Schweiß vom Auge weg"
-      },
-      {
-       "id": "h3-sinne-wimpern-2",
-       "a": "Wimpern",
-       "b": "halten Staub ab"
-      },
-      {
-       "id": "h3-sinne-lid",
-       "a": "Lid",
-       "b": "schließt sich beim Blinzeln"
-      },
-      {
-       "id": "h3-sinne-traenen",
-       "a": "Tränen",
-       "b": "spülen das Auge sauber"
-      }
-     ]
-    },
-    {
      "kind": "choice",
      "id": "h3-sinne-wie-heisst-der-farbige-ring",
      "task": "Was ist das?",
      "prompt": "Wie heißt der farbige Ring im Auge?",
      "options": [
-      "Iris",
+      "Regenbogenhaut",
       "Pupille",
-      "Lid"
+      "Augenlid"
      ],
-     "answer": "Iris",
+     "answer": "Regenbogenhaut",
+     "explain": "Man sagt auch Iris.",
      "pic": "[[auge-vorn]]",
      "showText": true
     },
@@ -395,12 +379,50 @@
      "prompt": "Wie heißt das schwarze Loch in der Mitte?",
      "options": [
       "Pupille",
-      "Iris",
+      "Regenbogenhaut",
       "Linse"
      ],
      "answer": "Pupille",
      "pic": "[[auge-vorn]]",
      "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-wie-heisst-die-weisse-kugel",
+     "task": "Was ist das?",
+     "prompt": "Wie heißt die weiße Kugel?",
+     "options": [
+      "Augapfel",
+      "Augenhöhle",
+      "Tränendrüse"
+     ],
+     "answer": "Augapfel",
+     "pic": "[[auge-vorn]]",
+     "showText": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-wo-liegt-die-traenendruese",
+     "task": "Was stimmt?",
+     "prompt": "Wo liegt die Tränendrüse?",
+     "options": [
+      "oben außen, versteckt unter dem Augenlid",
+      "mitten in der Pupille",
+      "in der Augenbraue"
+     ],
+     "answer": "oben außen, versteckt unter dem Augenlid"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-wie-heisst-die-regenbogenhau",
+     "task": "Was stimmt?",
+     "prompt": "Wie heißt die Regenbogenhaut noch?",
+     "options": [
+      "Iris",
+      "Linse",
+      "Netzhaut"
+     ],
+     "answer": "Iris"
     },
     {
      "kind": "choice",
@@ -426,6 +448,238 @@
      "answer": "richtig",
      "keepOrder": true,
      "explain": "Sie sieht schwarz aus, weil es im Inneren des Auges dunkel ist."
+    }
+   ]
+  },
+  {
+   "title": "Aufgaben der Augenteile",
+   "icon": "🛡️",
+   "tasks": [
+    {
+     "kind": "pairs",
+     "task": "Welche Aufgabe hat dieser Teil?",
+     "review": "Welche Aufgabe hat dieser Teil?",
+     "pairs": [
+      {
+       "id": "h3-sinne-augenhoehle",
+       "a": "Augenhöhle",
+       "b": "schützt vor Stößen"
+      },
+      {
+       "id": "h3-sinne-augenbraue",
+       "a": "Augenbraue",
+       "b": "hält Schweißtropfen ab"
+      },
+      {
+       "id": "h3-sinne-wimpern-2",
+       "a": "Wimpern",
+       "b": "halten Staub ab"
+      },
+      {
+       "id": "h3-sinne-augenlid",
+       "a": "Augenlid",
+       "b": "schließt sich bei Gefahr"
+      },
+      {
+       "id": "h3-sinne-pupille-2",
+       "a": "Pupille",
+       "b": "wird bei hellem Licht kleiner"
+      },
+      {
+       "id": "h3-sinne-traenendruese",
+       "a": "Tränendrüse",
+       "b": "hält das Auge feucht"
+      }
+     ]
+    },
+    {
+     "kind": "label",
+     "id": "h3-sinne-setze-die-richtigen-woerter",
+     "task": "Setze die richtigen Wörter ein! Das Bild hilft dir.",
+     "image": "auge-vorn",
+     "w": 300,
+     "h": 200,
+     "spots": [
+      {
+       "x": 150,
+       "y": 22,
+       "answer": "Augenbraue"
+      },
+      {
+       "answer": "Sprungschanze"
+      },
+      {
+       "x": 98,
+       "y": 92,
+       "answer": "Wimpern"
+      },
+      {
+       "x": 150,
+       "y": 64,
+       "answer": "Augenlid"
+      },
+      {
+       "answer": "Fremdkörper"
+      }
+     ],
+     "extra": [
+      "Rutsche",
+      "Pupille"
+     ],
+     "text": [
+      "Die __ wirkt wie eine __. Sie hält Wasser- und Schweißtropfen ab.",
+      "Die __ halten Staub und andere kleine Teilchen ab.",
+      "Das __ schließt sich bei Gefahr. So können keine __ ins Auge gelangen."
+     ],
+     "labels": true
+    },
+    {
+     "kind": "label",
+     "id": "h3-sinne-setze-die-richtigen-woerter-2",
+     "task": "Setze die richtigen Wörter ein! Das Bild hilft dir.",
+     "image": "auge-vorn",
+     "w": 300,
+     "h": 200,
+     "spots": [
+      {
+       "x": 150,
+       "y": 112,
+       "answer": "Pupille"
+      },
+      {
+       "answer": "kleiner"
+      },
+      {
+       "x": 240,
+       "y": 84,
+       "answer": "Tränendrüse"
+      },
+      {
+       "answer": "feucht"
+      },
+      {
+       "answer": "Augenhöhle"
+      },
+      {
+       "answer": "Stößen"
+      }
+     ],
+     "extra": [
+      "größer",
+      "trocken"
+     ],
+     "text": [
+      "Die __ wird bei hellem Licht __. So schützt sie das Auge vor zu viel Licht.",
+      "Die __ sorgt dafür, dass das Auge __ bleibt. Mit der Tränenflüssigkeit spült sie Staubteilchen weg.",
+      "Die __ schützt das Auge vor __."
+     ],
+     "labels": true
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-was-passiert-mit-der-pupille-3",
+     "task": "Was stimmt?",
+     "prompt": "Was passiert mit der Pupille, wenn es sehr hell ist?",
+     "options": [
+      "Sie wird kleiner.",
+      "Sie wird größer.",
+      "Sie bleibt gleich."
+     ],
+     "answer": "Sie wird kleiner.",
+     "explain": "So kommt nicht zu viel Licht ins Auge."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-im-dunkeln-wird-die-pupille",
+     "task": "Richtig oder falsch?",
+     "prompt": "Im Dunkeln wird die Pupille größer.",
+     "options": [
+      "richtig",
+      "falsch"
+     ],
+     "answer": "richtig",
+     "keepOrder": true,
+     "explain": "Dann kommt mehr Licht ins Auge und wir sehen besser."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-welcher-teil-wirkt-wie-eine",
+     "task": "Was stimmt?",
+     "prompt": "Welcher Teil wirkt wie eine Sprungschanze für Schweißtropfen?",
+     "options": [
+      "die Augenbraue",
+      "die Wimpern",
+      "die Pupille"
+     ],
+     "answer": "die Augenbraue"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-ein-staubkorn-fliegt-auf-dei",
+     "task": "Was stimmt?",
+     "prompt": "Ein Staubkorn fliegt auf dein Auge zu. Was passiert?",
+     "options": [
+      "Das Augenlid schließt sich blitzschnell.",
+      "Die Pupille wird größer.",
+      "Die Augenbraue fällt herunter."
+     ],
+     "answer": "Das Augenlid schließt sich blitzschnell."
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-womit-spuelt-die-traenendrue",
+     "task": "Was stimmt?",
+     "prompt": "Womit spült die Tränendrüse Staub aus dem Auge?",
+     "options": [
+      "mit Tränenflüssigkeit",
+      "mit Schweiß",
+      "mit Blut"
+     ],
+     "answer": "mit Tränenflüssigkeit"
+    },
+    {
+     "kind": "choice",
+     "id": "h3-sinne-was-schuetzt-das-auge-vor-st",
+     "task": "Was stimmt?",
+     "prompt": "Was schützt das Auge vor Stößen?",
+     "options": [
+      "die Augenhöhle",
+      "die Wimpern",
+      "die Pupille"
+     ],
+     "answer": "die Augenhöhle"
+    },
+    {
+     "kind": "sort",
+     "task": "Wovor schützt dieser Teil das Auge?",
+     "review": "Wovor schützt dieser Teil das Auge?",
+     "groups": [
+      "vor Staub",
+      "vor zu viel Licht",
+      "vor Stößen"
+     ],
+     "items": [
+      {
+       "id": "h3-sinne-wimpern-3",
+       "text": "Wimpern",
+       "group": "vor Staub"
+      },
+      {
+       "id": "h3-sinne-traenendruese-2",
+       "text": "Tränendrüse",
+       "group": "vor Staub"
+      },
+      {
+       "id": "h3-sinne-pupille-3",
+       "text": "Pupille",
+       "group": "vor zu viel Licht"
+      },
+      {
+       "id": "h3-sinne-augenhoehle-2",
+       "text": "Augenhöhle",
+       "group": "vor Stößen"
+      }
+     ]
     }
    ]
   },
@@ -494,7 +748,7 @@
        "b": "füllt das Auge wie klares Gelee"
       },
       {
-       "id": "h3-sinne-augenhoehle",
+       "id": "h3-sinne-augenhoehle-3",
        "a": "Augenhöhle",
        "b": "Knochen, die das Auge schützen"
       },

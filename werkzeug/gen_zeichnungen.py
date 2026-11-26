@@ -767,7 +767,10 @@ def auge_vorn():
     # Oberlid (Hautfalte) deutlich als eigene Fläche
     b += '<path d="M64,120 Q150,-4 236,120 Q150,58 64,120 Z" fill="#e9a98a" stroke="#c98668" stroke-width="2.5"/>'
     E = "M70,120 Q150,58 230,120 Q150,172 70,120 Z"
+    # Tränendrüse: liegt oben außen unter dem Lid (gestrichelt angedeutet)
+    b += '<path d="M206,94 q14,-14 30,-6 q8,10 -2,20 q-14,6 -28,-14 Z" fill="#f4a7b6" stroke="#c45a74" stroke-width="2" stroke-dasharray="4 3"/>'
     b += f'<path d="{E}" fill="#fff" stroke="#8a5a3a" stroke-width="3"/>'
+    b += '<path d="M70,120 q8,-7 14,0 q-6,7 -14,0 Z" fill="#f2a4a4"/>'
     b += f'<clipPath id="ey"><path d="{E}"/></clipPath>'
     b += '<g clip-path="url(#ey)"><circle cx="150" cy="112" r="30" fill="url(#ir)" stroke="#153f70" stroke-width="2"/>'
     for k in range(18):
