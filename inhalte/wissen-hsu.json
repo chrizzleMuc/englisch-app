@@ -682,16 +682,34 @@
   {
    "id": "hsu-auge-aussen",
    "icon": "👁️",
-   "title": "Das Auge von außen",
+   "title": "Wie heißen die Teile des Auges?",
    "merke": [
-    "Die **Augenbraue** lenkt Schweiß und Regen vom Auge weg.",
-    "Das **Lid** schließt sich beim Blinzeln. Es verteilt die Tränenflüssigkeit und schützt das Auge.",
-    "Die **Wimpern** halten Staub und kleine Insekten ab.",
-    "Die **Iris** ist der farbige Ring. In ihrer Mitte ist die schwarze **Pupille**, ein Loch, durch das Licht ins Auge fällt."
+    "Über dem Auge wächst die **Augenbraue**.",
+    "Das **Augenlid** kann das Auge zudecken. Am Rand des Lids wachsen die **Wimpern**.",
+    "Die **Tränendrüse** liegt oben außen, versteckt unter dem Augenlid.",
+    "Die weiße Kugel ist der **Augapfel**.",
+    "Der farbige Ring heißt **Regenbogenhaut** (oder **Iris**). In ihrer Mitte ist die schwarze **Pupille**, ein Loch, durch das Licht ins Auge fällt."
    ],
    "beispiele": [],
    "lektionen": [
     "h3-sinne/Das Auge von außen"
+   ]
+  },
+  {
+   "id": "hsu-auge-aufgaben",
+   "icon": "🛡️",
+   "title": "Welche Aufgaben haben die Teile des Auges?",
+   "merke": [
+    "Die **Augenhöhle** schützt das Auge vor **Stößen**.",
+    "Die **Augenbraue** wirkt wie eine **Sprungschanze**. Sie hält **Wasser- und Schweißtropfen** ab.",
+    "Die **Wimpern** halten **Staub** und andere kleine Teilchen ab.",
+    "Das **Augenlid** schließt sich bei **Gefahr**. So können **Fremdkörper** nicht ins Auge gelangen.",
+    "Die **Pupille** wird bei hellem Licht **kleiner**. So schützt sie das Auge vor zu viel Licht. Im Dunkeln wird sie größer.",
+    "Die **Tränendrüse** sorgt dafür, dass das Auge **feucht** bleibt. Mit der **Tränenflüssigkeit** spült sie Staubteilchen weg."
+   ],
+   "beispiele": [],
+   "lektionen": [
+    "h3-sinne/Aufgaben der Augenteile"
    ]
   },
   {

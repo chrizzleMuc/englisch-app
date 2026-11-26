@@ -921,6 +921,10 @@ table.eval tr.fail td { color: #b3261e; }
 .rule-list li .say-btn { margin-left: -2px; }
 
 /* Lückentext zum Schaubild */
+.label-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.label-lines .ll-halo { stroke: #fff; stroke-width: 5; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.label-lines .ll { stroke: #3b2585; stroke-width: 2.2; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.label-lines .ll-end { fill: #3b2585; stroke: #fff; stroke-width: 1.5; }
 .label-pic.small { width: min(100%, 340px); }
 .label-tag { position: absolute; transform: translate(-50%, -50%); background: rgba(255, 255, 255, .92); color: #4a2fa0; border: 2px solid #7a4fd6; border-radius: 10px; padding: 1px 6px; font: 800 13px/1.2 system-ui, sans-serif; white-space: nowrap; box-shadow: 0 1px 4px rgba(0, 0, 0, .25); pointer-events: none; }
 .label-cloze { width: min(100%, 560px); margin: 0 auto 10px; background: var(--card); color: var(--card-ink); border-radius: 16px; padding: 10px 14px; font-size: 19px; line-height: 2.1; }

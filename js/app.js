@@ -9,7 +9,7 @@ import { pic, zeichImg } from "./pics.js";
 import { vis, visText } from "./mathpics.js";
 import * as cloud from "./cloud.js";
 
-const APP_VERSION = 38;
+const APP_VERSION = 40;
 const app = document.getElementById("app");
 const current = { profile: null, subject: null, screen: null };
 
@@ -1194,6 +1194,19 @@ STEPS.build = (lesson, step) => {
 // ---------- Übung: Schaubild beschriften (Begriffe den Nummern im Bild zuordnen) ----------
 // Aufgabe: { kind: "label", image: "auge-vorn", spots: [{ x: 150, y: 22, answer: "Augenbraue" }, …], w: 300, h: 200, extra: ["Nase"] }
 // x/y in Bildkoordinaten (viewBox). Nummer antippen (oder es ist automatisch die nächste freie), dann Begriff antippen.
+// Beschriftungslinien: Spot mit tx/ty = Nummer steht bei x/y, ein Strich führt zum Teil bei tx/ty.
+function leaderLines(spots, W, H) {
+  const ls = spots.filter((s) => s.x != null && s.tx != null);
+  if (!ls.length) return "";
+  return `<svg class="label-lines" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">${ls.map((s) =>
+    `<line x1="${s.x}" y1="${s.y}" x2="${s.tx}" y2="${s.ty}" class="ll-halo"/><line x1="${s.x}" y1="${s.y}" x2="${s.tx}" y2="${s.ty}" class="ll"/><circle cx="${s.tx}" cy="${s.ty}" r="4" class="ll-end"/>`).join("")}</svg>`;
+}
+// Etikett mit Strich: am linken Rand linksbündig, am rechten rechtsbündig, damit es nicht abgeschnitten wird.
+function tagPos(s, W, H) {
+  const top = `top:${(s.y / H) * 100}%`;
+  if (s.tx == null || (s.x > W * 0.2 && s.x < W * 0.8)) return `left:${(s.x / W) * 100}%;${top}`;
+  return s.x <= W * 0.2 ? `left:1.5%;${top};transform:translate(0,-50%)` : `left:98.5%;${top};transform:translate(-100%,-50%)`;
+}
 STEPS.label = (lesson, step) => {
   const q = step.q;
   let first = true;
@@ -1205,7 +1218,7 @@ STEPS.label = (lesson, step) => {
   const W = q.w || 300, H = q.h || 200;
   const token = lessonRender(lesson, `
     ${taskHead(q.task || "Beschrifte das Bild!")}
-    <div class="label-pic ${q.text ? "small" : ""}"><img src="img/zeichnungen/${q.image}.svg" alt="">${q.spots.map((s, k) => s.x == null ? "" : q.labels ? `<span class="label-tag" style="left:${(s.x / W) * 100}%;top:${(s.y / H) * 100}%">${esc(s.answer)}</span>` : `<button class="label-dot" data-k="${k}" style="left:${(s.x / W) * 100}%;top:${(s.y / H) * 100}%">${k + 1}</button>`).join("")}</div>
+    <div class="label-pic ${q.text ? "small" : ""}"><img src="img/zeichnungen/${q.image}.svg" alt="">${leaderLines(q.spots, W, H)}${q.spots.map((s, k) => s.x == null ? "" : q.labels ? `<span class="label-tag" style="${tagPos(s, W, H)}">${esc(s.answer)}</span>` : `<button class="label-dot" data-k="${k}" style="left:${(s.x / W) * 100}%;top:${(s.y / H) * 100}%">${k + 1}</button>`).join("")}</div>
     ${q.text && readAloud ? `<button class="say-btn say-cloze" data-text="${esc(q.text.join(" ").replace(/__/g, "Lücke"))}" aria-label="Vorlesen">🔊</button>` : ""}
     <div class="${q.text ? "label-cloze" : "label-rows"}" id="rows"></div>
     <div class="build-pool" id="pool"></div>

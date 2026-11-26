@@ -767,7 +767,10 @@ def auge_vorn():
     # Oberlid (Hautfalte) deutlich als eigene Fläche
     b += '<path d="M64,120 Q150,-4 236,120 Q150,58 64,120 Z" fill="#e9a98a" stroke="#c98668" stroke-width="2.5"/>'
     E = "M70,120 Q150,58 230,120 Q150,172 70,120 Z"
+    # Tränendrüse: liegt oben außen unter dem Lid (gestrichelt angedeutet)
+    b += '<path d="M206,94 q14,-14 30,-6 q8,10 -2,20 q-14,6 -28,-14 Z" fill="#f4a7b6" stroke="#c45a74" stroke-width="2" stroke-dasharray="4 3"/>'
     b += f'<path d="{E}" fill="#fff" stroke="#8a5a3a" stroke-width="3"/>'
+    b += '<path d="M70,120 q8,-7 14,0 q-6,7 -14,0 Z" fill="#f2a4a4"/>'
     b += f'<clipPath id="ey"><path d="{E}"/></clipPath>'
     b += '<g clip-path="url(#ey)"><circle cx="150" cy="112" r="30" fill="url(#ir)" stroke="#153f70" stroke-width="2"/>'
     for k in range(18):
@@ -785,7 +788,10 @@ def auge_vorn():
         x = (1 - t) ** 2 * 70 + 2 * (1 - t) * t * 150 + t * t * 230
         y = (1 - t) ** 2 * 120 + 2 * (1 - t) * t * 172 + t * t * 120
         b += f'<path d="M{f(x)},{f(y)} l{f((t - .5) * 10)},7" stroke="#333" stroke-width="1.8" stroke-linecap="round"/>'
-    svg("auge-vorn", b, defs, "0 0 300 200")
+    # Rand links/rechts für Nummern mit Beschriftungslinien (Bild 400 breit, Auge in der Mitte)
+    b = b.replace('<rect width="300" height="200" rx="18" fill="url(#sk)"/>', '')
+    b = '<rect width="400" height="200" rx="18" fill="url(#sk)"/><g transform="translate(50,0)">' + b + '</g>'
+    svg("auge-vorn", b, defs, "0 0 400 200")
 
 
 def auge_schnitt():
@@ -809,7 +815,8 @@ def auge_schnitt():
     b += '<ellipse cx="124" cy="100" rx="9" ry="22" fill="#fff6c0" stroke="#d6b84a" stroke-width="2.5"/>'
     # Lichtstrahlen
     b += '<path d="M20,88 L124,92 L216,108 M20,112 L124,108 L216,92" stroke="#ffb400" stroke-width="1.6" stroke-dasharray="5 4" fill="none" opacity=".8"/>'
-    svg("auge-schnitt", b, defs, "0 0 300 200")
+    b = '<rect width="400" height="200" rx="18" fill="#fbe9dc"/><g transform="translate(50,0)">' + b + '</g>'
+    svg("auge-schnitt", b, defs, "0 0 400 200")
 
 
 auge_vorn(); auge_schnitt()
